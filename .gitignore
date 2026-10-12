@@ -46,3 +46,7 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+
+# Goodr: records holding integration secrets. Never commit (values live only in the org)
+force-app/main/default/customMetadata/NetSuite_Credential.*
+force-app/main/default/customMetadata/NetSuite_Config.*
