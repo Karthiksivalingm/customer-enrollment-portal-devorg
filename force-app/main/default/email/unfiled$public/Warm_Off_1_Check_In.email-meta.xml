@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email 1: Check-In (Month 12)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Warm Off 1 - Check In</name>
+    <style>none</style>
+    <subject>We miss having you as a goodr retailer</subject>
+    <textOnly>Hi {!Contact.Name},
+
+It’s been a while since your last order with goodr, and we wanted to check in. Is there anything we can help with, whether that’s reordering best sellers, exploring new styles, or troubleshooting an issue on your end?
+
+We’d love to keep {!Shopify_At_Risk_Notice__c.Store_Name__c} active in our retailer network. Let us know if you’d like to place an order or if there’s anything holding you back.
+
+Warmly,
+
+The goodr wholesale team
+
+© 2026 goodr. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

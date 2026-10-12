@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Notify Requester of Received Request</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Retailsupport Email</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply-retailsupport@goodr.com</senderEmail>
+            <senderName>goodr Specialty Support</senderName>
+            <template>EmailTemplatesMVP/First_Reply_Specialty_Inbounds_1761686449174</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Canadasupport Email</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply-canadasupport@goodr.com</senderEmail>
+            <senderName>goodr Specialty Support Canada</senderName>
+            <template>EmailTemplatesMVP/First_Reply_Specialty_Inbounds_CAN_1761686796362</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Globalsupport Email</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <senderEmail>noreply-globalsupport@goodr.com</senderEmail>
+            <senderName>goodr Global Support</senderName>
+            <template>EmailTemplatesMVP/Global_Email_Inbound_First_Reply_1761680388197</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Globalsupport Email</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply-retailorders@goodr.com</senderEmail>
+            <senderName>goodr Specialty Support</senderName>
+            <template>EmailTemplatesMVP/First_Reply_Specialty_Inbounds_1761686449174</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

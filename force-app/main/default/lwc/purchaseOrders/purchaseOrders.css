@@ -1,0 +1,224 @@
+.po-panel {
+    background: #fff;
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+}
+
+.po-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    min-height: 2.75rem;
+    border-bottom: 1px solid #dddbda;
+}
+
+.po-title {
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #3e3e3c;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.po-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Download All button */
+.po-header-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+    padding: 0.2rem 0.75rem;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #0176d3;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.1s, border-color 0.1s;
+}
+
+.po-header-btn:hover:not(:disabled) {
+    background-color: #f3f2f2;
+    border-color: #0176d3;
+}
+
+.po-header-btn:disabled {
+    color: #706e6b;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.po-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+}
+
+thead th {
+    padding: 0.35rem 0.75rem;
+    background: #fff;
+    border-top: 1px solid #dddbda;
+    border-bottom: 1px solid #dddbda;
+}
+
+.po-th {
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #706e6b;
+    text-transform: none;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.po-row td {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid #f3f2f2;
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 0.8125rem;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    color: #3e3e3c;
+}
+
+.po-row:last-child td {
+    border-bottom: none;
+}
+
+.po-row:hover {
+    background-color: #f3f2f2;
+}
+
+/* File title button — matches standard Files list link */
+.po-link {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #0176d3;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.po-link:hover {
+    text-decoration: underline;
+    color: #014486;
+}
+
+.po-link:focus {
+    outline: none;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.po-cell {
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #3e3e3c;
+}
+
+.po-icon {
+    flex-shrink: 0;
+}
+
+.po-action-cell {
+    padding: 0 0.5rem !important;
+    text-align: right;
+}
+
+.po-preview-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    line-height: 0;
+    color: #706e6b;
+}
+
+.po-row:hover .po-preview-btn {
+    display: inline-flex;
+    align-items: center;
+}
+
+.po-preview-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.po-checkbox {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    accent-color: #0176d3;
+    display: block;
+    margin: 0 auto;
+}
+
+.po-empty {
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #706e6b;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* View All / Show Less footer — matches standard related list */
+.po-footer {
+    border-top: 1px solid #dddbda;
+    text-align: center;
+    padding: 0.4rem;
+    background: #fff;
+}
+
+.po-viewall-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #0176d3;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+.po-viewall-btn:hover {
+    text-decoration: underline;
+    color: #014486;
+}

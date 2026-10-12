@@ -1,0 +1,177 @@
+<template>
+    <div class="po-panel">
+
+        <div class="po-header">
+            <div class="slds-media slds-media_center slds-no-space">
+                <div class="slds-media__figure slds-m-right_x-small">
+                    <lightning-icon icon-name="standard:file" size="x-small"></lightning-icon>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="po-title">{sectionTitle}</h2>
+                </div>
+            </div>
+
+            <!-- Download All: PO instance only -->
+            <template lwc:if={showPOActions}>
+                <div class="po-header-actions">
+                    <button
+                        class="po-header-btn"
+                        onclick={handleDownloadAll}
+                        title="Download all Purchase Orders as zip"
+                        disabled={isDownloading}>
+                        <lightning-icon
+                            icon-name="utility:download"
+                            size="x-small"
+                            class="slds-m-right_x-small">
+                        </lightning-icon>
+                        {downloadLabel}
+                    </button>
+                </div>
+            </template>
+        </div>
+
+        <template lwc:if={isLoading}>
+            <div class="slds-p-around_medium slds-text-align_center">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:if={hasFiles}>
+            <table
+                class="slds-table slds-table_cell-buffer slds-table_fixed-layout po-table"
+                role="grid"
+                aria-label={sectionTitle}>
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col" style={titleColStyle}>
+                            <div class="slds-truncate po-th">Title</div>
+                        </th>
+                        <template lwc:if={showAllFiles}>
+                            <th scope="col" style="width:6%" title="Mark as Purchase Order">
+                                <div class="slds-truncate po-th">PO</div>
+                            </th>
+                        </template>
+                        <th scope="col" style="width:18%">
+                            <div class="slds-truncate po-th">Owner</div>
+                        </th>
+                        <th scope="col" style="width:24%">
+                            <div class="slds-truncate po-th">Last Modified</div>
+                        </th>
+                        <th scope="col" style="width:10%">
+                            <div class="slds-truncate po-th">Size</div>
+                        </th>
+                        <th scope="col" style="width:4%">
+                            <div class="slds-assistive-text">Actions</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={visibleFiles} for:item="file">
+                        <tr key={file.contentDocumentId} class="slds-hint-parent po-row">
+
+                            <td data-label="Title">
+                                <div class="slds-truncate slds-grid slds-grid_vertical-align-center">
+                                    <lightning-icon
+                                        icon-name={file.iconName}
+                                        size="x-small"
+                                        class="slds-m-right_x-small po-icon">
+                                    </lightning-icon>
+                                    <button
+                                        class="po-link"
+                                        data-id={file.contentDocumentId}
+                                        onclick={handleFilePreview}
+                                        title={file.displayName}>
+                                        {file.displayName}
+                                    </button>
+                                </div>
+                            </td>
+
+                            <template lwc:if={showAllFiles}>
+                                <td data-label="Purchase Order">
+                                    <div class="slds-align_absolute-center">
+                                        <input
+                                            type="checkbox"
+                                            class="po-checkbox"
+                                            data-id={file.contentDocumentId}
+                                            checked={file.isPurchaseOrder}
+                                            onchange={handlePOToggle}
+                                            title="Mark as Purchase Order"
+                                        />
+                                    </div>
+                                </td>
+                            </template>
+
+                            <td data-label="Owner">
+                                <div class="slds-truncate po-cell">{file.ownerName}</div>
+                            </td>
+
+                            <td data-label="Last Modified">
+                                <div class="po-cell">
+                                    <lightning-formatted-date-time
+                                        value={file.lastModifiedDate}
+                                        year="numeric"
+                                        month="short"
+                                        day="2-digit"
+                                        hour="2-digit"
+                                        minute="2-digit">
+                                    </lightning-formatted-date-time>
+                                </div>
+                            </td>
+
+                            <td data-label="Size">
+                                <div class="slds-truncate po-cell">{file.formattedSize}</div>
+                            </td>
+
+                            <td class="po-action-cell">
+                                <button
+                                    class="po-preview-btn"
+                                    data-id={file.contentDocumentId}
+                                    onclick={handleFilePreview}
+                                    title="Preview">
+                                    <lightning-icon
+                                        icon-name="utility:preview"
+                                        size="x-small">
+                                    </lightning-icon>
+                                </button>
+                            </td>
+
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+            <!-- All Files: View All — expands in place, PO checkbox stays -->
+            <template lwc:if={showAllFilesViewAll}>
+                <div class="po-footer">
+                    <button class="po-viewall-btn" onclick={handleViewAll}>
+                        View All ({files.length})
+                    </button>
+                </div>
+            </template>
+
+            <!-- All Files: Show Less — collapses back to 5 rows -->
+            <template lwc:if={showAllFilesShowLess}>
+                <div class="po-footer">
+                    <button class="po-viewall-btn" onclick={handleShowLess}>
+                        Show Less
+                    </button>
+                </div>
+            </template>
+
+            <!-- PO list: View All — navigates to standard Salesforce files page -->
+            <template lwc:if={showPOViewAll}>
+                <div class="po-footer">
+                    <button class="po-viewall-btn" onclick={handleViewAll}>
+                        View All ({files.length})
+                    </button>
+                </div>
+            </template>
+
+        </template>
+
+        <template lwc:if={isEmpty}>
+            <div class="po-empty">No files found.</div>
+        </template>
+
+    </div>
+</template>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Cluster 3-Account Manager</label>
+    <protected>false</protected>
+    <values>
+        <field>Access_Level__c</field>
+        <value xsi:type="xsd:string">Read</value>
+    </values>
+    <values>
+        <field>Cluster_Value__c</field>
+        <value xsi:type="xsd:string">Cluster 3</value>
+    </values>
+    <values>
+        <field>ObjectAPIName__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Sales_Channel__c</field>
+        <value xsi:type="xsd:string">Key Account</value>
+    </values>
+    <values>
+        <field>Team_Role__c</field>
+        <value xsi:type="xsd:string">Account Manager</value>
+    </values>
+    <values>
+        <field>User_Identifier__c</field>
+        <value xsi:type="xsd:string">edwin@goodr.com</value>
+    </values>
+</CustomMetadata>

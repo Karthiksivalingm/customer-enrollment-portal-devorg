@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Early Notice (Month 15)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Warm Off 2 - Early Notice</name>
+    <style>none</style>
+    <subject>Your goodr wholesale account - action may be needed</subject>
+    <textOnly>Hi {!Contact.Name},
+
+Per our Terms of Service, wholesale accounts that have not placed an order in 18 months are subject to deactivation. Your account, {!Shopify_At_Risk_Notice__c.Store_Name__c}, has not ordered since {!Shopify_At_Risk_Notice__c.Last_Order_Date_At_Notice__c}, which puts you approaching that window.
+
+To keep your account active, simply place an order any time before {!Shopify_At_Risk_Notice__c.Deactivation_Date__c}. If you have questions about products, pricing, or your account, reply to this email or reach out to your account representative.
+
+Best,
+
+The goodr wholesale team
+
+© 2026 goodr. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

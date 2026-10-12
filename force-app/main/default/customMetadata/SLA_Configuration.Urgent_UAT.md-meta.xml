@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Urgent-UAT</label>
+    <protected>false</protected>
+    <values>
+        <field>Business_Hours_Name__c</field>
+        <value xsi:type="xsd:string">SLA Test 24x7</value>
+    </values>
+    <values>
+        <field>Email_To_Case_Address__c</field>
+        <value xsi:type="xsd:string">retailsupportuat@goodr.com</value>
+    </values>
+    <values>
+        <field>First_Reply_Hours__c</field>
+        <value xsi:type="xsd:double">4.0</value>
+    </values>
+    <values>
+        <field>Next_Reply_Hours__c</field>
+        <value xsi:type="xsd:double">4.0</value>
+    </values>
+    <values>
+        <field>Priority__c</field>
+        <value xsi:type="xsd:string">Urgent</value>
+    </values>
+</CustomMetadata>
