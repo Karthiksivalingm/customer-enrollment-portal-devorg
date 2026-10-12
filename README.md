@@ -1,58 +1,120 @@
-# Salesforce DX Project
+# Goodr – Salesforce Sandbox (GDRSAND)
 
-Salesforce DX is a development approach that brings source-driven development, team collaboration, and continuous integration to the Salesforce Platform. Instead of working directly in an org through a web browser, you work with metadata as source files in a local DX project, track changes in version control, and deploy through automated processes.
+> **Sandbox repository.** Everything here was built and deployed in the Goodr **sandbox** (`GDRSAND`).
+> The record data in this repo (CSV / Excel) is **sandbox data**. Folders whose names end in
+> `_PROD` are packages *prepared for* production (`GDRPROD`). They have **not** been deployed to production.
 
-This project template gets you started with the tools and structure you need to build Salesforce applications using source control, scratch orgs, and the Salesforce CLI.
+## What this project covers
 
-## Prerequisites
+Goodr's Sales Channel and Sector picklist values were moved to a new mapping on
+**Account, Contact, Lead and Opportunity**:
 
-Before you start, make sure you have:
+| Old Sales Channel | Old Sector | New Sales Channel | New Sector |
+|---|---|---|---|
+| Key Accounts | Core | Key Account | Enterprise |
+| Key Accounts | Mid-Market | Key Account | Strategic |
+| Key Accounts | Off-Price | Key Account | Discount |
+| Specialty | Bridge | Specialty | Planned |
+| Specialty | Sellgoodr USA | Specialty | Self Service |
+| Specialty | Sellgoodr CAN | Specialty | Self Service |
+| Specialty CAN | Sellgoodr CAN | Specialty | Self Service |
+| Specialty CAN | Bridge | Specialty | Planned |
+| Partnerships | Partnerships | Partnerships | Partnerships |
+| Global | Global | Global | Distributor |
 
-- **Salesforce CLI** - Download from [developer.salesforce.com/tools/salesforcecli](https://developer.salesforce.com/tools/salesforcecli). See [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) for details.
-- **VS Code with Salesforce Extension Pack** - See [Installation Instructions](https://developer.salesforce.com/docs/platform/sfvscode-extensions/guide/install.html) for details. Includes the Agentforce Vibes extension.
-- **A development org** - Sign up for a free Developer Edition org [here](https://developer.salesforce.com/signup).
-- **Dev Hub enabled** (optional, required to create scratch orgs) - You can enable Dev Hub in your development org under Setup > Dev Hub.  See [Provide Developers Access to Salesforce DX Tools](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_setup_dx_tools.htm).
+The work was delivered in five workstreams. See [CHANGELOG.md](CHANGELOG.md) for every sandbox
+deploy with its ID.
 
-## Project Structure
+1. **Key Account rename**: `Key Accounts` → `Key Account` in rules, team records, tests and page filters.
+2. **Sector new values**: Enterprise / Strategic / Discount / Planned / Self Service / Distributor, plus cluster rules and page filters.
+3. **Specialty CAN retirement**: the flow, tests and reports moved to `Specialty`.
+4. **V1 backup fields**: `Sales_Channel_V1__c` and `Sector_V1__c` on Account (editable by admins only) keep the old values.
+5. **Cluster fix**: the cluster is recalculated when only the Sector changes, and Sector cascades from Account to open Opportunities.
 
-Your DX project follows this structure:
+## Repository layout
 
-- **`force-app/main/default/`** - Your metadata source files live in this default package directory. You can configure additional package directories in the `sfdx-project.json` file.
-- **`config/`** - Scratch org definitions and project settings
-- **`scripts/`** - Automation scripts for common tasks
-- **`sfdx-project.json`** - Project manifest that defines package directories, namespace, API version, and other project-level settings
+```
+Goodr (repo root)
+├── force-app/main/default/        Salesforce metadata source of the SANDBOX (deploy target: GDRSAND)
+│                                    classes, triggers, flows, flexipages, customMetadata, objects, reports …
+├── manifest/
+│   ├── package.xml                 default project manifest
+│   └── retrieve/                   manifests used to retrieve / compare components during the work
+├── deployment/                     PRODUCTION-READY packages (mdapi format) + rollbacks + data loads
+│   ├── KeyAccount_Rename_PROD/            + KeyAccount_Rename_PROD_ROLLBACK/
+│   ├── Sector_NewValues_PROD/             + Sector_NewValues_PROD_ROLLBACK/
+│   ├── SpecialtyCAN_Phase1_PROD/          + SpecialtyCAN_Phase1_PROD_ROLLBACK/
+│   └── DataMigration_Account_Sandbox/     Data Loader CSVs (V1 backfill → pilot → full → rollback)
+│       └── source_exports/                the record exports the load files were built from
+├── docs/
+│   ├── 1_Analysis/                 where-used / impact analysis
+│   ├── 2_Deployment/               deployment document, change-set component list
+│   ├── 3_QA/                       QA test scenarios, cluster/team reference, page-section checks
+│   └── 4_Verification_Evidence/    results of the cluster/team checks, page rule exports, test runs
+├── scripts/
+│   ├── apex/verification/          anonymous Apex used to verify cluster + team live (rolls back, no data left)
+│   ├── apex/, soql/                project template samples
+│   └── doc-builders/               PowerShell (Excel COM) scripts that generated the workbooks
+├── backups/sandbox_pre_change/     copies of each component taken from the org BEFORE it was changed
+├── config/                         scratch-org definition (template)
+└── sfdx-project.json               project "Goodr", package directory force-app, API 59.0
+```
 
-See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm).
+### Where to put new items
 
-## Get Started
+| Item | Location |
+|---|---|
+| Metadata changed in the sandbox | `force-app/main/default/<type>/` (retrieve first, then edit) |
+| A package prepared for production | `deployment/<Change>_PROD/` with a matching `<Change>_PROD_ROLLBACK/` |
+| Data Loader files | `deployment/DataMigration_<Object>_<Org>/`, with raw exports in `source_exports/` |
+| Analysis workbook | `docs/1_Analysis/` |
+| Deployment document / change-set list | `docs/2_Deployment/` |
+| QA / UAT workbooks | `docs/3_QA/` |
+| Proof that a change works (query output, test results) | `docs/4_Verification_Evidence/` |
+| Snapshot of a component before changing it | `backups/sandbox_pre_change/<yyyy-mm-dd>_<Change>/` |
+| Reusable Apex / SOQL / PowerShell | `scripts/` |
 
-Ready to start developing? The [Get Started with Salesforce DX](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_get_started_dx.htm) guide walks you through your first project, from creating a scratch org to creating a simple Apex class or LWC to deploying your code to a sandbox.
+## Key documents
 
-## Common Salesforce CLI Commands
+| Document | Purpose |
+|---|---|
+| [docs/2_Deployment/KeyAccount_Rename_Deployment_Document.xlsx](docs/2_Deployment/KeyAccount_Rename_Deployment_Document.xlsx) | Production deployment steps for all three workstreams (Key Account, Sector, Specialty CAN), test plan and rollback |
+| [docs/2_Deployment/ChangeSet_Component_List.xlsx](docs/2_Deployment/ChangeSet_Component_List.xlsx) | The 44 components for the outbound change set |
+| [docs/1_Analysis/Sector_Where_Used_Analysis.xlsx](docs/1_Analysis/Sector_Where_Used_Analysis.xlsx) | Where Sales Channel / Sector are used and the impact of each change |
+| [docs/3_QA/QA_Test_Scenarios_KeyAccount_Sector_SpecialtyCAN.xlsx](docs/3_QA/QA_Test_Scenarios_KeyAccount_Sector_SpecialtyCAN.xlsx) | 36 UI test cases |
+| [docs/3_QA/QA_Cluster_Team_Assignment_Reference.xlsx](docs/3_QA/QA_Cluster_Team_Assignment_Reference.xlsx) | Expected cluster and team for each Sales Channel / Sector |
+| [docs/3_QA/QA_LRP_Sections_by_SalesChannel_Sector.xlsx](docs/3_QA/QA_LRP_Sections_by_SalesChannel_Sector.xlsx) | Which record-page sections show for each value |
+| [deployment/DataMigration_Account_Sandbox/SalesChannel_Sector_Records_To_Update_Sandbox.xlsx](deployment/DataMigration_Account_Sandbox/SalesChannel_Sector_Records_To_Update_Sandbox.xlsx) | All 989 sandbox records with their existing and new values |
 
-Here are common CLI commands that you'll use the most:
+## Common commands
 
-- `sf org login web`: Authorize an org
-- `sf org open`: Open your org in a browser
-- `sf org create scratch`: Create a scratch org
-- `sf project deploy start`: Deploy metadata to your org
-- `sf project retrieve start`: Retrieve metadata from your org
-- `sf template generate <artifact>`: Scaffold new components, such as Apex classes and triggers, LWC components, Lightning apps, and more
-- `sf apex <command>`: Run Apex tests, run anonymous Apex blocks, and view logs
-- `sf data <command>`: Work with test data
-- `sf alias <command>`: Manage org aliases
-- `sf config <command>`: Configure CLI settings
+```bash
+# Sandbox: retrieve before editing, check-only deploy, then deploy
+sf project retrieve start --metadata ApexClass:ClusterRuleEngine --target-org GDRSAND
+sf project deploy start --source-dir force-app/main/default/classes/ClusterRuleEngine.cls --target-org GDRSAND --dry-run --test-level RunSpecifiedTests --tests ClusterRuleEngineTest
 
-## Use Agentforce Vibes to Build Lightning Apps
+# Production: validate a prepared package (production does not allow NoTestRun)
+sf project deploy validate --metadata-dir deployment/KeyAccount_Rename_PROD --target-org GDRPROD --test-level RunSpecifiedTests --tests ClusterTeamEngineTest --tests ContactClusterTriggerTest
+```
 
-Transform your ideas into custom Lightning apps that extend CRM workflows directly in Lightning Experience. Through natural conversations with Agentforce Vibes, implement custom objects and fields, complex business logic, and dynamic UI components. See [Build a Lightning App Using Agentforce Vibes](https://developer.salesforce.com/docs/platform/einstein-for-devs/guide/lexapp-overview.html).
+## Working rules
 
-## Additional Resources
+- Retrieve the latest version from the org and take a backup (`backups/`) before changing anything.
+- Make the smallest change possible. Existing working logic must not change.
+- Run a check-only (`--dry-run`) deploy first. Deploy only after approval.
+- Don't change record data unless it has been approved.
+- Verify after each deploy and save the evidence in `docs/4_Verification_Evidence/`.
 
-- [Agentforce Vibes Developer Guide](https://developer.salesforce.com/docs/platform/einstein-for-devs/guide/einstein-overview.html)
-- [Salesforce CLI Installation Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/)
-- [Salesforce CLI Plugin Development Guide](https://developer.salesforce.com/docs/platform/salesforce-cli-plugin/guide/conceptual-overview.html)
-- [Salesforce VS Code Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
+## Known open items
 
+- `planda@goodr.com` (Global, Cluster 7, Sales Director) is inactive, so the team has 4 members.
+- Two test accounts in the sandbox (`R12 Test Company Sandbox`, `Test Team`) still show Cluster 5 with Self Service.
+- 2 `ShopifyOrderSyncTest` methods fail in the sandbox only. This was already the case before this work.
+- `AccountCascadeHandler` in the sandbox contains `ContactTeamReassignQueueable`. This line is not part of this work and isn't in production.
+- Production: 346 Specialty CAN companies have no Billing Country. In 71 Key Account accounts, clusters set by hand (2/3/8) are reset to Cluster 1 if the cluster fix is deployed before the data load.
+- The production data migration and the production page package are still pending.
+
+## Notes
+
+- The scripts in `scripts/doc-builders/` were run from a temporary working folder. Before re-running one, update the `$sp` / `$out` paths at the top of the script.
+- `.sf/`, `.sfdx/`, logs and `node_modules/` are git-ignored. Org connections are never stored in this repo.

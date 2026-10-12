@@ -1,8 +1,8 @@
 {
-  "name": "salesforce-app",
+  "name": "goodr-salesforce-sandbox",
   "private": true,
   "version": "1.0.0",
-  "description": "Salesforce App",
+  "description": "Goodr Salesforce - sandbox (GDRSAND) metadata, deployment packages and documentation",
   "scripts": {
     "lint": "eslint **/{aura,lwc}/**/*.js",
     "test": "npm run test:unit",
