@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Life Team</name>
+    <queueMembers>
+        <users>
+            <user>aiannicelli@everquote.com</user>
+            <user>cgarvey@everquote.com</user>
+            <user>djankovic@everquote.com</user>
+            <user>ndaniels@everquote.com</user>
+            <user>pfitzgerald@everquote.com</user>
+            <user>swinrow@everquote.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

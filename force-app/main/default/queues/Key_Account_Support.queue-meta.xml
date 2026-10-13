@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Key Account Support</name>
+    <queueMembers>
+        <users>
+            <user>bwang@everquote.com</user>
+            <user>enunes@everquote.com</user>
+            <user>gspano@everquote.com</user>
+            <user>hunter@everquote.com</user>
+            <user>rmason@everquote.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

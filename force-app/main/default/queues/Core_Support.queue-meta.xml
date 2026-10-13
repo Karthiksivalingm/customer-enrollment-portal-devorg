@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Core Support</name>
+    <queueMembers>
+        <users>
+            <user>kalyn.hettenbach@everquote.com</user>
+            <user>nprickett@everquote.com</user>
+            <user>nyk.mccargo@everquote.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Support_email</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

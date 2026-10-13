@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Allstate Team</name>
+    <queueMembers>
+        <users>
+            <user>bdrake@everquote.com</user>
+            <user>dmitchell@everquote.com</user>
+            <user>dsousa@everquote.com</user>
+            <user>ecarleton@everquote.com</user>
+            <user>hberman@everquote.com</user>
+            <user>jthomas@everquote.com</user>
+            <user>ndaniels@everquote.com</user>
+            <user>purban@everquote.com</user>
+            <user>shurley@everquote.com</user>
+            <user>shannigan@everquote.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

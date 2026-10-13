@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <description>Migrated from legacy Flow "BDR_Activity_completed_change_lead_owner_to_activity_owner" (Workflow process type). Flips leads to activity owner if they are a BDR.</description>
+    <environments>Default</environments>
+    <interviewLabel>BDR Activity Completed - Change Lead Owner {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BDR Activity Completed - Change Lead Owner</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <decisions>
+        <name>Is_Task_Owner_a_BDR</name>
+        <label>Is Task Owner a BDR?</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Is_BDR</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner:User.ProfileId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>00e1a000000hyVbAAI</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_Owner</targetReference>
+            </connector>
+            <label>Owner Is BDR</label>
+        </rules>
+    </decisions>
+    <recordUpdates>
+        <name>Update_Lead_Owner</name>
+        <label>Update Lead Owner</label>
+        <locationX>176</locationX>
+        <locationY>266</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhoId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.CreatedById</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Is_Task_Owner_a_BDR</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>StartsWith</operator>
+            <value>
+                <stringValue>00Q</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
