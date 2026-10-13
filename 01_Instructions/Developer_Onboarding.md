@@ -17,6 +17,7 @@ cd "C:/Microsoft VS Code/GDRSandbox"
 sf org login web --alias GDRSAND --instance-url https://test.salesforce.com      # the Goodr sandbox (partial copy)
 sf org login web --alias GDRPROD                                                 # production: read-only unless approved
 sf config set target-org GDRSAND
+git config core.hooksPath scripts/git-hooks                                     # blocks commits containing credentials
 ```
 Never commit org credentials. `.sf/` and `.sfdx/` are git-ignored.
 

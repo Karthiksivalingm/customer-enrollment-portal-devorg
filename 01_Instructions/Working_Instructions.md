@@ -42,7 +42,8 @@ Work **component by component**. Don't combine unrelated changes in one deploy.
 
 ## 5. Security
 
-- Never commit passwords, tokens, keys or org auth files. `NetSuite_Credential` and `NetSuite_Config` records are git-ignored and force-ignored.
+- Never commit passwords, tokens, keys or org auth files. `NetSuite_Credential` and `NetSuite_Config` records are git-ignored and force-ignored; placeholder templates are in `07_Technical_Documents/Secure_Config_Templates/`.
+- Enable the secret-blocking hook once per clone: `git config core.hooksPath scripts/git-hooks`.
 - Never paste credentials into chat, documents or commit messages. If one is exposed, rotate it.
 - The repository is **private**. Keep it private.
 

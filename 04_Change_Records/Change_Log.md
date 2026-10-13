@@ -203,6 +203,14 @@ Verified 2026-10-13 against `Data_Changes/DataMigration_Account_Sandbox/2_Accoun
 
   New in the repo: global value sets `Sales_Channel`, `Sales_Channel1` and `Sector`; Sales Channel / Sector fields on 4 objects; the `Shopify_At_Risk_Notice__c` object; the Shopify Account fields.
 
+## CHG-22 · Credential hardening in the repository (13 Oct, Session A)
+No org change. NetSuite credential custom metadata had been committed in `88fb123` and `246a9f2` and removed from tracking in `7ced5d5`. On 13 Oct:
+- added placeholder templates (`07_Technical_Documents/Secure_Config_Templates/`, every value `SET_IN_ORG__<field>`) and checked that none of the real values appear in them;
+- added the pre-commit hook `scripts/git-hooks/pre-commit`, which blocks credential files and secret-looking values (tested: it blocks the NetSuite file);
+- added `.gitattributes` so the hook keeps LF line endings.
+
+**Still open:** rotate the NetSuite sandbox keys (NetSuite admin), and purge the two old commits from the GitHub history (see CF-14).
+
 ---
 
 ## Before 25 Sep 2026
