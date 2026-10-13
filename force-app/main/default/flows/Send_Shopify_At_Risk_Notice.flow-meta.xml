@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <description>Replaces the Send Email (emailSimple) action. The SendWarmOffEmail Apex action picks the template from the notice Stage using Shopify At Risk Config (Template Stage 1-5; Email Template Name for legacy notices with no Stage), sends from the Org Wide Email, uses the notice as WhatId so its merge fields render, and logs the email to the contact and notice timelines.</description>
+        <description>Sends the stage template (Template Stage 1-5 in Shopify At Risk Config) with the notice as WhatId so merge fields render. Legacy notices with no Stage use Email Template Name. Logs the email on the contact.</description>
         <name>Send_Warm_Off_Email</name>
         <label>Send Warm-Off Email</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
         <actionName>SendWarmOffEmail</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -19,17 +19,15 @@
             </value>
         </inputParameters>
         <nameSegment>SendWarmOffEmail</nameSegment>
-        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
-        <description>Routes on the Success output of the Apex action.</description>
         <name>Email_Sent</name>
         <label>Email Sent?</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Mark_Send_Failed</targetReference>
         </defaultConnector>
@@ -50,7 +48,7 @@
             <label>Sent</label>
         </rules>
     </decisions>
-    <description>Sends the email for a newly created Shopify At Risk Notice. The template is chosen by the notice Stage (Month 12, Month 15, Month 17, 15-Day Reminder, Deactivation) inside the SendWarmOffEmail Apex action; legacy notices with no Stage still receive the Shopify At Risk Notice template. The email is logged to the activity timeline on both the contact and the notice. On success the notice is marked Notice Sent and stamped with the send date and template subject; on failure it is marked Send Failed. The send date drives the warm-off series, so this flow is the only thing that should populate Notice Date.</description>
+    <description>Sends the email for a new Shopify At Risk Notice. The template is chosen by Stage (Month 12 / 15 / 17 / 15-Day Reminder / Deactivation) inside the SendWarmOffEmail Apex action, then the notice is marked Notice Sent or Send Failed.</description>
     <environments>Default</environments>
     <interviewLabel>Send Shopify At Risk Notice {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Send Shopify At Risk Notice</label>
@@ -76,8 +74,8 @@
     <recordUpdates>
         <name>Mark_Notice_as_Sent</name>
         <label>Mark Notice as Sent</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <inputAssignments>
             <field>Email_Sent__c</field>
             <value>
@@ -107,8 +105,8 @@
     <recordUpdates>
         <name>Mark_Send_Failed</name>
         <label>Mark Send Failed</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
         <inputAssignments>
             <field>Status__c</field>
             <value>
@@ -118,7 +116,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>0</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Send_Warm_Off_Email</targetReference>

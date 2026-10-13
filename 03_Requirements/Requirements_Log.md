@@ -18,10 +18,17 @@ Dates are approximate for requests raised and closed in the same working session
 | REQ-011 | 2026-10-09 | Replace page filters with the strict new mapping (Company page, Lead page) | Done | Change log 2026-10-09 |
 | REQ-012 | 2026-10-09 | Bug: Specialty / Self Service showed Cluster 5. Verify cluster and team on all objects | Done (fixed and verified, 32 checks, 0 mismatches) | Change log 2026-10-09 (cluster fix) |
 | REQ-013 | 2026-10-09 | QA references: cluster/team mapping; page sections per Sales Channel / Sector | Done | `06_Deployment/QA_Testing/` |
-| REQ-014 | 2026-10-10 | Data update plan: export of existing and new values, Data Loader files, Mid-Market → Strategic | Prepared, **not loaded** | `04_Change_Records/Data_Changes/DataMigration_Account_Sandbox/` |
+| REQ-014 | 2026-10-10 | Data update plan: export of existing and new values, Data Loader files, Mid-Market → Strategic | Done: files prepared by Claude; loaded in the sandbox by the user (159 of 161 applied, see CHG-19) | `04_Change_Records/Data_Changes/DataMigration_Account_Sandbox/` |
 | REQ-015 | 2026-10-10 | Move page filters to production without unapproved fields (R12 and others) | Not started (V1 fields on prod pages not yet decided) | n/a |
 | REQ-016 | 2026-10-11 | Put the project in a private GitHub repository | Done | https://github.com/yogemani/GDRSandbox |
+| REQ-030 | 2026-09-29 | Document how R12 sales, at-risk notices, the batch schedule, emails and tasks work (Session B) | Done | `02_Knowledge_Base/Shopify_At_Risk_Offboarding.md` |
+| REQ-031 | 2026-10-08 | List every component of the at-risk / offboarding / notice process as a deployment document | Done | `06_Deployment/Deployment_Documents/Shopify_AtRisk_Offboarding_Deployment_Document.xlsx` |
+| REQ-032 | 2026-10-08 | Check the Shopify test classes give more than 80% coverage with no errors; fix or create them | Done (deploy `0Afdx00000GDn9lCAD`, 105/105) | Change log CHG-12 |
 | REQ-017 | 2026-10-12 | Organise the repo into Instructions / Knowledge Base / Requirements / Change Records / Conflicts / Deployment / Technical Documents | Done | This structure |
+
+| REQ-023 | 2026-10-13 | Store every org change made with VS Code and Claude in GitHub with correct dates and detail, and make the repo a learning base for new developers | Done | `04_Change_Records/Change_Log.md`, `01_Instructions/Developer_Onboarding.md` |
+
+REQ-030 to REQ-032 come from the second Claude session (Shopify At-Risk). Their IDs are kept separate so the existing numbers don't change.
 
 ## Open / upcoming
 | ID | Requirement | Waiting on |
@@ -31,6 +38,9 @@ Dates are approximate for requests raised and closed in the same working session
 | REQ-020 | Fix the "Accounts without NetSuite Id" report | Not started |
 | REQ-021 | Update the QA pack for the deactivated values and the cluster fix | Not started |
 | REQ-022 | Decide on the extra `ContactTeamReassignQueueable` line in `AccountCascadeHandler` (sandbox only) | Client / team decision |
+| REQ-024 | Deploy `KeyAccount_Rename_PROD` to production. The production picklist was already renamed on 10-06 (CF-15) | Approval |
+| REQ-025 | Decide what to do with the Sector value "Development" (CF-16) | Client |
+| REQ-026 | Shopify At-Risk go-live: clear the test filter, set the At Risk Mode, create the schedules, run all tests (see the Knowledge Base) | Client decisions |
 
 ## Template for a new requirement
 ```

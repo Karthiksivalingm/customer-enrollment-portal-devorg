@@ -5,10 +5,10 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Warm Off 4 - 15 Day Reminder</name>
     <style>none</style>
-    <subject>Reminder: {!Shopify_At_Risk_Notice__c.Store_Name__c}’s goodr account deactivates in 15 days</subject>
-    <textOnly>Hi {!Contact.Name},
+    <subject>Reminder: {!Shopify_At_Risk_Notice__c.Store_Name__c}&apos;s goodr account deactivates in 15 days</subject>
+    <textOnly>Hi {!Contact.FirstName},
 
-Following up on our earlier notice: your goodr wholesale account, {!Shopify_At_Risk_Notice__c.Store_Name__c}, is set to be deactivated on {!Shopify_At_Risk_Notice__c.Deactivation_Date__c} due to inactivity. As of today, no order has been placed.
+Following up on our earlier notice: your goodr wholesale account is set to be deactivated on {!Shopify_At_Risk_Notice__c.Deactivation_Date__c} due to inactivity. As of today, no order has been placed.
 
 If you’d like to keep your account active, please place an order before the deactivation date. We’re happy to help if you have any questions.
 
@@ -16,6 +16,7 @@ Best,
 
 The goodr wholesale team
 
+Section 22, SellGoodr Terms of Service, effective 24 July 2026.
 © 2026 goodr. All rights reserved.</textOnly>
     <type>custom</type>
     <uiType>Aloha</uiType>

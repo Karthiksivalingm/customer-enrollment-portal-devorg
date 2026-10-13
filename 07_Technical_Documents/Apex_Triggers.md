@@ -1,6 +1,6 @@
 # Apex Triggers
 
-_Generated 2026-10-12._ Watch for objects that have more than one trigger, because Salesforce doesn't guarantee the order they run in.
+_Generated 2026-10-13._ Watch for objects that have more than one trigger, because Salesforce doesn't guarantee the order they run in.
 
 | Trigger | Object | Events | Calls |
 |---|---|---|---|

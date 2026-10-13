@@ -22,6 +22,13 @@ every change or deployment. Add new entries at the bottom of the matching table.
 | CF-13 | Reports | Renaming a picklist value in Setup removes the old value from report filters | The Cluster 3 CAN reports were rebuilt with Billing Country = CA logic. Check the other reports after renames |
 | CF-14 | Security | NetSuite credential custom metadata was committed to git | Removed from tracking, git-ignored and force-ignored (2026-10-12). **Rotate the NetSuite credentials and purge git history** |
 
+| CF-15 | Production | Sales Channel "Key Accounts" was renamed to "Key Account" by hand in **production** on 2026-10-06 11:48, before the rest of the Key Account package | Rename step is already done in prod. Deploy `KeyAccount_Rename_PROD` (cluster rules, team records) soon: prod cluster rules still say 'Key Accounts' and no longer match. Fix the report filters (REQ-020) |
+| CF-16 | Picklist | Sector value **Development** was added on 2026-09-28 but is not in the approved mapping | Confirm with the client: keep, map or deactivate |
+| CF-17 | Repo vs org | On 2026-10-13 the repo did not match the org: Shopify config, Warm-Off email text, Contact pages and an **undeployed** local edit of `Send_Shopify_At_Risk_Notice` | Repo re-synced from the org (CHG-21). Always retrieve before editing, and log Setup changes in the change log |
+| CF-18 | API version | Retrieving with manifest version 59.0 dropped newer flow and page elements (styleProperties, areMetricsLoggedToDataCloud) | Use `<version>68.0</version>` in retrieve manifests |
+| CF-19 | Data | Sandbox Account update: 2 of the 161 rows (Missoula Scheels, Test TVK) were later changed to other values; the exact load time is unknown because Sector has no history | Keep Data Loader success files. Consider field history on Sector during the migration |
+| CF-20 | Shopify At-Risk | Sandbox-only settings: Test Store Name Filter `R12 WOT%`, schedules in IST | Clear the filter and set schedules in the agreed time zone before production |
+
 ## B. Possible conflicts (check before each change)
 
 | ID | Risk | Where | What to do |
@@ -36,3 +43,6 @@ every change or deployment. Add new entries at the bottom of the matching table.
 | PC-08 | Flows in InvalidDraft / Obsolete status (e.g. `Account_Cluster_Automation`, `Map_Lead_Source_to_Account_on_Conversion`) | Flows | Don't activate them without review; they may duplicate Apex logic |
 | PC-09 | Deactivated picklist values can't be used in page filters, and record types must list the new values | Pages, record types | Add the values to record types before data loads |
 | PC-10 | Report filters lose renamed values silently | Reports / dashboards | Re-check the reports listed in the where-used workbook after each picklist change |
+| PC-11 | Shopify company rollup is calculated per 200-record batch chunk; a company split across chunks gets partial R12/YTD totals | `ShopifyR12SalesBatch` | Fix before relying on company-level at-risk flags |
+| PC-12 | With At Risk Mode = Every Stage, a store can lose the at-risk flag in January and never get Email 3, which blocks deactivation | Shopify At-Risk | Client decision: Every Stage vs Entry Only |
+| PC-13 | Running `ShopifyAtRiskNoticeBatch` by hand sends real emails | Sandbox / production | Only run it with the test-store filter set, or with Deliverability off |

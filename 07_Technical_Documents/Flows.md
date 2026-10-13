@@ -1,6 +1,6 @@
 # Flows
 
-_Generated 2026-10-12 from `force-app/main/default/flows`._
+_Generated 2026-10-13 from `force-app/main/default/flows`._
 
 | Flow (API name) | Label | Type | Object | Trigger | Status | Description |
 |---|---|---|---|---|---|---|
@@ -26,7 +26,7 @@ _Generated 2026-10-12 from `force-app/main/default/flows`._
 | `Send_Contact_to_Shopify` | Send Contact to Shopify | Flow |  |  | **Draft** |  |
 | `Send_Email_To_Account_When_the_account_is_Inactive` | Send Email To Account When the account is Inactive | AutoLaunchedFlow | Account | RecordAfterSave / Update | **Obsolete** | Send Email To Account When the account is Inactive based on the company or store location |
 | `Send_Rejection_Email_on_account_rejection` | Send Rejection Email on account rejection | AutoLaunchedFlow | Lead | RecordAfterSave / Update | **Active** | A temporary flow just to send the rejection email, since the acceptance email needs updating |
-| `Send_Shopify_At_Risk_Notice` | Send Shopify At Risk Notice | AutoLaunchedFlow | Shopify_At_Risk_Notice__c | RecordAfterSave / Create | **Active** | Sends the email for a newly created Shopify At Risk Notice. The template is chosen by the notice Stage (Month 12, Month 15, Month 17, 15-Day Reminder, Deactivation) inside the SendWarmOffEmail Apex action; legacy notices with no Stage still receive the Shopify At Risk Notice template. The email is logged to the activity timeline on both the contact and the notice. On success the notice is marked Notice Sent and stamped with the send date and template subject; on failure it is marked Send Failed. The send date drives the warm-off series, so this flow is the only thing that should populate Notice Date. |
+| `Send_Shopify_At_Risk_Notice` | Send Shopify At Risk Notice | AutoLaunchedFlow | Shopify_At_Risk_Notice__c | RecordAfterSave / Create | **Active** | Sends the email for a new Shopify At Risk Notice. The template is chosen by Stage (Month 12 / 15 / 17 / 15-Day Reminder / Deactivation) inside the SendWarmOffEmail Apex action, then the notice is marked Notice Sent or Send Failed. |
 | `Set_At_Risk_Dates_on_Store_Location` | Set At Risk Dates on Store Location | AutoLaunchedFlow | Account | RecordBeforeSave / CreateAndUpdate | **Active** | Records when a store location is first flagged as at risk on Shopify, and clears that date when the location starts ordering again. Runs before save whenever the R12 sales calculation updates the account. The At Risk Since date tells the notice batch which contacts have already been notified, so a location that recovers and later stops ordering again is correctly treated as a new occasion. |
 | `SLA_Calculation` | SLA Calculation | AutoLaunchedFlow | Case | RecordAfterSave / CreateAndUpdate | **Draft** |  |
 | `Store_Copy_Values_From_Lead` | Store - Copy Values From Lead | AutoLaunchedFlow | Store__c | RecordBeforeSave / CreateAndUpdate | **Active** |  |

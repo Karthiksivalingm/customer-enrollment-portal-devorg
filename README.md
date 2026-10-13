@@ -4,6 +4,9 @@
 > repository (CSV / Excel) is **sandbox data**. The packages in `06_Deployment/Packages/` are *prepared for* production
 > (`GDRPROD`) and haven't been deployed there yet.
 
+**New developer? Start with [01_Instructions/Developer_Onboarding.md](01_Instructions/Developer_Onboarding.md).**
+Full dated history of every change: [04_Change_Records/Change_Log.md](04_Change_Records/Change_Log.md).
+
 ## Folders
 
 | # | Folder | What's in it | Start here |
@@ -22,7 +25,8 @@
 ## Current project: 2026 Sales Channel / Sector transition
 Key Accounts → Key Account; new Sectors Enterprise / Strategic / Discount / Planned / Self Service / Distributor;
 Specialty CAN retired into Specialty; V1 backup fields; cluster recalculation on Sector change.
-Sandbox metadata: **done**. Sandbox data load: **prepared, not run**. Production: **packages ready, not deployed**.
+Sandbox metadata: **done**. Sandbox data: **V1 backfill done; Account update applied (159 of 161)**. Production: **packages ready and validated, not deployed**. The Sales Channel value was already renamed to Key Account in production by hand on 2026-10-06 (CHG-07).
+Also in the sandbox: **Shopify At-Risk / Warm-Off offboarding** (see [02_Knowledge_Base/Shopify_At_Risk_Offboarding.md](02_Knowledge_Base/Shopify_At_Risk_Offboarding.md)).
 See [02_Knowledge_Base/Project_Overview.md](02_Knowledge_Base/Project_Overview.md).
 
 ## Quick commands

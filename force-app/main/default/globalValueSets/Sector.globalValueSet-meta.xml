@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Enterprise</fullName>
+        <default>false</default>
+        <label>Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic</fullName>
+        <default>false</default>
+        <label>Strategic</label>
+    </customValue>
+    <customValue>
+        <fullName>Development</fullName>
+        <default>false</default>
+        <label>Development</label>
+    </customValue>
+    <customValue>
+        <fullName>Discount</fullName>
+        <default>false</default>
+        <label>Discount</label>
+    </customValue>
+    <customValue>
+        <fullName>Planned</fullName>
+        <default>false</default>
+        <label>Planned</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Service</fullName>
+        <default>false</default>
+        <label>Self Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnerships</fullName>
+        <default>false</default>
+        <label>Partnerships</label>
+    </customValue>
+    <customValue>
+        <fullName>Distributor</fullName>
+        <default>false</default>
+        <label>Distributor</label>
+    </customValue>
+    <customValue>
+        <fullName>Global</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Global</label>
+    </customValue>
+    <customValue>
+        <fullName>Sellgoodr CAN</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sellgoodr CAN</label>
+    </customValue>
+    <customValue>
+        <fullName>Sellgoodr USA</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sellgoodr USA</label>
+    </customValue>
+    <customValue>
+        <fullName>Bridge</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bridge</label>
+    </customValue>
+    <customValue>
+        <fullName>Off-Price</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Off-Price</label>
+    </customValue>
+    <customValue>
+        <fullName>Mid-Market</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Mid-Market</label>
+    </customValue>
+    <customValue>
+        <fullName>Core</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Core</label>
+    </customValue>
+    <masterLabel>Sector</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

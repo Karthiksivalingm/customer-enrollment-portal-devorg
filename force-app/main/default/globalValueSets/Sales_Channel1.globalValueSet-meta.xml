@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Key Account</fullName>
+        <default>false</default>
+        <label>Key Account</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty</fullName>
+        <default>false</default>
+        <label>Specialty</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnerships</fullName>
+        <default>false</default>
+        <label>Partnerships</label>
+    </customValue>
+    <customValue>
+        <fullName>Global</fullName>
+        <default>false</default>
+        <label>Global</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty CAN</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Specialty CAN</label>
+    </customValue>
+    <customValue>
+        <fullName>Mid-Market</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Mid-Market</label>
+    </customValue>
+    <masterLabel>Sales Channel1</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

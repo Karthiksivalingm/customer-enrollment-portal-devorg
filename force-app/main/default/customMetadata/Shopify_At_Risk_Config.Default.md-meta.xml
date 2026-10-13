@@ -7,24 +7,28 @@
         <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
-        <field>At_Risk_Threshold__c</field>
-        <value xsi:type="xsd:double">0.0</value>
+        <field>At_Risk_Mode__c</field>
+        <value xsi:type="xsd:string">Every Stage</value>
     </values>
     <values>
         <field>Auto_Offboard__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Deactivation_Months__c</field>
+        <value xsi:type="xsd:double">18.0</value>
     </values>
     <values>
         <field>Email_Template_Name__c</field>
         <value xsi:type="xsd:string">Shopify At Risk Notice</value>
     </values>
     <values>
-        <field>Notice_Delay_Days__c</field>
-        <value xsi:type="xsd:double">0.0</value>
+        <field>Exclude_Bounced__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
-        <field>Offboard_Days__c</field>
-        <value xsi:type="xsd:double">30.0</value>
+        <field>Legacy_Notice_Enabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>Offboard_Owner_Username__c</field>
@@ -37,5 +41,37 @@
     <values>
         <field>Org_Wide_Email__c</field>
         <value xsi:type="xsd:string">retailsupportuat@goodr.com</value>
+    </values>
+    <values>
+        <field>Reminder_Days__c</field>
+        <value xsi:type="xsd:double">15.0</value>
+    </values>
+    <values>
+        <field>Require_Opt_In__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Template_Stage_1__c</field>
+        <value xsi:type="xsd:string">Warm Off 1 - Check In</value>
+    </values>
+    <values>
+        <field>Template_Stage_2__c</field>
+        <value xsi:type="xsd:string">Warm Off 2 - Early Notice</value>
+    </values>
+    <values>
+        <field>Template_Stage_3__c</field>
+        <value xsi:type="xsd:string">Warm Off 3 - 30 Day Warning</value>
+    </values>
+    <values>
+        <field>Template_Stage_4__c</field>
+        <value xsi:type="xsd:string">Warm Off 4 - 15 Day Reminder</value>
+    </values>
+    <values>
+        <field>Template_Stage_5__c</field>
+        <value xsi:type="xsd:string">Warm Off 5 - Deactivation Notice</value>
+    </values>
+    <values>
+        <field>Test_Store_Name_Filter__c</field>
+        <value xsi:type="xsd:string">R12 WOT%</value>
     </values>
 </CustomMetadata>

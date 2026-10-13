@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <inlineHelpText>Pending Send — identified, email not yet sent. Notice Sent — email issued, countdown running. Recovered — the store started ordering again. Offboard Due — countdown elapsed, store still not ordering. Cancelled — withdrawn manually.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending Send</fullName>
+                <default>true</default>
+                <label>Pending Send</label>
+            </value>
+            <value>
+                <fullName>Notice Sent</fullName>
+                <default>false</default>
+                <label>Notice Sent</label>
+            </value>
+            <value>
+                <fullName>Recovered</fullName>
+                <default>false</default>
+                <label>Recovered</label>
+            </value>
+            <value>
+                <fullName>Offboard Due</fullName>
+                <default>false</default>
+                <label>Offboard Due</label>
+            </value>
+            <value>
+                <fullName>Offboarded</fullName>
+                <default>false</default>
+                <label>Offboarded</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Send Failed</fullName>
+                <default>false</default>
+                <label>Send Failed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

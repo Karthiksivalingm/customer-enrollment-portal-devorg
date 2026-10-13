@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notices_Sent_Awaiting_Outcome</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Email_Sent__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Notice Sent</value>
+    </filters>
+    <label>Notices Sent — Awaiting Outcome</label>
+</ListView>

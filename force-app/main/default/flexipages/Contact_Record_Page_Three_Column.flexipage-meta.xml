@@ -491,6 +491,18 @@
                 <identifier>RecordStore_Is_Location__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Account_Name_for_Email__c</fieldItem>
+                <identifier>RecordAccount_Name_for_Email__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Shopify_Company_ID_for_Email__c</fieldItem>
+                <identifier>RecordShopify_Company_ID_for_Email__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-47396b09-68af-4166-943f-4fca64ddb4d8</name>
         <type>Facet</type>
     </flexiPageRegions>

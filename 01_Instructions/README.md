@@ -2,7 +2,7 @@
 
 | Folder | What goes in it |
 |---|---|
-| `01_Instructions/` | Rules for how work is done: process, approvals, data, security, git. Claude reads these through `CLAUDE.md` |
+| `01_Instructions/` | Rules for how work is done ([Working_Instructions.md](Working_Instructions.md)) and the **new developer guide** ([Developer_Onboarding.md](Developer_Onboarding.md)). Claude reads these through `CLAUDE.md` |
 | `02_Knowledge_Base/` | Project background: business context, orgs, objects, the mapping, cluster model, client decisions, glossary |
 | `03_Requirements/` | Every task or request received, with ID, date, status and where the output is |
 | `04_Change_Records/` | What changed, before and after: change log with deploy IDs, metadata snapshots taken before each change, data before/after files |

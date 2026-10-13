@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Rolling_12_Month_Sales__c</fullName>
+    <description>Sales team can see on the account page how much the customer spent THIS year without running a report</description>
+    <inlineHelpText>Total Shopify orders over the last 365 days. If today is 11 Sep 2026, this covers 11 Sep 2025 to 11 Sep 2026. Used for account sizing only — it does not decide the At Risk flag.</inlineHelpText>
+    <label>Rolling 12 Month Sales</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

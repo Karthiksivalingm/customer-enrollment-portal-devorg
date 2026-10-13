@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <label>Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Month 12</fullName>
+                <default>false</default>
+                <label>Month 12</label>
+            </value>
+            <value>
+                <fullName>Month 15</fullName>
+                <default>false</default>
+                <label>Month 15</label>
+            </value>
+            <value>
+                <fullName>Month 17</fullName>
+                <default>false</default>
+                <label>Month 17</label>
+            </value>
+            <value>
+                <fullName>15-Day Reminder</fullName>
+                <default>false</default>
+                <label>15-Day Reminder</label>
+            </value>
+            <value>
+                <fullName>Deactivation</fullName>
+                <default>false</default>
+                <label>Deactivation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

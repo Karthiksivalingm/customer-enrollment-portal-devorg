@@ -4,7 +4,9 @@
 |---|---|---|
 | **Metadata** (classes, rules, pages, flows, reports) | `Metadata_Before_Snapshots/<date>_<Change>/`: copied from the org just before each change | `force-app/main/default/` (current sandbox version) |
 | **Record data** (Sales Channel / Sector values) | `Data_Changes/DataMigration_Account_Sandbox/source_exports/` (existing values) and the V1 backup fields | The `New Sales Channel` / `New Sector` columns and the Data Loader update files |
-| **History of every deploy** | n/a | [Change_Log.md](Change_Log.md): date, deploy ID, components |
+| **History of every change** | n/a | [Change_Log.md](Change_Log.md): CHG-01 to CHG-21 with date, time, deploy ID, components, reason, result |
+| **Org's own records** | n/a | [Org_Change_History/](Org_Change_History/): deploys, deployed components and Setup Audit Trail for GDRSAND and GDRPROD (CSV + timeline). Regenerate with `scripts/doc-builders/build_org_change_history.ps1` |
+| **Claude session logs** | n/a | [Session_Logs/](Session_Logs/): what each Claude Code session did, when, and why, plus each user request |
 
 ## Metadata before snapshots
 | Folder | Contents |
@@ -17,7 +19,7 @@
 To restore a component, deploy the snapshot file back with `sf project deploy start --source-dir <file> -o GDRSAND`
 after copying it into `force-app/`.
 
-## Data changes (sandbox): status **prepared, not loaded**
+## Data changes (sandbox): V1 backfill done (8,387, CHG-16); Account update applied (159 of 161, CHG-19)
 Mapping: see [02_Knowledge_Base/Project_Overview.md](../02_Knowledge_Base/Project_Overview.md).
 
 | File | Rows | Purpose |
