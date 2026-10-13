@@ -28,4 +28,9 @@ if [ $fail -ne 0 ]; then
   echo "Remove the secret (keep it in the org only), or put SET_IN_ORG placeholders in a template."
   exit 1
 fi
+
+# 3. Project lint/format (husky + lint-staged), only when Node and the dependencies are installed
+if command -v npm >/dev/null 2>&1 && [ -d node_modules ]; then
+  npm run --silent precommit || exit 1
+fi
 exit 0

@@ -190,26 +190,38 @@ Verified 2026-10-13 against `Data_Changes/DataMigration_Account_Sandbox/2_Accoun
 `showDeveloperConsoleWithWebIdeOffOn` changed in GDRPROD. This isn't related to this project.
 
 ## CHG-21 · Repository (12 → 13 Oct, Session A)
-- **10-12 19:27:** private GitHub repo created; commit `88fb123`.
-- **10-12 19:36:** organised as the "Goodr" project; commit `246a9f2`.
-- **10-12 19:54:** 7 folders created; NetSuite credential records removed from tracking; commit `7ced5d5`.
+- **10-12 19:27:** private GitHub repo created; commit `c2b6b3e`.
+- **10-12 19:36:** organised as the "Goodr" project; commit `d591374`.
+- **10-12 19:54:** 7 folders created; NetSuite credential records removed from tracking; commit `b7561dd`.
 - **10-13 (repo synced to the org):** every class, trigger, flow, page and custom metadata record, plus the touched objects, fields, value sets and email templates, was retrieved from GDRSAND at API 68.0 (`manifest/retrieve/pkg_full_sync_20261013.xml`). The repo now matches the org.
 
   Real differences found and now fixed in the repo:
   - Shopify config: new settings in the org.
   - Warm-Off email wording.
-  - `Send_Shopify_At_Risk_Notice`: the local file was a newer **undeployed** edit, now replaced by the org's active version. The old local file is still in git history at commit `7ced5d5`.
+  - `Send_Shopify_At_Risk_Notice`: the local file was a newer **undeployed** edit, now replaced by the org's active version. The old local file is still in git history at commit `b7561dd`.
   - Contact pages: fields `Account_Name_for_Email__c` and `Shopify_Company_ID_for_Email__c`.
 
   New in the repo: global value sets `Sales_Channel`, `Sales_Channel1` and `Sector`; Sales Channel / Sector fields on 4 objects; the `Shopify_At_Risk_Notice__c` object; the Shopify Account fields.
 
 ## CHG-22 · Credential hardening in the repository (13 Oct, Session A)
-No org change. NetSuite credential custom metadata had been committed in `88fb123` and `246a9f2` and removed from tracking in `7ced5d5`. On 13 Oct:
+No org change. NetSuite credential custom metadata had been committed in the first two commits (old IDs `88fb123` and `246a9f2`). On 13 Oct:
 - added placeholder templates (`07_Technical_Documents/Secure_Config_Templates/`, every value `SET_IN_ORG__<field>`) and checked that none of the real values appear in them;
 - added the pre-commit hook `scripts/git-hooks/pre-commit`, which blocks credential files and secret-looking values (tested: it blocks the NetSuite file);
-- added `.gitattributes` so the hook keeps LF line endings.
+- added `.gitattributes` so the hook keeps LF line endings;
+- **purged the history** (user approved): the 2 files were removed from every commit with `git filter-branch` and pushed with `--force-with-lease`. Every commit ID changed: `88fb123→c2b6b3e`, `246a9f2→d591374`, `7ced5d5→b7561dd`, `e3ab771→7dae7eb`. Checked: none of the 6 secret values appears in any commit. A backup bundle of the old history was kept locally (not in the repo).
 
-**Still open:** rotate the NetSuite sandbox keys (NetSuite admin), and purge the two old commits from the GitHub history (see CF-14).
+**Still open:**
+- Rotate the NetSuite sandbox keys (NetSuite admin).
+- GitHub still serves the old commits to anyone with their exact ID until its clean-up runs. GitHub Support can remove them immediately. The repo is private.
+
+## CHG-23 · Repository best-practice setup (13 Oct, Session A)
+No org change.
+- **GitHub settings:** added the repo description and topics, turned the wiki off, and set branches to be deleted after merge. Secret scanning isn't available on a free private repo; the pre-commit hook covers that gap.
+- **`.github/`:** pull request checklist, issue templates (requirement, bug/conflict) and CODEOWNERS.
+- **`CONTRIBUTING.md`, `.editorconfig`;** `.vscode/` gained recommended extensions and search/file settings.
+- **`scripts/`:** samples moved to `samples/`; the one-off workbook builders moved to `doc-builders/archive_2026-10_workbook_builders/`; README added. `manifest/README.md` added.
+- **Hook:** now also runs the project's lint-staged step when Node is installed.
+- **Tag:** `sandbox-baseline-2026-10-13` marks the cleaned history, fully synced with GDRSAND.
 
 ---
 

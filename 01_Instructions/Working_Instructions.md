@@ -49,6 +49,9 @@ Work **component by component**. Don't combine unrelated changes in one deploy.
 
 ## 6. Git conventions
 
+- `main` always matches what's deployed in the sandbox. Do new work on a branch (`feature/REQ-0xx-name`, `fix/...`, `docs/...`) and merge it with a pull request (template in `.github/`).
+- Tags mark milestones: `sandbox-baseline-YYYY-MM-DD` (a full sync with GDRSAND) and `prod-YYYY-MM-DD-<name>` (each production deployment).
+- Never force-push `main`. The one exception was the approved credential purge on 2026-10-13 (CHG-22).
 - One commit per logical change. Write the message in the imperative, e.g. "Add Planned to Company page filters".
 - Put files in the correct numbered folder (see the root `README.md`). Keep Salesforce source in `force-app/` only.
 - Push after each completed change so GitHub stays current.

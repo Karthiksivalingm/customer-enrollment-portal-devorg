@@ -3,7 +3,20 @@
     "**/node_modules": true,
     "**/bower_components": true,
     "**/.sf": true,
+    "**/.sfdx": true,
+    "**/coverage": true,
+    "04_Change_Records/Org_Change_History/*.csv": true,
+    "06_Deployment/Post_Deployment_Verification/test_runs": true
+  },
+  "files.exclude": {
     "**/.sfdx": true
   },
-  "xml.preferences.showSchemaDocumentationType": "none"
+  "files.associations": {
+    "*.template.xml": "xml",
+    "scripts/git-hooks/*": "shellscript"
+  },
+  "files.insertFinalNewline": true,
+  "xml.preferences.showSchemaDocumentationType": "none",
+  "markdown.extension.toc.updateOnSave": false,
+  "git.inputValidationSubjectLength": 72
 }

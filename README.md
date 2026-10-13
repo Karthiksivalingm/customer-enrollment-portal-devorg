@@ -19,8 +19,11 @@ Full dated history of every change: [04_Change_Records/Change_Log.md](04_Change_
 | 06 | [06_Deployment](06_Deployment/) | Pre/post-deployment checklists, deployment documents, packages + rollbacks, QA, evidence | [README](06_Deployment/README.md) |
 | 07 | [07_Technical_Documents](07_Technical_Documents/) | Apex classes, triggers, flows, fields, integrations, impact analysis | [README](07_Technical_Documents/README.md) |
 | n/a | `force-app/` | Salesforce source of the sandbox | n/a |
-| n/a | `scripts/` | Verification Apex, SOQL, document generators | n/a |
-| n/a | `manifest/` | `package.xml` and retrieve manifests | n/a |
+| n/a | `scripts/` | Verification Apex, document generators, git hook | [README](scripts/README.md) |
+| n/a | `manifest/` | `package.xml` and retrieve manifests (full org sync) | [README](manifest/README.md) |
+| n/a | `.github/` | Pull request template, issue templates (requirement, bug/conflict), CODEOWNERS | n/a |
+| n/a | `.vscode/` | Recommended extensions and workspace settings. VS Code offers to install them when the folder is opened | n/a |
+| n/a | `CLAUDE.md` · `CONTRIBUTING.md` | Rules Claude loads automatically · how to contribute (branches, pull requests, tags) | n/a |
 
 ## Current project: 2026 Sales Channel / Sector transition
 Key Accounts → Key Account; new Sectors Enterprise / Strategic / Discount / Planned / Self Service / Distributor;
