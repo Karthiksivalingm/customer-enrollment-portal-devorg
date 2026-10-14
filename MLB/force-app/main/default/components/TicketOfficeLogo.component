@@ -1,0 +1,7 @@
+<apex:component controller="TicketOfficeAgreementStatusCtrl" access="global">
+    <apex:attribute name="width" type="Integer" access="global" default="78" description="Display width in pixels"/>
+    <apex:attribute name="height" type="Integer" access="global" default="76" description="Display height in pixels"/>
+    <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(logoUrl))}">
+        <img src="{!logoUrl}" width="{!width}" height="{!height}" alt="Miami Marlins" style="display:block;width:{!width}px;height:{!height}px;border:0;"/>
+    </apex:outputPanel>
+</apex:component>

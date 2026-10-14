@@ -1,0 +1,199 @@
+<messaging:emailTemplate subject="{!relatedTo.Agreement_Type__c} Details || {!IF(ISBLANK(relatedTo.ProVenue_ID__c), relatedTo.Account.ProVenue_ID__c, relatedTo.ProVenue_ID__c)}"
+    recipientType="User"
+    relatedToType="Opportunity"
+    replyTo="{!relatedTo.Owner.Email}"
+    renderUsingSystemContextWithoutSharing="true">
+<messaging:htmlEmailBody>
+<apex:variable var="agType" value="{!relatedTo.Agreement_Type__c}"/>
+<apex:variable var="pvId" value="{!IF(ISBLANK(relatedTo.ProVenue_ID__c), relatedTo.Account.ProVenue_ID__c, relatedTo.ProVenue_ID__c)}"/>
+<html>
+<body style="margin:0;padding:0;background:#EEF3F6;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EEF3F6;padding:24px 12px;">
+<tr><td align="center">
+
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#FFFFFF;border-radius:16px;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,sans-serif;">
+
+    <!-- Hero: Miami Blue with logo -->
+    <tr>
+        <td style="background:#00A3E0;background-image:linear-gradient(135deg,#00B2F0 0%,#00A3E0 45%,#0083B8 100%);padding:0;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td valign="middle" style="padding:20px 0 20px 32px;">
+                        <div style="font-size:11px;font-weight:800;letter-spacing:2.5px;color:#FFFFFF;">MIAMI MARLINS <span style="color:#BFEAFA;font-weight:600;">&middot; TICKET OFFICE</span></div>
+                        <div style="padding-top:10px;font-family:'Arial Black','Segoe UI',Arial,sans-serif;font-size:24px;line-height:1.1;color:#FFFFFF;text-transform:uppercase;">{!agType} <span style="color:#000000;">AGREEMENT</span></div>
+                        <div style="padding-top:10px;"><span style="display:inline-block;background:#FFFFFF;color:#0B1F2E;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;">ProVenue&nbsp; <span style="font-family:Consolas,'Courier New',monospace;">{!pvId}</span></span></div>
+                    </td>
+                    <td valign="middle" align="right" width="120" style="width:120px;padding:16px 28px 16px 0;">
+                        <table role="presentation" cellpadding="0" cellspacing="0" style="background:#FFFFFF;border-radius:16px;">
+                            <tr><td style="padding:10px;"><c:TicketOfficeLogo width="78" height="76"/></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Stitched divider -->
+    <tr>
+        <td align="center" style="padding:12px 20px 4px;line-height:8px;font-size:0;white-space:nowrap;overflow:hidden;">
+            <span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span>
+        </td>
+    </tr>
+
+    <!-- Agreement update (live from the Adobe Sign agreement) -->
+    <tr>
+        <td style="padding:16px 32px 0;"><c:TicketOfficeAgreementStatus oppId="{!relatedTo.Id}"/></td>
+    </tr>
+
+    <!-- Greeting -->
+    <tr>
+        <td style="padding:26px 32px 0;font-size:15px;line-height:1.6;color:#33495A;"><b style="color:#0B1F2E;">Hello Ticket Office,</b><br/>Please see comments below:</td>
+    </tr>
+
+    <!-- Ticket Office comments -->
+    <tr>
+        <td style="padding:12px 32px 0;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FFF8EC;border:1px solid #F3DDB5;border-radius:12px;">
+                <tr><td style="padding:16px 20px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+                        <td style="font-size:16px;">&#9918;</td>
+                        <td style="padding-left:8px;font-size:11px;font-weight:800;letter-spacing:1.4px;color:#A86A00;">TICKET OFFICE COMMENTS</td>
+                        <td style="padding-left:8px;font-size:12px;color:#6A8494;">from {!relatedTo.Owner.Name}</td>
+                    </tr></table>
+                    <div style="padding-top:8px;font-size:15px;line-height:1.6;color:#0B1F2E;white-space:pre-wrap;">{!IF(ISBLANK(relatedTo.Ticket_Office_Comments__c), 'No comments provided.', relatedTo.Ticket_Office_Comments__c)}</div>
+                </td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Customer -->
+    <tr>
+        <td style="padding:26px 32px 0;">
+            <div style="font-size:11px;font-weight:800;letter-spacing:1.6px;color:#41748D;padding-bottom:10px;">CUSTOMER</div>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-left:4px solid #00A3E0;">
+                <tr><td style="padding:2px 0 2px 16px;">
+                    <div style="font-size:18px;font-weight:800;color:#0B1F2E;">{!relatedTo.Account.Name}</div>
+                    <div style="padding-top:4px;font-size:14px;line-height:1.5;color:#33495A;">
+                        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(relatedTo.Account.BillingStreet))}">{!relatedTo.Account.BillingStreet}<br/>{!relatedTo.Account.BillingCity}{!IF(ISBLANK(relatedTo.Account.BillingState), '', ', ' & relatedTo.Account.BillingState)} {!relatedTo.Account.BillingPostalCode}</apex:outputPanel>
+                        <apex:outputPanel layout="none" rendered="{!ISBLANK(relatedTo.Account.BillingStreet) && NOT(ISBLANK(relatedTo.Account.PersonMailingStreet))}">{!relatedTo.Account.PersonMailingStreet}<br/>{!relatedTo.Account.PersonMailingCity}{!IF(ISBLANK(relatedTo.Account.PersonMailingState), '', ', ' & relatedTo.Account.PersonMailingState)} {!relatedTo.Account.PersonMailingPostalCode}</apex:outputPanel>
+                        <apex:outputPanel layout="none" rendered="{!ISBLANK(relatedTo.Account.BillingStreet) && ISBLANK(relatedTo.Account.PersonMailingStreet)}">Address not provided</apex:outputPanel>
+                    </div>
+                    <div style="padding-top:6px;font-size:12px;color:#6A8494;">ProVenue ID <span style="font-family:Consolas,'Courier New',monospace;color:#0B1F2E;font-weight:700;">{!pvId}</span></div>
+                </td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Agreement summary -->
+    <tr>
+        <td style="padding:26px 32px 0;">
+            <div style="font-size:11px;font-weight:800;letter-spacing:1.6px;color:#41748D;padding-bottom:10px;">AGREEMENT SUMMARY</div>
+            <c:TicketOfficeAgreementSummary oppId="{!relatedTo.Id}"/>
+        </td>
+    </tr>
+
+    <!-- Membership: seats & parking, ballpark-ticket style -->
+    <apex:outputPanel layout="none" rendered="{!agType == 'Membership'}">
+    <tr>
+        <td style="padding:26px 32px 0;">
+            <div style="font-size:11px;font-weight:800;letter-spacing:1.6px;color:#41748D;padding-bottom:10px;">SEATS &amp; PARKING</div>
+            <apex:repeat value="{!relatedTo.Membership_Agreements__r}" var="m">
+                <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(m.Plan_Type__c))}">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E2EAEF;border-radius:12px;border-collapse:separate;margin-bottom:8px;">
+                    <tr>
+                        <td width="150" style="width:150px;padding:12px 16px;background:#EAF7FD;border-radius:12px 0 0 12px;">
+                            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+                                <td style="padding-right:12px;"><div style="font-size:10px;font-weight:800;letter-spacing:1.2px;color:#0083B8;">SEC</div><div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;font-size:20px;color:#0B1F2E;">{!m.Location_Section__c}</div></td>
+                                <td style="padding-right:12px;"><div style="font-size:10px;font-weight:800;letter-spacing:1.2px;color:#0083B8;">ROW</div><div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;font-size:20px;color:#0B1F2E;">{!m.Location_Row__c}</div></td>
+                                <td><div style="font-size:10px;font-weight:800;letter-spacing:1.2px;color:#0083B8;">SEATS</div><div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;font-size:20px;color:#0B1F2E;white-space:nowrap;">{!m.Location_Seat__c}</div></td>
+                            </tr></table>
+                        </td>
+                        <td style="padding:12px 16px;border-left:2px dashed #E2EAEF;">
+                            <div style="font-size:14px;font-weight:700;color:#0B1F2E;">{!m.Plan_Type__c}</div>
+                            <div style="padding-top:2px;font-size:12px;color:#6A8494;">Qty <apex:outputText value="{0, number, #,##0}"><apex:param value="{!m.Qty_Seats__c}"/></apex:outputText> &middot; Order <span style="font-family:Consolas,'Courier New',monospace;color:#33495A;">{!m.Order_ID__c}</span></div>
+                        </td>
+                        <td align="right" style="padding:12px 16px;font-size:16px;font-weight:800;color:#0B1F2E;white-space:nowrap;"><apex:outputText value="{0, number, $#,##0.00}"><apex:param value="{!m.Total_Seat_Price__c}"/></apex:outputText></td>
+                    </tr>
+                </table>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(m.Plan_Type_Parking__c))}">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E2EAEF;border-radius:12px;border-collapse:separate;margin-bottom:8px;">
+                    <tr>
+                        <td width="150" style="width:150px;padding:12px 16px;background:#EEF4F7;border-radius:12px 0 0 12px;">
+                            <div style="font-size:10px;font-weight:800;letter-spacing:1.4px;color:#41748D;">PARKING</div>
+                            <div style="padding-top:2px;font-family:'Arial Black','Segoe UI',Arial,sans-serif;font-size:20px;color:#0B1F2E;">{!m.Location_Parking__c}</div>
+                        </td>
+                        <td style="padding:12px 16px;border-left:2px dashed #E2EAEF;">
+                            <div style="font-size:14px;font-weight:700;color:#0B1F2E;">{!m.Plan_Type_Parking__c}</div>
+                            <div style="padding-top:2px;font-size:12px;color:#6A8494;">Qty <apex:outputText value="{0, number, #,##0}"><apex:param value="{!m.Qty_Parking__c}"/></apex:outputText> &middot; Order <span style="font-family:Consolas,'Courier New',monospace;color:#33495A;">{!m.Order_ID_Parking__c}</span></div>
+                        </td>
+                        <td align="right" style="padding:12px 16px;font-size:16px;font-weight:800;color:#0B1F2E;white-space:nowrap;"><apex:outputText value="{0, number, $#,##0.00}"><apex:param value="{!m.Total_Parking_Price__c}"/></apex:outputText></td>
+                    </tr>
+                </table>
+                </apex:outputPanel>
+            </apex:repeat>
+        </td>
+    </tr>
+    </apex:outputPanel>
+
+    <!-- Suite Lease: suite ticket card -->
+    <apex:outputPanel layout="none" rendered="{!agType == 'Suite Lease'}">
+    <tr>
+        <td style="padding:26px 32px 0;">
+            <div style="font-size:11px;font-weight:800;letter-spacing:1.6px;color:#41748D;padding-bottom:10px;">SUITE</div>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E2EAEF;border-radius:12px;border-collapse:separate;">
+                <tr>
+                    <td width="130" style="width:130px;padding:14px 16px;background:#EAF7FD;border-radius:12px 0 0 12px;">
+                        <div style="font-size:10px;font-weight:800;letter-spacing:1.4px;color:#0083B8;">SUITE</div>
+                        <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;font-size:28px;color:#0B1F2E;">#{!relatedTo.Suite_Number__c}</div>
+                    </td>
+                    <td style="padding:14px 16px;border-left:2px dashed #E2EAEF;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+                            <td><div style="font-size:11px;color:#6A8494;">Location</div><div style="padding-top:2px;font-size:15px;font-weight:800;color:#0B1F2E;">{!relatedTo.Suite_Location__c}</div></td>
+                            <td><div style="font-size:11px;color:#6A8494;">Level</div><div style="padding-top:2px;font-size:15px;font-weight:800;color:#0B1F2E;">{!relatedTo.Suite_Level__c}</div></td>
+                            <td><div style="font-size:11px;color:#6A8494;">Tickets</div><div style="padding-top:2px;font-size:15px;font-weight:800;color:#0B1F2E;">{!relatedTo.Total_Tickets_in_Suite__c}</div></td>
+                            <td><div style="font-size:11px;color:#6A8494;">Games</div><div style="padding-top:2px;font-size:15px;font-weight:800;color:#0B1F2E;">{!relatedTo.Total_of_Games__c}</div></td>
+                        </tr></table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </apex:outputPanel>
+
+    <!-- CTA -->
+    <tr>
+        <td style="padding:30px 32px 0;">
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#EF3340;border-radius:999px;">
+                <a href="{!LEFT($Api.Partner_Server_URL_520, FIND('/services', $Api.Partner_Server_URL_520))}{!relatedTo.Id}" style="display:inline-block;padding:14px 28px;font-size:14px;font-weight:800;letter-spacing:.3px;color:#FFFFFF;text-decoration:none;">Open in Salesforce &rarr;</a>
+            </td></tr></table>
+        </td>
+    </tr>
+
+    <!-- Footer: stitches + thank-you signature -->
+    <tr>
+        <td align="center" style="padding:30px 32px 0;line-height:8px;font-size:0;white-space:nowrap;overflow:hidden;">
+            <span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span><span style="display:inline-block;width:9px;height:3px;background:#EF3340;border-radius:2px;margin:0 3px;"></span>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding:20px 32px 30px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EAF7FD;border-radius:12px;">
+                <tr>
+                    <td style="padding:18px 22px;font-size:14px;line-height:1.6;color:#33495A;">Thank you,<br/>
+                        <span style="font-size:16px;font-weight:800;color:#0B1F2E;">{!relatedTo.Owner.Name}</span><br/>
+                        <span style="font-size:13px;color:#6A8494;">{!IF(ISBLANK(relatedTo.Owner.Title), 'Sales Representative', relatedTo.Owner.Title)} &middot; <a href="mailto:{!relatedTo.Owner.Email}" style="color:#0083B8;text-decoration:none;">{!relatedTo.Owner.Email}</a></span>
+                    </td>
+                    <td align="right" valign="middle" style="padding:18px 22px;"><c:TicketOfficeLogo width="52" height="51"/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</td></tr>
+</table>
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Ticket_Office_Agreement_Details</fullName>
+        <ccEmails>meshakm@unitedtechno.com</ccEmails>
+        <description>Ticket Office Agreement Details - sent to Ticket Office and Sales Manager on Adobe Sign approve/decline, $50k+ send, and customer sign/decline</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Opportunity_Owner_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Ticket_Office_Agreement_Details</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Status_Update</fullName>
+        <field>Approved_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Condition_Approval_Reject</fullName>
+        <field>Approved_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Condition Approval Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Normal_Approval_Reject</fullName>
+        <field>Approved_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Normal Approval Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Normal_Approval_Status_Update</fullName>
+        <field>Approved_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Normal Approval StatusUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

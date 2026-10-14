@@ -1,0 +1,41 @@
+<template>
+    <template lwc:if={isVendor}>
+        <div class={bannerClass}>
+            <div class="banner_head">
+                <div class="banner_icon">
+                    <lightning-icon icon-name={bannerIcon} size="small" variant="inverse" alternative-text="Certificate status"></lightning-icon>
+                </div>
+                <div class="banner_text">
+                    <p class="banner_eyebrow">Vendor certificates &middot; {accountType}</p>
+                    <p class="banner_title">{bannerTitle}</p>
+                    <p class="banner_subtitle">{bannerSubtitle}</p>
+                </div>
+                <div class="banner_side">
+                    <span class="side_label">Agreement Status</span>
+                    <span class={statusClass}>{agreementStatus}</span>
+                </div>
+            </div>
+
+            <ul class="cert_list">
+                <template for:each={certificates} for:item="cert">
+                    <li key={cert.key} class={cert.itemClass}>
+                        <lightning-icon icon-name={cert.icon} size="x-small" variant={cert.variant} alternative-text={cert.stateLabel}></lightning-icon>
+                        <span class="cert_label">{cert.label}</span>
+                        <span class="cert_state">{cert.stateLabel}</span>
+                    </li>
+                </template>
+            </ul>
+
+            <template lwc:if={hasMissing}>
+                <div class="banner_actions">
+                    <lightning-button variant="brand" label="Upload Certificate" icon-name="utility:upload" onclick={handleUpload}></lightning-button>
+                </div>
+            </template>
+            <template lwc:elseif={showOptionalUpload}>
+                <div class="banner_actions">
+                    <lightning-button label={optionalUploadLabel} icon-name="utility:upload" onclick={handleUpload}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

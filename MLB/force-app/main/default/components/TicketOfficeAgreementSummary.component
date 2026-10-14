@@ -1,0 +1,15 @@
+<apex:component controller="TicketOfficeAgreementStatusCtrl" access="global">
+    <apex:attribute name="oppId" type="Id" access="global" assignTo="{!opportunityId}" description="Opportunity whose agreement summary is shown"/>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:2px solid #0B1F2E;border-radius:10px;border-collapse:separate;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,sans-serif;">
+        <tr>
+            <apex:repeat value="{!summaryColumns}" var="c">
+                <td align="center" style="background:#0B1F2E;padding:8px 6px;font-size:10px;font-weight:800;letter-spacing:1.4px;color:{!IF(c.primary, '#00A3E0', '#9FC3D6')};{!IF(c.primary, '', 'border-left:1px solid #22384A;')}">{!c.label}</td>
+            </apex:repeat>
+        </tr>
+        <tr>
+            <apex:repeat value="{!summaryColumns}" var="c">
+                <td align="center" style="padding:14px 6px;font-family:{!IF(c.primary, '\'Arial Black\',\'Segoe UI\',Arial,sans-serif', '\'Segoe UI\',Helvetica,Arial,sans-serif')};font-size:{!IF(c.primary, '22px', '18px')};font-weight:800;color:{!IF(c.primary, '#EF3340', '#0B1F2E')};white-space:nowrap;{!IF(c.primary, '', 'border-left:1px solid #E2EAEF;')}">{!c.value}</td>
+            </apex:repeat>
+        </tr>
+    </table>
+</apex:component>

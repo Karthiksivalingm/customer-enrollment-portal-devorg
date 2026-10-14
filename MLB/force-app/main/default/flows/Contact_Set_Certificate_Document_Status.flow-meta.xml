@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Document Uploaded once every certificate required for the Account Type is collected; otherwise Document Pending.</description>
+        <name>Set_Document_Status</name>
+        <label>Set Document Status</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Agreement_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmDocumentStatus</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Keeps Contact.Agreement_Status__c at Document Pending / Document Uploaded for Vendor Contacts, based on the certificates required for the Account Type (Food and Beverage: Food Service + W-9; Non-Profit: COI, W-9 optional; Sales Activation: COI, W-9 optional). Only acts while the status is blank, Document Pending or Document Uploaded - Ready to Send (Vendor Activation flow) and the Adobe Sign statuses (Adobe Agreement - Update Contact Status flow) are never changed here.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>True when every certificate required for the Account Type has been collected.</description>
+        <name>frmAllDocumentsCollected</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND(ISPICKVAL({!$Record.Account.Type}, &quot;Food and Beverage&quot;), {!$Record.Food_Services_Certificate_Collected__c}, {!$Record.W_9_Collected__c}),
+AND(ISPICKVAL({!$Record.Account.Type}, &quot;Non-Profit&quot;), {!$Record.COI_Collected__c}),
+AND(ISPICKVAL({!$Record.Account.Type}, &quot;Sales Activation&quot;), {!$Record.COI_Collected__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmDocumentStatus</name>
+        <dataType>String</dataType>
+        <expression>IF({!frmAllDocumentsCollected}, &quot;Document Uploaded&quot;, &quot;Document Pending&quot;)</expression>
+    </formulas>
+    <interviewLabel>Contact - Set Certificate Document Status {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact - Set Certificate Document Status</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Document_Status</targetReference>
+        </connector>
+        <filterFormula>AND(
+{!$Record.RecordType.DeveloperName} = &quot;Vendor_Contact&quot;,
+OR(ISPICKVAL({!$Record.Account.Type}, &quot;Food and Beverage&quot;), ISPICKVAL({!$Record.Account.Type}, &quot;Non-Profit&quot;), ISPICKVAL({!$Record.Account.Type}, &quot;Sales Activation&quot;)),
+OR(ISBLANK(TEXT({!$Record.Agreement_Status__c})), ISPICKVAL({!$Record.Agreement_Status__c}, &quot;Document Pending&quot;), ISPICKVAL({!$Record.Agreement_Status__c}, &quot;Document Uploaded&quot;)))</filterFormula>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

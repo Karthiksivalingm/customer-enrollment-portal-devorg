@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Sends the Ticket Office Agreement Details email alert for the Opportunity linked to this Adobe Sign agreement.</description>
+        <name>Send_Ticket_Office_Email</name>
+        <label>Send Ticket Office Email</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <actionName>Opportunity.Ticket_Office_Agreement_Details</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.echosign_dev1__Opportunity__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Ticket_Office_Agreement_Details</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Customer signed: sends the same Ticket Office email from Apex with the signed PDF from the Adobe agreement attached.</description>
+        <name>Send_Signed_Email_With_PDF</name>
+        <label>Send Signed Email With PDF</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <actionName>TicketOfficeSignedEmail</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>agreementId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>opportunityId</name>
+            <value>
+                <elementReference>$Record.echosign_dev1__Opportunity__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TicketOfficeSignedEmail</nameSegment>
+    </actionCalls>
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Should_Notify_Ticket_Office</name>
+        <label>Should Notify Ticket Office</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>No Notification</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Signed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.echosign_dev1__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Signed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Signed_Email_With_PDF</targetReference>
+            </connector>
+            <label>Customer Signed</label>
+        </rules>
+        <rules>
+            <name>Manager_Approved_or_Declined</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmManagerApprovedOrDeclined</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Ticket_Office_Email</targetReference>
+            </connector>
+            <label>Manager Approved or Declined</label>
+        </rules>
+        <rules>
+            <name>Sent_At_50k_Or_More</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmSentAt50kOrMore</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Ticket_Office_Email</targetReference>
+            </connector>
+            <label>Sent At 50k Or More</label>
+        </rules>
+        <rules>
+            <name>Customer_Signed_or_Declined</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmCustomerSignedOrDeclined</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Ticket_Office_Email</targetReference>
+            </connector>
+            <label>Customer Declined</label>
+        </rules>
+    </decisions>
+    <description>Notifies the Ticket Office (and Sales Manager) when: (1) the Sales Manager approves or declines in Adobe Sign (approval status to Out for Signature / Approved / Cancelled-Declined); (2) first send of an agreement with a total of $50k or more (pre-send status to Out for Approval / Out for Signature); (3) the customer signs (Signed - sent by TicketOfficeSignedEmail with the signed PDF attached) or declines (signature status to Cancelled-Declined). Total uses the same field per Agreement Type as the email.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Agreement total from the linked Opportunity, using the same field per Agreement Type as the email.</description>
+        <name>frmAgreementTotal</name>
+        <dataType>Currency</dataType>
+        <expression>CASE(TEXT({!$Record.echosign_dev1__Opportunity__r.Agreement_Type__c}),
+&quot;Membership&quot;, BLANKVALUE({!$Record.echosign_dev1__Opportunity__r.Total_MembershipPrice__c}, 0),
+&quot;Suite Lease&quot;, BLANKVALUE({!$Record.echosign_dev1__Opportunity__r.This_Season_Total_Amount__c}, 0),
+&quot;Multi-Product&quot;, BLANKVALUE({!$Record.echosign_dev1__Opportunity__r.Total_Multi_Product__c}, 0),
+&quot;Flex&quot;, BLANKVALUE({!$Record.echosign_dev1__Opportunity__r.Total_Flex_Membership__c}, 0),
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Point 3 (declined): customer declined while the agreement was out for signature. Signed is handled by the Customer_Signed outcome.</description>
+        <name>frmCustomerSignedOrDeclined</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Out for Signature&quot;, TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Waiting for Counter-Signature&quot;),
+TEXT({!$Record.echosign_dev1__Status__c}) = &quot;Cancelled / Declined&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Point 1: Sales Manager approved (approval status to Out for Signature / Approved) or declined (approval status to Cancelled / Declined).</description>
+        <name>frmManagerApprovedOrDeclined</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Out for Approval&quot;, TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Waiting for Counter-Approval&quot;),
+OR(TEXT({!$Record.echosign_dev1__Status__c}) = &quot;Out for Signature&quot;, TEXT({!$Record.echosign_dev1__Status__c}) = &quot;Approved&quot;, TEXT({!$Record.echosign_dev1__Status__c}) = &quot;Cancelled / Declined&quot;))</expression>
+    </formulas>
+    <formulas>
+        <description>Point 2: first send of an agreement with a total of $50k or more - the status leaves a pre-send status (Draft / Pre-Send / Send in Progress / Created) for its first live status (Out for Approval, or Out for Signature when there is no approver). Later re-entries into Out for Approval do not re-notify.</description>
+        <name>frmSentAt50kOrMore</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Draft&quot;, TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Pre-Send&quot;, TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Send in Progress&quot;, TEXT({!$Record__Prior.echosign_dev1__Status__c}) = &quot;Created&quot;, ISBLANK(TEXT({!$Record__Prior.echosign_dev1__Status__c}))),
+OR(TEXT({!$Record.echosign_dev1__Status__c}) = &quot;Out for Approval&quot;, TEXT({!$Record.echosign_dev1__Status__c}) = &quot;Out for Signature&quot;),
+{!frmAgreementTotal} &gt;= 50000)</expression>
+    </formulas>
+    <interviewLabel>Adobe Agreement - Notify Ticket Office {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Adobe Agreement - Notify Ticket Office</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Should_Notify_Ticket_Office</targetReference>
+        </connector>
+        <filterFormula>AND(ISCHANGED({!$Record.echosign_dev1__Status__c}), NOT(ISBLANK({!$Record.echosign_dev1__Opportunity__c})), NOT(ISBLANK(TEXT({!$Record.echosign_dev1__Opportunity__r.Agreement_Type__c}))))</filterFormula>
+        <object>echosign_dev1__SIGN_Agreement__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

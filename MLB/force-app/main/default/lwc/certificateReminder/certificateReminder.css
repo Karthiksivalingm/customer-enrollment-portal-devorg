@@ -1,0 +1,153 @@
+.banner {
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid transparent;
+}
+.banner_pending {
+    background: #fff8ec;
+    border-color: #f3ddb5;
+}
+.banner_done {
+    background: #ecf8f1;
+    border-color: #bfe6cf;
+}
+
+.banner_head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+}
+.banner_icon {
+    flex: none;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner_pending .banner_icon {
+    background: #e08600;
+}
+.banner_done .banner_icon {
+    background: #0e8a4f;
+}
+.banner_text {
+    flex: 1;
+    min-width: 0;
+}
+.banner_eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a5300;
+}
+.banner_done .banner_eyebrow {
+    color: #0b6b3a;
+}
+.banner_title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0b1f2e;
+    margin-top: 0.125rem;
+}
+.banner_subtitle {
+    font-size: 0.8125rem;
+    color: #33495a;
+    margin-top: 0.125rem;
+}
+.banner_side {
+    flex: none;
+    text-align: right;
+}
+.side_label {
+    display: block;
+    font-size: 0.6875rem;
+    color: #6a8494;
+    margin-bottom: 0.25rem;
+}
+
+.pill {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.pill_pending {
+    background: #ffe7bf;
+    color: #8a5300;
+}
+.pill_done {
+    background: #cdefdc;
+    color: #0b6b3a;
+}
+.pill_ready {
+    background: #d3e5ff;
+    color: #0b4fa8;
+}
+.pill_declined {
+    background: #fbd5d5;
+    color: #a1222a;
+}
+.cert_optional {
+    border-style: dashed;
+}
+.cert_optional .cert_state {
+    color: #6a8494;
+    font-style: italic;
+}
+
+.cert_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.875rem 0 0 3.125rem;
+    padding: 0;
+    list-style: none;
+}
+.cert {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    border: 1px solid #e2eaef;
+    font-size: 0.8125rem;
+}
+.cert_label {
+    font-weight: 600;
+    color: #0b1f2e;
+}
+.cert_state {
+    font-size: 0.75rem;
+    color: #6a8494;
+}
+.cert_pending {
+    border-color: #f3ddb5;
+}
+.cert_done .cert_state {
+    color: #0b6b3a;
+}
+.cert_pending .cert_state {
+    color: #8a5300;
+}
+
+.banner_actions {
+    margin: 0.875rem 0 0 3.125rem;
+}
+
+@media (max-width: 30em) {
+    .banner_head {
+        flex-wrap: wrap;
+    }
+    .banner_side {
+        text-align: left;
+        width: 100%;
+        padding-left: 3.125rem;
+    }
+}

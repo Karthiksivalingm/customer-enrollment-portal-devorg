@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Marlins_Sales</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Sales Managers role: Marlins Sales app, all three Contact record types (Business Contact, Internal, Vendor Contact) and Run Flows, for the Agreement Flow, Upload Certificate and Create Agreement (Vendor Activation) screen flows.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>MLB Sales Manager Access</label>
+    <recordTypeVisibilities>
+        <recordType>Contact.Business_Contact</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Contact.Internal</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Contact.Vendor_Contact</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunFlow</name>
+    </userPermissions>
+</PermissionSet>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certificate_Fields_Flow_Only</fullName>
+    <active>true</active>
+    <description>COI / W-9 / Food Services Certificate Collected can only be changed by the Upload Certificate flow (which flips Certificate_Flow_Update__c in the same save). Blocks manual edits by every user, including administrators.</description>
+    <errorConditionFormula>IF(
+    ISNEW(),
+    OR(COI_Collected__c, W_9_Collected__c, Food_Services_Certificate_Collected__c),
+    AND(
+        OR(
+            ISCHANGED(COI_Collected__c),
+            ISCHANGED(W_9_Collected__c),
+            ISCHANGED(Food_Services_Certificate_Collected__c)
+        ),
+        NOT(ISCHANGED(Certificate_Flow_Update__c))
+    )
+)</errorConditionFormula>
+    <errorMessage>COI Collected, W-9 Collected and Food Services Certificate Collected are set automatically when a certificate is uploaded. Please use the Upload Certificate button instead of editing these fields.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Agreement details sent to the Ticket Office and Sales Manager when the Adobe Sign agreement is approved/declined by the Sales Manager, sent for approval at $50k or more, or signed/declined by the customer. Content varies by Opportunity.Agreement_Type__c; status line comes from the Adobe Sign agreement.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Ticket Office Agreement Details</name>
+    <style>none</style>
+    <subject>Agreement Details</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

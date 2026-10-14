@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_FandB_Account</name>
+        <label>Is Account Food and Beverage?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Contact_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Food and Beverage</defaultConnectorLabel>
+        <rules>
+            <name>Is_FandB_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Food and Beverage</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FandB_Information_Screen</targetReference>
+            </connector>
+            <label>Is Food and Beverage</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>SalesManagerChoiceSet</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>UserRoleId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Sales_Manager_Role.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <interviewLabel>Vendor Activation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Vendor Activation Food and Beverage Agreement</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Sales_Manager_Role</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Contact.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Contact</name>
+        <label>Get Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Sales_Manager_Role</name>
+        <label>Get Sales Manager Role</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Agreement_Information_Screen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sales Manager</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>UserRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Contact_Record</name>
+        <label>Update Contact Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Success_Screen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Event_Date__c</field>
+            <value>
+                <elementReference>fld_event_date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Execution_Date__c</field>
+            <value>
+                <elementReference>fld_execution_date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Manager__c</field>
+            <value>
+                <elementReference>fld_sales_manager</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>COI_Coverage_Amount__c</field>
+            <value>
+                <elementReference>fld_coi_coverage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Policy_Exploration__c</field>
+            <value>
+                <elementReference>fld_coi_policy</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>COI_Expiration_Date__c</field>
+            <value>
+                <elementReference>fld_coi_expiration</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Food_and_Beverage_Expiry_Date__c</field>
+            <value>
+                <elementReference>fld_fandb_expiration</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <screens>
+        <name>Agreement_Information_Screen</name>
+        <label>Agreement Information</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>COI_Information_Screen</targetReference>
+        </connector>
+        <fields>
+            <name>fld_event_date</name>
+            <dataType>Date</dataType>
+            <fieldText>Event Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Enter the date the event will take place. This date must be at least 15 business days from today, so please plan ahead.</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <validationRule>
+                <errorMessage>Event Date must be at least 15 business days (approximately 21 calendar days) from today. Please choose a later date.</errorMessage>
+                <formulaExpression>OR(ISBLANK({!fld_event_date}), {!fld_event_date} &gt;= (TODAY() + 21))</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>fld_execution_date</name>
+            <dataType>Date</dataType>
+            <fieldText>Execution Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Enter the date by which this agreement must be signed and returned. This must be at least 10 business days before the event date you entered above.</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <validationRule>
+                <errorMessage>Execution Date must be at least 10 business days (approximately 14 calendar days) before the Event Date and cannot fall on or after the Event Date.</errorMessage>
+                <formulaExpression>OR(ISBLANK({!fld_execution_date}), ISBLANK({!fld_event_date}), AND({!fld_execution_date} &lt;= ({!fld_event_date} - 14), {!fld_execution_date} &lt; {!fld_event_date}))</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>fld_sales_manager</name>
+            <choiceReferences>SalesManagerChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sales Manager</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <helpText>Choose the Sales Manager who will oversee this vendor agreement. Only active users assigned the Sales Manager role appear in this list.</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>COI_Information_Screen</name>
+        <label>Certificate of Insurance</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Check_FandB_Account</targetReference>
+        </connector>
+        <fields>
+            <name>fld_coi_coverage</name>
+            <dataType>Currency</dataType>
+            <fieldText>Coverage Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Enter the total coverage amount shown on the vendor's Certificate of Insurance (COI).</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <scale>2</scale>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>fld_coi_policy</name>
+            <dataType>String</dataType>
+            <fieldText>Policy Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Enter the policy number printed on the Certificate of Insurance (COI).</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>fld_coi_expiration</name>
+            <dataType>Date</dataType>
+            <fieldText>COI Expiration Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Enter the expiration date of the Certificate of Insurance. Coverage must remain valid through the event date.</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <validationRule>
+                <errorMessage>COI Expiration Date must be on or after the Event Date.</errorMessage>
+                <formulaExpression>OR(ISBLANK({!fld_coi_expiration}), ISBLANK({!fld_event_date}), {!fld_coi_expiration} &gt;= {!fld_event_date})</formulaExpression>
+            </validationRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FandB_Information_Screen</name>
+        <label>Food and Beverage Insurance</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_Contact_Record</targetReference>
+        </connector>
+        <fields>
+            <name>fld_fandb_expiration</name>
+            <dataType>Date</dataType>
+            <fieldText>Food and Beverage Insurance Expiration Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>This vendor&apos;s account is set up as Food and Beverage, so an additional insurance policy is required. Enter its expiration date, which must remain valid through the event date.</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <validationRule>
+                <errorMessage>Food and Beverage Insurance Expiration Date must be on or after the Event Date.</errorMessage>
+                <formulaExpression>OR(ISBLANK({!fld_fandb_expiration}), ISBLANK({!fld_event_date}), {!fld_fandb_expiration} &gt;= {!fld_event_date})</formulaExpression>
+            </validationRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Screen</name>
+        <label>Success Confirmation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>fld_success_message</name>
+            <fieldText>The vendor agreement information has been submitted and saved successfully.</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Contact</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
