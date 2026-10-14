@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactivity_Stage__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Last_Shopify_Order_Date__c), &quot;Never Ordered&quot;,
+IF(Last_Shopify_Order_Date__c &lt;= ADDMONTHS(TODAY(), -18), &quot;Month 18+&quot;,
+IF(Last_Shopify_Order_Date__c &lt;= ADDMONTHS(TODAY(), -17), &quot;Month 17&quot;,
+IF(Last_Shopify_Order_Date__c &lt;= ADDMONTHS(TODAY(), -15), &quot;Month 15&quot;,
+IF(Last_Shopify_Order_Date__c &lt;= ADDMONTHS(TODAY(), -12), &quot;Month 12&quot;,
+&quot;Active&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Inactivity Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

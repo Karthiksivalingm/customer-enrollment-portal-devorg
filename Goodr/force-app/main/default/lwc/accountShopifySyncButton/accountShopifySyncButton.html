@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-align_absolute-center slds-size_1-of-1">
+        <div class="slds-text-align_center">
+            <lightning-button
+                label="Resync to Shopify"
+                onclick={handleClick}
+                variant={buttonVariant}
+                disabled={isButtonDisabled}>
+            </lightning-button>
+            <div if:false={isButtonEnabled} class="slds-m-top_small">
+                <lightning-formatted-text
+                    value={disabledMessage}
+                    class="slds-text-color_weak slds-text-body_small">
+                </lightning-formatted-text>
+            </div>
+        </div>
+    </div>
+</template>

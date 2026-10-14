@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>At_Risk_Since__c</fullName>
+    <description>Copied from the account when the notice is created. Identifies which at-risk episode this notice belongs to and forms part of the unique notice key.</description>
+    <inlineHelpText>The date the store location became at risk on this occasion.</inlineHelpText>
+    <label>At Risk Since</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

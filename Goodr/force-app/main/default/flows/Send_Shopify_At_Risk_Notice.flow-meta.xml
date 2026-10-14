@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Sends the stage template (Template Stage 1-5 in Shopify At Risk Config) with the notice as WhatId so merge fields render. Legacy notices with no Stage use Email Template Name. Logs the email on the contact.</description>
+        <name>Send_Warm_Off_Email</name>
+        <label>Send Warm-Off Email</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>SendWarmOffEmail</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Email_Sent</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>noticeId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SendWarmOffEmail</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Email_Sent</name>
+        <label>Email Sent?</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Mark_Send_Failed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Failed</defaultConnectorLabel>
+        <rules>
+            <name>Sent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Send_Warm_Off_Email.success</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Notice_as_Sent</targetReference>
+            </connector>
+            <label>Sent</label>
+        </rules>
+    </decisions>
+    <description>Sends the email for a new Shopify At Risk Notice. The template is chosen by Stage (Month 12 / 15 / 17 / 15-Day Reminder / Deactivation) inside the SendWarmOffEmail Apex action, then the notice is marked Notice Sent or Send Failed.</description>
+    <environments>Default</environments>
+    <interviewLabel>Send Shopify At Risk Notice {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Shopify At Risk Notice</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Mark_Notice_as_Sent</name>
+        <label>Mark Notice as Sent</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Email_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email_Subject__c</field>
+            <value>
+                <elementReference>Send_Warm_Off_Email.subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notice_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Notice Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Mark_Send_Failed</name>
+        <label>Mark Send Failed</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Send Failed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Warm_Off_Email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending Send</stringValue>
+            </value>
+        </filters>
+        <object>Shopify_At_Risk_Notice__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

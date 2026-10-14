@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sector__c</fullName>
+    <label>Sector</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sales_Channel__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Sector</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Key Account</controllingFieldValue>
+            <valueName>Enterprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Key Account</controllingFieldValue>
+            <valueName>Strategic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Key Account</controllingFieldValue>
+            <valueName>Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Key Account</controllingFieldValue>
+            <valueName>Discount</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty</controllingFieldValue>
+            <valueName>Planned</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty</controllingFieldValue>
+            <valueName>Self Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global</controllingFieldValue>
+            <valueName>Distributor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partnerships</controllingFieldValue>
+            <valueName>Partnerships</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

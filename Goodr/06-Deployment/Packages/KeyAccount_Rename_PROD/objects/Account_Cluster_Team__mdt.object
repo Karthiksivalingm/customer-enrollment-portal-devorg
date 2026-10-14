@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Sales_Channel__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Sales Channel</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Specialty</fullName>
+                    <default>true</default>
+                    <label>Specialty</label>
+                </value>
+                <value>
+                    <fullName>Key Accounts</fullName>
+                    <default>false</default>
+                    <label>Key Accounts</label>
+                </value>
+                <value>
+                    <fullName>Key Account</fullName>
+                    <default>false</default>
+                    <label>Key Account</label>
+                </value>
+                <value>
+                    <fullName>Global</fullName>
+                    <default>false</default>
+                    <label>Global</label>
+                </value>
+                <value>
+                    <fullName>Mid-Market</fullName>
+                    <default>false</default>
+                    <label>Mid-Market</label>
+                </value>
+                <value>
+                    <fullName>Partnerships</fullName>
+                    <default>false</default>
+                    <label>Partnerships</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>YTD_Performance_Percent__c</fullName>
+    <inlineHelpText>This year&apos;s sales as a percentage of last year&apos;s for the same period. Below 50% flags the store as at risk.</inlineHelpText>
+    <label>YTD Performance Percent</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+
+    <!-- All Email Templates -->
+    <types>
+        <members>*</members>
+        <name>EmailTemplate</name>
+    </types>
+
+    <!-- All Email Template Folders -->
+    <types>
+        <members>*</members>
+        <name>EmailFolder</name>
+    </types>
+    <!-- Lightning Record Pages -->
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+
+    <version>65.0</version>
+</Package>

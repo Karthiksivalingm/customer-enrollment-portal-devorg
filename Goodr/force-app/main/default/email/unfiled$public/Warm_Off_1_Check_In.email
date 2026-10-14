@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#f4f6f9;font-family:Arial, sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:20px;background:#f4f6f9;">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;border-radius:10px;overflow:hidden;">
+<tr><td align="center" style="padding:25px;">
+<img src="https://cdn.shopify.com/s/files/1/0084/1616/5946/files/goodr_logo_full_color_553x200.png?v=1679529815" alt="goodr" width="180" style="display:block;width:180px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" />
+</td></tr>
+<tr><td style="background:#4CAF9F;height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
+<tr><td style="padding:30px;color:#333333;font-size:14px;line-height:1.6;">
+<p style="margin-top:0;">Hi {!Contact.FirstName},</p>
+<p>It&rsquo;s been a while since your last order with goodr, and we wanted to check in. Is there anything we can help with, whether that&rsquo;s reordering best sellers, exploring new styles, or troubleshooting an issue on your end?</p>
+<p>We&rsquo;d love to keep <b>{!Shopify_At_Risk_Notice__c.Store_Name__c}</b> active in our retailer network. Let us know if you&rsquo;d like to place an order or if there&rsquo;s anything holding you back.</p>
+<p>Warmly,</p>
+<p><b>The goodr wholesale team</b></p>
+</td></tr>
+<tr><td align="center" style="padding:15px;background:#f4f6f9;color:#888888;font-size:12px;">&copy; 2026 goodr. All rights reserved.</td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>

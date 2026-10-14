@@ -1,0 +1,28 @@
+<template>
+    <lightning-quick-action-panel header="Change Case Status">
+
+        <lightning-combobox
+            name="status"
+            label="Select Status"
+            placeholder="Choose status"
+            options={statuses}
+            value={selectedStatus}
+            onchange={handleChange}>
+        </lightning-combobox>
+
+        <div slot="footer">
+            <lightning-button 
+                label="Cancel" 
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button 
+                label="Update Status" 
+                variant="brand" 
+                class="slds-m-left_small"
+                onclick={handleUpdate}>
+            </lightning-button>
+        </div>
+
+    </lightning-quick-action-panel>
+</template>
