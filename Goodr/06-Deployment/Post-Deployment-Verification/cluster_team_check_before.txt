@@ -1,0 +1,40 @@
+CREATE~Account~Specialty~Self Service~Cluster 6~akeem,amoskios,kristen,sforrestall,tam
+CREATE~Contact~Specialty~Self Service~Cluster 6~akeem,amoskios,kristen,sforrestall,tam
+CREATE~Opportunity~Specialty~Self Service~Cluster 6~akeem,amoskios,kristen,sforrestall,tam
+CREATE~Lead~Specialty~Self Service~Cluster 6~akeem,amoskios,kristen,sforrestall,tam,tam
+CREATE~Account~Specialty~Planned~Cluster 5~christacummings,edwin,kristen,sforrestall,tam
+CREATE~Contact~Specialty~Planned~Cluster 5~christacummings,edwin,kristen,sforrestall,tam
+CREATE~Opportunity~Specialty~Planned~Cluster 5~christacummings,edwin,kristen,sforrestall,tam
+CREATE~Lead~Specialty~Planned~Cluster 5~christacummings,edwin,kristen,sforrestall,tam,tam
+CREATE~Account~Key Account~Enterprise~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Contact~Key Account~Enterprise~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Opportunity~Key Account~Enterprise~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Lead~Key Account~Enterprise~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam,tam
+CREATE~Account~Key Account~Strategic~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Contact~Key Account~Strategic~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Opportunity~Key Account~Strategic~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Lead~Key Account~Strategic~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam,tam
+CREATE~Account~Key Account~Development~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Contact~Key Account~Development~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Opportunity~Key Account~Development~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Lead~Key Account~Development~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam,tam
+CREATE~Account~Key Account~Discount~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Contact~Key Account~Discount~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Opportunity~Key Account~Discount~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam
+CREATE~Lead~Key Account~Discount~Cluster 1~amaliacampos,bryanwendt,dwesterberg,kristen,tam,tam
+CREATE~Account~Global~Distributor~Cluster 7~carminaduarte,edwin,kristen,lexirousselle
+CREATE~Contact~Global~Distributor~Cluster 7~carminaduarte,edwin,kristen,lexirousselle
+CREATE~Opportunity~Global~Distributor~Cluster 7~carminaduarte,edwin,kristen,lexirousselle
+CREATE~Lead~Global~Distributor~Cluster 7~carminaduarte,edwin,kristen,lexirousselle
+CREATE~Account~Partnerships~Partnerships~Cluster 8~edwin,kristen,sforrestall
+CREATE~Contact~Partnerships~Partnerships~Cluster 8~edwin,kristen,sforrestall,sforrestall
+CREATE~Opportunity~Partnerships~Partnerships~Cluster 8~edwin,kristen,sforrestall
+CREATE~Lead~Partnerships~Partnerships~Cluster 8~edwin,kristen,sforrestall,sforrestall
+UPD_SECTOR_ONLY~Account~Specialty~Planned->Self Service~Cluster 5~expected Cluster 6
+UPD_SECTOR_ONLY~Lead~Specialty~Planned->Self Service~Cluster 5~expected Cluster 6
+UPD_SECTOR_ONLY~Opportunity~Specialty~Planned->Self Service~Cluster 5~expected Cluster 6
+UPD_SECTOR_ONLY~Contact(of Account)~-~-~Cluster 5~follows Account
+UPD_CHANNEL_WITH_OPEN_OPP~Account~FAILED~CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, AccountClusterTrigger: execution of AfterUpdatecaused by: System.DmlException: Update failed. First exception on row 0 w
+UPD_CHANNEL_NO_OPP~Account~retried after removing its open Opportunity
+UPD_CHANNEL~Account~Key Account->Specialty~Enterprise->Self Service~Cluster 6~akeem,amoskios,kristen,sforrestall,tam
+UPD_CHANNEL~Opportunity(open, cascaded)~null~-~null~

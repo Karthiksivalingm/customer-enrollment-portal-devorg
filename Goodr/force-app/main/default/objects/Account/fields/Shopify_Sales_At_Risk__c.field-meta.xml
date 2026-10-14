@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shopify_Sales_At_Risk__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This checkbox it is hard to quickly identify which accounts need attention A ratio number alone is harder to filter on</description>
+    <inlineHelpText>TRUE  = account is at risk (spending 50% less than last year)
+FALSE = account is healthy (spending within normal range)</inlineHelpText>
+    <label>Shopify Sales At Risk</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

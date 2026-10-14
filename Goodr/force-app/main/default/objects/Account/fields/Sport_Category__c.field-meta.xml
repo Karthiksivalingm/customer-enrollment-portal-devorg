@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sport_Category__c</fullName>
+    <label>Sport / Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Vertical__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Sport_Category</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Country Club</controllingFieldValue>
+            <valueName>Golf Shop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Country Club</controllingFieldValue>
+            <valueName>Golf: Country Club</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Country Club</controllingFieldValue>
+            <valueName>Golf: Private Course</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Country Club</controllingFieldValue>
+            <valueName>Golf: Public Course</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Country Club</controllingFieldValue>
+            <valueName>Pickleball</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Country Club</controllingFieldValue>
+            <valueName>Tennis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endurance</controllingFieldValue>
+            <valueName>Bike: Road</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endurance</controllingFieldValue>
+            <valueName>Triathlon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endurance</controllingFieldValue>
+            <valueName>Run</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endurance</controllingFieldValue>
+            <valueName>Bike: Mountain, Gravel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endurance</controllingFieldValue>
+            <valueName>Bike: E-Bike</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endurance</controllingFieldValue>
+            <valueName>Bike: Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fitness</controllingFieldValue>
+            <valueName>Fitness: Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fitness</controllingFieldValue>
+            <valueName>Studio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fitness</controllingFieldValue>
+            <valueName>Strength</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outdoor</controllingFieldValue>
+            <valueName>Outdoor Outfitter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Snow</controllingFieldValue>
+            <valueName>Resorts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Snow</controllingFieldValue>
+            <valueName>Boardshop, Ski, Snowboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sporting Goods</controllingFieldValue>
+            <valueName>General Sporting Goods</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Water</controllingFieldValue>
+            <valueName>Water: Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Water</controllingFieldValue>
+            <valueName>Board, Paddle, Sports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Water</controllingFieldValue>
+            <valueName>Marina, Boating, Fishing, Sailing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fashion</controllingFieldValue>
+            <valueName>Fashion: Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fashion</controllingFieldValue>
+            <valueName>Event Venue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Collegiate</controllingFieldValue>
+            <valueName>Collegiate</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

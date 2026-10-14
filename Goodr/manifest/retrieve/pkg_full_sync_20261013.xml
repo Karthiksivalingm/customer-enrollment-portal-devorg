@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types><members>*</members><name>ApexClass</name></types>
+    <types><members>*</members><name>ApexTrigger</name></types>
+    <types><members>*</members><name>Flow</name></types>
+    <types><members>*</members><name>FlexiPage</name></types>
+    <types><members>*</members><name>CustomMetadata</name></types>
+    <types>
+        <members>Sales_Channel</members><members>Sales_Channel1</members><members>Sector</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <types>
+        <members>Shopify_At_Risk_Notice__c</members><members>Shopify_At_Risk_Config__mdt</members>
+        <members>Account_Cluster_Team__mdt</members><members>Sales_Channel_Cluster__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Account.Sales_Channel__c</members><members>Account.Sector__c</members><members>Account.Cluster__c</members>
+        <members>Account.Sales_Channel_V1__c</members><members>Account.Sector_V1__c</members>
+        <members>Account.Last_Shopify_Order_Date__c</members><members>Account.Last_Shopify_Order_Sync_Date__c</members>
+        <members>Account.Months_Since_Last_Order__c</members><members>Account.Scheduled_Deactivation_Date__c</members>
+        <members>Account.Inactivity_Stage__c</members><members>Account.Order_Channel__c</members>
+        <members>Account.Active__c</members><members>Account.Shopify_Sales_At_Risk__c</members>
+        <members>Account.YTD_Performance_Percent__c</members><members>Account.Vertical__c</members>
+        <members>Account.Sport_Category__c</members><members>Account.Website</members>
+        <members>Account.Current_Rolling_12_Month_Sales__c</members>
+        <members>Contact.Sales_Channel__c</members><members>Contact.Sector__c</members>
+        <members>Lead.Sales_Channel__c</members><members>Lead.Sector__c</members>
+        <members>Opportunity.Sales_Channel__c</members><members>Opportunity.Sector__c</members>
+        <name>CustomField</name>
+    </types>
+    <types><members>Shopify_At_Risk_Notice__c-Shopify At Risk Notice Layout</members><name>Layout</name></types>
+    <types>
+        <members>unfiled$public/Shopify_At_Risk_Notice_1787306704561</members>
+        <members>unfiled$public/Warm_Off_1_Check_In</members><members>unfiled$public/Warm_Off_2_Early_Notice</members>
+        <members>unfiled$public/Warm_Off_3_30_Day_Warning</members><members>unfiled$public/Warm_Off_4_15_Day_Reminder</members>
+        <members>unfiled$public/Warm_Off_5_Deactivation_Notice</members>
+        <name>EmailTemplate</name>
+    </types>
+    <version>68.0</version>
+</Package>

@@ -1,0 +1,23 @@
+<template>
+    <lightning-quick-action-panel header="Confirmation">
+
+        <p class="slds-p-around_medium">
+            Are you sure you want to Reject this Contact?
+        </p>
+
+        <div slot="footer">
+            <lightning-button 
+                label="Cancel" 
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button 
+                label="Reject" 
+                variant="brand" 
+                class="slds-m-left_small"
+                onclick={handleReject}>
+            </lightning-button>
+        </div>
+
+    </lightning-quick-action-panel>
+</template>

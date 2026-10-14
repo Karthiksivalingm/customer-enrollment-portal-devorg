@@ -1,0 +1,2345 @@
+﻿{
+  "status": 100,
+  "result": {
+    "summary": {
+      "failRate": "34%",
+      "failing": 51,
+      "hostname": "https://energy-enterprise-8976--partial.sandbox.my.salesforce.com",
+      "orgId": "00Ddx000004dWYnEAM",
+      "outcome": "Failed",
+      "passRate": "66%",
+      "passing": 98,
+      "skipped": 0,
+      "testRunId": "707dx00001wUjqc",
+      "testStartTime": "2026-10-06T06:46:25.000Z",
+      "testsRan": 149,
+      "userId": "005Pn00000F2aQ9IAJ",
+      "username": "sandipp@goodr.com.partial",
+      "commandTime": "296 ms",
+      "testExecutionTime": "50308 ms",
+      "testTotalTime": "54691 ms"
+    },
+    "tests": [
+      {
+        "Id": "07Mdx00000Io30pEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_AccountRecords_AllProcessed",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 823,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_AccountRecords_AllProcessed"
+      },
+      {
+        "Id": "07Mdx00000Io30qEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_BlankCondition_EngineHandlesGracefully",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 464,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_BlankCondition_EngineHandlesGracefully"
+      },
+      {
+        "Id": "07Mdx00000Io30rEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_ContactObject_EarlyReturn",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1203,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_ContactObject_EarlyReturn"
+      },
+      {
+        "Id": "07Mdx00000Io30sEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_EmptyList_ReturnsEarly",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 13,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_EmptyList_ReturnsEarly"
+      },
+      {
+        "Id": "07Mdx00000Io30tEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_LeadObject_Insert_NoError",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 318,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_LeadObject_Insert_NoError"
+      },
+      {
+        "Id": "07Mdx00000Io30uEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_LeadObject_Update_SalesChannelUnchanged",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 149,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_LeadObject_Update_SalesChannelUnchanged"
+      },
+      {
+        "Id": "07Mdx00000Io30vEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_NoRuleMatch_NullNotWritten",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 413,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_NoRuleMatch_NullNotWritten"
+      },
+      {
+        "Id": "07Mdx00000Io30wEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": "Class.ClusterRuleEngineTest.testEvaluate_OperatorDetection_MultiCondition_NoException: line 246, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_OperatorDetection_MultiCondition_NoException",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 20,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_OperatorDetection_MultiCondition_NoException"
+      },
+      {
+        "Id": "07Mdx00000Io30xEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_SalesChannelChanged_RuleEngineRuns",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 383,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_SalesChannelChanged_RuleEngineRuns"
+      },
+      {
+        "Id": "07Mdx00000Io30yEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_SalesChannelUnchanged_RuleEngineSkipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 377,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_SalesChannelUnchanged_RuleEngineSkipped"
+      },
+      {
+        "Id": "07Mdx00000Io30zEAB",
+        "QueueItemId": "709dx00000Dl7hiAAB",
+        "StackTrace": "Class.ClusterRuleEngineTest.testEvaluate_UnqueriedField_HandledGracefully: line 261, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEvaluate_UnqueriedField_HandledGracefully",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001ymh7AAA",
+          "Name": "ClusterRuleEngineTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 15,
+        "FullName": "ClusterRuleEngineTest.testEvaluate_UnqueriedField_HandledGracefully"
+      },
+      {
+        "Id": "07Mdx00000IobLvEAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testApprovalThenRejection",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testApprovalThenRejection"
+      },
+      {
+        "Id": "07Mdx00000IobLwEAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAssignContactToCompanyNoMatchingAccount",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testAssignContactToCompanyNoMatchingAccount"
+      },
+      {
+        "Id": "07Mdx00000IobLxEAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAssignContactToCompanySuccess",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testAssignContactToCompanySuccess"
+      },
+      {
+        "Id": "07Mdx00000IobLyEAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAssignContactToCompanyUseNewUserEmail",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testAssignContactToCompanyUseNewUserEmail"
+      },
+      {
+        "Id": "07Mdx00000IobLzEAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBulkInsert",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testBulkInsert"
+      },
+      {
+        "Id": "07Mdx00000IobM0EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBulkUpdate",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testBulkUpdate"
+      },
+      {
+        "Id": "07Mdx00000IobM1EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testClusterTeamEngineOnInsert",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testClusterTeamEngineOnInsert"
+      },
+      {
+        "Id": "07Mdx00000IobM2EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testClusterTeamEngineOnUpdateSalesChannel",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testClusterTeamEngineOnUpdateSalesChannel"
+      },
+      {
+        "Id": "07Mdx00000IobM3EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testContactCompanyAssignmentWithTaxIdVariations",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testContactCompanyAssignmentWithTaxIdVariations"
+      },
+      {
+        "Id": "07Mdx00000IobM4EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testContactWithNullValues",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testContactWithNullValues"
+      },
+      {
+        "Id": "07Mdx00000IobM5EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testContactWithSpecialCharactersInEmail",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testContactWithSpecialCharactersInEmail"
+      },
+      {
+        "Id": "07Mdx00000IobM6EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testCreateStoreLocationNote",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testCreateStoreLocationNote"
+      },
+      {
+        "Id": "07Mdx00000IobM7EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testFirstNameAndLastNameUpdate",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testFirstNameAndLastNameUpdate"
+      },
+      {
+        "Id": "07Mdx00000IobM8EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleRejectedContacts",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testHandleRejectedContacts"
+      },
+      {
+        "Id": "07Mdx00000IobM9EAJ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testMultipleRevenueChanges",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testMultipleRevenueChanges"
+      },
+      {
+        "Id": "07Mdx00000IobMAEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testMultipleScenarios",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testMultipleScenarios"
+      },
+      {
+        "Id": "07Mdx00000IobMBEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testMultipleTaxIdFormats",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testMultipleTaxIdFormats"
+      },
+      {
+        "Id": "07Mdx00000IobMCEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testNoShopifySyncRetryOnceAlreadySynced",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testNoShopifySyncRetryOnceAlreadySynced"
+      },
+      {
+        "Id": "07Mdx00000IobMDEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testPhoneAndEmailUpdate",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testPhoneAndEmailUpdate"
+      },
+      {
+        "Id": "07Mdx00000IobMEEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testRemoveSymbolsFromTaxIdBeforeInsert",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testRemoveSymbolsFromTaxIdBeforeInsert"
+      },
+      {
+        "Id": "07Mdx00000IobMFEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testRemoveSymbolsFromTaxIdBeforeUpdate",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testRemoveSymbolsFromTaxIdBeforeUpdate"
+      },
+      {
+        "Id": "07Mdx00000IobMGEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testRevenueChange",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testRevenueChange"
+      },
+      {
+        "Id": "07Mdx00000IobMHEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testRevenueNoChange",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testRevenueNoChange"
+      },
+      {
+        "Id": "07Mdx00000IobMIEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSalesChannelInheritanceWithNoAccountId",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testSalesChannelInheritanceWithNoAccountId"
+      },
+      {
+        "Id": "07Mdx00000IobMJEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSalesChannelInheritedFromAccount",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testSalesChannelInheritedFromAccount"
+      },
+      {
+        "Id": "07Mdx00000IobMKEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSalesChannelNotOverwrittenWhenAlreadySet",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testSalesChannelNotOverwrittenWhenAlreadySet"
+      },
+      {
+        "Id": "07Mdx00000IobMLEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSalesChannelPicklistHandling",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testSalesChannelPicklistHandling"
+      },
+      {
+        "Id": "07Mdx00000IobMMEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShopifySyncOnApproval",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testShopifySyncOnApproval"
+      },
+      {
+        "Id": "07Mdx00000IobMNEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShopifySyncOnInsertApproved",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testShopifySyncOnInsertApproved"
+      },
+      {
+        "Id": "07Mdx00000IobMOEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShopifySyncOnInsertNoEmail",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testShopifySyncOnInsertNoEmail"
+      },
+      {
+        "Id": "07Mdx00000IobMPEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShopifySyncOnInsertNotApproved",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testShopifySyncOnInsertNotApproved"
+      },
+      {
+        "Id": "07Mdx00000IobMQEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShopifySyncRetryOnEmailCorrection",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testShopifySyncRetryOnEmailCorrection"
+      },
+      {
+        "Id": "07Mdx00000IobMREAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShopifySyncRetryOnPhoneCorrection",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testShopifySyncRetryOnPhoneCorrection"
+      },
+      {
+        "Id": "07Mdx00000IobMSEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testStoreLocationsWithMultipleFormats",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testStoreLocationsWithMultipleFormats"
+      },
+      {
+        "Id": "07Mdx00000IobMTEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testValidateAndCleanseNewContactsCaseInsensitiveEmail",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testValidateAndCleanseNewContactsCaseInsensitiveEmail"
+      },
+      {
+        "Id": "07Mdx00000IobMUEAZ",
+        "QueueItemId": "709dx00000Dl7hkAAB",
+        "StackTrace": "Class.ContactTriggerHandlerTest.setupTestData: line 34, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testValidateAndCleanseNewContactsDuplicateEmail",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1TIAT",
+          "Name": "ContactTriggerHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 0,
+        "FullName": "ContactTriggerHandlerTest.testValidateAndCleanseNewContactsDuplicateEmail"
+      },
+      {
+        "Id": "07Mdx00000IogkrEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAccountClusterTrigger_Insert",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1074,
+        "FullName": "ClusterTriggerTest.testAccountClusterTrigger_Insert"
+      },
+      {
+        "Id": "07Mdx00000IogksEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAccountClusterTrigger_Update_ClusterChange",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 2253,
+        "FullName": "ClusterTriggerTest.testAccountClusterTrigger_Update_ClusterChange"
+      },
+      {
+        "Id": "07Mdx00000IogktEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAccountClusterTrigger_Update_NoChange_NoCascade",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 326,
+        "FullName": "ClusterTriggerTest.testAccountClusterTrigger_Update_NoChange_NoCascade"
+      },
+      {
+        "Id": "07Mdx00000IogkuEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": "Class.ClusterTriggerTest.testAccountClusterTrigger_Update_SalesChannelChange: line 203, column 1",
+        "Message": "System.DmlException: Update failed. First exception on row 0 with id 001dx00000r8lUjAAI; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAccountClusterTrigger_Update_SalesChannelChange",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1020,
+        "FullName": "ClusterTriggerTest.testAccountClusterTrigger_Update_SalesChannelChange"
+      },
+      {
+        "Id": "07Mdx00000IogkvEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testLeadClusterTrigger_Conversion",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 2246,
+        "FullName": "ClusterTriggerTest.testLeadClusterTrigger_Conversion"
+      },
+      {
+        "Id": "07Mdx00000IogkwEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testLeadClusterTrigger_Conversion_WithExistingOpp",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1259,
+        "FullName": "ClusterTriggerTest.testLeadClusterTrigger_Conversion_WithExistingOpp"
+      },
+      {
+        "Id": "07Mdx00000IogkxEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testLeadClusterTrigger_Insert",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 88,
+        "FullName": "ClusterTriggerTest.testLeadClusterTrigger_Insert"
+      },
+      {
+        "Id": "07Mdx00000IogkyEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": "Class.ClusterTriggerTest.testLeadClusterTrigger_Update: line 102, column 1",
+        "Message": "System.DmlException: Update failed. First exception on row 0 with id 00Qdx00000Jkgm8EAB; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testLeadClusterTrigger_Update",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 91,
+        "FullName": "ClusterTriggerTest.testLeadClusterTrigger_Update"
+      },
+      {
+        "Id": "07Mdx00000IogkzEAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": "Class.ClusterTriggerTest.testOpportunityClusterTrigger_BulkUpdate: line 311, column 1",
+        "Message": "System.DmlException: Update failed. First exception on row 0 with id 006dx00000OZsuDAAT; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOpportunityClusterTrigger_BulkUpdate",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 407,
+        "FullName": "ClusterTriggerTest.testOpportunityClusterTrigger_BulkUpdate"
+      },
+      {
+        "Id": "07Mdx00000Iogl0EAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOpportunityClusterTrigger_Insert",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 325,
+        "FullName": "ClusterTriggerTest.testOpportunityClusterTrigger_Insert"
+      },
+      {
+        "Id": "07Mdx00000Iogl1EAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOpportunityClusterTrigger_Update_ClusterChange",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 405,
+        "FullName": "ClusterTriggerTest.testOpportunityClusterTrigger_Update_ClusterChange"
+      },
+      {
+        "Id": "07Mdx00000Iogl2EAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOpportunityClusterTrigger_Update_NoChange_Skipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 412,
+        "FullName": "ClusterTriggerTest.testOpportunityClusterTrigger_Update_NoChange_Skipped"
+      },
+      {
+        "Id": "07Mdx00000Iogl3EAB",
+        "QueueItemId": "709dx00000Dl7hjAAB",
+        "StackTrace": "Class.ClusterTriggerTest.testOpportunityClusterTrigger_Update_SalesChannelChange: line 256, column 1",
+        "Message": "System.DmlException: Update failed. First exception on row 0 with id 006dx00000OZsuLAAT; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOpportunityClusterTrigger_Update_SalesChannelChange",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001ymnZAAQ",
+          "Name": "ClusterTriggerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 325,
+        "FullName": "ClusterTriggerTest.testOpportunityClusterTrigger_Update_SalesChannelChange"
+      },
+      {
+        "Id": "07Mdx00000IogmUEAR",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testActiveStatusTrueWhenEdgesPresent",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 234,
+        "FullName": "ShopifySalesSyncServiceTest.testActiveStatusTrueWhenEdgesPresent"
+      },
+      {
+        "Id": "07Mdx00000IogmVEAR",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchChunkExceptionCreatesLog",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 214,
+        "FullName": "ShopifySalesSyncServiceTest.testBatchChunkExceptionCreatesLog"
+      },
+      {
+        "Id": "07Mdx00000IogmWEAR",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchErrorCreatesLog",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 160,
+        "FullName": "ShopifySalesSyncServiceTest.testBatchErrorCreatesLog"
+      },
+      {
+        "Id": "07Mdx00000IogmXEAR",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchGraphQLErrorCreatesLog",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 277,
+        "FullName": "ShopifySalesSyncServiceTest.testBatchGraphQLErrorCreatesLog"
+      },
+      {
+        "Id": "07Mdx00000IogmYEAR",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchSuccess",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 178,
+        "FullName": "ShopifySalesSyncServiceTest.testBatchSuccess"
+      },
+      {
+        "Id": "07Mdx00000IogmZEAR",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBillingAddress_UnresolvableState_Skipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 80,
+        "FullName": "ShopifySalesSyncServiceTest.testBillingAddress_UnresolvableState_Skipped"
+      },
+      {
+        "Id": "07Mdx00000IogmaEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBothShippingAndBillingAddressSynced",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 75,
+        "FullName": "ShopifySalesSyncServiceTest.testBothShippingAndBillingAddressSynced"
+      },
+      {
+        "Id": "07Mdx00000IogmbEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testDirectServiceCall_ShippingAndSalesUpdated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 73,
+        "FullName": "ShopifySalesSyncServiceTest.testDirectServiceCall_ShippingAndSalesUpdated"
+      },
+      {
+        "Id": "07Mdx00000IogmcEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEmptyAccountListReturnsEarly",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 8,
+        "FullName": "ShopifySalesSyncServiceTest.testEmptyAccountListReturnsEarly"
+      },
+      {
+        "Id": "07Mdx00000IogmdEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHttpExceptionCreatesLog",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 143,
+        "FullName": "ShopifySalesSyncServiceTest.testHttpExceptionCreatesLog"
+      },
+      {
+        "Id": "07Mdx00000IogmeEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testLocationNullCreatesLog",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 155,
+        "FullName": "ShopifySalesSyncServiceTest.testLocationNullCreatesLog"
+      },
+      {
+        "Id": "07Mdx00000IogmfEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": "Class.ShopifySalesSyncServiceTest.testNoConfigForChannel_SkipsAccount: line 606, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testNoConfigForChannel_SkipsAccount",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 11,
+        "FullName": "ShopifySalesSyncServiceTest.testNoConfigForChannel_SkipsAccount"
+      },
+      {
+        "Id": "07Mdx00000IogmgEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testNullAmountsDefaultToZero",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 170,
+        "FullName": "ShopifySalesSyncServiceTest.testNullAmountsDefaultToZero"
+      },
+      {
+        "Id": "07Mdx00000IogmhEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSchedulerRunsBatch",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 239,
+        "FullName": "ShopifySalesSyncServiceTest.testSchedulerRunsBatch"
+      },
+      {
+        "Id": "07Mdx00000IogmiEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShippingAddressSynced_BillingNull",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 75,
+        "FullName": "ShopifySalesSyncServiceTest.testShippingAddressSynced_BillingNull"
+      },
+      {
+        "Id": "07Mdx00000IogmjEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShippingAddress_CanadianProvince_Resolved",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 69,
+        "FullName": "ShopifySalesSyncServiceTest.testShippingAddress_CanadianProvince_Resolved"
+      },
+      {
+        "Id": "07Mdx00000IogmkEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShippingAddress_PrefixFormat_Resolved",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 71,
+        "FullName": "ShopifySalesSyncServiceTest.testShippingAddress_PrefixFormat_Resolved"
+      },
+      {
+        "Id": "07Mdx00000IogmlEAB",
+        "QueueItemId": "709dx00000Dl7hpAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testShippingAddress_UnresolvableState_Skipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi29IAD",
+          "Name": "ShopifySalesSyncServiceTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 69,
+        "FullName": "ShopifySalesSyncServiceTest.testShippingAddress_UnresolvableState_Skipped"
+      },
+      {
+        "Id": "07Mdx00000Iogo5EAB",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testQueueable_EmptyList_NoOp",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 108,
+        "FullName": "ShopifyAddressSyncTest.testQueueable_EmptyList_NoOp"
+      },
+      {
+        "Id": "07Mdx00000Iogo6EAB",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testQueueable_Execute_ShippingAndBilling_NoLogs",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 990,
+        "FullName": "ShopifyAddressSyncTest.testQueueable_Execute_ShippingAndBilling_NoLogs"
+      },
+      {
+        "Id": "07Mdx00000Iogo7EAB",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testQueueable_HttpError_LogsCreated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 756,
+        "FullName": "ShopifyAddressSyncTest.testQueueable_HttpError_LogsCreated"
+      },
+      {
+        "Id": "07Mdx00000Iogo8EAB",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testQueueable_NoShopifyId_Skipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 637,
+        "FullName": "ShopifyAddressSyncTest.testQueueable_NoShopifyId_Skipped"
+      },
+      {
+        "Id": "07Mdx00000Iogo9EAB",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testQueueable_NullList_NoOp",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 59,
+        "FullName": "ShopifyAddressSyncTest.testQueueable_NullList_NoOp"
+      },
+      {
+        "Id": "07Mdx00000IogoAEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_CalloutException_LogsCreated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 669,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_CalloutException_LogsCreated"
+      },
+      {
+        "Id": "07Mdx00000IogoBEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_EmptyList_ReturnsEarly",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 20,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_EmptyList_ReturnsEarly"
+      },
+      {
+        "Id": "07Mdx00000IogoCEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_GraphQLError_LogsCreated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 658,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_GraphQLError_LogsCreated"
+      },
+      {
+        "Id": "07Mdx00000IogoDEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_HttpError_LogsCreated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 684,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_HttpError_LogsCreated"
+      },
+      {
+        "Id": "07Mdx00000IogoEEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_MultipleLocations_AllProcessed",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1141,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_MultipleLocations_AllProcessed"
+      },
+      {
+        "Id": "07Mdx00000IogoFEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_NoShopifyId_LocationSkipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 614,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_NoShopifyId_LocationSkipped"
+      },
+      {
+        "Id": "07Mdx00000IogoGEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_NullInput_ReturnsEarly",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 17,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_NullInput_ReturnsEarly"
+      },
+      {
+        "Id": "07Mdx00000IogoHEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": "Class.ShopifyAddressSyncTest.testSyncAddress_NullSalesChannel_ConfigNull_Skipped: line 258, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_NullSalesChannel_ConfigNull_Skipped",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 319,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_NullSalesChannel_ConfigNull_Skipped"
+      },
+      {
+        "Id": "07Mdx00000IogoIEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_ShippingAddressIncomplete_ShippingSkipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 624,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_ShippingAddressIncomplete_ShippingSkipped"
+      },
+      {
+        "Id": "07Mdx00000IogoJEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_ShippingAndBilling_BothSynced_NoLogs",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 621,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_ShippingAndBilling_BothSynced_NoLogs"
+      },
+      {
+        "Id": "07Mdx00000IogoKEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_ShippingOnly_BillingSkipped_NoLogs",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 621,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_ShippingOnly_BillingSkipped_NoLogs"
+      },
+      {
+        "Id": "07Mdx00000IogoLEAR",
+        "QueueItemId": "709dx00000Dl7hnAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSyncAddress_UserErrors_LogsCreated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000020SnxAAE",
+          "Name": "ShopifyAddressSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 681,
+        "FullName": "ShopifyAddressSyncTest.testSyncAddress_UserErrors_LogsCreated"
+      },
+      {
+        "Id": "07Mdx00000IogphEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": "Class.LeadConversionHandlerTest1.testBulkLeadConversion: line 212, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 1; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBulkLeadConversion",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 312,
+        "FullName": "LeadConversionHandlerTest1.testBulkLeadConversion"
+      },
+      {
+        "Id": "07Mdx00000IogpiEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": "Class.LeadConversionHandlerTest1.createLead: line 46, column 1\nClass.LeadConversionHandlerTest1.testConversionWithoutOpportunity: line 105, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testConversionWithoutOpportunity",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 6,
+        "FullName": "LeadConversionHandlerTest1.testConversionWithoutOpportunity"
+      },
+      {
+        "Id": "07Mdx00000IogpjEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testExistingOpenOpportunitySync",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 2012,
+        "FullName": "LeadConversionHandlerTest1.testExistingOpenOpportunitySync"
+      },
+      {
+        "Id": "07Mdx00000IogpkEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandlerNoOpBranch",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 56,
+        "FullName": "LeadConversionHandlerTest1.testHandlerNoOpBranch"
+      },
+      {
+        "Id": "07Mdx00000IogplEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testQualifiedLeadPartnershipsChannel",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1250,
+        "FullName": "LeadConversionHandlerTest1.testQualifiedLeadPartnershipsChannel"
+      },
+      {
+        "Id": "07Mdx00000IogpmEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSingleLeadFullConversion",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 561,
+        "FullName": "LeadConversionHandlerTest1.testSingleLeadFullConversion"
+      },
+      {
+        "Id": "07Mdx00000IogpnEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testSpecialtyCanChannelNoPhysicalStore",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 527,
+        "FullName": "LeadConversionHandlerTest1.testSpecialtyCanChannelNoPhysicalStore"
+      },
+      {
+        "Id": "07Mdx00000IogpoEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testTaxIdNineDigitsAndUnique",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 4,
+        "FullName": "LeadConversionHandlerTest1.testTaxIdNineDigitsAndUnique"
+      },
+      {
+        "Id": "07Mdx00000IogppEAB",
+        "QueueItemId": "709dx00000Dl7hmAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testValidationBlocksQualificationWhenFieldsMissing",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001yzJNAAY",
+          "Name": "LeadConversionHandlerTest1",
+          "NamespacePrefix": null
+        },
+        "RunTime": 58,
+        "FullName": "LeadConversionHandlerTest1.testValidationBlocksQualificationWhenFieldsMissing"
+      },
+      {
+        "Id": "07Mdx00000IogrJEAR",
+        "QueueItemId": "709dx00000Dl7hlAAB",
+        "StackTrace": "Class.LeadConversionHandlerTest.testHandleConversion_ConvertedLead_ExistingOppSynced: line 130, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleConversion_ConvertedLead_ExistingOppSynced",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx000001ymkLAAQ",
+          "Name": "LeadConversionHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 482,
+        "FullName": "LeadConversionHandlerTest.testHandleConversion_ConvertedLead_ExistingOppSynced"
+      },
+      {
+        "Id": "07Mdx00000IogrKEAR",
+        "QueueItemId": "709dx00000Dl7hlAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleConversion_ConvertedLead_NewAccount_AssignsAccountAndContact",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymkLAAQ",
+          "Name": "LeadConversionHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 2497,
+        "FullName": "LeadConversionHandlerTest.testHandleConversion_ConvertedLead_NewAccount_AssignsAccountAndContact"
+      },
+      {
+        "Id": "07Mdx00000IogrLEAR",
+        "QueueItemId": "709dx00000Dl7hlAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleConversion_ConvertedLead_NoExistingOpps",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymkLAAQ",
+          "Name": "LeadConversionHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1156,
+        "FullName": "LeadConversionHandlerTest.testHandleConversion_ConvertedLead_NoExistingOpps"
+      },
+      {
+        "Id": "07Mdx00000IogrMEAR",
+        "QueueItemId": "709dx00000Dl7hlAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleConversion_ExistingOppAlreadyMatching_NoUpdate",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymkLAAQ",
+          "Name": "LeadConversionHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1537,
+        "FullName": "LeadConversionHandlerTest.testHandleConversion_ExistingOppAlreadyMatching_NoUpdate"
+      },
+      {
+        "Id": "07Mdx00000IogrNEAR",
+        "QueueItemId": "709dx00000Dl7hlAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleConversion_NoConvertedIds_NoSOQL",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymkLAAQ",
+          "Name": "LeadConversionHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 89,
+        "FullName": "LeadConversionHandlerTest.testHandleConversion_NoConvertedIds_NoSOQL"
+      },
+      {
+        "Id": "07Mdx00000IogrOEAR",
+        "QueueItemId": "709dx00000Dl7hlAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleConversion_NotConverted_NoProcessing",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymkLAAQ",
+          "Name": "LeadConversionHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 90,
+        "FullName": "LeadConversionHandlerTest.testHandleConversion_NotConverted_NoProcessing"
+      },
+      {
+        "Id": "07Mdx00000IogrPEAR",
+        "QueueItemId": "709dx00000Dl7hlAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandleConversion_NullOldMap_NoProcessing",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymkLAAQ",
+          "Name": "LeadConversionHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 89,
+        "FullName": "LeadConversionHandlerTest.testHandleConversion_NullOldMap_NoProcessing"
+      },
+      {
+        "Id": "07Mdx00000IogsvEAB",
+        "QueueItemId": "709dx00000Dl7hqAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testExecuteWithEmptyList",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1rIAD",
+          "Name": "ShopifyAssociationSyncSchedulableTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 215,
+        "FullName": "ShopifyAssociationSyncSchedulableTest.testExecuteWithEmptyList"
+      },
+      {
+        "Id": "07Mdx00000IogswEAB",
+        "QueueItemId": "709dx00000Dl7hqAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testExecuteWithValidData",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1rIAD",
+          "Name": "ShopifyAssociationSyncSchedulableTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 1600,
+        "FullName": "ShopifyAssociationSyncSchedulableTest.testExecuteWithValidData"
+      },
+      {
+        "Id": "07Mdx00000IogsxEAB",
+        "QueueItemId": "709dx00000Dl7hqAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testExecuteWithValidData_Canada",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1rIAD",
+          "Name": "ShopifyAssociationSyncSchedulableTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 597,
+        "FullName": "ShopifyAssociationSyncSchedulableTest.testExecuteWithValidData_Canada"
+      },
+      {
+        "Id": "07Mdx00000IogsyEAB",
+        "QueueItemId": "709dx00000Dl7hqAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testExecuteWithoutShopifyIds",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pPn00000ACi1rIAD",
+          "Name": "ShopifyAssociationSyncSchedulableTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 544,
+        "FullName": "ShopifyAssociationSyncSchedulableTest.testExecuteWithoutShopifyIds"
+      },
+      {
+        "Id": "07Mdx00000IoguYEAR",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testAddressProvincePrefixFormat",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 452,
+        "FullName": "ShopifyOrderSyncTest.testAddressProvincePrefixFormat"
+      },
+      {
+        "Id": "07Mdx00000IoguZEAR",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchDefaultConstructor",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 596,
+        "FullName": "ShopifyOrderSyncTest.testBatchDefaultConstructor"
+      },
+      {
+        "Id": "07Mdx00000IoguaEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchErrorHandled",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 359,
+        "FullName": "ShopifyOrderSyncTest.testBatchErrorHandled"
+      },
+      {
+        "Id": "07Mdx00000IogubEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchExecuteCatchBlock",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 357,
+        "FullName": "ShopifyOrderSyncTest.testBatchExecuteCatchBlock"
+      },
+      {
+        "Id": "07Mdx00000IogucEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchFinishCountQueries",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 589,
+        "FullName": "ShopifyOrderSyncTest.testBatchFinishCountQueries"
+      },
+      {
+        "Id": "07Mdx00000IogudEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchFullSync",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 792,
+        "FullName": "ShopifyOrderSyncTest.testBatchFullSync"
+      },
+      {
+        "Id": "07Mdx00000IogueEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchNoActiveAccounts",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 624,
+        "FullName": "ShopifyOrderSyncTest.testBatchNoActiveAccounts"
+      },
+      {
+        "Id": "07Mdx00000IogufEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchSchedulable",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 463,
+        "FullName": "ShopifyOrderSyncTest.testBatchSchedulable"
+      },
+      {
+        "Id": "07Mdx00000IogugEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testBatchSchedulableRegistered",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 418,
+        "FullName": "ShopifyOrderSyncTest.testBatchSchedulableRegistered"
+      },
+      {
+        "Id": "07Mdx00000IoguhEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testDailySyncMode",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 345,
+        "FullName": "ShopifyOrderSyncTest.testDailySyncMode"
+      },
+      {
+        "Id": "07Mdx00000IoguiEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testEmptyAccountList",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 22,
+        "FullName": "ShopifyOrderSyncTest.testEmptyAccountList"
+      },
+      {
+        "Id": "07Mdx00000IogujEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testFullSyncGetsHistoricalOrders",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 332,
+        "FullName": "ShopifyOrderSyncTest.testFullSyncGetsHistoricalOrders"
+      },
+      {
+        "Id": "07Mdx00000IogukEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testGraphQLError",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 232,
+        "FullName": "ShopifyOrderSyncTest.testGraphQLError"
+      },
+      {
+        "Id": "07Mdx00000IogulEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHttpError",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 128,
+        "FullName": "ShopifyOrderSyncTest.testHttpError"
+      },
+      {
+        "Id": "07Mdx00000IogumEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHttpException",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 95,
+        "FullName": "ShopifyOrderSyncTest.testHttpException"
+      },
+      {
+        "Id": "07Mdx00000IogunEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testLastOrderDateUpdated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 317,
+        "FullName": "ShopifyOrderSyncTest.testLastOrderDateUpdated"
+      },
+      {
+        "Id": "07Mdx00000IoguoEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": "Class.ShopifyOrderSyncTest.testMissingConfig: line 697, column 1",
+        "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Sales Channel: bad value for restricted picklist field: Key Accounts: [Sales_Channel__c]",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testMissingConfig",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 71,
+        "FullName": "ShopifyOrderSyncTest.testMissingConfig"
+      },
+      {
+        "Id": "07Mdx00000IogupEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": "Class.ShopifyOrderSyncTest.testNoAccountMatch_OrderSkipped: line 567, column 1",
+        "Message": "System.AssertException: Assertion Failed: Date updated even when orders are skipped: Expected: 2026-10-06 00:00:00, Actual: null",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testNoAccountMatch_OrderSkipped",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 275,
+        "FullName": "ShopifyOrderSyncTest.testNoAccountMatch_OrderSkipped"
+      },
+      {
+        "Id": "07Mdx00000IoguqEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": "Class.ShopifyOrderSyncTest.testNoOrdersToday: line 538, column 1",
+        "Message": "System.AssertException: Assertion Failed: Date updated even with no orders today: Expected: 2026-10-06 00:00:00, Actual: null",
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testNoOrdersToday",
+        "Outcome": "Fail",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 336,
+        "FullName": "ShopifyOrderSyncTest.testNoOrdersToday"
+      },
+      {
+        "Id": "07Mdx00000IogurEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOrderCreatedViaCompanyId",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 328,
+        "FullName": "ShopifyOrderSyncTest.testOrderCreatedViaCompanyId"
+      },
+      {
+        "Id": "07Mdx00000IogusEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOrderCreatedViaLocationId",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 334,
+        "FullName": "ShopifyOrderSyncTest.testOrderCreatedViaLocationId"
+      },
+      {
+        "Id": "07Mdx00000IogutEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testOrderUpdatedOnSecondSync",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 331,
+        "FullName": "ShopifyOrderSyncTest.testOrderUpdatedOnSecondSync"
+      },
+      {
+        "Id": "07Mdx00000IoguuEAB",
+        "QueueItemId": "709dx00000Dl7hoAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testPaginatedOrdersCreated",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx0000024qoTAAQ",
+          "Name": "ShopifyOrderSyncTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 472,
+        "FullName": "ShopifyOrderSyncTest.testPaginatedOrdersCreated"
+      },
+      {
+        "Id": "07Mdx00000IogwAEAR",
+        "QueueItemId": "709dx00000Dl7hhAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandle_ClusterChanged_CascadesToOppAndContact",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymlxAAA",
+          "Name": "AccountCascadeHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 463,
+        "FullName": "AccountCascadeHandlerTest.testHandle_ClusterChanged_CascadesToOppAndContact"
+      },
+      {
+        "Id": "07Mdx00000IogwBEAR",
+        "QueueItemId": "709dx00000Dl7hhAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandle_NoChange_ReturnsEarly",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymlxAAA",
+          "Name": "AccountCascadeHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 18,
+        "FullName": "AccountCascadeHandlerTest.testHandle_NoChange_ReturnsEarly"
+      },
+      {
+        "Id": "07Mdx00000IogwCEAR",
+        "QueueItemId": "709dx00000Dl7hhAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandle_NoContacts_SyncSkipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymlxAAA",
+          "Name": "AccountCascadeHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 374,
+        "FullName": "AccountCascadeHandlerTest.testHandle_NoContacts_SyncSkipped"
+      },
+      {
+        "Id": "07Mdx00000IogwDEAR",
+        "QueueItemId": "709dx00000Dl7hhAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandle_NoOpenOpportunities_SyncSkipped",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymlxAAA",
+          "Name": "AccountCascadeHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 430,
+        "FullName": "AccountCascadeHandlerTest.testHandle_NoOpenOpportunities_SyncSkipped"
+      },
+      {
+        "Id": "07Mdx00000IogwEEAR",
+        "QueueItemId": "709dx00000Dl7hhAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandle_NullOldMap_AllAccountsProcessed",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymlxAAA",
+          "Name": "AccountCascadeHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 339,
+        "FullName": "AccountCascadeHandlerTest.testHandle_NullOldMap_AllAccountsProcessed"
+      },
+      {
+        "Id": "07Mdx00000IogwFEAR",
+        "QueueItemId": "709dx00000Dl7hhAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandle_OppAlreadyCorrect_NoUpdate",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymlxAAA",
+          "Name": "AccountCascadeHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 445,
+        "FullName": "AccountCascadeHandlerTest.testHandle_OppAlreadyCorrect_NoUpdate"
+      },
+      {
+        "Id": "07Mdx00000IogwGEAR",
+        "QueueItemId": "709dx00000Dl7hhAAB",
+        "StackTrace": null,
+        "Message": null,
+        "AsyncApexJobId": "707dx00001wUjqcAAC",
+        "MethodName": "testHandle_SalesChannelChanged_CascadesFires",
+        "Outcome": "Pass",
+        "ApexClass": {
+          "Id": "01pdx000001ymlxAAA",
+          "Name": "AccountCascadeHandlerTest",
+          "NamespacePrefix": null
+        },
+        "RunTime": 360,
+        "FullName": "AccountCascadeHandlerTest.testHandle_SalesChannelChanged_CascadesFires"
+      }
+    ]
+  }
+}

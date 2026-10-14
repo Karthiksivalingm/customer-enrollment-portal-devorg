@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Channel_V1__c</fullName>
+    <description>Original Sales Channel value before the Oct 2026 Sales Channel / Sector transition. Backup only - populated by data migration. Do not edit. Edit access: System Administrator only.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Backup of the original Sales Channel value (before the 2026 transition). Do not edit.</inlineHelpText>
+    <label>Sales Channel V1</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

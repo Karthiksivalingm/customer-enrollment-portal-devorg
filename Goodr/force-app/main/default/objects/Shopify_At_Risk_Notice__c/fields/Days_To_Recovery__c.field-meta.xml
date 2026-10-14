@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_To_Recovery__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(ISBLANK(Recovered_Date__c), ISBLANK(Notice_Date__c)),
+  null,
+  Recovered_Date__c - Notice_Date__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>How many days it took this store to start ordering again after the notice was sent.</inlineHelpText>
+    <label>Days To Recovery</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

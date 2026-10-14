@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>30-Day Warning (Month 17)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Warm Off 3 - 30 Day Warning</name>
+    <style>none</style>
+    <subject>Your goodr wholesale account will be deactivated on {!Shopify_At_Risk_Notice__c.Deactivation_Date__c}</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+This is a formal notice that your goodr wholesale account, {!Shopify_At_Risk_Notice__c.Store_Name__c}, is scheduled for deactivation on {!Shopify_At_Risk_Notice__c.Deactivation_Date__c} due to 18 months of inactivity, per Section 22 of our Terms of Service.
+
+Placing an order before that date will keep your account active with no interruption. If your account is deactivated, reactivation requires submitting a new Retailer Application, and approval is not guaranteed.
+
+If you’d like help placing an order or have questions, please reply to this email or contact your account representative directly.
+
+Best,
+
+The goodr wholesale team
+
+Section 22, SellGoodr Terms of Service, effective 24 July 2026.
+© 2026 goodr. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

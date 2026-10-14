@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>At_Risk_Mode__c</field>
+        <value xsi:type="xsd:string">Every Stage</value>
+    </values>
+    <values>
+        <field>Auto_Offboard__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Deactivation_Months__c</field>
+        <value xsi:type="xsd:double">18.0</value>
+    </values>
+    <values>
+        <field>Email_Template_Name__c</field>
+        <value xsi:type="xsd:string">Shopify At Risk Notice</value>
+    </values>
+    <values>
+        <field>Exclude_Bounced__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Legacy_Notice_Enabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Offboard_Owner_Username__c</field>
+        <value xsi:type="xsd:string">kaylanewby@goodr.com.partial</value>
+    </values>
+    <values>
+        <field>Offboard_Reason__c</field>
+        <value xsi:type="xsd:string">Store At Risk</value>
+    </values>
+    <values>
+        <field>Org_Wide_Email__c</field>
+        <value xsi:type="xsd:string">retailsupportuat@goodr.com</value>
+    </values>
+    <values>
+        <field>Reminder_Days__c</field>
+        <value xsi:type="xsd:double">15.0</value>
+    </values>
+    <values>
+        <field>Require_Opt_In__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Template_Stage_1__c</field>
+        <value xsi:type="xsd:string">Warm Off 1 - Check In</value>
+    </values>
+    <values>
+        <field>Template_Stage_2__c</field>
+        <value xsi:type="xsd:string">Warm Off 2 - Early Notice</value>
+    </values>
+    <values>
+        <field>Template_Stage_3__c</field>
+        <value xsi:type="xsd:string">Warm Off 3 - 30 Day Warning</value>
+    </values>
+    <values>
+        <field>Template_Stage_4__c</field>
+        <value xsi:type="xsd:string">Warm Off 4 - 15 Day Reminder</value>
+    </values>
+    <values>
+        <field>Template_Stage_5__c</field>
+        <value xsi:type="xsd:string">Warm Off 5 - Deactivation Notice</value>
+    </values>
+    <values>
+        <field>Test_Store_Name_Filter__c</field>
+        <value xsi:type="xsd:string">R12 WOT%</value>
+    </values>
+</CustomMetadata>

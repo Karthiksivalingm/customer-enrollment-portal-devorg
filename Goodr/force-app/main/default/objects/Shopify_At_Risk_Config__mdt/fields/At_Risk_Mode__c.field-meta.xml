@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>At_Risk_Mode__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>At Risk Mode</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Every Stage</fullName>
+                <default>true</default>
+                <label>Every Stage</label>
+            </value>
+            <value>
+                <fullName>Entry Only</fullName>
+                <default>false</default>
+                <label>Entry Only</label>
+            </value>
+            <value>
+                <fullName>Off</fullName>
+                <default>false</default>
+                <label>Off</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

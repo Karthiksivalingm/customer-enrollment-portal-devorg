@@ -1,0 +1,134 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Salesforce Sans", Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            padding: 24px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 24px;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: #032d60;
+            margin-bottom: 20px;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #5c5c5c;
+            margin-bottom: 6px;
+        }
+
+        .dropdown {
+            width: 340px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #d8dde6;
+            background-color: #ffffff;
+            font-size: 14px;
+            color: #032d60;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown:hover {
+            border-color: #0176d3;
+        }
+
+        .dropdown:focus {
+            outline: none;
+            border-color: #0176d3;
+            box-shadow: 0 0 0 2px rgba(1, 118, 211, 0.2);
+        }
+
+        .iframe-container {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #d8dde6;
+        }
+
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            background: #fff;
+        }
+    </style>
+
+    <script>
+        function changeReport(url) {
+            document.getElementById("frame").src = url;
+        }
+    </script>
+
+    <div class="container">
+        <div class="card">
+
+            <div class="header">
+                Tableau Dashboard Viewer
+            </div>
+
+            <div class="filter-container">
+                <label class="filter-label">Select Dashboard</label>
+
+                <select class="dropdown" onchange="changeReport(this.value)">
+                    
+                    <option value="https://us-west-2b.online.tableau.com/t/goodrbi/views/global_picked_up_vs_pending/GlobalPickedupvsPendingRevenueDashboard?:embed=yes">
+                        Global Picked Up vs Pending
+                    </option>
+
+                    <option value="https://us-west-2b.online.tableau.com/t/goodrbi/views/goodrB2BDashboardV2/B2BDashboardV2?:embed=yes">
+                        Goodr B2B Dashboard V2
+                    </option>
+
+                    <option value="https://us-west-2b.online.tableau.com/t/goodrbi/views/key_acc_for_vs_actual_vs_booked_17410485497820/MONTHKeyAccountForecastvsActualvsBooked?:embed=yes">
+                        Key Account Forecast vs Actual vs Booked
+                    </option>
+
+                    <option value="https://us-west-2b.online.tableau.com/t/goodrbi/views/SellThroughDataDashboard_17502769778760/RevenueDashboard?:embed=yes">
+                        Sell Through Data Dashboard
+                    </option>
+
+                    <!--  NEW DASHBOARD ADDED -->
+                   <option value="https://us-west-2b.online.tableau.com/t/goodrbi/views/UNITDASHBOARDSKUINFO/CHANNELCOMP?:embed=yes">
+                    Unit Dashboard &amp; SKU Info
+                     </option>
+                     
+                     <option value="https://us-west-2b.online.tableau.com/t/goodrbi/views/goodrB2BDashboardV2/B2B-ChannelPerformance?:embed=yes">
+                       B2B - Channel Performance
+                           </option>
+
+                </select>
+            </div>
+
+            <div class="iframe-container">
+                <iframe id="frame"
+                    src="https://us-west-2b.online.tableau.com/t/goodrbi/views/global_picked_up_vs_pending/GlobalPickedupvsPendingRevenueDashboard?:embed=yes">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+
+</apex:page>
