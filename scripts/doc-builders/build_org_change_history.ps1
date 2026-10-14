@@ -1,4 +1,4 @@
-# Pulls the org's own change history into 04_Change_Records/Org_Change_History:
+# Pulls the org's own change history into 04-Change-Records/Org-Change-History:
 #   - deploys (DeployRequest, kept by Salesforce for ~30 days) and their components
 #   - Setup Audit Trail (kept by Salesforce for 180 days)
 # and writes a dated Markdown timeline. Re-run any time; it overwrites the generated files.
@@ -6,7 +6,7 @@
 param([string]$Since = '2026-08-01', [string]$UserLike = 'sandipp@goodr.com%', [string[]]$Orgs = @('GDRSAND', 'GDRPROD'))
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
-$out = Join-Path $root '04_Change_Records\Org_Change_History'
+$out = Join-Path $root '04-Change-Records\Org-Change-History'
 New-Item -ItemType Directory -Force $out | Out-Null
 function Q($org, $soql, [switch]$Tooling) {
   $a = @('data', 'query', '-o', $org, '-q', $soql, '--json'); if ($Tooling) { $a += '--use-tooling-api' }
@@ -16,7 +16,7 @@ function LocalTime($d) { ([datetime]$d).ToString('yyyy-MM-dd HH:mm') }
 $md = @("# Org Change History (generated)", "",
   "_Generated $(Get-Date -Format 'yyyy-MM-dd HH:mm') (local time) by ``scripts/doc-builders/build_org_change_history.ps1`` from each org's own records._",
   "_Sources: DeployRequest (Salesforce keeps it for about 30 days) and the Setup Audit Trail (180 days), filtered to user ``$UserLike`` since $Since._",
-  "_Raw CSVs are in this folder. The narrative explanation of each change is in [../Change_Log.md](../Change_Log.md)._", "")
+  "_Raw CSVs are in this folder. The narrative explanation of each change is in [DOCUMENT-INDEX](../../DOCUMENT-INDEX.md#04--change-records) and the CR-0xx documents in [04-Change-Records](../)._", "")
 foreach ($org in $Orgs) {
   # ---- deploys ----
   $deps = Q $org "SELECT Id, Status, CheckOnly, CreatedDate, CompletedDate, CreatedBy.Name, NumberComponentsDeployed, NumberComponentErrors, NumberTestsCompleted, NumberTestErrors FROM DeployRequest WHERE CreatedDate >= ${Since}T00:00:00Z ORDER BY CreatedDate" -Tooling
@@ -54,5 +54,5 @@ foreach ($org in $Orgs) {
     $md += ""
   }
 }
-[IO.File]::WriteAllText("$out\Org_Change_History.md", ($md -join "`n") + "`n", (New-Object Text.UTF8Encoding($false)))
+[IO.File]::WriteAllText("$out\Org-Change-History.md", ($md -join "`n") + "`n", (New-Object Text.UTF8Encoding($false)))
 "Written to $out"

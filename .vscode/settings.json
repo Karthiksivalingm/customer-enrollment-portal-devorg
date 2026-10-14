@@ -5,8 +5,8 @@
     "**/.sf": true,
     "**/.sfdx": true,
     "**/coverage": true,
-    "04_Change_Records/Org_Change_History/*.csv": true,
-    "06_Deployment/Post_Deployment_Verification/test_runs": true
+    "04-Change-Records/Org-Change-History/*.csv": true,
+    "06-Deployment/Post-Deployment-Verification/test_runs": true
   },
   "files.exclude": {
     "**/.sfdx": true

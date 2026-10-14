@@ -1,44 +1,42 @@
-# Goodr: Salesforce Sandbox (GDRSAND)
+# Goodr — Salesforce (sandbox GDRSAND)
 
-> **Sandbox repository.** The metadata in `force-app/` mirrors the Goodr **sandbox** (`GDRSAND`). All record data in this
-> repository (CSV / Excel) is **sandbox data**. The packages in `06_Deployment/Packages/` are *prepared for* production
-> (`GDRPROD`) and haven't been deployed there yet.
+> Part of the shared **sfdcut/SFDC** repository (one folder per client project: `FD/`, `MLB/`, `Goodr/`).
+> `force-app/` mirrors the Goodr **sandbox** (`GDRSAND`), and all record data in this folder is **sandbox data**.
+> The packages in `06-Deployment/Packages/` are prepared for production (`GDRPROD`) and haven't been deployed there yet.
 
-**New developer? Start with [01_Instructions/Developer_Onboarding.md](01_Instructions/Developer_Onboarding.md).**
-Full dated history of every change: [04_Change_Records/Change_Log.md](04_Change_Records/Change_Log.md).
+**New developer? Start with [01-Instructions/Developer-Onboarding.md](01-Instructions/Developer-Onboarding.md).**
+Every document by number: **[DOCUMENT-INDEX.md](DOCUMENT-INDEX.md)**.
 
 ## Folders
 
-| # | Folder | What's in it | Start here |
-|---|---|---|---|
-| 01 | [01_Instructions](01_Instructions/) | Rules Claude and the team follow: process, approvals, data, security | [Working_Instructions.md](01_Instructions/Working_Instructions.md) |
-| 02 | [02_Knowledge_Base](02_Knowledge_Base/) | Project overview: business context, orgs, mapping, cluster model, client decisions | [Project_Overview.md](02_Knowledge_Base/Project_Overview.md) |
-| 03 | [03_Requirements](03_Requirements/) | Every request with ID, date, status and output | [Requirements_Log.md](03_Requirements/Requirements_Log.md) |
-| 04 | [04_Change_Records](04_Change_Records/) | What changed, before and after: change log, metadata snapshots, data files | [README](04_Change_Records/README.md) · [Change_Log.md](04_Change_Records/Change_Log.md) |
-| 05 | [05_Conflicts](05_Conflicts/) | Conflicts faced and possible conflicts | [Conflicts_Log.md](05_Conflicts/Conflicts_Log.md) |
-| 06 | [06_Deployment](06_Deployment/) | Pre/post-deployment checklists, deployment documents, packages + rollbacks, QA, evidence | [README](06_Deployment/README.md) |
-| 07 | [07_Technical_Documents](07_Technical_Documents/) | Apex classes, triggers, flows, fields, integrations, impact analysis | [README](07_Technical_Documents/README.md) |
-| n/a | `force-app/` | Salesforce source of the sandbox | n/a |
-| n/a | `scripts/` | Verification Apex, document generators, git hook | [README](scripts/README.md) |
-| n/a | `manifest/` | `package.xml` and retrieve manifests (full org sync) | [README](manifest/README.md) |
-| n/a | `.github/` | Pull request template, issue templates (requirement, bug/conflict), CODEOWNERS | n/a |
-| n/a | `.vscode/` | Recommended extensions and workspace settings. VS Code offers to install them when the folder is opened | n/a |
-| n/a | `CLAUDE.md` · `CONTRIBUTING.md` | Rules Claude loads automatically · how to contribute (branches, pull requests, tags) | n/a |
+| # | Folder | What's in it |
+|---|---|---|
+| 01 | [01-Instructions](01-Instructions/) | Shared `AI-Workflow.md` and `Coding-Standards.md` (read-only), Goodr `Project-Rules.md`, `Developer-Onboarding.md` |
+| 02 | [02-Knowledge-Base](02-Knowledge-Base/) | KB-001 Project Overview · KB-002 Shopify At-Risk process · KB-003 Integrations · KB-004 Environment and tooling |
+| 03 | [03-Requirements](03-Requirements/) | One REQ document per request: need, scope, acceptance criteria, status |
+| 04 | [04-Change-Records](04-Change-Records/) | One CR document per change, with date, deploy ID, verification and rollback. Also before-snapshots, data files, the orgs' own change history and the session logs |
+| 05 | [05-Conflicts](05-Conflicts/) | One CON document per conflict faced or open risk |
+| 06 | [06-Deployment](06-Deployment/) | DEP documents, production packages with rollbacks, checklists, QA packs, verification evidence |
+| 07 | [07-Technical](07-Technical/) | TECH documents: cluster engine, inventories of classes / triggers / flows / fields / UI, secure configuration, impact analysis |
+| n/a | `force-app/`, `manifest/`, `config/`, `sfdx-project.json` | Salesforce DX project (run `sf` commands from this `Goodr/` folder) |
+| n/a | [scripts/](scripts/README.md) | Verification Apex, document generators (index, inventories, org history), secret-blocking git hook |
+| n/a | `CLAUDE.md` · `CONTRIBUTING.md` · `.vscode/` · `.github/` | Claude rules · how to contribute · VS Code settings · PR and issue templates (kept for reference; GitHub only reads `.github/` at the repo root) |
 
-## Current project: 2026 Sales Channel / Sector transition
-Key Accounts → Key Account; new Sectors Enterprise / Strategic / Discount / Planned / Self Service / Distributor;
-Specialty CAN retired into Specialty; V1 backup fields; cluster recalculation on Sector change.
-Sandbox metadata: **done**. Sandbox data: **V1 backfill done; Account update applied (159 of 161)**. Production: **packages ready and validated, not deployed**. The Sales Channel value was already renamed to Key Account in production by hand on 2026-10-06 (CHG-07).
-Also in the sandbox: **Shopify At-Risk / Warm-Off offboarding** (see [02_Knowledge_Base/Shopify_At_Risk_Offboarding.md](02_Knowledge_Base/Shopify_At_Risk_Offboarding.md)).
-See [02_Knowledge_Base/Project_Overview.md](02_Knowledge_Base/Project_Overview.md).
+## Current status
+- **Sales Channel / Sector transition:**
+  - **Sandbox metadata:** done.
+  - **Sandbox data:** the V1 backfill is done, and the Account update is applied (159 of 161).
+  - **Production:** packages are ready and validated but not deployed. See [DEP-001](06-Deployment/DEP-001_Sales-Channel-Sector-Production-Deployment.md). Note: "Key Accounts" was already renamed to "Key Account" in production by hand on 2026-10-06 ([CR-007](04-Change-Records/CR-007_Key-Accounts-To-Key-Account-Rename-In-PRODUCTION.md)).
+- **Shopify At-Risk / Warm-Off offboarding:** built in the sandbox and waiting on client decisions. See [KB-002](02-Knowledge-Base/KB-002_Shopify-At-Risk-Offboarding.md) and [DEP-002](06-Deployment/DEP-002_Shopify-At-Risk-Offboarding-Production-Deployment.md).
+- **Open items:** the ⚠ entries in [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
 
-## Quick commands
+## Quick commands (from `Goodr/`)
 ```bash
-sf project retrieve start --metadata ApexClass:ClusterRuleEngine -o GDRSAND
+sf project retrieve start -x manifest/retrieve/pkg_full_sync_20261013.xml -o GDRSAND --api-version 68.0 --ignore-conflicts
 sf project deploy start --source-dir force-app/main/default/classes/ClusterRuleEngine.cls -o GDRSAND --dry-run --test-level RunSpecifiedTests --tests ClusterRuleEngineTest
-sf project deploy validate --metadata-dir 06_Deployment/Packages/KeyAccount_Rename_PROD -o GDRPROD --test-level RunSpecifiedTests --tests ClusterTeamEngineTest --tests ContactClusterTriggerTest
+powershell -ExecutionPolicy Bypass -File scripts/doc-builders/build_document_index.ps1      # after adding a REQ/CR/CON/DEP/TECH document
 ```
 
 ## Security
-Secrets are never committed. `NetSuite_Credential` and `NetSuite_Config` custom metadata are excluded by `.gitignore` and `.forceignore`.
-Org auth (`.sf/`, `.sfdx/`) is git-ignored. The repository is private.
+Credentials are never committed. NetSuite credential records are excluded by `.gitignore` and `.forceignore`, with placeholder templates in
+[TECH-007](07-Technical/TECH-007_Secure-Configuration.md). The secret-blocking hook is enabled with `git config core.hooksPath Goodr/scripts/git-hooks`.

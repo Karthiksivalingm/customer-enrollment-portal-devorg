@@ -15,4 +15,4 @@ labels: bug
 
 **Suspected components:**
 
-_Once understood, log it in `05_Conflicts/Conflicts_Log.md` (CF-xx if it happened, PC-xx if it's a risk)._
+_Once understood, add a CON-0xx document in `05-Conflicts/` and list it in `DOCUMENT-INDEX.md`._

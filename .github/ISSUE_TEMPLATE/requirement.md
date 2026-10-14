@@ -18,4 +18,4 @@ labels: requirement
 **Acceptance criteria:**
 - [ ]
 
-_When work starts, add a row to `03_Requirements/Requirements_Log.md` and reference this issue._
+_When work starts, add a REQ-0xx document in `03-Requirements/`, list it in `DOCUMENT-INDEX.md`, and reference this issue._

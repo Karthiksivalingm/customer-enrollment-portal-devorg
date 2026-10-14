@@ -1,7 +1,7 @@
 #!/bin/sh
 # Goodr: blocks commits that contain credentials.
-# Enable once per clone:  git config core.hooksPath scripts/git-hooks
-# Real secrets live only in the org (see 07_Technical_Documents/Secure_Config_Templates/README.md).
+# Enable once per clone:  git config core.hooksPath Goodr/scripts/git-hooks
+# Real secrets live only in the org (see 07-Technical/TECH-007_Secure-Configuration.md).
 
 fail=0
 
@@ -15,7 +15,7 @@ fi
 
 # 2. Secret-looking content in added lines (values are not printed)
 patterns='shpat_[A-Za-z0-9]{20,}|shpss_[A-Za-z0-9]{20,}|shpca_[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|AKIA[0-9A-Z]{16}|Bearer [A-Za-z0-9._-]{30,}|00D[A-Za-z0-9]{12}![A-Za-z0-9._]{20,}|(Secret|Password|Private_Key|Token_Secret|Access_Token)__c</field>[[:space:]]*<value[^>]*>[^<S]'
-hits=$(git diff --cached -U0 --diff-filter=ACMR -- . ':(exclude)*.xlsx' ':(exclude)*.json' ':(exclude)scripts/git-hooks/*' \
+hits=$(git diff --cached -U0 --diff-filter=ACMR -- . ':(exclude)*.xlsx' ':(exclude)*.json' ':(exclude,glob)**/scripts/git-hooks/*' \
   | grep -E '^\+\+\+ |^\+' | grep -E "^\+\+\+ |$patterns" | grep -B1 -E "$patterns" | grep '^+++ ' | sed 's#^+++ b/#  - #')
 if [ -n "$hits" ]; then
   echo "BLOCKED: possible secret values found in:"
