@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designer_Task_Priority__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Text(Task_Name__c ),
+&quot;Dealer Logo Approval/Creation&quot;, &quot;09&quot;,
+&quot;Brand Diff Banner Creation&quot;, &quot;08&quot;,
+&quot;Email Free Space Sales&quot;, &quot;07&quot;,
+&quot;Email Free Space Service&quot;, &quot;06&quot;,
+&quot;Bonus Offer Images Creative&quot;, &quot;05&quot;,
+&quot;General Sales Offer Image Creative&quot;, &quot;04&quot;,
+&quot;Request Mail Creative in Apollo&quot;, &quot;03&quot;,
+&quot;Create Portal Announcement&quot;, &quot;02&quot;,
+&quot;Final Creative Review&quot;, &quot;01&quot;,
+&quot;99&quot;
+)&amp;&quot; &quot;&amp; Text(Task_Name__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Designer Task Priority</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

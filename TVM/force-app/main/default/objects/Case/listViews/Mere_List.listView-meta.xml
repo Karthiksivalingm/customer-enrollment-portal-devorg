@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mere_List</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Case_Category__c</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>Case_Classification__c</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <columns>Case_Assign_To__c</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Status_Filtered__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Foundation_Client_Services</value>
+    </filters>
+    <filters>
+        <field>Case_Assign_To__c</field>
+        <operation>contains</operation>
+        <value>jeaneba</value>
+    </filters>
+    <filters>
+        <field>CASES.SUBJECT</field>
+        <operation>notContain</operation>
+        <value>search term</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Future,New,In Progress,On Hold Client,On Hold - RPM,On Hold - Team Velocity,On Hold - Third Party</value>
+    </filters>
+    <label>Mere List</label>
+</ListView>

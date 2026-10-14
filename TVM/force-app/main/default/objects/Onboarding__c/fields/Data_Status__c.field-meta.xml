@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Status__c</fullName>
+    <label>Data Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Missing Account Areas</fullName>
+                <default>false</default>
+                <label>Missing Account Areas</label>
+            </value>
+            <value>
+                <fullName>Need Source</fullName>
+                <default>false</default>
+                <label>Need Source</label>
+            </value>
+            <value>
+                <fullName>Ordered, Need Dealer</fullName>
+                <default>false</default>
+                <label>Ordered, Need Dealer</label>
+            </value>
+            <value>
+                <fullName>Ordered, In Process</fullName>
+                <default>false</default>
+                <label>Ordered, In Process</label>
+            </value>
+            <value>
+                <fullName>In QC</fullName>
+                <default>false</default>
+                <label>In QC</label>
+            </value>
+            <value>
+                <fullName>Need 90 Day</fullName>
+                <default>false</default>
+                <label>Need 90 Day</label>
+            </value>
+            <value>
+                <fullName>Discrepancies</fullName>
+                <default>false</default>
+                <label>Discrepancies</label>
+            </value>
+            <value>
+                <fullName>With Bl</fullName>
+                <default>false</default>
+                <label>With Bl</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>FORD DIRECT</fullName>
+                <default>false</default>
+                <label>FORD DIRECT</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>DATA COMPLETE</fullName>
+                <default>false</default>
+                <label>DATA COMPLETE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

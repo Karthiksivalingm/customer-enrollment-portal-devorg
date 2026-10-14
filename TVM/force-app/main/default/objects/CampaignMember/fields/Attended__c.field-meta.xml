@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attended__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Status, &quot;Registered - Attended&quot;), &quot;Attended&quot;,
+IF(ISPICKVAL(Status, &quot;Attended&quot;), &quot;Attended&quot;,
+IF(NOT(ISNULL( Date_Marked_Attended__c)), &quot;Attended&quot;,
+IF(ISPICKVAL(Status, &quot;No Showed&quot;), &quot;Not Attended&quot;,
+&quot;Not Attended&quot;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Attended</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

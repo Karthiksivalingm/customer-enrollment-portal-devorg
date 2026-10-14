@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Apollo_prequal__c</fullName>
+    <formula>isBlank(Credit_Prequal_Recent_Start_Date__c)=false&amp;&amp;
+Credit_Prequal_Recent_Start_Date__c &gt; Credit_Prequal_Cancelled_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Apollo prequal</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_Product_Set__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Active_Sales_Mail__c, &quot;Sales Mail | &quot;, &quot;&quot;)&amp;
+if(Active_Sales_Retention__c, &quot;Sales Retention | &quot;, &quot;&quot;)&amp;
+if(Active_Service_Mail__c, &quot;Service Mail |&quot;, &quot;&quot;)&amp;
+if(Active_Service_Retention__c, &quot;Service Retention |&quot;, &quot;&quot;)&amp;
+if(Active_Search__c, &quot;Search |&quot;, &quot;&quot;)&amp;
+if(Active_Display__c, &quot;Display |&quot;, &quot;&quot;)&amp;
+if(Active_Social__c, &quot;Social |&quot;, &quot;&quot;)&amp;
+if(Active_Video__c, &quot;Video |&quot;, &quot;&quot;)&amp;
+if(Active_Website_C__c, &quot;Website |&quot;, &quot;&quot;)&amp;
+if(Active_SEO__c, &quot;SEO |&quot;, &quot;&quot;)&amp;
+if(Active_Text__c, &quot;Text |&quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Latest Product Set</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

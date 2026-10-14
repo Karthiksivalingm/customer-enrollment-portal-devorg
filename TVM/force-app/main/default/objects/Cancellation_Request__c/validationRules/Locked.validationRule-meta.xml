@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Locked</fullName>
+    <active>true</active>
+    <errorConditionFormula>Not(IsNew()) &amp;&amp;
+NOT(ISCHANGED(Bypass_Validation__c)) &amp;&amp;
+IsChanged(Cancellation_Status__c)=false &amp;&amp;
+IsChanged( NewRADOwnedXMonths__c )=false &amp;&amp;
+ $Profile.Name != &quot;System Administrator&quot; &amp;&amp;
+(
+Text( Cancellation_Status__c ) = &quot;Approved by DJ&quot; || Text( Cancellation_Status__c ) = &quot;Cancel Complete&quot;
+)</errorConditionFormula>
+    <errorMessage>This Cancellation Request is locked</errorMessage>
+</ValidationRule>

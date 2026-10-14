@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason__c</fullName>
+    <label>Loss Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+                <label>Going with a Competitor</label>
+            </value>
+            <value>
+                <fullName>No Budget / Lost Funding</fullName>
+                <default>false</default>
+                <label>No Budget / Lost Funding</label>
+            </value>
+            <value>
+                <fullName>No Decision / Non-Responsive</fullName>
+                <default>false</default>
+                <label>No Decision / Non-Responsive</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price Too High</label>
+            </value>
+            <value>
+                <fullName>Group Account/All Stores Same Provider</fullName>
+                <default>false</default>
+                <label>Part of Group / Want All Stores with Same Provider</label>
+            </value>
+            <value>
+                <fullName>Blocked by Agency</fullName>
+                <default>false</default>
+                <label>Blocked by Agency / Corporate</label>
+            </value>
+            <value>
+                <fullName>OEM Not Endorsed</fullName>
+                <default>false</default>
+                <label>Not OEM Endorsed</label>
+            </value>
+            <value>
+                <fullName>Currently with Another Provider / Not Willing to Change</fullName>
+                <default>false</default>
+                <label>Currently with Another Provider / Not Willing to Change</label>
+            </value>
+            <value>
+                <fullName>Currently No Provider / Not Interested</fullName>
+                <default>false</default>
+                <label>Currently No Provider / Not Interested</label>
+            </value>
+            <value>
+                <fullName>Expiration</fullName>
+                <default>false</default>
+                <label>Expiration</label>
+            </value>
+            <value>
+                <fullName>Dealer Cancelled</fullName>
+                <default>false</default>
+                <label>Dealer Cancelled</label>
+            </value>
+            <value>
+                <fullName>Purged</fullName>
+                <default>false</default>
+                <label>Purged</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

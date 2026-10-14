@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Onboarding__c</fullName>
+    <formula>Text(Call_Stage__c) != &quot;00 On Hold&quot; &amp;&amp;
+Text(Call_Stage__c) != &quot;11 Launched&quot; &amp;&amp;
+Text(Call_Stage__c) != &quot;00 Cancelled&quot; &amp;&amp;
+Text(Call_Stage__c) != &quot;&quot; &amp;&amp;
+Contains(Lower(Stage__c), &quot;launch&quot;)=false &amp;&amp;
+Contains(Lower(Stage__c), &quot;hold&quot;)=false &amp;&amp;
+Contains(Lower(Stage__c), &quot;cancel&quot;)=false &amp;&amp;
+Stage__c != &quot;&quot; &amp;&amp;
+Account__c != &quot;&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Open Onboarding</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

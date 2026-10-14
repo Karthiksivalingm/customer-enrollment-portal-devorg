@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generatea1BVb00000WOyGkMAL</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Docusign</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR(IF($Site.Prefix == &apos;/s&apos;, $Site.Prefix + &apos;/apex/dfsle__gendocumentgenerator&apos;, &apos;/apex/dfsle__gendocumentgenerator&apos;), null, [sId = Opportunity.Id, templateId = &apos;a1BVb00000WOyGkMAL&apos;, recordId = Opportunity.Id, title = &apos;Send Docusign (FNDN)&apos;])}</url>
+</WebLink>

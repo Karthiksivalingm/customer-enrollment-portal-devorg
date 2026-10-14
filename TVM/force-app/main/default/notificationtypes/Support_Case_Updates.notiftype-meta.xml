@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomNotificationType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customNotifTypeName>Support Case Updates</customNotifTypeName>
+    <description>Notify Account Team on Support Case Status Change</description>
+    <desktop>true</desktop>
+    <masterLabel>Support Case Updates</masterLabel>
+    <mobile>true</mobile>
+    <slack>false</slack>
+</CustomNotificationType>

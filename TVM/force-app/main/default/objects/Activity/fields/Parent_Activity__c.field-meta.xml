@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Activity__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(Parent_Event_ID__c ), &quot;No Parent&quot;,
+IF( Parent_Event_ID__c = &quot;Parent&quot;, &quot;This is the Parent&quot;,
+HYPERLINK(&quot;https://teamvelocity.lightning.force.com/lightning/r/Event/&quot;+  Parent_Event_ID__c  +&quot;/view&quot;, 
+&quot;Go to Parent&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Parent Activity</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

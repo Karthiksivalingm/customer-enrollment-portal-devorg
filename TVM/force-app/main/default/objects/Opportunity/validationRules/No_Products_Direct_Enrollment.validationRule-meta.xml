@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Products_Direct_Enrollment</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &quot;Direct_Enrollment&quot;,
+IsWon,
+NOT(HasOpportunityLineItem)
+)</errorConditionFormula>
+    <errorMessage>You must select products before trying to close this Opportunity</errorMessage>
+</ValidationRule>

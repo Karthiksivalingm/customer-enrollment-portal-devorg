@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Auction_Insights_to_make_sure_noth__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Check Auction Insights to make sure nothing looks off with our ranking/impression share</description>
+    <label>Check Auction Insights to make sure noth</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

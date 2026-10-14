@@ -1,0 +1,2215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Vars</name>
+        <label>Assign Vars</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>NewOnboardingPackId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>Test</name>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>FD_Package</name>
+        <label>FD Package?</label>
+        <locationX>182</locationX>
+        <locationY>971</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_for_a_Porsche_Dealer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_FD_Package</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FordDirect_Package</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Confirm_Franchise</targetReference>
+            </connector>
+            <label>Yes FD Package</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Ford_direct_Pack_1_1</name>
+        <label>Ford direct Pack 1:1?</label>
+        <locationX>182</locationX>
+        <locationY>3167</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_1_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account.FD_Package__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1:1 Messaging</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetUpMailAutomationinCPV</targetReference>
+            </connector>
+            <label>Yes, 1:1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Have_Production_Tasks_been_added_already</name>
+        <label>Have Production Tasks been added already?</label>
+        <locationX>710</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_Vars</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, add them</defaultConnectorLabel>
+        <rules>
+            <name>Yes_already_added</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_For_Production_Tasks.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes already added</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_New</name>
+        <label>Is New?</label>
+        <locationX>545</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Was_Production_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Updated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Vars</targetReference>
+            </connector>
+            <label>Yes, New</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_for_a_Porsche_Dealer</name>
+        <label>Is this for a Porsche Dealer?</label>
+        <locationX>182</locationX>
+        <locationY>1379</locationY>
+        <defaultConnector>
+            <targetReference>Create_Compliance_Account_Setup</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Porsche</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Porsche</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account.Analytics_Franchise__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PORSCHE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Email_Creative</targetReference>
+            </connector>
+            <label>Yes, Porsche</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_06_Dmatt_Said_So</name>
+        <label>Skip 06 (Dmatt Said So)</label>
+        <locationX>182</locationX>
+        <locationY>2651</locationY>
+        <defaultConnector>
+            <targetReference>Mail_Creative_Requested</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Skip_This</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>General_Sales_Service_Offers_Creative</targetReference>
+            </connector>
+            <label>Skip This</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Production_Added</name>
+        <label>Was Production Added?</label>
+        <locationX>908</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Production_Added</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Onboarding_Package_TypeVtwo__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Onboarding_Package_TypeVtwo__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_For_Production_Tasks</targetReference>
+            </connector>
+            <label>Yes, Production Added</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>AdminUser</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!$User.Profile_Name__c} = &quot;System Administrator&quot;,
+{!$User.Full_Name_Formula__c} = &quot;Kate Wessling&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Date00DealerSetup</name>
+        <dataType>Date</dataType>
+        <expression>IF(CONTAINS({!Status00DealerSetup}, &quot;Not Executing&quot;), TODAY(), NULL)</expression>
+    </formulas>
+    <formulas>
+        <name>FordDirect_Package</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!Get_Account.FD_Package__c}) = &quot;&quot;, &quot;&quot;, TEXT({!Get_Account.FD_Package__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>IgnoreComplianceAccess</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR(
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;CHEVROLET&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BUICK&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GMC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BUICK GMC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;JAGUAR&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LAND ROVER&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LEXUS&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GM&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GROUP&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;USED&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;PREOWNED&quot;
+),
+true, false
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IgnoreWebsiteSubmissionCompliance</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR(
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;ALFA ROMEO&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;AUDI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BMW&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BUICK&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;CADILLAC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;CHEVROLET&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;FORD&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GMC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;INFINITI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;JAGUAR&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LAND ROVER&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LEXUS&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LINCOLN&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;MASERATI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;MINI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;MITSUBISHI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;PORSCHE&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;SUBARU&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;STELLANTIS&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;VOLVO&quot;
+),
+true, 
+false
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IsFordDirect</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;FORD&quot; || TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LINCOLN&quot;, TRUE, FALSE)</expression>
+    </formulas>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>OB_Pack_Type</name>
+        <dataType>String</dataType>
+        <expression>If({!FordDirect_Package} = &quot;&quot;, {!OB_PAckage_Types_V2},
+If({!FordDirect_Package} = &quot;1:1 Messaging&quot;, &quot;Creative&quot;, &quot;Website&quot;
+))</expression>
+    </formulas>
+    <formulas>
+        <description>This creates a Multiselect Picklist input</description>
+        <name>OB_PAckage_Types_V2</name>
+        <dataType>String</dataType>
+        <expression>&quot;Production&quot; &amp;
+IF({!DigitalTypeVar} = &quot;Digital&quot;, &quot;; Digital&quot;, &quot;&quot;) &amp;
+&quot;; &quot; &amp; {!WebsiteTypeVar}</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatus_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;08 Onboarding Not Started&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatus_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;08 Onboarding Not Started&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+             &quot;09 Not Executing&quot;)
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatusLookup_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;a34Vb00000B8OQPIA3&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatusLookup_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQPIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+             &quot;a34Vb00000B8OQSIA3&quot;)
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Onboarding_Package_s_Selected</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE({!OB_PAckage_Types_V2}, &quot;;&quot;, &quot;, &quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Primary_or_Portal</name>
+        <dataType>String</dataType>
+        <expression>IF({!WebsiteTypeVar}= &quot;Primary Website&quot;, &quot;Primary&quot;, &quot;Portal&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatus_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;01 QC Not Started&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatus_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;01 QC Not Started&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+        &quot;09 Not Executing&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatusLookup_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;a34Vb00000BHmJdIAL&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatusLookup_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000BHmJdIAL&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        &quot;a34Vb00000B8OQSIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status00DealerSetup</name>
+        <dataType>String</dataType>
+        <expression>if(TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GROUP&quot;, &quot;09 Not Executing&quot;,
+&quot;05 Production Not Started&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Status01EmailCreative</name>
+        <dataType>String</dataType>
+        <expression>&quot;05 Production Not Started&quot;
+
+/*IF(
+    CONTAINS(OB_PAckage_Types_V2, &quot;Primary Website&quot;),
+    &quot;05 Production Not Started&quot;,
+    IF(
+        CONTAINS(OB_PAckage_Types_V2, &quot;Production&quot;),
+        &quot;05 Production Not Started&quot;,
+        IF(
+            CONTAINS(OB_PAckage_Types_V2, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;05 Production Not Started&quot;
+        )
+    )
+)*/</expression>
+    </formulas>
+    <formulas>
+        <name>Status02EmailAdmin</name>
+        <dataType>String</dataType>
+        <expression>&quot;06 Information Needed&quot;
+/*IF(
+    CONTAINS(OB_PAckage_Types_V2, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        CONTAINS(OB_PAckage_Types_V2, &quot;Production&quot;),
+        &quot;06 Information Needed&quot;,
+        IF(
+            CONTAINS(OB_PAckage_Types_V2, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;06 Information Needed&quot;
+        )
+    )
+)*/</expression>
+    </formulas>
+    <formulas>
+        <name>Status03ComplianceAccountSetup</name>
+        <dataType>String</dataType>
+        <expression>if({!IgnoreComplianceAccess}, &quot;09 Not Executing&quot;, &quot;05 Compliance Not Started&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Status04ABrandDiffBanners</name>
+        <dataType>String</dataType>
+        <expression>&quot;06 Information Needed&quot;
+/*IF(
+    Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+            Case(FordDirect_Package,
+            &quot;Platform Solutions&quot;, &quot;06 Information Needed&quot;,
+            &quot;1:1 Messaging&quot;, &quot;09 Not Executing&quot;,
+             &quot;06 Information Needed&quot;)
+        )
+    )
+)
+*/</expression>
+    </formulas>
+    <formulas>
+        <name>Status04BBrandDiffEmailFreeSpace</name>
+        <dataType>String</dataType>
+        <expression> &quot;06 Information Needed&quot;
+/*IF(
+    Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Production&quot;),
+        &quot;06 Information Needed&quot;,
+        IF(
+            Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;06 Information Needed&quot;
+        )
+    )
+)*/</expression>
+    </formulas>
+    <formulas>
+        <name>Status05BonusOfferCreative</name>
+        <dataType>String</dataType>
+        <expression>    &quot;06 Information Needed&quot;
+/*IF(
+    Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Production&quot;),
+        &quot;06 Information Needed&quot;,
+        IF(
+            Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;06 Information Needed&quot;
+        )
+    )
+)*/</expression>
+    </formulas>
+    <formulas>
+        <name>Status06GeneralSalesServiceOffersCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+            Case({!FordDirect_Package},
+            &quot;Platform Solutions&quot;, &quot;06 Information Needed&quot;,
+            &quot;1:1 Messaging&quot;, &quot;09 Not Executing&quot;,
+             &quot;06 Information Needed&quot;)
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status07Mailcreativerequested</name>
+        <dataType>String</dataType>
+        <expression>            &quot;08 Onboarding Not Started&quot;
+/*IF(
+    Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Primary Website&quot;),
+    &quot;08 Onboarding Not Started&quot;,
+    IF(
+        Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Production&quot;),
+        &quot;08 Onboarding Not Started&quot;,
+        IF(
+            Includes($Record.Onboarding_Package_TypeVtwo__c, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;08 Onboarding Not Started&quot;
+        )
+    )
+)*/</expression>
+    </formulas>
+    <formulas>
+        <name>Status08WebsiteGoingLive</name>
+        <dataType>String</dataType>
+        <expression>&quot;09 Not Executing&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup00DealerSetup</name>
+        <dataType>String</dataType>
+        <expression>if(TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GROUP&quot;, &quot;a34Vb00000B8OQSIA3&quot;,
+&quot;a34Vb00000B8OQDIA3&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup01EmailCreative</name>
+        <dataType>String</dataType>
+        <expression>&quot;a34Vb00000B8OQDIA3&quot;
+
+/*IF(
+    CONTAINS(OB_PAckage_Types_V2, &quot;Website&quot;),
+    &quot;a34Vb00000B8OQDIA3&quot;,
+    IF(
+        CONTAINS(OB_PAckage_Types_V2, &quot;Creative&quot;),
+        &quot;a34Vb00000B8OQDIA3&quot;,
+        IF(
+            CONTAINS(OB_PAckage_Types_V2, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQDIA3&quot;
+        )
+    )
+)*/</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup02EmailAdmin</name>
+        <dataType>String</dataType>
+        <expression>&quot;a34Vb00000B8OQEIA3&quot;
+
+/*IF(
+    CONTAINS(OB_PAckage_Types_V2, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        CONTAINS(OB_PAckage_Types_V2, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQEIA3&quot;,
+        IF(
+            CONTAINS(OB_PAckage_Types_V2, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQEIA3&quot;
+        )
+    )
+)*/</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup03ComplianceAccountSetup</name>
+        <dataType>String</dataType>
+        <expression>if({!IgnoreComplianceAccess}, &quot;a34Vb00000B8OQSIA3&quot;, &quot;a34Vb00000B8OQHIA3&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup04ABrandDiffBanners</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+            Case({!FordDirect_Package},
+            &quot;Platform Solutions&quot;, &quot;a34Vb00000B8OQEIA3&quot;,
+            &quot;1:1 Messaging&quot;, &quot;a34Vb00000B8OQSIA3&quot;,
+             &quot;a34Vb00000B8OQEIA3&quot;)
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup04BBrandDiffEmailFreeSpace</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQEIA3&quot;,
+        IF(
+            Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQEIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup05BonusOfferCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQEIA3&quot;,
+        IF(
+            Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQEIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup06GeneralSalesServiceOffersCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+            Case({!FordDirect_Package},
+            &quot;Platform Solutions&quot;, &quot;a34Vb00000B8OQEIA3&quot;,
+            &quot;1:1 Messaging&quot;, &quot;a34Vb00000B8OQSIA3&quot;,
+             &quot;a34Vb00000B8OQEIA3&quot;)
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup07Mailcreativerequested</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQPIA3&quot;,
+    IF(
+        Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQPIA3&quot;,
+        IF(
+            Includes({!$Record.Onboarding_Package_TypeVtwo__c}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQPIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>OB Package Production Task Creation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>OB Package Production Task Creation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Add_Confirm_Franchise</name>
+        <label>Add/Confirm Franchise</label>
+        <locationX>50</locationX>
+        <locationY>1079</locationY>
+        <connector>
+            <targetReference>Add_Order_Profile</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Add/Confirm Franchise</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>Create_Email_Account_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>FD_Statuses</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <stringValue>a34Vb00000B8OQPIA3</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>08 Onboarding Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Add/Confirm Franchise</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Add_Order_Profile</name>
+        <label>Add Order Profile</label>
+        <locationX>50</locationX>
+        <locationY>1187</locationY>
+        <connector>
+            <targetReference>Is_this_for_a_Porsche_Dealer</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Add Order Profile</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>Create_Email_Account_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>FD_Statuses</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <stringValue>a34Vb00000B8OQPIA3</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>08 Onboarding Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Add Order Profile</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Bonus_Offer_Creative_Create</name>
+        <label>Group 03 Bonus Offer Creative</label>
+        <locationX>182</locationX>
+        <locationY>2435</locationY>
+        <assignRecordIdToReference>NewTgId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Bonus_Offer_Images_Creative</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>03 Bonus Offer Creative</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Client_Project__c</field>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Responsibility__c</field>
+            <value>
+                <stringValue>Designer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Project_Task_Group__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Bonus_Offer_Images_Creative</name>
+        <label>Create Bonus Offer</label>
+        <locationX>182</locationX>
+        <locationY>2543</locationY>
+        <connector>
+            <targetReference>Skip_06_Dmatt_Said_So</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Create Bonus Offer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Creative4</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup05BonusOfferCreative</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status05BonusOfferCreative</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Bonus Offer Images Creative</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Brand_Diff_Banner_Creation</name>
+        <label>Brand Diff Banner Creation</label>
+        <locationX>182</locationX>
+        <locationY>2111</locationY>
+        <connector>
+            <targetReference>Email_Free_Space_Sales_Task</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Brand Diff Banner Creation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Size_System__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Creative4</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup04ABrandDiffBanners</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status04ABrandDiffBanners</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Brand Diff Banner Creation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Brand_Diff_Banners_Create</name>
+        <label>Group 02 Brand Diff Banners</label>
+        <locationX>182</locationX>
+        <locationY>2003</locationY>
+        <assignRecordIdToReference>NewTgId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Brand_Diff_Banner_Creation</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>02 Brand Diff Banners</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Client_Project__c</field>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Responsibility__c</field>
+            <value>
+                <stringValue>Designer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Project_Task_Group__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Compliance_Access_set_up</name>
+        <label>Compliance Access set up</label>
+        <locationX>182</locationX>
+        <locationY>1895</locationY>
+        <connector>
+            <targetReference>Brand_Diff_Banners_Create</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Compliance Access Set Up</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Compliance</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup03ComplianceAccountSetup</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status03ComplianceAccountSetup</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Compliance Access set up</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Compliance_Account_Setup</name>
+        <label>Group 01 Compliance Account Setup</label>
+        <locationX>182</locationX>
+        <locationY>1787</locationY>
+        <assignRecordIdToReference>NewTgId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Compliance_Access_set_up</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>01 Compliance Account Setup</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Client_Project__c</field>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Responsibility__c</field>
+            <value>
+                <stringValue>Compliance Team</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Project_Task_Group__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Dotmailer_Task</name>
+        <label>Create Dotmailer Task</label>
+        <locationX>182</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Dealer_Logo_Approval_Creation</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Dotmailer Account Request</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>Create_Email_Account_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Request</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup00DealerSetup</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status00DealerSetup</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Dotmailer Account Request</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Email_Account_Creation</name>
+        <label>Group 00 Dealer Setup</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Create_Dotmailer_Task</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>00 Dealer Setup</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Client_Project__c</field>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Prerequisite_Task_Group__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Responsibility__c</field>
+            <value>
+                <stringValue>Production Specialist</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Project_Task_Group__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Email_Creative</name>
+        <label>Group 001 Email Creative</label>
+        <locationX>50</locationX>
+        <locationY>1487</locationY>
+        <assignRecordIdToReference>NewTgId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Create_Secondary_Email_URL</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>001 Email Creative</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Client_Project__c</field>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Prerequisite_Task_Group__c</field>
+            <value>
+                <elementReference>Create_Email_Account_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Responsibility__c</field>
+            <value>
+                <stringValue>Designer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Project_Task_Group__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Secondary_Email_URL</name>
+        <label>Create Secondary Email URL</label>
+        <locationX>50</locationX>
+        <locationY>1595</locationY>
+        <assignRecordIdToReference>NewProjectTaskId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Create_Compliance_Account_Setup</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Secondary Email URL</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Request</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup01EmailCreative</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status01EmailCreative</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Secondary Email URL</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Dealer_Logo_Approval_Creation</name>
+        <label>Dealer Logo Approval/Creation</label>
+        <locationX>182</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>FD_Package</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Dealer Logo Approval/Creation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>Create_Email_Account_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Creative3</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <stringValue>a34Vb00000B8OQEIA3</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>06 Information Needed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Dealer Logo Approval/Creation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Email_Free_Space_Sales_Task</name>
+        <label>Email Free Space Sales Task</label>
+        <locationX>182</locationX>
+        <locationY>2219</locationY>
+        <connector>
+            <targetReference>Email_Free_Space_Service_Task</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Email Free Space Sales</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Size_System__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Creative2</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup04BBrandDiffEmailFreeSpace</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status04BBrandDiffEmailFreeSpace</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Email Free Space Sales</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Email_Free_Space_Service_Task</name>
+        <label>Email Free Space Service Task</label>
+        <locationX>182</locationX>
+        <locationY>2327</locationY>
+        <connector>
+            <targetReference>Bonus_Offer_Creative_Create</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Email Free Space Service</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Size_System__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Creative2</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup04BBrandDiffEmailFreeSpace</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status04BBrandDiffEmailFreeSpace</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Email Free Space Service</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>General_Sales_Offer_Image_Creative</name>
+        <label>General Sales Offer Image Creative</label>
+        <locationX>50</locationX>
+        <locationY>2867</locationY>
+        <connector>
+            <targetReference>Mail_Creative_Requested</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>General Sales Offer Image Creative</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Creative4</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup06GeneralSalesServiceOffersCreative</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status06GeneralSalesServiceOffersCreative</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>General Sales Offer Image Creative</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>General_Sales_Service_Offers_Creative</name>
+        <label>Group 04 General Sales / Service Offers Creative</label>
+        <locationX>50</locationX>
+        <locationY>2759</locationY>
+        <assignRecordIdToReference>NewTgId</assignRecordIdToReference>
+        <connector>
+            <targetReference>General_Sales_Offer_Image_Creative</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>04 General Sales / Service Offers Creative</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Client_Project__c</field>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Responsibility__c</field>
+            <value>
+                <stringValue>Designer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Project_Task_Group__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Mail_Creative_Requested</name>
+        <label>Group 05 Mail Creative Requested</label>
+        <locationX>182</locationX>
+        <locationY>3059</locationY>
+        <assignRecordIdToReference>NewTgId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Ford_direct_Pack_1_1</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>05 Mail Creative Requested</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Client_Project__c</field>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Prerequisite_Task_Group__c</field>
+            <value>
+                <elementReference>Create_Email_Account_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Responsibility__c</field>
+            <value>
+                <stringValue>Onboarding Rep</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Project_Task_Group__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>SetUpMailAutomationinCPV</name>
+        <label>Set Up Mail Automation in CPV</label>
+        <locationX>50</locationX>
+        <locationY>3275</locationY>
+        <inputAssignments>
+            <field>Account_Link__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Set Up Mail Automation in CPV</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Prerequisite_Task__c</field>
+            <value>
+                <elementReference>NewProjectTaskId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Task_Group__c</field>
+            <value>
+                <elementReference>NewTgId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filter_Type__c</field>
+            <value>
+                <stringValue>Creative7</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Lookup__c</field>
+            <value>
+                <elementReference>StatusLookup07Mailcreativerequested</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>Status07Mailcreativerequested</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Task_Name__c</field>
+            <value>
+                <stringValue>Set Up Mail Automation in CPV</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WIM__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Check_For_Production_Tasks</name>
+        <label>Check For Production Tasks</label>
+        <locationX>710</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Have_Production_Tasks_been_added_already</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Onboarding_Package_Id__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.X18_Digit_ID__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Project_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Email_Account_Creation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>419</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_New</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Onboarding_Package_TypeVtwo__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Production</stringValue>
+            </value>
+        </filters>
+        <object>Onboarding_Package__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>CompleteStaffPage_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;KW to update with current process info&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;&quot;If dealer has a staff page, or wants, one, we will need to:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;1) Create a staff folder in Image Library &amp;gt; 01 Banner Images &amp;gt; 01. Primary Sites &amp;gt; 00. Dealer. &amp;gt; Dealer Name &amp;gt; Staff (this will be the new folder you create)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;2) Go to the staff page on existing site and pull all images, names, titles, etc. (Right click on the image and select &quot;&quot;save image as&quot;&quot; - can only download in jpeg or png format. If the image downloads in webp format, I recommend this nifty extension for Chrome: https://chrome.google.com/webstore/detail/save-image-as-png/nkokmeaibnajheohncaamjggkanfbphi?hl=en. 3) Make sure the staff images are no larger than 230x230 - can be smaller than this, but if they&apos;re larger, it will throw off the layout of the page.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;4) Upload all staff images to the folder you created in step 1 above. (i know)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;5) Go to Content Management &amp;gt; Staff Members and click &quot;&quot;Add New Staff Member&quot;&quot;. NOTE: 99% of the time you won&apos;t have to worry about the &quot;&quot;Add New Staff Category&quot;&quot; option, as most staff categories are already available when you go to tadd the new staff member.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;6) Enter name, role, and select category from the dropdown. Use the image select option to navigate to your staff images folder and select the corresponding image. (PRO TIP: If you have multiple screens, put Apollo on one screen and the dealer&apos;s existing staff page on the other and then just copy/paste the info.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;7) Repeat step 6 for all staff members (i know...).&quot;&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DealerManagedGoogleAnalyticsProcessforPrimaryWebsites2025INTERNAL_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1o5tT778bdxLCc5oGSYx22ZRXd3qT-_Us-AkiNh2UtY8/edit?pli=1&amp;amp;tab=t.0#heading=h.9g5cfkqw5kdt&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Dealer Managed Google Analytics Process for Primary Websites - 2025 - (INTERNAL)&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>GettingStartedCallPrimaryWebsiteSection_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;Dedicate at least 15 minutes of GSC to website to go over: go dark/go live date, access to domain registrar, whether or not a zone file is needed, website tools, design selection (reference OEM guidelines) and set general expectations&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm Website Tools &amp;amp; Integrations: Digital Retailing, Finance Application, Value Trade, Service Scheduler, Chat / Text, etc. Do any integrations need to be set up such as xTime, DealerTrack, RouteOne, etc.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm if we should copy current SRP &amp;amp; VDP disclaimers&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm if any scripts such as GTM, ComplyAuto, tracking pixels, etc. will need to be moved to the new site&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm Domain registrar access&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm Primary Domain &amp;amp; any other domains that need to be pointed&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Review OEM approved website designs&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Discuss any specific requirements for the new website&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Set Target Website Review Date&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>GuidetoSubmittingTestLeads2025_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1UJJHWZ8BK11aJFA2FfGayXUeBfnPmIgakZc8yT_uDmI/edit?tab=t.0&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Guide to Submitting Test Leads - 2025&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NewProdBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;A new Onboarding Package was just created for {!Get_Account.Name}. Please go assign the workers.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Onboarding_Package__c/{!NewOnboardingPackId}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Click here to go to the Onboarding Package&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Report/00O5f000008SYBdEAO/view?queryScope=userFolders&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Click here to go to the Onboarding Creative report&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>PrimaryWebsiteLaunchInstructions2025_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1KBDOfe5Rn3XAaQppQLvllhsE9R6TzBHL9TPUZ5Ms4x0/edit?tab=t.0#heading=h.vl9dbpdthsm2&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Primary Website Launch Instructions 2025&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ProjectName</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!Get_Account.Name} {!$Flow.CurrentDate}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ScheduleWebsiteLaunchwDealerandTeamVIT_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;Schedule website launch call with Dealer and make sure to include Kate and IT (PJ/Joseph/Jim). Zoom is preferred! NOTE: WE DO NOT LAUNCH SITES ON FRIDAYS!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;On launch call, confirm lead email addresses are correct and in place and all hours are correct.&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>WebsiteGettingStartedCallResearchHowTo_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1fHn78LeeY-uaf_DBXN-uT57gtxrJtgZJP3WfUcjZw_Y/edit?tab=t.0&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Website Getting Started Call Research How To&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>CreatedTaskGroupId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DigitalTypeVar</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewOnboardingPackId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewProjectTaskId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewTgId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>WebsiteTypeVar</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

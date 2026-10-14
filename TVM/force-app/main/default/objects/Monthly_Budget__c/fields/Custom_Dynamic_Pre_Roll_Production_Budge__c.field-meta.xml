@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Dynamic_Pre_Roll_Production_Budge__c</fullName>
+    <inlineHelpText>Foundation Direct OTT Semi-Custom Creative Fee</inlineHelpText>
+    <label>Custom Dynamic Pre-Roll Production Budge</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Troubleshooting_Formula_Field__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*Year*/
+If(Contains(LEFT( Presentation_Demo_Date_Time__c , 2), &quot;/&quot;), /*Month is 1 characters*/
+  if(Contains(Right(Left(Presentation_Demo_Date_Time__c, 4), 2), &quot;/&quot;), /*Date is 1 char*/
+    Right(Left(Presentation_Demo_Date_Time__c, 8), 4),
+    Right(Left(Presentation_Demo_Date_Time__c, 9), 4)
+  ),
+  if(Contains(Right(Left(Presentation_Demo_Date_Time__c, 5), 2), &quot;/&quot;), /*Month is 2 chars and Date is 1 char*/
+    Right(Left(Presentation_Demo_Date_Time__c, 9), 4),
+    Right(Left(Presentation_Demo_Date_Time__c, 10), 4)
+  )
+)
+&amp;&quot;-&quot;&amp;
+/*Month*/
+If(Contains(LEFT( Presentation_Demo_Date_Time__c , 2), &quot;/&quot;), /*Month is 1 characters*/
+  LEFT( Presentation_Demo_Date_Time__c , 1),
+  LEFT( Presentation_Demo_Date_Time__c , 2)
+)
+&amp;&quot;-&quot;&amp;
+/*Day*/
+If(Contains(LEFT( Presentation_Demo_Date_Time__c , 2), &quot;/&quot;), /*Month is &quot;1/&quot; characters*/
+  if(Contains(Right(Left(Presentation_Demo_Date_Time__c, 4), 2), &quot;/&quot;), /*Date is 1 char*/
+    Right(Left(Presentation_Demo_Date_Time__c, 3), 1),
+    Right(Left(Presentation_Demo_Date_Time__c, 4), 2)
+  ),
+  if(Contains(Right(Left(Presentation_Demo_Date_Time__c, 5), 2), &quot;/&quot;), /*Date is 1 char*/
+    Right(Left(Presentation_Demo_Date_Time__c, 4), 1),
+    Right(Left(Presentation_Demo_Date_Time__c, 5), 2)
+  )
+)
+
+/*
+Possible Iterations
+1/1/2023
+1/10/2023
+10/1/2023
+10/10/2023
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Troubleshooting Formula Field</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

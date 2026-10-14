@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Service_Check__c</fullName>
+    <formula>Search_Service_Check__c || 
+Display_Service_Check__c || 
+Social_Service_Check__c || 
+Video_Service_Check__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Digital Service Check</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

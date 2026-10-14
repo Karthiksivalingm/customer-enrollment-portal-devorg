@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Billing_Comm_Month_T__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( 
+Final_Comm_Month_Calculated__c &lt; Date(2000, 1, 1) || IsBlank(Final_Comm_Month_Calculated__c ), &quot;Not Yet Billing&quot;, 
+
+Text(Year(Final_Comm_Month_Calculated__c ))&amp;&quot;-&quot;&amp;
+if(Month(Final_Comm_Month_Calculated__c )&lt;10, &quot;0&quot;&amp;Text(Month(Final_Comm_Month_Calculated__c )), Text(Month(Final_Comm_Month_Calculated__c )))&amp;
+&quot;-01&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>First Billing Comm Month (T)</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

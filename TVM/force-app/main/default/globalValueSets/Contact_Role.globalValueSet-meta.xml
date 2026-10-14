@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accounting Contact</fullName>
+        <default>false</default>
+        <label>Accounting Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Agency/Consultant</fullName>
+        <default>false</default>
+        <label>Agency/Consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Apollo User</fullName>
+        <default>false</default>
+        <label>Apollo User</label>
+    </customValue>
+    <customValue>
+        <fullName>BDC Contact</fullName>
+        <default>false</default>
+        <label>BDC Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer Group Contact</fullName>
+        <default>false</default>
+        <label>Dealer Group Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Contact</fullName>
+        <default>false</default>
+        <label>Digital Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>DMS Contact</fullName>
+        <default>false</default>
+        <label>DMS Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>FordDirect DPC</fullName>
+        <default>false</default>
+        <label>FordDirect DPC</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation 3rd Party Vendor</fullName>
+        <default>false</default>
+        <label>Foundation 3rd Party Vendor</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Analytics</fullName>
+        <default>false</default>
+        <label>Foundation Analytics</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Contract Signer</fullName>
+        <default>false</default>
+        <label>Foundation Contract Signer</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Coop</fullName>
+        <default>false</default>
+        <label>Foundation Coop</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation DigAd</fullName>
+        <default>false</default>
+        <label>Foundation DigAd</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Inactive</fullName>
+        <default>false</default>
+        <label>Foundation Inactive</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Media Budget</fullName>
+        <default>false</default>
+        <label>Foundation Media Budget</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Paid Search Provider</fullName>
+        <default>false</default>
+        <label>Foundation Paid Search Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Primary</fullName>
+        <default>false</default>
+        <label>Foundation Primary</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Secondary</fullName>
+        <default>false</default>
+        <label>Foundation Secondary</label>
+    </customValue>
+    <customValue>
+        <fullName>General Manager</fullName>
+        <default>false</default>
+        <label>General Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>General Sales Manager</fullName>
+        <default>false</default>
+        <label>General Sales Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Inventory Pricing</fullName>
+        <default>false</default>
+        <label>Inventory Pricing</label>
+    </customValue>
+    <customValue>
+        <fullName>IT</fullName>
+        <default>false</default>
+        <label>IT</label>
+    </customValue>
+    <customValue>
+        <fullName>Mail Approver</fullName>
+        <default>false</default>
+        <label>Mail Approver</label>
+    </customValue>
+    <customValue>
+        <fullName>OEM Rep</fullName>
+        <default>false</default>
+        <label>OEM Rep</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding Contact</fullName>
+        <default>false</default>
+        <label>Onboarding Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>OTT Contact</fullName>
+        <default>false</default>
+        <label>OTT Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Owner/Dealer Principal</fullName>
+        <default>false</default>
+        <label>Owner/Dealer Principal</label>
+    </customValue>
+    <customValue>
+        <fullName>Primary POC</fullName>
+        <default>false</default>
+        <label>Primary POC</label>
+    </customValue>
+    <customValue>
+        <fullName>Secondary POC</fullName>
+        <default>false</default>
+        <label>Secondary POC</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Contact</fullName>
+        <default>false</default>
+        <label>Service Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Voice Support Hold</fullName>
+        <default>false</default>
+        <label>Voice Support Hold</label>
+    </customValue>
+    <customValue>
+        <fullName>Website Approver</fullName>
+        <default>false</default>
+        <label>Website Approver</label>
+    </customValue>
+    <customValue>
+        <fullName>Website Contact</fullName>
+        <default>false</default>
+        <label>Website Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Parts Contact</fullName>
+        <default>false</default>
+        <label>Parts Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Decision Maker</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Decision Maker</label>
+    </customValue>
+    <customValue>
+        <fullName>3rd Party Vendor</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3rd Party Vendor</label>
+    </customValue>
+    <customValue>
+        <fullName>Coop</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Coop</label>
+    </customValue>
+    <customValue>
+        <fullName>OEM Contact</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>OEM Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>NCM Login</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>NCM Login</label>
+    </customValue>
+    <customValue>
+        <fullName>Primary Contact</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Primary Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Media Budget Decision Maker</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Media Budget Decision Maker</label>
+    </customValue>
+    <customValue>
+        <fullName>FordDirect DPR</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>FordDirect DPR</label>
+    </customValue>
+    <customValue>
+        <fullName>Paid Search Provider</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Paid Search Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Onboarding</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Foundation Onboarding</label>
+    </customValue>
+    <customValue>
+        <fullName>Secondary contact</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Secondary contact</label>
+    </customValue>
+    <customValue>
+        <fullName>DigAd Login</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>DigAd Login</label>
+    </customValue>
+    <customValue>
+        <fullName>Influencer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Influencer</label>
+    </customValue>
+    <customValue>
+        <fullName>BI Login</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BI Login</label>
+    </customValue>
+    <customValue>
+        <fullName>Analytics</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Analytics</label>
+    </customValue>
+    <customValue>
+        <fullName>Looker</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Looker</label>
+    </customValue>
+    <customValue>
+        <fullName>Contract Signer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Contract Signer</label>
+    </customValue>
+    <customValue>
+        <fullName>NCM Moderator</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>NCM Moderator</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounting</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Accounting</label>
+    </customValue>
+    <customValue>
+        <fullName>Pricing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Pricing</label>
+    </customValue>
+    <customValue>
+        <fullName>Inventory</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Inventory</label>
+    </customValue>
+    <customValue>
+        <fullName>Billing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Billing</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Onboarding</label>
+    </customValue>
+    <masterLabel>Contact Role</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

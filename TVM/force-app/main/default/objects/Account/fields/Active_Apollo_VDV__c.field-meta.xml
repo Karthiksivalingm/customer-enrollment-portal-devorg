@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Apollo_VDV__c</fullName>
+    <formula>IsBlank(PP_VDV_Plus_Recent_Start_Date__c)=false&amp;&amp;
+PP_VDV_Plus_Recent_Start_Date__c &gt; PP_VDV_Plus_Cancelled_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Apollo VDV</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Website_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISPICKVAL(Account__r.TVM_Website_Status__c, &quot;Cancelled&quot;), 
+    &quot;Cancelled&quot;,
+    IF(
+        AND(
+            INCLUDES(Onboarding_Package_TypeVtwo__c, &quot;Primary Website&quot;),
+            INCLUDES(Onboarding_Package_TypeVtwo__c, &quot;Portal Website&quot;)
+        ),
+        &quot;Both&quot;,
+        IF(
+            INCLUDES(Onboarding_Package_TypeVtwo__c, &quot;Primary Website&quot;),
+            &quot;Primary&quot;,
+            IF(
+                INCLUDES(Onboarding_Package_TypeVtwo__c, &quot;Portal Website&quot;),
+                &quot;Portal&quot;,
+                NULL
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVM Website Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

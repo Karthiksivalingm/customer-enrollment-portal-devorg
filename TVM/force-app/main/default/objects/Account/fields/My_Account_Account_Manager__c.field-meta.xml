@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Account_Account_Manager__c</fullName>
+    <formula>$User.Id = Account_Manager__r.Id</formula>
+    <label>My Account - Account Manager</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

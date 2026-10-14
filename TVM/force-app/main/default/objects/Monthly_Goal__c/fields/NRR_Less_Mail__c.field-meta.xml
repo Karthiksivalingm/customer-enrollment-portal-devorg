@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NRR_Less_Mail__c</fullName>
+    <formula>( Net_Revenue_Less_Mail__c + MRR_Expansion_Less_Mail__c + MRR_Contraction_Less_Mail__c + MRR_Churn_Less_Mail__c ) / Net_Revenue_Less_Mail__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>NRR Less Mail</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreQual_Next_Step__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+TExt( PreQual_Status__c ) != &quot;Ready to go LIVE&quot;,
+HYPERLINK(&apos;/flow/PreQual_Screenflow?varID=&apos;&amp; Id, &quot;Update Stage&quot;),
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PreQual Next Step</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

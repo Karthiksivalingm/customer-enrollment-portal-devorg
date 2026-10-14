@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_FNDN_All_Open_Cases</fullName>
+    <columns>Case_Assign_To__c</columns>
+    <columns>Red_Fire__c</columns>
+    <columns>Ticket__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Creator_Name__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Case_Assign_To__c</field>
+        <operation>equals</operation>
+        <value>$USER</value>
+    </filters>
+    <label>My FNDN Open Cases</label>
+</ListView>

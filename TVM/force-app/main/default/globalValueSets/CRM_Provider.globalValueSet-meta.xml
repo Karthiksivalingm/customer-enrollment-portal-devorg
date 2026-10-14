@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Don&apos;t Know</fullName>
+        <default>false</default>
+        <label>Don&apos;t Know</label>
+    </customValue>
+    <customValue>
+        <fullName>ActivEngage</fullName>
+        <default>false</default>
+        <label>ActivEngage</label>
+    </customValue>
+    <customValue>
+        <fullName>CDK Global</fullName>
+        <default>false</default>
+        <label>CDK Global</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer Peak</fullName>
+        <default>false</default>
+        <label>Dealer Peak</label>
+    </customValue>
+    <customValue>
+        <fullName>DealerSocket - CRM</fullName>
+        <default>false</default>
+        <label>DealerSocket - CRM</label>
+    </customValue>
+    <customValue>
+        <fullName>Vinsolutions</fullName>
+        <default>false</default>
+        <label>Vinsolutions</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>CRM Provider</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Scheduler__c</fullName>
+    <label>Service Scheduler</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advanced Automotive Production Systems</fullName>
+                <default>false</default>
+                <label>Advanced Automotive Production Systems</label>
+            </value>
+            <value>
+                <fullName>Affinitiv (Loop LLC)</fullName>
+                <default>false</default>
+                <label>Affinitiv (Loop LLC)</label>
+            </value>
+            <value>
+                <fullName>Auto.Live</fullName>
+                <default>false</default>
+                <label>Auto.Live</label>
+            </value>
+            <value>
+                <fullName>AUTOSKED</fullName>
+                <default>false</default>
+                <label>AUTOSKED</label>
+            </value>
+            <value>
+                <fullName>BLiNk AI</fullName>
+                <default>false</default>
+                <label>BLiNk AI</label>
+            </value>
+            <value>
+                <fullName>Carmen</fullName>
+                <default>false</default>
+                <label>Carmen</label>
+            </value>
+            <value>
+                <fullName>CDK Service</fullName>
+                <default>false</default>
+                <label>CDK Service</label>
+            </value>
+            <value>
+                <fullName>CrystalNet Online Appointment</fullName>
+                <default>false</default>
+                <label>CrystalNet Online Appointment</label>
+            </value>
+            <value>
+                <fullName>Dealer FX</fullName>
+                <default>false</default>
+                <label>Dealer FX</label>
+            </value>
+            <value>
+                <fullName>DealerLogix</fullName>
+                <default>false</default>
+                <label>DealerLogix</label>
+            </value>
+            <value>
+                <fullName>DealerMine</fullName>
+                <default>false</default>
+                <label>DealerMine</label>
+            </value>
+            <value>
+                <fullName>DealerSocket</fullName>
+                <default>false</default>
+                <label>DealerSocket</label>
+            </value>
+            <value>
+                <fullName>Dixon Technologies</fullName>
+                <default>false</default>
+                <label>Dixon Technologies</label>
+            </value>
+            <value>
+                <fullName>eLead CRM (CDK)</fullName>
+                <default>false</default>
+                <label>eLead CRM (CDK)</label>
+            </value>
+            <value>
+                <fullName>EvenFlow AI</fullName>
+                <default>false</default>
+                <label>EvenFlow AI</label>
+            </value>
+            <value>
+                <fullName>Fixed Ops Marketing</fullName>
+                <default>false</default>
+                <label>Fixed Ops Marketing</label>
+            </value>
+            <value>
+                <fullName>Ford Motor Company</fullName>
+                <default>false</default>
+                <label>Ford Motor Company</label>
+            </value>
+            <value>
+                <fullName>Fullpath</fullName>
+                <default>false</default>
+                <label>Fullpath</label>
+            </value>
+            <value>
+                <fullName>GM Online Scheduling Services</fullName>
+                <default>false</default>
+                <label>GM Online Scheduling Services</label>
+            </value>
+            <value>
+                <fullName>iService Auto</fullName>
+                <default>false</default>
+                <label>iService Auto</label>
+            </value>
+            <value>
+                <fullName>KABI, LLC</fullName>
+                <default>false</default>
+                <label>KABI, LLC</label>
+            </value>
+            <value>
+                <fullName>Keyloop</fullName>
+                <default>false</default>
+                <label>Keyloop</label>
+            </value>
+            <value>
+                <fullName>Lead Result, LLC</fullName>
+                <default>false</default>
+                <label>Lead Result, LLC</label>
+            </value>
+            <value>
+                <fullName>MOPAR</fullName>
+                <default>false</default>
+                <label>MOPAR</label>
+            </value>
+            <value>
+                <fullName>MyKaarma</fullName>
+                <default>false</default>
+                <label>MyKaarma</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>PSB Systems</fullName>
+                <default>false</default>
+                <label>PSB Systems</label>
+            </value>
+            <value>
+                <fullName>RedCap Valet</fullName>
+                <default>false</default>
+                <label>RedCap Valet</label>
+            </value>
+            <value>
+                <fullName>ReyRey</fullName>
+                <default>false</default>
+                <label>ReyRey</label>
+            </value>
+            <value>
+                <fullName>Schedule21</fullName>
+                <default>false</default>
+                <label>Schedule21</label>
+            </value>
+            <value>
+                <fullName>selectFI</fullName>
+                <default>false</default>
+                <label>selectFI</label>
+            </value>
+            <value>
+                <fullName>Serti Informatique</fullName>
+                <default>false</default>
+                <label>Serti Informatique</label>
+            </value>
+            <value>
+                <fullName>SocketTime</fullName>
+                <default>false</default>
+                <label>SocketTime</label>
+            </value>
+            <value>
+                <fullName>Sunbit</fullName>
+                <default>false</default>
+                <label>Sunbit</label>
+            </value>
+            <value>
+                <fullName>Techwall</fullName>
+                <default>false</default>
+                <label>Techwall</label>
+            </value>
+            <value>
+                <fullName>Tekion</fullName>
+                <default>false</default>
+                <label>Tekion</label>
+            </value>
+            <value>
+                <fullName>TimeHighWay</fullName>
+                <default>false</default>
+                <label>TimeHighWay</label>
+            </value>
+            <value>
+                <fullName>Total Customer Connect</fullName>
+                <default>false</default>
+                <label>Total Customer Connect</label>
+            </value>
+            <value>
+                <fullName>UpdatePromise</fullName>
+                <default>false</default>
+                <label>UpdatePromise</label>
+            </value>
+            <value>
+                <fullName>Uptime by Ford (OEM)</fullName>
+                <default>false</default>
+                <label>Uptime by Ford (OEM)</label>
+            </value>
+            <value>
+                <fullName>Website Form</fullName>
+                <default>false</default>
+                <label>Website Form</label>
+            </value>
+            <value>
+                <fullName>Xtime</fullName>
+                <default>false</default>
+                <label>Xtime</label>
+            </value>
+            <value>
+                <fullName>Calendly</fullName>
+                <default>false</default>
+                <label>Calendly</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

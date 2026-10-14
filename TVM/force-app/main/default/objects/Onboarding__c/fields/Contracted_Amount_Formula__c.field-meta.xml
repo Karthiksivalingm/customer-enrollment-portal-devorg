@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracted_Amount_Formula__c</fullName>
+    <formula>if(
+Contracted_Amount_Override__c&gt;0, Contracted_Amount_Override__c, 
+if(
+Contracted_Amount_Override__c&lt;0, 0,
+
+if(Contracted_Amount__c&gt;0 || Foundation_Sold_Opp__c , Contracted_Amount__c, Opportunity__r.Contracted_Amount__c))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contracted Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

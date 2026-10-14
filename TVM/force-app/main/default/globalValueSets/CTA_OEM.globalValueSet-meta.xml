@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Explore Inventory</fullName>
+        <default>false</default>
+        <label>Explore Inventory</label>
+    </customValue>
+    <customValue>
+        <fullName>Offer Details</fullName>
+        <default>false</default>
+        <label>Offer Details</label>
+    </customValue>
+    <customValue>
+        <fullName>View Inventory</fullName>
+        <default>false</default>
+        <label>View Inventory</label>
+    </customValue>
+    <masterLabel>CTA (OEM)</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

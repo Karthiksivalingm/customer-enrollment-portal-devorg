@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Derrick_Closed_Tickets_DC</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Flag__c</columns>
+    <columns>Quick_Note__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Request_User__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Sort_Grouping__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Ready for Deployment,Cancelled,On Hold</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>User_Story__c.Regular</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Derrick Chen</value>
+    </filters>
+    <label>Derrick Closed Tickets_DC</label>
+</ListView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_Slack_Channel__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(Slack_Channel_Id__c)),
+    HYPERLINK(&quot;https://app.slack.com/client/T0HNY7Z99/&quot; &amp; Slack_Channel_Id__c, &quot;Link to Slack&quot;, &quot;_blank&quot;),
+    &quot;No Slack&quot;
+  )</formula>
+    <label>View Slack Conversation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

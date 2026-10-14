@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Rev_From_Previous_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Net_Revenue_Change_From_Prev_Less_Mail__c &gt;0, &quot;Increase&quot;,
+if(Net_Revenue_Change_From_Prev_Less_Mail__c &lt;0, &quot;Decrease&quot;,
+if(Net_Revenue_Change_From_Prev_Less_Mail__c =0, &quot;No Change&quot;,
+&quot;Error&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Net Rev From Previous Less Mail Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

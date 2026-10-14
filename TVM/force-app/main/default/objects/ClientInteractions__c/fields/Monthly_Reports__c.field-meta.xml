@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Reports__c</fullName>
+    <label>Monthly Reports</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>4+ per month</fullName>
+                <default>false</default>
+                <label>4+ per month</label>
+            </value>
+            <value>
+                <fullName>4x per month</fullName>
+                <default>false</default>
+                <label>4x per month</label>
+            </value>
+            <value>
+                <fullName>3x per month</fullName>
+                <default>false</default>
+                <label>3x per month</label>
+            </value>
+            <value>
+                <fullName>2x per month</fullName>
+                <default>false</default>
+                <label>2x per month</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

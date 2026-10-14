@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assignment</name>
+        <label>Assignment</label>
+        <locationX>1684</locationX>
+        <locationY>1051</locationY>
+        <assignmentItems>
+            <assignToReference>FlagAssistant</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ActiveAssistant</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FlagPreQual</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ActivePreQual</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FlagVDV</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ActiveVDV</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Products</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Flag_Assistant</name>
+        <label>Flag Assistant</label>
+        <locationX>1778</locationX>
+        <locationY>1614</locationY>
+        <assignmentItems>
+            <assignToReference>FlagAssistant</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cycle_Through_Products</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Flag_Assistant_0</name>
+        <label>Flag Assistant</label>
+        <locationX>1777</locationX>
+        <locationY>1744</locationY>
+        <assignmentItems>
+            <assignToReference>FlagPreQual</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cycle_Through_Products</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Flag_Assistant_0_0</name>
+        <label>Flag Assistant</label>
+        <locationX>1778</locationX>
+        <locationY>1884</locationY>
+        <assignmentItems>
+            <assignToReference>FlagVDV</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cycle_Through_Products</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Mark_Closed_Lost</name>
+        <label>Mark Closed Lost</label>
+        <locationX>1150</locationX>
+        <locationY>837</locationY>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Opted Out</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.Close_Date_Actual__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.Try_Buy_Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EarliestTryBuy</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Closed_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Mark_Closed_Won</name>
+        <label>Mark Closed Won</label>
+        <locationX>1326</locationX>
+        <locationY>833</locationY>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Moved to Paid</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Debug</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetOpenOpp.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.Close_Date_Actual__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Budget_Month_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.Try_Buy_Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EarliestTryBuy</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Mark_Starting</name>
+        <label>Mark Starting</label>
+        <locationX>809</locationX>
+        <locationY>1279</locationY>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activated in Budget App</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GetOpenOpp.Try_Buy_Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EarliestTryBuy</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Closed_Status_0</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Closed_Already</name>
+        <label>Closed Already</label>
+        <locationX>1598</locationX>
+        <locationY>897</locationY>
+        <defaultConnector>
+            <targetReference>Create_Try_Buy</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Create</defaultConnectorLabel>
+        <rules>
+            <name>Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetClosedOpp</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>No_Products_Gate</name>
+        <label>No Products Gate</label>
+        <locationX>1856</locationX>
+        <locationY>1059</locationY>
+        <defaultConnector>
+            <targetReference>Cycle_Through_Products</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Has Products</defaultConnectorLabel>
+        <rules>
+            <name>No_Products</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Products</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>TryBuyProductList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Products_0</targetReference>
+            </connector>
+            <label>No Products</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Product_Decision</name>
+        <label>Product Decision</label>
+        <locationX>1952</locationX>
+        <locationY>1538</locationY>
+        <defaultConnectorLabel>Matched</defaultConnectorLabel>
+        <rules>
+            <name>Clear_Bundle</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TryBuyProductList</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>BundleAIPreQualVDV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Bundle</targetReference>
+            </connector>
+            <label>Clear Bundle</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Product_Decision_0</name>
+        <label>Product Decision</label>
+        <locationX>2226</locationX>
+        <locationY>1208</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Bundle</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Cycle_Through_Products.Contract_Product_Name__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Try &amp; Buy Bundle </stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Product_Decision</targetReference>
+            </connector>
+            <label>Bundle</label>
+        </rules>
+        <rules>
+            <name>Try_Buy_Apollo_Assistant_Ai</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Cycle_Through_Products.Contract_Product_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Try &amp; Buy Apollo Assistant.AI</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Product_Decision_0_0</targetReference>
+            </connector>
+            <label>Try &amp; Buy Apollo Assistant.Ai</label>
+        </rules>
+        <rules>
+            <name>Try_Buy_Credit_PreQual</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Cycle_Through_Products.Contract_Product_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Try &amp; Buy Credit PreQual</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Product_Decision_0_0_0</targetReference>
+            </connector>
+            <label>Try &amp; Buy Credit PreQual</label>
+        </rules>
+        <rules>
+            <name>Try_Buy_VDV</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Cycle_Through_Products.Contract_Product_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Try &amp; Buy VDV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Product_Decision_0_0_0_0</targetReference>
+            </connector>
+            <label>Try &amp; Buy VDV</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Product_Decision_0_0</name>
+        <label>Product Decision</label>
+        <locationX>1965</locationX>
+        <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>Flag_Assistant</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Clear_Try_Buy_Apollo_Assistant_Ai_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApolloAssistantStatus</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Bundle</targetReference>
+            </connector>
+            <label>Clear Try &amp; Buy Apollo Assistant.Ai</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Product_Decision_0_0_0</name>
+        <label>Product Decision</label>
+        <locationX>1965</locationX>
+        <locationY>1820</locationY>
+        <defaultConnector>
+            <targetReference>Flag_Assistant_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Clear_Try_Buy_Credit_PreQual_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CreditPreQualStatus</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Bundle</targetReference>
+            </connector>
+            <label>Clear Try &amp; Buy Credit PreQual</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Product_Decision_0_0_0_0</name>
+        <label>Product Decision</label>
+        <locationX>1980</locationX>
+        <locationY>1958</locationY>
+        <defaultConnector>
+            <targetReference>Flag_Assistant_0_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Clear_Try_Buy_VDV_0_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VDVStatus</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Bundle</targetReference>
+            </connector>
+            <label>Clear Try &amp; Buy VDV</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Products_to_Add_Gate</name>
+        <label>Products to Add Gate</label>
+        <locationX>988</locationX>
+        <locationY>1548</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Products_to_Add</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TryBuyProductListToAdd</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Products_0_0</targetReference>
+            </connector>
+            <label>Products to Add</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Terminate</name>
+        <label>Terminate?</label>
+        <locationX>968</locationX>
+        <locationY>371</locationY>
+        <defaultConnector>
+            <targetReference>GetOpenOpp</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Meeting_Recap_ID__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Terminate</label>
+        </rules>
+        <rules>
+            <name>Also_Terminate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApolloAssistantStatus</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>CreditPreQualStatus</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>VDVStatus</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <label>Also Terminate</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_Needs_Doing</name>
+        <label>What Needs Doing</label>
+        <locationX>1313</locationX>
+        <locationY>684</locationY>
+        <defaultConnectorLabel>No Action</defaultConnectorLabel>
+        <rules>
+            <name>Mark_Opps_Won</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>ApolloAssistantStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CreditPreQualStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VDVStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetOpenOpp</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Closed_Won</targetReference>
+            </connector>
+            <label>Mark Opps Won</label>
+        </rules>
+        <rules>
+            <name>Mark_Opps_Lost</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>ApolloAssistantStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lost DON&apos;T DO THIS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CreditPreQualStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lost DON&apos;T DO THIS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VDVStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lost DON&apos;T DO THIS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetOpenOpp</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Closed_Lost</targetReference>
+            </connector>
+            <label>Mark Opps Lost (DEP)</label>
+        </rules>
+        <rules>
+            <name>Add_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetOpenOpp</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>TryBuyProductList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetClosedOpp</targetReference>
+            </connector>
+            <label>Add Opp</label>
+        </rules>
+        <rules>
+            <name>Update_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetOpenOpp</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment</targetReference>
+            </connector>
+            <label>Update Opp</label>
+        </rules>
+    </decisions>
+    <description>Obj Monthly Budget | Trigger 2</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ActiveAssistant</name>
+        <dataType>Boolean</dataType>
+        <expression>{!ApolloAssistantStatus}=&quot;Active&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>ActivePreQual</name>
+        <dataType>Boolean</dataType>
+        <expression>{!CreditPreQualStatus}=&quot;Active&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>ActiveVDV</name>
+        <dataType>Boolean</dataType>
+        <expression>{!VDVStatus}=&quot;Active&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>ApolloAssistantStatus</name>
+        <dataType>String</dataType>
+        <expression>if({!$Record.Try_Buy_Apollo_Assistant_Status__c}=&quot;No Try &amp; Buy&quot;, &quot;&quot;,
+if({!$Record.Try_Buy_Apollo_Assistant_Status__c}=&quot;Lost&quot;, &quot;Lost&quot;,
+if(Contains({!$Record.Try_Buy_Apollo_Assistant_Status__c}, &quot;Month&quot;), &quot;Active&quot;,
+if({!$Record.Try_Buy_Apollo_Assistant_Status__c}!=&quot;&quot;, &quot;Won&quot;,
+&quot;&quot;
+))))</expression>
+    </formulas>
+    <formulas>
+        <name>CreditPreQualStatus</name>
+        <dataType>String</dataType>
+        <expression>if({!$Record.Try_Buy_Credit_PreQual_Status__c}=&quot;No Try &amp; Buy&quot;, &quot;&quot;,
+if({!$Record.Try_Buy_Credit_PreQual_Status__c}=&quot;Lost&quot;, &quot;Lost&quot;,
+if(Contains({!$Record.Try_Buy_Credit_Prequal_Status__c}, &quot;Month&quot;), &quot;Active&quot;,
+if({!$Record.Try_Buy_Credit_PreQual_Status__c}!=&quot;&quot;, &quot;Won&quot;,
+&quot;&quot;
+))))</expression>
+    </formulas>
+    <formulas>
+        <name>EarliestTryBuy</name>
+        <dataType>Date</dataType>
+        <expression>if(
+{!ActiveVDV}, {!$Record.Earliest_Try_Buy_VDV__c},
+if(
+{!ActivePreQual}, {!$Record.Earliest_Try_Buy_Credit_PreQual__c},
+if(
+{!ActiveAssistant}, {!$Record.Earliest_Try_Buy_Apollo_Assistant_AI__c},
+null
+)))</expression>
+    </formulas>
+    <formulas>
+        <name>ExpectedCloseDate</name>
+        <dataType>Date</dataType>
+        <expression>if(
+IsNull(DateValue({!$Record.Try_Buy_Apollo_Assistant_Expected_Paid__c}))=false,
+DateValue({!$Record.Try_Buy_Apollo_Assistant_Expected_Paid__c}),
+if(
+IsNull(DateValue({!$Record.Try_Buy_Credit_PreQual_Expected_Paid__c}))=false,
+DateValue({!$Record.Try_Buy_Credit_PreQual_Expected_Paid__c}),
+if(
+IsNull(DateValue({!$Record.Try_Buy_VDV_Expected_Paid__c}))=false,
+DateValue({!$Record.Try_Buy_VDV_Expected_Paid__c}),
+
+ADDMONTHS({!$Record.Budget_Month_Date__c}, 2)
+)))</expression>
+    </formulas>
+    <formulas>
+        <name>FirstDayCurrentMonth</name>
+        <dataType>Date</dataType>
+        <expression>DATE(Year({!$Flow.CurrentDate}),MONTH({!$Flow.CurrentDate}), 1)</expression>
+    </formulas>
+    <formulas>
+        <name>FirstDayNextMonth</name>
+        <dataType>Date</dataType>
+        <expression>IF(MONTH({!$Flow.CurrentDate}) = 1, 
+   DATE(YEAR({!$Flow.CurrentDate}) - 1, 12, 1),
+   DATE(YEAR({!$Flow.CurrentDate}), MONTH({!$Flow.CurrentDate}) + 1, 1)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FirstDayPreviousMonth</name>
+        <dataType>Date</dataType>
+        <expression>IF(MONTH({!$Flow.CurrentDate}) = 1, 
+   DATE(YEAR({!$Flow.CurrentDate}) - 1, 12, 1),
+   DATE(YEAR({!$Flow.CurrentDate}), MONTH({!$Flow.CurrentDate}) - 1, 1)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>NewCloseDate</name>
+        <dataType>Date</dataType>
+        <expression>AddMonths({!$Record.Budget_Month_Date__c}, 3)</expression>
+    </formulas>
+    <formulas>
+        <name>TryBuyProductList</name>
+        <dataType>String</dataType>
+        <expression>if(
+{!ApolloAssistantStatus}=&quot;Active&quot; &amp;&amp; {!CreditPreQualStatus}=&quot;Active&quot; &amp;&amp; {!VDVStatus}=&quot;Active&quot;, &quot;BundleAIPreQualVDV&quot;,
+if({!ApolloAssistantStatus}=&quot;Active&quot;, &quot;Apollo_Assistant_AI&quot;, &quot;&quot;)&amp;
+if({!CreditPreQualStatus}=&quot;Active&quot;, &quot;PreQual&quot;, &quot;&quot;)&amp;
+if({!VDVStatus}=&quot;Active&quot;, &quot;VDV&quot;, &quot;&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>TryBuyProductListToAdd</name>
+        <dataType>String</dataType>
+        <expression>if(
+{!FlagAssistant} &amp;&amp; {!FlagPreQual} &amp;&amp; {!FlagVDV}, &quot;BundleAIPreQualVDV&quot;,
+if({!FlagAssistant}, &quot;Apollo_Assistant_AI&quot;, &quot;&quot;)&amp;
+if({!FlagPreQual}, &quot;PreQual&quot;, &quot;&quot;)&amp;
+if({!FlagVDV}, &quot;VDV&quot;, &quot;&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>VDVStatus</name>
+        <dataType>String</dataType>
+        <expression>if({!$Record.Try_Buy_VDV_Status__c}=&quot;No Try &amp; Buy&quot;, &quot;&quot;,
+if({!$Record.Try_Buy_VDV_Status__c}=&quot;Lost&quot;, &quot;Lost&quot;,
+if(Contains({!$Record.Try_Buy_VDV_Status__c}, &quot;Month&quot;), &quot;Active&quot;,
+if({!$Record.Try_Buy_VDV_Status__c}!=&quot;&quot;, &quot;Won&quot;,
+&quot;&quot;
+))))</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Try &amp; Buy Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Monthly Budget - CreatedUpdated Try&amp;Buy</label>
+    <loops>
+        <name>Cycle_Through_Products</name>
+        <label>Cycle Through Products</label>
+        <locationX>1866</locationX>
+        <locationY>1241</locationY>
+        <collectionReference>Get_Products</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Product_Decision_0</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Products_to_Add_Gate</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Try_Buy</name>
+        <label>Create Try &amp; Buy</label>
+        <locationX>1406</locationX>
+        <locationY>1157</locationY>
+        <connector>
+            <targetReference>Set_Products</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>ExpectedCloseDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Dealership_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Pricebook2Id</field>
+            <value>
+                <stringValue>01sVb000001d8I5IAI</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>012Vb000006lHV1</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Activated in Budget App</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Support__c</field>
+            <value>
+                <stringValue>Virtual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Try_Buy_Campaign__c</field>
+            <value>
+                <stringValue>Activated in Budget App</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Try_Buy_Start_Date__c</field>
+            <value>
+                <elementReference>EarliestTryBuy</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VP_of_Client_Services__c</field>
+            <value>
+                <elementReference>$Record.Account__r.VP_of_Client_Services__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VP_of_Sales__c</field>
+            <value>
+                <elementReference>$Record.Account__r.VP_of_Sales__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordDeletes>
+        <name>Delete_Bundle</name>
+        <label>Delete Bundle</label>
+        <locationX>1303</locationX>
+        <locationY>1730</locationY>
+        <connector>
+            <targetReference>Cycle_Through_Products</targetReference>
+        </connector>
+        <inputReference>Cycle_Through_Products</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Products</name>
+        <label>Get Products</label>
+        <locationX>1686</locationX>
+        <locationY>1171</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>No_Products_Gate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetOpenOpp.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetClosedOpp</name>
+        <label>GetClosedOpp</label>
+        <locationX>1507</locationX>
+        <locationY>793</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Closed_Already</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Try &amp; Buy</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetOpenOpp</name>
+        <label>GetOpenOpp</label>
+        <locationX>1320</locationX>
+        <locationY>479</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>What_Needs_Doing</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Try &amp; Buy</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Closed_Status</name>
+        <label>Update Closed Status</label>
+        <locationX>1217</locationX>
+        <locationY>1004</locationY>
+        <inputReference>GetOpenOpp</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Closed_Status_0</name>
+        <label>Update Closed Status</label>
+        <locationX>988</locationX>
+        <locationY>1234</locationY>
+        <inputReference>GetOpenOpp</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>842</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Terminate</targetReference>
+        </connector>
+        <object>Monthly_Budget__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Set_Products</name>
+        <label>Set Products</label>
+        <locationX>1508</locationX>
+        <locationY>1158</locationY>
+        <flowName>Opportunity_Subflow_Try_Buy_Products</flowName>
+        <inputAssignments>
+            <name>OppIDInput</name>
+            <value>
+                <elementReference>Create_Try_Buy</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Products</name>
+            <value>
+                <elementReference>TryBuyProductList</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Set_Products_0</name>
+        <label>Set Products</label>
+        <locationX>2086</locationX>
+        <locationY>1054</locationY>
+        <flowName>Opportunity_Subflow_Try_Buy_Products</flowName>
+        <inputAssignments>
+            <name>Opportunity</name>
+            <value>
+                <elementReference>GetOpenOpp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Products</name>
+            <value>
+                <elementReference>TryBuyProductList</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Set_Products_0_0</name>
+        <label>Set Products</label>
+        <locationX>907</locationX>
+        <locationY>1407</locationY>
+        <connector>
+            <targetReference>Mark_Starting</targetReference>
+        </connector>
+        <flowName>Opportunity_Subflow_Try_Buy_Products</flowName>
+        <inputAssignments>
+            <name>Opportunity</name>
+            <value>
+                <elementReference>GetOpenOpp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Products</name>
+            <value>
+                <elementReference>TryBuyProductListToAdd</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Set_Values</name>
+        <label>Set Values</label>
+        <locationX>1312</locationX>
+        <locationY>964</locationY>
+        <connector>
+            <targetReference>Update_Closed_Status</targetReference>
+        </connector>
+        <flowName>Populate_Product_Details_on_Opportunity_Trigger</flowName>
+        <inputAssignments>
+            <name>Opportunity</name>
+            <value>
+                <elementReference>GetOpenOpp</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <triggerOrder>500</triggerOrder>
+    <variables>
+        <name>Debug</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FlagAssistant</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FlagPreQual</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FlagVDV</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

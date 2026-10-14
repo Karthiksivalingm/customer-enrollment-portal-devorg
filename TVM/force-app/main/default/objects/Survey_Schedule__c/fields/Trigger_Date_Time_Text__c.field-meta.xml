@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trigger_Date_Time_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>Text(Today()) &amp;&quot; &quot;&amp; Left(Text(TimeValue( Starting_Date_Time__c )), 8)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Trigger Date Time Text</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

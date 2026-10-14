@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Package_v2__c</fullName>
+    <label>Current Package</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Platform Solutions Package 3</fullName>
+                <default>false</default>
+                <label>Platform Solutions Package 3</label>
+            </value>
+            <value>
+                <fullName>Platform Solutions Package 2</fullName>
+                <default>false</default>
+                <label>Platform Solutions Package 2</label>
+            </value>
+            <value>
+                <fullName>Platform Solutions Package 1</fullName>
+                <default>false</default>
+                <label>Platform Solutions Package 1</label>
+            </value>
+            <value>
+                <fullName>1:1 Messaging Package 4</fullName>
+                <default>false</default>
+                <label>1:1 Messaging Package 4</label>
+            </value>
+            <value>
+                <fullName>1:1 Messaging Package 3</fullName>
+                <default>false</default>
+                <label>1:1 Messaging Package 3</label>
+            </value>
+            <value>
+                <fullName>1:1 Messaging Package 2</fullName>
+                <default>false</default>
+                <label>1:1 Messaging Package 2</label>
+            </value>
+            <value>
+                <fullName>1:1 Messaging Package 1</fullName>
+                <default>false</default>
+                <label>1:1 Messaging Package 1</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

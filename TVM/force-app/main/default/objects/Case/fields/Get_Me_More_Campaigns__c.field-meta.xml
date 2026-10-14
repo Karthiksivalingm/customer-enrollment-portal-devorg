@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Get_Me_More_Campaigns__c</fullName>
+    <description>FND</description>
+    <label>Get Me More Campaigns</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Product_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Get_Me_More_Campaigns</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Used PMax</controllingFieldValue>
+            <valueName>Used PMax Campaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>On Brand / Off Brand Used Make</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>On Brand / Off Brand Used Make Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Spanish Used Car</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Used Car Acquisition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Used Fuel-Efficient Segment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <controllingFieldValue>New Video</controllingFieldValue>
+            <valueName>Video - Model - Supplemental</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Certified Year Make Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New PMax</controllingFieldValue>
+            <valueName>New PMax Campaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Make Model Specific Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Make Model Specific Upper Funnel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Make Model Upper Funnel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Priority Model Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Static Make Model Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Static Make Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Social</controllingFieldValue>
+            <valueName>Hyundai In-Market Reach &amp; Awareness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Non Brand Service Offers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Service - Supplemental</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

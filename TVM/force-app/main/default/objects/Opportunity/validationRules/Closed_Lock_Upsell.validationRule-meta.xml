@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lock_Upsell</fullName>
+    <active>true</active>
+    <description>We can depreciate this after a few months 1/29/26</description>
+    <errorConditionFormula>$Profile.Name != &quot;System Administrator&quot; &amp;&amp;
+Opportunity_Type__c &lt;&gt; &quot;Try &amp; Buy&quot; &amp;&amp;
+Opportunity_Type__c &lt;&gt; &quot;Upsell&quot; &amp;&amp;
+ISCHANGED( Upsell_Team_Assist__c ) &amp;&amp;
+Close_Lock__c</errorConditionFormula>
+    <errorMessage>Upsell Assist can&apos;t be modified for New Sales after closing. If you feel like this is in error please reach out to SF Admin Team</errorMessage>
+</ValidationRule>

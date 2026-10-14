@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Digital_Packages</fullName>
+    <columns>NAME</columns>
+    <columns>Onboarding_Team__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>Completion_Status__c</columns>
+    <columns>Digital_Go_Live_Date__c</columns>
+    <columns>Digital_Team__c</columns>
+    <columns>Digital_Auditor__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Completion_Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>Types__c</field>
+        <operation>contains</operation>
+        <value>Digital</value>
+    </filters>
+    <label>Open Digital Packages</label>
+</ListView>

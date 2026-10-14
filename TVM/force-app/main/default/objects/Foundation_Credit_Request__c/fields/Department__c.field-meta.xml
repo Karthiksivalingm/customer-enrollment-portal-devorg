@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department__c</fullName>
+    <description>FND</description>
+    <label>Department</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>RPM</fullName>
+                <default>false</default>
+                <label>RPM</label>
+            </value>
+            <value>
+                <fullName>AT</fullName>
+                <default>false</default>
+                <label>AT</label>
+            </value>
+            <value>
+                <fullName>Sr. Management/Leaders</fullName>
+                <default>false</default>
+                <label>Sr. Management/Leaders</label>
+            </value>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>Co-Op &amp; Compliance</fullName>
+                <default>false</default>
+                <label>Co-Op &amp; Compliance</label>
+            </value>
+            <value>
+                <fullName>Data Team</fullName>
+                <default>false</default>
+                <label>Data Team</label>
+            </value>
+            <value>
+                <fullName>OEM Team</fullName>
+                <default>false</default>
+                <label>OEM Team</label>
+            </value>
+            <value>
+                <fullName>Performance Team</fullName>
+                <default>false</default>
+                <label>Performance Team</label>
+            </value>
+            <value>
+                <fullName>NCM</fullName>
+                <default>false</default>
+                <label>NCM</label>
+            </value>
+            <value>
+                <fullName>Business Intelligence</fullName>
+                <default>false</default>
+                <label>Business Intelligence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

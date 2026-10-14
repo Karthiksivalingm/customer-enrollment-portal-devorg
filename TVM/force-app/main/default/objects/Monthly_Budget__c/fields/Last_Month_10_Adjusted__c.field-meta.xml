@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Month_10_Adjusted__c</fullName>
+    <formula>if(DAY(Today())&gt;10, 
+Date(Year(ADDMONTHS(Today(), -1)), Month(ADDMONTHS(Today(), -1)), 1), 
+Date(Year(ADDMONTHS(Today(), -2)), Month(ADDMONTHS(Today(), -2)), 1)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last Month 10 Adjusted</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

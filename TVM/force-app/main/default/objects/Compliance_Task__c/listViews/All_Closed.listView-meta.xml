@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Closed</fullName>
+    <columns>Compliance_Request__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Designer__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Change Complete</value>
+    </filters>
+    <label>All Closed</label>
+</ListView>

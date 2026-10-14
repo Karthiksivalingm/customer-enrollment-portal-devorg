@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proofing_Change_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(Current_Status__c,
+&quot;05b Pre Client - Proofing Changes - Design&quot;, &quot;Change&quot;,
+&quot;06b Proofing Changes - Design&quot;, &quot;Change&quot;,
+&quot;08c Creative Approved - Proofing / Compliance&quot;, &quot;Complete&quot;,
+&quot;08c Creative Approved - Proofing Complete&quot;,&quot;Complete&quot;,
+&quot;05e Pre Client - Proofing Complete&quot;,&quot;Complete&quot;,
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Proofing Change Bucket</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

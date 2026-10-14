@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>case_is_future_future_start_date_needed</fullName>
+    <active>false</active>
+    <description>FND</description>
+    <errorConditionFormula>IF(AND(ISPICKVAL( Status_Filtered__c ,&apos;Future&apos;),ISBLANK(  Digital_Execution_Start_Date__c  )),true,false)</errorConditionFormula>
+    <errorDisplayField>Future_Start_Date__c</errorDisplayField>
+    <errorMessage>You must have to select future start date.</errorMessage>
+</ValidationRule>

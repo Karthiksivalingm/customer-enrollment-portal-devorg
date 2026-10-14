@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_daily_budgets_Make_sure_the_camp__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Check daily budgets. Make sure the campaign&apos;s daily budgets are fairly even.</description>
+    <label>Check daily budgets Make sure the camp</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

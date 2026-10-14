@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    CONTAINS(DR_tool_Company__r.Name, &quot;Team Velocity&quot;),
+    10, 
+    0  
+)
++
+IF(
+    CONTAINS(Finance_Application_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(PreQual_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(Service_Scheduler_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(SRP_CTA_1_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(SRP_CTA_2_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(Text_Chat_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(Trade_Value_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(VDP_CTA_1_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)
++
+IF(
+    CONTAINS(VDP_CTA_2_Company__r.Name, &quot;Team Velocity&quot;),
+    10,
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Website Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

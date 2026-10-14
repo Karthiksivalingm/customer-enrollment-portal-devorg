@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Banner / Logo</fullName>
+                <default>false</default>
+                <label>Banner / Logo</label>
+            </value>
+            <value>
+                <fullName>Pricing / Payment</fullName>
+                <default>false</default>
+                <label>Pricing / Payment</label>
+            </value>
+            <value>
+                <fullName>Vehicle Image</fullName>
+                <default>false</default>
+                <label>Vehicle Image</label>
+            </value>
+            <value>
+                <fullName>Prohibited or Distressed Language</fullName>
+                <default>false</default>
+                <label>Prohibited or Distressed Language</label>
+            </value>
+            <value>
+                <fullName>Dealer Image Issues</fullName>
+                <default>false</default>
+                <label>Dealer Image Issues</label>
+            </value>
+            <value>
+                <fullName>Website Creative Issues (non-banner/log)</fullName>
+                <default>false</default>
+                <label>Website Creative Issues (non-banner/log)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

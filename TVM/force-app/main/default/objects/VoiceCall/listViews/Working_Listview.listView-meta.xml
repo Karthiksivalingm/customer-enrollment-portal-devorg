@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Working_Listview</fullName>
+    <columns>Name</columns>
+    <columns>FromPhoneNumber</columns>
+    <columns>IsRecorded</columns>
+    <columns>Related_Contact__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>CallResolution</columns>
+    <columns>CallStartDateTime</columns>
+    <columns>ToPhoneNumber</columns>
+    <columns>EndUser</columns>
+    <columns>Owner</columns>
+    <columns>RelatedRecord</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CallType</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>ToPhoneNumber</field>
+        <operation>equals</operation>
+        <value>+16464402328</value>
+    </filters>
+    <label>Working Listview</label>
+</ListView>

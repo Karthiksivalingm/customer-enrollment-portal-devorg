@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DNC</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>of_Contacts__c</field>
+        <operation>greaterThan</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>of_DNCs__c</field>
+        <operation>greaterThan</operation>
+        <value>1</value>
+    </filters>
+    <label>DNC</label>
+</ListView>

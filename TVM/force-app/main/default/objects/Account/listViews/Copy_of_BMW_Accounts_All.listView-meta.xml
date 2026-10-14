@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_BMW_Accounts_All</fullName>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>Client_Type_Team_V__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Related_Auto_Group__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>Contacts_with_Email_Addresses__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>Inventory_Feeds_Only__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>notEqual</operation>
+        <value>TEST,Best Ferrari</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>FERRARI</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>notEqual</operation>
+        <value>,AB</value>
+    </filters>
+    <filters>
+        <field>Dealership_Closed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Copy of BMW Accounts All</label>
+</ListView>

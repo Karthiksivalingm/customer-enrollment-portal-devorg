@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Service_Retention_Health_Score_D__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(And(Category_Website_Active__c, Category_Service_Retention_Active__c), 
+	&quot;**Both Website/Service Retention = 15pts**&quot;, 
+	&quot;Both Website/Service Retention = 15pts&quot;)&amp;BR()&amp;
+if(And(Category_Website_Active__c, Category_Service_Retention_Active__c=false), 
+	&quot;**Website Active Only = 10pts**&quot;, 
+	&quot;Website Active Only = 10pts&quot;)&amp;BR()&amp;
+if(And(Category_Website_Active__c=false, Category_Service_Retention_Active__c),
+	&quot;**Service Retention Only = 5pts**&quot;, 
+	&quot;Service Retention Only = 5pts&quot;)&amp;BR()&amp;
+if(And(Category_Website_Active__c=false, Category_Service_Retention_Active__c=false), 
+	&quot;**Neither Website/Service Retention = 0pts**&quot;, 
+	&quot;Neither Website/Service Retention = 0pts&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Calculation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

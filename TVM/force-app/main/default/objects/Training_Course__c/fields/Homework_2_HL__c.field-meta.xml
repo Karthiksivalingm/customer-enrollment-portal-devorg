@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Homework_2_HL__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Homework_Hyperlink_2__c = &quot;&quot;, Homework_2__c, HYPERLINK(Homework_Hyperlink_2__c,  Homework_2__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Homework 2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

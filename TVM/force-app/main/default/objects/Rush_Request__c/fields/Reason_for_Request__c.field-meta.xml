@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Request__c</fullName>
+    <label>Reason for Rush</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Change in creative theme</fullName>
+                <default>false</default>
+                <label>Change in creative theme</label>
+            </value>
+            <value>
+                <fullName>Compliance Issue</fullName>
+                <default>false</default>
+                <label>Compliance Issue</label>
+            </value>
+            <value>
+                <fullName>Design Error</fullName>
+                <default>false</default>
+                <label>Design Error</label>
+            </value>
+            <value>
+                <fullName>Field Team Error</fullName>
+                <default>false</default>
+                <label>Field Team Error</label>
+            </value>
+            <value>
+                <fullName>In Person Dealer Meeting</fullName>
+                <default>false</default>
+                <label>In Person Dealer Meeting</label>
+            </value>
+            <value>
+                <fullName>Minor Update Needed To Order</fullName>
+                <default>false</default>
+                <label>Minor Update Needed To Order</label>
+            </value>
+            <value>
+                <fullName>Natural Disaster Support</fullName>
+                <default>false</default>
+                <label>Natural Disaster Support</label>
+            </value>
+            <value>
+                <fullName>Need for Dealer Event</fullName>
+                <default>false</default>
+                <label>Need for Dealer Event</label>
+            </value>
+            <value>
+                <fullName>New Incentive Release</fullName>
+                <default>false</default>
+                <label>New Incentive Release</label>
+            </value>
+            <value>
+                <fullName>OEM Rep Request</fullName>
+                <default>false</default>
+                <label>OEM Rep Request</label>
+            </value>
+            <value>
+                <fullName>Over 3 business days from request</fullName>
+                <default>false</default>
+                <label>Over 3 business days from request</label>
+            </value>
+            <value>
+                <fullName>Print Deadline</fullName>
+                <default>false</default>
+                <label>Print Deadline</label>
+            </value>
+            <value>
+                <fullName>Red Dealer</fullName>
+                <default>false</default>
+                <label>Red Dealer</label>
+            </value>
+            <value>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+                <label>Upsell</label>
+            </value>
+            <value>
+                <fullName>Potential Retention Risk - Approved By TL</fullName>
+                <default>false</default>
+                <label>Potential Retention Risk - Approved By TL</label>
+            </value>
+            <value>
+                <fullName>TL Requested Rush</fullName>
+                <default>false</default>
+                <label>TL Requested Rush</label>
+            </value>
+            <value>
+                <fullName>Over 48 hours from request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Over 48 hours from request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

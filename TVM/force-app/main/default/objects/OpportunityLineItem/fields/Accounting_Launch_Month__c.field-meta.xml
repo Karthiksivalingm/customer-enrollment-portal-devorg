@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounting_Launch_Month__c</fullName>
+    <formula>Opportunity.Account.Accounting_Launch_Month__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Accounting Launch Month</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

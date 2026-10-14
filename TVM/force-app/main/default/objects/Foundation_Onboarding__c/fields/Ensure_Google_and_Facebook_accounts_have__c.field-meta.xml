@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Google_and_Facebook_accounts_have__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Ensure Google and Facebook accounts have the “*OEM Dealer code*” - Foundation Direct -” in front of the account name.</description>
+    <label>Ensure Google and Facebook accounts have</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

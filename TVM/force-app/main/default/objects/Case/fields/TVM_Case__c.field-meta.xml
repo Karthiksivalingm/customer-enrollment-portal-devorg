@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Case__c</fullName>
+    <formula>Creator_Override__r.FirstName != &quot;Foundation&quot; &amp;&amp; Text(Case_Category__c ) != &quot;Foundation Digital Support&quot; &amp;&amp; 
+
+Text(Case_Category__c )!=&quot;Social Dealer&quot; &amp;&amp; Text(Case_Category__c )!=&quot;Digital SD&quot; &amp;&amp;
+
+ Account.Test_Account__c =false &amp;&amp; Text(Case_Category__c )!=&quot;Marketing Support&quot; &amp;&amp;
+
+/* This is for filtering out case categories before certain dates */
+
+(Text(Case_Category__c )!= &quot;General Support&quot; ||  Created_Date__c &gt; DATE(2024,8,1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVM Case</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

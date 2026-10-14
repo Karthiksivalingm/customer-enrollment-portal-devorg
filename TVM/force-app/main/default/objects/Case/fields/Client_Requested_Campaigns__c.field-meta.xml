@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Requested_Campaigns__c</fullName>
+    <description>FND</description>
+    <label>Client Requested Campaigns</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Product_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Client_Requested_Campaigns</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Electric Used</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Static Used Make Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Static Used Year Make Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Supplemental - Low Credit/No Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Used Brand Conquest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Used Car Acquisition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Used Make Specific Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Used Specific Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Search</controllingFieldValue>
+            <valueName>Used Specific Year Make Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Social</controllingFieldValue>
+            <valueName>Used - AIA - Inventory - No Payments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Social</controllingFieldValue>
+            <valueName>Used - AIA - Inventory - Remarketing - No Payments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Video</controllingFieldValue>
+            <valueName>Used Custom Video Campaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Display</controllingFieldValue>
+            <valueName>Dealer Why Buy Display Remarketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Conquest Make Model Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Electric Make Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Future Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Make Specific Purchase Intent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Spanish New Car Campaigns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Search</controllingFieldValue>
+            <valueName>Static Ioniq 5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Social</controllingFieldValue>
+            <valueName>AIA - All New Inventory - No Payments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Social</controllingFieldValue>
+            <valueName>AIA - All New Inventory - Selling Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Social</controllingFieldValue>
+            <valueName>Facebook Dealer Custom Creative</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Social</controllingFieldValue>
+            <valueName>New - AIA - Inventory - Remarketing - No Payments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Social</controllingFieldValue>
+            <valueName>New - AIA - Inventory - Remarketing - Selling Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Video</controllingFieldValue>
+            <valueName>Dealership Why Buy Campaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Video</controllingFieldValue>
+            <valueName>Esp Dealership Why Buy Campaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Video</controllingFieldValue>
+            <valueName>Hyundai ioniq 5 video 15 s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Video</controllingFieldValue>
+            <valueName>Hyundai ioniq 5 video 30 s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Service Collision</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Service Conquest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Service Online Parts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Service Rust Proofing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Static Service - Body Shop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Static Service - Conquest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Static Service - Detailing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Static Service - Make Specific</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Search</controllingFieldValue>
+            <valueName>Static Service - Non Branded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Social</controllingFieldValue>
+            <valueName>Service Custom Creative Campaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Video</controllingFieldValue>
+            <valueName>Service Custom Video Campaign</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

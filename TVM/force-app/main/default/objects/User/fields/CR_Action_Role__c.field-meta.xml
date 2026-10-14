@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CR_Action_Role__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Profile.Name,
+&quot;Production Support&quot;, &quot;Designer&quot;,
+&quot;System Administrator&quot;, &quot;PA&quot;,
+&quot;RSD&quot;, &quot;Field&quot;,
+&quot;RAD&quot;, &quot;Field&quot;,
+&quot;VP of Production&quot;, &quot;PA&quot;,
+&quot;VP&quot;, &quot;PA&quot;,
+&quot;Field&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CR Action Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

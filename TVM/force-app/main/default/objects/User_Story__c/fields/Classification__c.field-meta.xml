@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classification__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( With_UnitedTechno__c , &quot;UT&quot;,  
+if(Text(Application__c) =&quot;Pardot&quot;, &quot;PARDOT&quot;,   
+if(Text(Application__c) =&quot;Task Ray&quot;, &quot;TASKRAY&quot;,  
+if(Text(Application__c) =&quot;Reporting/Dashboard&quot;, &quot;Report/Dash&quot;,  
+if(CONTAINS(Short_Description__c , &quot;Ford Direct&quot;), &quot;FordDirect&quot;, 
+if(CONTAINS(Short_Description__c , &quot;HVS&quot;), &quot;HVS&quot;, 
+&quot;TVM&quot;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Classification</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

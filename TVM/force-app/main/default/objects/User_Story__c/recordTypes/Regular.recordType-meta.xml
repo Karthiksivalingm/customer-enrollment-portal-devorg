@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regular</fullName>
+    <active>true</active>
+    <description>Normal Admin Ticket</description>
+    <label>Regular</label>
+    <picklistValues>
+        <picklist>Application__c</picklist>
+        <values>
+            <fullName>Accounting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creative Requests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DS_Price_Books</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QB Load</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quickbase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting%2FDashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retention Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slack</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Assigned_Sprint__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Challenge_Level__c</picklist>
+        <values>
+            <fullName>Complex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simple</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Approval__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Difficulty__c</picklist>
+        <values>
+            <fullName>Easy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Easy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Hard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>Backlog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Could</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Should</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Would</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Admin Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Client Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need to Scope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Ticket</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Deployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Testing Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wait 4 Slack Field Synch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Feedback</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Theme__c</picklist>
+        <values>
+            <fullName>Access and Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Architecture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports and Dashboard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Accounting Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BDC Ticket</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

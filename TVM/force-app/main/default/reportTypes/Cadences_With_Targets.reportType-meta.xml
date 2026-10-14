@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>campaigns</category>
+    <deployed>true</deployed>
+    <description>Cadences With Targets</description>
+    <label>Cadences With Targets</label>
+    <sections>
+        <masterLabel>Cadences</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Cadence Trackers</masterLabel>
+    </sections>
+</ReportType>

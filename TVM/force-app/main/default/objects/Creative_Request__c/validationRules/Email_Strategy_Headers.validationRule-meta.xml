@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Strategy_Headers</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+  ISPICKVAL(Email_Strategy__c, &quot;----------ALL OF SALES----------&quot;),
+  ISPICKVAL(Email_Strategy__c, &quot;----------ALL OF SERVICE----------&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Email_Strategy__c</errorDisplayField>
+    <errorMessage>You cannot select a category header. Please choose a specific email strategy from the list.</errorMessage>
+</ValidationRule>

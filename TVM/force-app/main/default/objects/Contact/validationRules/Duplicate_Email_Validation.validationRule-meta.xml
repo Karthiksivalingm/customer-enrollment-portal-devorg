@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Email_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( Email ) &amp;&amp;
+Duplicate_Email_Validation__c 
+
+/*&amp;&amp; $Profile.Name !=&quot;System Administrator&quot;*/</errorConditionFormula>
+    <errorMessage>There&apos;s already a contact with this Email Address</errorMessage>
+</ValidationRule>

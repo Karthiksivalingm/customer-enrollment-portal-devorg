@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_12_Categories__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Sub_Category__c,
+&quot;Sales Mail&quot;, &quot;Sales Mail&quot;,
+&quot;Service Mail&quot;, &quot;Service Mail&quot;,
+&quot;Search&quot;, &quot;Search&quot;,
+&quot;Display&quot;, &quot;Display&quot;,
+&quot;Social&quot;, &quot;Social&quot;,
+&quot;Video&quot;, &quot;Video&quot;,
+&quot;Text&quot;, &quot;Text&quot;,
+&quot;Package Fees&quot;,
+if(Text(Main_Category__c) = &quot;Website&quot;, &quot;Website&quot;,
+if(Text(Main_Category__c) = &quot;Digital&quot;, &quot;Digital Fees&quot;,
+if(Contains(Contract_Product_Name__c, &quot;CXP&quot;), &quot;CXP&quot;,
+if(Contains(Contract_Product_Name__c, &quot;Sport Bundle&quot;) || Contains(Contract_Product_Name__c, &quot;Touring Bundle&quot;) || Contains(Contract_Product_Name__c, &quot;Advance Bundle&quot;) || Contains(Contract_Product_Name__c, &quot;A-Spec Website&quot;), &quot;Website&quot;,
+if(Text(Main_Category__c) = &quot;Retention&quot;, &quot;Sales Retention&quot;, &quot;ERROR&quot;)))))
+,
+&quot;Agency Fees&quot;, &quot;Agency Fees&quot;,
+&quot;Fees&quot;, &quot;Packages&quot;,
+&quot;Other&quot;, &quot;Packages&quot;,
+TEXT(Sub_Category__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reporting 12 Categories</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

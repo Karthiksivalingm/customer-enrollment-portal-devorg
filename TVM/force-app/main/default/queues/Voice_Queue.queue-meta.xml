@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>false</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Voice Queue</name>
+    <queueMembers>
+        <users>
+            <user>aflores@teamvelocitymarketing.com</user>
+            <user>alechuga@teamvelocitymarketing.com</user>
+            <user>eabad@teamvelocitymarketing.com</user>
+            <user>jdibiase@teamvelocitymarketing.com</user>
+            <user>jmoon@teamvelocitymarketing.com</user>
+            <user>jruiz@teamvelocitymarketing.com</user>
+            <user>jsombrio@teamvelocitymarketing.com</user>
+            <user>mcastillo@teamvelocitymarketing.com</user>
+            <user>nmanuel@teamvelocitymarketing.com</user>
+            <user>rstuchetz@teamvelocitymarketing.com</user>
+            <user>sandipp@unitedtechno.com.tvmprod</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>TVM_Voice_Routing_Config</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>VoiceCall</sobjectType>
+    </queueSobject>
+</Queue>

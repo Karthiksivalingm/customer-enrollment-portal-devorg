@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Group_Integration_Bypass__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows you to bypass the trigger for the Auto Group Integration with Quick Base</description>
+    <label>Auto Group Integration Bypass</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Digital_Reporting_Cases</fullName>
+    <columns>Red_Fire__c</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Name__c</columns>
+    <columns>Sub_Queue__c</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>Status_Number__c</columns>
+    <columns>Case_Subcategory__c</columns>
+    <columns>Case_Request__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Case_Category__c</field>
+        <operation>equals</operation>
+        <value>Digital Reporting</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Open Digital Reporting Cases</label>
+    <sharedTo>
+        <group>Digital_OEM</group>
+        <role>Digital_Reporting</role>
+        <role>Digital_Support</role>
+    </sharedTo>
+</ListView>

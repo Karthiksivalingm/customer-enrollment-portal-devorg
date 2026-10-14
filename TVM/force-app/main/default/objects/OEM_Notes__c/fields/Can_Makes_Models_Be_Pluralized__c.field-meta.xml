@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_Makes_Models_Be_Pluralized__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Cannot pluralize - must use &apos;models&apos; after make or model mention to make plural (IE Toyota models, Toyota RAV4 models, etc)&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Can Makes/Models Be Pluralized?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

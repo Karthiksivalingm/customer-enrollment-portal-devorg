@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Presentation_3_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(Presentation_3_grade__c),
+&quot;A&quot;, 10,
+&quot;B&quot;, 9,
+&quot;C&quot;, 8,
+&quot;D&quot;, 7,
+&quot;F&quot;, 6,
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Presentation 3 Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

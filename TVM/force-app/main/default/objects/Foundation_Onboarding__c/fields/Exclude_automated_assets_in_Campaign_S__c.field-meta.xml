@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_automated_assets_in_Campaign_S__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Exclude “automated assets” in Campaign Settings within Google Ads</description>
+    <label>Exclude &quot;automated assets&quot; in Campaign</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

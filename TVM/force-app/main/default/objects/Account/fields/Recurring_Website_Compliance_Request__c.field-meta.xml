@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring_Website_Compliance_Request__c</fullName>
+    <label>Recurring Website Compliance Request</label>
+    <summarizedField>Compliance_Request__c.CreatedDate</summarizedField>
+    <summaryFilterItems>
+        <field>Compliance_Request__c.Type__c</field>
+        <operation>equals</operation>
+        <value>Website</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Compliance_Request__c.Monthly_Recurring__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Compliance_Request__c.AccountId__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Quiz_Questions__c</fullName>
+    <inlineHelpText>Counts max score for completed quizzes only</inlineHelpText>
+    <label>Total Quiz Questions</label>
+    <summarizedField>Quiz__c.Total_Questions__c</summarizedField>
+    <summaryFilterItems>
+        <field>Quiz__c.Quiz_Completed_Date__c</field>
+        <operation>notEqual</operation>
+        <value></value>
+    </summaryFilterItems>
+    <summaryForeignKey>Quiz__c.Training_Course__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Try_Buy_Auto_Enrolled</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Link_to_Budget_App__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>Try_Buy_Start_Date__c</columns>
+    <columns>Try_Buy_First_Billing_Month__c</columns>
+    <columns>Try_Buy_Duration__c</columns>
+    <columns>Try_Buy_Review_Date__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account_RAD__c</columns>
+    <columns>Website_Product_Manager__c</columns>
+    <columns>Try_Buy_Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Try_Buy</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Try_Buy_Campaign__c</field>
+        <operation>contains</operation>
+        <value>Round</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Try &amp; Buy Auto Enrolled</label>
+</ListView>

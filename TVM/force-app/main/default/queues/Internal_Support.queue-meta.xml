@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>false</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Internal Support</name>
+    <queueMembers>
+        <users>
+            <user>dturner@teamvelocitymarketing.com</user>
+            <user>sknox@teamvelocitymarketing.com</user>
+            <user>soconnell@teamvelocitymarketing.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Audit_Log__c</sobjectType>
+    </queueSobject>
+</Queue>

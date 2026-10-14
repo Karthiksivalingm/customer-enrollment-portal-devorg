@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_New_Opportunity</fullName>
+    <availability>online</availability>
+    <description>This is the newest &quot;Create New Opportunity&quot; Created on 3/18/24</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Create New Opportunity</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://teamvelocity.lightning.force.com/flow/Opportunity_Creator?recordId={!Account.Id}&amp;variable1=1</url>
+</WebLink>

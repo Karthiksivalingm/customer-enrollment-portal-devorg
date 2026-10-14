@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Calls_Follow_Up</fullName>
+    <columns>Name</columns>
+    <columns>Incoming_Line_T__c</columns>
+    <columns>CallResolution</columns>
+    <columns>CallStartDateTime</columns>
+    <columns>Current_Owner__c</columns>
+    <columns>Caller_Input__c</columns>
+    <columns>CallType</columns>
+    <columns>Call_From__c</columns>
+    <columns>CallDurationInSeconds</columns>
+    <columns>Related_Contact__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>Account_Found__c</columns>
+    <columns>CreatedDate</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ToPhoneNumber</field>
+        <operation>equals</operation>
+        <value>+18444081840,+15715003470</value>
+    </filters>
+    <filters>
+        <field>Current_Owner__c</field>
+        <operation>equals</operation>
+        <value>Voicemail</value>
+    </filters>
+    <filters>
+        <field>Caller_Input__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>CallStartDateTime</field>
+        <operation>equals</operation>
+        <value>5/28/2026 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>CallResolution</field>
+        <operation>equals</operation>
+        <value>Not Resolved</value>
+    </filters>
+    <label>TVM Calls - Follow Ups</label>
+</ListView>

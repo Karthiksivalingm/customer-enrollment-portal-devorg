@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Output</name>
+        <label>Assign Output</label>
+        <locationX>182</locationX>
+        <locationY>1466</locationY>
+        <assignmentItems>
+            <assignToReference>Upsells</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_All_Upsells</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord.Contracted_Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Contracted</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Foundation_Opp</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Foundation_Assignment</name>
+        <label>Foundation Assignment</label>
+        <locationX>50</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>Contracted</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>OnboardingRecord.Foundation_Contract_Amount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_5</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Store_Loop_To_Multiselect</name>
+        <label>Store Loop To Multiselect</label>
+        <locationX>270</locationX>
+        <locationY>1274</locationY>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord.Digital_Products__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <elementReference>LoopDigitalProductsFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord.Retention_Products__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <elementReference>LoopRetentionProductsFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord.Website_Products__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <elementReference>LoopWebsiteProductsFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contracted</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_1.Launched_Price__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Store_Multiselect</name>
+        <label>Store Multiselect</label>
+        <locationX>50</locationX>
+        <locationY>866</locationY>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord.Digital_Products__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DigitalProductsFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord.Retention_Products__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RetentionProductsFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord.Website_Products__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>WebsiteProductsFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewSaleOpps</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Latest_Won_Opp</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contracted</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Latest_Won_Opp.Launched_Price__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LimitDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Latest_Won_Opp.Close_Date_Actual__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_All_Upsells</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Store_OB</name>
+        <label>Store OB</label>
+        <locationX>204</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>OnboardingRecord</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Onboarding</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LimitDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Onboarding.CreatedDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LimitDate</assignToReference>
+            <operator>Subtract</operator>
+            <value>
+                <numberValue>30.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Type</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_5</name>
+        <label>Commit OB</label>
+        <locationX>336</locationX>
+        <locationY>1958</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Commit_Onboarding</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CommitOppsToOnboarding</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_OB</targetReference>
+            </connector>
+            <label>Commit Onboarding</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_New_Sale_Opp</name>
+        <label>Found New Sale Opp</label>
+        <locationX>182</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>Get_All_Upsells</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Found_New_Sale</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Latest_Won_Opp</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Store_Multiselect</targetReference>
+            </connector>
+            <label>Found New Sale</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Foundation_Opp</name>
+        <label>Foundation Opp?</label>
+        <locationX>182</locationX>
+        <locationY>1574</locationY>
+        <defaultConnector>
+            <targetReference>Decision_5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Foundation_Contract</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OnboardingRecord.Foundation_Sold_Opp__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Foundation_Assignment</targetReference>
+            </connector>
+            <label>Foundation Contract</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Manual_Entry</name>
+        <label>Manual Entry?</label>
+        <locationX>336</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Which_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Onboarding</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Type</name>
+        <label>Which Type?</label>
+        <locationX>336</locationX>
+        <locationY>542</locationY>
+        <defaultConnector>
+            <targetReference>Decision_5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RunType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Created</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Latest_Won_Opp</targetReference>
+            </connector>
+            <label>Created</label>
+        </rules>
+    </decisions>
+    <description>Obj Onboarding | Subflow | Creates Product Picklist</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DigitalProductsFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!Get_Latest_Won_Opp.Count_Advid_New_Products__c}&gt; 0, &quot;D-Advid New;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Advid_Pre_Owned_Products__c} &gt; 0, &quot;D-Advid Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Apollo_Ads_Service_Products__c} &gt; 0, &quot;D-Apollo Ads (Service);&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Apollo_Ads_Products__c} &gt; 0, &quot;D-Apollo Ads;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Display_New_Products__c}&gt; 0, &quot;D-Display New;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Display_Pre_Owned_Products__c}&gt; 0, &quot;D-Display Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Display_Service_Products__c}&gt; 0, &quot;D-Display Service;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_OTT_Premium_Custom__c}&gt; 0, &quot;D-OTT Premium Custom;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Search_New_Products__c}&gt; 0, &quot;D-Search New;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Search_Pre_Owned_Products__c} &gt; 0, &quot;D-Search Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Search_Service_Products__c}&gt; 0, &quot;D-Search Service;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Social_New_Products__c}&gt; 0, &quot;D-Social New;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Social_Pre_Owned_Products__c}&gt; 0, &quot;D-Social Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Social_Service_Products__c}&gt; 0, &quot;D-Social Service;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Streaming_OTT__c}&gt; 0, &quot;D-Streaming OTT Dynamic;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>LoopDigitalProductsFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!Loop_1.Count_Advid_New_Products__c}&gt; 0, &quot;D-Advid New;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Advid_Pre_Owned_Products__c} &gt; 0, &quot;D-Advid Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Apollo_Ads_Service_Products__c} &gt; 0, &quot;D-Apollo Ads (Service);&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Apollo_Ads_Products__c} &gt; 0, &quot;D-Apollo Ads;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Display_New_Products__c}&gt; 0, &quot;D-Display New;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Display_Pre_Owned_Products__c}&gt; 0, &quot;D-Display Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Display_Service_Products__c}&gt; 0, &quot;D-Display Service;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_OTT_Premium_Custom__c}&gt; 0, &quot;D-OTT Premium Custom;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Search_New_Products__c}&gt; 0, &quot;D-Search New;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Search_Pre_Owned_Products__c} &gt; 0, &quot;D-Search Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Search_Service_Products__c}&gt; 0, &quot;D-Search Service;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Social_New_Products__c}&gt; 0, &quot;D-Social New;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Social_Pre_Owned_Products__c}&gt; 0, &quot;D-Social Pre-Owned;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Social_Service_Products__c}&gt; 0, &quot;D-Social Service;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Streaming_OTT__c}&gt; 0, &quot;D-Streaming OTT Dynamic;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>LoopRetentionProductsFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!Loop_1.Count_Apollo_Sales_Products__c} &gt; 0, &quot;R-Apollo Sales;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Apollo_Service_Products__c} &gt; 0, &quot;R-Apollo Service;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>LoopWebsiteProductsFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!Loop_1.Count_Apollo_Assistant__c} &gt; 0, &quot;W-Apollo Assistant;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Apollo_Sites_Products__c} &gt; 0, &quot;W-Apollo Sites;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Apollo_Transact_Products__c} &gt; 0, &quot;W-Apollo Transact;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Soft_Credit_Pull__c} &gt; 0, &quot;W-Credit PreQual;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Custom_Creative_Products__c} &gt; 0, &quot;W-Custom Creative;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_Group_Site__c}&gt; 0, &quot;W-Group Site;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_SEO_Products__c}&gt; 0, &quot;W-SEO;&quot;, &quot;&quot;) &amp;
+IF({!Loop_1.Count_VDV__c}&gt; 0, &quot;W-VDV;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>RetentionProductsFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!Get_Latest_Won_Opp.Count_Apollo_Sales_Products__c} &gt; 0  || {!Get_Latest_Won_Opp.FordDirect_Package__c} = &quot;Platform Solutions&quot;, &quot;R-Apollo Sales;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Apollo_Service_Products__c} &gt; 0  || {!Get_Latest_Won_Opp.FordDirect_Package__c} = &quot;Platform Solutions&quot;, &quot;R-Apollo Service;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>WebsiteProductsFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!Get_Latest_Won_Opp.Count_Apollo_Assistant__c} &gt; 0, &quot;W-Apollo Assistant;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Apollo_Sites_Products__c} &gt; 0 || {!Get_Latest_Won_Opp.FordDirect_Package__c} = &quot;Platform Solutions&quot;, &quot;W-Apollo Sites;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Apollo_Transact_Products__c} &gt; 0, &quot;W-Apollo Transact;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Soft_Credit_Pull__c} &gt; 0, &quot;W-Credit PreQual;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Custom_Creative_Products__c} &gt; 0, &quot;W-Custom Creative;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_Group_Site__c}&gt; 0, &quot;W-Group Site;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_SEO_Products__c}&gt; 0, &quot;W-SEO;&quot;, &quot;&quot;) &amp;
+IF({!Get_Latest_Won_Opp.Count_VDV__c}&gt; 0, &quot;W-VDV;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>Onboarding - Product Picklist Subflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Onboarding - Product Picklist Subflow</label>
+    <loops>
+        <name>Loop_1</name>
+        <label>Loop 1</label>
+        <locationX>182</locationX>
+        <locationY>1166</locationY>
+        <collectionReference>Get_All_Upsells</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Store_Loop_To_Multiselect</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_Output</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_All_Upsells</name>
+        <label>Get All Upsells</label>
+        <locationX>182</locationX>
+        <locationY>1058</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsWon</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>New Sale</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Historical</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Close_Date_Actual__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>LimitDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OnboardingRecord.Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Latest_Won_Opp</name>
+        <label>Get Latest Won Opp</label>
+        <locationX>182</locationX>
+        <locationY>650</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_New_Sale_Opp</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OnboardingRecord.Account__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>New Sale</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsWon</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>Close_Date_Actual__c</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Onboarding</name>
+        <label>Get Onboarding</label>
+        <locationX>204</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Store_OB</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Onboarding__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_OB</name>
+        <label>Update OB</label>
+        <locationX>204</locationX>
+        <locationY>2066</locationY>
+        <inputReference>OnboardingRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Manual_Entry</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>CommitOppsToOnboarding</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Contracted</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>FinalDigitalProducts</name>
+        <dataType>Multipicklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>LimitDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewSaleOpps</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>OnboardingRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Onboarding__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RunType</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Upsells</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Try_Buy_Duration__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Opportunity_Type__c =&quot;Try &amp; Buy&quot;,  
+if( isBlank(Try_Buy_Start_Date__c), &quot;Not Activated&quot;, 
+Text(Try_Buy_Duration_Months__c) &amp; &quot; Months&quot;
+), &quot;Not Active Yet&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Try &amp; Buy Duration</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

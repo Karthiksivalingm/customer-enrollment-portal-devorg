@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracted_Amount__c</fullName>
+    <formula>BlankValue(Amount, 0) + BlankValue(Addendum_Amount__c, 0) + BlankValue( Group_Site_Franchise_Additional__c , 0)+if(  RecordTypeId =&quot;012Vb000006lHV1IAM&quot;, DS_Try_Buy_Price_Month__c, 0)
++
+
+if( GM_Advid_Budget__c &gt; 0 &amp;&amp; Count_Apollo_Ads_Products__c &gt; 0, 
+	(GM_Advid_Budget__c * if(IsNull(GM_Advid_Percent_Override__c)=false, GM_Advid_Percent_Override__c, 0.3)), 0)+
+	
+if( GM_Apollo_Ads_Budget__c &gt; 0 &amp;&amp; Count_Apollo_Ads_Products__c &gt; 0, 
+	GM_Apollo_Ads_Budget__c*if(IsNull(GM_Apollo_Ads_Percent_Override__c)=false, GM_Apollo_Ads_Percent_Override__c, 0.25), 0)
+
++
+If((Text(DocuSign_Template__c)=&quot;Mazda&quot; || Text(DocuSign_Template__c)=&quot;Genesis&quot;) &amp;&amp;  Close_Date_Actual__c &gt;=  DATE(2024,5,21),
+    If(Search_Percent_Override__c&gt;0, Search_Budget__c*Search_Percent_Override__c, if(IsNull(Search_Budget__c), 0, 
+    Search_Budget__c*0.23))+
+    If(Display_Percent_Override__c&gt;0, Display_Budget__c*Display_Percent_Override__c, if(IsNull(Display_Budget__c), 0, Display_Budget__c*0.23))+
+    If(Social_Percent_Override__c&gt;0, Social_Budget__c*Social_Percent_Override__c, if(IsNull(Social_Budget__c), 0, Social_Budget__c*0.23))+
+    If(GM_Advid_Percent_Override__c&gt;0, GM_Advid_Budget__c*GM_Advid_Percent_Override__c, if(IsNull(GM_Advid_Budget__c), 0, GM_Advid_Budget__c*0.23)),
+0)
+
++
+If((Text(DocuSign_Template__c)=&quot;Porsche&quot;) &amp;&amp;  Close_Date_Actual__c &gt;=  DATE(2025,4,1),
+    If(Search_Percent_Override__c&gt;0, Search_Budget__c*Search_Percent_Override__c, if(IsNull(Search_Budget__c), 0, 
+    Search_Budget__c*0.23))+
+    If(Display_Percent_Override__c&gt;0, Display_Budget__c*Display_Percent_Override__c, if(IsNull(Display_Budget__c), 0, Display_Budget__c*0.23))+
+    If(Social_Percent_Override__c&gt;0, Social_Budget__c*Social_Percent_Override__c, if(IsNull(Social_Budget__c), 0, Social_Budget__c*0.23))+
+    If(GM_Advid_Percent_Override__c&gt;0, GM_Advid_Budget__c*GM_Advid_Percent_Override__c, if(IsNull(GM_Advid_Budget__c), 0, GM_Advid_Budget__c*0.23)),
+0)
+
++if( RecordType.Name=&quot;Try &amp; Buy&quot;, DS_Try_Buy_Price_Month__c, 0)</formula>
+    <label>Contracted Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

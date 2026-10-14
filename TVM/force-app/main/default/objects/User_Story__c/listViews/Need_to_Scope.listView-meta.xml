@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_to_Scope</fullName>
+    <columns>Update__c</columns>
+    <columns>NAME</columns>
+    <columns>Application__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Flag__c</columns>
+    <columns>Order__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Status__c</columns>
+    <columns>Quick_Note__c</columns>
+    <columns>Request_User__c</columns>
+    <columns>Date_Created_Date_Only__c</columns>
+    <columns>Estimated_Work_Hours__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Need to Scope,Admin Review,New Ticket,Investigate</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>User_Story__c.Regular</value>
+    </filters>
+    <label>Need to Scope</label>
+</ListView>

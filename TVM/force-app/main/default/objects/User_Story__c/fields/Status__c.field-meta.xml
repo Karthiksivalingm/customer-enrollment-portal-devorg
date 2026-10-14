@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Ticket</fullName>
+                <default>true</default>
+                <label>New Ticket</label>
+            </value>
+            <value>
+                <fullName>Investigate</fullName>
+                <default>false</default>
+                <label>Investigate</label>
+            </value>
+            <value>
+                <fullName>Ticket Ready</fullName>
+                <default>false</default>
+                <label>Ticket Ready</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Admin Review</fullName>
+                <default>false</default>
+                <label>Admin Review</label>
+            </value>
+            <value>
+                <fullName>Waiting on Feedback</fullName>
+                <default>false</default>
+                <label>Waiting on User Feedback</label>
+            </value>
+            <value>
+                <fullName>User Feedback</fullName>
+                <default>false</default>
+                <label>User Feedback Received</label>
+            </value>
+            <value>
+                <fullName>Awaiting Client Review</fullName>
+                <default>false</default>
+                <label>User Testing Deployed</label>
+            </value>
+            <value>
+                <fullName>Ready for Deployment</fullName>
+                <default>false</default>
+                <label>Deployed</label>
+            </value>
+            <value>
+                <fullName>Testing Complete</fullName>
+                <default>false</default>
+                <label>Waiting Deployment</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+                <label>Recurring</label>
+            </value>
+            <value>
+                <fullName>Need to Scope</fullName>
+                <default>false</default>
+                <label>Need to Scope</label>
+            </value>
+            <value>
+                <fullName>Wait 4 Slack Field Synch</fullName>
+                <default>false</default>
+                <label>Wait 4 Slack Field Synch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

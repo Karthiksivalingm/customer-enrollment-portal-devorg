@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dial_the_call_extension_number_to__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Dial the call extension number to ensure proper functioning</description>
+    <label>Dial the call extension number to</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

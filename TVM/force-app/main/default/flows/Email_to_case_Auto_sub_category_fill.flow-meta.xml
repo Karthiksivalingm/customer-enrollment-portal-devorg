@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Case_Category_Subcategory_Account_Settings</name>
+        <label>Set Case Category &amp; Subcategory - Account Settings</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Case_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>General Support</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Case_Subcategory__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account Settings</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Case_Category_Subcategory_Rebates_Incentives</name>
+        <label>Set Case Category &amp; Subcategory - Rebates &amp; Incentives</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Case_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>General Support</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Case_Subcategory__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Rebates &amp; Incentives</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Determine_Case_Category_Subcategory</name>
+        <label>Determine Case Category &amp; Subcategory</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Settings</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Account Settings</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Case_Category_Subcategory_Account_Settings</targetReference>
+            </connector>
+            <label>Account Settings</label>
+        </rules>
+        <rules>
+            <name>Rebates_Incentives</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Rebates</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Case_Category_Subcategory_Rebates_Incentives</targetReference>
+            </connector>
+            <label>Rebates &amp; Incentives</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Email to case Auto sub category fill {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Email to case Auto sub category fill</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Determine_Case_Category_Subcategory</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Origin</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Email</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

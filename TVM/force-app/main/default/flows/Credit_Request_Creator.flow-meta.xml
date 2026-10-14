@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>Redirect_To_Account</name>
+        <label>Redirect To Account</label>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
+        <actionName>c:RedirectPage</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>c:RedirectPage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <dynamicChoiceSets>
+        <name>CreditApplication_choices</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Credit_Application__c</picklistField>
+        <picklistObject>Credit_Request__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>CreditApplied_choice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Credit_Applied__c</picklistField>
+        <picklistObject>Credit_Request__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>CreditPeriod_choices</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Credit_Period__c</picklistField>
+        <picklistObject>Credit_Request__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>ReasonforCredit_Choices</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reason_for_Credit__c</picklistField>
+        <picklistObject>Credit_Request__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TVM_Departments_Choices</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>TVM_Department__c</picklistField>
+        <picklistObject>Credit_Request__c</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <name>CreditApplied_MonthStamp</name>
+        <dataType>String</dataType>
+        <expression>CASE(If({!Credit_Applied_Screen_1} = &quot;Towards Next Month&quot;, IF(MONTH({!$Flow.CurrentDate}) = 12, 1,  MONTH({!$Flow.CurrentDate})+1),
+IF({!Credit_Applied_Screen_1} = &quot;Towards Current Month&quot;, MONTH({!$Flow.CurrentDate}),
+IF({!Credit_Applied_Screen_1} = &quot;Towards Mail&quot;,13,
+IF({!Credit_Applied_Screen_1} = &quot;Cut Check Back to Dealer&quot;,14,
+15)))),
+    1, &quot;01 January&quot;,
+    2, &quot;02 February&quot;,
+    3, &quot;03 March&quot;,
+    4, &quot;04 April&quot;,
+    5, &quot;05 May&quot;,
+    6, &quot;06 June&quot;,
+    7, &quot;07 July&quot;,
+    8, &quot;08 August&quot;,
+    9, &quot;09 September&quot;,
+    10, &quot;10 October&quot;,
+    11, &quot;11 November&quot;,
+    12, &quot;12 December&quot;,
+    13,  &quot;Mail&quot;,
+    14, &quot;Cut Check Back to Dealer&quot;,
+&quot;No Credit Applied Selected&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Credit Request - Creator {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Credit Request - Creator</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Credit_Request</name>
+        <label>Create Credit Request</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignRecordIdToReference>New_CR_Id</assignRecordIdToReference>
+        <connector>
+            <targetReference>Screen_2</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Approval__c</field>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Credit_Amount__c</field>
+            <value>
+                <elementReference>Credit_Amount_Screen_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Credit_Application__c</field>
+            <value>
+                <elementReference>Credit_Application_Screen_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Credit_Applied__c</field>
+            <value>
+                <elementReference>Credit_Applied_Screen_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Credit_Date__c</field>
+            <value>
+                <elementReference>Credit_Applied_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Credit_Month__c</field>
+            <value>
+                <elementReference>CreditApplied_MonthStamp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Credit_Request_Details__c</field>
+            <value>
+                <elementReference>Credit_Request_Details_Screen_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Credit_Request_User__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reason_for_Credit__c</field>
+            <value>
+                <elementReference>Reason_for_Credit_Screen_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TVM_Department__c</field>
+            <value>
+                <elementReference>TVM_Department_Screen_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TVM_User__c</field>
+            <value>
+                <elementReference>TVM_User_Screen_1.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Credit_Request__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Screen_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Screen_1</name>
+        <label>Screen 1</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Credit_Request</targetReference>
+        </connector>
+        <fields>
+            <name>Disp_Screen_1</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;Creating Credit Request for {!Get_Account.Name}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Screen_1_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_1_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Reason_for_Credit_Screen_1</name>
+                    <choiceReferences>ReasonforCredit_Choices</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Reason for Credit</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>TVM_Department_Screen_1</name>
+                    <choiceReferences>TVM_Departments_Choices</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Department That Caused Issue</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <helpText>&lt;p&gt;&lt;span style=&quot;font-size: 11.36px; font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);&quot;&gt;The Department that caused the issue.&lt;/span&gt;&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>TVM_User_Screen_1</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>TVM_User__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>User That Caused Issue</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Credit_Request__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_1_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Credit_Amount_Screen_1</name>
+                    <dataType>Currency</dataType>
+                    <fieldText>Credit Amount</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Credit_Applied_Screen_1</name>
+                    <choiceReferences>CreditApplied_choice</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Credit Applied</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Credit_Applied_Date</name>
+                    <dataType>Date</dataType>
+                    <fieldText>Credit Applied Date</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Select what month the credit is applied to (if applicable)&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Credit_Applied_Screen_1</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Towards Current Month</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>Credit_Applied_Screen_1</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Towards Next Month</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>Credit_Application_Screen_1</name>
+                    <choiceReferences>CreditApplication_choices</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Credit Application</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Credit_Request_Details_Screen_1</name>
+            <fieldText>Credit Request Details</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Create Credit Request</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_2</name>
+        <label>Screen 2</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Redirect_To_Account</targetReference>
+        </connector>
+        <fields>
+            <name>Disp_Screen_2</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;Credit Request created and submitted for approval!&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;To go to the request &lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Credit_Request__c/{!New_CR_Id}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;u&gt;click here&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Go Back to Account</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>New_CR_Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

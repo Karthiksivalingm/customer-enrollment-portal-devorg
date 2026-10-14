@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Billing_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Billing_Amount_Static__c =null ||  Billing_Amount_Static__c  &lt;= 0, &quot;Not Billing Yet&quot;, TEXT(Billing_Amount_Static__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>First Billing Amount Old</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

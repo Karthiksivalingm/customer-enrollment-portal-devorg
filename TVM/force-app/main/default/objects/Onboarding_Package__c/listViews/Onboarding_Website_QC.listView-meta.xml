@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Website_QC</fullName>
+    <columns>Onboarding_Month__c</columns>
+    <columns>Account__c</columns>
+    <columns>URL__c</columns>
+    <columns>Website_Go_Live_Date__c</columns>
+    <columns>Website_Go_Live_Time__c</columns>
+    <columns>TP_ID__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>Onboarding_Package_TypeVtwo__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Completion_Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>Onboarding_Month__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>2026 06 June</value>
+    </filters>
+    <filters>
+        <field>Website_Go_Live_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Onboarding_Package_TypeVtwo__c</field>
+        <operation>includes</operation>
+        <value>Primary Website</value>
+    </filters>
+    <filters>
+        <field>Website_QC__c</field>
+        <operation>equals</operation>
+        <value>Kambria Carlson</value>
+    </filters>
+    <label>Onboarding - Website QC</label>
+</ListView>

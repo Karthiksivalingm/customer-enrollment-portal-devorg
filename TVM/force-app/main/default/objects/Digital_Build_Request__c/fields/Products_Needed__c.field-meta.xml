@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_Needed__c</fullName>
+    <label>Products Needed</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Display New</fullName>
+                <default>false</default>
+                <label>Display New</label>
+            </value>
+            <value>
+                <fullName>Display Used</fullName>
+                <default>false</default>
+                <label>Display Used</label>
+            </value>
+            <value>
+                <fullName>Search New</fullName>
+                <default>false</default>
+                <label>Search New</label>
+            </value>
+            <value>
+                <fullName>Search Used</fullName>
+                <default>false</default>
+                <label>Search Used</label>
+            </value>
+            <value>
+                <fullName>Search Service</fullName>
+                <default>false</default>
+                <label>Search Service</label>
+            </value>
+            <value>
+                <fullName>Social</fullName>
+                <default>false</default>
+                <label>Social</label>
+            </value>
+            <value>
+                <fullName>Video New</fullName>
+                <default>false</default>
+                <label>Video New</label>
+            </value>
+            <value>
+                <fullName>Video Used</fullName>
+                <default>false</default>
+                <label>Video Used</label>
+            </value>
+            <value>
+                <fullName>VLA New</fullName>
+                <default>false</default>
+                <label>VLA New</label>
+            </value>
+            <value>
+                <fullName>VLA Used</fullName>
+                <default>false</default>
+                <label>VLA Used</label>
+            </value>
+            <value>
+                <fullName>pMax New</fullName>
+                <default>false</default>
+                <label>pMax New</label>
+            </value>
+            <value>
+                <fullName>OTT</fullName>
+                <default>false</default>
+                <label>OTT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

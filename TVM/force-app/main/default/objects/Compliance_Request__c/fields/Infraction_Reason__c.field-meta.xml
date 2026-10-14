@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Infraction_Reason__c</fullName>
+    <inlineHelpText>Select all applicable infractions for this compliance request. Multiple values may be selected.</inlineHelpText>
+    <label>Infraction Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Disclaimers</fullName>
+                <default>false</default>
+                <label>Disclaimers</label>
+            </value>
+            <value>
+                <fullName>Font</fullName>
+                <default>false</default>
+                <label>Font</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Text/Logo</fullName>
+                <default>false</default>
+                <label>Text/Logo</label>
+            </value>
+            <value>
+                <fullName>Vehicle Colors</fullName>
+                <default>false</default>
+                <label>Vehicle Colors</label>
+            </value>
+            <value>
+                <fullName>Vehicle Image</fullName>
+                <default>false</default>
+                <label>Vehicle Image</label>
+            </value>
+            <value>
+                <fullName>Web Banner</fullName>
+                <default>false</default>
+                <label>Web Banner</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

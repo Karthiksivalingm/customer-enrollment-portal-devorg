@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designer_Change_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*
+
+if(Contains(Current_Status__c, &quot;Changes for Designer&quot;), &quot;03 Changes for Designer&quot;,
+if(Contains(Current_Status__c, &quot;Compliance Changes - Design&quot;), &quot;05c Compliance Changes - Design&quot;,
+if(Contains(Current_Status__c, &quot;Proofing Changes - Design&quot;), &quot;06b Proofing Changes - Design&quot;,
+if(Contains(Current_Status__c, &quot;Designer Changes Needed&quot;), &quot;05 Designer Changes Needed&quot;,
+if(Contains(Current_Status__c, &quot;05 Designer Changes Needed&quot;), &quot;05 Designer Changes Needed&quot;,
+
+
+if(Contains(Current_Status__c, &quot;Script - Changes Needed&quot;), &quot;03 - Script - Changes Needed&quot;,
+
+&quot;&quot;))))))
+*/
+if(Contains(Current_Status__c, &quot;08a Creative Complete - Design&quot;) || Contains(Current_Status__c, &quot;08 Creative Complete&quot;), &quot;Designer Production Complete&quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Designer Change Bucket</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

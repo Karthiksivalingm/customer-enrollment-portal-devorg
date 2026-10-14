@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Access__c</fullName>
+    <formula>$User.Email = &quot;acalacci@teamvelocitymarketing.com&quot; || 
+ $User.Email = &quot;maria@teamvelocitymarketing.com&quot; ||
+ $User.Email = &quot;svogelgesang@teamvelocitymarketing.com&quot; || 
+ $User.Email = &quot;dchen@teamvelocitymarketing.com&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Admin Access</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

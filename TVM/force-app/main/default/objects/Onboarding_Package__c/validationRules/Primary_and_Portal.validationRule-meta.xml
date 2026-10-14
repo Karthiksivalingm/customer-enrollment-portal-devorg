@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_and_Portal</fullName>
+    <active>true</active>
+    <description>You cant have Primary and Portal</description>
+    <errorConditionFormula>AND(
+  INCLUDES(Onboarding_Package_TypeVtwo__c, &quot;Primary Website&quot;),
+  INCLUDES(Onboarding_Package_TypeVtwo__c, &quot;Portal Website&quot;)
+)</errorConditionFormula>
+    <errorMessage>You cant have Primary and Portal. Its either one or the other.</errorMessage>
+</ValidationRule>

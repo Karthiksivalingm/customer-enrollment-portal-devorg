@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_Reason__c</fullName>
+    <description>FND</description>
+    <label>Lost Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Buy-Sell</fullName>
+                <default>false</default>
+                <label>Buy-Sell</label>
+            </value>
+            <value>
+                <fullName>Cancelling SEM</fullName>
+                <default>false</default>
+                <label>Cancelling SEM</label>
+            </value>
+            <value>
+                <fullName>Change in Leadership</fullName>
+                <default>false</default>
+                <label>Change in Leadership</label>
+            </value>
+            <value>
+                <fullName>Channel Conflict</fullName>
+                <default>false</default>
+                <label>Channel Conflict</label>
+            </value>
+            <value>
+                <fullName>Desires full service Agency</fullName>
+                <default>false</default>
+                <label>Desires full service Agency</label>
+            </value>
+            <value>
+                <fullName>Desires one solution (including website)</fullName>
+                <default>false</default>
+                <label>Desires one solution (including website)</label>
+            </value>
+            <value>
+                <fullName>Did Not See Value</fullName>
+                <default>false</default>
+                <label>Did Not See Value</label>
+            </value>
+            <value>
+                <fullName>Failure to launch</fullName>
+                <default>false</default>
+                <label>Failure to launch</label>
+            </value>
+            <value>
+                <fullName>In-house agency</fullName>
+                <default>false</default>
+                <label>In-house agency</label>
+            </value>
+            <value>
+                <fullName>No Longer in 20 Group</fullName>
+                <default>false</default>
+                <label>No Longer in 20 Group</label>
+            </value>
+            <value>
+                <fullName>No Longer NCM Member</fullName>
+                <default>false</default>
+                <label>No Longer NCM Member</label>
+            </value>
+            <value>
+                <fullName>Not Coop Eligble</fullName>
+                <default>false</default>
+                <label>Not Coop Eligble</label>
+            </value>
+            <value>
+                <fullName>Not Ideal Fit</fullName>
+                <default>false</default>
+                <label>Not Ideal Fit</label>
+            </value>
+            <value>
+                <fullName>OEM Certification</fullName>
+                <default>false</default>
+                <label>OEM Certification</label>
+            </value>
+            <value>
+                <fullName>Pilot did not convert</fullName>
+                <default>false</default>
+                <label>Pilot did not convert</label>
+            </value>
+            <value>
+                <fullName>Store Closure</fullName>
+                <default>false</default>
+                <label>Store Closure</label>
+            </value>
+            <value>
+                <fullName>Timing</fullName>
+                <default>false</default>
+                <label>Timing</label>
+            </value>
+            <value>
+                <fullName>Too Expensive</fullName>
+                <default>false</default>
+                <label>Too Expensive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

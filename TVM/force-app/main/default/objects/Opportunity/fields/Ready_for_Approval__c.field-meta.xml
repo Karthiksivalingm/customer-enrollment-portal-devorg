@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ready_for_Approval__c</fullName>
+    <formula>IsBlank(Submission_Issues__c)
+
+
+/*Text(Approval_Status__c) = &quot;Not Yet Submitted&quot; &amp;&amp;
+ VP_of_Sales__c!=&quot;&quot; &amp;&amp;
+( Opportunity_Type__c = &quot;Upsell&quot; ||
+(
+ (Dealer_DocuSign_Contact_Populated__c) &amp;&amp;
+ (Addendum_Populated__c)
+))*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Ready for Approval</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

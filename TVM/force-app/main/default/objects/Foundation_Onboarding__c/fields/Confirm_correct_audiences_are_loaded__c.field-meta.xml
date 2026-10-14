@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_correct_audiences_are_loaded__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Confirm correct audiences are loaded for both campaigns. Elevate to Pod Leader if audiences are not there.</description>
+    <label>Confirm correct audiences are loaded for</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

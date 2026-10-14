@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linda_OEM_List</fullName>
+    <columns>Open_Opportunities__c</columns>
+    <columns>Open_Opportunity_Status__c</columns>
+    <columns>Client_Type_Team_V__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_STREET</columns>
+    <columns>Regional_Sales_Manager__c</columns>
+    <columns>Regional_Sales_Director__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Inactive,Prospect</value>
+    </filters>
+    <filters>
+        <field>Hide_Dealership__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Dealership_Closed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>BDC_Initiative_Account__c</field>
+        <operation>equals</operation>
+        <value>LW0925</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Linda OEM List</label>
+</ListView>

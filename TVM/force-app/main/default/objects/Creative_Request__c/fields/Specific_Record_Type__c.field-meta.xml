@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specific_Record_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(RecordType.Name = &quot;Custom Email Blast&quot;, &quot;Custom Email Blast&quot;, 
+if(RecordType.Name = &quot;Display&quot;, &quot;Display&quot;,
+if(RecordType.Name = &quot;Landing Page&quot;, &quot;Landing Page&quot;, 
+if(RecordType.Name = &quot;Web Banner&quot;, &quot;Web Banner&quot;, 
+if(RecordType.Name = &quot;Batched Email Template Updates&quot;, &quot;Batched Email Template Updates&quot;, 
+if(RecordType.Name = &quot;Bonus Offer (600x400)&quot;, &quot;Bonus Offer (600x400)&quot;, 
+if(RecordType.Name = &quot;Email Free Space&quot;, &quot;Email Free Space&quot;, 
+if(RecordType.Name = &quot;Advid / OTT&quot; &amp;&amp;  ISPICKVAL(Advid_OTT_Company__c, &quot;Advid&quot;), &quot;Advid&quot;, 
+if(RecordType.Name = &quot;Advid / OTT&quot; &amp;&amp; ISPICKVAL(Advid_OTT_Company__c, &quot;OTT&quot;), &quot;OTT&quot;, 
+if(RecordType.Name = &quot;Website Header Image&quot;, &quot;Website Header Image&quot;,
+if(RecordType.Name = &quot;Website Image&quot;, &quot;Website Header Image&quot;,
+if(RecordType.Name = &quot;Automated Banner Asset&quot;, &quot;Automated Banner Asset&quot;,
+if(RecordType.Name = &quot;Mega Menu Image&quot;, &quot;Mega Menu Image&quot;,
+if(RecordType.Name = &quot;Media&quot;, &quot;Media&quot;,
+&quot;error&quot;))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Specific Record Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

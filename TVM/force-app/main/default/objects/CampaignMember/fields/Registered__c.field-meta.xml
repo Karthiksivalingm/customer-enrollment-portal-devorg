@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registered__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Attended__c == &quot;Attended&quot;, &quot;Registered&quot;,
+IF(ISPICKVAL(Status, &quot;Registered&quot;), &quot;Registered&quot;,
+IF(ISPICKVAL(Status, &quot;Registered - No Showed&quot;), &quot;Registered&quot;,
+IF(ISPICKVAL(Status, &quot;Not Attended&quot;), &quot;Registered&quot;,
+IF(ISPICKVAL(Status, &quot;No Attend&quot;), &quot;Registered&quot;,
+IF(NOT(ISNULL( Date_Marked_Registered__c )), &quot;Registered&quot;,
+&quot;Not Registered&quot;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Registered</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

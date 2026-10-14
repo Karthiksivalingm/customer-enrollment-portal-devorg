@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mark_Do_Not_Contact__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( DNC__c =false, HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/br3gp5c73?act=API_EditRecord&amp;usertoken=b2566k_wjz_0_bsn8322wuk6dpcq6drnidbsniyi&amp;rid=&quot;&amp; Text(Quickbase_Native_Record_Id_Int__c)&amp;&quot;&amp;_fid_26=1&amp;_fid_84=1&amp;rdr=https%3A%2F%2Fteamvelocity.lightning.force.com%2Flightning%2Fr%2FAccount%2F&quot;&amp; AccountId &amp;&quot;%2Frelated%2FAccountContactRelations%2Fview&quot;, &quot;Mark Do Not Contact&quot;, &quot;_self&quot;), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Mark Do Not Contact</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

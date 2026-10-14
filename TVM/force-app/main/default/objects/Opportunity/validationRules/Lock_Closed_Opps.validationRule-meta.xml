@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Closed_Opps</fullName>
+    <active>false</active>
+    <description>Lock closed opportunities</description>
+    <errorConditionFormula>OR(
+AND(ISCHANGED(StageName), PRIORVALUE(Close_Lock__c) = true),
+AND(NOT(ISCHANGED(StageName)), Close_Lock__c = true)
+) &amp;&amp;
+ $User.Alias = &quot;sknox&quot;</errorConditionFormula>
+    <errorMessage>Please reach out to a Salesforce Admin to edit this record, as its a closed record.</errorMessage>
+</ValidationRule>

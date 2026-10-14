@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Group_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+Not_Executing_Tasks_in_Group__c -  Total_Tasks_in_Group__c = 0, &quot;99 Not Executing&quot;,
+if(
+Completion_Status__c = &quot;Closed&quot;, &quot;99 Complete&quot;,
+
+IF(OR(
+/*(ISBLANK(New_Client_Project__r.Website_Team__r.X18_Digit_User_ID__c),*/
+ISBLANK(New_Client_Project__r.Compliance_Team__r.X18_Digit_User_ID__c),ISBLANK(New_Client_Project__r.Designer__r.X18_Digit_User_ID__c),ISBLANK( New_Client_Project__r.Production_Specialist__r.X18_Digit_User_ID__c)),&quot;01 Unassigned&quot;,
+
+IF(Dependence_Lock__c = true, &quot;00 Locked&quot;,
+IF(Completion_Status__c != &quot;Closed&quot; &amp;&amp;  Group_Completion_Percentage__c = 0, &quot;02 Ready to Start&quot;,
+&quot;03 In Progress&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Task Group Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GA4_Measurement_ID_Days_Count__c</fullName>
+    <description>FND</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK( GA4_Measurement_ID__c ),(TODAY() - Contract_Signed__c ), NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GA4 Measurement ID - Days Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

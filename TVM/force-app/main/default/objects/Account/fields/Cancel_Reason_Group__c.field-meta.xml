@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancel_Reason_Group__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Cancelled_Reason__c,
+&quot;Budget PCS Out of Line&quot;, &quot;Customer Service&quot;,
+&quot;Lack of Customer Service&quot;, &quot;Customer Service&quot;,
+&quot;Buy/Sell/Closed&quot;, &quot;Dealership Change&quot;,
+&quot;Buy/Sell&quot;, &quot;Dealership Change&quot;,
+&quot;Closed Point&quot;, &quot;Dealership Change&quot;,
+&quot;Management Change&quot;, &quot;Dealership Change&quot;,
+&quot;Lack of Utilization/Lack of Buy In/Not Feeling It&quot;, &quot;Expectations&quot;,
+&quot;Cost/Value (Dealer Perceives Too Expensive)&quot;, &quot;Expectations&quot;,
+&quot;Missed Expecations/Loss&quot;, &quot;Expectations&quot;,
+&quot;Product Competiveness/Loss&quot;, &quot;Product&quot;,
+&quot;Not Supported by OEM Initiatives (Coop)&quot;, &quot;Product&quot;,
+&quot;Production/Execution Issues&quot;, &quot;Product&quot;,
+&quot;Never Launched&quot;, &quot;Never Launched&quot;,
+&quot;-&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cancel Reason Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recent_Account_Errors</fullName>
+    <columns>NAME</columns>
+    <columns>Response_Message__c</columns>
+    <columns>Event_Time__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Request_Body__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Event_Time__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>N_DAYS_AGO:4</value>
+    </filters>
+    <filters>
+        <field>Request_Object__c</field>
+        <operation>equals</operation>
+        <value>Account</value>
+    </filters>
+    <filters>
+        <field>Response_Status_Code__c</field>
+        <operation>notEqual</operation>
+        <value>200</value>
+    </filters>
+    <label>Recent Account Errors</label>
+</ListView>

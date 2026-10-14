@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Filtered__c</fullName>
+    <inlineHelpText>Admin Status</inlineHelpText>
+    <label>Case Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Case_Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Waiting on Development</fullName>
+                <default>false</default>
+                <label>Waiting on Development</label>
+            </value>
+            <value>
+                <fullName>Internal Feedback Needed</fullName>
+                <default>false</default>
+                <label>Internal Feedback Needed</label>
+            </value>
+            <value>
+                <fullName>Internal Feedback Provided</fullName>
+                <default>false</default>
+                <label>Internal Feedback Provided</label>
+            </value>
+            <value>
+                <fullName>Production Complete</fullName>
+                <default>false</default>
+                <label>Production Complete</label>
+            </value>
+            <value>
+                <fullName>Digital Complete</fullName>
+                <default>false</default>
+                <label>Digital Complete</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Awaiting Approval</fullName>
+                <default>false</default>
+                <label>Awaiting Approval</label>
+            </value>
+            <value>
+                <fullName>Changes Needed</fullName>
+                <default>false</default>
+                <label>Changes Needed</label>
+            </value>
+            <value>
+                <fullName>Approved For Upload</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+                <label>Escalated</label>
+            </value>
+            <value>
+                <fullName>External Feedback Needed</fullName>
+                <default>false</default>
+                <label>External Feedback Needed</label>
+            </value>
+            <value>
+                <fullName>External Feedback Provided</fullName>
+                <default>false</default>
+                <label>External Feedback Provided</label>
+            </value>
+            <value>
+                <fullName>Ready for Testing</fullName>
+                <default>false</default>
+                <label>Ready for Testing</label>
+            </value>
+            <value>
+                <fullName>In Progress with Dev</fullName>
+                <default>false</default>
+                <label>In Progress with Dev</label>
+            </value>
+            <value>
+                <fullName>Selected for Dev</fullName>
+                <default>false</default>
+                <label>Selected for Dev</label>
+            </value>
+            <value>
+                <fullName>Upload Complete - Ready to Send to Dealer</fullName>
+                <default>false</default>
+                <label>Upload Complete - Ready to Send to Dealer</label>
+            </value>
+            <value>
+                <fullName>OEM Feedback Provided</fullName>
+                <default>false</default>
+                <label>OEM Feedback Provided</label>
+            </value>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>Ready for QA</fullName>
+                <default>false</default>
+                <label>Ready for QA</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SEO</controllingFieldValue>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <controllingFieldValue>Digital SD</controllingFieldValue>
+            <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SEO</controllingFieldValue>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <controllingFieldValue>Digital SD</controllingFieldValue>
+            <valueName>Assigned</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SEO</controllingFieldValue>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <controllingFieldValue>Digital SD</controllingFieldValue>
+            <valueName>In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SEO</controllingFieldValue>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <controllingFieldValue>Digital SD</controllingFieldValue>
+            <valueName>On Hold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SEO</controllingFieldValue>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <controllingFieldValue>Digital SD</controllingFieldValue>
+            <valueName>Closed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SEO</controllingFieldValue>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <controllingFieldValue>Digital SD</controllingFieldValue>
+            <valueName>Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SEO</controllingFieldValue>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <controllingFieldValue>Digital SD</controllingFieldValue>
+            <valueName>Escalated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>Data_Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <valueName>Waiting on Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <valueName>Internal Feedback Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <valueName>Internal Feedback Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>Digital_Support</controllingFieldValue>
+            <valueName>Digital Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <valueName>External Feedback Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <controllingFieldValue>General Support</controllingFieldValue>
+            <valueName>External Feedback Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <valueName>Future</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Digital Support</controllingFieldValue>
+            <valueName>Ready for QA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <valueName>Production Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <valueName>Awaiting Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <valueName>Changes Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production Support</controllingFieldValue>
+            <valueName>Approved For Upload</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advid Creative</controllingFieldValue>
+            <valueName>Upload Complete - Ready to Send to Dealer</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

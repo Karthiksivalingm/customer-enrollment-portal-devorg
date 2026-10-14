@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>In Program - Sellable</fullName>
+        <default>false</default>
+        <label>In Program - Sellable</label>
+    </customValue>
+    <customValue>
+        <fullName>Not in Program - Sellable</fullName>
+        <default>false</default>
+        <label>Not in Program - Sellable</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Sellable</fullName>
+        <default>false</default>
+        <label>Not Sellable</label>
+    </customValue>
+    <masterLabel>OEM Program Choices</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

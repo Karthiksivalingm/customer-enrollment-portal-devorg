@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FordDirect_1_1_Active_Enrolled_Dealers</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5) AND 6 AND 7</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FD_Package__c</columns>
+    <columns>Latest_Closed_Opportunity__c</columns>
+    <columns>Latest_Budget_Month__c</columns>
+    <columns>Regional_Account_Director__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Hide_Dealership__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Dealership</value>
+    </filters>
+    <filters>
+        <field>FordDirect_Early_Adopter__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Pending_Activation__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>FD_Package__c</field>
+        <operation>equals</operation>
+        <value>1:1 Messaging</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>FordDirect 1:1 Active Enrolled Dealers</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bug_Cases_Health_Score__c</fullName>
+    <businessStatus>DeprecateCandidate</businessStatus>
+    <externalId>false</externalId>
+    <formula>Text( HS_Bug_Cases_Calc_11_24__c ) + &quot; pts / 10 pts&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Dep</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

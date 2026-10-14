@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Creative_Requests2</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
+    <columns>Red_Fire__c</columns>
+    <columns>NAME</columns>
+    <columns>AccountId__c</columns>
+    <columns>Project_Name__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Difficulty__c</columns>
+    <columns>Status_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Closed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Designer__c</field>
+        <operation>equals</operation>
+        <value>$USER</value>
+    </filters>
+    <filters>
+        <field>OwnerBackend__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>Alerted_User_1__c</field>
+        <operation>contains</operation>
+        <value>$USER</value>
+    </filters>
+    <filters>
+        <field>Alerted_User_2__c</field>
+        <operation>contains</operation>
+        <value>$USER</value>
+    </filters>
+    <label>My Open Creative Requests</label>
+</ListView>

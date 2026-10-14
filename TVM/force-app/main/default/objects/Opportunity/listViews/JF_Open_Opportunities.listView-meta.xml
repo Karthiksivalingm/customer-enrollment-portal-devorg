@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JF_Open_Opportunities</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Opportunity_Type__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>FordDirect_Package__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Order_Confirmation_Products__c</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Owner_Name__c</field>
+        <operation>equals</operation>
+        <value>Jess Farthing</value>
+    </filters>
+    <filters>
+        <field>Upsell_Team_Assist__c</field>
+        <operation>equals</operation>
+        <value>Jessica Farthing</value>
+    </filters>
+    <label>JF Open Opportunities</label>
+</ListView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Builds</fullName>
+    <columns>Full_Record__c</columns>
+    <columns>Assigned_Analyst__c</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>Action_Needed__c</columns>
+    <columns>Target_Launch_Date__c</columns>
+    <columns>Search_Status__c</columns>
+    <columns>Search_Action__c</columns>
+    <columns>VLA_Status__c</columns>
+    <columns>VLA_Action__c</columns>
+    <columns>Video_Status__c</columns>
+    <columns>Video_Action__c</columns>
+    <columns>Facebook_Status__c</columns>
+    <columns>Facebook_Action__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Completed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Digital Build Queue</label>
+</ListView>

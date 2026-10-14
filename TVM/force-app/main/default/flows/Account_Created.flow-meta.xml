@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>FNDN_Billed_Gate</name>
+        <label>FNDN Billed Gate</label>
+        <locationX>974</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Create_OB_Build_Doc</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FNDN_Billed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Foundation_Hybrid_Billing__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hybrid FNDN Billing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_to_TVM_FNDN_Billed</targetReference>
+            </connector>
+            <label>FNDN Billed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Get_User_From_Email_Null_Gate</name>
+        <label>Get User From Email Null Gate</label>
+        <locationX>974</locationX>
+        <locationY>1355</locationY>
+        <defaultConnector>
+            <targetReference>Set_Created_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Null</defaultConnectorLabel>
+        <rules>
+            <name>Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetUserFromEmail</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Analytics_Franchise_populated</targetReference>
+            </connector>
+            <label>Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Initial_Gate</name>
+        <label>Initial Gate</label>
+        <locationX>512</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>FNDN_Billed_Gate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Foundation_Record_TVM_Billing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Region__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Foundation Direct</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Foundation_Hybrid_Billing__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hybrid TVM Billing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Records_4</targetReference>
+            </connector>
+            <label>Foundation Record TVM Billing</label>
+        </rules>
+        <rules>
+            <name>Foundation_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Region__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Foundation Direct</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_4</targetReference>
+            </connector>
+            <label>Foundation Record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the Analytics Franchise field is populated.</description>
+        <name>Is_Analytics_Franchise_populated</name>
+        <label>Is Analytics Franchise populated?</label>
+        <locationX>974</locationX>
+        <locationY>1655</locationY>
+        <defaultConnectorLabel>No, Analytics Franchise is not populated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Analytics_Franchise_is_populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Analytics_Franchise__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Acura_Contract_Products_Price_Book</targetReference>
+            </connector>
+            <label>Yes, Analytics Franchise is populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the Analytics Franchise field is populated.</description>
+        <name>Is_Analytics_Franchise_populated_0</name>
+        <label>Is Analytics Franchise populated?</label>
+        <locationX>446</locationX>
+        <locationY>947</locationY>
+        <defaultConnectorLabel>No, Analytics Franchise is not populated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Analytics_Franchise_is_populated_0</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Analytics_Franchise__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FNDN_Auto_Group.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Lithia</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_FNDN_Acura_Contract_Products_Price_Book</targetReference>
+            </connector>
+            <label>Yes, Analytics Franchise is populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the Auto Group field is populated.</description>
+        <name>Is_Auto_Group_populate</name>
+        <label>Is Auto Group populate?</label>
+        <locationX>974</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>GetUserFromEmail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Auto Group is not populated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Auto_Group_is_populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Related_Auto_Group__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Auto_Group</targetReference>
+            </connector>
+            <label>Yes, Auto Group is populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the Auto Group field is populated.</description>
+        <name>Is_Auto_Group_populate_0</name>
+        <label>Is Auto Group populate?</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Is_Analytics_Franchise_populated_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Auto Group is not populated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Auto_Group_is_populated_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Related_Auto_Group__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_FNDN_Auto_Group</targetReference>
+            </connector>
+            <label>Yes, Auto Group is populated</label>
+        </rules>
+    </decisions>
+    <description>When an Account is created, this flow will review if the Auto Group is populated and/or if Analytics Franchise is populated.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DefaultPriceBook</name>
+        <dataType>String</dataType>
+        <expression>IF(
+OR(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;NON-AUTOMOTIVE&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;Not Categorized:&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;PREOWNED&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;USED&quot;)),
+null,
+IF(
+OR(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;FORD&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;LINCOLN&quot;)),
+{!Get_Ford_Lincoln_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;MAZDA&quot;),
+{!Get_Mazda_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;MITSUBISHI&quot;),
+{!Get_Mitsubishi_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;HONDA&quot;),
+{!Get_Honda_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;ACURA&quot;),
+{!Get_Acura_Contract_Products_Price_Book.Id},
+IF(
+OR(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;DODGE&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;RAM&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;STELLANTIS&quot;)),
+{!Get_Stellantis_FCA_Contract_Products_Price_Book.Id},
+IF(
+OR(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;BUICK&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;BUICK GMC&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;CADILLAC&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;CHEVROLET&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;GM&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;GMC&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;HUMMER&quot;)),
+{!Get_GM_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;BMW&quot;),
+{!Get_BMW_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;KIA&quot;),
+{!Get_Kia_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;MASERATI&quot;),
+{!Get_Maserati_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;NISSAN&quot;),
+{!Get_Nissan_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;PORSCHE&quot;),
+{!Get_Porsche_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;SUBARU&quot;),
+{!Get_Subaru_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;VOLKSWAGEN&quot;),
+{!Get_Volkswagen_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;AUDI&quot;),
+{!Get_Audi_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;INFINITI&quot;),
+{!Get_Infiniti_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;HYUNDAI&quot;),
+{!Get_Hyundai_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;VOLVO&quot;),
+{!Get_Volvo_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;GENESIS&quot;),
+{!Get_Genesis_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;MERCEDES-BENZ&quot;),
+{!Get_Mercedes_Contract_Products_Price_Book.Id},
+IF(
+OR(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;JAGUAR&quot;),
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;LAND ROVER&quot;)
+),
+{!Get_JLR_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;FERRARI&quot;),
+{!Get_Ferrari_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;MINI&quot;),
+{!Get_BMW_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;TOYOTA&quot;),
+{!Get_Toyota_Contract_Products_Price_Book.Id},
+{!Get_Tier_3_Contract_Products_TVM_Price_Book.Id}
+)))))))))))))))))))))))))</expression>
+    </formulas>
+    <formulas>
+        <name>DefaultPriceBookFNDN</name>
+        <dataType>String</dataType>
+        <expression>IF(
+Contains({!Get_FNDN_Auto_Group.Name}, &quot;Lithia&quot;),
+{!Get_Foundation_Lithia_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;HONDA&quot;),
+{!Get_Foundation_Honda_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;ACURA&quot;),
+{!Get_FNDN_Acura_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;SUBARU&quot;),
+{!Get_Foundation_Subaru_Contract_Products_Price_Book.Id},
+IF(
+ISPICKVAL({!$Record.Analytics_Franchise__c},&quot;HYUNDAI&quot;),
+{!Get_Hyundai_Contract_Products_Price_Book.Id},
+
+&quot;01sVb0000036gcLIAQ&quot;
+)))))</expression>
+    </formulas>
+    <formulas>
+        <name>IncreaseCountBy1</name>
+        <dataType>Number</dataType>
+        <expression>{!Get_Auto_Group.Number_of_Accounts__c} + 1</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>IncreaseFNDNCountBy1</name>
+        <dataType>Number</dataType>
+        <expression>{!Get_FNDN_Auto_Group.of_FNDN_Accounts__c} + 1</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>OB_Build_Doc_Name</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Name} &amp; &quot; Onboarding Build Doc&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>StellantisAccount</name>
+        <dataType>Number</dataType>
+        <expression>{!Get_Auto_Group.of_Stellantis_Accounts__c} + if(Text({!$Record.Analytics_Franchise__c})=&quot;STELLANTIS&quot;, 1, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>TodaysDate</name>
+        <dataType>String</dataType>
+        <expression>TEXT(TODAY())</expression>
+    </formulas>
+    <interviewLabel>Account - Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account - Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_OB_Build_Doc</name>
+        <label>Create OB Build Doc</label>
+        <locationX>974</locationX>
+        <locationY>731</locationY>
+        <connector>
+            <targetReference>Is_Auto_Group_populate</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Name__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OB_Build_Doc_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Previous_Sales_Result__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>Captures the Acura Contract Products Price Book.</description>
+        <name>Get_Acura_Contract_Products_Price_Book</name>
+        <label>Get Acura Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>1763</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Audi_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Acura Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Audi Contract Products Price Book.</description>
+        <name>Get_Audi_Contract_Products_Price_Book</name>
+        <label>Get Audi Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>1871</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_BMW_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Audi Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Auto Group to which the Account is associated.</description>
+        <name>Get_Auto_Group</name>
+        <label>Get Auto Group</label>
+        <locationX>842</locationX>
+        <locationY>947</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_1_to_the_Auto_Group_s_Count</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Related_Auto_Group__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Auto_Group__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the BMW Contract Products Price Book.</description>
+        <name>Get_BMW_Contract_Products_Price_Book</name>
+        <label>Get BMW Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>1979</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_GM_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BMW Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Ferrari Contract Products Price Book.</description>
+        <name>Get_Ferrari_Contract_Products_Price_Book</name>
+        <label>Get Ferrari Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>4247</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_MINI_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Ferrari Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Acura Contract Products Price Book.</description>
+        <name>Get_FNDN_Acura_Contract_Products_Price_Book</name>
+        <label>Get FNDN Acura Contract Products Price Book</label>
+        <locationX>314</locationX>
+        <locationY>1055</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Foundation_Honda_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Foundation Acura Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Auto Group to which the Account is associated.</description>
+        <name>Get_FNDN_Auto_Group</name>
+        <label>Get FNDN Auto Group</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_1_to_the_Auto_Group_s_Count_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Related_Auto_Group__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Auto_Group__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Ford/Lincoln Contract Products Price Book.</description>
+        <name>Get_Ford_Lincoln_Contract_Products_Price_Book</name>
+        <label>Get Ford/Lincoln Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3923</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Volvo_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Ford/Lincoln Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Honda Contract Products Price Book.</description>
+        <name>Get_Foundation_Honda_Contract_Products_Price_Book</name>
+        <label>Get Foundation Honda Contract Products Price Book</label>
+        <locationX>314</locationX>
+        <locationY>1163</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Foundation_Hyundai_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Foundation Honda Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Hyundai Contract Products Price Book.</description>
+        <name>Get_Foundation_Hyundai_Contract_Products_Price_Book</name>
+        <label>Get Foundation Hyundai Contract Products Price Book</label>
+        <locationX>314</locationX>
+        <locationY>1271</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Foundation_Subaru_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Foundation Hyundai Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Subaru Contract Products Price Book.</description>
+        <name>Get_Foundation_Lithia_Contract_Products_Price_Book</name>
+        <label>Get Foundation Lithia Contract Products Price Book</label>
+        <locationX>314</locationX>
+        <locationY>1487</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Populate_the_Default_Foundation_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Foundation Lithia Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Subaru Contract Products Price Book.</description>
+        <name>Get_Foundation_Subaru_Contract_Products_Price_Book</name>
+        <label>Get Foundation Subaru Contract Products Price Book</label>
+        <locationX>314</locationX>
+        <locationY>1379</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Foundation_Lithia_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Foundation Subaru Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Genesis Contract Products Price Book.</description>
+        <name>Get_Genesis_Contract_Products_Price_Book</name>
+        <label>Get Genesis Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>4139</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Ferrari_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Genesis Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the GM Contract Products Price Book.</description>
+        <name>Get_GM_Contract_Products_Price_Book</name>
+        <label>Get GM Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2087</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Honda_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>GM Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Honda Contract Products Price Book.</description>
+        <name>Get_Honda_Contract_Products_Price_Book</name>
+        <label>Get Honda Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2195</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Hyundai_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Honda Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Hyundai Contract Products Price Book.</description>
+        <name>Get_Hyundai_Contract_Products_Price_Book</name>
+        <label>Get Hyundai Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2303</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Infiniti_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Hyundai Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Infiniti Contract Products Price Book.</description>
+        <name>Get_Infiniti_Contract_Products_Price_Book</name>
+        <label>Get Infiniti Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2411</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_JLR_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Infiniti Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the JLR Contract Products Price Book.</description>
+        <name>Get_JLR_Contract_Products_Price_Book</name>
+        <label>Get JLR Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2519</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Kia_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>JLR Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Kia Contract Products Price Book.</description>
+        <name>Get_Kia_Contract_Products_Price_Book</name>
+        <label>Get Kia Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2627</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Maserati_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Kia Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Masertati Contract Products Price Book.</description>
+        <name>Get_Maserati_Contract_Products_Price_Book</name>
+        <label>Get Maserati Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2735</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Mazda_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Maserati Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Mazda Contract Products Price Book.</description>
+        <name>Get_Mazda_Contract_Products_Price_Book</name>
+        <label>Get Mazda Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2843</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Mercedes_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Mazda Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Mercedes Contract Products Price Book.</description>
+        <name>Get_Mercedes_Contract_Products_Price_Book</name>
+        <label>Get Mercedes Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>2951</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Volkswagen_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Mercedes Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Genesis Contract Products Price Book.</description>
+        <name>Get_MINI_Contract_Products_Price_Book</name>
+        <label>Get MINI Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>4355</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Populate_the_Default_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>MINI Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Mitsubishi Contract Products Price Book.</description>
+        <name>Get_Mitsubishi_Contract_Products_Price_Book</name>
+        <label>Get Mitsubishi Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3815</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Ford_Lincoln_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Mitsubishi Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Nissan Contract Products Price Book.</description>
+        <name>Get_Nissan_Contract_Products_Price_Book</name>
+        <label>Get Nissan Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3707</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Mitsubishi_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Nissan Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Porsche Contract Products Price Book.</description>
+        <name>Get_Porsche_Contract_Products_Price_Book</name>
+        <label>Get Porsche Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3599</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Nissan_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Porsche Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Stellantis (FCA) Contract Products Price Book.</description>
+        <name>Get_Stellantis_FCA_Contract_Products_Price_Book</name>
+        <label>Get Stellantis (FCA) Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3491</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Porsche_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Stellantis (FCA) Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Subaru Contract Products Price Book.</description>
+        <name>Get_Subaru_Contract_Products_Price_Book</name>
+        <label>Get Subaru Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3383</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Stellantis_FCA_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Subaru Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Tier 3 Contract Products (TVM) Price Book.</description>
+        <name>Get_Tier_3_Contract_Products_TVM_Price_Book</name>
+        <label>Get Tier 3 Contract Products (TVM) Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3275</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Subaru_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Tier 3 Contract Products (TVM)</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Toyota Contract Products Price Book.</description>
+        <name>Get_Toyota_Contract_Products_Price_Book</name>
+        <label>Get Toyota Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3167</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Tier_3_Contract_Products_TVM_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Toyota Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Volkswagen Contract Products Price Book.</description>
+        <name>Get_Volkswagen_Contract_Products_Price_Book</name>
+        <label>Get Volkswagen Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>3059</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Toyota_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Volkswagen Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Volvo Contract Products Price Book.</description>
+        <name>Get_Volvo_Contract_Products_Price_Book</name>
+        <label>Get Volvo Contract Products Price Book</label>
+        <locationX>842</locationX>
+        <locationY>4031</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Genesis_Contract_Products_Price_Book</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Volvo Contract Products</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetUserFromEmail</name>
+        <label>GetUserFromEmail</label>
+        <locationX>974</locationX>
+        <locationY>1247</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_User_From_Email_Null_Gate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Created_By_Email__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Adds 1 to the Count for the Auto Group to which the Account is associated.</description>
+        <name>Add_1_to_the_Auto_Group_s_Count</name>
+        <label>Add 1 to the Auto Group&apos;s Count</label>
+        <locationX>842</locationX>
+        <locationY>1055</locationY>
+        <connector>
+            <targetReference>GetUserFromEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Auto_Group.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Number_of_Accounts__c</field>
+            <value>
+                <elementReference>IncreaseCountBy1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>of_Stellantis_Accounts__c</field>
+            <value>
+                <elementReference>StellantisAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Auto_Group__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Adds 1 to the Count for the Auto Group to which the Account is associated.</description>
+        <name>Add_1_to_the_Auto_Group_s_Count_0</name>
+        <label>Add 1 to the Auto Group&apos;s Count</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Is_Analytics_Franchise_populated_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Auto_Group.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>of_FNDN_Accounts__c</field>
+            <value>
+                <elementReference>IncreaseFNDNCountBy1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>of_Stellantis_Accounts__c</field>
+            <value>
+                <elementReference>StellantisAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Auto_Group__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Records_4</name>
+        <label>Copy 1 of Update Records 4</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>005Vb00000Co24XIAR</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>012Vb0000083OFhIAM</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Account to populate the Default Price Book using a formula to determine which Price Book should be used based on the Account&apos;s Analytics Franchise.</description>
+        <name>Populate_the_Default_Foundation_Price_Book</name>
+        <label>Populate the Default Foundation Price Book</label>
+        <locationX>314</locationX>
+        <locationY>1595</locationY>
+        <inputAssignments>
+            <field>Default_Price_Book__c</field>
+            <value>
+                <elementReference>DefaultPriceBook</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Account to populate the Default Price Book using a formula to determine which Price Book should be used based on the Account&apos;s Analytics Franchise.</description>
+        <name>Populate_the_Default_Price_Book</name>
+        <label>Populate the Default Price Book</label>
+        <locationX>842</locationX>
+        <locationY>4463</locationY>
+        <inputAssignments>
+            <field>Default_Price_Book__c</field>
+            <value>
+                <elementReference>DefaultPriceBook</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Created_User</name>
+        <label>Set Created User</label>
+        <locationX>1062</locationX>
+        <locationY>1463</locationY>
+        <connector>
+            <targetReference>Is_Analytics_Franchise_populated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Created_Account_in_TP__c</field>
+            <value>
+                <elementReference>GetUserFromEmail.X18_Digit_User_ID__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_to_TVM_FNDN_Billed</name>
+        <label>Set to TVM FNDN Billed</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Create_OB_Build_Doc</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>012Vb000007wGBdIAM</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Records_4</name>
+        <label>Update Records 4</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Is_Auto_Group_populate_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>005Vb00000CoBB5IAN</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>012Vb000007jZ41IAE</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>386</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Initial_Gate</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

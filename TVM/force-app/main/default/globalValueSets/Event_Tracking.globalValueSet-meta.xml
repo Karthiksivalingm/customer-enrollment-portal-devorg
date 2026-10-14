@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Event tracked via tagged triggers</fullName>
+        <default>false</default>
+        <label>Event tracked via tagged triggers</label>
+    </customValue>
+    <customValue>
+        <fullName>Event tracked via passed events from provider</fullName>
+        <default>false</default>
+        <label>Event tracked via passed events from provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Event can be tracked via tagged triggers but currently is not</fullName>
+        <default>false</default>
+        <label>Event can be tracked via tagged triggers but currently is not</label>
+    </customValue>
+    <customValue>
+        <fullName>Event can be tracked via passed events from provider but currently is not</fullName>
+        <default>false</default>
+        <label>Event can be tracked via passed events from provider but currently is not</label>
+    </customValue>
+    <customValue>
+        <fullName>Event not trackable, iframed &amp; vendor does not pass events</fullName>
+        <default>false</default>
+        <label>Event not trackable, iframed &amp; vendor does not pass events</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer does not use vendor</fullName>
+        <default>false</default>
+        <label>Dealer does not use vendor</label>
+    </customValue>
+    <customValue>
+        <fullName>Event tracked but low volume</fullName>
+        <default>false</default>
+        <label>Event tracked but low volume</label>
+    </customValue>
+    <customValue>
+        <fullName>Event Impacted By Bot Traffic</fullName>
+        <default>false</default>
+        <label>Event Impacted By Bot Traffic</label>
+    </customValue>
+    <customValue>
+        <fullName>Event High Volume</fullName>
+        <default>false</default>
+        <label>Event High Volume</label>
+    </customValue>
+    <description>FND</description>
+    <masterLabel>Event Tracking</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

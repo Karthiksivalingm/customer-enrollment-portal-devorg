@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unqualified_Reason__c</fullName>
+    <description>FND</description>
+    <label>Unqualified Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Desires Full Service Agency</fullName>
+                <default>false</default>
+                <label>Desires Full Service Agency</label>
+            </value>
+            <value>
+                <fullName>Desires One Solution (Website Included)</fullName>
+                <default>false</default>
+                <label>Desires One Solution (Website Included)</label>
+            </value>
+            <value>
+                <fullName>Not Coop Eligible</fullName>
+                <default>false</default>
+                <label>Not Coop Eligible</label>
+            </value>
+            <value>
+                <fullName>Not Ideal Fit</fullName>
+                <default>false</default>
+                <label>Not Ideal Fit</label>
+            </value>
+            <value>
+                <fullName>OEM Certification Required</fullName>
+                <default>false</default>
+                <label>OEM Certification Required</label>
+            </value>
+            <value>
+                <fullName>Timing</fullName>
+                <default>false</default>
+                <label>Timing</label>
+            </value>
+            <value>
+                <fullName>Too Expensive</fullName>
+                <default>false</default>
+                <label>Too Expensive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

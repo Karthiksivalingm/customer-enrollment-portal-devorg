@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cross_Accounts__c</fullName>
+    <externalId>false</externalId>
+    <formula>Text(
+if(Inventory_Feeds_Only__c, 1, 0)+
+if(MSA_Contract__c, 1, 0)+
+if(Foundation_Account__c=&quot;&quot;, 1, 0)+
+if(SocialDealer__c=&quot;&quot;, 1, 0))
+&amp; &quot; &quot; &amp;
+if(Inventory_Feeds_Only__c || MSA_Contract__c || Foundation_Account__c=&quot;&quot; || SocialDealer__c=&quot;&quot;, 
+if(Inventory_Feeds_Only__c, &quot;Inventory Feed | &quot;, &quot;&quot;) &amp;
+if( MSA_Contract__c, &quot;MSA | &quot;, &quot;&quot;) &amp;
+if(Foundation_Account__c!=&quot;&quot;, &quot;Foundation | &quot;, &quot;&quot;)&amp;
+If(SocialDealer__c!=&quot;&quot;, &quot;SocialDealer | &quot;, &quot;&quot;),
+
+&quot;Not Cross Account&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cross Accounts</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

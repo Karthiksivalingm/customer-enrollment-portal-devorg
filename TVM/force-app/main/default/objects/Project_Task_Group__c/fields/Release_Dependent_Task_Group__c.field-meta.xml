@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Release_Dependent_Task_Group__c</fullName>
+    <formula>Completion_Status__c = &quot;Closed&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Release Dependent Task Group</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

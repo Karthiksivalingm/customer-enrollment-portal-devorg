@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HS_Net_Revenue_Calc_11_24__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt;9000,
+	25,
+if(Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt;7000,
+	20,
+if(Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt;5000,
+	15,
+if(Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt;3000,
+	10,
+	5
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HS Net Revenue Calc 11/24</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>Mark_Complete</name>
+        <label>Mark Complete</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T0HNY7Z99</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <elementReference>ConvoID</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>MessageBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessageTimestamp</name>
+            <value>
+                <elementReference>TimestampButtonKey</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Close_State</name>
+        <label>Assign Close State</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case.X3rd_Party_Integration_Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Approval</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Mark_Complete</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>ApprovedExecuting</name>
+        <choiceText>Approved - Executing</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Approved - Executing</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NotNeeded</name>
+        <choiceText>Not Needed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Not Needed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Rejected</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(227, 243, 255); font-size: 11.36px; font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);&quot;&gt;Rejected&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rejected</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Rejected_Not_Executing</name>
+        <choiceText>Rejected - Not Executing</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rejected - Not Executing</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Rejected_Switched_to_TVM_App</name>
+        <choiceText>Rejected - Switched to TVM App</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rejected - Switched to TVM App</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Already_Closed</name>
+        <label>Already Closed?</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Screen_1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.X3rd_Party_Integration_Approval_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approval Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Already_Complete</targetReference>
+            </connector>
+            <label>Yes, Closed</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>PicklistApprovalSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>X3rd_Party_Integration_Approval_Status__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Slack</environments>
+    <interviewLabel>Slack Button SEO Complete {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Slack Case Button 3rd Party</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Case</name>
+        <label>Get Case</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Already_Closed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Confirm_Screen</targetReference>
+        </connector>
+        <inputReference>Get_Case</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Already_Complete</name>
+        <label>Already Complete</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Already_Complete_Disp</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;This Case has already been marked approved&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Confirm_Screen</name>
+        <label>Confirm Screen</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Confirmation_Disp</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;All Good!  You can close this window.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_1</name>
+        <label>Screen 1</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Close_State</targetReference>
+        </connector>
+        <fields>
+            <name>Approval</name>
+            <choiceReferences>PicklistApprovalSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>3rd Party Approval</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Confirm</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Case</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>MessageBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$User.FirstName} {!$User.LastName} marked 3rd Party Approval: {!Approval}!</text>
+    </textTemplates>
+    <variables>
+        <name>ConvoID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TimestampButtonKey</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Primary Website</fullName>
+        <default>false</default>
+        <label>Primary Website</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital</fullName>
+        <default>false</default>
+        <label>Digital</label>
+    </customValue>
+    <customValue>
+        <fullName>Portal Website</fullName>
+        <default>false</default>
+        <label>Portal Website</label>
+    </customValue>
+    <customValue>
+        <fullName>Production</fullName>
+        <default>false</default>
+        <label>Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Creative</label>
+    </customValue>
+    <masterLabel>Onboarding Package Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

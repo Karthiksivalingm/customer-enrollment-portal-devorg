@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SEO_not_yet_setup</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(Case_Category__c, &quot;SEO&quot;) &amp;&amp;  $User.ProfileId != &apos;00e5f000002HLkQ&apos;</errorConditionFormula>
+    <errorMessage>SEO cases are not live yet. Please reach out to an Admin if needed.</errorMessage>
+</ValidationRule>

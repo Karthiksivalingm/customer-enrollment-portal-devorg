@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Changes</fullName>
+    <active>true</active>
+    <description>Block changes to Intergroup Communications after 1 minute (they should be read only after sending, just like email).</description>
+    <errorConditionFormula>AND(
+				CreatedDate+(1/1440) &lt; NOW(),
+				NOT(Contains($User.FirstName, &quot;Connection&quot;))
+)</errorConditionFormula>
+    <errorMessage>Intergroup Communications are read only once they are sent.</errorMessage>
+</ValidationRule>

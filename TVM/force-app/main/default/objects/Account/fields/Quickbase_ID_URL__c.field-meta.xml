@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quickbase_ID_URL__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/bfnijpmiv?a=dr&amp;rid=&quot;&amp; Quickbase_Record_ID__c , Quickbase_Record_ID__c, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

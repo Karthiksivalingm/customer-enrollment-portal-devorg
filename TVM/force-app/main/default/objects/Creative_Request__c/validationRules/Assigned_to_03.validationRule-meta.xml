@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_to_03</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &quot;02 Assigned&quot;) &amp;&amp;
+NOT(ISPICKVAL(Status__c, &quot;In_Progress&quot;)) &amp;&amp;
+ISCHANGED(Status__c)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>The next status has to be 03 In Progress.</errorMessage>
+</ValidationRule>

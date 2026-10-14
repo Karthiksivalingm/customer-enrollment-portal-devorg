@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consecutive_Months_Of_Virtual_Meetings__c</fullName>
+    <description>Depreciate</description>
+    <formula>AND(Meeting_Recap_Location__c = &quot;Virtual&quot;,
+ Previous_Month_Meeting_Recap__r.Meeting_Recap_Location__c = &quot;Virtual&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Consecutive Depreciate</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

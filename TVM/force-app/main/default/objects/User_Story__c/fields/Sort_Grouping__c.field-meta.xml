@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sort_Grouping__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Text(Status__c )=&quot;Awaiting Client Review&quot;, &quot;0&quot;, &quot;&quot;)&amp;
+if(Text(Status__c )=&quot;Need to Scope&quot;, &quot;A4 On Hold&quot;, &quot;&quot;)&amp;
+if(Order__c&gt;0, Text( Order__c ) &amp; &quot; | &quot;, &quot;&quot;)&amp;
+Case(Text(Status__c ),
+&quot;On Hold&quot;, &quot;A5 On Hold&quot;,
+&quot;Awaiting Client Review&quot;, &quot;A1 Deployed&quot;,
+&quot;Wait 4 Slack Field Synch&quot;, &quot;A1 Waiting&quot;,
+&quot;Recurring&quot;, &quot;A6 Recurring&quot;,
+&quot;In Progress&quot;, &quot;A1 In Progress&quot;,
+if(
+Due_Date__c &lt;  TODAY() , &quot;A2 Overdue&quot;, 
+if(
+    CEILING( ( Due_Date__c - DATE( YEAR( Due_Date__c ), 1, 1) + 1) / 7)
+  =
+    CEILING( ( TODAY()- DATE( YEAR( TODAY()), 1, 1) + 1) / 7)
+ , &quot;A3 This Week&quot;,
+if(
+    CEILING( ( Due_Date__c - DATE( YEAR( Due_Date__c ), 1, 1) + 1) / 7)
+  =
+  1+CEILING( ( TODAY()- DATE( YEAR( TODAY()), 1, 1) + 1) / 7)
+ , &quot;A4 Next Week&quot;,
+if( 
+    CEILING( ( Due_Date__c - DATE( YEAR( Due_Date__c ), 1, 1) + 1) / 7)
+  &gt;
+    1+CEILING( ( TODAY()- DATE( YEAR( TODAY()), 1, 1) + 1) / 7)
+ , &quot;A5 Future&quot;, 
+
+&quot;No Due Date&quot;))))) &amp;
+&quot; &quot;&amp;
+Text(Year(Due_Date__c ))&amp;if(Month(Due_Date__c )&lt;10, &quot;0&quot;&amp;Text(Month(Due_Date__c )), Text(Month(Due_Date__c )))&amp;if(Day(Due_Date__c )&lt;10, &quot;0&quot;&amp;Text(Day(Due_Date__c )),Text(Day(Due_Date__c )))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>DC Sort Grouping</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

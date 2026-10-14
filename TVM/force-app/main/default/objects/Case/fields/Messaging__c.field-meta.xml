@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Messaging__c</fullName>
+    <label>Messaging</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Allow for text ad callouts</fullName>
+                <default>false</default>
+                <label>Allow for text ad callouts</label>
+            </value>
+            <value>
+                <fullName>Allow for URL link field for video</fullName>
+                <default>false</default>
+                <label>Allow for URL link field for video</label>
+            </value>
+            <value>
+                <fullName>Allow for image uploads</fullName>
+                <default>false</default>
+                <label>Allow for image uploads</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

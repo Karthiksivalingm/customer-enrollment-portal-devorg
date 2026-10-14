@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Domain_Exclusion__c</fullName>
+    <formula>Contains( EmailDomain__c , &quot;barracuda&quot;) ||
+Contains( EmailDomain__c , &quot;cloudflare&quot;) ||
+Contains( EmailDomain__c , &quot;gosecure&quot;) ||
+Contains( EmailDomain__c , &quot;hydra&quot;) ||
+Contains( EmailDomain__c , &quot;ik2&quot;) ||
+Contains( EmailDomain__c , &quot;iphmx&quot;) ||
+Contains( EmailDomain__c , &quot;mailanyone&quot;) ||
+Contains( EmailDomain__c , &quot;mailhop&quot;) ||
+Contains( EmailDomain__c , &quot;mailmarshal&quot;) ||
+Contains( EmailDomain__c , &quot;mbox&quot;) ||
+Contains( EmailDomain__c , &quot;mxthunder&quot;) ||
+Contains( EmailDomain__c , &quot;pphosted&quot;) ||
+Contains( EmailDomain__c , &quot;spamhero&quot;) ||
+Contains( EmailDomain__c , &quot;stableserver&quot;) ||
+Contains( EmailDomain__c , &quot;threatspike&quot;) ||
+Contains( EmailDomain__c , &quot;tmes&quot;) ||
+Contains( EmailDomain__c , &quot;xion&quot;) ||
+Contains( EmailDomain__c , &quot;mimecast&quot;) ||
+Contains( EmailDomain__c , &quot;emailsrvr&quot;) ||
+Contains( EmailDomain__c , &quot;heliontechnologies&quot;) ||
+Contains( EmailDomain__c , &quot;hornetsecurity&quot;) ||
+Contains( EmailDomain__c , &quot;arsmtp&quot;) ||
+Contains( EmailDomain__c , &quot;mailsecurity.io&quot;) ||
+Contains( EmailDomain__c , &quot;helionmail&quot;) ||
+Contains( EmailDomain__c , &quot;spamtitan&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Domain Exclusion</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

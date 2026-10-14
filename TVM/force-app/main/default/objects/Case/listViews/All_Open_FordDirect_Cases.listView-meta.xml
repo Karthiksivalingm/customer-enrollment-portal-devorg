@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_FordDirect_Cases</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Red_Fire__c</columns>
+    <columns>Ticket__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Case_Subcategory__c</columns>
+    <columns>Case_Request__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Escalated_To__c</columns>
+    <columns>FD_Date_Opened__c</columns>
+    <columns>Sync_FD__c</columns>
+    <columns>SLA_Level__c</columns>
+    <columns>SLA_Resolve_Time__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Request_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Sync_FD__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Open Cases Shared with FordDirect</label>
+</ListView>

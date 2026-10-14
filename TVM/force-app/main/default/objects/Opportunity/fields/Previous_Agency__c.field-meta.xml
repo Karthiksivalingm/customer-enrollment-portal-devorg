@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Agency__c</fullName>
+    <description>FND</description>
+    <label>Previous Agency</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adpearance</fullName>
+                <default>false</default>
+                <label>Adpearance</label>
+            </value>
+            <value>
+                <fullName>AutoLeadStar</fullName>
+                <default>false</default>
+                <label>AutoLeadStar</label>
+            </value>
+            <value>
+                <fullName>C-4</fullName>
+                <default>false</default>
+                <label>C-4</label>
+            </value>
+            <value>
+                <fullName>CF Search Marketing</fullName>
+                <default>false</default>
+                <label>CF Search Marketing</label>
+            </value>
+            <value>
+                <fullName>ClickHere Digital</fullName>
+                <default>false</default>
+                <label>ClickHere Digital</label>
+            </value>
+            <value>
+                <fullName>Constellation</fullName>
+                <default>false</default>
+                <label>Constellation</label>
+            </value>
+            <value>
+                <fullName>Dealer.com</fullName>
+                <default>false</default>
+                <label>Dealer.com</label>
+            </value>
+            <value>
+                <fullName>Dealer eProcess</fullName>
+                <default>false</default>
+                <label>Dealer eProcess</label>
+            </value>
+            <value>
+                <fullName>DealerInspire</fullName>
+                <default>false</default>
+                <label>DealerInspire</label>
+            </value>
+            <value>
+                <fullName>DealerOn</fullName>
+                <default>false</default>
+                <label>DealerOn</label>
+            </value>
+            <value>
+                <fullName>DealerTeamwork</fullName>
+                <default>false</default>
+                <label>DealerTeamwork</label>
+            </value>
+            <value>
+                <fullName>Force Marketing</fullName>
+                <default>false</default>
+                <label>Force Marketing</label>
+            </value>
+            <value>
+                <fullName>Fox Dealer</fullName>
+                <default>false</default>
+                <label>Fox Dealer</label>
+            </value>
+            <value>
+                <fullName>FusionZone</fullName>
+                <default>false</default>
+                <label>FusionZone</label>
+            </value>
+            <value>
+                <fullName>Google autoMate</fullName>
+                <default>false</default>
+                <label>Google autoMate</label>
+            </value>
+            <value>
+                <fullName>iFrog Marketing Solutions</fullName>
+                <default>false</default>
+                <label>iFrog Marketing Solutions</label>
+            </value>
+            <value>
+                <fullName>L2Tmedia</fullName>
+                <default>false</default>
+                <label>L2Tmedia</label>
+            </value>
+            <value>
+                <fullName>Mudd Adertising</fullName>
+                <default>false</default>
+                <label>Mudd Adertising</label>
+            </value>
+            <value>
+                <fullName>Naked Lime</fullName>
+                <default>false</default>
+                <label>Naked Lime</label>
+            </value>
+            <value>
+                <fullName>Netsertive</fullName>
+                <default>false</default>
+                <label>Netsertive</label>
+            </value>
+            <value>
+                <fullName>PCG</fullName>
+                <default>false</default>
+                <label>PCG</label>
+            </value>
+            <value>
+                <fullName>PixelMotion</fullName>
+                <default>false</default>
+                <label>PixelMotion</label>
+            </value>
+            <value>
+                <fullName>Pixel Motion</fullName>
+                <default>false</default>
+                <label>Pixel Motion</label>
+            </value>
+            <value>
+                <fullName>PureCars</fullName>
+                <default>false</default>
+                <label>PureCars</label>
+            </value>
+            <value>
+                <fullName>Search Optics</fullName>
+                <default>false</default>
+                <label>Search Optics</label>
+            </value>
+            <value>
+                <fullName>Sincro</fullName>
+                <default>false</default>
+                <label>Sincro</label>
+            </value>
+            <value>
+                <fullName>Skyrush</fullName>
+                <default>false</default>
+                <label>Skyrush</label>
+            </value>
+            <value>
+                <fullName>Sokal</fullName>
+                <default>false</default>
+                <label>Sokal</label>
+            </value>
+            <value>
+                <fullName>Stream</fullName>
+                <default>false</default>
+                <label>Stream</label>
+            </value>
+            <value>
+                <fullName>TeamVelocity</fullName>
+                <default>false</default>
+                <label>TeamVelocity</label>
+            </value>
+            <value>
+                <fullName>Turnkey Media</fullName>
+                <default>false</default>
+                <label>Turnkey Media</label>
+            </value>
+            <value>
+                <fullName>Unity Works Media</fullName>
+                <default>false</default>
+                <label>Unity Works Media</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

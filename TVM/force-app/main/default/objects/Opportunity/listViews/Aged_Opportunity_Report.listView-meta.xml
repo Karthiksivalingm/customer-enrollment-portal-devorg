@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aged_Opportunity_Report</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>LAST_EVENT_DATE</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Opportunity_Type__c</columns>
+    <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Demo Scheduled,Demo Completed,Committed,Contract Sent</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FULL_NAME</field>
+        <operation>equals</operation>
+        <value>,Mark Fair,Chad Sterling,Jack Clemons,Austin Beachler,Alex Parziale,Matthew Abbott,Robert Librizzi,Andee Joyce,Chris Winkler,Joe Pracher</value>
+    </filters>
+    <filters>
+        <field>LAST_EVENT_DATE</field>
+        <operation>lessOrEqual</operation>
+        <value>4/6/2023 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Aged Opportunity Report</label>
+</ListView>

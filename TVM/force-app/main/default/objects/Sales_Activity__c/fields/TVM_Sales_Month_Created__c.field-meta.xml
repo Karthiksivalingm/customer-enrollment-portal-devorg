@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Sales_Month_Created__c</fullName>
+    <formula>if( DateValue(CreatedDate) &gt;=DATE( 2025 , 12 , 1 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 12 , 31), DATE( 2025 , 12 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 11 , 1 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 11 , 30), DATE( 2025 , 11 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 10 , 1 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 10 , 31), DATE( 2025 , 10 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 9 , 1 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 9 , 30), DATE( 2025 , 9 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 8 , 1)&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 8 , 31), DATE( 2025 , 8 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 7 , 1 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 7 , 31 ), DATE( 2025 , 7 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 5 , 31 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 6 , 30), DATE( 2025 , 6 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 4 , 29 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 5 , 30 ), DATE( 2025 , 5 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 3 , 28 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 4 , 28 ), DATE( 2025 , 4 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 2 , 26 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 3 , 27 ), DATE( 2025 , 3 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2025 , 1 , 28 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 2 , 25 ), DATE( 2025 , 2 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2024 , 12 , 27 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2025 , 1 , 27 ), DATE( 2025 , 1 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2024 , 11 , 26 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2024 , 12 , 26 ), DATE( 2024 , 12 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2024 , 10 , 26 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2024 , 11 , 25 ), DATE( 2024 , 11 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2024 , 9 , 26 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2024 , 10 , 25 ), DATE( 2024 , 10 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2024 , 8 , 27 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2024 , 9 , 25 ), DATE( 2024 , 9 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2024 , 7 , 26 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2024 , 8 , 26 ), DATE( 2024 , 8 , 1 ),
+if( DateValue(CreatedDate) &gt;=DATE( 2024 , 6 , 26 )&amp;&amp; DateValue(CreatedDate)&lt;=DATE( 2024 , 7 , 25 ), DATE( 2024 , 7 , 1 ),
+TVM_Sales_Month_Static__c))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVM Sales Month (Created)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_List_Criteria__c</fullName>
+    <label>Email List Criteria</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <label>Lost</label>
+            </value>
+            <value>
+                <fullName>Active + Lost</fullName>
+                <default>false</default>
+                <label>Active + Lost</label>
+            </value>
+            <value>
+                <fullName>General Service</fullName>
+                <default>false</default>
+                <label>General Service</label>
+            </value>
+            <value>
+                <fullName>Active, Lost + Gen. Service</fullName>
+                <default>false</default>
+                <label>Active, Lost + Gen. Service</label>
+            </value>
+            <value>
+                <fullName>Push List</fullName>
+                <default>false</default>
+                <label>Push List</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

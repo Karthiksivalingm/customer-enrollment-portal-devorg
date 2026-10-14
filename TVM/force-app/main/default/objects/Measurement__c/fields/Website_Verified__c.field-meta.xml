@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Verified__c</fullName>
+    <label>Website Verified</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Verified</fullName>
+                <default>false</default>
+                <label>Verified</label>
+            </value>
+            <value>
+                <fullName>Not Verified</fullName>
+                <default>false</default>
+                <label>Not Verified</label>
+            </value>
+            <value>
+                <fullName>Broken URL</fullName>
+                <default>false</default>
+                <label>Broken URL</label>
+            </value>
+            <value>
+                <fullName>Redirect URL</fullName>
+                <default>false</default>
+                <label>Redirect URL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

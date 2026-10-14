@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Rating__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Client_Rating_Text__c ,
+&quot;good&quot;, IMAGE(&quot;/resource/rating_good&quot;, &quot;Good&quot;, 70, 70),
+&quot;average&quot;, IMAGE(&quot;/resource/rating_average&quot;, &quot;Average&quot;, 70, 70),
+IMAGE(&quot;/resource/rating_bad&quot;, &quot;Bad&quot;, 70, 70))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Budget App Client Rating</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

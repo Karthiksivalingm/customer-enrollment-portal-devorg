@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Digital Reporting is a sub team of the digital support team</description>
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>digitalsupport@teamvelocitymarketing.com</email>
+    <name>Digital Reporting</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>Digital_Reporting_Support</publicGroup>
+        </publicGroups>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

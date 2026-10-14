@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_OTT_Custom_Recent_Date__c</fullName>
+    <formula>if( OEM_Enrolled_OTT__c,   OEM_Enrolled_OTT_Date__c , 
+if( OEM_Unenrolled_OTT__c,  OEM_Unenrolled_OTT_Date__c , null))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Enrollment OTT Recent Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

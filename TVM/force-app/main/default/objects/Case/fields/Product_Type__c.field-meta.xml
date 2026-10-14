@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <description>FND</description>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Profit_Center__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Display</fullName>
+                <default>false</default>
+                <label>New Display</label>
+            </value>
+            <value>
+                <fullName>New PMax</fullName>
+                <default>false</default>
+                <label>New PMax</label>
+            </value>
+            <value>
+                <fullName>New Search</fullName>
+                <default>false</default>
+                <label>New Search</label>
+            </value>
+            <value>
+                <fullName>New Social</fullName>
+                <default>false</default>
+                <label>New Social</label>
+            </value>
+            <value>
+                <fullName>New Vehicle Ads</fullName>
+                <default>false</default>
+                <label>New Vehicle Ads</label>
+            </value>
+            <value>
+                <fullName>New Video</fullName>
+                <default>false</default>
+                <label>New Video</label>
+            </value>
+            <value>
+                <fullName>Service Display</fullName>
+                <default>false</default>
+                <label>Service Display</label>
+            </value>
+            <value>
+                <fullName>Service Search</fullName>
+                <default>false</default>
+                <label>Service Search</label>
+            </value>
+            <value>
+                <fullName>Service Social</fullName>
+                <default>false</default>
+                <label>Service Social</label>
+            </value>
+            <value>
+                <fullName>Service Video</fullName>
+                <default>false</default>
+                <label>Service Video</label>
+            </value>
+            <value>
+                <fullName>Used Display</fullName>
+                <default>false</default>
+                <label>Used Display</label>
+            </value>
+            <value>
+                <fullName>Used PMax</fullName>
+                <default>false</default>
+                <label>Used PMax</label>
+            </value>
+            <value>
+                <fullName>Used Search</fullName>
+                <default>false</default>
+                <label>Used Search</label>
+            </value>
+            <value>
+                <fullName>Used Social</fullName>
+                <default>false</default>
+                <label>Used Social</label>
+            </value>
+            <value>
+                <fullName>Used Vehicle Ads</fullName>
+                <default>false</default>
+                <label>Used Vehicle Ads</label>
+            </value>
+            <value>
+                <fullName>Used Video</fullName>
+                <default>false</default>
+                <label>Used Video</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>New Profit Center</controllingFieldValue>
+            <valueName>New Display</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Profit Center</controllingFieldValue>
+            <valueName>New PMax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Profit Center</controllingFieldValue>
+            <valueName>New Search</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Profit Center</controllingFieldValue>
+            <valueName>New Social</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Profit Center</controllingFieldValue>
+            <valueName>New Vehicle Ads</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Profit Center</controllingFieldValue>
+            <valueName>New Video</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Profit Center</controllingFieldValue>
+            <valueName>Used Display</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Profit Center</controllingFieldValue>
+            <valueName>Used PMax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Profit Center</controllingFieldValue>
+            <valueName>Used Search</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Profit Center</controllingFieldValue>
+            <valueName>Used Social</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Profit Center</controllingFieldValue>
+            <valueName>Used Vehicle Ads</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Profit Center</controllingFieldValue>
+            <valueName>Used Video</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Profit Center</controllingFieldValue>
+            <valueName>Service Display</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Profit Center</controllingFieldValue>
+            <valueName>Service Search</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Profit Center</controllingFieldValue>
+            <valueName>Service Social</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Profit Center</controllingFieldValue>
+            <valueName>Service Video</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

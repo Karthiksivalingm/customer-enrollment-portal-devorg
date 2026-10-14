@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to store the external system Salesforce to Salesforce Connection ID, and the ID of the Connection User for that Connection. This metadata is referred to in 2 Way Case Integration Solution Flows and Apex.</description>
+    <label>SF2SF Automation Setting</label>
+    <pluralLabel>SF2SF Automation Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Case_Owner_Log_to_Collection</name>
+        <label>Add Case Owner Log to Collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>AllLogs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CaseOwnerLog</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_All_Logs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Config_Case_Owner_Log</name>
+        <label>Config Case Owner Log</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.Company__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TVMorFNDN</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Log</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.Field__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Case Owner</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.New_Value__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.Old_Value__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.Table__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.Record_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseOwnerLog.Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseOwnerDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Case_Owner_Log_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Case_Owner_Changed</name>
+        <label>Case Owner Changed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Add_All_Logs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Create_Log_Item</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Config_Case_Owner_Log</targetReference>
+            </connector>
+            <label>Case Owner Updated</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>TVMorFNDN</name>
+        <dataType>String</dataType>
+        <expression>if({!$Record.Foundation_Record__c}, &quot;FNDN&quot;, &quot;TVM&quot;)</expression>
+    </formulas>
+    <interviewLabel>Case Updated - Audit Logs {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Updated - Audit Logs</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Add_All_Logs</name>
+        <label>Add All Logs</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>AllLogs</inputReference>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Case_Owner_Changed</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>CaseOwnerDescription</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Old Value: {!$Record__Prior.Owner:Group.Name}{!$Record__Prior.Owner:User.Full_Name_Formula__c}&lt;br/&gt;
+New Value: {!$Record.Owner:Group.Name}{!$Record.Owner:User.Full_Name_Formula__c}&lt;br/&gt;
+&lt;br/&gt;
+Current Flow User: {!$User.Full_Name_Formula__c}&lt;br/&gt;
+{!$Record.LastModifiedBy.Full_Name_Formula__c}</text>
+    </textTemplates>
+    <variables>
+        <name>AllLogs</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Audit_Log__c</objectType>
+    </variables>
+    <variables>
+        <name>CaseOwnerLog</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Audit_Log__c</objectType>
+    </variables>
+</Flow>

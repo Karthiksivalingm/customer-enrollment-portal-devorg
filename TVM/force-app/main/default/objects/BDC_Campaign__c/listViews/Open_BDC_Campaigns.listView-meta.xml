@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_BDC_Campaigns</fullName>
+    <columns>NAME</columns>
+    <columns>Title__c</columns>
+    <columns>Analytic_Franchise__c</columns>
+    <columns>Launch_Date__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <label>All Open BDC Campaigns</label>
+</ListView>

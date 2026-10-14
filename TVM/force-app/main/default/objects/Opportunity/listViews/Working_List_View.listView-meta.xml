@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Working_List_View</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Add_On_Product_Type__c</columns>
+    <columns>Product_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Product_Status__c</field>
+        <operation>equals</operation>
+        <value>OTT Only,Streaming TV/OTT Advertising</value>
+    </filters>
+    <filters>
+        <field>Add_On_Product_Type__c</field>
+        <operation>equals</operation>
+        <value>OTT,Hybrid OTT</value>
+    </filters>
+    <label>Working List View</label>
+</ListView>

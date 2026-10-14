@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DMA_Id__c</fullName>
+    <description>FND</description>
+    <label>DMA Id</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>DMA_Name__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>DMA_Id</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Lima, OH</controllingFieldValue>
+            <valueName>200558</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lincoln &amp; Hastings-Kearney, NE</controllingFieldValue>
+            <valueName>200722</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Little Rock-Pine Bluff, AR</controllingFieldValue>
+            <valueName>200693</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Los Angeles, CA</controllingFieldValue>
+            <valueName>200803</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Louisville, KY</controllingFieldValue>
+            <valueName>200529</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lubbock, TX</controllingFieldValue>
+            <valueName>200651</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Macon, GA</controllingFieldValue>
+            <valueName>200503</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Madison, WI</controllingFieldValue>
+            <valueName>200669</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mankato, MN</controllingFieldValue>
+            <valueName>200737</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Marquette, MI</controllingFieldValue>
+            <valueName>200553</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Augusta, GA</controllingFieldValue>
+            <valueName>200520</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Austin, TX</controllingFieldValue>
+            <valueName>200635</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bakersfield, CA</controllingFieldValue>
+            <valueName>200800</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Baltimore, MD</controllingFieldValue>
+            <valueName>200512</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bangor, ME</controllingFieldValue>
+            <valueName>200537</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Baton Rouge, LA</controllingFieldValue>
+            <valueName>200716</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Beaumont-Port Arthur, TX</controllingFieldValue>
+            <valueName>200692</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bend, OR</controllingFieldValue>
+            <valueName>200821</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billings, MT</controllingFieldValue>
+            <valueName>200756</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Biloxi-Gulfport, MS</controllingFieldValue>
+            <valueName>200746</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medford-Klamath Falls, OR</controllingFieldValue>
+            <valueName>200813</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Memphis, TN</controllingFieldValue>
+            <valueName>200640</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Abilene-Sweetwater, TX</controllingFieldValue>
+            <controllingFieldValue>Birmingham, AL</controllingFieldValue>
+            <valueName>200662</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meridian, MS</controllingFieldValue>
+            <valueName>200711</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Albany-Schenectady-Troy, NY</controllingFieldValue>
+            <valueName>200532</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Miami-Ft. Lauderdale, FL</controllingFieldValue>
+            <valueName>200528</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Albany, GA</controllingFieldValue>
+            <valueName>200525</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Milwaukee, WI</controllingFieldValue>
+            <valueName>200617</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Albuquerque-Santa Fe, NM</controllingFieldValue>
+            <valueName>200790</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Minneapolis-St. Paul, MN</controllingFieldValue>
+            <valueName>200613</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alexandria, LA</controllingFieldValue>
+            <valueName>200644</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Minot-Bismarck-Dickinson(Williston), ND</controllingFieldValue>
+            <valueName>200687</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alpena, MI</controllingFieldValue>
+            <valueName>200583</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Missoula, MT</controllingFieldValue>
+            <valueName>200762</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Amarillo, TX</controllingFieldValue>
+            <valueName>200634</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile, AL-Pensacola (Ft. Walton Beach), FL</controllingFieldValue>
+            <valueName>200686</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anchorage, AK</controllingFieldValue>
+            <valueName>200743</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monroe, LA-El Dorado, AR</controllingFieldValue>
+            <valueName>200628</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Atlanta, GA</controllingFieldValue>
+            <valueName>200524</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Binghamton, NY</controllingFieldValue>
+            <valueName>200502</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Birmingham, AL</controllingFieldValue>
+            <valueName>200630</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bluefield-Beckley-Oak Hill, WV</controllingFieldValue>
+            <valueName>200559</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boise, ID</controllingFieldValue>
+            <valueName>200757</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boston, MA-Manchester, NH</controllingFieldValue>
+            <valueName>200506</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bowling Green, KY</controllingFieldValue>
+            <valueName>200736</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buffalo, NY</controllingFieldValue>
+            <valueName>200514</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Burlington, VT-Plattsburgh, NY</controllingFieldValue>
+            <valueName>200523</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Butte-Bozeman, MT</controllingFieldValue>
+            <valueName>200754</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Casper-Riverton, WY</controllingFieldValue>
+            <valueName>200767</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monterey-Salinas, CA</controllingFieldValue>
+            <valueName>200828</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montgomery (Selma), AL</controllingFieldValue>
+            <valueName>200698</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nashville, TN</controllingFieldValue>
+            <valueName>200659</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Orleans, LA</controllingFieldValue>
+            <valueName>200622</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New York, NY</controllingFieldValue>
+            <valueName>200501</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Norfolk-Portsmouth-Newport News,VA</controllingFieldValue>
+            <valueName>200544</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>North Platte, NE</controllingFieldValue>
+            <valueName>200740</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Odessa-Midland, TX</controllingFieldValue>
+            <valueName>200633</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oklahoma City, OK</controllingFieldValue>
+            <valueName>200650</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Omaha, NE</controllingFieldValue>
+            <valueName>200652</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cedar Rapids-Waterloo-Iowa City &amp; Dubuque, IA</controllingFieldValue>
+            <valueName>200637</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Champaign &amp; Springfield-Decatur,IL</controllingFieldValue>
+            <valueName>200648</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Charleston-Huntington, WV</controllingFieldValue>
+            <valueName>200564</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Charleston, SC</controllingFieldValue>
+            <valueName>200519</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Charlotte, NC</controllingFieldValue>
+            <valueName>200517</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Charlottesville, VA</controllingFieldValue>
+            <valueName>200584</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chattanooga, TN</controllingFieldValue>
+            <valueName>200575</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cheyenne, WY-Scottsbluff, NE</controllingFieldValue>
+            <valueName>200759</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chicago, IL</controllingFieldValue>
+            <valueName>200602</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chico-Redding, CA</controllingFieldValue>
+            <valueName>200868</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Orlando-Daytona Beach-Melbourne, FL</controllingFieldValue>
+            <valueName>200534</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ottumwa, IA-Kirksville, MO</controllingFieldValue>
+            <valueName>200631</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paducah, KY-Cape Girardeau, MO-Harrisburg-Mount Vernon, IL</controllingFieldValue>
+            <valueName>200632</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Palm Springs, CA</controllingFieldValue>
+            <valueName>200804</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Panama City, FL</controllingFieldValue>
+            <valueName>200656</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Parkersburg, WV</controllingFieldValue>
+            <valueName>200597</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peoria-Bloomington, IL</controllingFieldValue>
+            <valueName>200675</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Philadelphia, PA</controllingFieldValue>
+            <valueName>200504</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Phoenix, AZ</controllingFieldValue>
+            <valueName>200753</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pittsburgh, PA</controllingFieldValue>
+            <valueName>200508</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cincinnati, OH</controllingFieldValue>
+            <valueName>200515</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Clarksburg-Weston, WV</controllingFieldValue>
+            <valueName>200598</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleveland-Akron (Canton), OH</controllingFieldValue>
+            <valueName>200510</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Colorado Springs-Pueblo, CO</controllingFieldValue>
+            <valueName>200752</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Columbia-Jefferson City, MO</controllingFieldValue>
+            <valueName>200604</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Columbia, SC</controllingFieldValue>
+            <valueName>200546</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Columbus-Tupelo-West Point, MS</controllingFieldValue>
+            <valueName>200673</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Columbus, GA</controllingFieldValue>
+            <valueName>200522</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Columbus, OH</controllingFieldValue>
+            <valueName>200535</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corpus Christi, TX</controllingFieldValue>
+            <valueName>200600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portland-Auburn, ME</controllingFieldValue>
+            <valueName>200500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portland, OR</controllingFieldValue>
+            <valueName>200820</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presque Isle, ME</controllingFieldValue>
+            <valueName>200552</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Providence, RI-New Bedford, MA</controllingFieldValue>
+            <valueName>200521</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quincy, IL-Hannibal, MO-Keokuk, IA</controllingFieldValue>
+            <valueName>200717</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Raleigh-Durham (Fayetteville), NC</controllingFieldValue>
+            <valueName>200560</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rapid City, SD</controllingFieldValue>
+            <valueName>200764</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reno, NV</controllingFieldValue>
+            <valueName>200811</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Richmond-Petersburg, VA</controllingFieldValue>
+            <valueName>200556</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roanoke-Lynchburg, VA</controllingFieldValue>
+            <valueName>200573</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dallas-Ft. Worth, TX</controllingFieldValue>
+            <valueName>200623</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Davenport,IA-Rock Island-Moline,IL</controllingFieldValue>
+            <valueName>200682</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dayton, OH</controllingFieldValue>
+            <valueName>200542</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denver, CO</controllingFieldValue>
+            <valueName>200751</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Des Moines-Ames, IA</controllingFieldValue>
+            <valueName>200679</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Detroit, MI</controllingFieldValue>
+            <valueName>200505</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dothan, AL</controllingFieldValue>
+            <valueName>200606</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Duluth, MN-Superior, WI</controllingFieldValue>
+            <valueName>200676</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>El Paso, TX</controllingFieldValue>
+            <valueName>200765</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Elmira, NY</controllingFieldValue>
+            <valueName>200565</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rochester, MN-Mason City, IA-Austin, MN</controllingFieldValue>
+            <valueName>200611</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rochester, NY</controllingFieldValue>
+            <valueName>200538</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rockford, IL</controllingFieldValue>
+            <valueName>200610</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sacramento-Stockton-Modesto, CA</controllingFieldValue>
+            <valueName>200862</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salisbury, MD</controllingFieldValue>
+            <valueName>200576</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salt Lake City, UT</controllingFieldValue>
+            <valueName>200770</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>San Angelo, TX</controllingFieldValue>
+            <valueName>200661</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>San Antonio, TX</controllingFieldValue>
+            <valueName>200641</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>San Diego, CA</controllingFieldValue>
+            <valueName>200825</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>San Francisco-Oakland-San Jose, CA</controllingFieldValue>
+            <valueName>200807</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Erie, PA</controllingFieldValue>
+            <valueName>200516</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eugene, OR</controllingFieldValue>
+            <valueName>200801</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eureka, CA</controllingFieldValue>
+            <valueName>200802</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Evansville, IN</controllingFieldValue>
+            <valueName>200649</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fairbanks, AK</controllingFieldValue>
+            <valueName>200745</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fargo-Valley City, ND</controllingFieldValue>
+            <valueName>200724</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Flint-Saginaw-Bay City, MI</controllingFieldValue>
+            <valueName>200513</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florence-Myrtle Beach, SC</controllingFieldValue>
+            <valueName>200570</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fresno-Visalia, CA</controllingFieldValue>
+            <valueName>200866</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ft. Myers-Naples, FL</controllingFieldValue>
+            <valueName>200571</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Santa Barbara-Santa Maria-San Luis Obispo, CA</controllingFieldValue>
+            <valueName>200855</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Savannah, GA</controllingFieldValue>
+            <valueName>200507</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Seattle-Tacoma, WA</controllingFieldValue>
+            <valueName>200819</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sherman, TX-Ada, OK</controllingFieldValue>
+            <valueName>200657</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shreveport, LA</controllingFieldValue>
+            <valueName>200612</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sioux City, IA</controllingFieldValue>
+            <valueName>200624</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sioux Falls(Mitchell), SD</controllingFieldValue>
+            <valueName>200725</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>South Bend-Elkhart, IN</controllingFieldValue>
+            <valueName>200588</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spokane, WA</controllingFieldValue>
+            <valueName>200881</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Springfield-Holyoke, MA</controllingFieldValue>
+            <valueName>200543</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ft. Smith-Fayetteville-Springdale-Rogers, AR</controllingFieldValue>
+            <valueName>200670</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ft. Wayne, IN</controllingFieldValue>
+            <valueName>200509</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gainesville, FL</controllingFieldValue>
+            <valueName>200592</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Glendive, MT</controllingFieldValue>
+            <valueName>200798</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grand Junction-Montrose, CO</controllingFieldValue>
+            <valueName>200773</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grand Rapids-Kalamazoo-Battle Creek, MI</controllingFieldValue>
+            <valueName>200563</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Falls, MT</controllingFieldValue>
+            <valueName>200755</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Green Bay-Appleton, WI</controllingFieldValue>
+            <valueName>200658</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Greensboro-High Point-Winston Salem, NC</controllingFieldValue>
+            <valueName>200518</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Greenville-New Bern-Washington, NC</controllingFieldValue>
+            <valueName>200545</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Springfield, MO</controllingFieldValue>
+            <valueName>200619</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>St. Joseph, MO</controllingFieldValue>
+            <valueName>200638</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>St. Louis, MO</controllingFieldValue>
+            <valueName>200609</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Syracuse, NY</controllingFieldValue>
+            <valueName>200555</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tallahassee, FL-Thomasville, GA</controllingFieldValue>
+            <valueName>200530</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tampa-St Petersburg (Sarasota), FL</controllingFieldValue>
+            <valueName>200539</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Terre Haute, IN</controllingFieldValue>
+            <valueName>200581</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toledo, OH</controllingFieldValue>
+            <valueName>200547</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Topeka, KS</controllingFieldValue>
+            <valueName>200605</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Traverse City-Cadillac, MI</controllingFieldValue>
+            <valueName>200540</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Greenville-Spartanburg, SC-Asheville, NC-Anderson, SC</controllingFieldValue>
+            <valueName>200567</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Greenwood-Greenville, MS</controllingFieldValue>
+            <valueName>200647</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Harlingen-Weslaco-Brownsville-McAllen, TX</controllingFieldValue>
+            <valueName>200636</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Harrisburg-Lancaster-Lebanon-York, PA</controllingFieldValue>
+            <valueName>200566</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Harrisonburg, VA</controllingFieldValue>
+            <valueName>200569</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hartford &amp; New Haven, CT</controllingFieldValue>
+            <valueName>200533</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hattiesburg-Laurel, MS</controllingFieldValue>
+            <valueName>200710</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Helena, MT</controllingFieldValue>
+            <valueName>200766</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Honolulu, HI</controllingFieldValue>
+            <valueName>200744</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Houston, TX</controllingFieldValue>
+            <valueName>200618</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tri-Cities, TN-VA</controllingFieldValue>
+            <valueName>200531</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tucson (Sierra Vista), AZ</controllingFieldValue>
+            <valueName>200789</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tulsa, OK</controllingFieldValue>
+            <valueName>200671</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Twin Falls, ID</controllingFieldValue>
+            <valueName>200760</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tyler-Longview(Lufkin &amp; Nacogdoches), TX</controllingFieldValue>
+            <valueName>200709</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Utica, NY</controllingFieldValue>
+            <valueName>200526</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Victoria, TX</controllingFieldValue>
+            <valueName>200626</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waco-Temple-Bryan, TX</controllingFieldValue>
+            <valueName>200625</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Washington, DC (Hagerstown, MD)</controllingFieldValue>
+            <valueName>200511</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Watertown, NY</controllingFieldValue>
+            <valueName>200549</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huntsville-Decatur (Florence), AL</controllingFieldValue>
+            <valueName>200691</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Idaho Falls-Pocatello, ID</controllingFieldValue>
+            <valueName>200758</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Indianapolis, IN</controllingFieldValue>
+            <valueName>200527</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jackson, MS</controllingFieldValue>
+            <valueName>200718</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jackson, TN</controllingFieldValue>
+            <valueName>200639</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jacksonville, FL</controllingFieldValue>
+            <valueName>200561</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Johnstown-Altoona, PA</controllingFieldValue>
+            <valueName>200574</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jonesboro, AR</controllingFieldValue>
+            <valueName>200734</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Joplin, MO-Pittsburg, KS</controllingFieldValue>
+            <valueName>200603</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Juneau, AK</controllingFieldValue>
+            <valueName>200747</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wausau-Rhinelander, WI</controllingFieldValue>
+            <valueName>200705</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Palm Beach-Ft. Pierce, FL</controllingFieldValue>
+            <valueName>200548</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wheeling, WV-Steubenville, OH</controllingFieldValue>
+            <valueName>200554</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wichita Falls, TX &amp; Lawton, OK</controllingFieldValue>
+            <valueName>200627</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wichita-Hutchinson, KS</controllingFieldValue>
+            <valueName>200678</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wilkes Barre-Scranton, PA</controllingFieldValue>
+            <valueName>200577</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wilmington, NC</controllingFieldValue>
+            <valueName>200550</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yakima-Pasco-Richland-Kennewick, WA</controllingFieldValue>
+            <valueName>200810</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Youngstown, OH</controllingFieldValue>
+            <valueName>200536</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yuma, AZ-El Centro, CA</controllingFieldValue>
+            <valueName>200771</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Zanesville, OH</controllingFieldValue>
+            <valueName>200596</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kansas City, MO</controllingFieldValue>
+            <valueName>200616</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Knoxville, TN</controllingFieldValue>
+            <valueName>200557</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>La Crosse-Eau Claire, WI</controllingFieldValue>
+            <valueName>200702</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lafayette, IN</controllingFieldValue>
+            <valueName>200582</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lafayette, LA</controllingFieldValue>
+            <valueName>200642</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lake Charles, LA</controllingFieldValue>
+            <valueName>200643</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lansing, MI</controllingFieldValue>
+            <valueName>200551</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laredo, TX</controllingFieldValue>
+            <valueName>200749</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Las Vegas, NV</controllingFieldValue>
+            <valueName>200839</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lexington, KY</controllingFieldValue>
+            <valueName>200541</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

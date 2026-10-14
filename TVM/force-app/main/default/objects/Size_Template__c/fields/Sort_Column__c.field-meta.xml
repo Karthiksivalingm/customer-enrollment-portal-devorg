@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sort_Column__c</fullName>
+    <label>Sort Column</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apollo Primary</fullName>
+                <default>false</default>
+                <label>Apollo Primary</label>
+            </value>
+            <value>
+                <fullName>Dealer</fullName>
+                <default>false</default>
+                <label>Dealer</label>
+            </value>
+            <value>
+                <fullName>Generic Social</fullName>
+                <default>false</default>
+                <label>Generic Social</label>
+            </value>
+            <value>
+                <fullName>Custom Dealer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Dealer</label>
+            </value>
+            <value>
+                <fullName>Large</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Large</label>
+            </value>
+            <value>
+                <fullName>Medium</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Medium</label>
+            </value>
+            <value>
+                <fullName>Small</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Small</label>
+            </value>
+            <value>
+                <fullName>X Large</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>X Large</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

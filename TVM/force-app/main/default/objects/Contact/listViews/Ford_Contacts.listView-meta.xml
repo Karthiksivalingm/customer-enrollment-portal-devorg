@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ford_Contacts</fullName>
+    <columns>Account.Client_Type_Team_V__c</columns>
+    <columns>Account.Analytics_Franchise__c</columns>
+    <columns>Auto_Group_Concatenated__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>Account.Region__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Account.Related_Auto_Group__c</columns>
+    <columns>Account.Regional_Sales_Director__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>No_Longer_With_Company__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>DNC__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>Ford,Lincoln</value>
+    </filters>
+    <filters>
+        <field>Account.Regional_Sales_Manager__c</field>
+        <operation>equals</operation>
+        <value>Linda Winship</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Ford Contacts</label>
+</ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Month__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(LEFT( Presentation_Demo_Date_Time__c , 2),
+&apos;1/&apos;, &quot;January&quot;,
+&apos;2/&apos;, &quot;February&quot;,
+&apos;3/&apos;, &quot;March&quot;, 
+&apos;4/&apos;, &quot;April&quot;, 
+&apos;5/&apos;, &quot;May&quot;, 
+&apos;6/&apos;, &quot;June&quot;,
+&apos;7/&apos;, &quot;July&quot;,
+&apos;8/&apos;, &quot;August&quot;,
+&apos;9/&apos;, &quot;September&quot;,
+&apos;10&apos;, &quot;October&quot;,
+&apos;11&apos;, &quot;November&quot;,
+&apos;12&apos;, &quot;December&quot;,
+&quot;Demo not Logged in Activity Panel&quot;)</formula>
+    <label>Demo Month</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

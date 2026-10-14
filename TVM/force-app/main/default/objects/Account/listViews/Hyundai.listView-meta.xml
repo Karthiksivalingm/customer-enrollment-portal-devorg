@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hyundai</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Client_Type_Team_V__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Regional_Account_Director__c</columns>
+    <columns>Regional_Sales_Director__c</columns>
+    <columns>Inventory_Feeds_Only__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>notContain</operation>
+        <value>Boost</value>
+    </filters>
+    <filters>
+        <field>Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>HYUNDAI</value>
+    </filters>
+    <filters>
+        <field>Inventory_Feeds_Only__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Hyundai Active Accounts</label>
+</ListView>

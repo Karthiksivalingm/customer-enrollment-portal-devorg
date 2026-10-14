@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IF_LAUNCHING_IN_EXISTING_CID_Categorize__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - IF LAUNCHING IN EXISTING CID: Categorize Previous Provider&apos;s campaigns in Apollo, pause campaigns in Google Ads</description>
+    <label>IF LAUNCHING IN EXISTING CID Categorize</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

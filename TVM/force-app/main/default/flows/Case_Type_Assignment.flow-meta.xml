@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Advid_Request_Types</name>
+        <label>Advid Request Types</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AdvidTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Apollo_Request</name>
+        <label>Apollo Request</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ApolloTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Command_Center_Request_Types</name>
+        <label>Command Center Request Types</label>
+        <locationX>842</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CommandCenterTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Digital_Request_Types_1</name>
+        <label>Copy 2 of Digital Request Types 1</label>
+        <locationX>4450</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DigitalOEMtypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Data_Support_Request_Types</name>
+        <label>Data Support Request Types</label>
+        <locationX>1106</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DataTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Digital_Reporting_Types_1</name>
+        <label>Digital Reporting Types 1</label>
+        <locationX>4186</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DigitalReportingTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Digital_Request_Types</name>
+        <label>Digital Request Types 1</label>
+        <locationX>1370</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DigitalTypes1</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Digital_SD_Types</name>
+        <label>Digital SD Types</label>
+        <locationX>2602</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DigitalSDTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Foundation_Digital_Types</name>
+        <label>Foundation Digital Types</label>
+        <locationX>2866</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FoundationDigitalTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>General_Digital_Types</name>
+        <label>General Digital Types</label>
+        <locationX>3130</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GeneralTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>General_Digital_Types_2</name>
+        <label>General Digital Types 2</label>
+        <locationX>3394</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GeneralTypes2</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Marketing_Types</name>
+        <label>Marketing Types</label>
+        <locationX>1810</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MarketingTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>OEM_Types</name>
+        <label>OEM Types</label>
+        <locationX>3922</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OEMTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Production_Types</name>
+        <label>Production Types</label>
+        <locationX>2074</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ProductionTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SEO_Types</name>
+        <label>SEO Types</label>
+        <locationX>2338</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SEOTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Website_Analytics_Types</name>
+        <label>Website Analytics Types</label>
+        <locationX>3658</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>WebsiteAnalyticTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Website_Request_Types</name>
+        <label>Website Request Types</label>
+        <locationX>578</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>OutputCaseType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>WebsiteTypes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Skip_Update</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Category</name>
+        <label>Category</label>
+        <locationX>2382</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Advid</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advid Creative</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Advid_Request_Types</targetReference>
+            </connector>
+            <label>Advid</label>
+        </rules>
+        <rules>
+            <name>Apollo_Support</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Apollo Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Apollo_Request</targetReference>
+            </connector>
+            <label>Apollo Support</label>
+        </rules>
+        <rules>
+            <name>Apollo_Websites</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Apollo_Websites</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Website_Request_Types</targetReference>
+            </connector>
+            <label>Apollo Websites</label>
+        </rules>
+        <rules>
+            <name>Command_Center</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Command Center</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Command_Center_Request_Types</targetReference>
+            </connector>
+            <label>Command Center</label>
+        </rules>
+        <rules>
+            <name>Data_Support</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Data_Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Data_Support_Request_Types</targetReference>
+            </connector>
+            <label>Data Support</label>
+        </rules>
+        <rules>
+            <name>Digital_Support</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Digital_Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Digital_Formula_Iteration</targetReference>
+            </connector>
+            <label>Digital Support</label>
+        </rules>
+        <rules>
+            <name>Marketing_Support</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Marketing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Marketing_Types</targetReference>
+            </connector>
+            <label>Marketing Support</label>
+        </rules>
+        <rules>
+            <name>Production_Support</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Production Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Production_Types</targetReference>
+            </connector>
+            <label>Production Support</label>
+        </rules>
+        <rules>
+            <name>SEO</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SEO</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SEO_Types</targetReference>
+            </connector>
+            <label>SEO</label>
+        </rules>
+        <rules>
+            <name>Digital_SD</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Digital SD</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Digital_SD_Types</targetReference>
+            </connector>
+            <label>Digital SD</label>
+        </rules>
+        <rules>
+            <name>Foundation_Digital_Support</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Foundation Digital Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Foundation_Digital_Types</targetReference>
+            </connector>
+            <label>Foundation Digital Support</label>
+        </rules>
+        <rules>
+            <name>General</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>General Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GeneralTypesDecision</targetReference>
+            </connector>
+            <label>General</label>
+        </rules>
+        <rules>
+            <name>Website_Analytics</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Website Analytics</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Website_Analytics_Types</targetReference>
+            </connector>
+            <label>Website Analytics</label>
+        </rules>
+        <rules>
+            <name>OEM</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>OEM</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OEM_Types</targetReference>
+            </connector>
+            <label>OEM</label>
+        </rules>
+        <rules>
+            <name>Digital_Reporting</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Digital Reporting</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Digital_Reporting_Types_1</targetReference>
+            </connector>
+            <label>Digital Reporting</label>
+        </rules>
+        <rules>
+            <name>Digital_OEM</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case.Case_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Digital OEM</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Digital_Request_Types_1</targetReference>
+            </connector>
+            <label>Digital OEM</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Digital_Formula_Iteration</name>
+        <label>Digital Formula Iteration</label>
+        <locationX>1502</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Skip_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Digital formula 2</defaultConnectorLabel>
+        <rules>
+            <name>Digital_Formula_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DigitalTypes1</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Error</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Digital_Request_Types</targetReference>
+            </connector>
+            <label>Digital Formula 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>GeneralTypesDecision</name>
+        <label>GeneralTypesDecision</label>
+        <locationX>3262</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>General_Digital_Types_2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Formula 2</defaultConnectorLabel>
+        <rules>
+            <name>Formula_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GeneralTypes</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Error</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>General_Digital_Types</targetReference>
+            </connector>
+            <label>Formula 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_Update</name>
+        <label>Skip Update</label>
+        <locationX>2382</locationX>
+        <locationY>626</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Skip_It</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SkipOutput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Skip It</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>AdvidTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Custom Video&quot;, &quot;Request&quot;,
+&quot;Creative Request&quot;, &quot;Request&quot;,
+&quot;3rd Party Integration (new integration)&quot;,&quot;Request&quot;,
+&quot;3rd Party Integration (available integrations)&quot;,&quot;Request&quot;,
+&quot;Problem/Issue&quot;, &quot;Bug&quot;,
+&quot;New Template&quot;, &quot;Request&quot;,
+&quot;Template changes&quot;, &quot;Request&quot;,
+&quot;Wrong Logo&quot;, &quot;Bug&quot;,
+&quot;Wrong Spot Airing&quot;, &quot;Bug&quot;,
+&quot;Custom or Semi Custom Problem/Issue&quot;, &quot;Bug&quot;,
+&quot;Compliance Issue&quot;,&quot;Bug&quot;,
+&quot;Coop Request&quot;,&quot;Request&quot;,
+&quot;Logo Issue&quot;,&quot;Bug&quot;,
+&quot;Media Buy Recommendation&quot;,&quot;Bug&quot;,
+&quot;Spend Adjustment&quot;,&quot;Request&quot;,
+&quot;VO Issue&quot;,&quot;Bug&quot;,
+&quot;OTT Upload&quot;,&quot;Request&quot;,
+&quot;Reporting Issue&quot;,&quot;Bug&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>ApolloTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Admin&quot;, &quot;Request&quot;,
+&quot;Agreement &amp; Budget&quot;, &quot;Request&quot;,
+&quot;Apollo Enhancement Request&quot;, &quot;Request&quot;,
+&quot;Creative/Order Status/Printing App&quot;, &quot;Request&quot;,
+&quot;Research Tools&quot;, &quot;Request&quot;,
+&quot;Results&quot;, &quot;Request&quot;,
+&quot;Admin&quot;, &quot;Request&quot;,
+&quot;Agreement &amp; Budget&quot;, &quot;Request&quot;,
+&quot;Apollo Enhancement Request&quot;, &quot;Request&quot;,
+&quot;Budget App&quot;, &quot;Bug&quot;,
+&quot;Change in Inventory Provider&quot;, &quot;Request&quot;,
+&quot;Change Payment Parameters&quot;, &quot;Request&quot;,
+&quot;Compliance Change&quot;, &quot;Bug&quot;,
+&quot;Custom Form&quot;, &quot;Request&quot;,
+&quot;List Download (FD ONLY)&quot;, &quot;Request&quot;,
+&quot;Content Management&quot;,&quot;Request&quot;,
+&quot;Facebook Campaign Build&quot;,&quot;Request&quot;,
+&quot;SEO Reporting&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>CommandCenterTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Data Issue&quot;, &quot;Bug&quot;,
+&quot;Hot Opportunities&quot;, &quot;Bug&quot;,
+&quot;Inbound Text&quot;, &quot;Bug&quot;,
+&quot;Dealer Setup&quot;, &quot;Request&quot;,
+&quot;Enhancement&quot;, &quot;Request&quot;,
+&quot;User Setup&quot;, &quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>DataTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Data Feed Setup&quot;, &quot;Request&quot;,
+&quot;Lagging Data&quot;, &quot;Bug&quot;,
+&quot;DMS Change&quot;, &quot;Request&quot;,
+&quot;DMS Change Request&quot;, &quot;Request&quot;,
+&quot;Equity Numbers&quot;, &quot;Request&quot;,
+&quot;Service Appts&quot;, &quot;Request&quot;,
+&quot;Requests for OEM Data Lists&quot;, &quot;Request&quot;,
+&quot;Incorrect Reporting&quot;, &quot;Bug&quot;,
+&quot;New Data Feed Ford Direct&quot;, &quot;Request&quot;,
+&quot;Add Email Report Recipients&quot;, &quot;Request&quot;,
+&quot;Missing Data (Ford)&quot;, &quot;Bug&quot;,
+&quot;Launch Data Issue&quot;, &quot;Bug&quot;,
+&quot;Sales/Service Reporting Metrics&quot;, &quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>DigitalOEMtypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Compliance&quot;,&quot;Request&quot;,
+&quot;Document Update&quot;,&quot;Request&quot;,
+&quot;OEM Heavy Up Request&quot;,&quot;Request&quot;,
+&quot;Performance &quot;,&quot;Request&quot;,
+&quot;Performance Recommendations&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>DigitalReportingTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Add Email Report Recipients&quot;,&quot;Request&quot;,
+&quot;Data Reporting Issues&quot;,&quot;Request&quot;,
+&quot;Coop Document Request&quot;,&quot;Request&quot;,
+&quot;PDF Report Request&quot;,&quot;Request&quot;,
+&quot;Reporting Dashboard Issues&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>DigitalSDTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Facebook Boost Campaign&quot;, &quot;Request&quot;,
+&quot;Facebook Creative&quot;, &quot;Request&quot;,
+&quot;New Campaign&quot;, &quot;Request&quot;,
+&quot;Creative Changes&quot;, &quot;Request&quot;,
+&quot;Ad Copy Updates&quot;, &quot;Request&quot;,
+&quot;Landing Page Updates&quot;, &quot;Request&quot;,
+&quot;Budget Change&quot;, &quot;Request&quot;,
+&quot;Report Request&quot;, &quot;Request&quot;,
+&quot;Miscellaneous&quot;, &quot;Request&quot;,
+&quot;Sales - Facebook Post Creative&quot;, &quot;Request&quot;,
+&quot;Sales - Facebook Ad Creative&quot;, &quot;Request&quot;,
+&quot;Branding Video&quot;, &quot;Request&quot;,
+&quot;Sales - Facebook&quot;,&quot;Request&quot;,
+&quot;Sales - Ad Copy update&quot;,&quot;Request&quot;,
+&quot;Facebook Profile Photo Creative&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>DigitalTypes1</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Ad Copy Updates&quot;, &quot;Request&quot;,
+&quot;Ad Copy Updates - Not Triggering or Wrong Data&quot;, &quot;Request&quot;,
+&quot;Boost Campaign Updates&quot;, &quot;Request&quot;,
+&quot;Creative Changes&quot;, &quot;Request&quot;,
+&quot;Landing Page Updates&quot;, &quot;Request&quot;,
+&quot;Location Targeting Updates&quot;, &quot;Request&quot;,
+&quot;Message Extentions&quot;, &quot;Request&quot;,
+&quot;New Campaign&quot;, &quot;Request&quot;,
+&quot;Vehicle Offer Updates&quot;, &quot;Request&quot;,
+&quot;Coop Document Request&quot;, &quot;Request&quot;,
+&quot;Data Reporting Issues&quot;, &quot;Request&quot;,
+&quot;PDF Report Request&quot;, &quot;Request&quot;,
+&quot;Reporting Dashboard Issues&quot;, &quot;Request&quot;,
+&quot;Add Email Report Recipients&quot;, &quot;Request&quot;,
+&quot;Performance&quot;, &quot;Request&quot;,
+&quot;Compliance&quot;, &quot;Request&quot;,
+&quot;Scorecard Analysis&quot;, &quot;Request&quot;,
+&quot;RFP&quot;, &quot;Request&quot;,
+&quot;Strategy Definition&quot;, &quot;Request&quot;,
+&quot;Program Requirement Updates&quot;, &quot;Request&quot;,
+&quot;OEM Heavy Up Event&quot;, &quot;Request&quot;,
+&quot;Pacing Inquiry&quot;, &quot;Request&quot;,
+&quot;Tagging Audit&quot;, &quot;Bug&quot;,
+&quot;Recommendations Report&quot;, &quot;Bug&quot;,
+&quot;Boost Campaign Updates&quot;, &quot;Request&quot;,
+&quot;Document Update&quot;, &quot;Request&quot;,
+&quot;Advid&quot;, &quot;Request&quot;,
+&quot;Advid Issues&quot;, &quot;Bug&quot;,
+&quot;Keyword Issues&quot;, &quot;Bug&quot;,
+&quot;Google &amp; Bing Budget Allocation Updates&quot;, &quot;Request&quot;,
+&quot;Apollo Campaign Categorization&quot;,&quot;Request&quot;,
+&quot;Bonus Offer&quot;,&quot;Request&quot;,
+&quot;Compliance Issue&quot;,&quot;Bug&quot;,
+&quot;Coop Request&quot;,&quot;Request&quot;,
+&quot;Custom or Semi Custom Problem/Issue&quot;,&quot;Bug&quot;,
+&quot;Facebook Campaign Build&quot;,&quot;Request&quot;,
+&quot;Media Buy Recommendation&quot;,&quot;Bug&quot;,
+&quot;Offer Manager&quot;,&quot;Request&quot;,
+&quot;Performance Recommendations&quot;,&quot;Request&quot;,
+&quot;Spend Adjustment&quot;,&quot;Request&quot;,
+&quot;Problem/Issue&quot;,&quot;Bug&quot;,
+&quot;Wrong Offer&quot;,&quot;Bug&quot;,
+&quot;Offer Manager Updates&quot;,&quot;Request&quot;,
+&quot;Audience Update&quot;,&quot;Request&quot;,
+&quot;Build SEM Products&quot;, &quot;Request&quot;,
+&quot;Build Facebook Products&quot;, &quot;Request&quot;,
+&quot;New Template&quot;, &quot;Request&quot;,
+&quot;OTT Upload&quot;, &quot;Request&quot;,
+&quot;Reporting Issues&quot;,&quot;Bug&quot;,
+&quot;New Record Needed&quot;,&quot;Bug&quot;,
+&quot;Expiring Soon&quot;,&quot;Bug&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FoundationDigitalTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Ad Copy Updates - Not Triggering or Wrong Data&quot;, &quot;Bug&quot;,
+&quot;Location Targeting Updates&quot;, &quot;Bug&quot;,
+&quot;New Campaign&quot;, &quot;Request&quot;,
+&quot;Keyword Issues&quot;, &quot;Bug&quot;,
+&quot;Ad Copy Updates&quot;, &quot;Request&quot;,
+&quot;Landing Page Updates&quot;, &quot;Bug&quot;,
+&quot;Vehicle Offer Updates&quot;, &quot;Request&quot;,
+&quot;Offer Manager Updates&quot;, &quot;Request&quot;,
+&quot;Apollo Campaign Categorization&quot;, &quot;Request&quot;,
+&quot;Google &amp; Bing Budget Allocation Updates&quot;, &quot;Request&quot;,
+&quot;Strategy Definition&quot;, &quot;Request&quot;,
+&quot;Program Requirement Updates&quot;, &quot;Request&quot;,
+&quot;OEM Heavy Up Event&quot;, &quot;Request&quot;,
+&quot;Offer Manager Adjusment&quot;, &quot;Request&quot;,
+&quot;Advid&quot;, &quot;Request&quot;,
+&quot;Alerts Request&quot;, &quot;Request&quot;,
+&quot;Feature Request&quot;, &quot;Request&quot;,
+&quot;Inventory Filter Issues&quot;, &quot;Request&quot;,
+&quot;Standard Advid Build&quot;, &quot;Request&quot;,
+&quot;Supplemental Advid Build&quot;, &quot;Request&quot;,
+&quot;Offer Manager Error&quot;, &quot;Bug&quot;,
+&quot;Advid Issues&quot;, &quot;Bug&quot;,
+&quot;Apollo Alert Issues&quot;, &quot;Bug&quot;,
+&quot;Apollo Technical Issues&quot;, &quot;Bug&quot;,
+&quot;User Experience Issues&quot;, &quot;Bug&quot;,
+&quot;Feed Issues&quot;, &quot;Bug&quot;,
+&quot;Products Tab Issue&quot;, &quot;Bug&quot;,
+&quot;Merchant Center - Vehicle Ads Bugs&quot;, &quot;Bug&quot;,
+&quot;Facebook Issues&quot;, &quot;Bug&quot;,
+&quot;Advid Ad Creation Issues&quot;, &quot;Bug&quot;,
+&quot;Compliance&quot;, &quot;Request&quot;,
+&quot;Subaru Regional Models&quot;, &quot;Request&quot;,
+&quot;Creative Changes&quot;,&quot;Request&quot;,
+&quot;Facebook Campaign Build&quot;,&quot;Request&quot;,
+&quot;Performance&quot;,&quot;Request&quot;,
+&quot;Standard Search Builds&quot;,&quot;Request&quot;,
+&quot;Supplemental Display Build&quot;,&quot;Request&quot;,
+&quot;Problem/Issue&quot;,&quot;Bug&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>GeneralTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Data Issue&quot;, &quot;Bug&quot;,
+&quot;Hot Opportunities&quot;, &quot;Bug&quot;,
+&quot;Inbound Text&quot;, &quot;Bug&quot;,
+&quot;Dealer Setup&quot;, &quot;Request&quot;,
+&quot;Enhancement&quot;, &quot;Request&quot;,
+&quot;User Setup Other&quot;, &quot;Request&quot;,
+&quot;Admin&quot;, &quot;Request&quot;,
+&quot;Agreement &amp; Budget&quot;, &quot;Request&quot;,
+&quot;Apollo Enhancement Request&quot;, &quot;Request&quot;,
+&quot;Creative/Order Status/Printing App&quot;, &quot;Request&quot;,
+&quot;Research Tools&quot;, &quot;Request&quot;,
+&quot;Results&quot;, &quot;Request&quot;,
+&quot;Budget App&quot;, &quot;Bug&quot;,
+&quot;List Download (FD ONLY)&quot;, &quot;Request&quot;,
+&quot;Apollo Login&quot;, &quot;Request&quot;,
+&quot;DNC Request&quot;, &quot;Request&quot;,
+&quot;Seed List Changes&quot;, &quot;Request&quot;,
+&quot;Phone Number Updates (CallRevu)&quot;, &quot;Request&quot;,
+&quot;Hot Opportunities&quot;, &quot;Request&quot;,
+&quot;Coop Document Request&quot;, &quot;Request&quot;,
+&quot;Launch Audits&quot;, &quot;Request&quot;,
+&quot;Other&quot;, &quot;Request&quot;,
+&quot;Banners&quot;, &quot;Request&quot;,
+&quot;Staff Pages&quot;, &quot;Request&quot;,
+&quot;Hours&quot;, &quot;Request&quot;,
+&quot;Phone Numbers&quot;, &quot;Request&quot;,
+&quot;Scripts&quot;, &quot;Request&quot;,
+&quot;CTA Changes&quot;, &quot;Request&quot;,
+&quot;VDP / SRP&quot;, &quot;Request&quot;,
+&quot;Vehicle Images&quot;, &quot;Request&quot;,
+&quot;Menu/Navigation Updates&quot;, &quot;Request&quot;,
+&quot;Adjust Trade Value Settings&quot;, &quot;Request&quot;,
+&quot;Lead Address Changes&quot;, &quot;Request&quot;,
+&quot;Coupon Updates&quot;, &quot;Request&quot;,
+&quot;General Sales Offers&quot;, &quot;Request&quot;,
+&quot;Bonus Offers&quot;, &quot;Request&quot;,
+&quot;3rd Party Integration&quot;, &quot;Request&quot;,
+&quot;Add 3rd Party Integration&quot;, &quot;Request&quot;,
+&quot;3rd Party Integration Modification&quot;, &quot;Request&quot;,
+&quot;GTM Placement&quot;, &quot;Request&quot;,
+&quot;Manual Specials&quot;, &quot;Request&quot;,
+&quot;Buyer Call Users&quot;, &quot;Request&quot;,
+&quot;Pricing Change&quot;, &quot;Request&quot;,
+&quot;Price Stack Updates&quot;, &quot;Request&quot;,
+&quot;Price Label Update&quot;, &quot;Request&quot;,
+&quot;Vehicle Images&quot;, &quot;Request&quot;,
+&quot;Incentives/Rebates&quot;, &quot;Request&quot;,
+&quot;Change Payment Parameters&quot;, &quot;Request&quot;,
+&quot;Advertised Offers&quot;, &quot;Request&quot;,
+&quot;Homenet/Feed Issue&quot;, &quot;Request&quot;,
+&quot;Source Change&quot;, &quot;Request&quot;,
+&quot;IFrame Set Up&quot;, &quot;Request&quot;,
+&quot;Compliance Changes&quot;, &quot;Request&quot;,
+&quot;Admin Tools&quot;,&quot;Request&quot;,
+&quot;Template changes&quot;,&quot;Request&quot;,
+&quot;Custom Video&quot;,&quot;Request&quot;,
+&quot;Address Change&quot;,&quot;Request&quot;,
+&quot;Apollo Login Issue&quot;,&quot;Bug&quot;,
+&quot;Apollo Login Setup&quot;,&quot;Request&quot;,
+&quot;Budget Adjustment&quot;,&quot;Request&quot;,
+&quot;Dealer Name Change&quot;,&quot;Request&quot;,
+&quot;DNS Changes&quot;,&quot;Request&quot;,
+&quot;Do Not Contact/DNC Request&quot;,&quot;Request&quot;,
+&quot;Domain Changes&quot;,&quot;Request&quot;,
+&quot;Event Driven Email Updates&quot;,&quot;Request&quot;,
+&quot;Franchise Update&quot;,&quot;Request&quot;,
+&quot;Security Certificate&quot;,&quot;Request&quot;,
+&quot;Sub Domain Creation&quot;,&quot;Request&quot;,
+&quot;Control App Issues&quot;,&quot;Bug&quot;,
+&quot;Customer Profile Issue&quot;,&quot;Bug&quot;,
+&quot;Deal Alerts Issue&quot;,&quot;Bug&quot;,
+&quot;Deal Alerts Setup&quot;,&quot;Request&quot;,
+&quot;Vauto Direct Request&quot;,&quot;Request&quot;,
+&quot;Incentives/Rebates Update&quot;,&quot;Request&quot;,
+&quot;Incentives/Rebates Issue&quot;,&quot;Bug&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>GeneralTypes2</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Hot Opportunities Issue&quot;,&quot;Bug&quot;,
+&quot;Deal Alerts Setup&quot;,&quot;Request&quot;,
+&quot;Hot Opportunities Setup&quot;,&quot;Request&quot;,
+&quot;User Settings&quot;,&quot;Request&quot;,
+&quot;Feed Export Issue&quot;,&quot;Bug&quot;,
+&quot;Feed Export Setup&quot;,&quot;Request&quot;,
+&quot;Inventory Grouping Issue&quot;,&quot;Request&quot;,
+&quot;Inventory Grouping Setup&quot;,&quot;Request&quot;,
+&quot;Inventory Quantity Issue&quot;,&quot;Bug&quot;,
+&quot;Inventory Source Change&quot;,&quot;Request&quot;,
+&quot;Key Features Issue&quot;,&quot;Request&quot;,
+&quot;New HomeNet Feed/Order&quot;,&quot;Request&quot;,
+&quot;VDV Issue&quot;,&quot;Request&quot;,
+&quot;Vehicle Information Issue&quot;,&quot;Request&quot;,
+&quot;Vehicle Photos Issue&quot;,&quot;Request&quot;,
+&quot;Manual Vehicle Offers&quot;,&quot;Request&quot;,
+&quot;New Vehicle Payment Specials&quot;,&quot;Request&quot;,
+&quot;Pre-Owned Specials&quot;,&quot;Request&quot;,
+&quot;Payment Disclaimer Change&quot;,&quot;Request&quot;,
+&quot;Payment Disclaimer Issue&quot;,&quot;Bug&quot;,
+&quot;Pricing/Payment Issue&quot;,&quot;Bug&quot;,
+&quot;Pricing/Payments Update&quot;,&quot;Request&quot;,
+&quot;Rollbacks&quot;,&quot;Request&quot;,
+&quot;Taxes &amp; Fees Changes&quot;,&quot;Request&quot;,
+&quot;Taxes &amp; Fees Issues&quot;,&quot;Bug&quot;,
+&quot;Unlock Price/Discount Issue&quot;,&quot;Request&quot;,
+&quot;Unlock Price/Discount Setup&quot;,&quot;Request&quot;,
+&quot;Incentives/Rebates Issue&quot;,&quot;Bug&quot;,
+&quot;Incentives/Rebates Update&quot;,&quot;Request&quot;,
+&quot;3rd Party Integration Issue&quot;,&quot;Bug&quot;,
+&quot;Tracking PIxel Placement&quot;,&quot;Request&quot;,
+&quot;Apollo Assistant Issue&quot;,&quot;Bug&quot;,
+&quot;Apollo Assistant Setup&quot;,&quot;Request&quot;,
+&quot;Finance Application iFrame Setup&quot;,&quot;Request&quot;,
+&quot;Finance Application Integration Setup&quot;,&quot;Request&quot;,
+&quot;Finance Application Issue&quot;,&quot;Bug&quot;,
+&quot;Inbound Text Issue&quot;,&quot;Bug&quot;,
+&quot;Inbound Text Setup&quot;,&quot;Request&quot;,
+&quot;Pre-Qual Issue&quot;,&quot;Bug&quot;,
+&quot;Pre-Qual Setup&quot;,&quot;Request&quot;,
+&quot;Schedule Test Drive Setup&quot;,&quot;Request&quot;,
+&quot;Service Scheduler iFrame Setup&quot;,&quot;Request&quot;,
+&quot;Service Scheduler Integration Setup&quot;,&quot;Request&quot;,
+&quot;Transact Issue&quot;,&quot;Bug&quot;,
+&quot;Transact Setup&quot;,&quot;Request&quot;,
+&quot;VDV Issue&quot;,&quot;Request&quot;,
+&quot;VDV Setup&quot;,&quot;Request&quot;,
+&quot;Automated Dynamic Banners (ADB)&quot;,&quot;Request&quot;,
+&quot;Blogs&quot;,&quot;Request&quot;,
+&quot;Custom SRP Tile&quot;,&quot;Request&quot;,
+&quot;Disaster Message&quot;,&quot;Request&quot;,
+&quot;Dynamic Number Insertion Issue&quot;,&quot;Bug&quot;,
+&quot;Hours &amp; Directions&quot;,&quot;Request&quot;,
+&quot;Logo Changes&quot;,&quot;Request&quot;,
+&quot;Model Research Pages&quot;,&quot;Request&quot;,
+&quot;Privacy Policy or Site Disclaimers&quot;,&quot;Request&quot;,
+&quot;Reserve Your Car&quot;,&quot;Request&quot;,
+&quot;Staff Updates&quot;,&quot;Request&quot;,
+&quot;Update SEO Page Content&quot;,&quot;Request&quot;,
+&quot;Custom Form Creation&quot;,&quot;Request&quot;,
+&quot;Lead Routing Issue&quot;,&quot;Bug&quot;,
+&quot;Lead Routing Updates&quot;,&quot;Request&quot;,
+&quot;TCPA/Form Disclaimers&quot;,&quot;Request&quot;,
+&quot;Service Coupons&quot;,&quot;Request&quot;,
+&quot;Value Trade / Sell Us Your Car&quot;,&quot;Request&quot;,
+&quot;Compliance Change&quot;,&quot;Request&quot;,
+&quot;Page Creation (Basic)&quot;,&quot;Request&quot;,
+&quot;Page Update&quot;,&quot;Request&quot;,
+&quot;Template Change&quot;,&quot;Request&quot;,
+&quot;URL Redirects&quot;,&quot;Request&quot;,
+&quot;Vauto Direct Request&quot;,&quot;Request&quot;,
+&quot;Command Center&quot;,&quot;Request&quot;,
+&quot;My Credit Drive Login Setup&quot;,&quot;Request&quot;,
+&quot;New Integration&quot;,&quot;Request&quot;,
+&quot;Offer Manger&quot;,&quot;Request&quot;,
+&quot;Reporting&quot;,&quot;Request&quot;,
+&quot;Websites&quot;,&quot;Request&quot;,
+&quot;Keyword Issues&quot;,&quot;Bug&quot;,
+&quot;Meeting Request&quot;,&quot;Request&quot;,
+&quot;Automated Email Updates&quot;,&quot;Request&quot;,
+&quot;Automated Email Issues&quot;,&quot;Bug&quot;,
+&quot;Lead Form Updates&quot;,&quot;Request&quot;,
+&quot;Meeting Request&quot;,&quot;Request&quot;,
+&quot;Update Defaults&quot;,&quot;Request&quot;,
+&quot;Custom Badges&quot;,&quot;Request&quot;,
+&quot;Digital Reports&quot;,&quot;Request&quot;,
+&quot;Core Web Vitals/Site Speed&quot;,&quot;Request&quot;,
+&quot;Buy Sell&quot;,&quot;Request&quot;,
+&quot;Payment Setup&quot;,&quot;Request&quot;,
+&quot;Payment/Rebate Issues&quot;,&quot;Request&quot;,
+&quot;Transact Setup&quot;,&quot;Request&quot;,
+&quot;Inventory Order Follow Up&quot;,&quot;Request&quot;,
+&quot;Inventory Grouping Setup&quot;,&quot;Request&quot;,
+&quot;Inventory Source Change&quot;,&quot;Request&quot;,
+&quot;Inventory Tagging/Comments&quot;,&quot;Request&quot;,
+&quot;Other&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>MarketingTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;New Sell Sheet&quot;, &quot;Request&quot;,
+&quot;Document Update&quot;, &quot;Request&quot;,
+&quot;New Sell Sheet&quot;, &quot;Request&quot;,
+&quot;Case Study&quot;, &quot;Request&quot;,
+&quot;Presentation&quot;, &quot;Request&quot;,
+&quot;Pricing Update&quot;, &quot;Request&quot;,
+&quot;Product Video&quot;, &quot;Request&quot;,
+&quot;Culture Video&quot;, &quot;Request&quot;,
+&quot;Press Release&quot;, &quot;Request&quot;,
+&quot;Social Post&quot;, &quot;Request&quot;,
+&quot;New Website&quot;, &quot;Request&quot;,
+&quot;New Landing Page&quot;, &quot;Request&quot;,
+&quot;Content Update&quot;, &quot;Request&quot;,
+&quot;Updated Terms&quot;, &quot;Request&quot;,
+&quot;General Maintenence&quot;, &quot;Request&quot;,
+&quot;New Event Briefing&quot;, &quot;Request&quot;,
+&quot;Logo Design&quot;, &quot;Request&quot;,
+&quot;Document Brand Alignment&quot;, &quot;Request&quot;,
+&quot;New Product Branding&quot;, &quot;Request&quot;,
+&quot;Product/Feature Update&quot;, &quot;Request&quot;,
+&quot;Client Gift&quot;, &quot;Request&quot;,
+&quot;Event (non-NADA)&quot;, &quot;Request&quot;,
+&quot;Employee Gift&quot;, &quot;Request&quot;,
+&quot;Compliance&quot;,&quot;Request&quot;,
+&quot;Compliance Changes&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>OEMTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;SSO Request&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>ProductionTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Missing Coop Documentation&quot;, &quot;Bug&quot;,
+&quot;Batched Email Updates&quot;, &quot;Request&quot;,
+&quot;Custom List Request&quot;, &quot;Request&quot;,
+&quot;Data Needs&quot;, &quot;Request&quot;,
+&quot;Email Custom List&quot;, &quot;Request&quot;,
+&quot;Email Needs&quot;, &quot;Request&quot;,
+&quot;Precision Email&quot;, &quot;Request&quot;,
+&quot;Set up of New Email Account&quot;, &quot;Request&quot;,
+&quot;Email Freespace (Sales)&quot;, &quot;Request&quot;,
+&quot;Email Freespace (Service)&quot;, &quot;Request&quot;,
+&quot;Email Freespace (Sales &amp; Service)&quot;, &quot;Request&quot;,
+&quot;Set up of New Email Account&quot;, &quot;Request&quot;,
+&quot;Deployment Issue/Question&quot;, &quot;Request&quot;,
+&quot;New Compliance Access&quot;, &quot;Request&quot;,
+&quot;Vehicle Image&quot;, &quot;Request&quot;,
+&quot;Non Team V URL Email Set up&quot;, &quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>SEOTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;SEO Reporting&quot;, &quot;Request&quot;,
+&quot;Update Name, Address, Phone, Hours&quot;, &quot;Request&quot;,
+&quot;Add Content or Page Text&quot;, &quot;Request&quot;,
+&quot;Update SEO Meta Values&quot;, &quot;Request&quot;,
+&quot;Enable Site Indexing&quot;, &quot;Request&quot;,
+&quot;XML Sitemaps or Robots.txt Issue&quot;, &quot;Bug&quot;,
+&quot;Broken Links&quot;, &quot;Bug&quot;,
+&quot;Display Issue&quot;, &quot;Bug&quot;,
+&quot;Platform Issues&quot;, &quot;Bug&quot;,
+&quot;Research Tools&quot;,&quot;Request&quot;,
+&quot;Results&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>WebsiteAnalyticTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;General Request&quot;, &quot;Request&quot;,
+&quot;Property Ownership Transfer&quot;, &quot;Request&quot;,
+&quot;Add Dealer Managed GA4&quot;, &quot;Request&quot;,
+&quot;Analytics Access&quot;, &quot;Request&quot;,
+&quot;Data Review&quot;, &quot;Request&quot;,
+&quot;Custom Report&quot;, &quot;Request&quot;,
+&quot;Bug Report&quot;, &quot;Request&quot;,
+&quot;Analytics Request (Ryan)&quot;, &quot;Request&quot;,
+&quot;Bonus Offers&quot;,&quot;Request&quot;,
+&quot;Bot Traffic Review&quot;,&quot;Request&quot;,
+&quot;IP Address Data Filter&quot;,&quot;Request&quot;,
+
+&quot;Error&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>WebsiteTypes</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Case.Case_Request__c},
+&quot;Compliance Change&quot;, &quot;Bug&quot;,
+&quot;New Client Launch&quot;, &quot;Bug&quot;,
+&quot;Other&quot;, &quot;Bug&quot;,
+&quot;Image Feed Issues&quot;, &quot;Bug&quot;,
+&quot;Incentive Feed Issues&quot;, &quot;Bug&quot;,
+&quot;Inventory Feed Issues&quot;, &quot;Bug&quot;,
+&quot;Inventory Feed Discrepancies&quot;, &quot;Bug&quot;,
+&quot;Change in Inventory Provider&quot;, &quot;Request&quot;,
+&quot;Payment Processing Issues&quot;, &quot;Bug&quot;,
+&quot;Change Payment Parameters&quot;, &quot;Request&quot;,
+&quot;Hide vehicle&quot;, &quot;Request&quot;,
+&quot;Lead Distribution Issues&quot;, &quot;Bug&quot;,
+&quot;Missing Vehicle Images&quot;, &quot;Bug&quot;,
+&quot;Offer Manager Issues&quot;, &quot;Bug&quot;,
+&quot;Offer Manager Issues - No Payments&quot;, &quot;Bug&quot;,
+&quot;Report a Bug&quot;, &quot;Bug&quot;,
+&quot;Functionality changes&quot;, &quot;Request&quot;,
+&quot;Request an Enhancement&quot;, &quot;Request&quot;,
+&quot;Image/Banner Update&quot;, &quot;Bug&quot;,
+&quot;Images Issues (Homenet)&quot;, &quot;Bug&quot;,
+&quot;Menu/Navigation Updates&quot;, &quot;Bug&quot;,
+&quot;3rd Party Integration Modification&quot;, &quot;Request&quot;,
+&quot;Add 3rd Party Integration&quot;, &quot;Request&quot;,
+&quot;3rd Party Integration&quot;, &quot;Request&quot;,
+&quot;Contact Information Update&quot;, &quot;Request&quot;,
+&quot;Page Content Update&quot;, &quot;Request&quot;,
+&quot;Page Creation (Basic)&quot;, &quot;Request&quot;,
+&quot;Tag Placement&quot;, &quot;Request&quot;,
+&quot;Template changes&quot;, &quot;Request&quot;,
+&quot;Vehicle Locator Issue (Ford)&quot;, &quot;Bug&quot;,
+&quot;Pricing Issues (Ford)&quot;, &quot;Bug&quot;,
+&quot;Window Sticker (Ford)&quot;, &quot;Bug&quot;,
+&quot;Rebate Issues&quot;, &quot;Bug&quot;,
+&quot;Add Widget or Vendor&quot;, &quot;Request&quot;,
+&quot;Analytics Request (Ryan) &quot;, &quot;Request&quot;,
+&quot;Header / Footer&quot;, &quot;Request&quot;,
+&quot;Inventory Export&quot;, &quot;Request&quot;,
+&quot;Offer Manager&quot;, &quot;Request&quot;,
+&quot;Search Bar / SRP Filters&quot;, &quot;Request&quot;,
+&quot;Service Coupons&quot;, &quot;Request&quot;,
+&quot;Update Existing Integration&quot;, &quot;Request&quot;,
+&quot;Admin Tools&quot;, &quot;Request&quot;,
+&quot;Apollo Assistant / Text&quot;, &quot;Request&quot;,
+&quot;Compliance Changes&quot;, &quot;Request&quot;,
+&quot;Content Management&quot;,&quot;Request&quot;,
+&quot;CTAs&quot;, &quot;Request&quot;,
+&quot;Custom Form&quot;,&quot;Request&quot;,
+&quot;Bonus Offer&quot;,&quot;Request&quot;,
+&quot;Dealer Group&quot;,&quot;Request&quot;,
+&quot;Design / Content&quot;,&quot;Request&quot;,
+&quot;Digital Retailing&quot;,&quot;Request&quot;,
+&quot;Finance Application&quot;,&quot;Request&quot;,
+&quot;Image Library&quot;,&quot;Request&quot;,
+&quot;Installation&quot;,&quot;Request&quot;,
+&quot;Inventory&quot;,&quot;Request&quot;,
+&quot;Inventory / Pricing&quot;,&quot;Request&quot;,
+&quot;Lead Forms&quot;,&quot;Request&quot;,
+&quot;Leads&quot;,&quot;Request&quot;,
+&quot;Menu&quot;,&quot;Request&quot;,
+&quot;New Component / Enhancement&quot;,&quot;Request&quot;,
+&quot;New Feature Request&quot;,&quot;Request&quot;,
+&quot;New Integration&quot;,&quot;Request&quot;,
+&quot;Offersite Setup&quot;,&quot;Request&quot;,
+&quot;Page Update&quot;,&quot;Request&quot;,
+&quot;Pre-Qual&quot;,&quot;Request&quot;,
+&quot;Schedule Test Drive&quot;,&quot;Request&quot;,
+&quot;Service Scheduler&quot;,&quot;Request&quot;,
+&quot;Template Change&quot;,&quot;Request&quot;,
+&quot;Transact&quot;,&quot;Request&quot;,
+&quot;URL Redirects&quot;,&quot;Request&quot;,
+&quot;Value Trade / Sell Us Your Car&quot;,&quot;Request&quot;,
+&quot;VDP / SRP&quot;,&quot;Request&quot;,
+&quot;Vehicle Information&quot;,&quot;Request&quot;,
+&quot;Vehicle Photos / Videos&quot;,&quot;Request&quot;,
+&quot;General Request&quot;,&quot;Request&quot;,
+&quot;Inventory Counts / Missing Inventory&quot;,&quot;Bug&quot;,
+&quot;Lead Routing (General)&quot;,&quot;Bug&quot;,
+&quot;Pricing / Payments&quot;,&quot;Bug&quot;,
+&quot;Rebates / Incentives&quot;,&quot;Bug&quot;,
+&quot;Report An Issue&quot;,&quot;Bug&quot;,
+&quot;Vehicle Specials&quot;,&quot;Bug&quot;,
+&quot;My Credit Drive Login Setup&quot;,&quot;Request&quot;,
+&quot;Error&quot;)</expression>
+    </formulas>
+    <interviewLabel>Case Type Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Type Assignment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>2514</locationX>
+        <locationY>734</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Case.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Request_Type__c</field>
+            <value>
+                <elementReference>OutputCaseType</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <start>
+        <locationX>2256</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Category</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Case</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>OutputCaseType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>SkipOutput</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

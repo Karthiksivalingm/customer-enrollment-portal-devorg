@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAD_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( VP_of_Client_Services__c = Regional_Account_Director__c , Regional_Account_Director__r.FirstName &amp; &quot; &quot; &amp;  Regional_Account_Director__r.LastName,
+if(
+Regional_Account_Director__r.FirstName&lt;&gt;&quot;&quot;, Regional_Account_Director__r.FirstName &amp; &quot; &quot; &amp;  Regional_Account_Director__r.LastName,
+if( 
+Product_Manager__r.FirstName &lt;&gt;&quot;&quot; &amp;&amp; No_RAD_Needed__c=false,  &quot;WPM&quot;,
+if(
+No_RAD_Needed__c, &quot;No RAD On Account&quot;,
+&quot;Onboarding Not Yet Assigned&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RAD Assignment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

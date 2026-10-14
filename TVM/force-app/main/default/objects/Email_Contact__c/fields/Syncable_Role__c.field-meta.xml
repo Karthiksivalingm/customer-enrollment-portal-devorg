@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Syncable_Role__c</fullName>
+    <formula>Includes( (Contact__r.Contact_Role__c) , &quot;Primary POC&quot;) ||
+Includes( (Contact__r.Contact_Role__c) , &quot;Owner/Dealer Principal&quot;) ||
+Includes( (Contact__r.Contact_Role__c) , &quot;General Manager&quot;) ||
+Includes( (Contact__r.Contact_Role__c) , &quot;Service Contact&quot;) ||
+Includes( (Contact__r.Contact_Role__c) , &quot;Secondary POC&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Syncable Role</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_and_Done_Artist__c</fullName>
+    <formula>NOT(
+  OR(
+    INCLUDES(Proofing_Flags__c, &quot;Design&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Directions&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Filing&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Images/Logos&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Links&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Offer – Artist&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Specs – Artist&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Compliance – Artist&quot;)
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>One and Done (Artist)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

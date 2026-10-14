@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submission_Issues__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Text(Approval_Status__c) != &quot;Not Yet Submitted&quot;
+	, &quot;&quot;,
+	IF( of_Products_Chosen__c = 0 &amp;&amp; Text(MSA_Opp__c)!=&quot;MSA DocuSign Template&quot;, &quot;No Products&quot;,
+		/*IF(IsBlank(VP_of_Sales__r.X18_Digit_User_ID__c) &amp;&amp; Opportunity_Type__c=&quot;New Sale&quot;,
+			&quot;VP of Sales&quot;+BR(), &quot;&quot;)
+		+
+		IF(IsBlank(VP_of_Client_Services__r.X18_Digit_User_ID__c) &amp;&amp; Opportunity_Type__c=&quot;Upsell&quot;,
+			&quot;VP of Client Services&quot;+BR(), &quot;&quot;)
+		+*/
+		IF(of_Products_Chosen__c &lt; 1 &amp;&amp; Opportunity_Type__c=&quot;Upsell&quot;,
+			&quot;Add Products&quot;+BR(), &quot;&quot;)
+		+
+		IF(Dealer_DocuSign_Contact_Populated__c=false &amp;&amp;Opportunity_Type__c &lt;&gt; &quot;Child MSA&quot; &amp;&amp; (Text(MSA_Contract__c)!=&quot;Yes&quot; || (Text(MSA_Contract__c)!=&quot;Yes&quot; &amp;&amp; Text(MSA_Opp__c) != &quot;MSA DocuSign Template&quot;)|| (Text(MSA_Contract__c)=&quot;Yes&quot; &amp;&amp; Text(MSA_Opp__c) = &quot;MSA DocuSign Template&quot;)),
+			&quot;Document Recipient&quot;+BR(), &quot;&quot;)
+		+
+		/*IF(Addendum_Populated__c=false &amp;&amp; Opportunity_Type__c=&quot;New Sale&quot; &amp;&amp; Text( DocuSign_Template__c )!=&quot;Ford/Lincoln&quot;,
+			&quot;Addendum&quot;+BR(), &quot;&quot;)
+		+*/
+		IF(Count_CXP_Bundle_Add_On__c&gt;0 &amp;&amp; (Count_Apollo_Sites_Products__c=0 || Count_SEO_Products__c=0 || Count_Apollo_Text_Products__c=0 || Count_Custom_Creative_Products__c=0),
+			&quot;CXP Bundle Requires Website/SEO/Text/Custom Creative&quot;+BR(),&quot;&quot;)
+		+
+		IF(Count_Website_Advert_Bundle__c+Count_Website_Retention_Bundle__c &gt; 0 &amp;&amp; (Count_Apollo_Sites_Products__c=0 &amp;&amp; Account.Active_Website_C__c =false ),
+			&quot;Requires a Website Package&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_Streaming_OTT__c&gt;0 &amp;&amp; Text(DocuSign_Template__c)!=&quot;Honda&quot; &amp;&amp; Text(DocuSign_Template__c)!=&quot;Acura&quot; &amp;&amp; Text(DocuSign_Template__c)!=&quot;GM&quot; &amp;&amp; Streaming_OTT_Budget__c&lt;=0,
+			&quot;Advid OTT Dynamic Required&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_Streaming_OTT__c&gt;0 &amp;&amp; (Text(DocuSign_Template__c)=&quot;Honda&quot; || Text(DocuSign_Template__c)=&quot;Acura&quot;) &amp;&amp; Streaming_OTT_Budget__c&lt;3000,
+			&quot;Advid OTT Dynamic Minimum $3000&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_Streaming_OTT__c&gt;0 &amp;&amp; Text(DocuSign_Template__c)=&quot;GM&quot; &amp;&amp; Streaming_OTT_Budget__c&lt;1500,
+			&quot;Advid OTT Dynamic Minimum $1500&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_Streaming_OTT__c&gt;0 &amp;&amp; Text(OTT_Dynamic_Creative_Type__c)=&quot;&quot;,
+			&quot;Advid OTT Dynamic Creative Type Needed&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_OTT_Premium_Custom__c&gt;0 &amp;&amp; Text(DocuSign_Template__c)!=&quot;Honda&quot; &amp;&amp; Text(DocuSign_Template__c)!=&quot;Acura&quot; &amp;&amp; Text(DocuSign_Template__c)!=&quot;GM&quot; &amp;&amp; Advid_Premium_OTT_Custom_Budget__c&lt;=0,
+			&quot;Advid OTT Custom Required&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_OTT_Premium_Custom__c&gt;0 &amp;&amp; (Text(DocuSign_Template__c)=&quot;Honda&quot; || Text(DocuSign_Template__c)=&quot;Acura&quot;) &amp;&amp; Advid_Premium_OTT_Custom_Budget__c&lt;3000,
+			&quot;Advid OTT Custom Minimum $3000&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_OTT_Premium_Custom__c&gt;0 &amp;&amp; Text(DocuSign_Template__c)=&quot;GM&quot; &amp;&amp; Advid_Premium_OTT_Custom_Budget__c&lt;1500,
+			&quot;Advid OTT Custom Minimum $1500&quot;+BR(), &quot;&quot;)
+		+
+		IF(Count_OTT_Premium_Custom__c&gt;0 &amp;&amp; Text(OTT_Custom_Creative_Type__c)=&quot;&quot;,
+			&quot;Advid OTT Custom Creative Type Needed&quot;+BR(), &quot;&quot;)
+		+
+		IF( Text(MSA_Opp__c)=&quot;&quot; &amp;&amp;  Analytics_Franchise__c = &quot;GROUP&quot; &amp;&amp; Opportunity_Type__c=&quot;New Sale&quot;,
+			&quot;MSA Choice Needed&quot;+BR(), &quot;&quot;)
+		+
+		IF( Text( Target_Launch_Date__c )=&quot;&quot; &amp;&amp; Opportunity_Type__c &lt;&gt; &quot;Child MSA&quot; &amp;&amp; Opportunity_Type__c &lt;&gt; &quot;Parent MSA&quot;,
+			&quot;Target Launch Date&quot;+BR(), &quot;&quot;)
+                +
+		IF(Opportunity_Type__c=&quot;New Sale&quot; &amp;&amp;  Dealer_DocuSign_Contact__r.Email=&quot;&quot; &amp;&amp; Text(MSA_Contract__c)!=&quot;Yes&quot;,
+			&quot;DocuSign Contact has no Email&quot;+BR(), &quot;&quot;)
+                +
+		IF(Text(DocuSign_Template__c)=&quot;GM&quot; &amp;&amp; OEM_Dealer_Code__c =&quot;&quot; &amp;&amp;  Foundation_Record__c =false,
+			&quot;OEM Dealer Code Missing&quot;+BR(), &quot;&quot;)
+                +
+		IF(NOT(ISBLANK(Margin_Approval_Needed__c)),
+			&quot;Margin altered, get approved discount request&quot;+BR(), &quot;&quot;)
+                /*+
+		IF(Text(MSA_Contract__c)=&quot;&quot;,
+			&quot;MSA Contract Decision&quot;+BR(), &quot;&quot;)*/
+
+	)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Submission Issues</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

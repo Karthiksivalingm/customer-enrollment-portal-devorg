@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Selling_Price_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(Round( ListPrice , 0) &lt; Round( UnitPrice , 0), &quot;Sold Above Retail&quot;,
+If(Round(ListPrice , 0) &gt; Round(UnitPrice , 0), &quot;Sold Below Retail&quot;,
+&quot;Sold At Retail&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Selling Price Bucket</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

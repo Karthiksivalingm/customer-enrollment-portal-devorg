@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RSD_cannot_create_Upsell_Opp</fullName>
+    <active>false</active>
+    <description>Restricts Users assigned to the RSD role from creating Upsell (Record Type: Active) Opportunities.</description>
+    <errorConditionFormula>AND(
+ISNEW(),
+RecordType.Name = &quot;Active&quot;,
+$UserRole.Name = &quot;Regional Sales Director&quot;)</errorConditionFormula>
+    <errorMessage>As a Regional Sales Director, you are not permitted to create Upsell Opportunities.</errorMessage>
+</ValidationRule>

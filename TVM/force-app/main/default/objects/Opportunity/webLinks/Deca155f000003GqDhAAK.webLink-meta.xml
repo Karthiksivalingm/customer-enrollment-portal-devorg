@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deca155f000003GqDhAAK</fullName>
+    <availability>online</availability>
+    <description>Ford Single</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Docusign</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR(IF($Site.prefix == &apos;/s&apos;,&apos;/apex/dfsle__sending&apos;, $Site.Prefix +&apos;/apex/dfsle__sending&apos;), null, [sId = Opportunity.Id, sendingExperience = &apos;tag&apos;, isEmbedded = false, templateId = &apos;a155f000003GqDhAAK&apos;, recordId = Opportunity.Id, title = &apos;Ford Single&apos;])}</url>
+</WebLink>

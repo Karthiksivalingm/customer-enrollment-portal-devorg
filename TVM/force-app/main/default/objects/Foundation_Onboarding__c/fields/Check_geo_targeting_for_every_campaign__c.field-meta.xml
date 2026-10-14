@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_geo_targeting_for_every_campaign__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Check geo targeting for every campaign. VAs geos do NOT push from Apollo. Will have to manually add these in Google Ads if missing/wrong.</description>
+    <label>Check geo targeting for every campaign</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

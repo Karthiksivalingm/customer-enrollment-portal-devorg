@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Build Requested</fullName>
+                <default>false</default>
+                <label>Build Requested</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Build Complete, Service Pending</fullName>
+                <default>false</default>
+                <label>Build Complete, Service Pending</label>
+            </value>
+            <value>
+                <fullName>Build Complete</fullName>
+                <default>false</default>
+                <label>Build Complete</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>TVM Question To FD</fullName>
+                <default>false</default>
+                <label>TVM Question To FD</label>
+            </value>
+            <value>
+                <fullName>FD Question To TVM</fullName>
+                <default>false</default>
+                <label>FD Question To TVM</label>
+            </value>
+            <value>
+                <fullName>Question Answered</fullName>
+                <default>false</default>
+                <label>Question Answered</label>
+            </value>
+            <value>
+                <fullName>Brand Complete / Waiting on Inventory</fullName>
+                <default>false</default>
+                <label>Brand Complete / Waiting on Inventory</label>
+            </value>
+            <value>
+                <fullName>Google Complete/Bing Pending</fullName>
+                <default>false</default>
+                <label>Google Complete/Bing Pending</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

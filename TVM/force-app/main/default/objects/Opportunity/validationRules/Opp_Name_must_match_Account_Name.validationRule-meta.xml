@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Name_must_match_Account_Name</fullName>
+    <active>false</active>
+    <description>Requires the Opportunity Name to match the Account Name.</description>
+    <errorConditionFormula>AND(
+RecordType.Name &lt;&gt; &quot;Historical&quot;,
+RecordType.Name &lt;&gt; &quot;Foundation Opportunity&quot;,
+Lower(Name) &lt;&gt; Lower(Account.Name),
+$User.FirstName &lt;&gt; &quot;Integration&quot;,
+$User.Id &lt;&gt; &quot;0055f000007uli3&quot;,
+IsClosed = false
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Opportunity Name must match Account Name.</errorMessage>
+</ValidationRule>

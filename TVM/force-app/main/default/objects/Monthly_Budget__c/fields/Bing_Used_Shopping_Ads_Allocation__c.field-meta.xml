@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bing_Used_Shopping_Ads_Allocation__c</fullName>
+    <description>FND</description>
+    <formula>(PPC_Budget_VLA_Used__c * PPC_VLA_Used_Bing_Allocation__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Bing Used Shopping Ads Allocation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

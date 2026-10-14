@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sizes__c</fullName>
+    <label>Sizes</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Service Coupon (200x125)</fullName>
+                <default>false</default>
+                <label>Service Coupon (200x125)</label>
+            </value>
+            <value>
+                <fullName>Facebook (1080x1080)</fullName>
+                <default>false</default>
+                <label>Facebook (1080x1080)</label>
+            </value>
+            <value>
+                <fullName>Badge: (482x274)</fullName>
+                <default>false</default>
+                <label>Badge: (482x274)</label>
+            </value>
+            <value>
+                <fullName>Medium (Desktop) 1920x500 &amp; Medium (Mobile) 600x400</fullName>
+                <default>false</default>
+                <label>Medium (Desktop) 1920x500 &amp; Medium (Mobile) 600x400</label>
+            </value>
+            <value>
+                <fullName>Medium (Desktop) 1920x500 &amp; Large (Mobile) 600x800</fullName>
+                <default>false</default>
+                <label>Medium (Desktop) 1920x500 &amp; Large (Mobile) 600x800</label>
+            </value>
+            <value>
+                <fullName>Large (Desktop) 1920x768 &amp; Medium (Mobile) 600x400</fullName>
+                <default>false</default>
+                <label>Large (Desktop) 1920x768 &amp; Medium (Mobile) 600x400</label>
+            </value>
+            <value>
+                <fullName>Large (Desktop) 1920x768 &amp; Large (Mobile) 600x800</fullName>
+                <default>false</default>
+                <label>Large (Desktop) 1920x768 &amp; Large (Mobile) 600x800</label>
+            </value>
+            <value>
+                <fullName>X Large (Desktop) 1920x1080 &amp; Medium (Mobile) 600x400</fullName>
+                <default>false</default>
+                <label>X Large (Desktop) 1920x1080 &amp; Medium (Mobile) 600x400</label>
+            </value>
+            <value>
+                <fullName>X Large (Desktop) 1920x1080 &amp; Large (Mobile) 600x800</fullName>
+                <default>false</default>
+                <label>X Large (Desktop) 1920x1080 &amp; Large (Mobile) 600x800</label>
+            </value>
+            <value>
+                <fullName>Small (Desktop) 1920x80 &amp; Small (Mobile) 375x80</fullName>
+                <default>false</default>
+                <label>Small (Desktop) 1920x80 &amp; Small (Mobile) 375x80</label>
+            </value>
+            <value>
+                <fullName>BMW OEM Homepage Desktop (1900x776) and Mobile (800x326)</fullName>
+                <default>false</default>
+                <label>BMW OEM Homepage Desktop (1900x776) and Mobile (800x326)</label>
+            </value>
+            <value>
+                <fullName>Ford OEM Homepage Desktop (1920x600) and Mobile (480x320)</fullName>
+                <default>false</default>
+                <label>Ford OEM Homepage Desktop (1920x600) and Mobile (480x320)</label>
+            </value>
+            <value>
+                <fullName>Kia OEM Homepage w/6 pack Desktop (1920x768) and Mobile (750x500 )</fullName>
+                <default>false</default>
+                <label>Kia OEM Homepage w/6 pack Desktop (1920x768) and Mobile (750x500 )</label>
+            </value>
+            <value>
+                <fullName>Mazda OEM Homepage Desktop (1920x540) and Mobile (480x320)</fullName>
+                <default>false</default>
+                <label>Mazda OEM Homepage Desktop (1920x540) and Mobile (480x320)</label>
+            </value>
+            <value>
+                <fullName>Subaru OEM Homepage Desktop (2000x500) and Mobile (600x450)</fullName>
+                <default>false</default>
+                <label>Subaru OEM Homepage Desktop (2000x500) and Mobile (600x450)</label>
+            </value>
+            <value>
+                <fullName>My Garage Banners (Small) Desktop (1920x80) and Mobile (375x80)</fullName>
+                <default>false</default>
+                <label>My Garage Banners (Small) Desktop (1920x80) and Mobile (375x80)</label>
+            </value>
+            <value>
+                <fullName>PMAX: 3 Landscape Images 1.91:1, 1200x628 px (min 600x314 px) with max file size 5120 kb, 2 Square Image 1:1 1200x1200 px (min 300x300 px) with max file size 5120 kb</fullName>
+                <default>false</default>
+                <label>PMAX: 3 Landscape Images 1.91:1, 1200x628 px (min 600x314 px) with max file size 5120 kb, 2 Square Image 1:1 1200x1200 px (min 300x300 px) with max file size 5120 kb</label>
+            </value>
+            <value>
+                <fullName>Sonic DDC Audi Desktop &amp; Mobile (2000x500 - 600x450)</fullName>
+                <default>false</default>
+                <label>Sonic DDC Audi Desktop &amp; Mobile (2000x500 - 600x450)</label>
+            </value>
+            <value>
+                <fullName>Sonic DDC Honda Desktop &amp; Mobile (2000x514 (960x500 safe) - 600x450)</fullName>
+                <default>false</default>
+                <label>Sonic DDC Honda Desktop &amp; Mobile (2000x514 (960x500 safe) - 600x450)</label>
+            </value>
+            <value>
+                <fullName>Sonic DDC Ford Desktop &amp; Mobile (2000x514 (960x514 safe) - 600x450)</fullName>
+                <default>false</default>
+                <label>Sonic DDC Ford Desktop &amp; Mobile (2000x514 (960x514 safe) - 600x450)</label>
+            </value>
+            <value>
+                <fullName>Sonic DDC VW Desktop &amp; Mobile (1920x500 - 600x400)</fullName>
+                <default>false</default>
+                <label>Sonic DDC VW Desktop &amp; Mobile (1920x500 - 600x400)</label>
+            </value>
+            <value>
+                <fullName>Sonic DDC VDP/SRP Mobile &amp; Desktop (1244x87)</fullName>
+                <default>false</default>
+                <label>Sonic DDC VDP/SRP Mobile &amp; Desktop (1244x87)</label>
+            </value>
+            <value>
+                <fullName>Sonic DDC Hero Image (1551x871 - 1970x400 - 1900x800 - 600x400 - 600x450))</fullName>
+                <default>false</default>
+                <label>Sonic DDC Hero Image (1551x871 - 1970x400 - 1900x800 - 600x400 - 600x450))</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Honda &amp; Nissan 1800x663 - 600x400</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Honda &amp; Nissan 1800x663 - 600x400</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Hyundai 1800x625- 600x400</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Hyundai 1800x625- 600x400</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Subaru 1800x550 - 600x400</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Subaru 1800x550 - 600x400</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Mazda 1920x540 - 768x716</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Mazda 1920x540 - 768x716</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Toyota 1920x614 - 600x400</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Toyota 1920x614 - 600x400</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Kia 1920x614- 600x400</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Kia 1920x614- 600x400</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Volkswagen 1920x600 - 600x400</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Volkswagen 1920x600 - 600x400</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Social Sizes (1200x900 - 1080x1080)</fullName>
+                <default>false</default>
+                <label>Safford Brown Social Sizes (1200x900 - 1080x1080)</label>
+            </value>
+            <value>
+                <fullName>Safford Brown Desktop &amp; Mobile - Maserati 1800x760 - 600x400</fullName>
+                <default>false</default>
+                <label>Safford Brown Desktop &amp; Mobile - Maserati 1800x760 - 600x400</label>
+            </value>
+            <value>
+                <fullName>Safford Brown DI Hero Image - 1920x810 - 1140x760</fullName>
+                <default>false</default>
+                <label>Safford Brown DI Hero Image - 1920x810 - 1140x760</label>
+            </value>
+            <value>
+                <fullName>Coral Springs Desktop &amp; Mobile - 1342 X 576</fullName>
+                <default>false</default>
+                <label>Coral Springs Desktop &amp; Mobile - 1342 X 576</label>
+            </value>
+            <value>
+                <fullName>VDV (Desktop 640x480)</fullName>
+                <default>false</default>
+                <label>VDV (Desktop 640x480)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

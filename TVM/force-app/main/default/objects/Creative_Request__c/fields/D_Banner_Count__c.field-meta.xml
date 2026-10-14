@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>D_Banner_Count__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(of_Offers__c),
+&quot;1&quot;, 1,
+&quot;2&quot;, 2,
+&quot;3&quot;, 3,
+&quot;4&quot;, 4,
+&quot;5&quot;, 5,
+0) *  PICKLISTCOUNT(Sizes__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Depreciate Banner Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

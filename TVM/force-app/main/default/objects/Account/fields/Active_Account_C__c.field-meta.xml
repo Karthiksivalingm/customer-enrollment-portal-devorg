@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Account_C__c</fullName>
+    <formula>Active_Account__c = &quot;Active&quot; &amp;&amp;  Inventory_Feeds_Only__c=false &amp;&amp; (MSA_Contract__c=false || (MSA_Contract__c=false ||  Latest_Budget_Month__c &gt;=ADDMONTHS(Today(),-1)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Account (C)</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

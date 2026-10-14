@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Issue_List__c</fullName>
+    <inlineHelpText>Hold CTRL + Left Click to select multiple options</inlineHelpText>
+    <label>Digital Issue List</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Missing ID</fullName>
+                <default>false</default>
+                <label>Missing ID</label>
+            </value>
+            <value>
+                <fullName>Spend Mismatch</fullName>
+                <default>false</default>
+                <label>Spend Mismatch</label>
+            </value>
+            <value>
+                <fullName>No Wildcard Selected&gt; Service Brand &amp; General don’t spend</fullName>
+                <default>false</default>
+                <label>No Wildcard Selected&gt; Service Brand &amp; General don’t spend</label>
+            </value>
+            <value>
+                <fullName>Not enough Coupons selected to generate spend</fullName>
+                <default>false</default>
+                <label>Not enough Coupons selected to generate spend</label>
+            </value>
+            <value>
+                <fullName>Tag not placed / website not verified</fullName>
+                <default>false</default>
+                <label>Tag not placed / website not verified</label>
+            </value>
+            <value>
+                <fullName>Old marketing partner claiming website</fullName>
+                <default>false</default>
+                <label>Old marketing partner claiming website</label>
+            </value>
+            <value>
+                <fullName>Store Codes can’t start with 0</fullName>
+                <default>false</default>
+                <label>Store Codes can’t start with 0</label>
+            </value>
+            <value>
+                <fullName>Must provide creative and budget to run manual</fullName>
+                <default>false</default>
+                <label>Must provide creative and budget to run manual</label>
+            </value>
+            <value>
+                <fullName>Manual videos need to be updated monthly</fullName>
+                <default>false</default>
+                <label>Manual videos need to be updated monthly</label>
+            </value>
+            <value>
+                <fullName>Pause Ticket Request:</fullName>
+                <default>false</default>
+                <label>Pause Ticket Request:</label>
+            </value>
+            <value>
+                <fullName>Budget removal&gt; why it’s important for pacing</fullName>
+                <default>false</default>
+                <label>Budget removal&gt; why it’s important for pacing</label>
+            </value>
+            <value>
+                <fullName>Inventory feed not setup correctly (no inventory)</fullName>
+                <default>false</default>
+                <label>Inventory feed not setup correctly (no inventory)</label>
+            </value>
+            <value>
+                <fullName>GMB missing access</fullName>
+                <default>false</default>
+                <label>GMB missing access</label>
+            </value>
+            <value>
+                <fullName>Missing FB page access</fullName>
+                <default>false</default>
+                <label>Missing FB page access</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Queue__c</fullName>
+    <label>Sub-Queue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Analytics/GA4</fullName>
+                <default>false</default>
+                <label>Analytics/GA4</label>
+            </value>
+            <value>
+                <fullName>Asset Alerts/Errors</fullName>
+                <default>false</default>
+                <label>Asset Alerts/Errors</label>
+            </value>
+            <value>
+                <fullName>Heavy Up Event</fullName>
+                <default>false</default>
+                <label>Heavy Up Event</label>
+            </value>
+            <value>
+                <fullName>New Asset Build</fullName>
+                <default>false</default>
+                <label>New Asset Build</label>
+            </value>
+            <value>
+                <fullName>OEM Program</fullName>
+                <default>false</default>
+                <label>OEM Program</label>
+            </value>
+            <value>
+                <fullName>Performance Analysis</fullName>
+                <default>false</default>
+                <label>Performance Analysis</label>
+            </value>
+            <value>
+                <fullName>Product Pacing</fullName>
+                <default>false</default>
+                <label>Product Pacing</label>
+            </value>
+            <value>
+                <fullName>Sonic Automotive</fullName>
+                <default>false</default>
+                <label>Sonic Automotive</label>
+            </value>
+            <value>
+                <fullName>Tier 10</fullName>
+                <default>false</default>
+                <label>Tier 10</label>
+            </value>
+            <value>
+                <fullName>Tagging</fullName>
+                <default>false</default>
+                <label>Tagging</label>
+            </value>
+            <value>
+                <fullName>VLA</fullName>
+                <default>false</default>
+                <label>VLA</label>
+            </value>
+            <value>
+                <fullName>Coop</fullName>
+                <default>false</default>
+                <label>Coop</label>
+            </value>
+            <value>
+                <fullName>Reporting Request</fullName>
+                <default>false</default>
+                <label>Reporting Request</label>
+            </value>
+            <value>
+                <fullName>Coops/Reporting Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coops/Reporting Request</label>
+            </value>
+            <value>
+                <fullName>Recommendations Report</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Recommendations Report</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

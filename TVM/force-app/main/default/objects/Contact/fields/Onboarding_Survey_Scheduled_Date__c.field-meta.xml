@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Survey_Scheduled_Date__c</fullName>
+    <formula>if(Onboarding_Survey_Ready__c&gt; DATE(2025,8,14) , Onboarding_Survey_Ready__c +1, Onboarding_Survey_Ready__c +6)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Onboarding Survey Scheduled Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

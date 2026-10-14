@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Once_goals_have_been_imported_check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Once goals have been imported, check campaign goals. If only one type is selected and unable to select more, see next step.</description>
+    <label>Once goals have been imported, check cam</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

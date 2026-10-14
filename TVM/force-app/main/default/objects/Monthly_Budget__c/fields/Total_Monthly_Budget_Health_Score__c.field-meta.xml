@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Monthly_Budget_Health_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>Text( HS_Total_Monthly_Budget_Calc__c ) + &quot; pts / 15 pts&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Monthly Budget Health Score</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

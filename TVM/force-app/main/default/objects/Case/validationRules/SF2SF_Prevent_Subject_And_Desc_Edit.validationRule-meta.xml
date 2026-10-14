@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SF2SF_Prevent_Subject_And_Desc_Edit</fullName>
+    <active>true</active>
+    <description>Prevent edit of Case Subject and Description fields when Case has been received via Salesforce to Salesforce.</description>
+    <errorConditionFormula>AND( 
+	OR(
+		ISCHANGED(Subject), 
+		ISCHANGED(Description)
+	),
+	IsShared__c = true,
+	Not(ISBLANK(ConnectionReceivedId)),
+	NOT(
+		AND(
+			ISCHANGED(ConnectionReceivedId), 
+			NOT(ConnectionReceivedId = null)
+		)
+	),
+	NOT(Contains($User.FirstName, &quot;Connection&quot;))
+)</errorConditionFormula>
+    <errorMessage>The Subject and Description cannot be changed when case has been received via Salesforce to Salesforce.</errorMessage>
+</ValidationRule>

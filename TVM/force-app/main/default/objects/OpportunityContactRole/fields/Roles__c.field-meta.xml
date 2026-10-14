@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roles__c</fullName>
+    <description>FND</description>
+    <label>Roles</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3rd Party Vendor</fullName>
+                <default>false</default>
+                <label>3rd Party Vendor</label>
+            </value>
+            <value>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+                <label>Analytics</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <default>false</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Contract Signer</fullName>
+                <default>false</default>
+                <label>Contract Signer</label>
+            </value>
+            <value>
+                <fullName>Coop</fullName>
+                <default>false</default>
+                <label>Coop</label>
+            </value>
+            <value>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+                <label>Inventory</label>
+            </value>
+            <value>
+                <fullName>Media Budget Decision Maker</fullName>
+                <default>false</default>
+                <label>Media Budget</label>
+            </value>
+            <value>
+                <fullName>OEM Contact</fullName>
+                <default>false</default>
+                <label>OEM Contact</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Primary</fullName>
+                <default>false</default>
+                <label>Primary</label>
+            </value>
+            <value>
+                <fullName>Secondary</fullName>
+                <default>false</default>
+                <label>Secondary</label>
+            </value>
+            <value>
+                <fullName>Paid Search Provider</fullName>
+                <default>false</default>
+                <label>Paid Search Provider</label>
+            </value>
+            <value>
+                <fullName>DigAd Login</fullName>
+                <default>false</default>
+                <label>DigAd Login</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

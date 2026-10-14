@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Create_Unless_Case_Is_Shared</fullName>
+    <active>true</active>
+    <description>Prevents IC from being created when Case has not been shared.</description>
+    <errorConditionFormula>NOT(Case__r.IsShared__c)</errorConditionFormula>
+    <errorMessage>Case has not been shared externally so Intergroup Communications cannot be created on this Case. First share the Case externally and then try again.</errorMessage>
+</ValidationRule>

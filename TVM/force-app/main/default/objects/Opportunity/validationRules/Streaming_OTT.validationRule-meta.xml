@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Streaming_OTT</fullName>
+    <active>false</active>
+    <description>Restricts Users from creating more than 1 Product of this type on a single Opportunity.</description>
+    <errorConditionFormula>Count_Streaming_OTT__c &gt; 1</errorConditionFormula>
+    <errorMessage>You cannot have more than 1 Streaming OTT Product on a single Opportunity. Please remove any duplicate Products before adding new Products.</errorMessage>
+</ValidationRule>

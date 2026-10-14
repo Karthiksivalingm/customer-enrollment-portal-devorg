@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Copy Creation</fullName>
+                <default>false</default>
+                <label>Copy Creation</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <label>Radio / VO</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+            <value>
+                <fullName>Collateral</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Collateral</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Email Blast</label>
+            </value>
+            <value>
+                <fullName>Dealer Monthly Logo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dealer Monthly Logo</label>
+            </value>
+            <value>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Direct Mail</label>
+            </value>
+            <value>
+                <fullName>Landing Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Landing Page</label>
+            </value>
+            <value>
+                <fullName>Print Ad</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Print Ad</label>
+            </value>
+            <value>
+                <fullName>Web Banner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Web Banner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

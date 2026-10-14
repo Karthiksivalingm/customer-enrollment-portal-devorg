@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Try_Buy_Send_Emails</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Try_Buy_Campaign__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Send_Try_Buy_Email__c</columns>
+    <columns>Try_Buy_Email_Template__c</columns>
+    <columns>Send_Issue__c</columns>
+    <columns>Dealer_DocuSign_Contact__c</columns>
+    <columns>Count_Apollo_Assistant__c</columns>
+    <columns>Count_Soft_Credit_Pull__c</columns>
+    <columns>Count_VDV__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Account_RAD__c</columns>
+    <columns>Website_Product_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Try_Buy</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Try &amp; Buy Review</value>
+    </filters>
+    <filters>
+        <field>Test_Account__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Try &amp; Buy Send Emails</label>
+</ListView>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proofing_Flags__c</fullName>
+    <label>Proofing Flags</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client Updates QC</fullName>
+                <default>false</default>
+                <label>Client Updates QC</label>
+            </value>
+            <value>
+                <fullName>Compliance – Artist</fullName>
+                <default>false</default>
+                <label>Compliance – Artist</label>
+            </value>
+            <value>
+                <fullName>Compliance – MM/MD</fullName>
+                <default>false</default>
+                <label>Compliance – MM/MD</label>
+            </value>
+            <value>
+                <fullName>Design</fullName>
+                <default>false</default>
+                <label>Design</label>
+            </value>
+            <value>
+                <fullName>Directions</fullName>
+                <default>false</default>
+                <label>Directions</label>
+            </value>
+            <value>
+                <fullName>Filing</fullName>
+                <default>false</default>
+                <label>Filing</label>
+            </value>
+            <value>
+                <fullName>Grammar - Artist</fullName>
+                <default>false</default>
+                <label>Grammar - Artist</label>
+            </value>
+            <value>
+                <fullName>Grammar - MM/MD</fullName>
+                <default>false</default>
+                <label>Grammar - MM/MD</label>
+            </value>
+            <value>
+                <fullName>Images/Logos</fullName>
+                <default>false</default>
+                <label>Images/Logos</label>
+            </value>
+            <value>
+                <fullName>Links</fullName>
+                <default>false</default>
+                <label>Links</label>
+            </value>
+            <value>
+                <fullName>Offer – Artist</fullName>
+                <default>false</default>
+                <label>Offer – Artist</label>
+            </value>
+            <value>
+                <fullName>Offer – MM/MD</fullName>
+                <default>false</default>
+                <label>Offer – MM/MD</label>
+            </value>
+            <value>
+                <fullName>Order Information - MM/MD</fullName>
+                <default>false</default>
+                <label>Order Information - MM/MD</label>
+            </value>
+            <value>
+                <fullName>Specs – Artist</fullName>
+                <default>false</default>
+                <label>Specs – Artist</label>
+            </value>
+            <value>
+                <fullName>Specs – MM/MD</fullName>
+                <default>false</default>
+                <label>Specs – MM/MD</label>
+            </value>
+            <value>
+                <fullName>Grammar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Grammar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

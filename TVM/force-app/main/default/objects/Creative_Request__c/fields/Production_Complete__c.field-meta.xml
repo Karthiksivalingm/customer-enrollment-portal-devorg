@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Production_Complete__c</fullName>
+    <formula>NOT(ISNULL(Production_Completion_Date__c)) ||  TEXT(Status_Lookup__r.Early_Close_Reason__c) = &quot;08 Creative Complete&quot; ||  TEXT(Status_Lookup__r.Early_Close_Reason__c) = &quot;06c script approval&quot; ||  Status_Lookup__r.Closing_Status__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Production Complete</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

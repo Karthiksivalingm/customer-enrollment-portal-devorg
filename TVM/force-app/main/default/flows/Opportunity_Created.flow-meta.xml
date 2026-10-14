@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_1</name>
+        <label>Add 1</label>
+        <locationX>1234</locationX>
+        <locationY>1131</locationY>
+        <assignmentItems>
+            <assignToReference>LoopCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>First_Loop_Newest_Opp</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Any_New_Sale_Wins_Found</name>
+        <label>Any New Sale Wins Found?</label>
+        <locationX>881</locationX>
+        <locationY>812</locationY>
+        <defaultConnector>
+            <targetReference>ReAssign_Ford_Lincoln_to_Jimmy</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_NS_Wins_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Most_Recent_NS_Closed_Won_Opp</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Opps</targetReference>
+            </connector>
+            <label>Yes, NS Wins Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>First_Loop_Newest_Opp</name>
+        <label>First Loop? (Newest Opp)</label>
+        <locationX>1617</locationX>
+        <locationY>1039</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Opps</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_first_loop</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopCount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Store_Last_NS_details</targetReference>
+            </connector>
+            <label>Yes, first loop</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Is this an Opportunity for a Prospect?</description>
+        <name>Prospect_Opportunity</name>
+        <label>New Sale Opportunity?</label>
+        <locationX>798</locationX>
+        <locationY>1461</locationY>
+        <defaultConnector>
+            <targetReference>Populate_DocuSign_Template_and_Last_Stage_Change_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, it is not a New Sale Opportunity</defaultConnectorLabel>
+        <rules>
+            <name>Yes_it_is_a_Prospect_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Prospect_Opportunity_Record_Type.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Lead_Source_DocuSign_Template_Last_Stage_Change_Date</targetReference>
+            </connector>
+            <label>Yes, it is a New Sale Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ReAssign_Ford_Lincoln_to_Jimmy</name>
+        <label>ReAssign Ford Lincoln to Jimmy</label>
+        <locationX>858</locationX>
+        <locationY>1176</locationY>
+        <defaultConnector>
+            <targetReference>Prospect_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_ReAssign</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Analytics_Franchise__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FORD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Analytics_Franchise__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>LINCOLN</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>TEMPORARY SKIP</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Opp_to_Jimmy</targetReference>
+            </connector>
+            <label>Yes, ReAssign</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Upsell_Category</name>
+        <label>Upsell Category</label>
+        <locationX>1619</locationX>
+        <locationY>1827</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Upsell_Category_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Upsell_during_Onboarding</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetOBRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Upsell_Category</targetReference>
+            </connector>
+            <label>Upsell during Onboarding</label>
+        </rules>
+    </decisions>
+    <description>This flow will updated the Opportunity&apos;s Price Book to reflect the Account&apos;s Default Price Book and if the Opportunity is a Prospect Opportunity, default the Lead Source using the Account&apos;s Account Source.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DocuSignTemplate</name>
+        <dataType>String</dataType>
+        <expression>IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;FORD&quot;) || 
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;LINCOLN&quot;),
+&quot;Ford/Lincoln&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;LAND ROVER&quot;) || 
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;JAGUAR&quot;),
+&quot;JLR&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;MAZDA&quot;),
+&quot;Mazda&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;MITSUBISHI&quot;),
+&quot;Mitsubishi&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;HONDA&quot;),
+&quot;Honda&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;DODGE&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;RAM&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;STELLANTIS&quot;),
+&quot;Stellantis&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;BUICK&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;BUICK GMC&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;CADILLAC&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;CHEVROLET&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;GM&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;GMC&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;HUMMER&quot;),
+&quot;GM&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;PORSCHE&quot;),
+&quot;Porsche&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;ACURA&quot;),
+&quot;Acura&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;TOYOTA&quot;),
+&quot;Toyota&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;AUDI&quot;),
+&quot;Audi&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;BMW&quot;) || 
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;MINI&quot;),
+&quot;BMW&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;GENESIS&quot;),
+&quot;Genesis&quot;,
+IF(
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;KIA&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;FERRARI&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;MASERATI&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;NISSAN&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;SUBARU&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;PREOWNED&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;VOLKSWAGEN&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;MERCEDES&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;INFINITI&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;VOLVO&quot;) ||
+ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;HYUNDAI&quot;),
+&quot;General&quot;,
+IF(ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;HYUNDAIXXXX&quot;),
+&quot;General - No Websites&quot;,
+IF(
+NOT(ISPICKVAL({!$Record.Account.Analytics_Franchise__c},&quot;&quot;)),
+&quot;General&quot;,
+null))))))))))))))))</expression>
+    </formulas>
+    <formulas>
+        <name>FDRecordType</name>
+        <dataType>String</dataType>
+        <expression>if(Text({!$Record.Account.Analytics_Franchise__c})!=&quot;FORD&quot; &amp;&amp; Text({!$Record.Account.Analytics_Franchise__c})!=&quot;LINCOLN&quot;, {!$Record.RecordTypeId},
+if({!$Record.Account.Pending_Activation__c} || Text({!$Record.Account.Client_Type_Team_V__c})=&quot;Active&quot;, &quot;0125f000000Ri1aAAC&quot;,
+if(Text({!$Record.Account.Client_Type_Team_V__c})=&quot;Prospect&quot;, &quot;0125f000000Ri2YAAS&quot;,
+if(Text({!$Record.Account.Client_Type_Team_V__c})=&quot;Inactive&quot;, &quot;0125f000000Ri1fAAC&quot;,
+{!$Record.RecordTypeId}
+))))</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Created</label>
+    <loops>
+        <name>Loop_Opps</name>
+        <label>Loop Opps</label>
+        <locationX>1058</locationX>
+        <locationY>929</locationY>
+        <collectionReference>Get_Most_Recent_NS_Closed_Won_Opp</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_1</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>ReAssign_Ford_Lincoln_to_Jimmy</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Most_Recent_NS_Closed_Won_Opp</name>
+        <label>Get Most Recent NS Closed Won Opp</label>
+        <locationX>940</locationX>
+        <locationY>626</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Any_New_Sale_Wins_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>New Sale</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsWon</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>Close_Date_Actual__c</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Captures the Prospect Opportunity Record Type.</description>
+        <name>Get_Prospect_Opportunity_Record_Type</name>
+        <label>Get Prospect Opportunity Record Type</label>
+        <locationX>872</locationX>
+        <locationY>424</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Most_Recent_NS_Closed_Won_Opp</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Prospect</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetOBRecord</name>
+        <label>GetOBRecord</label>
+        <locationX>1607</locationX>
+        <locationY>1660</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Upsell_Category</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsComplete__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Onboarding__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Assign_Opp_to_Jimmy</name>
+        <label>Assign Opp to Jimmy</label>
+        <locationX>640</locationX>
+        <locationY>1230</locationY>
+        <connector>
+            <targetReference>Prospect_Opportunity</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>0055f000007vAzHAAU</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Opportunity to populate the DocuSign Template and the Last Stage Change Date.</description>
+        <name>Populate_DocuSign_Template_and_Last_Stage_Change_Date</name>
+        <label>Populate DocuSign Template and Last Stage Change Date</label>
+        <locationX>1321</locationX>
+        <locationY>1468</locationY>
+        <connector>
+            <targetReference>GetOBRecord</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>DocuSign_Template__c</field>
+            <value>
+                <elementReference>DocuSignTemplate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Stage_Change_Date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VP_of_Sales__c</field>
+            <value>
+                <elementReference>$Record.VP_of_Sales__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Opportunity to populate the Lead Source using the Account&apos;s Account Source, the DocuSign Template, and the Last Stage Change Date.</description>
+        <name>Populate_Lead_Source_DocuSign_Template_Last_Stage_Change_Date</name>
+        <label>Populate Lead Source, DocuSign Template, &amp; Last Stage Change Date</label>
+        <locationX>490</locationX>
+        <locationY>1568</locationY>
+        <inputAssignments>
+            <field>DocuSign_Template__c</field>
+            <value>
+                <elementReference>DocuSignTemplate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Stage_Change_Date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadSource</field>
+            <value>
+                <elementReference>$Record.Account.AccountSource</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VP_of_Sales__c</field>
+            <value>
+                <elementReference>$Record.Account.VP_of_Sales__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Opportunity to populate the DocuSign Template and the Last Stage Change Date.</description>
+        <name>Populate_Upsell_Category</name>
+        <label>Populate Upsell Category</label>
+        <locationX>1217</locationX>
+        <locationY>2054</locationY>
+        <inputAssignments>
+            <field>Onboarding_Link__c</field>
+            <value>
+                <elementReference>GetOBRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Upsell_Category__c</field>
+            <value>
+                <stringValue>During Onboarding</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Opportunity to populate the DocuSign Template and the Last Stage Change Date.</description>
+        <name>Populate_Upsell_Category_0</name>
+        <label>Populate Upsell Category</label>
+        <locationX>1979</locationX>
+        <locationY>2057</locationY>
+        <inputAssignments>
+            <field>Upsell_Category__c</field>
+            <value>
+                <stringValue>Active Client</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Store_Last_NS_details</name>
+        <label>Store Last NS details</label>
+        <locationX>1606</locationX>
+        <locationY>1200</locationY>
+        <connector>
+            <targetReference>Loop_Opps</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Last_New_Sale_Close_Date__c</field>
+            <value>
+                <elementReference>Loop_Opps.Close_Date_Actual__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_New_Sale_Opp_Owner__c</field>
+            <value>
+                <elementReference>$Record.Owner.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>762</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Prospect_Opportunity_Record_Type</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>LoopCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

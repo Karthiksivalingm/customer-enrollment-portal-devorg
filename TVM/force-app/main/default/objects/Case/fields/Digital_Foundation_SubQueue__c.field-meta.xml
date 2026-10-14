@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Foundation_SubQueue__c</fullName>
+    <formula>Text( Sub_Queue__c )=&quot;OEM Program&quot; ||
+Text( Sub_Queue__c )=&quot;Sonic Automotive&quot; ||
+Text( Sub_Queue__c )=&quot;Heavy Up Event&quot; ||
+Text( Sub_Queue__c )=&quot;Coops/Reporting Request&quot; ||
+Text( Sub_Queue__c )=&quot;Coop&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Digital Foundation SubQueue</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

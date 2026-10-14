@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_or_Primary_Website__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*If(
+ Category_Website_Active__c, &quot;Primary Website&quot;,
+if(
+ Category_Sales_Retention_Active__c, &quot;Portal Website&quot;,
+if(
+ MC_Website__c, &quot;Sub-Products&quot;,
+&quot;No Website&quot;
+)))*/
+if( Text(Account__r.TVM_Website_Status__c) =&quot;Primary&quot; || Text(Account__r.TVM_Website_Status__c)=&quot;Portal&quot;, Text(Account__r.TVM_Website_Status__c), &quot;No TVM Website&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Portal or Primary Website (Current)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

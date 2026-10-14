@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Cancelled_Reason__c</fullName>
+    <label>Cancellation Reason</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Budget PCS Out of Line</fullName>
+                <default>false</default>
+                <label>Budget PCS Out of Line</label>
+            </value>
+            <value>
+                <fullName>Buy/Sell</fullName>
+                <default>false</default>
+                <label>Buy/Sell</label>
+            </value>
+            <value>
+                <fullName>Closed Point</fullName>
+                <default>false</default>
+                <label>Closed Point</label>
+            </value>
+            <value>
+                <fullName>Cost/Value (Dealer Perceives Too Expensive)</fullName>
+                <default>false</default>
+                <label>Cost/Value (Dealer Perceives Too Expensive)</label>
+            </value>
+            <value>
+                <fullName>Lack of Customer Service</fullName>
+                <default>false</default>
+                <label>Lack of Customer Service</label>
+            </value>
+            <value>
+                <fullName>Lack of Utilization/Lack of Buy In/Not Feeling It</fullName>
+                <default>false</default>
+                <label>Lack of Utilization/Lack of Buy In/Not Feeling It</label>
+            </value>
+            <value>
+                <fullName>Management Change</fullName>
+                <default>false</default>
+                <label>Management Change</label>
+            </value>
+            <value>
+                <fullName>Missed Expecations/Loss</fullName>
+                <default>false</default>
+                <label>Missed Expecations/Loss</label>
+            </value>
+            <value>
+                <fullName>Not Supported by OEM Initiatives (Coop)</fullName>
+                <default>false</default>
+                <label>Not Supported by OEM Initiatives (Coop)</label>
+            </value>
+            <value>
+                <fullName>Product Competiveness/Loss</fullName>
+                <default>false</default>
+                <label>Product Competiveness/Loss</label>
+            </value>
+            <value>
+                <fullName>Production/Execution Issues</fullName>
+                <default>false</default>
+                <label>Production/Execution Issues</label>
+            </value>
+            <value>
+                <fullName>Fulfilled Contract Term</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fulfilled Contract Term</label>
+            </value>
+            <value>
+                <fullName>Never Launched</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Never Launched</label>
+            </value>
+            <value>
+                <fullName>Package Downgrade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Package Downgrade</label>
+            </value>
+            <value>
+                <fullName>Package Upgrade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Package Upgrade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

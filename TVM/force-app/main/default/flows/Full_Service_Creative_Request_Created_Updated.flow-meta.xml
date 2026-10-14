@@ -1,0 +1,3331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Client_Services</name>
+        <label>Assign Client Services</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Client_Services__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UniqueName</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_Copywriter</name>
+        <label>Assign Copywriter</label>
+        <locationX>6210</locationX>
+        <locationY>1895</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Copywriter__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Media</name>
+        <label>Assign Media</label>
+        <locationX>10786</locationX>
+        <locationY>1895</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Media__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Production_Starting_Values</name>
+        <label>Assign Production Starting Values</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Submission</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Master_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Proofer3</name>
+        <label>Assign Proofer</label>
+        <locationX>6650</locationX>
+        <locationY>1895</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Proofer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Radio_Starting_Values</name>
+        <label>Assign Radio Starting Values</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Submission</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Master_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Video_Editor</name>
+        <label>Assign Video Editor</label>
+        <locationX>8586</locationX>
+        <locationY>2003</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Video_Editor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Video_Starting_Values</name>
+        <label>Assign Video Starting Values</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Submission</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Master_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Close_Request</name>
+        <label>Close Request</label>
+        <locationX>8921</locationX>
+        <locationY>947</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Closed_Date_Time__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Status_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Set_AV_Production_Stage</name>
+        <label>Set AV Production Stage</label>
+        <locationX>9290</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>AV Production</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ready to Start</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Set_Final_Proofing</name>
+        <label>Set Final Proofing</label>
+        <locationX>9026</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Final Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>QC Approved - Ready to Start Final Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Set_Upload_Compliance_Approved_Script_Stage</name>
+        <label>Set Upload Compliance Approved Script Stage</label>
+        <locationX>7354</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Upload Compliance Approved Script</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Compliance Approved - Ready to Upload Script</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Set_Final_Proofing</name>
+        <label>Set Final Proofing</label>
+        <locationX>9554</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Final Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>QC Approved - Ready to Start Final Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_3_of_Set_Final_Proofing</name>
+        <label>Copy 3 of Set Final Proofing</label>
+        <locationX>8322</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Final Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>QC Approved - Ready to Start Final Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Designer_Assignment</name>
+        <label>Designer Assignment</label>
+        <locationX>1458</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Designer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Designer_Stage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Log_Info_Needed_User</name>
+        <label>Log Info Needed User</label>
+        <locationX>9317</locationX>
+        <locationY>3347</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Information_Needed_User__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Master_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Nullify_Comment</name>
+        <label>Nullify Comment</label>
+        <locationX>9317</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Internal_Note__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_the_Request_Marked_Closed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Owner_Stamp</name>
+        <label>Owner Stamp</label>
+        <locationX>8366</locationX>
+        <locationY>1463</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Owner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Owner_Calculation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Stage_2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>PA_Assignment</name>
+        <label>PA Assignment</label>
+        <locationX>1018</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Production_Admin__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Preq_Stage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>PA_Assignment2</name>
+        <label>PA Assignment</label>
+        <locationX>5770</locationX>
+        <locationY>1895</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Production_Admin__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Proofer_Assignment</name>
+        <label>Proofer Assignment</label>
+        <locationX>1898</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Proofer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_PC_Proofing_Stage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_AV_Production_Stage</name>
+        <label>Set AV Production Stage</label>
+        <locationX>9818</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>AV Production</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Cancelled_Stage</name>
+        <label>Set Cancelled Stage</label>
+        <locationX>5506</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Client_Approval_Stage</name>
+        <label>Set Client Approval Stage</label>
+        <locationX>2338</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Client Approval</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Compliance_Approval_Stage</name>
+        <label>Set Compliance Approval Stage</label>
+        <locationX>2602</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Compliance Approval</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Copywriter_Stage</name>
+        <label>Set Copywriter Stage</label>
+        <locationX>6342</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Copywriter</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Copywriter</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Designer_Stage</name>
+        <label>Set Designer Stage</label>
+        <locationX>1590</locationX>
+        <locationY>1871</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Design</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Final_Proofing</name>
+        <label>Set Final Proofing</label>
+        <locationX>10082</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Final Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Media_Prep_Stage</name>
+        <label>Set Media Prep Stage</label>
+        <locationX>10478</locationX>
+        <locationY>2279</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Media Prep</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Media_Trafficking_Stage</name>
+        <label>Set Media Trafficking Stage</label>
+        <locationX>10918</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Media Trafficking</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Media</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Order_VO_Stage</name>
+        <label>Set Order VO Stage</label>
+        <locationX>8718</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Order VO</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Video_Editor</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_PC_Proofing_Stage</name>
+        <label>Set PC Proofing Stage</label>
+        <locationX>2030</locationX>
+        <locationY>1871</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>PC Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Preq_Stage</name>
+        <label>Set Preq Stage</label>
+        <locationX>1150</locationX>
+        <locationY>1871</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Preq</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Preq_Stage2</name>
+        <label>Set Preq Stage 2</label>
+        <locationX>5902</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Preq</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_PA2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Ready_to_Traffic_Status</name>
+        <label>Set Ready to Traffic Status</label>
+        <locationX>10346</locationX>
+        <locationY>2087</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ready to Traffic</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Media_Prep_Stage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Script_Client_Approval_Stage</name>
+        <label>Set Script Client Approval Stage</label>
+        <locationX>7090</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Script Client Approval</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Script_Compliance_Approval_Stage</name>
+        <label>Set Script Compliance Approval Stage</label>
+        <locationX>7618</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Script Compliance Approval</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Script_PC_Proofing_Stage</name>
+        <label>Set Script PC Proofing Stage</label>
+        <locationX>6782</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Script PC Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Proofer</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Dealer_Monthly_Logo</name>
+        <label>Set Stage to Deploy Dealer Monthly Logo</label>
+        <locationX>4538</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Deploy Dealer Monthly Logo</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Deploy_Collateral</name>
+        <label>Set Stage to Deploy Collateral</label>
+        <locationX>5066</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Deploy Collateral</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Deploy_Email</name>
+        <label>Set Stage to Deploy Email</label>
+        <locationX>3746</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Deploy Email</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Deploy_Web_Banner</name>
+        <label>Set Stage to Deploy Web Banner</label>
+        <locationX>4802</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Deploy Web Banner</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Final_Client_Approval</name>
+        <label>Set Stage to Final Client Approval</label>
+        <locationX>4274</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Final Client Approval</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Proofing</name>
+        <label>Set Stage to Proofing</label>
+        <locationX>2954</locationX>
+        <locationY>1763</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Proofing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_stage_to_Send_Print_Ad</name>
+        <label>Set stage to Send Print Ad</label>
+        <locationX>4010</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Send Print Ad</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Sent_for_Approval</name>
+        <label>Set Stage to Sent for Approval</label>
+        <locationX>3218</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Sent for Approval</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Stage_to_Upload_to_Apollo</name>
+        <label>Set Stage to Upload to Apollo</label>
+        <locationX>3482</locationX>
+        <locationY>1571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Upload to Apollo</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_to_Order_VO</name>
+        <label>Set to Order VO</label>
+        <locationX>8234</locationX>
+        <locationY>2579</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Order VO</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Upload - Submit for VO</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Missing_Required_fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Upload_Compliance_Approved_Script_Stage</name>
+        <label>Set Upload Compliance Approved Script Stage</label>
+        <locationX>7882</locationX>
+        <locationY>1679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Upload Compliance Approved Script</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stamp_Closed</name>
+        <label>Stamp Closed</label>
+        <locationX>10346</locationX>
+        <locationY>1787</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Media Trafficking Complete</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Upload_File</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Throw_Error</name>
+        <label>Throw Expiration Error</label>
+        <locationX>8102</locationX>
+        <locationY>2879</locationY>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+        <customErrorMessages>
+            <errorMessage>You must fill out Expiration Date to proceed to this Status.</errorMessage>
+            <fieldSelection>Expiration_Date__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Throw_Trafficking_Error</name>
+        <label>Throw Trafficking Error</label>
+        <locationX>8366</locationX>
+        <locationY>2879</locationY>
+        <connector>
+            <targetReference>Info_Needed_User</targetReference>
+        </connector>
+        <customErrorMessages>
+            <errorMessage>You must fill out Trafficking Details to proceed to this Status.</errorMessage>
+            <fieldSelection>Trafficking_Details__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Approved_CC_Added</name>
+        <label>Approved CC Added?</label>
+        <locationX>8366</locationX>
+        <locationY>2471</locationY>
+        <defaultConnector>
+            <targetReference>Missing_Required_fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Approved_CC_added</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approved_Copy_Creation__r.X18_digit_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Approved_Copy_Creation__r.X18_digit_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Copy Creation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_to_Order_VO</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes, Approved CC added</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assign_Designer</name>
+        <label>Assign Designer?</label>
+        <locationX>1590</locationX>
+        <locationY>1571</locationY>
+        <defaultConnector>
+            <targetReference>Set_Designer_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Assign_Designer</name>
+            <conditionLogic>1 AND (2 or 3 or 4) and 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Design</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Creative Complete - Ready for Proofer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Designer__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Designer_Assignment</targetReference>
+            </connector>
+            <label>Yes, Assign Designer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assign_PA</name>
+        <label>Assign PA?</label>
+        <locationX>1150</locationX>
+        <locationY>1571</locationY>
+        <defaultConnector>
+            <targetReference>Set_Preq_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Assign_PA</name>
+            <conditionLogic>5 AND 4 AND (1 or 2 or 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Start</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Preq</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Production_Admin__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PA_Assignment</targetReference>
+            </connector>
+            <label>Yes, Assign PA</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assign_PA2</name>
+        <label>Assign PA?</label>
+        <locationX>5902</locationX>
+        <locationY>1787</locationY>
+        <defaultConnector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Assign_PA2</name>
+            <conditionLogic>4 AND (1 or 2 or 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Start</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Request Being Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Production_Admin__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PA_Assignment2</targetReference>
+            </connector>
+            <label>Yes, Assign PA</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assign_Proofer</name>
+        <label>Assign Proofer?</label>
+        <locationX>2030</locationX>
+        <locationY>1571</locationY>
+        <defaultConnector>
+            <targetReference>Set_PC_Proofing_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Assign_Proofer</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proofer__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofing Complete - Ready to Send to Client</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proofer_Assignment</targetReference>
+            </connector>
+            <label>Yes, Assign Proofer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assign_Proofer2</name>
+        <label>Assign Proofer?</label>
+        <locationX>2954</locationX>
+        <locationY>1571</locationY>
+        <defaultConnector>
+            <targetReference>Set_Stage_to_Proofing</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Assign_Proofer2</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proofer__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Proofing</targetReference>
+            </connector>
+            <label>Yes, Assign Proofer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Created_Or_Updated</name>
+        <label>Created Or Updated?</label>
+        <locationX>4947</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Was_A_Comment_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Updated</defaultConnectorLabel>
+        <rules>
+            <name>Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Client_Services</targetReference>
+            </connector>
+            <label>Created</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Info_Needed_User</name>
+        <label>Info Needed User?</label>
+        <locationX>9449</locationX>
+        <locationY>3239</locationY>
+        <defaultConnector>
+            <targetReference>Master_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Log_Info_Needed_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Log_Info_Needed_User</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes, Log Info Needed User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Missing_Required_fields</name>
+        <label>Missing Required fields?</label>
+        <locationX>8366</locationX>
+        <locationY>2771</locationY>
+        <defaultConnector>
+            <targetReference>Info_Needed_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Missing_Required_fields</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Media Parameters</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Media Trafficking</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Media Trafficking Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Expiration_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Throw_Error</targetReference>
+            </connector>
+            <label>Yes, Missing Expiration Date</label>
+        </rules>
+        <rules>
+            <name>Yes_Missing_Trafficking_Details</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Media Parameters</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Media Trafficking</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Media Trafficking Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trafficking_Details__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Throw_Trafficking_Error</targetReference>
+            </connector>
+            <label>Yes, Missing Trafficking Details</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Process2</name>
+        <label>Process?</label>
+        <locationX>7321</locationX>
+        <locationY>1355</locationY>
+        <defaultConnector>
+            <targetReference>Info_Needed_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Production2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_Stage</targetReference>
+            </connector>
+            <label>Production</label>
+        </rules>
+        <rules>
+            <name>Radio2</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Radio</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Video</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Owner_Stamp</targetReference>
+            </connector>
+            <label>AV</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Project_Type</name>
+        <label>Project Type?</label>
+        <locationX>9158</locationX>
+        <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Set_AV_Production_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Everything Else</defaultConnectorLabel>
+        <rules>
+            <name>VO</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Radio</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Audio_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VO</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Set_Final_Proofing</targetReference>
+            </connector>
+            <label>VO</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Set_Copywriter</name>
+        <label>Set Copywriter?</label>
+        <locationX>6342</locationX>
+        <locationY>1787</locationY>
+        <defaultConnector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Copywriter</name>
+            <conditionLogic>1 AND (2 or 3 or 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Copywriter__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Creative Complete - Ready for Proofer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_Copywriter</targetReference>
+            </connector>
+            <label>Yes, Set Copywriter</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Set_Media</name>
+        <label>Set Media?</label>
+        <locationX>10918</locationX>
+        <locationY>1787</locationY>
+        <defaultConnector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Media</name>
+            <conditionLogic>1 and (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Media__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Media Trafficking</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Media Trafficking Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Media</targetReference>
+            </connector>
+            <label>Yes, Set Media</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Set_Proofer</name>
+        <label>Set Proofer?</label>
+        <locationX>6782</locationX>
+        <locationY>1787</locationY>
+        <defaultConnector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Proofer</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofing Complete - Ready to Send to Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Proofer__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Proofer3</targetReference>
+            </connector>
+            <label>Yes, Set Proofer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Set_Video_Editor</name>
+        <label>Set Video Editor?</label>
+        <locationX>8718</locationX>
+        <locationY>1895</locationY>
+        <defaultConnector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Video_Editor</name>
+            <conditionLogic>1 and (2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Video_Editor__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send for Translation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Waiting for VO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VO Obtained</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Video_Editor</targetReference>
+            </connector>
+            <label>Yes, Set Video Editor</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_Compliance</name>
+        <label>Skip Compliance?</label>
+        <locationX>7486</locationX>
+        <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>Set_Script_Compliance_Approval_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Skip_this_Stage</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Compliance_Needed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Set_Upload_Compliance_Approved_Script_Stage</targetReference>
+            </connector>
+            <label>Yes, Skip this Stage</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_Stage</name>
+        <label>Skip Stage?</label>
+        <locationX>9686</locationX>
+        <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>Set_AV_Production_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Skip</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Radio</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Copy Creation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Set_Final_Proofing</targetReference>
+            </connector>
+            <label>Yes, Skip</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_Stage2</name>
+        <label>Skip Stage?</label>
+        <locationX>8432</locationX>
+        <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>Set_Order_VO_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Do_Nothing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Copy Creation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Approved_CC_Added</targetReference>
+            </connector>
+            <label>Do Nothing</label>
+        </rules>
+        <rules>
+            <name>Yes_Skip_Stage2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Copy Creation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_3_of_Set_Final_Proofing</targetReference>
+            </connector>
+            <label>Yes, Skip Stage</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>UniqueName</name>
+        <label>Process?</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Master_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Production</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>xProduction</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Production_Starting_Values</targetReference>
+            </connector>
+            <label>Production</label>
+        </rules>
+        <rules>
+            <name>Radio</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>xRadio</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Radio_Starting_Values</targetReference>
+            </connector>
+            <label>Radio</label>
+        </rules>
+        <rules>
+            <name>Video</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>xVideo</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Video_Starting_Values</targetReference>
+            </connector>
+            <label>Video</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Upload_File</name>
+        <label>Upload File?</label>
+        <locationX>10478</locationX>
+        <locationY>1979</locationY>
+        <defaultConnector>
+            <targetReference>Set_Media_Prep_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Upload_File_Status_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upload File</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Ready_to_Traffic_Status</targetReference>
+            </connector>
+            <label>Upload File Status Update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_A_Comment_Added</name>
+        <label>Was A Comment Added?</label>
+        <locationX>9449</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Was_the_Request_Marked_Closed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Comment</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Comment</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Note__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Comment_Record</targetReference>
+            </connector>
+            <label>Yes, Comment</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Status_Changed</name>
+        <label>Was Status Changed?</label>
+        <locationX>9449</locationX>
+        <locationY>1139</locationY>
+        <defaultConnector>
+            <targetReference>Info_Needed_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Status not Changed</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Status_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_FSCR_Log</targetReference>
+            </connector>
+            <label>Yes, Status Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_the_Request_Marked_Closed</name>
+        <label>Was the Request Marked Closed?</label>
+        <locationX>9449</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Was_Status_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Normal_Request</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Closed_Date_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Media Trafficking Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_Request</targetReference>
+            </connector>
+            <label>Yes, Normal Request</label>
+        </rules>
+        <rules>
+            <name>Yes_Youtube_Request</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Video_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Youtube</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Closed_Date_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upload File</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Close_Request</targetReference>
+            </connector>
+            <label>Yes, Youtube Request</label>
+        </rules>
+        <rules>
+            <name>Yes_CC_request</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Copy Creation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upload - Submit for VO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Closed_Date_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Close_Request</targetReference>
+            </connector>
+            <label>Yes, CC request</label>
+        </rules>
+        <rules>
+            <name>Yes_Cancelled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Approved to Execute</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Closed_Date_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Close_Request</targetReference>
+            </connector>
+            <label>Yes, Cancelled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Stage</name>
+        <label>Which Stage?</label>
+        <locationX>3240</locationX>
+        <locationY>1463</locationY>
+        <defaultConnector>
+            <targetReference>Info_Needed_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Submitted</name>
+            <conditionLogic>1 OR (3 and (2 or 4 or 5 ))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Preq</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Provided</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_PA</targetReference>
+            </connector>
+            <label>PreQ</label>
+        </rules>
+        <rules>
+            <name>Design</name>
+            <conditionLogic>1 OR (2 AND (3 OR 4 OR 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Start</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Design</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Provided</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Designer</targetReference>
+            </connector>
+            <label>Design</label>
+        </rules>
+        <rules>
+            <name>PC_Proofing</name>
+            <conditionLogic>1 OR (2 AND(3 OR 4 OR 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Creative Complete - Ready for Proofer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Proofer</targetReference>
+            </connector>
+            <label>PC Proofing</label>
+        </rules>
+        <rules>
+            <name>Client_Approval</name>
+            <conditionLogic>1 OR (2 AND (3 OR 4 OR 5 OR 6))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofing Complete - Ready to Send to Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Waiting Client Response</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Changes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofer Changes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Client_Approval_Stage</targetReference>
+            </connector>
+            <label>Client Approval</label>
+        </rules>
+        <rules>
+            <name>Compliance_Approval</name>
+            <conditionLogic>7 OR 1 OR 2 OR (3 AND (4 OR 5 OR 6))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Approved - Ready to Send to Compliance</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send to Compliance</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Compliance Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Waiting Compliance Response</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Compliance Changes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofer Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Compliance_Approval_Stage</targetReference>
+            </connector>
+            <label>Compliance Approval</label>
+        </rules>
+        <rules>
+            <name>Proofing</name>
+            <conditionLogic>6 or 1 OR (2 AND (3 OR 4 OR 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Compliance Approved - Ready For Proofer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Compliance Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Proofer2</targetReference>
+            </connector>
+            <label>Proofing</label>
+        </rules>
+        <rules>
+            <name>Sent_for_Approval</name>
+            <conditionLogic>1 AND ((2 AND 3) or 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Direct Mail</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sent to Apollo Production for Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Sent_for_Approval</targetReference>
+            </connector>
+            <label>Sent for Approval</label>
+        </rules>
+        <rules>
+            <name>Upload_to_Appollo</name>
+            <conditionLogic>3 and (1 OR 2)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Apollo Production Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Uploaded to Apollo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Direct Mail</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Upload_to_Apollo</targetReference>
+            </connector>
+            <label>Upload to Appollo</label>
+        </rules>
+        <rules>
+            <name>Deploy_Email</name>
+            <conditionLogic>1 and (2 or (3 and (4 OR 5 OR 6 OR 7 or 8)))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Email</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deploy Email</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Schedule Deployments</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deployment on Hold</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Provided</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Asset Live / Deployed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Deploy_Email</targetReference>
+            </connector>
+            <label>Deploy Email</label>
+        </rules>
+        <rules>
+            <name>Send_Print_Ad</name>
+            <conditionLogic>1 AND (2 Or 3 Or 4 or 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Collateral_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Print Ads</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Media Trafficking</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Print Ad Sent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Asset Live / Deployed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_stage_to_Send_Print_Ad</targetReference>
+            </connector>
+            <label>Send Print Ad</label>
+        </rules>
+        <rules>
+            <name>Final_Client_Approval</name>
+            <conditionLogic>(1 OR 2 OR 3) And (4 or 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Landing Page</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dealer Monthly Logo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Web Banner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Editing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Client Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Final_Client_Approval</targetReference>
+            </connector>
+            <label>Final Client Approval</label>
+        </rules>
+        <rules>
+            <name>Dealer_Monthly_Logo</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dealer Monthly Logo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Asset Live / Deployed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Dealer_Monthly_Logo</targetReference>
+            </connector>
+            <label>Dealer Monthly Logo</label>
+        </rules>
+        <rules>
+            <name>Web_Banner</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Web Banner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Asset Live / Deployed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Deploy_Web_Banner</targetReference>
+            </connector>
+            <label>Web Banner</label>
+        </rules>
+        <rules>
+            <name>Collateral</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Collateral</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Asset Live / Deployed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_Deploy_Collateral</targetReference>
+            </connector>
+            <label>Collateral</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Stage_2</name>
+        <label>Which Stage? 2</label>
+        <locationX>8366</locationX>
+        <locationY>1571</locationY>
+        <defaultConnector>
+            <targetReference>Approved_CC_Added</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Cancelled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Approved to Execute</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Cancelled_Stage</targetReference>
+            </connector>
+            <label>Cancelled</label>
+        </rules>
+        <rules>
+            <name>Preq</name>
+            <conditionLogic>1 OR 2 or (3 And (4 or 5 or 6 or 7))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Request Being Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Preq</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Provided</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Design Prepared - Waiting for Incentives</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Incentives Released</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Preq_Stage2</targetReference>
+            </connector>
+            <label>Preq</label>
+        </rules>
+        <rules>
+            <name>Copywriter</name>
+            <conditionLogic>(1 AND 2) or (3 and (2 or 4 or 5 or 8)) or (6 and 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Preq</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Start</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Copywriter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Provided</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Script Change Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Copywriter_Stage</targetReference>
+            </connector>
+            <label>Copywriter</label>
+        </rules>
+        <rules>
+            <name>Script_PC_Proofing</name>
+            <conditionLogic>(1 AND 2) or (3 and (2 OR 4 or 5 or 6))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Copywriter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Creative Complete - Ready for Proofer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Script PC Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Script_PC_Proofing_Stage</targetReference>
+            </connector>
+            <label>Script PC Proofing</label>
+        </rules>
+        <rules>
+            <name>Script_Client_Approval</name>
+            <conditionLogic>(1 AND 2) OR (3 AND (2 OR 4 OR 5 OR 6))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Script PC Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PC Proofing Complete - Ready to Send to Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Script Client Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Waiting Client Response</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Changes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Script_Client_Approval_Stage</targetReference>
+            </connector>
+            <label>Script Client Approval</label>
+        </rules>
+        <rules>
+            <name>Script_Compliance_Approval</name>
+            <conditionLogic>(1 AND 2) or (3 and (2 or 4 or 5 or 6))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Script Client Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Approved - Ready to Send to Compliance</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Script Compliance Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Waiting Compliance Response</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Compliance Changes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Compliance Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Skip_Compliance</targetReference>
+            </connector>
+            <label>Script Compliance Approval</label>
+        </rules>
+        <rules>
+            <name>Upload_Compliance_Approved_Script</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Compliance Approved - Ready to Upload Script</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Upload_Compliance_Approved_Script_Stage</targetReference>
+            </connector>
+            <label>Upload Compliance Approved Script</label>
+        </rules>
+        <rules>
+            <name>Order_VO</name>
+            <conditionLogic>2 or (1 and (3 or 4 or 5 or 6)) or (7 and 8)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Order VO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upload - Submit for VO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Provided</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send for Translation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Waiting for VO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VO Change Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Skip_Stage2</targetReference>
+            </connector>
+            <label>Order VO</label>
+        </rules>
+        <rules>
+            <name>VO_Obtained_Decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Order VO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VO Obtained</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Project_Type</targetReference>
+            </connector>
+            <label>VO Obtained Decision</label>
+        </rules>
+        <rules>
+            <name>AV_Production</name>
+            <conditionLogic>1 and (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8) or (9 and 10)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AV Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Start</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Video Change Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Information Provided</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Creative Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for QC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Video Change Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Skip_Stage</targetReference>
+            </connector>
+            <label>AV Production</label>
+        </rules>
+        <rules>
+            <name>Final_Proofing</name>
+            <conditionLogic>2 OR( 1 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>QC Approved - Ready to Start Final Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Script Change Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VO Change Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Video Change Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Changes Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send to Compliance</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proofing Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Final_Proofing</targetReference>
+            </connector>
+            <label>Final Proofing</label>
+        </rules>
+        <rules>
+            <name>Media_Prep</name>
+            <conditionLogic>(1 AND 2 AND 3 And 6) or 4 or 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upload File</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Audio_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>VO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Proofing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Request Platform Link</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Traffic</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Video_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Youtube</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Youtube</targetReference>
+            </connector>
+            <label>Media Prep</label>
+        </rules>
+        <rules>
+            <name>Media_Trafficking</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upload Final Files</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Final Media Parameters</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Media Trafficking</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Media Trafficking Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Media_Trafficking_Stage</targetReference>
+            </connector>
+            <label>Media Trafficking</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Youtube</name>
+        <label>Youtube?</label>
+        <locationX>10478</locationX>
+        <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>Upload_File</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_Youtube</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Video_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Youtube</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_Closed</targetReference>
+            </connector>
+            <label>Yes Youtube</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>Owner_Calculation</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.Action_Role__c},
+&quot;Production Admin&quot;, {!$Record.Production_Admin__r.X18_Digit_User_ID__c},
+&quot;Copywriter&quot;, {!$Record.Copywriter__r.X18_Digit_User_ID__c},
+&quot;Proofer&quot;, {!$Record.Proofer__r.X18_Digit_User_ID__c},
+&quot;Client Services&quot;, {!$Record.Client_Services__r.X18_Digit_User_ID__c},
+&quot;Video Editor&quot;, {!$Record.Video_Editor__r.X18_Digit_User_ID__c},
+&quot;Media&quot;, {!$Record.Media__r.X18_Digit_User_ID__c},
+&quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>Full Service Creative Request - Created / Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Full Service Creative Request - Created / Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Comment_Record</name>
+        <label>Create Comment Record</label>
+        <locationX>9317</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Nullify_Comment</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Full_Service_Creative_Request_Link__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Note__c</field>
+            <value>
+                <elementReference>$Record.Internal_Note__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Parent_Record_Id__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Comment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_FSCR_Log</name>
+        <label>Create FSCR Log</label>
+        <locationX>7321</locationX>
+        <locationY>1247</locationY>
+        <connector>
+            <targetReference>Process2</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Current_Status__c</field>
+            <value>
+                <elementReference>$Record.Status__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Designer__c</field>
+            <value>
+                <elementReference>$Record.Designer__r.Full_Name_Formula__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Full_Service_Creative_Request__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Modified_By__c</field>
+            <value>
+                <elementReference>$Record.LastModifiedBy.Full_Name_Formula__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Previous_Status_Date_Time__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Previous_Status__c</field>
+            <value>
+                <elementReference>$Record__Prior.Status__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Name__c</field>
+            <value>
+                <elementReference>$Record.Project_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Record_Type__c</field>
+            <value>
+                <elementReference>$Record.Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Creative_Request_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Master_Update</name>
+        <label>Master Update</label>
+        <locationX>4947</locationX>
+        <locationY>3623</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>4821</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Created_Or_Updated</targetReference>
+        </connector>
+        <object>Full_Service_Creative_Request__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isInactive__c</fullName>
+    <description>Inactive clients that also should not be contacted.</description>
+    <formula>AND(
+/*Account.Open_Demos_Scheduled__c = 0,*/
+Account.Pending_Activation__c = FALSE,
+ISPICKVAL(Account.Client_Type_Team_V__c,&quot;Inactive&quot;),
+DNC__c = FALSE)</formula>
+    <label>isInactive</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

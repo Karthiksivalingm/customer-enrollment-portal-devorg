@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <description>FND</description>
+    <label>Product</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CORE</fullName>
+                <default>false</default>
+                <label>CORE</label>
+            </value>
+            <value>
+                <fullName>YouTube Only</fullName>
+                <default>false</default>
+                <label>YouTube Only</label>
+            </value>
+            <value>
+                <fullName>Group Aggregate Pre Owned</fullName>
+                <default>false</default>
+                <label>Group Aggregate Pre Owned</label>
+            </value>
+            <value>
+                <fullName>Dealer Group Pricing</fullName>
+                <default>false</default>
+                <label>Dealer Group Pricing</label>
+            </value>
+            <value>
+                <fullName>Volvo Pricing</fullName>
+                <default>false</default>
+                <label>Volvo Pricing</label>
+            </value>
+            <value>
+                <fullName>Cadillac Pricing</fullName>
+                <default>false</default>
+                <label>Cadillac Pricing</label>
+            </value>
+            <value>
+                <fullName>Search only (All profit centers)</fullName>
+                <default>false</default>
+                <label>Search only (All profit centers)</label>
+            </value>
+            <value>
+                <fullName>CORE without New Car Search</fullName>
+                <default>false</default>
+                <label>CORE without New Car Search</label>
+            </value>
+            <value>
+                <fullName>New Car Search Only</fullName>
+                <default>false</default>
+                <label>New Car Search Only</label>
+            </value>
+            <value>
+                <fullName>Used/Service Search Only</fullName>
+                <default>false</default>
+                <label>Used/Service Search Only</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

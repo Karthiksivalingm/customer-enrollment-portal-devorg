@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hyundai_Prospect_Contacts</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Contact_Role__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>HYUNDAI</value>
+    </filters>
+    <filters>
+        <field>Account.Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Prospect,Inactive</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Contact_Title__c</field>
+        <operation>notEqual</operation>
+        <value>Accounting Professional,Controller,OEM Rep,Voice Support Hold,Agency/Consultant</value>
+    </filters>
+    <filters>
+        <field>Contact_Role__c</field>
+        <operation>notEqual</operation>
+        <value>Accounting Contact,Mail Approver,Apollo User,DMS Contact,Voice Support Hold,Website Approver</value>
+    </filters>
+    <label>Hyundai Prospect Contacts</label>
+</ListView>

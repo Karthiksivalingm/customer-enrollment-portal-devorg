@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Flag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This is a flag used for admins to use for dataloading, etc. 2/22/24 - being used to track old canceled cases so Alex &amp; Alex can see them</description>
+    <label>Admin Flag</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

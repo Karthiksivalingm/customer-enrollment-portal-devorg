@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_TVM_Unresolved_Voice_Calls</fullName>
+    <columns>Name</columns>
+    <columns>Incoming_Line_T__c</columns>
+    <columns>CallStartDateTime</columns>
+    <columns>Call_From__c</columns>
+    <columns>CallResolution</columns>
+    <columns>Current_Owner__c</columns>
+    <columns>Caller_Input__c</columns>
+    <columns>CallDurationInSeconds</columns>
+    <columns>Related_Contact__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>Related_Auto_Group__c</columns>
+    <columns>IsRecorded</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ToPhoneNumber</field>
+        <operation>equals</operation>
+        <value>+15715003470,+18444081840</value>
+    </filters>
+    <filters>
+        <field>Caller_Input__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>IsRecorded</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All TVM Missed Calls</label>
+</ListView>

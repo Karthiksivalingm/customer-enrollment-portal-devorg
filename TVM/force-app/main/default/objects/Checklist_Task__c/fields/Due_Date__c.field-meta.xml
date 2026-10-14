@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_Date__c</fullName>
+    <formula>IF( Due_After_Go_Live__c = &quot;Transition Day&quot;,
+ DATEVALUE(CreatedDate),
+Parent_Checklist__r.In_Store_Launch_Date__c +  Due_Date_Offset_from_Launch__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Due Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

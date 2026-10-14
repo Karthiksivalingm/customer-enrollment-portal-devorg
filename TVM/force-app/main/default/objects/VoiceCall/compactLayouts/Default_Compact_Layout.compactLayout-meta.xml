@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Compact_Layout</fullName>
+    <fields>FromPhoneNumber</fields>
+    <fields>Incoming_Line__c</fields>
+    <fields>CallStartDateTime</fields>
+    <fields>CallDurationInSeconds</fields>
+    <fields>OwnerId</fields>
+    <fields>Related_Contact__c</fields>
+    <fields>Related_Account__c</fields>
+    <fields>Related_Auto_Group__c</fields>
+    <label>Default Compact Layout</label>
+</CompactLayout>

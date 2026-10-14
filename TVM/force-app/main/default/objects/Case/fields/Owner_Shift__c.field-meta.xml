@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Shift__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*if( Owner:User.Morning_Shift__c, &quot;Morning | &quot;, &quot;&quot;)&amp;
+if( Owner:User.Afternoon_Shift__c, &quot;Afternoon | &quot;, &quot;&quot;)&amp;
+if( Owner:User.Weekend_Shift__c, &quot;Weekend | &quot;, &quot;&quot;)*/
+&quot;&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner Shift</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

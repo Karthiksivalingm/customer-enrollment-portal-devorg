@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Rev_Less_Mail_Agency_OEM_Rev_Share__c</fullName>
+    <formula>Net_Revenue_Less_Mail__c  - Total_OEM_Rev_Share_Fees__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Net Rev Less Mail/Agency/OEM Rev Share</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

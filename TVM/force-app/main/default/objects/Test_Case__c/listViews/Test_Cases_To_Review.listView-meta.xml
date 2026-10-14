@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Cases_To_Review</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Tested - Pass</value>
+    </filters>
+    <label>Test Cases To Review</label>
+</ListView>

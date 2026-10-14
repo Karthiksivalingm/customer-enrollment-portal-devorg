@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Vendor__c</fullName>
+    <description>FND</description>
+    <label>Finance Vendor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>700 Credit</fullName>
+                <default>false</default>
+                <label>700 Credit</label>
+            </value>
+            <value>
+                <fullName>Accelerate Dealer</fullName>
+                <default>false</default>
+                <label>Accelerate Dealer</label>
+            </value>
+            <value>
+                <fullName>AppOne</fullName>
+                <default>false</default>
+                <label>AppOne</label>
+            </value>
+            <value>
+                <fullName>AutoFI</fullName>
+                <default>false</default>
+                <label>AutoFI</label>
+            </value>
+            <value>
+                <fullName>Autoverify</fullName>
+                <default>false</default>
+                <label>Autoverify</label>
+            </value>
+            <value>
+                <fullName>Capital One</fullName>
+                <default>false</default>
+                <label>Capital One</label>
+            </value>
+            <value>
+                <fullName>CBC</fullName>
+                <default>false</default>
+                <label>CBC</label>
+            </value>
+            <value>
+                <fullName>Credit Application by Roadster</fullName>
+                <default>false</default>
+                <label>Credit Application by Roadster</label>
+            </value>
+            <value>
+                <fullName>CreditIQ</fullName>
+                <default>false</default>
+                <label>CreditIQ</label>
+            </value>
+            <value>
+                <fullName>CreditScore-Express by Intice</fullName>
+                <default>false</default>
+                <label>CreditScore-Express by Intice</label>
+            </value>
+            <value>
+                <fullName>DealerCentric</fullName>
+                <default>false</default>
+                <label>DealerCentric</label>
+            </value>
+            <value>
+                <fullName>Dealertrack</fullName>
+                <default>false</default>
+                <label>Dealertrack</label>
+            </value>
+            <value>
+                <fullName>Equifax</fullName>
+                <default>false</default>
+                <label>Equifax</label>
+            </value>
+            <value>
+                <fullName>Ford (OEM) Credit Application</fullName>
+                <default>false</default>
+                <label>Ford (OEM) Credit Application</label>
+            </value>
+            <value>
+                <fullName>GM Financial</fullName>
+                <default>false</default>
+                <label>GM Financial</label>
+            </value>
+            <value>
+                <fullName>National Credit Center</fullName>
+                <default>false</default>
+                <label>National Credit Center</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Quotible</fullName>
+                <default>false</default>
+                <label>Quotible</label>
+            </value>
+            <value>
+                <fullName>RouteOne</fullName>
+                <default>false</default>
+                <label>RouteOne</label>
+            </value>
+            <value>
+                <fullName>Tekion</fullName>
+                <default>false</default>
+                <label>Tekion</label>
+            </value>
+            <value>
+                <fullName>Upstart Auto Retail</fullName>
+                <default>false</default>
+                <label>Upstart Auto Retail</label>
+            </value>
+            <value>
+                <fullName>VinSolutions</fullName>
+                <default>false</default>
+                <label>VinSolutions</label>
+            </value>
+            <value>
+                <fullName>WebBuy</fullName>
+                <default>false</default>
+                <label>WebBuy</label>
+            </value>
+            <value>
+                <fullName>Website Form</fullName>
+                <default>false</default>
+                <label>Website Form</label>
+            </value>
+            <value>
+                <fullName>Chrysler Capital</fullName>
+                <default>false</default>
+                <label>Chrysler Capital</label>
+            </value>
+            <value>
+                <fullName>AutoNation</fullName>
+                <default>false</default>
+                <label>AutoNation</label>
+            </value>
+            <value>
+                <fullName>Qualify Wizard</fullName>
+                <default>false</default>
+                <label>Qualify Wizard</label>
+            </value>
+            <value>
+                <fullName>Blackhawk Digital</fullName>
+                <default>false</default>
+                <label>Blackhawk Digital</label>
+            </value>
+            <value>
+                <fullName>Connect CDK</fullName>
+                <default>false</default>
+                <label>Connect CDK</label>
+            </value>
+            <value>
+                <fullName>truPayments</fullName>
+                <default>false</default>
+                <label>truPayments</label>
+            </value>
+            <value>
+                <fullName>AutoAPR (TradePending)</fullName>
+                <default>false</default>
+                <label>AutoAPR (TradePending)</label>
+            </value>
+            <value>
+                <fullName>Inspire Financial</fullName>
+                <default>false</default>
+                <label>Inspire Financial</label>
+            </value>
+            <value>
+                <fullName>e-Dealer</fullName>
+                <default>false</default>
+                <label>e-Dealer</label>
+            </value>
+            <value>
+                <fullName>Dealer Peak</fullName>
+                <default>false</default>
+                <label>Dealer Peak</label>
+            </value>
+            <value>
+                <fullName>Eunifi</fullName>
+                <default>false</default>
+                <label>Eunifi</label>
+            </value>
+            <value>
+                <fullName>selectFI</fullName>
+                <default>false</default>
+                <label>selectFI</label>
+            </value>
+            <value>
+                <fullName>Harley-Davidson OEM</fullName>
+                <default>false</default>
+                <label>Harley-Davidson OEM</label>
+            </value>
+            <value>
+                <fullName>Quick2Credit</fullName>
+                <default>false</default>
+                <label>Quick2Credit</label>
+            </value>
+            <value>
+                <fullName>The Dealers Concierge</fullName>
+                <default>false</default>
+                <label>The Dealers Concierge</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Bing</fullName>
+        <default>false</default>
+        <label>Bing</label>
+    </customValue>
+    <customValue>
+        <fullName>Collision Only</fullName>
+        <default>false</default>
+        <label>Collision Only</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer Name Only</fullName>
+        <default>false</default>
+        <label>Dealer Name Only</label>
+    </customValue>
+    <customValue>
+        <fullName>Display</fullName>
+        <default>false</default>
+        <label>Display</label>
+    </customValue>
+    <customValue>
+        <fullName>Google</fullName>
+        <default>false</default>
+        <label>Google</label>
+    </customValue>
+    <customValue>
+        <fullName>Meta</fullName>
+        <default>false</default>
+        <label>Meta</label>
+    </customValue>
+    <customValue>
+        <fullName>N/A</fullName>
+        <default>false</default>
+        <label>N/A</label>
+    </customValue>
+    <customValue>
+        <fullName>OTT</fullName>
+        <default>false</default>
+        <label>OTT</label>
+    </customValue>
+    <customValue>
+        <fullName>pMax</fullName>
+        <default>false</default>
+        <label>pMax</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Ads</fullName>
+        <default>false</default>
+        <label>Vehicle Ads</label>
+    </customValue>
+    <customValue>
+        <fullName>YouTube</fullName>
+        <default>false</default>
+        <label>YouTube</label>
+    </customValue>
+    <masterLabel>Profit Center New</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

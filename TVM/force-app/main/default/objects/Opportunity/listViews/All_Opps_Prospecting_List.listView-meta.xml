@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Opps_Prospecting_List</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>DS_Account_City__c</columns>
+    <columns>DS_Account_State__c</columns>
+    <columns>DS_Account_Street__c</columns>
+    <columns>DS_Account_Zip__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FULL_NAME</field>
+        <operation>equals</operation>
+        <value>Austin Beachler,Jack Clemons,Bob Librizzi,Chad Sterling,Matt Abbott,Joe Pracher,Mark Fair,Chris Winkler,Rocco Jackintelle</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Demo Scheduled,Demo Completed,Committed,Contract Sent</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Opps Prospecting List</label>
+</ListView>

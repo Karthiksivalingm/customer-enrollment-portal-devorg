@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Attach_Reasons</name>
+        <label>Attach Reasons</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T0HNY7Z99</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <stringValue>G3DUCHNMN</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>FollowupMessagetoSend</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessageTimestamp</name>
+            <value>
+                <elementReference>Send_Record_Created_Message.slackMessageTimestamp</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Reason1Primary</name>
+        <label>Reason1Primary</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <actionName>RichTextStrip</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Reason2Switching</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>inputtext</name>
+            <value>
+                <elementReference>CancellationRequest.Primary_Cancellation_Reason__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RichTextStrip</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Reason2Switching</name>
+        <label>Reason2Switching</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <actionName>RichTextStrip</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Reason3Improve</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>inputtext</name>
+            <value>
+                <elementReference>CancellationRequest.Can_we_Keep_Dealer_by_Switching_Products__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RichTextStrip</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Reason3Improve</name>
+        <label>Reason3Improve</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <actionName>RichTextStrip</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Reason4Warning</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>inputtext</name>
+            <value>
+                <elementReference>CancellationRequest.TVM_Areas_of_Improvement__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RichTextStrip</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Reason4Warning</name>
+        <label>Reason4Warning</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <actionName>RichTextStrip</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Reason5Action</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>inputtext</name>
+            <value>
+                <elementReference>CancellationRequest.Warning_Signs__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RichTextStrip</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Reason5Action</name>
+        <label>Reason5Action</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <actionName>RichTextStrip</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Reason6Additional</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>inputtext</name>
+            <value>
+                <elementReference>CancellationRequest.What_is_the_Action_Plan_from_Huddling__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RichTextStrip</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Reason6Additional</name>
+        <label>Reason6Additional</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <actionName>RichTextStrip</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_Record_Created_Message</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>inputtext</name>
+            <value>
+                <elementReference>CancellationRequest.Additional_Details__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RichTextStrip</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Record_Created_Message</name>
+        <label>Send Record Created Message</label>
+        <locationX>50</locationX>
+        <locationY>890</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <connector>
+            <targetReference>Attach_Reasons</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T0HNY7Z99</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <stringValue>G3DUCHNMN</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>InitialMessagetoSend</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>CancellationRequest.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>What_Message</name>
+        <label>What Message?</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MessageType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Created</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reason1Primary</targetReference>
+            </connector>
+            <label>Record Created</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Slack Cancellation Request Messanger {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Slack Cancellation Request Messanger</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>What_Message</targetReference>
+        </connector>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>FollowupMessagetoSend</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>====================================
+Primary Reason for Cancellation
+====================================
+*What is the Primary Cancellation Reason?*
+{!Reason1Primary}
+
+*Can we Keep Dealer by Switching Products?*
+{!Reason2Switching}
+====================================
+Internal Findings
+====================================
+*What are TVM&apos;s Areas of Improvement?*
+{!Reason3Improve}
+
+*What Were the Warning Signs?*
+{!Reason4Warning}
+====================================
+Action Plan
+====================================
+*What is the Action Plan from Huddling?*
+{!Reason5Action}
+
+*Additional Details Why They Cancelled?*
+{!Reason6Additional}
+
+====================================
+Date History
+====================================
+Contract Start Month: {!CancellationRequest.Contract_Start_Month__c}
+Dealer Cancellation Notice: {!CancellationRequest.Date_of_Cancellation_Notice__c}
+Last GM/DP Communicaton: {!CancellationRequest.Date_of_Last_GM_DP_Comunication__c}
+Huddle Date: {!CancellationRequest.Date_and_Time_of_Internal_Huddle__c}
+Effective Cancelled Budget Month: {!CancellationRequest.Date_of_Cancellation_Requested__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>InitialMessagetoSend</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A Cancellation Request was just created for &lt;https://teamvelocity.lightning.force.com/lightning/r/Cancellation_Request__c/{!CancellationRequest.Id}/view|{!CancellationRequest.Account__r.Name}&gt;
+*Cancellation Reason:* {!CancellationRequest.Primary_Cancelled_Reason__c}
+*Cancellation Code:* {!CancellationRequest.Cancellation_Code__c}
+==================================
+Team: {!CancellationRequest.Account__r.Client_Team__r.Name}
+RAD: {!CancellationRequest.RAD__c}
+AM: {!CancellationRequest.Account_Manager__c}
+WPM: {!CancellationRequest.WPM__c}
+==================================
+Current Net Rev Amount: ${!CancellationRequest.Final_Monthly_Budget__r.Net_Total_Monthly_Budget_Ex_Digital_Spe__c}
+Current Products: {!CancellationRequest.Final_Month_Products__c}
+Current Health Score: {!CancellationRequest.Final_Monthly_Budget__r.Health_Score_L__c}
+Client Age: {!CancellationRequest.Account__r.Active_Client_Age__c} Months
+First Budget Month Net Rev: {!CancellationRequest.Earliest_Budget_Month_w_Value_Net_Rev__c}</text>
+    </textTemplates>
+    <variables>
+        <name>CancellationRequest</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Cancellation_Request__c</objectType>
+    </variables>
+    <variables>
+        <name>MessageType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

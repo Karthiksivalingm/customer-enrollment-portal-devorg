@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Accounting_Email</name>
+        <label>Send Accounting Email</label>
+        <locationX>536</locationX>
+        <locationY>755</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Get_Most_Recent_Monthly_Budget</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>accounting@Teamvelocitymarketing.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply@salesforce.teamvelocitymarketing.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Status_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Accounting_Approved_Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Approval_Email</name>
+        <label>Send Approval Email</label>
+        <locationX>536</locationX>
+        <locationY>647</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Send_Accounting_Email</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>CreatorRecipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply@salesforce.teamvelocitymarketing.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Status_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Approved_Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Rejection_Email</name>
+        <label>Send Rejection Email</label>
+        <locationX>844</locationX>
+        <locationY>647</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Master_Update</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>CreatorRecipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply@salesforce.teamvelocitymarketing.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Status_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Rejected_Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Account_Vars</name>
+        <label>Assign Account Vars</label>
+        <locationX>404</locationX>
+        <locationY>1595</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Account.Total_Credit_Granted__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Credit_Amount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_MB_Vars</name>
+        <label>Update MB Vars</label>
+        <locationX>404</locationX>
+        <locationY>1079</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Most_Recent_Monthly_Budget.Credit_Issued_This_Month__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Credit_Amount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_MB</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Account_Found</name>
+        <label>Account Found?</label>
+        <locationX>536</locationX>
+        <locationY>1487</locationY>
+        <defaultConnector>
+            <targetReference>Master_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Account_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Account_Vars</targetReference>
+            </connector>
+            <label>Yes Account Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Approved_or_Rejected</name>
+        <label>Approved or Rejected?</label>
+        <locationX>812</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Master_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Approval_Email</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Approved</label>
+        </rules>
+        <rules>
+            <name>Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Disapproved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Rejection_Email</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Rejected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Created_or_Updated</name>
+        <label>Created or Updated?</label>
+        <locationX>476</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Approved_or_Rejected</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Updated</defaultConnectorLabel>
+        <rules>
+            <name>Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account__r.Test_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Created</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Most_Recent_MB_Found</name>
+        <label>Most Recent MB Found?</label>
+        <locationX>536</locationX>
+        <locationY>971</locationY>
+        <defaultConnector>
+            <targetReference>Get_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_MB_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Most_Recent_Monthly_Budget.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_MB_Vars</targetReference>
+            </connector>
+            <label>Yes, MB Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Test_Account</name>
+        <label>Test Account?</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Created_or_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Test_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__r.Test_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Test Account</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>ApprovalFormulaText</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!$Record.Approval__c}) = &quot;Approved&quot;, &quot;Approved&quot;, &quot;Rejected&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>ClientTeamRecipients_Formula</name>
+        <dataType>String</dataType>
+        <expression>if(isblank({!$Record.Account__r.VP_of_Client_Services__r.Email}), &quot;&quot;, &quot;sknox@teamvelocitymarketing.com,&quot; &amp;{!$Record.Account__r.VP_of_Client_Services__r.Email})</expression>
+    </formulas>
+    <formulas>
+        <name>CreditApplied_MonthStamp</name>
+        <dataType>String</dataType>
+        <expression>CASE(If(TEXT({!$Record.Credit_Applied__c}) = &quot;Towards Next Month&quot;, IF(MONTH({!$Flow.CurrentDate}) = 12, 1,  MONTH({!$Flow.CurrentDate})+1),
+IF(TEXT({!$Record.Credit_Applied__c}) = &quot;Towards Current Month&quot;, MONTH({!$Flow.CurrentDate}),
+IF(TEXT({!$Record.Credit_Applied__c}) = &quot;Towards Mail&quot;,13,
+IF(TEXT({!$Record.Credit_Applied__c}) = &quot;Cut Check Back to Dealer&quot;,14,
+15)))),
+    1, &quot;01 January&quot;,
+    2, &quot;02 February&quot;,
+    3, &quot;03 March&quot;,
+    4, &quot;04 April&quot;,
+    5, &quot;05 May&quot;,
+    6, &quot;06 June&quot;,
+    7, &quot;07 July&quot;,
+    8, &quot;08 August&quot;,
+    9, &quot;09 September&quot;,
+    10, &quot;10 October&quot;,
+    11, &quot;11 November&quot;,
+    12, &quot;12 December&quot;,
+    13,  &quot;Mail&quot;,
+    14, &quot;Cut Check Back to Dealer&quot;,
+&quot;No Credit Applied Selected&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Credit Request - Created/Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Credit Request - Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>536</locationX>
+        <locationY>1379</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Account_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Most_Recent_Monthly_Budget</name>
+        <label>Get Most Recent Monthly Budget</label>
+        <locationX>536</locationX>
+        <locationY>863</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Most_Recent_MB_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Budget_Month_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__r.Latest_Budget_Month__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Monthly_Budget__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Master_Update</name>
+        <label>Master Update</label>
+        <locationX>812</locationX>
+        <locationY>1979</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>404</locationX>
+        <locationY>1703</locationY>
+        <connector>
+            <targetReference>Master_Update</targetReference>
+        </connector>
+        <inputReference>Get_Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_MB</name>
+        <label>Update MB</label>
+        <locationX>404</locationX>
+        <locationY>1187</locationY>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+        <inputReference>Get_Most_Recent_Monthly_Budget</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Test_Account</targetReference>
+        </connector>
+        <object>Credit_Request__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>Accounting_Approved_Body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;A Credit Request for {!$Record.Account__r.Name} has been approved by {!$Record.Approved_By__r.Full_Name_Formula__c}. See details below:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Amount&lt;/strong&gt;: ${!$Record.Credit_Amount__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Credit Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Credit_Request_Details__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Approval Notes:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Approval_Notes__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Approval_Request_Body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Credit_Request__c/{!$Record.Id}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;This new credit request {!$Record.Name}&lt;/a&gt; was just created&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;for {!$Record.Account__r.Name},&lt;/span&gt; one of you needs to approve or reject this by following the link.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Amount&lt;/strong&gt;: ${!$Record.Credit_Amount__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Credit Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Credit_Request_Details__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Approved_Body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Your Credit Request for {!$Record.Account__r.Name} been approved. See details below:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Amount&lt;/strong&gt;: ${!$Record.Credit_Amount__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Credit Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Credit_Request_Details__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Approval Notes&lt;/strong&gt;:&lt;/p&gt;&lt;p&gt;{!$Record.Approval_Notes__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CreatorRecipients</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>sknox@teamvelocitymarketing.com, sfintegration@teamvelocitymarketing.com, {!$Record.Credit_Request_User__r.Email}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DJ_Body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Credit_Request__c/%7B!$Record.Id%7D/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;This new credit request {!$Record.Name}&lt;/a&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;was just created. DJ, you need to approve or reject this by following the link because its value is ${!$Record.Credit_Amount__c}.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;﻿Amount&lt;/strong&gt;: ${!$Record.Credit_Amount__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Credit Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Credit_Request_Details__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DJ_Body2</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Credit_Request__c/%7B!$Record.Id%7D/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;This new credit request {!$Record.Name}&lt;/a&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;was just created. The System failed to find a Client Team Lead. DJ, you need to approve or reject this by following the link because &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;there is likely no Client Team Lead on the account.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Amount&lt;/strong&gt;: ${!$Record.Credit_Amount__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Credit Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Credit_Request_Details__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NewCreditRequest_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New Credit Request for {!$Record.Account__r.Name}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Rejected_Body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Your Credit Request for {!$Record.Account__r.Name} been rejected. See details below:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Amount&lt;/strong&gt;: ${!$Record.Credit_Amount__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Credit Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Credit_Request_Details__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Approval Notes:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Approval_Notes__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Status_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Credit Request {!ApprovalFormulaText} for {!$Record.Account__r.Name}</text>
+    </textTemplates>
+    <variables>
+        <name>Account</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>

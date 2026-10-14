@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Name__c</fullName>
+    <label>Task Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bonus Offer Images Creative</fullName>
+                <default>false</default>
+                <label>Bonus Offer Images Creative</label>
+            </value>
+            <value>
+                <fullName>Brand Diff Banner Creation</fullName>
+                <default>false</default>
+                <label>Brand Diff Banner Creation</label>
+            </value>
+            <value>
+                <fullName>Compliance Access set up</fullName>
+                <default>false</default>
+                <label>Compliance Access set up</label>
+            </value>
+            <value>
+                <fullName>Create Sales Email Suite</fullName>
+                <default>false</default>
+                <label>Create Portal Announcement</label>
+            </value>
+            <value>
+                <fullName>Create Service Email Suite</fullName>
+                <default>false</default>
+                <label>Create Service Email Suite</label>
+            </value>
+            <value>
+                <fullName>Dealer Logo Approval/Creation</fullName>
+                <default>false</default>
+                <label>Dealer Logo Approval/Creation</label>
+            </value>
+            <value>
+                <fullName>Deploy Portal Announcement and OV</fullName>
+                <default>false</default>
+                <label>Deploy Portal Announcement and OV</label>
+            </value>
+            <value>
+                <fullName>Dotmailer Account Request</fullName>
+                <default>false</default>
+                <label>Dotmailer Account Request</label>
+            </value>
+            <value>
+                <fullName>Email Free Space Sales</fullName>
+                <default>false</default>
+                <label>Email Free Space Sales</label>
+            </value>
+            <value>
+                <fullName>Email Free Space Sales and Service</fullName>
+                <default>false</default>
+                <label>Email Free Space Sales and Service</label>
+            </value>
+            <value>
+                <fullName>Email Free Space Service</fullName>
+                <default>false</default>
+                <label>Email Free Space Service</label>
+            </value>
+            <value>
+                <fullName>Final Creative Review</fullName>
+                <default>false</default>
+                <label>Final Creative Review</label>
+            </value>
+            <value>
+                <fullName>General Sales Offer Image Creative</fullName>
+                <default>false</default>
+                <label>General Sales Offer Image Creative</label>
+            </value>
+            <value>
+                <fullName>Information Collection Meeting/Details</fullName>
+                <default>false</default>
+                <label>Information Collection Meeting/Details</label>
+            </value>
+            <value>
+                <fullName>Request Mail Creative in Apollo</fullName>
+                <default>false</default>
+                <label>Request Mail Creative in Apollo</label>
+            </value>
+            <value>
+                <fullName>Secondary Email URL</fullName>
+                <default>false</default>
+                <label>Secondary Email URL</label>
+            </value>
+            <value>
+                <fullName>Service Offer Image Creative</fullName>
+                <default>false</default>
+                <label>Service Offer Image Creative</label>
+            </value>
+            <value>
+                <fullName>Set up Email Free Space</fullName>
+                <default>false</default>
+                <label>Set up Email Free Space</label>
+            </value>
+            <value>
+                <fullName>Set Up Mail Automation in CPV</fullName>
+                <default>false</default>
+                <label>Set Up Mail Automation in CPV</label>
+            </value>
+            <value>
+                <fullName>Toggle Emails on in Comms Manager</fullName>
+                <default>false</default>
+                <label>Toggle Emails on in Comms Manager</label>
+            </value>
+            <value>
+                <fullName>Website Going Live</fullName>
+                <default>false</default>
+                <label>Website Going Live</label>
+            </value>
+            <value>
+                <fullName>Website Submission to Compliance</fullName>
+                <default>false</default>
+                <label>Website Submission to Compliance</label>
+            </value>
+            <value>
+                <fullName>Add/Confirm Franchise</fullName>
+                <default>false</default>
+                <label>Add/Confirm Franchise</label>
+            </value>
+            <value>
+                <fullName>Add Order Profile</fullName>
+                <default>false</default>
+                <label>Add Order Profile</label>
+            </value>
+            <value>
+                <fullName>Order URL</fullName>
+                <default>false</default>
+                <label>Order URL</label>
+            </value>
+            <value>
+                <fullName>Call Tracking</fullName>
+                <default>false</default>
+                <label>Call Tracking</label>
+            </value>
+            <value>
+                <fullName>Load Logo in Backend of Apollo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Load Logo in Backend of Apollo</label>
+            </value>
+            <value>
+                <fullName>Load Logo in Image Manager for Website Header</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Load Logo in Image Manager for Website Header</label>
+            </value>
+            <value>
+                <fullName>Submit Logo for Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Submit Logo for Approval</label>
+            </value>
+            <value>
+                <fullName>Upload Header Image on Website</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Upload Header Image on Website</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

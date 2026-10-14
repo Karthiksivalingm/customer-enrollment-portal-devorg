@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Compliance_Task_Banners_Logos</fullName>
+        <ccEmails>Complianceteam@teamvelocitymarketing.com</ccEmails>
+        <description>Compliance Task: Banners / Logos</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Designer__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Team_Velocity_Support/Comply_Task_Banners_Logos</template>
+    </alerts>
+    <alerts>
+        <fullName>Compliance_Task_Generic</fullName>
+        <ccEmails>Complianceteam@teamvelocitymarketing.com</ccEmails>
+        <description>Compliance Task: Generic</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Comply_Task_Generic_Status</template>
+    </alerts>
+    <alerts>
+        <fullName>Compliance_Task_Pricing_Payment</fullName>
+        <ccEmails>Complianceteam@teamvelocitymarketing.com</ccEmails>
+        <description>Compliance Task: Pricing/Payment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Team_Velocity_Support/Comply_Task_Price_Changes_Needed</template>
+    </alerts>
+    <alerts>
+        <fullName>Compliance_Task_Vehicle_Images</fullName>
+        <ccEmails>Complianceteam@teamvelocitymarketing.com</ccEmails>
+        <description>Compliance Task: Vehicle Images</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Designer__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Team_Velocity_Support/Comply_Task_Vehicle_Images</template>
+    </alerts>
+</Workflow>

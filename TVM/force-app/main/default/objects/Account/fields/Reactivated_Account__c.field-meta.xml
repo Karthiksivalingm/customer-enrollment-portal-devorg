@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reactivated_Account__c</fullName>
+    <formula>(Contains( Contract_Type__c , &quot;Reactivation&quot;) || Reactivated_Account_New__c) &amp;&amp;  Active_Account_C__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reactivated Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

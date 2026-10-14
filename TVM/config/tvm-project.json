@@ -1,0 +1,25 @@
+{
+  "_comment": "Single source of truth for TVM automation. Scripts in TVM/scripts read this file. Never store credentials here.",
+  "project": "TVM",
+  "projectDir": "TVM",
+  "salesforce": {
+    "alias": "Fullsandbox",
+    "orgId": "00DVa000006Eh6TMAS",
+    "username": "sandipp@unitedtechno.com.tvmprod.fullsando",
+    "instanceUrl": "https://teamvelocity--fullsando.sandbox.my.salesforce.com",
+    "organizationName": "Team Velocity Marketing",
+    "mustBeSandbox": true,
+    "apiVersion": "68.0"
+  },
+  "git": {
+    "remoteName": "origin",
+    "remoteUrl": "https://github.com/sfdcut/SFDC.git",
+    "workingBranch": "tvm/develop",
+    "protectedBranches": ["main", "master"],
+    "autoCommit": true,
+    "autoPush": true
+  },
+  "secretRecords": [
+    "customMetadata/TouchPoint_Callout.*"
+  ]
+}

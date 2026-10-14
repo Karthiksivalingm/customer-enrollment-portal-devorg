@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>NorthEast</fullName>
+        <default>false</default>
+        <label>NorthEast</label>
+    </customValue>
+    <customValue>
+        <fullName>SouthEast</fullName>
+        <default>false</default>
+        <label>SouthEast</label>
+    </customValue>
+    <customValue>
+        <fullName>Central</fullName>
+        <default>false</default>
+        <label>Central</label>
+    </customValue>
+    <customValue>
+        <fullName>West</fullName>
+        <default>false</default>
+        <label>West</label>
+    </customValue>
+    <customValue>
+        <fullName>Advid</fullName>
+        <default>false</default>
+        <label>Advid</label>
+    </customValue>
+    <customValue>
+        <fullName>National</fullName>
+        <default>false</default>
+        <label>National</label>
+    </customValue>
+    <customValue>
+        <fullName>T10-Health</fullName>
+        <default>false</default>
+        <label>T10-Health</label>
+    </customValue>
+    <customValue>
+        <fullName>Tier 2</fullName>
+        <default>false</default>
+        <label>Tier 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation Direct</fullName>
+        <default>false</default>
+        <label>Foundation Direct</label>
+    </customValue>
+    <customValue>
+        <fullName>GM Canada</fullName>
+        <default>false</default>
+        <label>GM Canada</label>
+    </customValue>
+    <masterLabel>Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

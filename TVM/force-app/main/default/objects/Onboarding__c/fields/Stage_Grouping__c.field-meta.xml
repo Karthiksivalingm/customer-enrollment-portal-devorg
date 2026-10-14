@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Grouping__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Stage__c ,
+&quot;In Build&quot;, &quot;In Progress&quot;,
+&quot;Getting Started&quot;, &quot;In Progress&quot;,
+&quot;Website in Build&quot;, &quot;In Progress&quot;,
+&quot;Website Review&quot;, &quot;In Progress&quot;,
+&quot;Confirming Budget&quot;, &quot;In Progress&quot;,
+&quot;Digital Review&quot;, &quot;In Progress&quot;,
+&quot;Needs GTM&quot;, &quot;In Progress&quot;,
+&quot;GTM Scheduled&quot;, &quot;In Progress&quot;,
+&quot;Awaiting GSC&quot;, &quot;In Progress&quot;,
+&quot;Awaiting GSC-Partial Docs&quot;, &quot;In Progress&quot;,
+&quot;GSC Scheduled&quot;, &quot;In Progress&quot;,
+&quot;Needs Payment Call&quot;, &quot;In Progress&quot;,
+&quot;Payment Call Scheduled&quot;, &quot;In Progress&quot;,
+&quot;Go to Market&quot;, &quot;In Progress&quot;,
+&quot;Awaiting Docs&quot;, &quot;In Progress&quot;,
+	
+&quot;Pending Transition&quot;, &quot;In Progress&quot;,
+&quot;Launched&quot;, &quot;Launched&quot;,
+
+&quot;Cancelled&quot;, &quot;Cancelled/Hold&quot;,
+&quot;On Hold&quot;, &quot;Cancelled/Hold&quot;,
+If(Status__c=&quot;ON HOLD&quot;, &quot;Cancelled/Hold&quot;, &quot;In Progress&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stage Grouping</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

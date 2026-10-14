@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Task__c</fullName>
+    <formula>OR(
+My_Task_Compliance_Team__c,
+My_Task_Creator__c,
+My_Task_Currently_Assigned__c,
+My_Task_Designer__c,
+My_Task_Website__c/*,
+AND(
+$User.Profile_Name__c = &quot;Onboarding Director&quot; || $User.Profile_Name__c = &quot;Onboarding Manager&quot;,
+CONTAINS(Queues__c, &quot;Onboarding Director (Creator)&quot;)
+)*/
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>My Task</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

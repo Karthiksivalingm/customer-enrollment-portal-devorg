@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Count_CXP__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(   Reporting_Categories__c  = &quot;CXP&quot;, 1, 0) + 
+if(    Contains(Contract_Product_Name__c,&quot;Platform Solutions&quot;), 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>All Packages CXP</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

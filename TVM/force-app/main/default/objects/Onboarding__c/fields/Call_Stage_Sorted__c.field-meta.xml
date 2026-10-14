@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Stage_Sorted__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(Call_Stage__c),
+&quot;Welcome Email Sent&quot;, &quot;01. Welcome Email Sent&quot;,
+&quot;Scheduling GSC&quot;, &quot;02. Scheduling GSC&quot;,
+&quot;GSC Scheduled&quot;, &quot;03. GSC Scheduled&quot;,
+&quot;Needs Payment Call&quot;, &quot;04. Needs Payment Call&quot;,
+&quot;Payment Call Scheduled&quot;, &quot;05. Payment Call Scheduled&quot;,
+&quot;Website in Build&quot;, &quot;06. Website in Build&quot;,
+&quot;Needs Website Review&quot;, &quot;07. Needs Website Review&quot;,
+&quot;Website Review Scheduled&quot;, &quot;08. Website Review Scheduled&quot;,
+&quot;Website Review Complete&quot;, &quot;09. Website Review Complete&quot;,
+&quot;Needs MRR&quot;, &quot;10. Needs MRR&quot;,
+&quot;MRR Scheduled&quot;, &quot;11. MRR Scheduled&quot;,
+&quot;Pending Transition&quot;, &quot;12. Pending Transition&quot;,
+&quot;Launched&quot;, &quot;13. Launched&quot;,
+&quot;On Hold&quot;, &quot;14. On Hold&quot;,
+&quot;Cancelled&quot;, &quot;15. Cancelled&quot;,
+&quot;Needs Digital&quot;, &quot;Needs Digital&quot;,
+&quot;Digital Review&quot;, &quot;Digital Review&quot;,
+&quot;Digital Review Complete&quot;, &quot;Digital Review Complete&quot;,
+&quot;No Call Stage&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Depreciate</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retention_Sorting_Date__c</fullName>
+    <formula>if(
+IsNull(Account__r.Cancelled_Month__c),  Budget_Month_Date__c, 
+if( 
+((Account__r.Latest_Budget_Month__c &lt; Account__r.Cancelled_Month__c &amp;&amp; Account__r.Latest_Budget_Month__c = Budget_Month_Date__c) ||
+(Budget_Month_Date__c&gt;= Account__r.Cancelled_Month__c))&amp;&amp; Account__r.Cancelled_Account__c =1, Account__r.Cancelled_Month__c, 
+/*null*/
+Budget_Month_Date__c
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Retention Sorting Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

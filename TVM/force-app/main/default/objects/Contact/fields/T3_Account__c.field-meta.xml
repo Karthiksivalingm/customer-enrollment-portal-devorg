@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T3_Account__c</fullName>
+    <formula>Account.T3__c = true &amp;&amp;  Account.Hide_Dealership__c =false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>T3 Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

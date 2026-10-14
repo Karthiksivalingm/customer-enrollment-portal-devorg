@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Account_OEM_Team_Values</name>
+        <label>Set Account OEM Team Values</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>Account.OEM_Team__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_OEM_Team.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.OEM_VP__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OEMVP</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.Program_Manager_1__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AccountPM1</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.Program_Manager_2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AccountPM2</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Found_OEM_Team_Gate</name>
+        <label>Found OEM Team Gate</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Found_OEM_Team</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_OEM_Team</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Account_OEM_Team_Values</targetReference>
+            </connector>
+            <label>Found OEM Team</label>
+        </rules>
+    </decisions>
+    <description>Obj Account | Subflow | Assigns OEM Team</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AccountPM1</name>
+        <dataType>String</dataType>
+        <expression>if(
+{!SrProgramManager}=&quot;&quot;, {!ProgramManager1}, {!SrProgramManager}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>AccountPM2</name>
+        <dataType>String</dataType>
+        <expression>if({!SrProgramManager}=&quot;&quot;, {!ProgramManager2}, {!ProgramManager1})</expression>
+    </formulas>
+    <formulas>
+        <name>CleanedAnalyticsFranchise</name>
+        <dataType>String</dataType>
+        <expression>if(
+Text({!Account.Analytics_Franchise__c})=&quot;JAGUAR&quot; || Text({!Account.Analytics_Franchise__c})=&quot;LAND ROVER&quot;, &quot;JLR&quot;,
+if(
+Text({!Account.Analytics_Franchise__c})= &quot;BUICK&quot; || Text({!Account.Analytics_Franchise__c})=&quot;BUICK GMC&quot; || Text({!Account.Analytics_Franchise__c})=&quot;CADILLAC&quot; || Text({!Account.Analytics_Franchise__c})=&quot;CHEVROLET&quot; || Text({!Account.Analytics_Franchise__c})=&quot;GMC&quot;, &quot;GM&quot;,
+if(
+Text({!Account.Analytics_Franchise__c})=&quot;ALFA ROMEO&quot; || Text({!Account.Analytics_Franchise__c})=&quot;DODGE&quot; || Text({!Account.Analytics_Franchise__c})=&quot;JEEP&quot; || Text({!Account.Analytics_Franchise__c})=&quot;MASERATI&quot; || Text({!Account.Analytics_Franchise__c})=&quot;RAM&quot;, &quot;STELLANTIS&quot;,
+
+Text({!Account.Analytics_Franchise__c})
+)))</expression>
+    </formulas>
+    <formulas>
+        <name>OEMVP</name>
+        <dataType>String</dataType>
+        <expression>{!Get_OEM_Team.OEM_VP__r.FirstName} &amp; &quot; &quot; &amp; {!Get_OEM_Team.OEM_VP__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>ProgramManager1</name>
+        <dataType>String</dataType>
+        <expression>{!Get_OEM_Team.Program_Manager_1__r.FirstName} &amp; &quot; &quot; &amp; {!Get_OEM_Team.Program_Manager_1__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>ProgramManager2</name>
+        <dataType>String</dataType>
+        <expression>{!Get_OEM_Team.Program_Manager_2__r.FirstName} &amp; &quot; &quot; &amp; {!Get_OEM_Team.Program_Manager_2__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>ProgramManager3</name>
+        <dataType>String</dataType>
+        <expression>{!Get_OEM_Team.Program_Manager_3__r.FirstName} &amp; &quot; &quot; &amp; {!Get_OEM_Team.Program_Manager_3__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>SrProgramManager</name>
+        <dataType>String</dataType>
+        <expression>{!Get_OEM_Team.SR_Program_Manager_1__r.FirstName} &amp; &quot; &quot; &amp; {!Get_OEM_Team.SR_Program_Manager_1__r.LastName}</expression>
+    </formulas>
+    <interviewLabel>Account OEM Assignment Subflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account - OEM Assignment Subflow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_OEM_Team</name>
+        <label>Get OEM Team</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_OEM_Team_Gate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CleanedAnalyticsFranchise</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OEM_Team__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <inputReference>Account</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_OEM_Team</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Account</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>OEMTeamID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

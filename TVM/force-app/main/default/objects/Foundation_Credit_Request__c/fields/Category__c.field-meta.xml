@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>FND</description>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales Tactic</fullName>
+                <default>false</default>
+                <label>Sales Tactic</label>
+            </value>
+            <value>
+                <fullName>Onboarding Mistake</fullName>
+                <default>false</default>
+                <label>Onboarding Mistake</label>
+            </value>
+            <value>
+                <fullName>Client Services Mistake</fullName>
+                <default>false</default>
+                <label>Client Services Mistake</label>
+            </value>
+            <value>
+                <fullName>OEM Program Conversion</fullName>
+                <default>false</default>
+                <label>OEM Program Conversion</label>
+            </value>
+            <value>
+                <fullName>Auto Group Special Pricing</fullName>
+                <default>false</default>
+                <label>Auto Group Special Pricing</label>
+            </value>
+            <value>
+                <fullName>Apollo Tech Issue</fullName>
+                <default>false</default>
+                <label>Apollo Tech Issue</label>
+            </value>
+            <value>
+                <fullName>Accounting Issue</fullName>
+                <default>false</default>
+                <label>Accounting Issue</label>
+            </value>
+            <value>
+                <fullName>NCM Issue</fullName>
+                <default>false</default>
+                <label>NCM Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Filter__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(AccountId__r.Analytics_Franchise__c),
+&quot;ACURA&quot;, &quot;Approved OEM&quot;,
+&quot;GENESIS&quot;, &quot;Approved OEM&quot;,
+&quot;HONDA&quot;, &quot;Approved OEM&quot;,
+&quot;KIA&quot;, &quot;Approved OEM&quot;,
+&quot;MAZDA&quot;, &quot;Approved OEM&quot;,
+&quot;MERCEDES-BENZ&quot;, &quot;Approved OEM&quot;,
+&quot;NISSAN&quot;, &quot;Approved OEM&quot;,
+&quot;TOYOTA&quot;, &quot;Approved OEM&quot;,
+/*&quot;VOLVO&quot;, &quot;Approved OEM&quot;,*/
+&quot;VOLKSWAGEN&quot;, &quot;Approved OEM&quot;,
+&quot;OEM Not Approved&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OEM Filter</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

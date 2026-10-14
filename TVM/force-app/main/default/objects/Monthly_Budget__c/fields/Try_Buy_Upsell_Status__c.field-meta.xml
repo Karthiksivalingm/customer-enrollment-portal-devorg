@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Try_Buy_Upsell_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Portal_or_Primary_Website__c != &quot;Primary&quot;, &quot;99 Try &amp; Buy Ineligible&quot;,
+if(PP_Credit_Prequal_Active__c &amp;&amp; PP_Apollo_Assistant_AI_Active__c &amp;&amp; PP_VDV_Plus_Active__c, &quot;99 Try &amp; Buy Ineligible&quot;,
+if(PP_Credit_Prequal_Active__c &amp;&amp; PP_Apollo_Assistant_AI_Active__c, &quot;03 VDV Only&quot;, 
+if(PP_Credit_Prequal_Active__c &amp;&amp; PP_VDV_Plus_Active__c, &quot;03 Assistant Only&quot;, 
+if(PP_VDV_Plus_Active__c &amp;&amp; PP_Apollo_Assistant_AI_Active__c, &quot;03 PreQual Only&quot;, 
+
+if(PP_Credit_Prequal_Active__c, &quot;02 Assistant &amp; VDV&quot;,
+if(PP_Apollo_Assistant_AI_Active__c, &quot;02 PreQual &amp; VDV&quot;,
+if(PP_Credit_Prequal_Active__c, &quot;02 Assistant &amp; PreQual&quot;,
+&quot;01 Bundle Eligible&quot;
+))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Try &amp; Buy Upsell Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RPM_Assessment_Score_Grade__c</fullName>
+    <description>FND</description>
+    <externalId>false</externalId>
+    <formula>IF( AND(RPM_Assessment_Score__c &gt;= 0 ,  RPM_Assessment_Score__c &lt;= 40), &apos;D&apos;, 
+IF( AND(RPM_Assessment_Score__c &gt; 40 ,RPM_Assessment_Score__c &lt;= 60), &apos;C&apos;, 
+IF( AND(RPM_Assessment_Score__c &gt; 60 ,RPM_Assessment_Score__c &lt;= 80), &apos;B&apos;,
+IF( AND(RPM_Assessment_Score__c &gt; 80 , RPM_Assessment_Score__c &lt;= 100), &apos;A&apos;, &apos;&apos;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RPM Assessment Score Grade</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

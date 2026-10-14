@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <label>Stage</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Preq</fullName>
+                <default>false</default>
+                <label>Preq</label>
+            </value>
+            <value>
+                <fullName>Copywriter</fullName>
+                <default>false</default>
+                <label>Copywriter</label>
+            </value>
+            <value>
+                <fullName>Script PC Proofing</fullName>
+                <default>false</default>
+                <label>Script PC Proofing</label>
+            </value>
+            <value>
+                <fullName>Script Client Approval</fullName>
+                <default>false</default>
+                <label>Script Client Approval</label>
+            </value>
+            <value>
+                <fullName>Script Compliance Approval</fullName>
+                <default>false</default>
+                <label>Script Compliance Approval</label>
+            </value>
+            <value>
+                <fullName>Upload Compliance Approved Script</fullName>
+                <default>false</default>
+                <label>Upload Compliance Approved Script</label>
+            </value>
+            <value>
+                <fullName>Order VO</fullName>
+                <default>false</default>
+                <label>Order VO</label>
+            </value>
+            <value>
+                <fullName>AV Production</fullName>
+                <default>false</default>
+                <label>AV Production</label>
+            </value>
+            <value>
+                <fullName>Final Proofing</fullName>
+                <default>false</default>
+                <label>Final Proofing</label>
+            </value>
+            <value>
+                <fullName>Media Trafficking</fullName>
+                <default>false</default>
+                <label>Media Trafficking</label>
+            </value>
+            <value>
+                <fullName>Media Prep</fullName>
+                <default>false</default>
+                <label>Media Prep</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Client Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client Approval</label>
+            </value>
+            <value>
+                <fullName>Compliance Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Compliance Approval</label>
+            </value>
+            <value>
+                <fullName>Deploy Collateral</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deploy Collateral</label>
+            </value>
+            <value>
+                <fullName>Deploy Dealer Monthly Logo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deploy Dealer Monthly Logo</label>
+            </value>
+            <value>
+                <fullName>Deploy Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deploy Email</label>
+            </value>
+            <value>
+                <fullName>Deploy Web Banner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deploy Web Banner</label>
+            </value>
+            <value>
+                <fullName>Design</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Design</label>
+            </value>
+            <value>
+                <fullName>Final Client Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Final Client Approval</label>
+            </value>
+            <value>
+                <fullName>Get Print Ready</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Get Print Ready</label>
+            </value>
+            <value>
+                <fullName>PC Proofing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PC Proofing</label>
+            </value>
+            <value>
+                <fullName>Proofing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proofing</label>
+            </value>
+            <value>
+                <fullName>Send Print Ad</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Send Print Ad</label>
+            </value>
+            <value>
+                <fullName>Sent for Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sent for Approval</label>
+            </value>
+            <value>
+                <fullName>Submission</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Submission</label>
+            </value>
+            <value>
+                <fullName>Traffic</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Traffic</label>
+            </value>
+            <value>
+                <fullName>Upload to Apollo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Upload to Apollo</label>
+            </value>
+            <value>
+                <fullName>Video Ad Purchased</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Video Ad Purchased</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <controllingFieldValue>Copy Creation</controllingFieldValue>
+            <valueName>Preq</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <controllingFieldValue>Copy Creation</controllingFieldValue>
+            <valueName>Copywriter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <controllingFieldValue>Copy Creation</controllingFieldValue>
+            <valueName>Script PC Proofing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <controllingFieldValue>Copy Creation</controllingFieldValue>
+            <valueName>Script Client Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <controllingFieldValue>Copy Creation</controllingFieldValue>
+            <valueName>Script Compliance Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <controllingFieldValue>Copy Creation</controllingFieldValue>
+            <valueName>Upload Compliance Approved Script</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <controllingFieldValue>Copy Creation</controllingFieldValue>
+            <valueName>Order VO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <valueName>AV Production</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <valueName>Final Proofing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <valueName>Media Trafficking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radio</controllingFieldValue>
+            <controllingFieldValue>Video</controllingFieldValue>
+            <valueName>Media Prep</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_Onboarding__c</fullName>
+    <formula>/*TASKRAY__trOnboardingKickoffCompleted__c=false &amp;&amp;*/
+ No_Onboarding_Needed__c =false &amp;&amp;
+ IsClosed</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Needs Onboarding</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Formula_6__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Opportunity_Product_6__r.Id), &quot;&quot;, &quot;Product 6: &quot; &amp;  Opportunity_Product_6__r.Contract_Product_Name__c &amp; &quot; Retail: $&quot; &amp;  TEXT(Opportunity_Product_6__r.ListPrice) &amp; &quot; Requested Price: $&quot; &amp; TEXT( Requested_Discounted_Selling_Price_6__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Formula 6</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

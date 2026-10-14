@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overall_Product_Group__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(
+    Full_CXP__c!=&quot;No&quot;, &quot;01 - Full CXP&quot;, 
+if(
+    MC_Digital__c=false &amp;&amp; MC_Retention__c &amp;&amp; MC_Website__c=false, 
+        If(Category_Sales_Retention_Active__c || Category_Service_Retention_Active__c, &quot;03 - Retention Only&quot;, &quot;05 - Mail Only&quot;),
+if(
+    MC_Digital__c &amp;&amp; (Category_Sales_Retention_Active__c || Category_Service_Retention_Active__c), &quot;05 - Digital &amp; Retention&quot;,
+if(
+    (Category_Sales_Retention_Active__c || Category_Service_Retention_Active__c) &amp;&amp; MC_Website__c, &quot;05 - Retention &amp; Website&quot;,
+if(
+    MC_Digital__c &amp;&amp; MC_Website__c, &quot;05 - Digital &amp; Website&quot;,
+if(
+    MC_Digital__c &amp;&amp; (Category_Sales_Retention_Active__c || Category_Service_Retention_Active__c)=false, &quot;02 - Digital Only&quot;,
+if(
+    MC_Website__c, &quot;04 - Website Only - &quot;&amp;Portal_or_Primary_Website__c,
+if(
+    PP_OTT_Dynamic_Active__c || PP_OTT_Dynamic_Active__c, &quot;06 - OTT Only&quot;,
+    &quot;Other&quot;
+))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Overall Product Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

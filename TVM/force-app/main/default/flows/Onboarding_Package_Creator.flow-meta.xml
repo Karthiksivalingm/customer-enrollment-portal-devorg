@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>Reload</name>
+        <label>Reload</label>
+        <locationX>314</locationX>
+        <locationY>1514</locationY>
+        <actionName>c:ReloadPage</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>c:ReloadPage</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Account_Vars</name>
+        <label>Set Account Vars</label>
+        <locationX>314</locationX>
+        <locationY>1190</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Account.Latest_Onboarding_Pack_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NewOnboardingPackId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Account.TVM_Website_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Primary_or_Portal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Final_Account_Update</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Creative_choice</name>
+        <choiceText>Creative</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Creative</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Digital_choice</name>
+        <choiceText>Digital</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Digital</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoDigital_choice</name>
+        <choiceText>No Digital</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No Digital</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoProduction_choice</name>
+        <choiceText>No Production</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No Production</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NotAvailable</name>
+        <choiceText>Not Available</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Not Available</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>OB_Choice</name>
+        <choiceText>Onboarding Tasks Will Be Created</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Onboarding Tasks Will Be Created</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Portal_choice</name>
+        <choiceText>Portal Website</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Portal Website</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>PortalWebsite_choice</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Portal Website&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Portal Website</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Primary_Choice</name>
+        <choiceText>Primary Website</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Primary Website</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>PrimaryWebsite_choice</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Primary Website&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Primary Website</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Production_choice</name>
+        <choiceText>Production</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Production</stringValue>
+        </value>
+    </choices>
+    <constants>
+        <name>CourtneyBartsch</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>0055f000007vAzqAAE</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>JamieHarris</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>0055f00000EfZt1AAF</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>KambriaCarlson</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>005Vb000000qOW5IAM</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>StephenRasmussen</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>0055f00000D1jvRAAR</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Test</name>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Duplicate_Found</name>
+        <label>Duplicate Found?</label>
+        <locationX>182</locationX>
+        <locationY>974</locationY>
+        <defaultConnector>
+            <targetReference>Create_Onboarding_Package</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Pack Yet</defaultConnectorLabel>
+        <rules>
+            <name>Pack_Already_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Onboarding_Pack_Duplicate_Check</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error2</targetReference>
+            </connector>
+            <label>Pack Already Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Non_Admin_Selecting_Website</name>
+        <label>Non Admin Selecting Website?</label>
+        <locationX>182</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Onboarding_Pack_Duplicate_Check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>test2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Test</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Test_Screen</targetReference>
+            </connector>
+            <label>test</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OBRecord_Error_Gate</name>
+        <label>OBRecord Error Gate</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error</defaultConnectorLabel>
+        <rules>
+            <name>Good_to_Go</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Most_Recent_Onboarding_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen_0</targetReference>
+            </connector>
+            <label>Good to Go</label>
+        </rules>
+    </decisions>
+    <description>Obj Onboarding Package | Screenflow | Main Highest-Level Creator</description>
+    <dynamicChoiceSets>
+        <name>FD_Package_Picklist_Choices</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>FD_Package__c</picklistField>
+        <picklistObject>Account</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>OnboardingUsers</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Profile_Name__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Onboarding</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Profile_Name__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Apollo Websites Support</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>mhaberli@teamvelocitymarketing.com</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>jmartinez@teamvelocitymarketing.com</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>atucker@teamvelocitymarketing.com</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>lbiengardo@teamvelocitymarketing.com</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>ksagona@teamvelocitymarketing.com</stringValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <name>AdminUser</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!$Profile.Name} = &quot;System Administrator&quot;,
+{!$User.Full_Name_Formula__c} = &quot;Kate Wessling&quot;,
+{!Get_Account.Onboarding_Team__r.Name} = &quot;Pink&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CreateProduction</name>
+        <dataType>Boolean</dataType>
+        <expression>TRUE</expression>
+    </formulas>
+    <formulas>
+        <name>Date00DealerSetup</name>
+        <dataType>Date</dataType>
+        <expression>IF(CONTAINS({!Status00DealerSetup}, &quot;Not Executing&quot;), TODAY(), NULL)</expression>
+    </formulas>
+    <formulas>
+        <name>FordDirect_Package</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!Get_Account.FD_Package__c}) = &quot;&quot;, &quot;&quot;, TEXT({!Get_Account.FD_Package__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>IgnoreComplianceAccess</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR(
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;CHEVROLET&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BUICK&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GMC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BUICK GMC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;JAGUAR&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LAND ROVER&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LEXUS&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GM&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GROUP&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;USED&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;PREOWNED&quot;
+),
+true, false
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IgnoreWebsiteSubmissionCompliance</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR(
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;ALFA ROMEO&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;AUDI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BMW&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;BUICK&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;CADILLAC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;CHEVROLET&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;FORD&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GMC&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;INFINITI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;JAGUAR&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LAND ROVER&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LEXUS&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LINCOLN&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;MASERATI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;MINI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;MITSUBISHI&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;PORSCHE&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;SUBARU&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;STELLANTIS&quot;,
+TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;VOLVO&quot;
+),
+true, 
+false
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IsFordDirect</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;FORD&quot; || TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;LINCOLN&quot;, TRUE, FALSE)</expression>
+    </formulas>
+    <formulas>
+        <name>IsWebsitePackage</name>
+        <dataType>Boolean</dataType>
+        <expression>CONTAINS({!OB_PAckage_Types_V2}, &quot;Website&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>OB_Pack_Type_Text</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE({!OB_PAckage_Types_V2}, &quot;;&quot;, &quot;,&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>This creates a Multiselect Picklist input</description>
+        <name>OB_PAckage_Types_V2</name>
+        <dataType>String</dataType>
+        <expression>&quot;Production&quot; &amp;
+IF({!Digital} = &quot;Digital&quot;, &quot;; Digital&quot;, &quot;&quot;) &amp;
+  IF( {!Website_radioButtons} = &quot;Not Available&quot;, &quot;&quot;,  &quot;; &quot; &amp; {!Website_radioButtons})</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatus_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;08 Onboarding Not Started&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatus_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;08 Onboarding Not Started&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+             &quot;09 Not Executing&quot;)
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatusLookup_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;a34Vb00000B8OQPIA3&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>OD_Web_StartingStatusLookup_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQPIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+             &quot;a34Vb00000B8OQSIA3&quot;)
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Onboarding_Package_s_Selected</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE({!OB_PAckage_Types_V2}, &quot;;&quot;, &quot;, &quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Primary_or_Portal</name>
+        <dataType>String</dataType>
+        <expression>IF({!Website_radioButtons} = &quot;Primary Website&quot;, &quot;Primary&quot;, &quot;Portal&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatus_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;01 QC Not Started&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatus_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;01 QC Not Started&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+        &quot;09 Not Executing&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatusLookup_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;a34Vb00000BHmJdIAL&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>Qc_Web_StartingStatusLookup_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000BHmJdIAL&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        &quot;a34Vb00000B8OQSIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status00DealerSetup</name>
+        <dataType>String</dataType>
+        <expression>if(TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GROUP&quot;, &quot;09 Not Executing&quot;,
+&quot;05 Production Not Started&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Status01Build_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;01 WIM Not Started&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>Status01Build_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;), &quot;01 WIM Not Started&quot;, &quot;09 Not Executing&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Status01EmailCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;05 Production Not Started&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;05 Production Not Started&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;05 Production Not Started&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status02EmailAdmin</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;06 Information Needed&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;06 Information Needed&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status03ComplianceAccountSetup</name>
+        <dataType>String</dataType>
+        <expression>if({!IgnoreComplianceAccess}, &quot;09 Not Executing&quot;, &quot;05 Compliance Not Started&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Status04ABrandDiffBanners</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+            Case({!FordDirect_Package},
+            &quot;Platform Solutions&quot;, &quot;06 Information Needed&quot;,
+            &quot;1:1 Messaging&quot;, &quot;09 Not Executing&quot;,
+             &quot;06 Information Needed&quot;)
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status04BBrandDiffEmailFreeSpace</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;06 Information Needed&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;06 Information Needed&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status05BonusOfferCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;06 Information Needed&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;06 Information Needed&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status06GeneralSalesServiceOffersCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;06 Information Needed&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;09 Not Executing&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;09 Not Executing&quot;,
+            Case({!FordDirect_Package},
+            &quot;Platform Solutions&quot;, &quot;06 Information Needed&quot;,
+            &quot;1:1 Messaging&quot;, &quot;09 Not Executing&quot;,
+             &quot;06 Information Needed&quot;)
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status07Mailcreativerequested</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;08 Onboarding Not Started&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;08 Onboarding Not Started&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;09 Not Executing&quot;,
+            &quot;08 Onboarding Not Started&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Status08WebsiteGoingLive</name>
+        <dataType>String</dataType>
+        <expression>&quot;09 Not Executing&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup00DealerSetup</name>
+        <dataType>String</dataType>
+        <expression>if(TEXT({!Get_Account.Analytics_Franchise__c}) = &quot;GROUP&quot;, &quot;a34Vb00000B8OQSIA3&quot;,
+&quot;a34Vb00000B8OQDIA3&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup01Build_Portal</name>
+        <dataType>String</dataType>
+        <expression>&quot;a34Vb00000BDyT3IAL&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup01Build_Primary</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;), &quot;a34Vb00000BDyT3IAL&quot;, &quot;a34Vb00000B8OQSIA3&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup01EmailCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Website&quot;),
+    &quot;a34Vb00000B8OQDIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Creative&quot;),
+        &quot;a34Vb00000B8OQDIA3&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQDIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup02EmailAdmin</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQEIA3&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQEIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup03ComplianceAccountSetup</name>
+        <dataType>String</dataType>
+        <expression>if({!IgnoreComplianceAccess}, &quot;a34Vb00000B8OQSIA3&quot;, &quot;a34Vb00000B8OQHIA3&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup04ABrandDiffBanners</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+            Case({!FordDirect_Package},
+            &quot;Platform Solutions&quot;, &quot;a34Vb00000B8OQEIA3&quot;,
+            &quot;1:1 Messaging&quot;, &quot;a34Vb00000B8OQSIA3&quot;,
+             &quot;a34Vb00000B8OQEIA3&quot;)
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup04BBrandDiffEmailFreeSpace</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQEIA3&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQEIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup05BonusOfferCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQEIA3&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQEIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup06GeneralSalesServiceOffersCreative</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQEIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+        IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+        &quot;a34Vb00000B8OQSIA3&quot;,
+            Case({!FordDirect_Package},
+            &quot;Platform Solutions&quot;, &quot;a34Vb00000B8OQEIA3&quot;,
+            &quot;1:1 Messaging&quot;, &quot;a34Vb00000B8OQSIA3&quot;,
+             &quot;a34Vb00000B8OQEIA3&quot;)
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StatusLookup07Mailcreativerequested</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!OB_PAckage_Types_V2}, &quot;Primary Website&quot;),
+    &quot;a34Vb00000B8OQPIA3&quot;,
+    IF(
+        CONTAINS({!OB_PAckage_Types_V2}, &quot;Production&quot;),
+        &quot;a34Vb00000B8OQPIA3&quot;,
+        IF(
+            CONTAINS({!OB_PAckage_Types_V2}, &quot;Digital&quot;),
+            &quot;a34Vb00000B8OQSIA3&quot;,
+            &quot;a34Vb00000B8OQPIA3&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Onboarding Package - Creator {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>OB Package - Creator</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Onboarding_Package</name>
+        <label>Create Onboarding Package</label>
+        <locationX>314</locationX>
+        <locationY>1082</locationY>
+        <assignRecordIdToReference>NewOnboardingPackId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Set_Account_Vars</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ProjectName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Director__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Package_TypeVtwo__c</field>
+            <value>
+                <elementReference>OB_PAckage_Types_V2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Package_Type_Text__c</field>
+            <value>
+                <elementReference>OB_Pack_Type_Text</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Product_Specialist__c</field>
+            <value>
+                <elementReference>JamieHarris</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Product_Strategist__c</field>
+            <value>
+                <elementReference>CourtneyBartsch</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding_Team__c</field>
+            <value>
+                <elementReference>Get_Account.Onboarding_Team__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Onboarding__c</field>
+            <value>
+                <elementReference>Get_Most_Recent_Onboarding_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Creator__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Staging_URL__c</field>
+            <value>
+                <elementReference>Get_Most_Recent_Onboarding_Record.STAGING_DOMAIN__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>URL__c</field>
+            <value>
+                <elementReference>Get_Most_Recent_Onboarding_Record.PRIMARY_DOMAIN__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Website_Implementation_Manager__c</field>
+            <value>
+                <elementReference>Get_Account.Website_Implementation_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Onboarding_Package__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>380</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Most_Recent_Onboarding_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Most_Recent_Onboarding_Record</name>
+        <label>Get Most Recent Onboarding Record</label>
+        <locationX>380</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OBRecord_Error_Gate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsComplete__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Onboarding__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Onboarding_Pack_Duplicate_Check</name>
+        <label>Onboarding Pack Duplicate Check</label>
+        <locationX>182</locationX>
+        <locationY>866</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Duplicate_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Onboarding__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Most_Recent_Onboarding_Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Completion_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Onboarding_Package__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Final_Account_Update</name>
+        <label>Final Account Update</label>
+        <locationX>314</locationX>
+        <locationY>1298</locationY>
+        <connector>
+            <targetReference>Fin_Screen</targetReference>
+        </connector>
+        <inputReference>Get_Account</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>Error2</name>
+        <label>Error2</label>
+        <locationX>50</locationX>
+        <locationY>1082</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Disp_Error2</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;There is already a Creative Onboarding Package. &lt;strong&gt;Please click &quot;next&quot; select another Type.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;To go to the existing Creative Onboarding Package &lt;/strong&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Onboarding_Package__c/{!Onboarding_Pack_Duplicate_Check.Id}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;click here.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>NoOppsFound</name>
+            <fieldText>&lt;p&gt;Something has gone wrong, please reach out to help channel with a link to this account.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Fin_Screen</name>
+        <label>Fin Screen</label>
+        <locationX>314</locationX>
+        <locationY>1406</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Reload</targetReference>
+        </connector>
+        <fields>
+            <name>Disp_Fin</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;Onboarding Package created! &lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Onboarding_Package__c/{!NewOnboardingPackId}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Click here&lt;/a&gt; to go to the new package.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_0</name>
+        <label>Screen 0</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Non_Admin_Selecting_Website</targetReference>
+        </connector>
+        <fields>
+            <name>Screen_0_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_0_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>DispalayProduction</name>
+                    <choiceReferences>Production_choice</choiceReferences>
+                    <choiceReferences>NoProduction_choice</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultSelectedChoiceReference>Production_choice</defaultSelectedChoiceReference>
+                    <fieldText>Production</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Disp_1_Screen_0</name>
+                    <fieldText>&lt;p&gt;*Production assets are included in every Onboarding Package&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Onboarding_radios</name>
+                    <choiceReferences>OB_Choice</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultSelectedChoiceReference>OB_Choice</defaultSelectedChoiceReference>
+                    <fieldText>Onboarding</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>5</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_0_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Website_radioButtons</name>
+                    <choiceReferences>Primary_Choice</choiceReferences>
+                    <choiceReferences>Portal_choice</choiceReferences>
+                    <choiceReferences>NotAvailable</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultSelectedChoiceReference>NotAvailable</defaultSelectedChoiceReference>
+                    <fieldText>Website</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>Get_Account.FD_Package__c</objectFieldReference>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>IsFordDirect</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_0_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Digital</name>
+                    <choiceReferences>Digital_choice</choiceReferences>
+                    <choiceReferences>NoDigital_choice</choiceReferences>
+                    <choiceReferences>NotAvailable</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultSelectedChoiceReference>NotAvailable</defaultSelectedChoiceReference>
+                    <fieldText>Digital</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Test_Screen</name>
+        <label>Test Screen</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Onboarding_Pack_Duplicate_Check</targetReference>
+        </connector>
+        <fields>
+            <name>disp_Test</name>
+            <fieldText>&lt;p&gt;Type Formula: {!OB_PAckage_Types_V2}&lt;/p&gt;&lt;p&gt;Status01EmailCreative: {!Status01EmailCreative}&lt;/p&gt;&lt;p&gt;{!Primary_or_Portal}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Website Bool: {!IsWebsitePackage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>CompleteStaffPage_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;KW to update with current process info&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;&quot;If dealer has a staff page, or wants, one, we will need to:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;1) Create a staff folder in Image Library &amp;gt; 01 Banner Images &amp;gt; 01. Primary Sites &amp;gt; 00. Dealer. &amp;gt; Dealer Name &amp;gt; Staff (this will be the new folder you create)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;2) Go to the staff page on existing site and pull all images, names, titles, etc. (Right click on the image and select &quot;&quot;save image as&quot;&quot; - can only download in jpeg or png format. If the image downloads in webp format, I recommend this nifty extension for Chrome: https://chrome.google.com/webstore/detail/save-image-as-png/nkokmeaibnajheohncaamjggkanfbphi?hl=en. 3) Make sure the staff images are no larger than 230x230 - can be smaller than this, but if they&apos;re larger, it will throw off the layout of the page.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;4) Upload all staff images to the folder you created in step 1 above. (i know)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;5) Go to Content Management &amp;gt; Staff Members and click &quot;&quot;Add New Staff Member&quot;&quot;. NOTE: 99% of the time you won&apos;t have to worry about the &quot;&quot;Add New Staff Category&quot;&quot; option, as most staff categories are already available when you go to tadd the new staff member.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;6) Enter name, role, and select category from the dropdown. Use the image select option to navigate to your staff images folder and select the corresponding image. (PRO TIP: If you have multiple screens, put Apollo on one screen and the dealer&apos;s existing staff page on the other and then just copy/paste the info.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;7) Repeat step 6 for all staff members (i know...).&quot;&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DealerManagedGoogleAnalyticsProcessforPrimaryWebsites2025INTERNAL_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1o5tT778bdxLCc5oGSYx22ZRXd3qT-_Us-AkiNh2UtY8/edit?pli=1&amp;amp;tab=t.0#heading=h.9g5cfkqw5kdt&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Dealer Managed Google Analytics Process for Primary Websites - 2025 - (INTERNAL)&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>GettingStartedCallPrimaryWebsiteSection_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;Dedicate at least 15 minutes of GSC to website to go over: go dark/go live date, access to domain registrar, whether or not a zone file is needed, website tools, design selection (reference OEM guidelines) and set general expectations&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm Website Tools &amp;amp; Integrations: Digital Retailing, Finance Application, Value Trade, Service Scheduler, Chat / Text, etc. Do any integrations need to be set up such as xTime, DealerTrack, RouteOne, etc.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm if we should copy current SRP &amp;amp; VDP disclaimers&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm if any scripts such as GTM, ComplyAuto, tracking pixels, etc. will need to be moved to the new site&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm Domain registrar access&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Confirm Primary Domain &amp;amp; any other domains that need to be pointed&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Review OEM approved website designs&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Discuss any specific requirements for the new website&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;- Set Target Website Review Date&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>GuidetoSubmittingTestLeads2025_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1UJJHWZ8BK11aJFA2FfGayXUeBfnPmIgakZc8yT_uDmI/edit?tab=t.0&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Guide to Submitting Test Leads - 2025&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NewProdBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;A new Onboarding Package was just created for {!Get_Account.Name}. Please go assign the workers.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Onboarding_Package__c/{!NewOnboardingPackId}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Click here to go to the Onboarding Package&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Report/00O5f000008SYBdEAO/view?queryScope=userFolders&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Click here to go to the Onboarding Creative report&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>PrimaryWebsiteLaunchInstructions2025_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1KBDOfe5Rn3XAaQppQLvllhsE9R6TzBHL9TPUZ5Ms4x0/edit?tab=t.0#heading=h.vl9dbpdthsm2&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Primary Website Launch Instructions 2025&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ProjectName</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!Get_Account.Name} {!$Flow.CurrentDate}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ScheduleWebsiteLaunchwDealerandTeamVIT_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;Schedule website launch call with Dealer and make sure to include Kate and IT (PJ/Joseph/Jim). Zoom is preferred! NOTE: WE DO NOT LAUNCH SITES ON FRIDAYS!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&quot;&gt;On launch call, confirm lead email addresses are correct and in place and all hours are correct.&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>WebsiteGettingStartedCallResearchHowTo_description</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1fHn78LeeY-uaf_DBXN-uT57gtxrJtgZJP3WfUcjZw_Y/edit?tab=t.0&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Website Getting Started Call Research How To&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>CreatedTaskGroupId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewOnboardingPackId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewProjectTaskId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewTgId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

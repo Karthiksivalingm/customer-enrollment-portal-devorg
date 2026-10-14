@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Closed_Email_Alert</name>
+        <label>Send Closed Email Alert</label>
+        <locationX>402</locationX>
+        <locationY>3131</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Approved</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.CreatedBy.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply@salesforce.teamvelocitymarketing.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>RR_Closed_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Approved_Denied_body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Alert</name>
+        <label>Send Email Alert</label>
+        <locationX>182</locationX>
+        <locationY>4055</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.CreatedBy.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply@salesforce.teamvelocitymarketing.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Approved_Denied_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Approved_Denied_body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Store_New_CR_Vars</name>
+        <label>Store New CR Vars</label>
+        <locationX>572</locationX>
+        <locationY>1847</locationY>
+        <assignmentItems>
+            <assignToReference>NewCR</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_New_CR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewCR.Rush_Request__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_CR</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Time_Threshold_Error</name>
+        <label>Time Threshold Error</label>
+        <locationX>803</locationX>
+        <locationY>947</locationY>
+        <connector>
+            <targetReference>Creative_Request_Changed</targetReference>
+        </connector>
+        <customErrorMessages>
+            <errorMessage>Please select a date &amp; time at least 2 hours from now.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Approval_Status</name>
+        <label>Approval Status?</label>
+        <locationX>726</locationX>
+        <locationY>1331</locationY>
+        <defaultConnector>
+            <targetReference>Assigned_External_and_already_Approved</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Approved</defaultConnectorLabel>
+        <rules>
+            <name>Approved2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Was_the_an_Old_CR</targetReference>
+            </connector>
+            <label>Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Approved</name>
+        <label>Approved?</label>
+        <locationX>534</locationX>
+        <locationY>3323</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Rescinded</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Creative_Request</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes, Approved</label>
+        </rules>
+        <rules>
+            <name>No_Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_RR</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>No, Rejected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Approved_Assigned_Record_Changed</name>
+        <label>Approved &amp; Assigned Record Changed?</label>
+        <locationX>534</locationX>
+        <locationY>2615</locationY>
+        <defaultConnector>
+            <targetReference>Send_Closed_Slack_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Record_Altered_send_Updates</name>
+            <conditionLogic>4 AND (1 OR 2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Mail_Strategy__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Production_Notes__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Request_Needed_By__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Original_Slack_DM_Timestamp__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Changed_DM</targetReference>
+            </connector>
+            <label>Yes Record Altered, send Updates</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assigned_External_and_already_Approved</name>
+        <label>Assigned (External) and already Approved?</label>
+        <locationX>534</locationX>
+        <locationY>2315</locationY>
+        <defaultConnector>
+            <targetReference>Approved_Assigned_Record_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Send_slack</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Designer_Outside_SF__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Approval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Initial_DM</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes, Send slack to external User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Created_or_Updated</name>
+        <label>Created or Updated?</label>
+        <locationX>534</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Mark_Mail_rush_complete</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Updated</defaultConnectorLabel>
+        <rules>
+            <name>Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Message_Slack_Channel_1</targetReference>
+            </connector>
+            <label>Created</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Creative_Request</name>
+        <label>Creative Request?</label>
+        <locationX>182</locationX>
+        <locationY>3431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_CR</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Request_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Creative Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Escalate_CR</targetReference>
+            </connector>
+            <label>Yes, CR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Creative_Request_Changed</name>
+        <label>Creative Request Changed?</label>
+        <locationX>891</locationX>
+        <locationY>1223</locationY>
+        <defaultConnector>
+            <targetReference>Assigned_External_and_already_Approved</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Creative_Request__r.Id</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Approval_Status</targetReference>
+            </connector>
+            <label>Yes, Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Date_or_Time_Changed</name>
+        <label>Date or Time Changed?</label>
+        <locationX>891</locationX>
+        <locationY>731</locationY>
+        <defaultConnector>
+            <targetReference>Creative_Request_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Changed2</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Request_Needed_By_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Request_Needed_By_Time_EST__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_it_more_than_2_hours_in_the_future</targetReference>
+            </connector>
+            <label>Yes, Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Rescinded</name>
+        <label>Decision Rescinded?</label>
+        <locationX>886</locationX>
+        <locationY>3431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Nullify</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Approved_By__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Date_Time_Approved__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Nullify_User_Time</targetReference>
+            </connector>
+            <label>Yes, Nullify</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_it_more_than_2_hours_in_the_future</name>
+        <label>Is it more than 2 hours in the future?</label>
+        <locationX>715</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Time_Threshold_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Too Soon / in the past</defaultConnectorLabel>
+        <rules>
+            <name>Yes_they_gave_some_time</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsMoreThanTwoHours</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Creative_Request_Changed</targetReference>
+            </connector>
+            <label>Yes, they gave some time</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Mark_Mail_rush_complete</name>
+        <label>Mark Mail rush complete</label>
+        <locationX>891</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Date_or_Time_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>no_Creative_Requests</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Creative_Request__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Date_time</targetReference>
+            </connector>
+            <label>no Creative Requests</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Send_Closed_Slack_Message</name>
+        <label>Send Closed Slack Message</label>
+        <locationX>534</locationX>
+        <locationY>2915</locationY>
+        <defaultConnector>
+            <targetReference>Approved</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>RR_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Original_Slack_DM_Timestamp__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Green_Checkbox</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>RR Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_the_an_Old_CR</name>
+        <label>Is there an Old CR?</label>
+        <locationX>572</locationX>
+        <locationY>1439</locationY>
+        <defaultConnector>
+            <targetReference>Get_New_CR</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Old_one</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Creative_Request__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unmark_Old_CR</targetReference>
+            </connector>
+            <label>Yes Old one</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>ApprovalNotes</name>
+        <dataType>String</dataType>
+        <expression>If(ISBLANK({!$Record.Approval_Notes__c}), &quot;&quot;, &quot;Approval Notes: &quot; &amp; Br() &amp; {!$Record.Approval_Notes__c})</expression>
+    </formulas>
+    <formulas>
+        <name>IsMoreThanTwoHours</name>
+        <dataType>Boolean</dataType>
+        <expression>{!UserSelectedDateTimeConversion} &gt; {!TwoHoursFromNow}</expression>
+    </formulas>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>IsNew()</expression>
+    </formulas>
+    <formulas>
+        <name>TwoHoursFromNow</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() + (2/24)</expression>
+    </formulas>
+    <formulas>
+        <name>UserSelectedDateTimeConversion</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+    TEXT({!$Record.Request_Needed_By_Date__c}) &amp; &quot; &quot; &amp; 
+    CASE({!$Record.Request_Needed_By_Time_EST__c},
+        &quot;8:00 AM&quot;,  &quot;12:00:00&quot;, /* 8 AM EDT = 12:00 GMT */
+        &quot;9:00 AM&quot;,  &quot;13:00:00&quot;, /* 9 AM EDT = 13:00 GMT */
+        &quot;9:30 AM&quot;,  &quot;13:30:00&quot;, /* 9:30 AM EDT = 13:30 GMT */
+        &quot;10:00 AM&quot;, &quot;14:00:00&quot;, /* 10 AM EDT = 14:00 GMT */
+        &quot;10:30 AM&quot;, &quot;14:30:00&quot;, /* 10:30 AM EDT = 14:30 GMT */
+        &quot;11:00 AM&quot;, &quot;15:00:00&quot;, /* 11 AM EDT = 15:00 GMT */
+        &quot;11:30 AM&quot;, &quot;15:30:00&quot;, /* 11:30 AM EDT = 15:30 GMT */
+        &quot;12:00 PM&quot;, &quot;16:00:00&quot;, /* 12 PM EDT = 16:00 GMT */
+        &quot;12:30 PM&quot;, &quot;16:30:00&quot;, /* 12:30 PM EDT = 16:30 GMT */
+        &quot;1:00 PM&quot;,  &quot;17:00:00&quot;, /* 1 PM EDT = 17:00 GMT */
+        &quot;1:30 PM&quot;,  &quot;17:30:00&quot;, /* 1:30 PM EDT = 17:30 GMT */
+        &quot;2:00 PM&quot;,  &quot;18:00:00&quot;, /* 2 PM EDT = 18:00 GMT */
+        &quot;2:30 PM&quot;,  &quot;18:30:00&quot;, /* 2:30 PM EDT = 18:30 GMT */
+        &quot;3:00 PM&quot;,  &quot;19:00:00&quot;, /* 3 PM EDT = 19:00 GMT */
+        &quot;3:30 PM&quot;,  &quot;19:30:00&quot;, /* 3:30 PM EDT = 19:30 GMT */
+        &quot;4:00 PM&quot;,  &quot;20:00:00&quot;, /* 4 PM EDT = 20:00 GMT */
+        &quot;4:30 PM&quot;,  &quot;20:30:00&quot;, /* 4:30 PM EDT = 20:30 GMT */
+        &quot;5:00 PM&quot;,  &quot;21:00:00&quot;, /* 5 PM EDT = 21:00 GMT */
+        &quot;5:30 PM&quot;,  &quot;21:30:00&quot;, /* 5:30 PM EDT = 21:30 GMT */
+        
+
+        &quot;00:00:00&quot; 
+    ) &amp; &quot;.000Z&quot; 
+)
++
+/* 2. Check for Winter (Standard Time) and add 1 Hour if necessary */
+IF(
+    OR(
+        /* Date is BEFORE the start of DST (2nd Sunday in March) */
+        {!$Record.Request_Needed_By_Date__c} &lt; 
+        (DATE(YEAR({!$Record.Request_Needed_By_Date__c}), 3, 14) - 
+        MOD(DATE(YEAR({!$Record.Request_Needed_By_Date__c}), 3, 14) - DATE(1900, 1, 7), 7)),
+        
+        /* Date is AFTER the end of DST (1st Sunday in November) */
+        {!$Record.Request_Needed_By_Date__c} &gt;= 
+        (DATE(YEAR({!$Record.Request_Needed_By_Date__c}), 11, 7) - 
+        MOD(DATE(YEAR({!$Record.Request_Needed_By_Date__c}), 11, 7) - DATE(1900, 1, 7), 7))
+    ),
+    /* If Winter, Add 1 Hour (1 day divided by 24 hours) */
+    1/24, 
+    /* Else (Summer), Add 0 */
+    0
+)</expression>
+    </formulas>
+    <interviewLabel>Rush Request - Created / Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Rush Request - Created / Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_New_CR</name>
+        <label>Get New CR</label>
+        <locationX>572</locationX>
+        <locationY>1739</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Store_New_CR_Vars</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Creative_Request__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Creative_Request__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Close_RR</name>
+        <label>Close RR</label>
+        <locationX>490</locationX>
+        <locationY>3431</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_User_Time</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Escalate_CR</name>
+        <label>Escalate CR</label>
+        <locationX>50</locationX>
+        <locationY>3539</locationY>
+        <connector>
+            <targetReference>Update_Status</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Esclate_Request__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rush_Request__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Creative_Request__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Log_User_Time</name>
+        <label>Log User &amp; Time</label>
+        <locationX>182</locationX>
+        <locationY>3839</locationY>
+        <connector>
+            <targetReference>send_Message_2</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Approved_By__c</field>
+            <value>
+                <elementReference>$User.Full_Name_Formula__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Time_Approved__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Nullify_User_Time</name>
+        <label>Nullify User &amp; Time</label>
+        <locationX>754</locationX>
+        <locationY>3539</locationY>
+        <inputAssignments>
+            <field>Approved_By__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Time_Approved__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Unmark_Old_CR</name>
+        <label>Unmark Old CR</label>
+        <locationX>440</locationX>
+        <locationY>1547</locationY>
+        <connector>
+            <targetReference>Get_New_CR</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.Creative_Request__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Esclate_Request__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rush_Request__c</field>
+        </inputAssignments>
+        <object>Creative_Request__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_CR</name>
+        <label>Update CR</label>
+        <locationX>572</locationX>
+        <locationY>1955</locationY>
+        <connector>
+            <targetReference>Assigned_External_and_already_Approved</targetReference>
+        </connector>
+        <inputReference>NewCR</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Date_time</name>
+        <label>Update Date/time</label>
+        <locationX>759</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Date_or_Time_Changed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Time_Closed__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status</name>
+        <label>Update Status</label>
+        <locationX>182</locationX>
+        <locationY>3731</locationY>
+        <connector>
+            <targetReference>Log_User_Time</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>408</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Created_or_Updated</targetReference>
+        </connector>
+        <object>Rush_Request__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Message_Slack_Channel_1</name>
+        <label>Message Slack Channel 1</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Assigned_External_and_already_Approved</targetReference>
+        </connector>
+        <flowName>Slack_Rush_Request_Messanger</flowName>
+        <inputAssignments>
+            <name>MessageType</name>
+            <value>
+                <stringValue>Regular</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RR_ID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Send_Changed_DM</name>
+        <label>Send Changed DM</label>
+        <locationX>402</locationX>
+        <locationY>2723</locationY>
+        <connector>
+            <targetReference>Send_Closed_Slack_Message</targetReference>
+        </connector>
+        <flowName>Slack_Rush_Request_Messanger</flowName>
+        <inputAssignments>
+            <name>MessageType</name>
+            <value>
+                <stringValue>DM2</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RR_ID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Send_Green_Checkbox</name>
+        <label>Send Green Checkbox DM</label>
+        <locationX>402</locationX>
+        <locationY>3023</locationY>
+        <connector>
+            <targetReference>Send_Closed_Email_Alert</targetReference>
+        </connector>
+        <flowName>Slack_Rush_Request_Messanger</flowName>
+        <inputAssignments>
+            <name>MessageType</name>
+            <value>
+                <stringValue>Complete_DM</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RR_ID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Send_Initial_DM</name>
+        <label>Send Initial DM</label>
+        <locationX>402</locationX>
+        <locationY>2423</locationY>
+        <connector>
+            <targetReference>Approved_Assigned_Record_Changed</targetReference>
+        </connector>
+        <flowName>Slack_Rush_Request_Messanger</flowName>
+        <inputAssignments>
+            <name>MessageType</name>
+            <value>
+                <stringValue>DM1</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RR_ID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>send_Message_2</name>
+        <label>send Message 2</label>
+        <locationX>182</locationX>
+        <locationY>3947</locationY>
+        <connector>
+            <targetReference>Send_Email_Alert</targetReference>
+        </connector>
+        <flowName>Slack_Rush_Request_Messanger</flowName>
+        <inputAssignments>
+            <name>MessageType</name>
+            <value>
+                <stringValue>Check</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RR_ID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>Approved_Denied_body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Your Rush Request &lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Rush_Request__c/{!$Record.Id}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!$Record.Name}&lt;/a&gt; for {!$Record.Dealership__r.Name} was {!$Record.Approval__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Approval Notes:&lt;/p&gt;&lt;p&gt;{!$Record.Approval_Notes__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Approved_Denied_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Your Rush Request was {!$Record.Approval__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Closed_Body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Your Rush Request&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Rush_Request__c/%7B!$Record.Id%7D/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;background-color: rgb(255, 255, 255); color: rgb(11, 92, 171);&quot;&gt;{!$Record.Name}&lt;/a&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;for {!$Record.Dealership__r.Name} is finished!&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>RR_Closed_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Rush Request for {!$Record.Dealership__r.Name} Completed</text>
+    </textTemplates>
+    <variables>
+        <name>NewCR</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Creative_Request__c</objectType>
+    </variables>
+    <variables>
+        <name>testText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

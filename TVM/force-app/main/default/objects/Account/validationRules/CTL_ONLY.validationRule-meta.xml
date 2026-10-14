@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTL_ONLY</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(VP_of_Client_Services__c ) &amp;&amp;
+VP_of_Client_Services__r.Profile.Name != &quot;System Administrator&quot; &amp;&amp;
+VP_of_Client_Services__c != &quot;&quot; &amp;&amp;
+VP_of_Client_Services__r.Profile.Name != &quot;Client Team Lead&quot; &amp;&amp; VP_of_Client_Services__r.Profile.Name != &quot;VP of Retention&quot;&amp;&amp; VP_of_Client_Services__r.Client_Team_Lead_Override__c = false &amp;&amp;
+ VP_of_Client_Services__r.Email !=&quot;support@foundationdirect.com&quot;</errorConditionFormula>
+    <errorDisplayField>VP_of_Client_Services__c</errorDisplayField>
+    <errorMessage>You&apos;ve chosen a user that isn&apos;t Client Team Lead.  Please reach out to SF Admins to add the override or update the profile to &quot;Client Team Lead&quot;</errorMessage>
+</ValidationRule>

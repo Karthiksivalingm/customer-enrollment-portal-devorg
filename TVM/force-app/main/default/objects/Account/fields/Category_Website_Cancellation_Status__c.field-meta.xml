@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_Website_Cancellation_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>if((Category_Website_Cancelled_Date__c&gt;=Date(2020,1,1)||Category_Website_Recent_Start_Date__c&gt;=Date(2020,1,1)) &amp;&amp; Text(Client_Type_Team_V__c)!=&quot;Active&quot;, 
+&quot;01 Website &amp; Account Cancelled&quot;,
+
+if(Category_Website_Cancelled_Date__c&gt;=Date(2020,1,1), 
+&quot;02 Website Product Cancelled&quot;,
+
+if(Category_Website_Recent_Start_Date__c&gt;=Date(2020,1,1), 
+&quot;03 Website Product Active&quot;, 
+
+if(Text(Client_Type_Team_V__c )!=&quot;Active&quot;,
+&quot;05 Client Inactive&quot;,
+
+&quot;04 Active Client No Website Product&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Category Website Cancellation Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

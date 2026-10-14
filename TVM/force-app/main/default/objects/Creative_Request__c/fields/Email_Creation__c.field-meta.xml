@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Creation__c</fullName>
+    <businessStatus>DeprecateCandidate</businessStatus>
+    <description>I think we can Depreciate</description>
+    <label>Email Creation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Create Fully in DotDigital</fullName>
+                <default>true</default>
+                <label>Create Fully in DotDigital</label>
+            </value>
+            <value>
+                <fullName>Create in DotDigital &amp; Provide HTML of Email</fullName>
+                <default>false</default>
+                <label>Create in DotDigital &amp; Provide HTML of Email</label>
+            </value>
+            <value>
+                <fullName>Do not Create in DotDigital</fullName>
+                <default>false</default>
+                <label>Do not Create in DotDigital</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

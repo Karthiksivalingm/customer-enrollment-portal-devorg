@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Not_Required</fullName>
+    <active>false</active>
+    <errorConditionFormula>(Text(Case_Category__c)=&quot;Digital_Support&quot; &amp;&amp; Text(OEM__c)=&quot;&quot; &amp;&amp;  AccountId=&quot;&quot;) ||
+
+(Text(Case_Category__c)!=&quot;Digital_Support&quot; &amp;&amp; Text(Case_Category__c)!=&quot;General Support&quot; &amp;&amp;  AccountId =&quot;&quot;)</errorConditionFormula>
+    <errorMessage>Account needs to be chosen</errorMessage>
+</ValidationRule>

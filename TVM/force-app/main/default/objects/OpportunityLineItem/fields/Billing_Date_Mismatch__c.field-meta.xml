@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Date_Mismatch__c</fullName>
+    <formula>DateValue(CreatedDate) &gt; AddMonths(Today(), -12) &amp;&amp;
+
+if(IsBlank(Billing_Date_Static__c), Date(1988,6,18), Billing_Date_Static__c) !=  Billing_Date_Calculated__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Billing Date Mismatch</label>
+    <type>Checkbox</type>
+</CustomField>

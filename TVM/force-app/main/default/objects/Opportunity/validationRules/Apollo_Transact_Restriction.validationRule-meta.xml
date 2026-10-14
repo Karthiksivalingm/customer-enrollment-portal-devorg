@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apollo_Transact_Restriction</fullName>
+    <active>true</active>
+    <description>Restricts Users from creating more than 1 Product of this type on a single Opportunity.</description>
+    <errorConditionFormula>Count_Apollo_Transact_Products__c &gt; 1 &amp;&amp; Analytics_Franchise__c != &quot;ACURA&quot;</errorConditionFormula>
+    <errorMessage>You cannot have more than 1 Apollo Transact Product on a single Opportunity. Please remove any duplicate Products before adding new Products.</errorMessage>
+</ValidationRule>

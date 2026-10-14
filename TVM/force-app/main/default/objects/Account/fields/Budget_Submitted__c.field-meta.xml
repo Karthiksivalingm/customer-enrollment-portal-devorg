@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget_Submitted__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+Latest_Budget_Month__c &gt;= Date(Year(ADDMONTHS(Today(), 1)), Month(ADDMONTHS(Today(), 1)), 1) &amp;&amp; NOT(ISNULL(Latest_Budget_Month__c)), &quot;Submitted&quot;, 
+IF( Inventory_Feeds_Only__c , &quot;Inventory Feeds&quot;,
+&quot;Not Submitted&quot;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Budget Submitted</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

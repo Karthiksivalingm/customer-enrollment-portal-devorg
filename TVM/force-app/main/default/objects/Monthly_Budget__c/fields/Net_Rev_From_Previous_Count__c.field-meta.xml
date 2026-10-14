@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Rev_From_Previous_Count__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Net_Rev_From_Previous_Type__c = &quot;Increase&quot;, 1,
+if(Net_Rev_From_Previous_Type__c = &quot;Decrease&quot;, -1,
+0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Net Rev From Previous Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

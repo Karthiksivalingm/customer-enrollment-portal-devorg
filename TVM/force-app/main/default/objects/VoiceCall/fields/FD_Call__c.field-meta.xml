@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FD_Call__c</fullName>
+    <formula>ToPhoneNumber=&quot;+18444081840&quot; ||
+ToPhoneNumber=&quot;+18444430455&quot; ||
+ToPhoneNumber=&quot;+13373612773&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FD Call</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

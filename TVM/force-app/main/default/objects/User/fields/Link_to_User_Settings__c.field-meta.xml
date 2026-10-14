@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_User_Settings__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://teamvelocity.lightning.force.com/lightning/setup/ManageUsers/page?address=%2F&quot;&amp; X18_Digit_User_ID__c &amp;&quot;%3Fnoredirect%3D1%26isUserEntityOverride%3D1&quot;,  FirstName &amp;&quot; &quot; &amp;LastName&amp; &quot; Settings&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Link to User Settings</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

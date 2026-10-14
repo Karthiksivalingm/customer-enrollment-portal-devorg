@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alfanso_Orlando</fullName>
+    <columns>ACCOUNT.URL</columns>
+    <columns>ACCOUNT.ADDRESS1_STREET</columns>
+    <columns>Client_Type_Team_V__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>Regional_Sales_Manager__c</columns>
+    <columns>Regional_Sales_Director__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Prospect,Inactive</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>equals</operation>
+        <value>TX</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_CITY</field>
+        <operation>equals</operation>
+        <value>Katy,Sugar Land,Missouri City,Pasadena,Pearland,Baytown,Conroe,Spring,The Woodlands,Tomball,Cypress,Humble,League City,Friendswood,Alvin,Houston</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>ACURA,BMW,BUICK,BUICK GMC,CADILLAC,CHEVROLET,DODGE,FORD,GENESIS,GM,GMC,HONDA,HYUNDAI,JEEP,KIA,LEXUS,LINCOLN,MASERATI,MAZDA,MERCEDES-BENZ,MITSUBISHI,NISSAN,PORSCHE,RAM,STELLANTIS,SUBARU,TOYOTA,VOLKSWAGEN,VOLVO</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Alfonso Orlando</label>
+</ListView>

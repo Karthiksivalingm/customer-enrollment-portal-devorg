@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_campaign_goal_to_clicks_save__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Change campaign goal to clicks, save. Switch back to conversions, then check if more goals are now selected. Save if so</description>
+    <label>Change campaign goal to clicks, save. Sw</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

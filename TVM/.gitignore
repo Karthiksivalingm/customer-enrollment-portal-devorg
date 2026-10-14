@@ -1,0 +1,47 @@
+# TVM: local Salesforce CLI state and auth (never commit)
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+**/lwc/jsconfig.json
+.eslintcache
+.pmdCache
+coverage/
+node_modules/
+__pycache__/
+*.pyc
+
+# Claude Code: personal settings and automation state stay local
+.claude/settings.local.json
+.tvm-state/
+
+# Logs and OS files
+*.log
+logs/
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+
+# Secrets and keys
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+*.crt
+authUrl*.txt
+*sfdxAuthUrl*
+
+# TVM: custom metadata records that hold integration tokens. Values live only in the org.
+force-app/main/default/customMetadata/TouchPoint_Callout.*
+
+# TVM: org source files with hardcoded credentials (config/secret-files.json, CF-001). Local only.
+force-app/main/default/classes/TouchPointMakeAccountPOSTCallout.cls
+force-app/main/default/classes/TouchPointMakeAutoGroupPOSTCallout.cls
+force-app/main/default/classes/TouchPointMakeBudgetPOSTCallout.cls
+force-app/main/default/classes/TouchPointMakeCPPOSTCallout.cls
+force-app/main/default/classes/TouchPointMakeContactPOSTCallout.cls
+force-app/main/default/classes/TouchpointAGAPI.cls
+force-app/main/default/classes/TouchpointAPI.cls
+force-app/main/default/externalCredentials/fndn_google_ads.externalCredential-meta.xml

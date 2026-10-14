@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Set_Actual_Closed_Date</name>
+        <label>Set Actual Closed Date</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Closed_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Closed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Close_Date_Actual__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Close_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Closed Opp</label>
+        </rules>
+    </decisions>
+    <description>Obj Opportunity | Fast Update</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Closed</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!$Record.StageName}, &quot;Not Upsold&quot;) ||
+ISPICKVAL({!$Record.StageName}, &quot;Closed Lost&quot;) ||
+ISPICKVAL({!$Record.StageName}, &quot;Upsold&quot;) ||
+ISPICKVAL({!$Record.StageName}, &quot;Closed Won&quot;) ||
+ISPICKVAL({!$Record.StageName}, &quot;Moved to Paid&quot;) ||
+ISPICKVAL({!$Record.StageName}, &quot;Opted Out&quot;)</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Updated (Fast) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Updated (Fast)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Close_Date</name>
+        <label>Set Close Date</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Close_Date_Actual__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Close_Lock__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Actual_Closed_Date</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Mismatch_Final_Value</name>
+        <label>Mismatch Final Value</label>
+        <locationX>802</locationX>
+        <locationY>800</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Final_Value</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Final_Opp_Value__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Contracted_Amount_Less_Previous_Package__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Final_Value</targetReference>
+            </connector>
+            <label>Final Value</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Mismatch_Try_Buy_Field</name>
+        <label>Mismatch Try &amp; Buy Field</label>
+        <locationX>776</locationX>
+        <locationY>566</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Forcast_Close_Date_Mismatch</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Try_Buy_First_Billing_Month_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Forcasted_Close_Month__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CloseDate</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Try_Buy_Date</targetReference>
+            </connector>
+            <label>Forcast Close Date Mismatch</label>
+        </rules>
+        <rules>
+            <name>Try_Buy_Paid_Date_Mismatch</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Try_Buy_First_Billing_Month_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Forcasted_Close_Month__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Try_Buy_First_Billing_Month__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Try_Buy_Date_0</targetReference>
+            </connector>
+            <label>Try&amp;Buy Paid Date Mismatch</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Terminate_Flow</name>
+        <label>Terminate Flow</label>
+        <locationX>814</locationX>
+        <locationY>341</locationY>
+        <defaultConnector>
+            <targetReference>Mismatch_Try_Buy_Field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Terminate_Flow43</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bypass_Validation__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Terminate Flow</label>
+        </rules>
+    </decisions>
+    <description>Obj Opportunity | Created/Updated | Trigger 0</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DateCalculatedTryBuyBillingMonth</name>
+        <dataType>Date</dataType>
+        <expression>DATE(
+Value(Right(Text( {!$Record.Try_Buy_First_Billing_Month__c}), 4)),
+
+Case(Left(Text( {!$Record.Try_Buy_First_Billing_Month__c} ), 3),
+&quot;JAN&quot;, 1,
+&quot;FEB&quot;, 2,
+&quot;MAR&quot;, 3,
+&quot;APR&quot;, 4,
+&quot;MAY&quot;, 5,
+&quot;JUN&quot;, 6,
+&quot;JUL&quot;, 7,
+&quot;AUG&quot;, 8,
+&quot;SEP&quot;, 9,
+&quot;OCT&quot;, 10,
+&quot;NOV&quot;, 11,
+&quot;DEC&quot;, 12,
+1),
+
+1
+)</expression>
+    </formulas>
+    <formulas>
+        <name>TextCalculatedTryBuyBillingMonth</name>
+        <dataType>String</dataType>
+        <expression>Case(Month({!$Record.CloseDate}),
+1, &quot;JAN&quot;,
+2, &quot;FEB&quot;,
+3, &quot;MAR&quot;,
+4, &quot;APR&quot;,
+5, &quot;MAY&quot;,
+6, &quot;JUN&quot;,
+7, &quot;JUL&quot;,
+8, &quot;AUG&quot;,
+9, &quot;SEP&quot;,
+10, &quot;OCT&quot;,
+11, &quot;NOV&quot;,
+12, &quot;DEC&quot;,
+&quot;JAN&quot;
+)
+&amp;Text(Year({!$Record.CloseDate}))</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Updated Fast Field Updates {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Updated Field Updates</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Final_Value</name>
+        <label>Update Final Value</label>
+        <locationX>839</locationX>
+        <locationY>1039</locationY>
+        <inputAssignments>
+            <field>Final_Opp_Value__c</field>
+            <value>
+                <elementReference>$Record.Contracted_Amount_Less_Previous_Package__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Try_Buy_Date</name>
+        <label>Update Try &amp; Buy Date</label>
+        <locationX>512</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Mismatch_Final_Value</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Try_Buy_First_Billing_Month__c</field>
+            <value>
+                <elementReference>TextCalculatedTryBuyBillingMonth</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Try_Buy_Date_0</name>
+        <label>Update Try &amp; Buy Date</label>
+        <locationX>587</locationX>
+        <locationY>750</locationY>
+        <connector>
+            <targetReference>Mismatch_Final_Value</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>DateCalculatedTryBuyBillingMonth</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>679</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Terminate_Flow</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>700</triggerOrder>
+</Flow>

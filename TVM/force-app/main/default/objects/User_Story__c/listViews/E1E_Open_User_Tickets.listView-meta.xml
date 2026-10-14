@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E1E_Open_User_Tickets</fullName>
+    <columns>Update__c</columns>
+    <columns>NAME</columns>
+    <columns>Application__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Flag__c</columns>
+    <columns>Quick_Note__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Status__c</columns>
+    <columns>Request_User__c</columns>
+    <columns>Difficulty__c</columns>
+    <columns>Estimated_Work_Hours__c</columns>
+    <columns>Date_Created_Date_Only__c</columns>
+    <columns>Calculated_Work_Hours__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Ready for Deployment,Cancelled,On Hold</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>User_Story__c.Regular</value>
+    </filters>
+    <filters>
+        <field>Application__c</field>
+        <operation>notEqual</operation>
+        <value>Quickbase</value>
+    </filters>
+    <filters>
+        <field>Short_Description__c</field>
+        <operation>contains</operation>
+        <value>E1E</value>
+    </filters>
+    <label>E1E Open User Tickets</label>
+</ListView>

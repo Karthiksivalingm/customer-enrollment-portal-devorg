@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Collateral_Type__c</fullName>
+    <label>Collateral Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hang Tags</fullName>
+                <default>false</default>
+                <label>Hang Tags</label>
+            </value>
+            <value>
+                <fullName>Banner Stands</fullName>
+                <default>false</default>
+                <label>Banner Stands</label>
+            </value>
+            <value>
+                <fullName>Table Toppers</fullName>
+                <default>false</default>
+                <label>Table Toppers</label>
+            </value>
+            <value>
+                <fullName>Posters</fullName>
+                <default>false</default>
+                <label>Posters</label>
+            </value>
+            <value>
+                <fullName>Flags</fullName>
+                <default>false</default>
+                <label>Flags</label>
+            </value>
+            <value>
+                <fullName>Show Tents</fullName>
+                <default>false</default>
+                <label>Show Tents</label>
+            </value>
+            <value>
+                <fullName>Print Ads</fullName>
+                <default>false</default>
+                <label>Print Ads</label>
+            </value>
+            <value>
+                <fullName>Flyers</fullName>
+                <default>false</default>
+                <label>Flyers</label>
+            </value>
+            <value>
+                <fullName>Lincense Plate Covers</fullName>
+                <default>false</default>
+                <label>Lincense Plate Covers</label>
+            </value>
+            <value>
+                <fullName>Business Cards</fullName>
+                <default>false</default>
+                <label>Business Cards</label>
+            </value>
+            <value>
+                <fullName>Key Chains</fullName>
+                <default>false</default>
+                <label>Key Chains</label>
+            </value>
+            <value>
+                <fullName>Shirts</fullName>
+                <default>false</default>
+                <label>Shirts</label>
+            </value>
+            <value>
+                <fullName>Letterhead</fullName>
+                <default>false</default>
+                <label>Letterhead</label>
+            </value>
+            <value>
+                <fullName>Billboard</fullName>
+                <default>false</default>
+                <label>Billboard</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

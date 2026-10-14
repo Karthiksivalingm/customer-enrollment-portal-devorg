@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_VLAs_Are_Live__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Usually go live 2-4 days after the rest of digital</inlineHelpText>
+    <label>dep</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

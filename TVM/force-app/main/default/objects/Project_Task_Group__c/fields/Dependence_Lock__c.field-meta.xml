@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dependence_Lock__c</fullName>
+    <formula>IF(ISBLANK(Prerequisite_Task_Group__r.Id), false,
+IF(Prerequisite_Task_Group__r.Release_Dependent_Task_Group__c = true, false, true)) ||
+IF(Name = &quot;12 Website Going Live&quot; &amp;&amp;  New_Client_Project__r.Last_Task_Lock__c = true, true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Dependence Lock</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Slack_Channel_Name_f_x__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(TEXT(X3rd_Party_Integration_Approval_Status__c))), &quot;3rd_party_approval_&quot; &amp; CaseNumber,
+&quot;rally_&quot; &amp; CaseNumber
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Slack Channel Name f(x)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

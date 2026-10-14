@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Google_Verification_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(  Google_Verification_Rejected__c , &quot;Verification Rejected, Please Provide New File&quot;,
+if(  Google_Verification_Requested__c, &quot;Verification File Requested, Please Provide File&quot;,
+if(  Google_Verification_File_Provided__c , &quot;File Provided, Please Mark Verified or Rejected&quot;,
+if( Google_Verified__c , &quot;Google Verified&quot;, &quot;Error&quot;
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Google Verification Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

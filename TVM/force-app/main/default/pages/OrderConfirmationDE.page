@@ -1,0 +1,247 @@
+<apex:page controller="OrderConfirmationSend" renderAs="pdf" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>OEM DIRECT ENROLLMENT ORDER CONFIRMATION</title>
+<style>
+  @page {
+    /* Set standard PDF margins here */
+    margin: 0.5in;
+    margin-bottom: 0.75in; /* Added extra margin to ensure content doesn't overlap the footer */
+    @bottom-center {
+      content: element(footer);
+    }
+  }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+  }
+  .page {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* Table based layout for Header to ensure PDF compatibility */
+  .header-table {
+    width: 100%;
+    margin-bottom: 26px;
+    border-collapse: collapse;
+  }
+  .header-table td {
+    vertical-align: top;
+  }
+  .logo {
+    font-size: 44px;
+    font-weight: 700;
+    color: #0b2e53;
+    line-height: 1;
+  }
+  .logo sup {
+    font-size: 16px;
+    color: #555;
+    vertical-align: super; 
+  }
+  .doc-title {
+    text-align: right;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: .2px;
+    float: right;
+    width: 250px;
+  }
+  .subtext {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .band {
+    background: #0b2e53;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 8px 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  /* Padding instead of border-spacing for PDF safety */
+  .details td, .products td {
+    font-size: 16px;
+    vertical-align: middle;
+    padding-bottom: 8px;
+  }
+  .label, .labelcell {
+    font-weight: 700;
+    color: #555;
+    width: 32%;
+  }
+  .details .label {
+    padding: 0 14px 0 8px;
+  }
+  .products .labelcell {
+    text-align: right;
+    padding: 0 14px 0 8px;
+  }
+  .field-wrap {
+    padding: 0 10px; /* Added right padding so the box doesn't run to the exact edge */
+  }
+  .field-wrap.split-left { padding-right: 6px; }
+  .field-wrap.split-right { padding-left: 6px; }
+  .cell-wrap-left, .cell-wrap-right {
+    padding: 0 8px;
+  }
+  .products .hdr {
+    font-weight: 700;
+    color: #555;
+    padding: 2px 8px 6px 8px;
+  }
+  /* Unified box classes using line-height instead of flex alignment */
+  .fill-box {
+    border: 2px solid #c8c8c8;
+    height: 28px;
+    line-height: 24px; 
+    background: #fff;
+    display: block; /* Native block flow natively prevents overflow */
+    padding: 0 8px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .money-box {
+    border: 2px solid #c8c8c8;
+    height: 32px;
+    line-height: 28px; 
+    background: #fff;
+    display: block; /* Native block flow natively prevents overflow */
+    padding: 0 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #444;
+    font-size: 18px;
+  }
+  .addendum-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.4;
+    padding: 10px 12px;
+  }
+  
+  /* Converted to a running element for PDF pagination */
+  .footer {
+    display: block;
+    position: running(footer);
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+
+<div class="footer">
+    &#169;{!YEAR(TODAY())} TeamVelocity. All rights reserved.
+</div>
+
+<div class="page">
+  <table class="header-table">
+    <tr>
+      <td>
+        <div class="logo">TeamVelocity<sup>&#174;</sup></div>
+      </td>
+      <td>
+        <div class="doc-title">OEM DIRECT ENROLLMENT ORDER CONFIRMATION</div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="subtext">
+    <div>Thank you for your recent Enrollment. Below are the details regarding your enrollment.</div>
+    <div>Please contact your Account Representative if you have any questions.</div>
+  </div>
+
+  <div class="band">ORDER DETAILS</div>
+  <table class="details">
+    <colgroup>
+      <col style="width:32%"/>
+      <col style="width:34%"/>
+      <col style="width:34%"/>
+    </colgroup>
+    <tr><td class="label">Dealership Name</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account.Name}</div></td></tr>
+    
+    <apex:outputPanel layout="none" rendered="{!showOemDealerCode}">
+      <tr><td class="label">OEM Dealer Code</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.OEM_Dealer_Code__c}</div></td></tr>
+    </apex:outputPanel>
+
+    <tr><td class="label">Street Address</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account.BillingStreet}</div></td></tr>
+    <tr><td class="label">City</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account.BillingCity}</div></td></tr>
+    <tr>
+        <td class="label">State / ZIP</td>
+        <td class="field-wrap split-left"><div class="fill-box">{!opportunity.Account.BillingState}</div></td>
+        <td class="field-wrap split-right"><div class="fill-box">{!opportunity.Account.BillingPostalCode}</div></td>
+    </tr>
+    <tr><td class="label">Contact Name</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Dealer_DocuSign_Contact__r.Name}</div></td></tr>
+    <tr><td class="label">Title</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Dealer_DocuSign_Contact__r.Contact_Title__c}</div></td></tr>
+    <tr><td class="label">Target Launch Month</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Launch_Month__c}</div></td></tr>
+    <tr><td class="label">RAD</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account_RAD__c}</div></td></tr>
+    <tr><td class="label">OEM</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Analytics_Franchise__c}</div></td></tr>
+  </table>
+
+  <div class="band">PRODUCTS</div>
+  <table class="products">
+    <colgroup>
+      <col style="width:50%"/>
+      <col style="width:50%"/>
+    </colgroup>
+    <tr><td class="hdr">Product</td><td class="hdr">Price</td></tr>
+    
+    <apex:repeat var="a" value="{!lineItems}">
+        <tr>
+            <td class="cell-wrap-left"><div class="money-box">{!a.Contract_Product_Name__c}</div></td>
+            <td class="cell-wrap-right"><div class="money-box">$<apex:outputText value="{!a.MRR__c}"/></div></td>
+        </tr>
+    </apex:repeat>
+
+    <tr>
+        <td class="labelcell">Order Date</td>
+        <td class="cell-wrap-right">
+            <div class="money-box">
+                <apex:outputText value="{0, date, M/d/yyyy}">
+                    <apex:param value="{!NOW()}" />
+                </apex:outputText>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="labelcell">Total</td>
+        <td class="cell-wrap-right"><div class="money-box">${!opportunity.Contracted_Amount__c}</div></td>
+    </tr>
+  </table>
+
+  <apex:outputPanel rendered="{!hasAddendum}">
+    <div class="band" style="margin-top: 20px;">ADDENDUM</div>
+    <div class="addendum-text">
+      
+      <apex:repeat var="a" value="{!lineItems}">
+          <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(a.Product2.Addendum_Language__c))}">
+              <p style="margin-top: 0; margin-bottom: 8px;"><strong>{!a.Contract_Product_Name__c} - Service Term: </strong>{!a.Product2.Addendum_Language__c}</p>
+          </apex:outputPanel>
+      </apex:repeat>
+
+      <apex:outputPanel rendered="{!specialNotes != ''}">
+          <p><strong>Additional Terms: </strong>{!specialNotes}</p>
+      </apex:outputPanel>
+      
+    </div>
+  </apex:outputPanel>
+
+</div>
+
+</body>
+</html>
+</apex:page>

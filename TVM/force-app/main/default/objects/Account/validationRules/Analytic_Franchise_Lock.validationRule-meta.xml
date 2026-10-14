@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Analytic_Franchise_Lock</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Analytics_Franchise__c),
+$User.ProfileId != &apos;00e5f000002HLkQ&apos;)</errorConditionFormula>
+    <errorDisplayField>Analytics_Franchise__c</errorDisplayField>
+    <errorMessage>Change Analytic Franchise in Touchpoint</errorMessage>
+</ValidationRule>

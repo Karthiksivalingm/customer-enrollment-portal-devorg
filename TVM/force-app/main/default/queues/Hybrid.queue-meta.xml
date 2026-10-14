@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Hybrid</name>
+    <queueMembers>
+        <users>
+            <user>chan@foundationdirect.com</user>
+            <user>cecily@foundationdirect.com</user>
+            <user>desmond@foundationdirect.com</user>
+            <user>emily@foundationdirect.com</user>
+            <user>hilary@foundationdirect.com</user>
+            <user>ibn@foundationdirect.com</user>
+            <user>mdeleon@foundationdirect.com</user>
+            <user>tcruitt@foundationdirect.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

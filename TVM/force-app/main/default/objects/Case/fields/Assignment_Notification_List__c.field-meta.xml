@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assignment_Notification_List__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Regional_Account_Director__r.Email!=&quot;&quot;, Regional_Account_Director__r.Email&amp;&quot;, &quot;, &quot;&quot;)&amp;
+if(Account_Manager__r.Email!=&quot;&quot;, Account_Manager__r.Email&amp;&quot;,&quot;, &quot;&quot;)
+
+/*
+&amp;
+if(Full_Service_Account_Director__r.Email!=&quot;&quot;, Full_Service_Account_Director__r.Email&amp;&quot;,&quot;, &quot;&quot;)&amp;
+if(Full_Service_Account_Manager__r.Email!=&quot;&quot;, Full_Service_Account_Manager__r.Email&amp;&quot;,&quot;, &quot;&quot;)
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Assignment Notification List</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

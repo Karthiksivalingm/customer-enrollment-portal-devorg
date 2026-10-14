@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantatative_Metric_Score__c</fullName>
+    <description>FND</description>
+    <externalId>false</externalId>
+    <formula>(
+IF( Days_Since_Last_PR_Closed__c &gt; 60, 10,
+IF( AND(Days_Since_Last_PR_Closed__c &gt; 45 ,Days_Since_Last_PR_Closed__c &lt;= 60), 15,
+IF( AND(Days_Since_Last_PR_Closed__c &gt; 30 ,Days_Since_Last_PR_Closed__c &lt;= 45), 20,
+IF( Days_Since_Last_PR_Closed__c &lt; 30 ,25 , 0
+))))
+) + 
+(
+IF(  Average_Days_Between_PRs__c &gt; 60, 10,
+IF( AND(Average_Days_Between_PRs__c &gt; 45 ,Average_Days_Between_PRs__c &lt;= 60), 15,
+IF( AND(Average_Days_Between_PRs__c &gt; 30 ,Average_Days_Between_PRs__c &lt;= 45), 20,
+IF( Average_Days_Between_PRs__c &lt; 30 ,25 , 0
+))))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quantatative Metric Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

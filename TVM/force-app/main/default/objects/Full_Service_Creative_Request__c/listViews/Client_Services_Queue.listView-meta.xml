@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Services_Queue</fullName>
+    <booleanFilter>(1 or 3) AND 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Project_Name__c</columns>
+    <columns>Type__c</columns>
+    <columns>Stage_Numbers__c</columns>
+    <columns>Status__c</columns>
+    <columns>Escalate_Request__c</columns>
+    <columns>RAD__c</columns>
+    <columns>AM__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Action_Role__c</field>
+        <operation>contains</operation>
+        <value>Client Services</value>
+    </filters>
+    <filters>
+        <field>Completed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Design Prepared - Waiting for Incentives</value>
+    </filters>
+    <label>Client Services Queue</label>
+</ListView>

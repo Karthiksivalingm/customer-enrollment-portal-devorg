@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Volvo_Prospect_Inactive_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Client_Type_Team_V__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Prospect,Inactive</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>VOLVO</value>
+    </filters>
+    <filters>
+        <field>Hide_Dealership__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Volvo Prospect/Inactive Accounts</label>
+</ListView>

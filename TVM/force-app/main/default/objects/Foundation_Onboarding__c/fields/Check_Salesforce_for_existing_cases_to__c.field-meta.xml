@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Salesforce_for_existing_cases_to__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Check Salesforce for existing cases to launch other platforms in case they were ready early</description>
+    <label>Check Salesforce for existing cases to</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

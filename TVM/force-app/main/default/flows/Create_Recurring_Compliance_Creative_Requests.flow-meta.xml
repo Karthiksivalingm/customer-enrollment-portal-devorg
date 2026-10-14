@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Obj Compliance Request | Creator | Scheduled</description>
+    <environments>Default</environments>
+    <interviewLabel>Compliance Creative Requests {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Recurring Compliance Requests</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>First_Batch</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-08-05</startDate>
+            <startTime>03:45:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Fifth_Batch</name>
+        <label>Fifth Batch</label>
+        <locationX>176</locationX>
+        <locationY>1116</locationY>
+        <connector>
+            <targetReference>Wait_5</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>First_Batch</name>
+        <label>First Batch</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <connector>
+            <targetReference>Wait_1</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>Fourth_Batch</name>
+        <label>Fourth Batch</label>
+        <locationX>176</locationX>
+        <locationY>900</locationY>
+        <connector>
+            <targetReference>Wait_4</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>Second_Batch</name>
+        <label>Second Batch</label>
+        <locationX>176</locationX>
+        <locationY>468</locationY>
+        <connector>
+            <targetReference>Wait_2</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>Seventh_Batch</name>
+        <label>Seventh Batch</label>
+        <locationX>176</locationX>
+        <locationY>1548</locationY>
+        <connector>
+            <targetReference>Wait_7</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>Sixth_Batch</name>
+        <label>Sixth Batch</label>
+        <locationX>176</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>Wait_6</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>Third_Batch</name>
+        <label>Third Batch</label>
+        <locationX>176</locationX>
+        <locationY>684</locationY>
+        <connector>
+            <targetReference>Wait_3</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>X10th_Batch</name>
+        <label>10th Batch</label>
+        <locationX>176</locationX>
+        <locationY>2196</locationY>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>X8th_Batch</name>
+        <label>8th Batch</label>
+        <locationX>176</locationX>
+        <locationY>1764</locationY>
+        <connector>
+            <targetReference>Wait_8</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <subflows>
+        <name>X9th_Batch</name>
+        <label>9th Batch</label>
+        <locationX>176</locationX>
+        <locationY>1980</locationY>
+        <connector>
+            <targetReference>Wait_9</targetReference>
+        </connector>
+        <flowName>Recurring_Compliance_Subflow</flowName>
+    </subflows>
+    <variables>
+        <name>ComplianceRequestSingle</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Compliance_Request__c</objectType>
+    </variables>
+    <variables>
+        <name>CreateComplianceRequestList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Compliance_Request__c</objectType>
+    </variables>
+    <variables>
+        <name>UpdateComplianceRequestList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Compliance_Request__c</objectType>
+    </variables>
+    <waits>
+        <name>Wait_1</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 1</label>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Second_Batch</targetReference>
+            </connector>
+            <label>el_0</label>
+            <offset>1</offset>
+            <offsetUnit>Minutes</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_2</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 2</label>
+        <locationX>176</locationX>
+        <locationY>576</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Third_Batch</targetReference>
+            </connector>
+            <label>el_1</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_3</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 3</label>
+        <locationX>176</locationX>
+        <locationY>792</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Fourth_Batch</targetReference>
+            </connector>
+            <label>el_2</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_4</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 4</label>
+        <locationX>176</locationX>
+        <locationY>1008</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Fifth_Batch</targetReference>
+            </connector>
+            <label>el_3</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_5</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 5</label>
+        <locationX>176</locationX>
+        <locationY>1224</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Sixth_Batch</targetReference>
+            </connector>
+            <label>el_4</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_6</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 6</label>
+        <locationX>176</locationX>
+        <locationY>1440</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Seventh_Batch</targetReference>
+            </connector>
+            <label>el_5</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_7</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 7</label>
+        <locationX>176</locationX>
+        <locationY>1656</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>X8th_Batch</targetReference>
+            </connector>
+            <label>el_6</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_8</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 8</label>
+        <locationX>176</locationX>
+        <locationY>1872</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>X9th_Batch</targetReference>
+            </connector>
+            <label>el_7</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_9</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 9</label>
+        <locationX>176</locationX>
+        <locationY>2088</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>X10th_Batch</targetReference>
+            </connector>
+            <label>el_8</label>
+            <offset>1</offset>
+            <offsetUnit>Days</offsetUnit>
+        </waitEvents>
+    </waits>
+</Flow>

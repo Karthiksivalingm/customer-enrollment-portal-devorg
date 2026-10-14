@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_from_Opportunity__c</fullName>
+    <label>Products from Opportunity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>R 1:1 Messaging</fullName>
+                <default>false</default>
+                <label>R 1:1 Messaging</label>
+            </value>
+            <value>
+                <fullName>D Advid New</fullName>
+                <default>false</default>
+                <label>D Advid New</label>
+            </value>
+            <value>
+                <fullName>D Advid Pre-Owned</fullName>
+                <default>false</default>
+                <label>D Advid Pre-Owned</label>
+            </value>
+            <value>
+                <fullName>D Apollo Ads (Service)</fullName>
+                <default>false</default>
+                <label>D Apollo Ads (Service)</label>
+            </value>
+            <value>
+                <fullName>D Apollo Ads</fullName>
+                <default>false</default>
+                <label>D Apollo Ads</label>
+            </value>
+            <value>
+                <fullName>W Apollo Assistant</fullName>
+                <default>false</default>
+                <label>W Apollo Assistant</label>
+            </value>
+            <value>
+                <fullName>R Apollo Sales</fullName>
+                <default>false</default>
+                <label>R Apollo Sales</label>
+            </value>
+            <value>
+                <fullName>R Apollo Service</fullName>
+                <default>false</default>
+                <label>R Apollo Service</label>
+            </value>
+            <value>
+                <fullName>W Apollo Sites</fullName>
+                <default>false</default>
+                <label>W Apollo Sites</label>
+            </value>
+            <value>
+                <fullName>W Apollo Text</fullName>
+                <default>false</default>
+                <label>W Apollo Text</label>
+            </value>
+            <value>
+                <fullName>W Apollo Transact</fullName>
+                <default>false</default>
+                <label>W Apollo Transact</label>
+            </value>
+            <value>
+                <fullName>W Credit PreQual</fullName>
+                <default>false</default>
+                <label>W Credit PreQual</label>
+            </value>
+            <value>
+                <fullName>W Custom Creative</fullName>
+                <default>false</default>
+                <label>W Custom Creative</label>
+            </value>
+            <value>
+                <fullName>D Display New</fullName>
+                <default>false</default>
+                <label>D Display New</label>
+            </value>
+            <value>
+                <fullName>D Display Pre-Owned</fullName>
+                <default>false</default>
+                <label>D Display Pre-Owned</label>
+            </value>
+            <value>
+                <fullName>D Display Service</fullName>
+                <default>false</default>
+                <label>D Display Service</label>
+            </value>
+            <value>
+                <fullName>W Group Site</fullName>
+                <default>false</default>
+                <label>W Group Site</label>
+            </value>
+            <value>
+                <fullName>D OTT Premium Custom</fullName>
+                <default>false</default>
+                <label>D OTT Premium Custom</label>
+            </value>
+            <value>
+                <fullName>D Search New</fullName>
+                <default>false</default>
+                <label>D Search New</label>
+            </value>
+            <value>
+                <fullName>D Search Pre-Owned</fullName>
+                <default>false</default>
+                <label>D Search Pre-Owned</label>
+            </value>
+            <value>
+                <fullName>D Search Service</fullName>
+                <default>false</default>
+                <label>D Search Service</label>
+            </value>
+            <value>
+                <fullName>W SEO</fullName>
+                <default>false</default>
+                <label>W SEO</label>
+            </value>
+            <value>
+                <fullName>D Social Media Posting</fullName>
+                <default>false</default>
+                <label>D Social Media Posting</label>
+            </value>
+            <value>
+                <fullName>D Social New</fullName>
+                <default>false</default>
+                <label>D Social New</label>
+            </value>
+            <value>
+                <fullName>D Social Pre-Owned</fullName>
+                <default>false</default>
+                <label>D Social Pre-Owned</label>
+            </value>
+            <value>
+                <fullName>D Social Service</fullName>
+                <default>false</default>
+                <label>D Social Service</label>
+            </value>
+            <value>
+                <fullName>D Streaming OTT Dynamic</fullName>
+                <default>false</default>
+                <label>D Streaming OTT Dynamic</label>
+            </value>
+            <value>
+                <fullName>W VDV</fullName>
+                <default>false</default>
+                <label>W VDV</label>
+            </value>
+            <value>
+                <fullName>CXP Bundle Add-On</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CXP Bundle Add-On</label>
+            </value>
+            <value>
+                <fullName>Call Tracking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Call Tracking</label>
+            </value>
+            <value>
+                <fullName>DMS Write-Back</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DMS Write-Back</label>
+            </value>
+            <value>
+                <fullName>Performance Director</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Performance Director</label>
+            </value>
+            <value>
+                <fullName>Smart Communications Products</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Smart Communications Products</label>
+            </value>
+            <value>
+                <fullName>Upsell Products</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Upsell Products</label>
+            </value>
+            <value>
+                <fullName>Website Advert Bundle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Website Advert Bundle</label>
+            </value>
+            <value>
+                <fullName>Website Retention Bundle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Website Retention Bundle</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

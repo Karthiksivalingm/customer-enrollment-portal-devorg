@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>DoNothing</name>
+        <label>DoNothing</label>
+        <locationX>440</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Test_Field__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+    </assignments>
+    <description>Obj Task | Deleted</description>
+    <environments>Default</environments>
+    <interviewLabel>Task Deleted {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task Deleted</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Sales_Activity</name>
+        <label>Delete Sales Activity</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <faultConnector>
+            <targetReference>DoNothing</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Sales_Activity_ID__c</elementReference>
+            </value>
+        </filters>
+        <object>Sales_Activity__c</object>
+    </recordDeletes>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Delete_Sales_Activity</targetReference>
+        </connector>
+        <object>Task</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

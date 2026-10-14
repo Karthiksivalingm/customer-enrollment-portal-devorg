@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Edited_in_the_last_30_days</name>
+        <label>Unedited in the last 30 days?</label>
+        <locationX>182</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Not Stalled</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Stalled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Days_Since_Edit__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>30.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_OB_Pack</targetReference>
+            </connector>
+            <label>Yes, Stalled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Launch_Date_60_Days_ago</name>
+        <label>Launch Date &gt; 60 Days ago?</label>
+        <locationX>380</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Less than 60 Days</defaultConnectorLabel>
+        <rules>
+            <name>Yes_60_days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Days_Since_Onboarding_Month__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>60.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Edited_in_the_last_30_days</targetReference>
+            </connector>
+            <label>Yes &gt;= 60 days</label>
+        </rules>
+    </decisions>
+    <description>Obj Onboarding Package | Scheduled</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ExpirationThreshold</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.Onboarding__r.Actual_Onboarding_Month__c}+60</expression>
+    </formulas>
+    <formulas>
+        <name>ProjectLevel_RecentEditThreshold</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.LastModifiedDate}) + 30</expression>
+    </formulas>
+    <formulas>
+        <name>TaskLevel_RecentEditThreshold</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.Project_Tasks_Last_Modified_Date_Time__c}) + 30</expression>
+    </formulas>
+    <interviewLabel>Onboarding Package - Nightly Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Onboarding Package - Nightly Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Close_OB_Pack</name>
+        <label>Close OB Pack</label>
+        <locationX>50</locationX>
+        <locationY>468</locationY>
+        <inputAssignments>
+            <field>Mark_Project_Complete__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Launch_Date_60_Days_ago</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Completion_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </filters>
+        <object>Onboarding_Package__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-10-29</startDate>
+            <startTime>02:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

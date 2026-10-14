@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Website_Section__c</fullName>
+    <formula>(DS_Apollo_Sites__c || DS_Smart_Communications__c ||  DS_Transact__c || DS_Text__c || DS_SEO__c || DS_Group_Site__c || DS_VDV__c)
+&amp;&amp; (/*Text(DocuSign_Template__c)!=&quot;GM&quot; &amp;&amp;*/ Text(DocuSign_Template__c)!=&quot;General - No Websites&quot; &amp;&amp; Text(DocuSign_Template__c)!=&quot;Porsche&quot; 
+/*&amp;&amp; Text(DocuSign_Template__c)!=&quot;Stellantis&quot;*/
+) 
+/*true*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice Website Section</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

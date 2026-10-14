@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Closed_Date__c</fullName>
+    <formula>IF(Activity_Type__c = &quot;Email&quot;, DATEVALUE(CreatedDate),
+IF(Activity_Type__c = &quot;Call&quot;, DATEVALUE(CreatedDate),
+IF(Activity_Type__c  = &quot;Update&quot;, DATEVALUE(CreatedDate),
+IF(Activity_Type__c  = &quot;Highspot Content&quot;, DATEVALUE(CreatedDate),
+IF(CONTAINS(Activity_Type__c, &quot;Demo&quot;), DATEVALUE(Date_Time_Closed__c),
+DATEVALUE(Date_Time_Closed__c)
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reporting Closed Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

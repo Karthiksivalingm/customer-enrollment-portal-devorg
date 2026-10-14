@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Onboarding</fullName>
+    <columns>Current_Onboarding_Month__c</columns>
+    <columns>NAME</columns>
+    <columns>Onboarding_Status__c</columns>
+    <columns>Call_Stage__c</columns>
+    <columns>Website_Go_Live_Date__c</columns>
+    <columns>Digital_Go_Live_Date_Manual__c</columns>
+    <columns>Retention_Go_Live_Date__c</columns>
+    <columns>Data_Status__c</columns>
+    <columns>Inventory_Picklist__c</columns>
+    <columns>Onboarding_Director__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Current_Onboarding_Month__c</field>
+        <operation>notEqual</operation>
+        <value>0000 On Hold 00</value>
+    </filters>
+    <filters>
+        <field>Current_Onboarding_Month__c</field>
+        <operation>equals</operation>
+        <value>2026 06 June,2026 07 July,2026 08 August,2026 09 September</value>
+    </filters>
+    <label>All Open Onboarding</label>
+</ListView>

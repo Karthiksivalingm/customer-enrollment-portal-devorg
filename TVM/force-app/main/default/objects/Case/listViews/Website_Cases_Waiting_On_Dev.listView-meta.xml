@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Cases_Waiting_On_Dev</fullName>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Jira_Status__c</columns>
+    <columns>Jira_Link__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Active_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>On Hold,Waiting on Development,Selected for Dev,In Progress with Dev</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Cases Waiting On Development</label>
+    <sharedTo>
+        <group>Apollo_Websites_Support</group>
+        <group>General_Support</group>
+    </sharedTo>
+</ListView>

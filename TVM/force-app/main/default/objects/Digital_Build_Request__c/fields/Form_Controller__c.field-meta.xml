@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Form_Controller__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Includes(Products_Needed__c, &quot;VLA Used&quot;) || Includes(Products_Needed__c, &quot;VLA New&quot;), &quot;Google CID, Tags, VLA,&quot;, &quot;&quot;)&amp;
+
+if(Includes(Products_Needed__c, &quot;Search New&quot;)||Includes(Products_Needed__c, &quot;Search Used&quot;)||Includes(Products_Needed__c, &quot;Search Service&quot;), &quot;Google CID, Bing, Search Items&quot;, &quot;&quot;)&amp;
+
+if(Includes(Products_Needed__c, &quot;Display Used&quot;) || Includes(Products_Needed__c, &quot;Display New&quot;)|| Includes(Products_Needed__c, &quot;Video New&quot;) || Includes(Products_Needed__c, &quot;Video Used&quot;) || Includes(Products_Needed__c, &quot;VLA New&quot;)||Includes(Products_Needed__c, &quot;VLA Used&quot;), &quot;Search Items&quot;, &quot;&quot;)&amp;
+
+if(Includes(Products_Needed__c, &quot;Social&quot;), &quot;Facebook Items&quot;, &quot;&quot;)&amp;
+if(Includes(Products_Needed__c, &quot;Search Service&quot;), &quot;Service Items&quot;, &quot;&quot;)
+
+&amp;
+if(Includes(Products_Needed__c, &quot;Video New&quot;)||Includes(Products_Needed__c, &quot;Video Used&quot;), &quot;Video Items&quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Form Controller</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

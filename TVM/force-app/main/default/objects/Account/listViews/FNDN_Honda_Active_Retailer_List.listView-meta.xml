@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FNDN_Honda_Active_Retailer_List</fullName>
+    <columns>OEM_Dealer_Code__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OEM_Zone__c</columns>
+    <columns>OEM_Serv__c</columns>
+    <columns>ACCOUNT.ADDRESS2_STREET</columns>
+    <columns>ACCOUNT.ADDRESS2_CITY</columns>
+    <columns>ACCOUNT.ADDRESS2_STATE</columns>
+    <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+    <columns>ACCOUNT.URL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OEM__c</field>
+        <operation>equals</operation>
+        <value>Honda</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>includes</operation>
+        <value>Digital Advertising</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Foundation_Dealership</value>
+    </filters>
+    <label>FNDN Honda Active Retailer List</label>
+    <sharedTo>
+        <group>Foundation</group>
+        <group>Foundation_Leadership_Team</group>
+        <group>Foundation_OEM_Team</group>
+    </sharedTo>
+</ListView>

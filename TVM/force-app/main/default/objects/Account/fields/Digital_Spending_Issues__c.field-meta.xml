@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Spending_Issues__c</fullName>
+    <label>Digital Spending Issues</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Issue(s)</fullName>
+                <default>false</default>
+                <label>Issue(s)</label>
+            </value>
+            <value>
+                <fullName>Issue(s) Field Resolved</fullName>
+                <default>false</default>
+                <label>Issue(s) Field Resolved</label>
+            </value>
+            <value>
+                <fullName>Digital Resolved</fullName>
+                <default>false</default>
+                <label>Digital Resolved</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

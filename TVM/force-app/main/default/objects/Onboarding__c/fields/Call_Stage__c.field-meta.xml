@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Stage__c</fullName>
+    <label>Call Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>00 Assigned</fullName>
+                <default>false</default>
+                <label>00 Assigned</label>
+            </value>
+            <value>
+                <fullName>Welcome Email Sent</fullName>
+                <default>false</default>
+                <label>01 Welcome Email Sent</label>
+            </value>
+            <value>
+                <fullName>GSC Scheduled</fullName>
+                <default>false</default>
+                <label>02 GSC Scheduled</label>
+            </value>
+            <value>
+                <fullName>Payment Call Scheduled</fullName>
+                <default>false</default>
+                <label>03 Payment Call Scheduled</label>
+            </value>
+            <value>
+                <fullName>04 Digital in Build</fullName>
+                <default>false</default>
+                <label>04 Digital in Build</label>
+            </value>
+            <value>
+                <fullName>Website in Build</fullName>
+                <default>false</default>
+                <label>05 Website in Build</label>
+            </value>
+            <value>
+                <fullName>Website Review Scheduled</fullName>
+                <default>false</default>
+                <label>06 Website Review Scheduled</label>
+            </value>
+            <value>
+                <fullName>Needs MRR</fullName>
+                <default>false</default>
+                <label>07 Needs MRR</label>
+            </value>
+            <value>
+                <fullName>MRR Scheduled</fullName>
+                <default>false</default>
+                <label>08 MRR Scheduled</label>
+            </value>
+            <value>
+                <fullName>Pending Transition</fullName>
+                <default>false</default>
+                <label>09 Pending Transition</label>
+            </value>
+            <value>
+                <fullName>10 Live</fullName>
+                <default>false</default>
+                <label>10 Live</label>
+            </value>
+            <value>
+                <fullName>Launched</fullName>
+                <default>false</default>
+                <label>11 Launched</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>00 On Hold</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>00 Cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Not_Needed__c</fullName>
+    <formula>IsWon &amp;&amp; of_Products_Chosen__c = (Count_Apollo_Assistant__c+Count_Soft_Credit_Pull__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Onboarding Not Needed</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isActive__c</fullName>
+    <description>Pulls everyone who’s active or pending activation or have had a demo scheduled.</description>
+    <formula>AND(
+OR(
+/*Account.Open_Demos_Scheduled__c &gt; 0,*/
+Account.Pending_Activation__c,
+ISPICKVAL(Account.Client_Type_Team_V__c,&quot;Active&quot;)),
+DNC__c = FALSE)</formula>
+    <label>isActive</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

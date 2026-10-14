@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_Won_New_Sales__c</fullName>
+    <formula>Close_Date_Actual__c =  Account.Latest_New_Sale_Opportunity_Month__c || Close_Date_Actual__c = Account.Latest_New_Sale_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Latest Won New Sales</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

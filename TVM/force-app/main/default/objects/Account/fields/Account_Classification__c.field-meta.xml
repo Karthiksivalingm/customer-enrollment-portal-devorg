@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Classification__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Foundation_Record__c  , &quot;FNDN&quot;, &quot;TVM&quot;)&amp; if( Dealer_Group_Account__c , &quot; Group Account&quot;, &quot;&quot;) &amp; if(Text(Foundation_Hybrid_Billing__c) &lt;&gt; &quot;Standard&quot;, Text(Foundation_Hybrid_Billing__c), &quot;&quot;)
+&amp;&quot; &quot;&amp;
+ Quickbase_Record_ID__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Classification</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

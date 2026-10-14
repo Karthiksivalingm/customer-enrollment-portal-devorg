@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_Button_Block</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBlank( Text(Type__c ))</errorConditionFormula>
+    <errorMessage>Please use the blue button to create a Vendor Rep.</errorMessage>
+</ValidationRule>

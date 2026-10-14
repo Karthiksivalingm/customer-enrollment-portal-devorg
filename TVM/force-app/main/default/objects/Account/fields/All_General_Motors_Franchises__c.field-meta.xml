@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_General_Motors_Franchises__c</fullName>
+    <formula>OR(
+ISPICKVAL(Analytics_Franchise__c,&quot;STELLANTIS&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;ALFA ROMEO&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;DODGE&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;JEEP&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;RAM&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;FIAT&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;MASERATI&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;Chrysler&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;GM&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;BUICK GMC&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;BUICK&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;GMC&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;CADILLAC&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;CHEVROLET&quot;)
+)</formula>
+    <label>All GM, Mas, Stellantis Franchises</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

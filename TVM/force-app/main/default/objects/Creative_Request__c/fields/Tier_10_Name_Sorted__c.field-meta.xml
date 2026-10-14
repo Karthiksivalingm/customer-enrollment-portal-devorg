@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tier_10_Name_Sorted__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  NOT(ISBLANK(Manual_Order_Override__c)), 
+  Manual_Order_Override__c, 
+  CASE(RecordType.Name,
+    &quot;Pre-Roll Video&quot;, &quot;1&quot;,
+    &quot;Radio&quot;, &quot;1&quot;,
+    &quot;Script/VO/Storyboard&quot;, &quot;1&quot;,
+    &quot;TV / OTT&quot;, &quot;1&quot;,
+    &quot;TV Spot Upload&quot;, &quot;1&quot;,
+    &quot;Web Video&quot;, &quot;1&quot;,
+    &quot;Direct Mail&quot;, &quot;2&quot;,
+    &quot;Print Ad&quot;, &quot;2&quot;,
+    &quot;Email Blast (Dotmailer)&quot;, &quot;3&quot;,
+    &quot;Email Blast (Static JPG - 640px wide)&quot;, &quot;3&quot;,
+    &quot;Custom Merchandise&quot;, &quot;4&quot;,
+    &quot;Landing Page&quot;, &quot;4&quot;,
+    &quot;Logo&quot;, &quot;4&quot;,
+    &quot;Pitch/Presentation&quot;, &quot;4&quot;,
+    &quot;Social/SMA&quot;, &quot;4&quot;,
+    &quot;Standard POS&quot;, &quot;4&quot;,
+    &quot;Web Banner&quot;, &quot;4&quot;,
+    &quot;99&quot;
+  )
+) 
+&amp; &quot; - &quot; &amp; Project_Name__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tier 10 Name Sorted</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

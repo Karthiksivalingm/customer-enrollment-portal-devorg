@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Editors_Only</fullName>
+    <active>false</active>
+    <errorConditionFormula>$Profile.Name != &quot;Digital Support&quot; &amp;&amp;
+ $Profile.Name != &quot;System Administrator&quot; &amp;&amp;
+IsNew()=false</errorConditionFormula>
+    <errorMessage>You can&apos;t edit this object.  If you feel like this is an error, send a message to Derrick Chen.</errorMessage>
+</ValidationRule>

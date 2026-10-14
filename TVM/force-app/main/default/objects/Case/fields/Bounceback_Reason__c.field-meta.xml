@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bounceback_Reason__c</fullName>
+    <description>FND - If Bounceback box is checked, this field opens</description>
+    <label>Bounceback Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Bounceback__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Case Incomplete</fullName>
+                <default>false</default>
+                <label>Case Incomplete</label>
+            </value>
+            <value>
+                <fullName>Incorrect Action Taken</fullName>
+                <default>false</default>
+                <label>Incorrect Action Taken</label>
+            </value>
+            <value>
+                <fullName>Ads: Missing Campaign Setting</fullName>
+                <default>false</default>
+                <label>Ads: Missing Campaign Setting</label>
+            </value>
+            <value>
+                <fullName>Apollo: Missing Campaign Setting</fullName>
+                <default>false</default>
+                <label>Apollo: Missing Campaign Setting</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Case Incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Incorrect Action Taken</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Ads: Missing Campaign Setting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Apollo: Missing Campaign Setting</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Requirements__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( INCLUDES(Launch_Type__c, &quot;Digital&quot;)=false &amp;&amp; INCLUDES(Launch_Type__c, &quot;CXP&quot;)=false, &quot;&quot; ,
+
+IF(IsBlank( Digital_Go_Live_Date_Manual__c), &quot;Digital Go Live Date&quot;+BR(), &quot;&quot;) +
+IF(TEXT(Budget_Status__c) = &quot;Complete&quot; || TEXT(Budget_Status__c) = &quot;Placeholder&quot;, &quot;&quot;, &quot;Budget Not in Budget App&quot;+BR()) +
+IF(TEXT(Account__r.Website_Providers__c) = &quot;&quot; &amp;&amp;  TEXT(Account__r.TVM_Website_Status__c) = &quot;&quot;, &quot;Website Provider&quot;+BR(), &quot;&quot;) +
+IF( PRIMARY_DOMAIN__c = &quot;&quot;, &quot;PRIMARY DOMAIN&quot;+BR(), &quot;&quot;) +
+IF(OR( Buy_Sell__c , Offers_Inventory__c), &quot;&quot;, &quot;Offers + Inventory&quot;+BR()) +
+IF(TEXT( In_program_selection__c) = &quot;&quot; , &quot;In Program Selection&quot;+BR(), &quot;&quot;) +
+IF(ISBLANK(CallRevu_Number_Sales__c), &quot;CallRevu Number Sales&quot;+BR(), &quot;&quot;) +
+IF(ISBLANK(CallRevu_Number_Service__c), &quot;CallRevu Number Service&quot;+BR(), &quot;&quot;) +
+IF(TEXT(Billing_Section__c) = &quot;&quot;, &quot;Billing Selection&quot;+BR(), &quot;&quot;)
++if(Text(Google_Ads_Account__c)=&quot;&quot;, &quot;Missing Digital Account Type&quot;+BR(), &quot;&quot;)
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Digital Requirements to Build</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

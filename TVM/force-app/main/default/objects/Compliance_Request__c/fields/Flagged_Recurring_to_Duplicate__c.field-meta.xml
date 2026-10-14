@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flagged_Recurring_to_Duplicate__c</fullName>
+    <formula>Monthly_Recurring__c &amp;&amp;  Most_Recent_Recurring_Request__c &amp;&amp;
+IF(
+    Year(Created_Date_Non_Native__c) &lt; Year(Today()) ||
+    (Year(Created_Date_Non_Native__c) = Year(Today()) &amp;&amp; Month(Created_Date_Non_Native__c) &lt; Month(Today())),
+    TRUE,
+    FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Flagged Recurring to Duplicate</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

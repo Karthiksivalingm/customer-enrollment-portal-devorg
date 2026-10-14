@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Account_RSM__c</fullName>
+    <formula>$User.Id = Regional_Sales_Manager__r.Id</formula>
+    <label>My Account - RSM</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

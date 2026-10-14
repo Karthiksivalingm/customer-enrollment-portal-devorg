@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Types__c</fullName>
+    <label>Sub-Types</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TV/OTT</fullName>
+                <default>false</default>
+                <label>TV/OTT</label>
+            </value>
+            <value>
+                <fullName>Web Video / Social</fullName>
+                <default>false</default>
+                <label>Web Video / Social</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <label>Radio</label>
+            </value>
+            <value>
+                <fullName>Copy Creation</fullName>
+                <default>false</default>
+                <label>Copy Creation</label>
+            </value>
+            <value>
+                <fullName>Best CR Status</fullName>
+                <default>false</default>
+                <label>Best CR Status</label>
+            </value>
+            <value>
+                <fullName>OEM Checklist Restricted Status</fullName>
+                <default>false</default>
+                <label>OEM Checklist Restricted Status</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

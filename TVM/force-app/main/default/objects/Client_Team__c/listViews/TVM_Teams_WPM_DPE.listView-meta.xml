@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Teams_WPM_DPE</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>East_West_North_RET__c</columns>
+    <columns>NAME</columns>
+    <columns>Client_Team_Lead__c</columns>
+    <columns>Regional_VP__c</columns>
+    <columns>Director_of_AM__c</columns>
+    <columns>Digital_SME__c</columns>
+    <columns>WPM_1__c</columns>
+    <columns>WPM_2__c</columns>
+    <columns>WPM_3__c</columns>
+    <columns>WPM_4__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>East_West_North_RET__c</field>
+        <operation>notEqual</operation>
+        <value>Non-Standard</value>
+    </filters>
+    <filters>
+        <field>Client_Team_Lead__c</field>
+        <operation>equals</operation>
+        <value>Jess Seurer</value>
+    </filters>
+    <label>TVM Teams WPM/DPE</label>
+</ListView>

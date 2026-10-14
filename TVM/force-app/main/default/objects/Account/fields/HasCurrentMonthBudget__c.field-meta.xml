@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HasCurrentMonthBudget__c</fullName>
+    <formula>(
+Active_Agency_Fee__c ||
+Active_Display__c ||
+Active_Sales_Mail__c ||
+Active_Sales_Retention__c ||
+Active_Search__c ||
+Active_SEO__c ||
+Active_Service_Mail__c ||
+Active_Service_Retention__c ||
+Active_Social__c ||
+Active_Text__c ||
+Active_Video__c ||
+Active_Website_C__c  ||
+ Latest_Budget_Month_Amount__c &gt; 0
+)
+&amp;&amp;
+(Earliest_Budget_Month__c&lt;=Date(Year(Today()), Month(Today()), 1) &amp;&amp; Latest_Budget_Month__c&gt;=Date(Year(Today()), Month(Today()), 1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HasCurrentMonthBudget</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomNotificationType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customNotifTypeName>Creative Request Status Change</customNotifTypeName>
+    <description>Notify Account Team on Creative Request Status Change</description>
+    <desktop>true</desktop>
+    <masterLabel>Creative Request Status Change</masterLabel>
+    <mobile>true</mobile>
+    <slack>false</slack>
+</CustomNotificationType>

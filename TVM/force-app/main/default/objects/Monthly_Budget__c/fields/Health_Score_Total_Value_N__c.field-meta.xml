@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Score_Total_Value_N__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*HS_Total_Monthly_Budget_Calc__c+
+HS_Rating_Calc__c+
+HS_Net_Revenue_Calc__c+
+HS_Mail_Ordered_Calc__c+
+HS_Website_SRetention_Calc__c+
+HS_Meeting_Recaps_11_24__c+
+HS_Bug_Cases_Calc_11_24__c
+
+Newest Score:*/
+HS_Single_Product_Calc_V3__c +
+HS_Rating_Calc__c +
+Bug_Cases_Score__c +
+HS_NRR_Decrease_Calc_V3__c +
+HS_Credit_Issued__c +
+Meeting_Recaps_Frequency_Score__c +
+ Meeting_Recap_Location_Score__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Health Score Total Value (N)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

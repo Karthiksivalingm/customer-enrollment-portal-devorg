@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Account_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Current_Status__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Compliance_Team__c</columns>
+    <columns>Designer__c</columns>
+    <columns>Project_Creator__c</columns>
+    <columns>Production_Specialist__c</columns>
+    <columns>Website_QC__c</columns>
+    <columns>Complete__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>Final Budget Entered</value>
+    </filters>
+    <label>All</label>
+</ListView>

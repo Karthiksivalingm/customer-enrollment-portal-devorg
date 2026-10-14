@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tamaroff_Jeffrey</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>AccountId__c</columns>
+    <columns>Project_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>RAD__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>OwnerId__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AccountId__c</field>
+        <operation>contains</operation>
+        <value>Tamaroff</value>
+    </filters>
+    <filters>
+        <field>AccountId__c</field>
+        <operation>contains</operation>
+        <value>Jeffrey</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Website</value>
+    </filters>
+    <label>Tamaroff/Jeffrey</label>
+</ListView>

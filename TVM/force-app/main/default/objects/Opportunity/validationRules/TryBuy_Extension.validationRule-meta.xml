@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TryBuy_Extension</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED( Try_Buy_First_Billing_Month__c ) &amp;&amp;
+ $Profile.Name != &quot;Upsell Team&quot; &amp;&amp;
+ $Profile.Name != &quot;System Administrator&quot; &amp;&amp;
+ Opportunity_Type__c =&quot;Try &amp; Buy&quot;</errorConditionFormula>
+    <errorMessage>The Upsell Team needs to update the Try &amp; Buy Paid Date.  Please reach out to Eric or Jen</errorMessage>
+</ValidationRule>

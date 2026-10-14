@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Project_Task_Statuses2</fullName>
+    <columns>Status_Sort_Value__c</columns>
+    <columns>NAME</columns>
+    <columns>Project_Task_Owner__c</columns>
+    <columns>Project_Task_Queues__c</columns>
+    <columns>Project_Task_Type__c</columns>
+    <columns>Project_Task_Alert__c</columns>
+    <columns>Closing_Status__c</columns>
+    <columns>Starting_Status__c</columns>
+    <columns>Tagging__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Project Task</value>
+    </filters>
+    <filters>
+        <field>Deactivated__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Project_Task_Type__c</field>
+        <operation>includes</operation>
+        <value>Digital Client,Digital Tag,Digital Basic,Digital ID,Digital Audit,Digital Approval,Digital Case,Digital FB</value>
+    </filters>
+    <label>Digital Project Task Statuses</label>
+    <sharedTo>
+        <group>Digital_Support</group>
+        <group>System_Admins</group>
+    </sharedTo>
+</ListView>

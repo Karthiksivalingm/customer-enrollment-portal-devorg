@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VDP_CTA_1_Company__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>VDP CTA #1 Company</label>
+    <referenceTo>Vendor__c</referenceTo>
+    <relationshipLabel>90 Day Website Reviews (VDP CTA #1 Company)</relationshipLabel>
+    <relationshipName>X90_Day_Website_Reviews8</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

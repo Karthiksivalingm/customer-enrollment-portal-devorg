@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3rd_Party_Integration_Approval_Status__c</fullName>
+    <defaultValue>&quot;Not Needed&quot;</defaultValue>
+    <label>3rd Party Integration Approval Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Approval Needed</fullName>
+                <default>false</default>
+                <label>Approval Needed</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved - Executing</label>
+            </value>
+            <value>
+                <fullName>Rejected - Not Executing</fullName>
+                <default>false</default>
+                <label>Rejected - Not Executing</label>
+            </value>
+            <value>
+                <fullName>Rejected - Switched to TVM App</fullName>
+                <default>false</default>
+                <label>Rejected - Switched to TVM App</label>
+            </value>
+            <value>
+                <fullName>Auto-Approved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Auto-Approved</label>
+            </value>
+            <value>
+                <fullName>Not Needed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Needed</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Applied__c</fullName>
+    <label>Credit Applied</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Towards Invoice</fullName>
+                <default>false</default>
+                <label>Towards Invoice</label>
+            </value>
+            <value>
+                <fullName>Towards Mail</fullName>
+                <default>false</default>
+                <label>Towards Mail</label>
+            </value>
+            <value>
+                <fullName>Cut Check Back to Dealer</fullName>
+                <default>false</default>
+                <label>Cut Check Back to Dealer</label>
+            </value>
+            <value>
+                <fullName>Check Back to Dealer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Check Back to Dealer</label>
+            </value>
+            <value>
+                <fullName>Discount on Future Invoice(s)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Discount on Future Invoice(s)</label>
+            </value>
+            <value>
+                <fullName>Towards Current Month</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Towards Current Month&apos;s Invoice</label>
+            </value>
+            <value>
+                <fullName>Towards Next Month</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Towards Next Month&apos;s Invoice</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

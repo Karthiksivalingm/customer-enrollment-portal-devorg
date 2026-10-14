@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HS_Recap_Location__c</fullName>
+    <label>Recap Location</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Virtual</fullName>
+                <default>false</default>
+                <label>Virtual</label>
+            </value>
+            <value>
+                <fullName>In-Person</fullName>
+                <default>false</default>
+                <label>In-Person</label>
+            </value>
+            <value>
+                <fullName>No Meeting</fullName>
+                <default>false</default>
+                <label>No Meeting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

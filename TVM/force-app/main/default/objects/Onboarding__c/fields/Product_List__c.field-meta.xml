@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_List__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(  IsBlank(Retention_Products__c), &quot;&quot;, &quot;--Retention Products--&quot;&amp;BR()&amp;
+  if(  INCLUDES(Retention_Products__c, &quot;R-Apollo Sales&quot;), &quot;Apollo Sales&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Retention_Products__c, &quot;R-Apollo Service&quot;), &quot;Apollo Service&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  IsBlank(Retention_Products__c), &quot;&quot;, BR())
+)
+&amp;
+if(  IsBlank(Website_Products__c), &quot;&quot;, &quot;--Website Products--&quot;&amp;BR()&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-Apollo Sites&quot;), &quot;Apollo Sites&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-Group Site&quot;), &quot;Group Site&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-Apollo Assistant&quot;), &quot;Apollo Assistant&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-Apollo Transact&quot;), &quot;Apollo Transact&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-Credit PreQual&quot;), &quot;Credit PreQual&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-Custom Creative&quot;), &quot;Custom Creative&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-VDV&quot;), &quot;VDV&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Website_Products__c, &quot;W-SEO&quot;), &quot;SEO&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  IsBlank(Website_Products__c), &quot;&quot;, BR())
+)
+&amp;
+if(  IsBlank(Digital_Products__c), &quot;&quot;, &quot;--Digital Products--&quot;&amp;BR()&amp;
+  if(  INCLUDES(Digital_Products__c, &quot;D-Apollo Ads (Sales)&quot;), &quot;Apollo Ads (Sales)&quot;&amp;BR(), &quot;&quot;)&amp;
+  if(  INCLUDES(Digital_Products__c, &quot;D-Apollo Ads (Service)&quot;), &quot;Apollo Ads (Service)&quot;&amp;BR(), &quot;&quot;)&amp;
+
+  if(  INCLUDES(Digital_Products__c, &quot;D-Search New&quot;) || INCLUDES(Digital_Products__c, &quot;D-Search Pre-Owned&quot;) || INCLUDES(Digital_Products__c, &quot;D-Search Service&quot;), 
+    &quot;Search &quot;&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Search New&quot;), &quot;New &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Search Pre-Owned&quot;),&quot;Pre-Owned &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Search Service&quot;), &quot;Service&quot;, &quot;&quot;)
+	&amp;BR(), &quot;&quot;
+  )&amp;
+
+  if(  INCLUDES(Digital_Products__c, &quot;D-Display New&quot;) || INCLUDES(Digital_Products__c, &quot;D-Display Pre-Owned&quot;) || INCLUDES(Digital_Products__c, &quot;D-Display Service&quot;), 
+    &quot;Display &quot;&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Display New&quot;), &quot;New &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Display Pre-Owned&quot;),&quot;Pre-Owned &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Display Service&quot;), &quot;Service&quot;, &quot;&quot;)
+	&amp;BR(), &quot;&quot;
+  )&amp;
+
+  if(  INCLUDES(Digital_Products__c, &quot;D-Social New&quot;) || INCLUDES(Digital_Products__c, &quot;D-Social Pre-Owned&quot;) || INCLUDES(Digital_Products__c, &quot;D-Social Service&quot;), 
+    &quot;Social &quot;&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Social New&quot;), &quot;New &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Social Pre-Owned&quot;),&quot;Pre-Owned &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Social Service&quot;), &quot;Service&quot;, &quot;&quot;)
+	&amp;BR(), &quot;&quot;
+  )&amp;
+
+  if(  INCLUDES(Digital_Products__c, &quot;D-Advid New&quot;) || INCLUDES(Digital_Products__c, &quot;D-Advid Pre-Owned&quot;), 
+    &quot;Advid &quot;&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Advid New&quot;), &quot;New &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-Advid Pre-Owned&quot;),&quot;Pre-Owned &quot;, &quot;&quot;)
+	&amp;BR(), &quot;&quot;
+  )&amp;
+
+  if(  INCLUDES(Digital_Products__c, &quot;D-OTT Dynamic&quot;) || INCLUDES(Digital_Products__c, &quot;D-OTT Custom&quot;), 
+    &quot;OTT &quot;&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-OTT Dynamic&quot;), &quot;Dynamic &quot;, &quot;&quot;)&amp;
+	if(INCLUDES(Digital_Products__c, &quot;D-OTT Custom&quot;),&quot;Custom&quot;, &quot;&quot;)
+	&amp;BR(), &quot;&quot;
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product List</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

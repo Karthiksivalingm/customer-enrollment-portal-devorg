@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OBCPT_Transition_Email_to_Dealer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Send Transition Email to Dealer, include team distro</inlineHelpText>
+    <label>OBCPT Transition Email to Dealer</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

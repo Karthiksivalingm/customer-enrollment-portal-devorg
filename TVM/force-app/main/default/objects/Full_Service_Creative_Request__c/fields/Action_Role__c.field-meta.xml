@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Role__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(TEXT(Stage__c)=&quot;Preq&quot;,
+	if(TEXT(Status__c)=&quot;Information Needed&quot;, &quot;Client Services&quot;,
+		&quot;Production Admin&quot;),
+		
+if(TEXT(Stage__c)=&quot;Copywriter&quot;,
+	if(TEXT(Status__c)=&quot;Information Needed&quot;, &quot;Client Services&quot;,
+	if(TEXT(Status__c)=&quot;Design Prepared - Waiting for Incentives&quot;, &quot;Client Services&quot;,
+		&quot;Copywriter&quot;)),
+
+if(TEXT(Stage__c)=&quot;Script PC Proofing&quot;,
+	if(TEXT(Status__c)=&quot;Changes Needed&quot;, &quot;Copywriter&quot;,
+		&quot;Proofer&quot;),
+
+if(TEXT(Stage__c)=&quot;Script Client Approval&quot;,
+	if(TEXT(Status__c)=&quot;Client Changes&quot;, &quot;Copywriter&quot;,
+		&quot;Client Services&quot;),
+
+if(TEXT(Stage__c)=&quot;Script Compliance Approval&quot;,
+	if(TEXT(Status__c)=&quot;Client Changes&quot;, &quot;Copywriter&quot;,
+		&quot;Client Services&quot;),
+
+if(TEXT(Stage__c)=&quot;Upload Compliance Approved Script&quot;,
+		&quot;Client Services&quot;,
+
+if(TEXT(Stage__c)=&quot;Order VO&quot;,
+	if(TEXT(Status__c)=&quot;Information Needed&quot;, &quot;Client Services&quot;,
+		&quot;Video Editor&quot;),
+
+if(TEXT(Stage__c)=&quot;AV Production&quot;,
+		&quot;Video Editor&quot;,
+
+if(TEXT(Stage__c)=&quot;Final Proofing&quot;,
+		&quot;Proofer&quot;,
+
+if(TEXT(Stage__c)=&quot;Media Prep&quot;,
+	if(TEXT(Status__c)=&quot;Request Platform Link&quot;, &quot;Video Editor&quot;,
+		&quot;Media&quot;),
+
+if(TEXT(Stage__c)=&quot;Media Trafficking&quot;,
+	if(TEXT(Status__c)=&quot;Final Media Parameters&quot;, &quot;Client Services&quot;,
+		&quot;Media&quot;),
+		
+&quot;Error&quot;)))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Action Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

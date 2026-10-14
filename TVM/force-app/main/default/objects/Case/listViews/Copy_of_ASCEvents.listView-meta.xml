@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_ASCEvents</fullName>
+    <columns>Case_18_ID__c</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Case_Assign_To__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.SUBJECT</field>
+        <operation>contains</operation>
+        <value>Secure &amp; Pass Along ASC Event Approval from Dealer</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Case_Assign_To__c</field>
+        <operation>equals</operation>
+        <value>$USER</value>
+    </filters>
+    <label>My FNDN ASC Event Open Cases</label>
+</ListView>

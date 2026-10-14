@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recap_Month_Formula__c</fullName>
+    <formula>IF(text(MR_System__c) != &quot;Post 8/28/25&quot;,
+DATE(
+if(Contains(Subject__c, &quot;2022&quot;), 2022,
+if(Contains(Subject__c, &quot;2023&quot;), 2023,
+if(Contains(Subject__c, &quot;2024&quot;), 2024,
+if(Contains(Subject__c, &quot;2025&quot;), 2025,
+if(Contains(Subject__c, &quot;2026&quot;), 2026,
+if(Contains(Subject__c, &quot;2027&quot;), 2027,
+if(Contains(Subject__c, &quot;2028&quot;), 2028,
+1988
+))))))),
+if(Contains(UPPER(Subject__c), &quot;JAN2&quot;), 1,
+if(Contains(UPPER(Subject__c), &quot;FEB2&quot;), 2,
+if(Contains(UPPER(Subject__c), &quot;MAR2&quot;), 3,
+if(Contains(UPPER(Subject__c), &quot;APR2&quot;), 4,
+if(Contains(UPPER(Subject__c), &quot;MAY2&quot;), 5,
+if(Contains(UPPER(Subject__c), &quot;JUN2&quot;), 6,
+if(Contains(UPPER(Subject__c), &quot;JUL2&quot;), 7,
+if(Contains(UPPER(Subject__c), &quot;AUG2&quot;), 8,
+if(Contains(UPPER(Subject__c), &quot;SEP2&quot;), 9,
+if(Contains(UPPER(Subject__c), &quot;OCT2&quot;), 10,
+if(Contains(UPPER(Subject__c), &quot;NOV2&quot;), 11,
+if(Contains(UPPER(Subject__c), &quot;DEC2&quot;), 12,
+6
+)))))))))))),
+1
+),
+DATE(YEAR(Recap_Month_Selection__c), MONTH(Recap_Month_Selection__c), 1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Recap Month</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

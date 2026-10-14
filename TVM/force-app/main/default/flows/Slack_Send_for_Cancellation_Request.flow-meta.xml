@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Create_New_Channel</name>
+        <label>Create New Channel</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <actionName>slackCreateChannel</actionName>
+        <actionType>slackCreateChannel</actionType>
+        <connector>
+            <targetReference>End_Screen</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T0HNY7Z99</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackChannelName</name>
+            <value>
+                <elementReference>SlackChannelName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>isChannelPrivate</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForChannel</name>
+            <value>
+                <stringValue>T0HNY7Z99</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>slackCreateChannel</nameSegment>
+        <offset>0</offset>
+        <outputParameters>
+            <assignToReference>NewChannelD</assignToReference>
+            <name>slackChannelId</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Testy_Channel</name>
+        <label>Set Test Channel</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>NewChannelD</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>C06JNGJU858</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>End_Screen</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Channel_Check</name>
+        <label>Channel Check</label>
+        <locationX>248</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Test</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Channel_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <operator>None</operator>
+            </conditions>
+            <connector>
+                <targetReference>Channel_Already_Exists_Screen</targetReference>
+            </connector>
+            <label>Channel Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Test</name>
+        <label>Test?</label>
+        <locationX>446</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Create_New_Channel</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Test</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TestEnabled</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Set_Testy_Channel</targetReference>
+            </connector>
+            <label>Yes, Test</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>SlackChannelName</name>
+        <dataType>String</dataType>
+        <expression>&quot;sf_cancellation_&quot;&amp;
+Lower(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+IF(LEN(SUBSTITUTE({!Get_Cancellation_Request.Account__r.Name}, &quot; &quot;, &quot;&quot;)) &lt;= 55,
+SUBSTITUTE({!Get_Cancellation_Request.Account__r.Name}, &quot; &quot;, &quot;&quot;),
+LEFT(SUBSTITUTE({!Get_Cancellation_Request.Account__r.Name}, &quot; &quot;, &quot;&quot;), 55)
+),
+&quot;&apos;&quot;,&quot;&quot;),
+&quot;.&quot;,&quot;&quot;),
+&quot;,&quot;,&quot;&quot;),
+&quot;/&quot;,&quot;&quot;)
+)&amp;&quot;_&quot; &amp; {!Get_Cancellation_Request.Id}</expression>
+    </formulas>
+    <formulas>
+        <name>TestEnabled</name>
+        <dataType>Boolean</dataType>
+        <expression>true</expression>
+    </formulas>
+    <interviewLabel>Slack Send for Cancellation Request {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Slack Send for Cancellation Request</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Cancellation_Request</name>
+        <label>Get Cancellation Request</label>
+        <locationX>248</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Channel_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>recordId</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Cancellation_Request__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Channel_Already_Exists_Screen</name>
+        <label>Channel Already Exists Screen</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Channel_Exists_Disp_1</name>
+            <fieldText>&lt;p&gt;A Slack Channel Already Exists for this Cancellation Request, here is its URL:&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>End_Screen</name>
+        <label>End Screen</label>
+        <locationX>446</locationX>
+        <locationY>650</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Disp_1_End_Screen</name>
+            <fieldText>&lt;p&gt;Slack Channel Created! Here is the Slack Channels URL:&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Cancellation_Request</targetReference>
+        </connector>
+    </start>
+    <status>InvalidDraft</status>
+    <variables>
+        <name>NewChannelD</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

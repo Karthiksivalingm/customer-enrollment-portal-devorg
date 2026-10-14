@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Slack_Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Owner:Queue.QueueName,
+&quot;Advid Support&quot;,&quot;0055f000009AeMxAAK&quot;,/*Alexa Stanco*/
+&quot;Apollo Support&quot;,&quot;0055f000009A6SUAA0&quot;,/*JDK*/
+&quot;Apollo Websites Support&quot;,&quot;0055f000007vB0JAAU&quot;,/*Maria M*/
+&quot;Command Center Support&quot;,&quot;0055f000009AYgAAAW&quot;,/*Jeremy W*/
+&quot;Data Support&quot;,&quot;0055f000009A6iDAAS&quot;,/*Geoff Faulkner*/
+&quot;Digital Support&quot;,&quot;0055f000009AFMuAAO&quot;,/*Andy Maza*/
+&quot;Marketing Support&quot;,&quot;0055f000007uliXAAQ&quot;,/*Britt Boice*/
+&quot;Production Support&quot;,&quot;0055f000009A6SFAA0&quot;,/*Christine Rowland*/
+&quot;SEO Support&quot;,&quot;0055f000009BaVbAAK&quot;,/*Steve Shackleford*/
+&quot;SD Digital Support&quot;,&quot;&quot;,/*Mary McAdams*/
+ Owner:User.X18_Digit_User_ID__c 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Support Slack Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

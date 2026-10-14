@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Social_Section__c</fullName>
+    <formula>DS_Fully_Managed_Paid_Social__c || DS_Automotive_Inventory_Ads__c || DS_Facebook_Marketplace__c || DS_Reputation_Management__c || DS_Social_Media_Posting_Management__c || DS_Tiktok__c || DS_Snapchat__c || DS_LinkedIn__c
+
+/*true*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice Social Section</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

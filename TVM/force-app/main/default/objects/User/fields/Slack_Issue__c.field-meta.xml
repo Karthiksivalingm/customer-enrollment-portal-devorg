@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Slack_Issue__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( Has_SF_Slack_App__c =false &amp;&amp; IsBlank(Slack_User_ID__c), &quot;No Channel or Mention Access&quot;, 
+If( IsBlank(Slack_User_ID__c), &quot;No Mention Access&quot;,
+If( Has_SF_Slack_App__c =false , &quot;No Channel Access&quot;,
+&quot;Full Access&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Slack Issue</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

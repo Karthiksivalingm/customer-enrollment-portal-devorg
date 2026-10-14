@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Client_Project__c</fullName>
+    <label>New Client Project</label>
+    <referenceTo>Onboarding_Package__c</referenceTo>
+    <relationshipLabel>Project Task Groups</relationshipLabel>
+    <relationshipName>Project_Task_Groups</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

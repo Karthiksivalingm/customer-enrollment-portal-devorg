@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrolled_Products__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( OEM_Enrolled_Approved_Bundle__c , &quot;Approved Bundle - &quot;&amp;Text( OEM_Enrolled_Approved_Bundle_Date__c )&amp;BR(), &quot;&quot;) &amp;
+if( OEM_Enrolled_Digital__c , &quot;Digital - &quot;&amp;Text( OEM_Enrolled_Digital_Date__c )&amp;BR(), &quot;&quot;) &amp;
+if( OEM_Enrolled_Retention__c , &quot;Retention - &quot;&amp;Text( OEM_Enrolled_Retention_Date__c )&amp;BR(), &quot;&quot;) &amp;
+if( OEM_Enrolled_Website__c , &quot;Website - &quot;&amp;Text( OEM_Enrolled_Website_Date__c )&amp;BR(), &quot;&quot;) &amp;
+if( OEM_Enrolled_OTT__c , &quot;OTT- &quot;&amp;Text( OEM_Enrolled_OTT_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Rep_Man__c , &quot;Rep Man - &quot;&amp;Text( OEM_Enrolled_Rep_Man_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if(  OEM_Enrolled_Apollo_Assistant_AI__c , &quot;Apollo Assistant AI - &quot;&amp;Text( OEM_Enrolled_Apollo_Assistant_AI_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Custom_Creative__c , &quot;Custom Creative - &quot;&amp;Text( OEM_Enrolled_Custom_Creative_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Text__c , &quot;Text - &quot;&amp;Text( OEM_Enrolled_Text_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Credit_Prequal__c , &quot;Credit Prequal - &quot;&amp;Text( OEM_Enrolled_Credit_Prequal_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Search__c , &quot;Search - &quot;&amp;Text( OEM_Enrolled_Search_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Display__c , &quot;Display - &quot;&amp;Text( OEM_Enrolled_Display_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Social__c , &quot;Social - &quot;&amp;Text( OEM_Enrolled_Social_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Video__c , &quot;Video - &quot;&amp;Text( OEM_Enrolled_Video_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Sales_Mail__c , &quot;Sales Mail - &quot;&amp;Text( OEM_Enrolled_Sales_Mail_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Service_Retention__c , &quot;Service Retention - &quot;&amp;Text( OEM_Enrolled_Service_Retention_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Service_Mail__c , &quot;Service Mail - &quot;&amp;Text( OEM_Enrolled_Service_Mail_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_SEO__c , &quot;SEO - &quot;&amp;Text( OEM_Enrolled_SEO_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_VDV__c , &quot;VDV - &quot;&amp;Text( OEM_Enrolled_VDV_Date__c )&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Transact__c , &quot;Transact - &quot;&amp;Text( OEM_Enrolled_Transact_Date__c )&amp;BR(), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Enrolled Products</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

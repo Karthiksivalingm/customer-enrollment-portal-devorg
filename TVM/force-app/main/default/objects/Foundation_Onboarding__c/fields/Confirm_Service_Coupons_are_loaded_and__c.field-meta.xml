@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_Service_Coupons_are_loaded_and__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Confirm Service Coupons are loaded and marked &quot;Include in Digital.&quot;</description>
+    <label>Confirm Service Coupons are loaded and</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

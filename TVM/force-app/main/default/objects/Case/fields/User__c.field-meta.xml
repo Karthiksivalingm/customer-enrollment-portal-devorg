@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This field is a hidden field to allow the Case - Creator screen flow to find a user to make the case owner. If we can get the Case owner field to work in the screen flow we can link to that OwnerId API instead of this field. 
+
+The issue with the OwnerId seems to be that it is a lookup for groups and users, screen flow doesnt like this and throws an error. As a result this will just be a user lookup as opposed to a group/user lookup like OwnerId.</description>
+    <label>User</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Cases4</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>FND</description>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Intelligence</fullName>
+                <default>false</default>
+                <label>Business Intelligence</label>
+            </value>
+            <value>
+                <fullName>Dealer Group</fullName>
+                <default>false</default>
+                <label>Dealer Group</label>
+            </value>
+            <value>
+                <fullName>Digital Advertising</fullName>
+                <default>false</default>
+                <label>Digital Advertising</label>
+            </value>
+            <value>
+                <fullName>NCM</fullName>
+                <default>false</default>
+                <label>NCM</label>
+            </value>
+            <value>
+                <fullName>NCM 20 Group</fullName>
+                <default>false</default>
+                <label>NCM 20 Group</label>
+            </value>
+            <value>
+                <fullName>OEM Account</fullName>
+                <default>false</default>
+                <label>OEM Account</label>
+            </value>
+            <value>
+                <fullName>OEM Advertising</fullName>
+                <default>false</default>
+                <label>OEM Advertising</label>
+            </value>
+            <value>
+                <fullName>OEM Pilot Program</fullName>
+                <default>false</default>
+                <label>OEM Pilot Program</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

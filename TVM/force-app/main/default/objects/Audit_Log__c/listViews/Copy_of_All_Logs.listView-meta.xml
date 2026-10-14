@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_All_Logs</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Discrepancy_User__c</columns>
+    <columns>Status__c</columns>
+    <columns>Table__c</columns>
+    <columns>Field__c</columns>
+    <columns>Old_Value__c</columns>
+    <columns>New_Value__c</columns>
+    <columns>Record_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Field__c</field>
+        <operation>equals</operation>
+        <value>Digital SME</value>
+    </filters>
+    <label>Working Logs</label>
+</ListView>

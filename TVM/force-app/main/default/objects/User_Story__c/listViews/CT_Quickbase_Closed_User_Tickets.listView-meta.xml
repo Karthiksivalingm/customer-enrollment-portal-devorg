@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Quickbase_Closed_User_Tickets</fullName>
+    <columns>Update__c</columns>
+    <columns>NAME</columns>
+    <columns>Application__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Tracking_End__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Status__c</columns>
+    <columns>Estimated_Work_Hours__c</columns>
+    <columns>Request_User__c</columns>
+    <columns>Sort_Grouping__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Ready for Deployment,Cancelled,On Hold</value>
+    </filters>
+    <filters>
+        <field>Application__c</field>
+        <operation>equals</operation>
+        <value>Quickbase</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Chaitanya Kumar</value>
+    </filters>
+    <label>CC Quickbase Closed User Tickets</label>
+</ListView>

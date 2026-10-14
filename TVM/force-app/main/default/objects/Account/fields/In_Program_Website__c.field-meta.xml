@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Program_Website__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Text( Related_OEM_Program__r.Product_Website__c) &lt;&gt; &quot;&quot; , Text(Related_OEM_Program__r.Product_Website__c), &quot;Not in Program - Sellable&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>In Program Website</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

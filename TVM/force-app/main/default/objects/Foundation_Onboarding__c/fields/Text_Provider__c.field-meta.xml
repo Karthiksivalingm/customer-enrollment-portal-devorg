@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Text_Provider__c</fullName>
+    <description>FND</description>
+    <label>Text Provider</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Activengage</fullName>
+                <default>false</default>
+                <label>Activengage</label>
+            </value>
+            <value>
+                <fullName>Capital One</fullName>
+                <default>false</default>
+                <label>Capital One</label>
+            </value>
+            <value>
+                <fullName>Captivated</fullName>
+                <default>false</default>
+                <label>Captivated</label>
+            </value>
+            <value>
+                <fullName>CarChat24</fullName>
+                <default>false</default>
+                <label>CarChat24</label>
+            </value>
+            <value>
+                <fullName>CarNow Chat</fullName>
+                <default>false</default>
+                <label>CarNow Chat</label>
+            </value>
+            <value>
+                <fullName>Dealerboost</fullName>
+                <default>false</default>
+                <label>Dealerboost</label>
+            </value>
+            <value>
+                <fullName>Dealer eProcess</fullName>
+                <default>false</default>
+                <label>Dealer eProcess</label>
+            </value>
+            <value>
+                <fullName>Dealer Inspire Conversations</fullName>
+                <default>false</default>
+                <label>Dealer Inspire Conversations</label>
+            </value>
+            <value>
+                <fullName>DriveCentric DirectChat</fullName>
+                <default>false</default>
+                <label>DriveCentric DirectChat</label>
+            </value>
+            <value>
+                <fullName>Edmunds</fullName>
+                <default>false</default>
+                <label>Edmunds</label>
+            </value>
+            <value>
+                <fullName>Engage to Sell</fullName>
+                <default>false</default>
+                <label>Engage to Sell</label>
+            </value>
+            <value>
+                <fullName>FullPath</fullName>
+                <default>false</default>
+                <label>FullPath</label>
+            </value>
+            <value>
+                <fullName>FZA Digital - Connect by FusionZone</fullName>
+                <default>false</default>
+                <label>FZA Digital - Connect by FusionZone</label>
+            </value>
+            <value>
+                <fullName>Gubagoo Chat</fullName>
+                <default>false</default>
+                <label>Gubagoo Chat</label>
+            </value>
+            <value>
+                <fullName>Kenect</fullName>
+                <default>false</default>
+                <label>Kenect</label>
+            </value>
+            <value>
+                <fullName>Keyloop</fullName>
+                <default>false</default>
+                <label>Keyloop</label>
+            </value>
+            <value>
+                <fullName>Matador</fullName>
+                <default>false</default>
+                <label>Matador</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Optimy</fullName>
+                <default>false</default>
+                <label>Optimy</label>
+            </value>
+            <value>
+                <fullName>Podium</fullName>
+                <default>false</default>
+                <label>Podium</label>
+            </value>
+            <value>
+                <fullName>Snapcell</fullName>
+                <default>false</default>
+                <label>Snapcell</label>
+            </value>
+            <value>
+                <fullName>Strolid</fullName>
+                <default>false</default>
+                <label>Strolid</label>
+            </value>
+            <value>
+                <fullName>Team Velocity</fullName>
+                <default>false</default>
+                <label>Team Velocity</label>
+            </value>
+            <value>
+                <fullName>Tecobi</fullName>
+                <default>false</default>
+                <label>Tecobi</label>
+            </value>
+            <value>
+                <fullName>Text2Drive</fullName>
+                <default>false</default>
+                <label>Text2Drive</label>
+            </value>
+            <value>
+                <fullName>Text tool created by website</fullName>
+                <default>false</default>
+                <label>Text tool created by website</label>
+            </value>
+            <value>
+                <fullName>TradePending SMS tool</fullName>
+                <default>false</default>
+                <label>TradePending SMS tool</label>
+            </value>
+            <value>
+                <fullName>WebHammer</fullName>
+                <default>false</default>
+                <label>WebHammer</label>
+            </value>
+            <value>
+                <fullName>Cyrus</fullName>
+                <default>false</default>
+                <label>Cyrus</label>
+            </value>
+            <value>
+                <fullName>DP360</fullName>
+                <default>false</default>
+                <label>DP360</label>
+            </value>
+            <value>
+                <fullName>Motive</fullName>
+                <default>false</default>
+                <label>Motive</label>
+            </value>
+            <value>
+                <fullName>CDK Global (Roadster)</fullName>
+                <default>false</default>
+                <label>CDK Global (Roadster)</label>
+            </value>
+            <value>
+                <fullName>Dealer Funnel</fullName>
+                <default>false</default>
+                <label>Dealer Funnel</label>
+            </value>
+            <value>
+                <fullName>Calldrip</fullName>
+                <default>false</default>
+                <label>Calldrip</label>
+            </value>
+            <value>
+                <fullName>Pypestream</fullName>
+                <default>false</default>
+                <label>Pypestream</label>
+            </value>
+            <value>
+                <fullName>Visquanta</fullName>
+                <default>false</default>
+                <label>Visquanta</label>
+            </value>
+            <value>
+                <fullName>Impel</fullName>
+                <default>false</default>
+                <label>Impel</label>
+            </value>
+            <value>
+                <fullName>BDC.AI</fullName>
+                <default>false</default>
+                <label>BDC.AI</label>
+            </value>
+            <value>
+                <fullName>LiveAdmins</fullName>
+                <default>false</default>
+                <label>LiveAdmins</label>
+            </value>
+            <value>
+                <fullName>Drivee.ai</fullName>
+                <default>false</default>
+                <label>Drivee.ai</label>
+            </value>
+            <value>
+                <fullName>Omni Chat</fullName>
+                <default>false</default>
+                <label>Omni Chat</label>
+            </value>
+            <value>
+                <fullName>Autotrader.ca</fullName>
+                <default>false</default>
+                <label>Autotrader.ca</label>
+            </value>
+            <value>
+                <fullName>DemandHub</fullName>
+                <default>false</default>
+                <label>DemandHub</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

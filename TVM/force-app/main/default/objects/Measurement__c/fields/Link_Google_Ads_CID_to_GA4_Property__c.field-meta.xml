@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_Google_Ads_CID_to_GA4_Property__c</fullName>
+    <description>FND</description>
+    <label>Link Google Ads CID to GA4 Property</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Ad Account is no longer linked</fullName>
+                <default>false</default>
+                <label>Ad Account is no longer linked</label>
+            </value>
+            <value>
+                <fullName>Confirmed No Ad Account</fullName>
+                <default>false</default>
+                <label>Confirmed No Ad Account</label>
+            </value>
+            <value>
+                <fullName>Link Confirmed</fullName>
+                <default>false</default>
+                <label>Link Confirmed</label>
+            </value>
+            <value>
+                <fullName>Sent Linking Instructions</fullName>
+                <default>false</default>
+                <label>Sent Linking Instructions</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Marketing_Plan__c</fullName>
+    <formula>(
+(Contains( Active_Marketing_Plan__c , &quot;Foundation Direct&quot;) &amp;&amp; FNDN_Billed_Through_TVM__c=false) ||
+Contains( Active_Marketing_Plan__c , &quot;Heavy Up&quot;) ||
+Contains( Active_Marketing_Plan__c , &quot;SocialDealer&quot;)
+)
+&amp;&amp;
+(
+Contains( Active_Marketing_Plan__c , &quot;Apollo&quot;)
+)=false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invalid Marketing Plan</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

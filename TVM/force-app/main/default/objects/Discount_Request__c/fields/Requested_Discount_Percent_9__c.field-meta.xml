@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Discount_Percent_9__c</fullName>
+    <formula>(Opportunity_Product_9__r.ListPrice - Requested_Discounted_Selling_Price_9__c)/ Opportunity_Product_9__r.ListPrice</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Requested Discount Percent 9</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

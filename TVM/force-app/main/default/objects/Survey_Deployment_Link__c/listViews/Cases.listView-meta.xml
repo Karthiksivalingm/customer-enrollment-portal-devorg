@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cases</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Contact__c</columns>
+    <columns>Survey_Deployment__c</columns>
+    <columns>Survey_Response_TVM__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Survey_Deployment__c</field>
+        <operation>contains</operation>
+        <value>Case</value>
+    </filters>
+    <label>Cases</label>
+</ListView>

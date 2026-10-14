@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mail_Score_c__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    ISBLANK( Mail_Orders_c__c ),
+     Mail_Orders_c__c &lt;= 1
+  ),
+  0,
+  IF(
+     Mail_Orders_c__c &lt;= 3,
+    0.05,
+    IF(
+       Mail_Orders_c__c &lt;= 4,
+      0.07,
+      0.1
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Mail Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

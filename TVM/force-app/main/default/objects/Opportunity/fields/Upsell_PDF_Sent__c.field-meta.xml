@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upsell_PDF_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>A flow will check this after a PDF is sent</description>
+    <label>Upsell PDF Sent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

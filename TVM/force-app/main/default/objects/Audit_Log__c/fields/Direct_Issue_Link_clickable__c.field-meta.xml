@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_Issue_Link_clickable__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+    &quot;/&quot; &amp;  Direct_Issue_Record_ID_helper__c,
+    &quot;Open Direct Issue&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Direct Issue Link (clickable)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

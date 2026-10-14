@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to translate Salesforce to Salesforce sharing statuses into meaningful language. This Custom Metadata helps power the ShareStatus Lightning Component.</description>
+    <label>SharingStatusMapping</label>
+    <pluralLabel>SharingStatusMapping</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

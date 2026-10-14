@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OTT_Cancelled_Date__c</fullName>
+    <formula>if(Account__r.OTT_Premium_Custom_Cancelled_Date__c&gt;Account__r.OTT_Premium_Dynamic_Cancelled_Date__c, 
+Account__r.OTT_Premium_Custom_Cancelled_Date__c, Account__r.OTT_Premium_Dynamic_Cancelled_Date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OTT Cancelled Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

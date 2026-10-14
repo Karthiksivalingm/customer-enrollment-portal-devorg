@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Build_Comment_Header</name>
+        <label>Build Comment Header</label>
+        <locationX>50</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>TextOutput</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Comment_Header</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Build_Final_Output</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Build_Comments_Header</name>
+        <label>Build Comments Header</label>
+        <locationX>314</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>TextOutput</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Comments_Header</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_Final_Output</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Build_Final_Output</name>
+        <label>Build Final Output</label>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>TextOutput</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Comments_Var</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Screen_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Build_List_of_Comments</name>
+        <label>Build List of Comments</label>
+        <locationX>402</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>Comments_Var</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>FirstLine</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Comments_Var</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Comments.Text_Rich__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Comments_Var</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LineBreak</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Comments_Var</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>— — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AmountofComments</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Comments</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>empty</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Any_Notes_Found</name>
+        <label>Any Notes?</label>
+        <locationX>314</locationX>
+        <locationY>542</locationY>
+        <defaultConnector>
+            <targetReference>Screen_1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_One_Note</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AmountofComments</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Build_Comment_Header</targetReference>
+            </connector>
+            <label>Yes, One Note</label>
+        </rules>
+        <rules>
+            <name>Yes_Notes_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AmountofComments</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Build_Comments_Header</targetReference>
+            </connector>
+            <label>Yes, Multiple Notes</label>
+        </rules>
+    </decisions>
+    <description>added refresh and filters to limit number of notes</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>FirstLineTime</name>
+        <dataType>String</dataType>
+        <expression>TEXT(Month(DATEVALUE({!Comments.CreatedDate}))) &amp;&quot;/&quot;&amp; 
+TEXT(Day(DATEVALUE({!Comments.CreatedDate}))) &amp;&quot;/&quot;&amp; 
+TEXT(YEAR(DATEVALUE({!Comments.CreatedDate}))) &amp;&quot; &quot;&amp; 
+IF(
+    VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) &gt; 12,
+    TEXT(VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) - 12) &amp; &apos;:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;PM&apos;,
+    IF(
+        VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) = 12,
+        &apos;12:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;PM&apos;,
+        IF(
+            VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) = 0,
+            &apos;12:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;AM&apos;,
+            TEXT(VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2))) &amp; &apos;:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;AM&apos;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Creative Request Comment Viewer {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Creative Request Comment Viewer-erik v3.2</label>
+    <loops>
+        <name>Comments</name>
+        <label>Comments</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Get_Notes</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Build_List_of_Comments</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Any_Notes_Found</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Notes</name>
+        <label>Get Notes</label>
+        <locationX>314</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Comments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Creative_Request__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <limit>
+            <numberValue>5.0</numberValue>
+        </limit>
+        <object>Compliance_Creative_Note__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Screen_1</name>
+        <label>Screen 1</label>
+        <locationX>314</locationX>
+        <locationY>950</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Compliance_Creative_Notes</name>
+            <fieldText>Compliance &amp; Creative Notes</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Compliance_Creative_Notes_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Disp_1_Screen_1</name>
+                    <fieldText>&lt;p&gt;{!TextOutput}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Refresh Notes</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Notes</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>Comment_Header</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;&lt;u&gt;Note:&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Comments_Header</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;&lt;u&gt;Notes:&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FirstLine</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong&gt;{!Comments.CreatedBy.Full_Name_Formula__c}&lt;/strong&gt; {!FirstLineTime} EST&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>LineBreak</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!empty}&lt;br/&gt;
+{!empty}</text>
+    </textTemplates>
+    <variables>
+        <name>AmountofComments</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Comments_Var</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TextOutput</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Date_Digital__c</fullName>
+    <formula>if(Count_Search_New__c+Count_Search_Pre_Owned__c+Count_Search_Service__c &gt;0 &amp;&amp; Year(Opportunity.Account.Category_Search_First_Billing_Date__c)&gt;2000,  Opportunity.Account.Category_Search_First_Billing_Date__c ,
+if(Count_Display_New__c+Count_Display_Pre_Owned__c+Count_Display_Service__c &gt;0 &amp;&amp; Year(Opportunity.Account.Category_Display_First_Billing_Date__c )&gt;2000,  Opportunity.Account.Category_Display_First_Billing_Date__c ,
+if(Count_Advid_New__c+Count_Advid_Pre_Owned__c &gt;0 &amp;&amp; Year(Opportunity.Account.Category_Video_First_Billing_Date__c )&gt;2000,  Opportunity.Account.Category_Video_First_Billing_Date__c ,
+if(Count_Streaming_OTT__c&gt;0 &amp;&amp; Year(Opportunity.Account.OTT_Premium_Dynamic_First_Billing_Date__c )&gt;2000,  Opportunity.Account.OTT_Premium_Dynamic_First_Billing_Date__c ,
+if(Count_Streaming_OTT_Custom__c&gt;0 &amp;&amp; Year(Opportunity.Account.OTT_Premium_Custom_First_Billing_Date__c )&gt;2000,  Opportunity.Account.OTT_Premium_Custom_First_Billing_Date__c ,
+if(Count_Facebook_Marketplace__c+Count_Fully_Managed_Paid_Social__c+Count_Reputation_Management__c+Count_Social_New__c+Count_Social_Pre_Owned__c+Count_Social_Service__c+Count_SocialDealer_Craigslist__c+Count_SocialDealer_Equipment_Fee__c+Count_SocialDealer_New_Vehicle_Listing__c+Count_SocialDealer_Platform_Fee__c+Count_Social_Media_Posting_Management__c &gt;0,  Opportunity.Account.Category_Social_First_Billing_Date__c ,
+
+null
+))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Billing Date Digital</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

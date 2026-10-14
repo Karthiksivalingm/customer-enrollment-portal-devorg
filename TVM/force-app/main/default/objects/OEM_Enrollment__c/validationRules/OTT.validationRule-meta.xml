@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OTT</fullName>
+    <active>true</active>
+    <errorConditionFormula>OEM_Enrolled_OTT__c &amp;&amp;
+OEM_Unenrolled_OTT__c</errorConditionFormula>
+    <errorDisplayField>OEM_Enrolled_OTT__c</errorDisplayField>
+    <errorMessage>You can&apos;t have both checked. Checking one will uncheck the other.</errorMessage>
+</ValidationRule>

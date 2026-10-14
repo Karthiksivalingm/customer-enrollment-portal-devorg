@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PMAX_Status__c</fullName>
+    <label>PMAX Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Build Request</fullName>
+                <default>false</default>
+                <label>Full Build Request</label>
+            </value>
+            <value>
+                <fullName>In Progress (TVM)</fullName>
+                <default>false</default>
+                <label>In Progress (TVM)</label>
+            </value>
+            <value>
+                <fullName>Pending Video Ads</fullName>
+                <default>false</default>
+                <label>Pending Video Ads</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

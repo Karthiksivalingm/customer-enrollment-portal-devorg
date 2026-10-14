@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_correct_audience_signals_present__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Confirm correct audience signals present in asset groups</description>
+    <label>Confirm correct audience signals present</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

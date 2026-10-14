@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dealer_DocuSign_Contact_Populated__c</fullName>
+    <description>The Approval Process entry criteria cannot reference the Dealer DocuSign lookup field so this field is used to determine if the Dealer DocuSign Contact has been populated and is used in the Approval Process entry criteria to ensure that an Opportunity is not submitted for approval if this Contact has not yet been populated.</description>
+    <formula>NOT(ISBLANK(Dealer_DocuSign_Contact__c))</formula>
+    <label>Document Recipient Populated</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

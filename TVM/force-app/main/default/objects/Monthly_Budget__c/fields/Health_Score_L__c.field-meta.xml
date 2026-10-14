@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Score_L__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Old Scale
+if( Budget_Month_Date__c &lt;= ADDMONTHS(TODAY(),-1),
+if(
+Health_Score_Total_Value_N__c &gt; 84, &quot;A&quot;,
+if(
+Health_Score_Total_Value_N__c &gt; 69, &quot;B&quot;,
+if(
+Health_Score_Total_Value_N__c &gt; 49, &quot;C&quot;,
+if(
+Health_Score_Total_Value_N__c &gt; 29, &quot;D&quot;,
+
+&quot;F&quot;
+)))
+),&quot;TBD&quot;
+)
+New Scale
+*/
+if(
+Health_Score_Total_Value_N__c &lt;= 10, &quot;A&quot;,
+if(
+Health_Score_Total_Value_N__c &lt;= 20, &quot;B&quot;,
+if(
+Health_Score_Total_Value_N__c &lt;= 30, &quot;C&quot;,
+if(
+Health_Score_Total_Value_N__c &lt;= 45, &quot;D&quot;,
+
+&quot;F&quot;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Health Score (L)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

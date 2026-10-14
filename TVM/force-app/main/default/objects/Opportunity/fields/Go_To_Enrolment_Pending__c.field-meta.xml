@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Go_To_Enrolment_Pending__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND</description>
+    <label>Go To Enrolment Pending</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

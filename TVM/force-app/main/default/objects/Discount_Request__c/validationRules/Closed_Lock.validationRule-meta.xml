@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lock</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISCHANGED(DateTime_Approved_Rejected__c)),
+NOT(ISPICKVAL(Status__c, &quot;New&quot;)),
+OR(
+ISCHANGED(Approved_Price_1__c),
+ISCHANGED(Approved_Price_2__c),
+ISCHANGED(Approved_Price_3__c),
+ISCHANGED(Approved_Price_4__c),
+ISCHANGED(Approved_Price_5__c),
+ISCHANGED(Approved_Price_6__c),
+ISCHANGED(Approved_Price_7__c),
+ISCHANGED(Approved_Price_8__c),
+ISCHANGED(Approved_Price_9__c),
+ISCHANGED(Requested_Discounted_Selling_Price_1__c),
+ISCHANGED(Requested_Discounted_Selling_Price_2__c),
+ISCHANGED(Requested_Discounted_Selling_Price_3__c),
+ISCHANGED(Requested_Discounted_Selling_Price_4__c),
+ISCHANGED(Requested_Discounted_Selling_Price_5__c),
+ISCHANGED(Requested_Discounted_Selling_Price_6__c),
+ISCHANGED(Requested_Discounted_Selling_Price_7__c),
+ISCHANGED(Requested_Discounted_Selling_Price_8__c),
+ISCHANGED(Requested_Discounted_Selling_Price_9__c)
+)
+)</errorConditionFormula>
+    <errorMessage>This Discount Request has already been Approved/Rejected</errorMessage>
+</ValidationRule>

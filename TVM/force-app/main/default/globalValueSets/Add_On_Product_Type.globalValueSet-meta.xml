@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>OTT</fullName>
+        <default>false</default>
+        <label>OTT</label>
+    </customValue>
+    <customValue>
+        <fullName>DMS</fullName>
+        <default>false</default>
+        <label>DMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Hybrid OTT</fullName>
+        <default>false</default>
+        <label>Hybrid OTT</label>
+    </customValue>
+    <customValue>
+        <fullName>Hybrid Video</fullName>
+        <default>false</default>
+        <label>Hybrid Video</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Creative</fullName>
+        <default>false</default>
+        <label>Social Creative</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Marketplace Listings</fullName>
+        <default>false</default>
+        <label>Social Marketplace Listings</label>
+    </customValue>
+    <description>FND</description>
+    <masterLabel>Add-On Product Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

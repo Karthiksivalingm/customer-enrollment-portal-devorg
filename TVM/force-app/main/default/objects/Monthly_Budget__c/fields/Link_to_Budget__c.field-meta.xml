@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_Budget__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/bf99egkc9?a=q&amp;qid=1248&amp;nv=1&amp;v0=&quot;&amp;(Quickbase_Record_ID__c ) , &quot;Link to Budgets&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Link to Budget</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

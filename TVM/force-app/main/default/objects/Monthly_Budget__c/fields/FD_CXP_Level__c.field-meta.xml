@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FD_CXP_Level__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( FordDirect_CXP_Package_1__c , &quot;Package 1&quot;,
+if( FordDirect_CXP_Package_2__c , &quot;Package 2&quot;,
+if( FordDirect_CXP_Package_3__c , &quot;Package 3&quot;,
+&quot;No Package&quot;)
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FD CXP Level</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

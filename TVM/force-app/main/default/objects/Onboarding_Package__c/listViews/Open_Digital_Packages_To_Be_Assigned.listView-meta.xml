@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Digital_Packages_To_Be_Assigned</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4) AND 5 AND 6</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Onboarding_Team__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>Parent_OB_Call_Stage__c</columns>
+    <columns>Completion_Status__c</columns>
+    <columns>Digital_Go_Live_Date__c</columns>
+    <columns>Digital_Team__c</columns>
+    <columns>Digital_Auditor__c</columns>
+    <columns>Types__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Completion_Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>Types__c</field>
+        <operation>contains</operation>
+        <value>Digital</value>
+    </filters>
+    <filters>
+        <field>Digital_Team__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Digital_Auditor__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Parent_OB_Call_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>On Hold</value>
+    </filters>
+    <filters>
+        <field>Types__c</field>
+        <operation>contains</operation>
+        <value>Digital</value>
+    </filters>
+    <label>Open Digital Packages To Be Assigned</label>
+</ListView>

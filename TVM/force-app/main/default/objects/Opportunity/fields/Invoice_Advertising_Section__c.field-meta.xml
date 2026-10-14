@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Advertising_Section__c</fullName>
+    <formula>DS_Apollo_Ads__c || DS_Search__c || DS_Display__c || DS_Social__c || DS_Advid__c || DS_Advid_Social_Display__c || DS_Streaming_OTT__c ||  DS_OTT_Premium_Custom__c  || DS_Mazda_Service_Search__c || DS_Mazda_Service_Social__c || DS_Mazda_Sales_Apollo_Ads__c || DS_Mazda_Service_Apollo_Ads__c || DS_Collision__c
+/*true*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice Advertising Section</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

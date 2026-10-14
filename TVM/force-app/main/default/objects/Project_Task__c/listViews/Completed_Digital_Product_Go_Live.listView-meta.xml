@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed_Digital_Product_Go_Live</fullName>
+    <columns>Account_Name__c</columns>
+    <columns>Current_Status__c</columns>
+    <columns>Digital_Go_Live_Date__c</columns>
+    <columns>Search_Status__c</columns>
+    <columns>Display_Status__c</columns>
+    <columns>Video_Status__c</columns>
+    <columns>VLA_Status__c</columns>
+    <columns>PMAX_Status__c</columns>
+    <columns>Digital_Team__c</columns>
+    <columns>Digital_Auditor__c</columns>
+    <columns>Onboarding_Director__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>Build Digital</value>
+    </filters>
+    <filters>
+        <field>Digital_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Action Needed</value>
+    </filters>
+    <filters>
+        <field>Current_Status__c</field>
+        <operation>notContain</operation>
+        <value>Not Executing</value>
+    </filters>
+    <label>Completed Digital Product Go Live</label>
+</ListView>

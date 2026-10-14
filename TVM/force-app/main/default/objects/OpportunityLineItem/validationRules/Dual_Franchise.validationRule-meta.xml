@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dual_Franchise</fullName>
+    <active>true</active>
+    <errorConditionFormula>Opportunity.FordDirect_Dual_Franchise_Deal__c = false &amp;&amp; Contains( Contract_Product_Name__c , &quot;Lincoln Dual&quot;)  &amp;&amp; Opportunity.Analytics_Franchise__c != &quot;LINCOLN&quot;</errorConditionFormula>
+    <errorMessage>You can&apos;t choose a Lincoln Dual Product, this is only available through a Ford Opportunity marked &quot;Dual Franchise Account&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sellable_SEO__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(  Text(Analytics_Franchise__c ),
+&quot;ACURA&quot;, &quot;Sellable&quot;,
+&quot;ALFA ROMEO&quot;, &quot;Sellable&quot;,
+&quot;ASTON MARTIN&quot;, &quot;Sellable&quot;,
+&quot;AUDI&quot;, &quot;Sellable&quot;,
+&quot;BENTLEY&quot;, &quot;Sellable&quot;,
+&quot;BMW&quot;, &quot;Sellable&quot;,
+&quot;BUICK&quot;, &quot;Sellable&quot;,
+&quot;BUICK GMC&quot;, &quot;Sellable&quot;,
+&quot;CADILLAC&quot;, &quot;Sellable&quot;,
+&quot;CHEVROLET&quot;, &quot;Sellable&quot;,
+&quot;CHRYSLER&quot;, &quot;Sellable&quot;,
+&quot;DODGE&quot;, &quot;Sellable&quot;,
+&quot;FERRARI&quot;, &quot;Sellable&quot;,
+&quot;FIAT&quot;, &quot;Sellable&quot;,
+&quot;FORD&quot;, &quot;Sellable&quot;,
+&quot;GENESIS&quot;, &quot;Sellable&quot;,
+&quot;GM&quot;, &quot;Sellable&quot;,
+&quot;GMC&quot;, &quot;Sellable&quot;,
+&quot;HONDA&quot;, &quot;Sellable&quot;,
+&quot;HYUNDAI&quot;, &quot;Sellable&quot;,
+&quot;INFINITI&quot;, &quot;Sellable&quot;,
+&quot;JAGUAR&quot;, &quot;Sellable&quot;,
+&quot;JEEP&quot;, &quot;Sellable&quot;,
+&quot;KIA&quot;, &quot;Sellable&quot;,
+&quot;LAMBORGHINI&quot;, &quot;Sellable&quot;,
+&quot;LAND ROVER&quot;, &quot;Sellable&quot;,
+&quot;LEXUS&quot;, &quot;Sellable&quot;,
+&quot;LINCOLN&quot;, &quot;Sellable&quot;,
+&quot;MASERATI&quot;, &quot;Sellable&quot;,
+&quot;MAZDA&quot;, &quot;Sellable&quot;,
+&quot;MERCEDES-BENZ&quot;, &quot;Sellable&quot;,
+&quot;MINI&quot;, &quot;Sellable&quot;,
+&quot;MITSUBISHI&quot;, &quot;Sellable&quot;,
+&quot;NISSAN&quot;, &quot;Sellable&quot;,
+&quot;PORSCHE&quot;, &quot;Not Sellable&quot;,
+&quot;RAM&quot;, &quot;Sellable&quot;,
+&quot;ROLLS-ROYCE&quot;, &quot;Sellable&quot;,
+&quot;STELLANTIS&quot;, &quot;Sellable&quot;,
+&quot;SUBARU&quot;, &quot;Sellable&quot;,
+&quot;TOYOTA&quot;, &quot;Sellable&quot;,
+&quot;VOLKSWAGEN&quot;, &quot;Sellable&quot;,
+&quot;VOLVO&quot;, &quot;Sellable&quot;,
+&quot;Sellable&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sellable SEO</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

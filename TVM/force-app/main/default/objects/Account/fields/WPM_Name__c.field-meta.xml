@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WPM_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+ Product_Manager__r.FirstName&lt;&gt;&quot;&quot;,  Product_Manager__r.Full_Name_Formula__c,
+&quot;WPM Not Yet Assigned&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>WPM Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

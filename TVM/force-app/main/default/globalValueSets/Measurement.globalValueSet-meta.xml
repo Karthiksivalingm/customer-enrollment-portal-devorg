@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not Started</fullName>
+        <default>true</default>
+        <label>Not Started</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiting on Partner</fullName>
+        <default>false</default>
+        <label>Waiting on Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiting on Website Provider</fullName>
+        <default>false</default>
+        <label>Waiting on Website Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiting on Client</fullName>
+        <default>false</default>
+        <label>Waiting on Client</label>
+    </customValue>
+    <customValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+    </customValue>
+    <customValue>
+        <fullName>Complete</fullName>
+        <default>false</default>
+        <label>Complete</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Applicable</fullName>
+        <default>false</default>
+        <label>Not Applicable</label>
+    </customValue>
+    <description>FND</description>
+    <masterLabel>Measurement</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

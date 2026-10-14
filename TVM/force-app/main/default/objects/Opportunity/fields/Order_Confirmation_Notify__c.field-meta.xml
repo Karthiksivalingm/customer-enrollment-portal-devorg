@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Confirmation_Notify__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;OEM@teamvelocitymarketing.com,dgilliland@teamvelocitymarketing.com,onboarding@teamvelocitymarketing.com,Accounting@teamvelocitymarketing.com,sfintegration@teamvelocitymarketing.com,&quot;&amp;
+Owner.Email&amp;&quot;,&quot;&amp;Account.Regional_Account_Director__r.Email&amp;&quot;,&quot;&amp; Account.Account_Manager__r.Email</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Order Confirmation Notify</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

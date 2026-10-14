@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OBCLGS_Add_Dealertrack_RouteOne__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Dealertrack/RouteOne Credit App Integration Only - submit test lead &amp; confirm receipt</inlineHelpText>
+    <label>OBCLGS Add Dealertrack/RouteOne</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

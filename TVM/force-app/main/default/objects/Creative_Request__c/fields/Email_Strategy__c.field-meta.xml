@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Strategy__c</fullName>
+    <label>Email Strategy</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>----------ALL OF SALES----------</fullName>
+                <default>false</default>
+                <label>----------ALL OF SALES----------</label>
+            </value>
+            <value>
+                <fullName>New Active Shopper</fullName>
+                <default>false</default>
+                <label>New Active Shopper</label>
+            </value>
+            <value>
+                <fullName>Used Active Shopper</fullName>
+                <default>false</default>
+                <label>Used Active Shopper</label>
+            </value>
+            <value>
+                <fullName>Lease Expiration</fullName>
+                <default>false</default>
+                <label>Lease Expiration</label>
+            </value>
+            <value>
+                <fullName>Credit Pre-Qualification</fullName>
+                <default>false</default>
+                <label>Credit Pre-Qualification</label>
+            </value>
+            <value>
+                <fullName>Service Reimbursement</fullName>
+                <default>false</default>
+                <label>Service Reimbursement</label>
+            </value>
+            <value>
+                <fullName>Holiday</fullName>
+                <default>false</default>
+                <label>Holiday</label>
+            </value>
+            <value>
+                <fullName>Statement Email - Sales</fullName>
+                <default>false</default>
+                <label>Statement Email - Sales</label>
+            </value>
+            <value>
+                <fullName>All In Drive Off</fullName>
+                <default>false</default>
+                <label>All In Drive Off</label>
+            </value>
+            <value>
+                <fullName>Service Appointment Appraisal Only</fullName>
+                <default>false</default>
+                <label>Service Appointment Appraisal Only</label>
+            </value>
+            <value>
+                <fullName>Ownership Verification</fullName>
+                <default>false</default>
+                <label>Ownership Verification</label>
+            </value>
+            <value>
+                <fullName>Portal Announcement</fullName>
+                <default>false</default>
+                <label>Portal Announcement</label>
+            </value>
+            <value>
+                <fullName>----------ALL OF SERVICE----------</fullName>
+                <default>false</default>
+                <label>----------ALL OF SERVICE----------</label>
+            </value>
+            <value>
+                <fullName>Thank You For Your Purchase</fullName>
+                <default>false</default>
+                <label>Thank You For Your Purchase</label>
+            </value>
+            <value>
+                <fullName>Monthly Updates</fullName>
+                <default>false</default>
+                <label>Monthly Updates</label>
+            </value>
+            <value>
+                <fullName>Maintenance Reminders</fullName>
+                <default>false</default>
+                <label>Maintenance Reminders</label>
+            </value>
+            <value>
+                <fullName>Past Due Maintenance Reminders</fullName>
+                <default>false</default>
+                <label>Past Due Maintenance Reminders</label>
+            </value>
+            <value>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+                <label>At Risk</label>
+            </value>
+            <value>
+                <fullName>Service Recovery</fullName>
+                <default>false</default>
+                <label>Service Recovery</label>
+            </value>
+            <value>
+                <fullName>Thank You for Service</fullName>
+                <default>false</default>
+                <label>Thank You for Service</label>
+            </value>
+            <value>
+                <fullName>Statement Email - Service</fullName>
+                <default>false</default>
+                <label>Statement Email - Service</label>
+            </value>
+            <value>
+                <fullName>New Sale Accessories</fullName>
+                <default>false</default>
+                <label>New Sale Accessories</label>
+            </value>
+            <value>
+                <fullName>Missed Service Appointment</fullName>
+                <default>false</default>
+                <label>Missed Service Appointment</label>
+            </value>
+            <value>
+                <fullName>Recalls</fullName>
+                <default>false</default>
+                <label>Recalls</label>
+            </value>
+            <value>
+                <fullName>Service Appointment Confirmation</fullName>
+                <default>false</default>
+                <label>Service Appointment Confirmation</label>
+            </value>
+            <value>
+                <fullName>Download Coupon But Not Yet Serviced</fullName>
+                <default>false</default>
+                <label>Download Coupon But Not Yet Serviced</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

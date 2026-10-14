@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Cancellation_Status__c</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Client_Team_Lead__c</columns>
+    <columns>RAD__c</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Most_Recent_Health_Score__c</columns>
+    <columns>Date_of_Latest_Budget__c</columns>
+    <columns>Amount_of_Latest_Net_Revenue__c</columns>
+    <columns>Earliest_Budget_Month__c</columns>
+    <columns>Earliest_Budget_Month_Net_Revenue_Amount__c</columns>
+    <columns>Amount_of_1st_Budget_Month__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

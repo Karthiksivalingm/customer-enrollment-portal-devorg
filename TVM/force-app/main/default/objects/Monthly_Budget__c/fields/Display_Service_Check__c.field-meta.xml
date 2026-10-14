@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Service_Check__c</fullName>
+    <formula>Category_Display_Service_Budget_Amount__c &gt;0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Display Service Check</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Approved_Discount__c</fullName>
+    <formula>IF(TEXT(Status__c) = &quot;Partially Approved&quot;,
+
+IF(ISBLANK(Requested_Discounted_Selling_Price_1__c), 0,  Opportunity_Product_1__r.ListPrice - Approved_Price_1__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_2__c), 0,  Opportunity_Product_2__r.ListPrice - Approved_Price_2__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_3__c), 0,  Opportunity_Product_3__r.ListPrice - Approved_Price_3__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_4__c), 0,  Opportunity_Product_4__r.ListPrice - Approved_Price_4__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_5__c), 0,  Opportunity_Product_5__r.ListPrice - Approved_Price_5__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_6__c), 0,  Opportunity_Product_6__r.ListPrice - Approved_Price_6__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_7__c), 0,  Opportunity_Product_7__r.ListPrice - Approved_Price_7__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_8__c), 0,  Opportunity_Product_8__r.ListPrice - Approved_Price_8__c)
++
+IF(ISBLANK(Requested_Discounted_Selling_Price_9__c), 0,  Opportunity_Product_9__r.ListPrice - Approved_Price_9__c),
+
+IF(TEXT(Status__c) = &quot;Approved&quot;, Total_Discount_Requested__c, 0
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Approved Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

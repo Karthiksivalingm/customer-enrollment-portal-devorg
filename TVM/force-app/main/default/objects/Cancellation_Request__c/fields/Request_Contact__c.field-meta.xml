@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Dealer Contact Requesting Cancellation</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.No_Longer_With_Company__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Cancellation Requests</relationshipLabel>
+    <relationshipName>Cancellation_Requests</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

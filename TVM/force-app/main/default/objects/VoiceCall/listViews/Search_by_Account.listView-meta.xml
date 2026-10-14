@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_by_Account</fullName>
+    <columns>CallStartDateTime</columns>
+    <columns>FromPhoneNumber</columns>
+    <columns>CallType</columns>
+    <columns>CallResolution</columns>
+    <columns>Owner</columns>
+    <columns>Name</columns>
+    <columns>EndUser</columns>
+    <columns>QualityScore</columns>
+    <columns>CallOrigin</columns>
+    <columns>Related_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Related_Account__c</field>
+        <operation>equals</operation>
+        <value>Frank&apos;s Irvine Subaru</value>
+    </filters>
+    <label>Search by Account</label>
+</ListView>

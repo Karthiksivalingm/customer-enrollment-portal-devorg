@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foundation_Request_Type__c</fullName>
+    <description>FND</description>
+    <label>Foundation Request Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>14 Launch Day QA</fullName>
+                <default>false</default>
+                <label>14 Launch Day QA</label>
+            </value>
+            <value>
+                <fullName>15 Min. Consult</fullName>
+                <default>false</default>
+                <label>15 Min. Consult</label>
+            </value>
+            <value>
+                <fullName>20 Group Pitch</fullName>
+                <default>false</default>
+                <label>20 Group Pitch</label>
+            </value>
+            <value>
+                <fullName>5 Min. Recorded Recap</fullName>
+                <default>false</default>
+                <label>5 Min. Recorded Recap</label>
+            </value>
+            <value>
+                <fullName>7 Launch Day QA</fullName>
+                <default>false</default>
+                <label>7 Launch Day QA</label>
+            </value>
+            <value>
+                <fullName>Account Cancellation - Account Cancelled: Run Final Payments &quot;Day after Last Day of Service&quot;</fullName>
+                <default>false</default>
+                <label>Account Cancellation - Account Cancelled: Run Final Payments &quot;Day after Last Day of Service&quot;</label>
+            </value>
+            <value>
+                <fullName>Account Cancellation - Account Cancelled: Set Automated Cancellation Rules</fullName>
+                <default>false</default>
+                <label>Account Cancellation - Account Cancelled: Set Automated Cancellation Rules</label>
+            </value>
+            <value>
+                <fullName>Accounting Invoice Request</fullName>
+                <default>false</default>
+                <label>Accounting Invoice Request</label>
+            </value>
+            <value>
+                <fullName>Ad Account Name Audit</fullName>
+                <default>false</default>
+                <label>Ad Account Name Audit</label>
+            </value>
+            <value>
+                <fullName>Adjust Meta Budget Automated Rules</fullName>
+                <default>false</default>
+                <label>Adjust Meta Budget Automated Rules</label>
+            </value>
+            <value>
+                <fullName>Ads Support</fullName>
+                <default>false</default>
+                <label>Ads Support</label>
+            </value>
+            <value>
+                <fullName>Alert &amp; Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Alert &amp; Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>AT Monthly Deep Dive</fullName>
+                <default>false</default>
+                <label>AT Monthly Deep Dive</label>
+            </value>
+            <value>
+                <fullName>AT QA Notes/Adjustments</fullName>
+                <default>false</default>
+                <label>AT QA Notes/Adjustments</label>
+            </value>
+            <value>
+                <fullName>AT Recommendation</fullName>
+                <default>false</default>
+                <label>AT Recommendation</label>
+            </value>
+            <value>
+                <fullName>Bid Change</fullName>
+                <default>false</default>
+                <label>Bid Change</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <default>false</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Boost Admin</fullName>
+                <default>false</default>
+                <label>Boost Admin</label>
+            </value>
+            <value>
+                <fullName>Budget Accuracy - Pacing Report</fullName>
+                <default>false</default>
+                <label>Budget Accuracy - Pacing Report</label>
+            </value>
+            <value>
+                <fullName>Budget Change</fullName>
+                <default>false</default>
+                <label>Budget Change</label>
+            </value>
+            <value>
+                <fullName>Business Intelligence Kickoff</fullName>
+                <default>false</default>
+                <label>Business Intelligence Kickoff</label>
+            </value>
+            <value>
+                <fullName>Campaign Build - Client Requested</fullName>
+                <default>false</default>
+                <label>Campaign Build - Client Requested</label>
+            </value>
+            <value>
+                <fullName>Campaign Build - Get Me More</fullName>
+                <default>false</default>
+                <label>Campaign Build - Get Me More</label>
+            </value>
+            <value>
+                <fullName>Campaign Build - Standard</fullName>
+                <default>false</default>
+                <label>Campaign Build - Standard</label>
+            </value>
+            <value>
+                <fullName>Change Video/Ad Copy</fullName>
+                <default>false</default>
+                <label>Change Video/Ad Copy</label>
+            </value>
+            <value>
+                <fullName>CID List</fullName>
+                <default>false</default>
+                <label>CID List</label>
+            </value>
+            <value>
+                <fullName>Client Request</fullName>
+                <default>false</default>
+                <label>Client Request</label>
+            </value>
+            <value>
+                <fullName>Contact Client</fullName>
+                <default>false</default>
+                <label>Contact Client</label>
+            </value>
+            <value>
+                <fullName>CoOp</fullName>
+                <default>false</default>
+                <label>CoOp</label>
+            </value>
+            <value>
+                <fullName>Dashboard Issue</fullName>
+                <default>false</default>
+                <label>Dashboard Issue</label>
+            </value>
+            <value>
+                <fullName>Data Deep Dive</fullName>
+                <default>false</default>
+                <label>Data Deep Dive</label>
+            </value>
+            <value>
+                <fullName>Dealer Cancellation - Remove Looker Credentials</fullName>
+                <default>false</default>
+                <label>Dealer Cancellation - Remove Looker Credentials</label>
+            </value>
+            <value>
+                <fullName>Dealership Deep Dive ($195)</fullName>
+                <default>false</default>
+                <label>Dealership Deep Dive ($195)</label>
+            </value>
+            <value>
+                <fullName>Elantra RPM Sprint</fullName>
+                <default>false</default>
+                <label>Elantra RPM Sprint</label>
+            </value>
+            <value>
+                <fullName>Expected Billing File</fullName>
+                <default>false</default>
+                <label>Expected Billing File</label>
+            </value>
+            <value>
+                <fullName>Facebook Campaigns Ready</fullName>
+                <default>false</default>
+                <label>Facebook Campaigns Ready</label>
+            </value>
+            <value>
+                <fullName>Facebook Not Yet Live</fullName>
+                <default>false</default>
+                <label>Facebook Not Yet Live</label>
+            </value>
+            <value>
+                <fullName>Failure to Create GA4 Property ID</fullName>
+                <default>false</default>
+                <label>Failure to Create GA4 Property ID</label>
+            </value>
+            <value>
+                <fullName>Failure To Create GTM API ID</fullName>
+                <default>false</default>
+                <label>Failure To Create GTM API ID</label>
+            </value>
+            <value>
+                <fullName>Future Budget Change</fullName>
+                <default>false</default>
+                <label>Future Budget Change</label>
+            </value>
+            <value>
+                <fullName>Future Campaign Build - Client Requested</fullName>
+                <default>false</default>
+                <label>Future Campaign Build - Client Requested</label>
+            </value>
+            <value>
+                <fullName>Future Campaign Build - Get Me More</fullName>
+                <default>false</default>
+                <label>Future Campaign Build - Get Me More</label>
+            </value>
+            <value>
+                <fullName>Future Campaign Build - Standard</fullName>
+                <default>false</default>
+                <label>Future Campaign Build - Standard</label>
+            </value>
+            <value>
+                <fullName>GA4 Build Is Not Complete</fullName>
+                <default>false</default>
+                <label>GA4 Build Is Not Complete</label>
+            </value>
+            <value>
+                <fullName>Geo Change</fullName>
+                <default>false</default>
+                <label>Geo Change</label>
+            </value>
+            <value>
+                <fullName>Google/Bing Allocation Adjustment</fullName>
+                <default>false</default>
+                <label>Google/Bing Allocation Adjustment</label>
+            </value>
+            <value>
+                <fullName>GTM Email Not Sent</fullName>
+                <default>false</default>
+                <label>GTM Email Not Sent</label>
+            </value>
+            <value>
+                <fullName>GTM Not On Site</fullName>
+                <default>false</default>
+                <label>GTM Not On Site</label>
+            </value>
+            <value>
+                <fullName>Hyundai CoOp - Digital Expansion</fullName>
+                <default>false</default>
+                <label>Hyundai CoOp - Digital Expansion</label>
+            </value>
+            <value>
+                <fullName>Inventory Support</fullName>
+                <default>false</default>
+                <label>Inventory Support</label>
+            </value>
+            <value>
+                <fullName>Keyword/Audience Audit/Adjustment</fullName>
+                <default>false</default>
+                <label>Keyword/Audience Audit/Adjustment</label>
+            </value>
+            <value>
+                <fullName>Launch Day QA</fullName>
+                <default>false</default>
+                <label>Launch Day QA</label>
+            </value>
+            <value>
+                <fullName>Link Google Ads Account</fullName>
+                <default>false</default>
+                <label>Link Google Ads Account</label>
+            </value>
+            <value>
+                <fullName>Login/Access Issue</fullName>
+                <default>false</default>
+                <label>Login/Access Issue</label>
+            </value>
+            <value>
+                <fullName>Monthly Enrollment Audit</fullName>
+                <default>false</default>
+                <label>Monthly Enrollment Audit</label>
+            </value>
+            <value>
+                <fullName>Monthly Executive Roll Up Report</fullName>
+                <default>false</default>
+                <label>Monthly Executive Roll Up Report</label>
+            </value>
+            <value>
+                <fullName>Monthly Offers Update (Ad Feed)</fullName>
+                <default>false</default>
+                <label>Monthly Offers Update (Ad Feed)</label>
+            </value>
+            <value>
+                <fullName>Monthly Performance Summary</fullName>
+                <default>false</default>
+                <label>Monthly Performance Summary</label>
+            </value>
+            <value>
+                <fullName>Monthly QA</fullName>
+                <default>false</default>
+                <label>Monthly QA</label>
+            </value>
+            <value>
+                <fullName>Monthly Search Term Audit</fullName>
+                <default>false</default>
+                <label>Monthly Search Term Audit</label>
+            </value>
+            <value>
+                <fullName>NCM Intelligence Scorecard Kickoff</fullName>
+                <default>false</default>
+                <label>NCM Intelligence Scorecard Kickoff</label>
+            </value>
+            <value>
+                <fullName>NCM Meeting</fullName>
+                <default>false</default>
+                <label>NCM Meeting</label>
+            </value>
+            <value>
+                <fullName>NCM Member Status</fullName>
+                <default>false</default>
+                <label>NCM Member Status</label>
+            </value>
+            <value>
+                <fullName>New Platform (Social/VA)</fullName>
+                <default>false</default>
+                <label>New Platform (Social/VA)</label>
+            </value>
+            <value>
+                <fullName>New Regional Offers Update</fullName>
+                <default>false</default>
+                <label>New Regional Offers Update</label>
+            </value>
+            <value>
+                <fullName>Offer-Based Video Creative</fullName>
+                <default>false</default>
+                <label>Offer-Based Video Creative</label>
+            </value>
+            <value>
+                <fullName>Offer Language Removal</fullName>
+                <default>false</default>
+                <label>Offer Language Removal</label>
+            </value>
+            <value>
+                <fullName>Office Hours</fullName>
+                <default>false</default>
+                <label>Office Hours</label>
+            </value>
+            <value>
+                <fullName>Order Inventory</fullName>
+                <default>false</default>
+                <label>Order Inventory</label>
+            </value>
+            <value>
+                <fullName>Other (Long SLA)</fullName>
+                <default>false</default>
+                <label>Other (Long SLA)</label>
+            </value>
+            <value>
+                <fullName>Over/Under Spend</fullName>
+                <default>false</default>
+                <label>Over/Under Spend</label>
+            </value>
+            <value>
+                <fullName>Pacing Report</fullName>
+                <default>false</default>
+                <label>Pacing Report</label>
+            </value>
+            <value>
+                <fullName>Pause Campaign (same day SLA)</fullName>
+                <default>false</default>
+                <label>Pause Campaign (same day SLA)</label>
+            </value>
+            <value>
+                <fullName>Pause Campaigns</fullName>
+                <default>false</default>
+                <label>Pause Campaigns</label>
+            </value>
+            <value>
+                <fullName>Performance Alert Review</fullName>
+                <default>false</default>
+                <label>Performance Alert Review</label>
+            </value>
+            <value>
+                <fullName>Performance Inquiry/Analysis Keyword</fullName>
+                <default>false</default>
+                <label>Performance Inquiry/Analysis Keyword</label>
+            </value>
+            <value>
+                <fullName>Performance Inquiry - Leadership</fullName>
+                <default>false</default>
+                <label>Performance Inquiry - Leadership</label>
+            </value>
+            <value>
+                <fullName>Performance Review</fullName>
+                <default>false</default>
+                <label>Performance Review</label>
+            </value>
+            <value>
+                <fullName>PMax Ready to Launch</fullName>
+                <default>false</default>
+                <label>PMax Ready to Launch</label>
+            </value>
+            <value>
+                <fullName>Pod Leader - Account Launch QA</fullName>
+                <default>false</default>
+                <label>Pod Leader - Account Launch QA</label>
+            </value>
+            <value>
+                <fullName>Pre/Post Request</fullName>
+                <default>false</default>
+                <label>Pre/Post Request</label>
+            </value>
+            <value>
+                <fullName>President&apos;s Day Sales Event Material</fullName>
+                <default>false</default>
+                <label>President&apos;s Day Sales Event Material</label>
+            </value>
+            <value>
+                <fullName>Program Insights</fullName>
+                <default>false</default>
+                <label>Program Insights</label>
+            </value>
+            <value>
+                <fullName>QBR</fullName>
+                <default>false</default>
+                <label>QBR</label>
+            </value>
+            <value>
+                <fullName>Reset Facebook Budgets</fullName>
+                <default>false</default>
+                <label>Reset Facebook Budgets</label>
+            </value>
+            <value>
+                <fullName>Rollbacks</fullName>
+                <default>false</default>
+                <label>Rollbacks</label>
+            </value>
+            <value>
+                <fullName>RPM Sprint</fullName>
+                <default>false</default>
+                <label>RPM Sprint</label>
+            </value>
+            <value>
+                <fullName>Schedule Review</fullName>
+                <default>false</default>
+                <label>Schedule Review</label>
+            </value>
+            <value>
+                <fullName>Service Coupons</fullName>
+                <default>false</default>
+                <label>Service Coupons</label>
+            </value>
+            <value>
+                <fullName>Share Active Retailer File</fullName>
+                <default>false</default>
+                <label>Share Active Retailer File</label>
+            </value>
+            <value>
+                <fullName>Share Hyundai and Genesis Monthly Dealer List</fullName>
+                <default>false</default>
+                <label>Share Hyundai and Genesis Monthly Dealer List</label>
+            </value>
+            <value>
+                <fullName>Shift Billing File</fullName>
+                <default>false</default>
+                <label>Shift Billing File</label>
+            </value>
+            <value>
+                <fullName>Sitelink Extension build/change</fullName>
+                <default>false</default>
+                <label>Sitelink Extension build/change</label>
+            </value>
+            <value>
+                <fullName>TVM Tagging</fullName>
+                <default>false</default>
+                <label>TVM Tagging</label>
+            </value>
+            <value>
+                <fullName>Update Dealer Differentiators</fullName>
+                <default>false</default>
+                <label>Update Dealer Differentiators</label>
+            </value>
+            <value>
+                <fullName>Update Enrollment Report</fullName>
+                <default>false</default>
+                <label>Update Enrollment Report</label>
+            </value>
+            <value>
+                <fullName>Update Landing Page(s)</fullName>
+                <default>false</default>
+                <label>Update Landing Page(s)</label>
+            </value>
+            <value>
+                <fullName>Vehicle Ads Campaigns Ready</fullName>
+                <default>false</default>
+                <label>Vehicle Ads Campaigns Ready</label>
+            </value>
+            <value>
+                <fullName>Video Ad Approval</fullName>
+                <default>false</default>
+                <label>Video Ad Approval</label>
+            </value>
+            <value>
+                <fullName>Virtual Data Deep Dive</fullName>
+                <default>false</default>
+                <label>Virtual Data Deep Dive</label>
+            </value>
+            <value>
+                <fullName>Website Not Verified</fullName>
+                <default>false</default>
+                <label>Website Not Verified</label>
+            </value>
+            <value>
+                <fullName>Weekly Enrollment Audit</fullName>
+                <default>false</default>
+                <label>Weekly Enrollment Audit</label>
+            </value>
+            <value>
+                <fullName>Weekly QA</fullName>
+                <default>false</default>
+                <label>Weekly QA</label>
+            </value>
+            <value>
+                <fullName>WER Alert Monitoring</fullName>
+                <default>false</default>
+                <label>WER Alert Monitoring</label>
+            </value>
+            <value>
+                <fullName>WER Billing</fullName>
+                <default>false</default>
+                <label>WER Billing</label>
+            </value>
+            <value>
+                <fullName>Winter Sales Event Material</fullName>
+                <default>false</default>
+                <label>Winter Sales Event Material</label>
+            </value>
+            <value>
+                <fullName>ASC Event Approval</fullName>
+                <default>false</default>
+                <label>ASC Event Approval</label>
+            </value>
+            <value>
+                <fullName>Onboarding: ASC Event Approval</fullName>
+                <default>false</default>
+                <label>Onboarding: ASC Event Approval</label>
+            </value>
+            <value>
+                <fullName>Onboarding: 3rd Party Vendor Identification</fullName>
+                <default>false</default>
+                <label>Onboarding: 3rd Party Vendor Identification</label>
+            </value>
+            <value>
+                <fullName>Onboarding: 3rd Party Vendor Email Outreach</fullName>
+                <default>false</default>
+                <label>Onboarding: 3rd Party Vendor Email Outreach</label>
+            </value>
+            <value>
+                <fullName>Onboarding: ASC Event Confirmation</fullName>
+                <default>false</default>
+                <label>Onboarding: ASC Event Confirmation</label>
+            </value>
+            <value>
+                <fullName>Case Request</fullName>
+                <default>false</default>
+                <label>Case Request</label>
+            </value>
+            <value>
+                <fullName>Live Client - New Product Launch</fullName>
+                <default>false</default>
+                <label>Live Client - New Product Launch</label>
+            </value>
+            <value>
+                <fullName>New Campaign Request</fullName>
+                <default>false</default>
+                <label>New Campaign Request</label>
+            </value>
+            <value>
+                <fullName>Ad Copy &amp; Creative Updates</fullName>
+                <default>false</default>
+                <label>Ad Copy &amp; Creative Updates</label>
+            </value>
+            <value>
+                <fullName>Extension Request</fullName>
+                <default>false</default>
+                <label>Extension Request</label>
+            </value>
+            <value>
+                <fullName>Keyword Updates</fullName>
+                <default>false</default>
+                <label>Keyword Updates</label>
+            </value>
+            <value>
+                <fullName>Audience Updates</fullName>
+                <default>false</default>
+                <label>Audience Updates</label>
+            </value>
+            <value>
+                <fullName>IP Address Exclusion</fullName>
+                <default>false</default>
+                <label>IP Address Exclusion</label>
+            </value>
+            <value>
+                <fullName>Geo Targeting Updates</fullName>
+                <default>false</default>
+                <label>Geo Targeting Updates</label>
+            </value>
+            <value>
+                <fullName>Modify Landing Pages</fullName>
+                <default>false</default>
+                <label>Modify Landing Pages</label>
+            </value>
+            <value>
+                <fullName>Enable or Pause Campaign</fullName>
+                <default>false</default>
+                <label>Enable or Pause Campaign</label>
+            </value>
+            <value>
+                <fullName>Spend &amp; Budget Adjustments</fullName>
+                <default>false</default>
+                <label>Spend &amp; Budget Adjustments</label>
+            </value>
+            <value>
+                <fullName>Performance Optimization &amp; Recommendations</fullName>
+                <default>false</default>
+                <label>Performance Optimization &amp; Recommendations</label>
+            </value>
+            <value>
+                <fullName>Pacing - Product Under/Over Pacing</fullName>
+                <default>false</default>
+                <label>Pacing - Product Under/Over Pacing</label>
+            </value>
+            <value>
+                <fullName>Model/Inventory Adjustment (Model Specific Campaigns)</fullName>
+                <default>false</default>
+                <label>Model/Inventory Adjustment (Model Specific Campaigns)</label>
+            </value>
+            <value>
+                <fullName>Bid Adjustments/Modifiers</fullName>
+                <default>false</default>
+                <label>Bid Adjustments/Modifiers</label>
+            </value>
+            <value>
+                <fullName>Custom Tagging - Adding Clarivoy Or Custom Tracking</fullName>
+                <default>false</default>
+                <label>Custom Tagging - Adding Clarivoy Or Custom Tracking</label>
+            </value>
+            <value>
+                <fullName>Add Email Recipients - Add Emails To Ad Platforms</fullName>
+                <default>false</default>
+                <label>Add Email Recipients - Add Emails To Ad Platforms</label>
+            </value>
+            <value>
+                <fullName>Tracking &amp; Tagging Audit</fullName>
+                <default>false</default>
+                <label>Tracking &amp; Tagging Audit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

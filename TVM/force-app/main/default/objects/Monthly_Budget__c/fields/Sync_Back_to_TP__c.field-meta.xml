@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sync_Back_to_TP__c</fullName>
+    <formula>Budget_Month_Date__c &gt;= ADDMONTHS(Today(),-18) &amp;&amp;  IsBlank(Quickbase_Record_ID__c )=false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sync Back to TP</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

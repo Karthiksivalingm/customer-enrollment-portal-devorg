@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alphabetically_Low__c</fullName>
+    <formula>OR(
+    BEGINS(LastName, &quot;A&quot;),
+    BEGINS(LastName, &quot;B&quot;),
+    BEGINS(LastName, &quot;C&quot;),
+    BEGINS(LastName, &quot;D&quot;),
+    BEGINS(LastName, &quot;E&quot;),
+    BEGINS(LastName, &quot;F&quot;),
+    BEGINS(LastName, &quot;G&quot;),
+    BEGINS(LastName, &quot;H&quot;),
+    BEGINS(LastName, &quot;I&quot;),
+    BEGINS(LastName, &quot;J&quot;),
+    BEGINS(LastName, &quot;K&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Alphabetically Low</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

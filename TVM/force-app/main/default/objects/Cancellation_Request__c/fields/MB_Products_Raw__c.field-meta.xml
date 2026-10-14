@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MB_Products_Raw__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Final_Monthly_Budget__r.MC_Digital__c , &quot;D | &quot;, &quot;&quot;)&amp;
+if(Final_Monthly_Budget__r.MC_Retention__c , &quot;R | &quot;, &quot;&quot;)&amp;
+if(Final_Monthly_Budget__r.Category_Website_Active__c , &quot;W | &quot;, &quot;&quot;)&amp;
+if(Final_Monthly_Budget__r.Category_Sales_Mail_Active__c ||  Final_Monthly_Budget__r.Category_Service_Mail_Active__c, &quot;M&quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>MB Products Raw</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

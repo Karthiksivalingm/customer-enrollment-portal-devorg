@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Sales_Month__c</fullName>
+    <description>I dont think we use this one anymore!!! shane - 7-26-2024</description>
+    <formula>if(Activity_Date__c &gt;=DATE(2025	, 12, 1)&amp;&amp; Activity_Date__c &lt;=DATE(2025, 12, 31), DATE(2025, 12, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 11, 1)&amp;&amp; Activity_Date__c &lt;=DATE(2025, 11, 30), DATE(2025, 11, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 10, 1)&amp;&amp; Activity_Date__c &lt;=DATE(2025, 10, 31), DATE(2025, 10, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 9, 1)&amp;&amp; Activity_Date__c&lt;=DATE(2025, 9, 30), DATE(2025, 9, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 8, 1)&amp;&amp; Activity_Date__c&lt;=DATE(2025, 8, 31), DATE(2025, 8, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 7, 1)&amp;&amp; Activity_Date__c&lt;=DATE(2025, 7, 31), DATE(2025, 7, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 5, 31)&amp;&amp; Activity_Date__c&lt;=DATE(2025, 6, 30), DATE(2025, 6, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 4, 29)&amp;&amp; Activity_Date__c&lt;=DATE(2025, 5, 30), DATE(2025, 5, 1),
+if(Activity_Date__c &gt;=DATE(2025	, 3, 28)&amp;&amp; Activity_Date__c&lt;=DATE(2025, 4, 28), DATE(2025, 4, 1),
+TVM_Sales_Month_Static_Completed__c)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVM Sales Month (Set)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

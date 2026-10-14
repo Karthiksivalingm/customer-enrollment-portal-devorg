@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dataloading_Rollup__c</fullName>
+    <label>Dataloading Rollup</label>
+    <summarizedField>Credit_Request__c.Credit_Amount__c</summarizedField>
+    <summaryForeignKey>Credit_Request__c.Account__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

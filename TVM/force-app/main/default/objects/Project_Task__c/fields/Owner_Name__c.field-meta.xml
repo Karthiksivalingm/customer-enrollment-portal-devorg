@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+Assigned_To__c=&quot;&quot;, 
+		Case(Text(Responsibility__c),
+			&quot;Designer&quot;,  Designer__r.FirstName &amp; &quot; &quot; &amp; Designer__r.LastName,
+			&quot;Production Specialist&quot;,  Production_Specialist__r.FirstName &amp; &quot; &quot; &amp; Production_Specialist__r.LastName,
+			&quot;Compliance Team&quot;,  Compliance_Team__r.FirstName &amp; &quot; &quot; &amp; Compliance_Team__r.LastName,
+			&quot;Website Team&quot;,  Website_QC__r.FirstName &amp; &quot; &quot; &amp; Website_QC__r.LastName,
+			&quot;Onboarding Rep&quot;,  Project_Creator__r.FirstName &amp; &quot; &quot; &amp; Project_Creator__r.LastName,
+			&quot;error&quot;
+		),
+	Assigned_To__r.FirstName &amp; &quot; &quot; &amp;Assigned_To__r.LastName
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

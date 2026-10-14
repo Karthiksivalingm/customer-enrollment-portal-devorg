@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HS_Credit_Issued__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Credit_Issued_This_Month__c &gt;= 5000, 20,
+IF(Credit_Issued_This_Month__c &gt;= 2500, 10,
+IF(Credit_Issued_This_Month__c &gt;= 1000, 5,
+0
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Credit Issued Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

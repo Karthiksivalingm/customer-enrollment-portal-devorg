@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(TEXT(Status__c) = &quot;08 Not Approved, Changes Still Needed&quot;, TEXT(Status__c) = &quot;04 Approved&quot;, TEXT(Status__c) = &quot;05 Approved&quot;, TEXT(Status__c) = &quot;06 Rejected&quot;, TEXT(Status__c) = &quot;07 Rejected&quot; , TEXT(Status__c) = &quot;98 Cancelled&quot; ), &quot;Closed&quot;, &quot;Open&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Closed</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_All_Opportunities_East_West</fullName>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>MSA_Contract_Formula__c</columns>
+    <columns>Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>Opportunity.Historical</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.PROBABILITY</field>
+        <operation>greaterThan</operation>
+        <value>30.0</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Closed Won,Upsold</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.AMOUNT</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FULL_NAME</field>
+        <operation>notContain</operation>
+        <value>James Green</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>Central,West</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>West Opportunities</label>
+</ListView>

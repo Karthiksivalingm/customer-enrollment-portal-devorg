@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dependence_Lock</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Flow_Override_Close__c = FALSE,
+Dependence_Lock__c,
+ISCHANGED(Dependence_Lock__c)=false,
+ISCHANGED(Released_Date__c)=false,
+NOT(ISNEW()),
+ISCHANGED(Status__c),
+Text(Status__c)!=&quot;Not Started&quot;,
+NOT( Admin_Flag__c )
+/*$User.Profile_Name__c != &quot;System Administrator&quot;*/
+)</errorConditionFormula>
+    <errorMessage>This Task is locked because one or more of the prerequisite Tasks (or Task Groups) are not completed.</errorMessage>
+</ValidationRule>

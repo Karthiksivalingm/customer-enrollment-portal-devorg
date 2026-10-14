@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Complete_Event__c</fullName>
+    <formula>Designer_Change_Bucket__c != &quot;&quot; &amp;&amp; 
+DateValue(Creative_Request_Link__r.Production_Completion_Date__c) = DateValue(Created_Date_Time__c) &amp;&amp;
+Hour(TimeValue(Creative_Request_Link__r.Production_Completion_Date__c)) = Hour(TimeValue(Created_Date_Time__c)) &amp;&amp;
+Minute(TimeValue(Creative_Request_Link__r.Production_Completion_Date__c)) = Minute(TimeValue(Created_Date_Time__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Initial Complete Event</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

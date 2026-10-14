@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Role__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+Text( Status )= &quot;Needs Information&quot; ||
+(Text( Status )= &quot;Compliance Changes&quot; &amp;&amp;  Text(Case_Request__c)!=&quot;Dealer Logo&quot; )
+,
+&quot;Submitter&quot;,
+if(Text( Status )= &quot;Compliance Changes&quot; &amp;&amp;  Text(Case_Request__c)!=&quot;Dealer Logo&quot;, &quot;Korrie&quot;,
+if(Text( Status )= &quot;Ready for Digital&quot;, &quot;Support Digital&quot;,
+
+Case(Text( Case_Category__c ),
+&quot;Advid Creative&quot;, &quot;Support Advid&quot;,
+&quot;Apollo Support&quot;, &quot;Support Apollo&quot;,
+&quot;Apollo_Websites&quot;, &quot;Support Support&quot;,
+&quot;Command Center&quot;, &quot;Support Command Center&quot;,
+&quot;Data_Support&quot;, &quot;Support Data&quot;,
+&quot;Digital_Support&quot;, &quot;Support Digital&quot;,
+&quot;Production Support&quot;, &quot;Support Production&quot;,
+&quot;Digital SD&quot;, &quot;Support Digital SD&quot;,
+&quot;SEO&quot;, &quot;Support SEO&quot;,
+&quot;Website Analytics&quot;, &quot;Website Analytics&quot;,
+&quot;General Support&quot;, &quot;General Support&quot;,
+&quot;OEM&quot;, &quot;OEM&quot;,
+&quot;Error&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Action Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

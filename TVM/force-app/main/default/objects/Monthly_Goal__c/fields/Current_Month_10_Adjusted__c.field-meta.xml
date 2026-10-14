@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Month_10_Adjusted__c</fullName>
+    <formula>if(DAY(Today())&gt;10, 
+Month(Monthly_Goal_Date__c) =  Month(Today()) &amp;&amp; Year(Monthly_Goal_Date__c) =  Year(Today()) , 
+Month(Monthly_Goal_Date__c) =  Month(ADDMONTHS(Today(), -1) ) &amp;&amp; Year(Monthly_Goal_Date__c) =  Year(ADDMONTHS(Today(), -1) )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Month 10 Adjusted</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

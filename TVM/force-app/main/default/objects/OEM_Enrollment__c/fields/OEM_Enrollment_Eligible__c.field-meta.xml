@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Enrollment_Eligible__c</fullName>
+    <formula>(
+Text( Account__r.Analytics_Franchise__c) = &quot;ACURA&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;AUDI&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;ALFA ROMEO&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;BMW&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;BUICK&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;BUICK GMC&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;CADILLAC&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;CHEVROLET&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;JEEP&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;FIAT&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;GM&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;GMC&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;GENESIS&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;HONDA&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;JEEP&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;KIA&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;MASERATI&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;MAZDA&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;MITSUBISHI&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;PORSCHE&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;RAM&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;STELLANTIS&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;SUBARU&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;TOYOTA&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;VOLKSWAGEN&quot; ||
+Text( Account__r.Analytics_Franchise__c) = &quot;VOLVO&quot;/*||
+Text( Account__r.Analytics_Franchise__c) = &quot;FORD&quot;||
+Text( Account__r.Analytics_Franchise__c) = &quot;LINCOLN&quot;*/
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OEM Enrollment Eligible</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

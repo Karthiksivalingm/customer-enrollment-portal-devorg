@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Error__c</fullName>
+    <formula>(
+
+(Notify_Me__c!=&quot;&quot; &amp;&amp; Contains(Assignment_Notification_List__c, Notify_Me__r.Email )) || 
+(Alerted_User_2__c!=&quot;&quot; &amp;&amp; Contains(Assignment_Notification_List__c, Alerted_User_2__r.Email ))
+
+) &amp;&amp;
+
+IsClosed == false
+/*&amp;&amp;$User.FirstName &lt;&gt; &quot;Integration&quot;*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Duplicate Error</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,3625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>ADD_Account_Manager_Email_FID</name>
+        <label>ADD | Account Manager Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Account_Manager_Email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Product_Manager_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Account_Tech_Lead_FID</name>
+        <label>ADD | Account Tech Lead FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Account_Technician_FID_Line</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Account_Strag_Change</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Account_Tech_Strg_FID</name>
+        <label>ADD | Account Tech Strg FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Secondary_Account_Technician_FID_Line</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Account_Trainee_Change</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Account_Tech_Trainee_FID</name>
+        <label>ADD | Account Tech Trainee FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Account_Technician_Trainee_FID_Line</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Touchpoint_Masterid_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Apollo_Website_Url_FID</name>
+        <label>ADD | Apollo_Website_Url_FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_ApolloWebsite_url_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_VP_Sales_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Auto_Group_External_ID_FID_Line</name>
+        <label>ADD | Auto Group External ID FID Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_AutoGroupExtID_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_BillingCountry_FID</name>
+        <label>ADD | BillingCountry FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_BillingCountry_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Apollo_Website_URL_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_BillingState_FID</name>
+        <label>ADD | BillingState_FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_BillingState_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_BillingCountry_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Billingstreet_FID</name>
+        <label>ADD | Billingstreet FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_BillingStreet_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_2_of_CHG_BillingStreet_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Cancelled_Reason_FID</name>
+        <label>ADD | Cancelled Reason FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_CAncelled_reason_c_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_New_Vehicle_Inventory_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Client_Team_FID</name>
+        <label>ADD | Client Team FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Client_team_fid</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OEM_SERV_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Client_Type_Team_V</name>
+        <label>ADD | Client Type Team V</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Client_type_team_v</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Ninjacat_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Digital_Go_Live_Date_FID</name>
+        <label>ADD | Digital Go Live Date FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Digital_go_live_Date_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Retention_Go_Live_Date_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Digital_SME_Email_Changed</name>
+        <label>Add Digital SME Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Digital_SME_Email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Director_of_AM_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Director_of_AM_Changed</name>
+        <label>ADD | Director of AM Changed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Director_of_AM_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_SEO_Team_Lead_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Distro_Email_FID</name>
+        <label>ADD | Distro Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Distro_email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Enrollment_Date_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Effective_Cancelled_Budget_Month_FID</name>
+        <label>ADD | Effective Cancelled Budget Month FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Effective_Cancelled_Budget_month_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Digital_Go_Live_Date_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Enrollment_Date_FID</name>
+        <label>ADD | Enrollment Date FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Enrollment_Date_C_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OB_Build_Doc_Date_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Excluded_for_Commissions_Cancellation</name>
+        <label>ADD | Excluded for Commissions Cancellation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_ExcludedforCommisions_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Trigger_Activation_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_FB_Pixel_FID</name>
+        <label>ADD | FB Pixel FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_FB_PIxel_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Client_team_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_FNDN_Billed_Through_TVM_FID</name>
+        <label>ADD | FNDN Billed Through TVM FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_FNDN_billedthroughtvm_Fid</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Foundation_direct_GTM_ID_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Foundation_Direct_GTM_ID_FID</name>
+        <label>ADD | Foundation Direct GTM ID FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Foiundation_direct_GTM_ID_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_FB_PIXEL_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Inventory_Only_FID</name>
+        <label>ADD | Inventory Only FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FX_Inventory_feed_only_Boolean</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Excluded_for_Commesions_cancellation_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_MSA_Contract_FID</name>
+        <label>ADD | MSA Contract FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_MSA_Contract_c_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OEM_Dealer_Code_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Name_FID_Line</name>
+        <label>ADD | Name FID Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Name_FID_Line</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_TP_Master_ID_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_New_Vehicle_Inventory_FID</name>
+        <label>ADD | New Vehicle Inventory FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_New_Vehicle_inventory_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Inventory_Feeds_only_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Ninja_FID_Line</name>
+        <label>ADD | Ninja FID Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Ninjacat_recipient</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Phone_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OB_Account_Director_Email_FID</name>
+        <label>ADD | OB Account Director Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Onboarding_accountDirector_email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Account_Manager_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OB_Account_Manager_Email_FID</name>
+        <label>ADD | OB Account Manager Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Onboarding_Account_Manager_Email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OB_Account_Director_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OB_Build_Doc_Date_FID</name>
+        <label>ADD | OB Build Doc Date FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OB_Build_Doc_Date_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Effective_Cancelled_Budget_Month_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OEM_Dealer_Code_FID</name>
+        <label>ADD | OEM Dealer Code FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OEM_Dealer_code_c_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Cancelled_Reason_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OEM_Production_allocation_Details</name>
+        <label>ADD | OEM Production allocation Details</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OEM_Production_Allocation_details</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Region_ProductionChanged</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OEM_Region</name>
+        <label>ADD | OEM Region</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OEMREGION</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OEM_Product_Allocation_Details_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OEM_Region_Code</name>
+        <label>ADD | OEM Region Code</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OEMREGIONCODE</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OEM_Region_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OEM_Serv_FID</name>
+        <label>ADD | OEM Serv FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OEM_SERV_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OEM_ZOne_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_OEM_Zone</name>
+        <label>ADD | OEM Zone</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OEM_ZONE_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OEM_Region_Code_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Onboarding_Status</name>
+        <label>ADD | Onboarding Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_OnboardinginProgress</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Name_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Phone_FID_Line</name>
+        <label>ADD | Phone FID Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Phone_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Auto_Group_External_ID_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Product_Manager_Email_FID</name>
+        <label>ADD | Product Manager Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Product_Manager_email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Digital_SME_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_RAD_Email_FID</name>
+        <label>ADD | RAD Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Regional_Account_Director_email_c_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_RSM_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_RAD_FID</name>
+        <label>ADD | RPM FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Regional_Performance_Manager_FID_Line</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Regional_Performance_Manager_Changed_EM</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Regional_Performance_Director</name>
+        <label>ADD | Regional Performance Director</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Regional_Performance_Director</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Account_Technician_Lead_changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Regional_Performance_Manager_Trainee</name>
+        <label>ADD | Regional Performance Manager Trainee</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_RegionalPerformanceManagerTrainee</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CALL_Send_Account_to_TouchPoint</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Retention_Go_Live_Date_FID</name>
+        <label>ADD | Retention Go Live Date FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Retention_go_live_dateFID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Website_Go_Live_Date_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_RPD_Email_FID</name>
+        <label>ADD | RPD Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_RPD_email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_OB_Account_Manager_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_RPM_EM_FID</name>
+        <label>ADD | RPM EM FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Regional_Perfomance_Manager_Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Regional_Performance_Director_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_RSD_Email_FID</name>
+        <label>ADD | RSD Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Regional_Sales_Director_email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_RPD_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_RSM_Email_FID</name>
+        <label>ADD | RSM Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Regional_sales_manager_email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_RSD_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_SEO_Analyst_FID</name>
+        <label>ADD | SEO Analyst FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_SEO_Analyst_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Distro_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_SEO_Team_Lead_FID</name>
+        <label>ADD | SEO Team Lead FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_SEO_Team_Lead_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_SEO_Analyst_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_touchpoint_master_ID_FID_Line</name>
+        <label>ADD | touchpoint master ID FID Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TTTouchpointMasterID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Website_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_TP_Master_ID_FID</name>
+        <label>ADD | TP Master ID FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Touchpoint_Master_ID_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_TVM_Master_ID_Change</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_TVM_Master_ID_FID</name>
+        <label>ADD | TVM Master ID FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TTTVMMasterTouchpointIDchange</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Regional_Performance_Manager_Trainee</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_VP_Client_Services_Email_FID</name>
+        <label>ADD | VP Client Services Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_VP_of_client_services_email_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_RAD_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_VP_Sales_Email_FID</name>
+        <label>ADD | VP Sales Email FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_VP_of_Sales_email_c_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_VP_Client_Services_Email_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Website_FID_Line</name>
+        <label>ADD | Website FID Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Website_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Client_Type_Team_V_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ADD_Website_Go_Live_Date_FID</name>
+        <label>ADD | Website Go Live Date FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Website_go_live_Date_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_MSA_Contract_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_38</name>
+        <label>ADD | Trigger Activation FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Triggered_Activation_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_FNDN_Billed_through_Tvm_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_ADD_Billingstreet_2_FID</name>
+        <label>ADD | Billingcity_FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_BillingCity_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_BillingState_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_ADD_Billingstreet_FID</name>
+        <label>ADD | Billingstreet_2_FID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>txtFidLine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TT_Billing_street2_FID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtFidLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_BillingCity_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>INIT_Clear_Collection</name>
+        <label>INIT | Clear Collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>colFidValueLines</assignToReference>
+            <operator>RemoveAll</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHG_Onboarding_Status_Change</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Any_TP_Field_Changed1</name>
+        <label>Any TP Field Changed1?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Any_TP_Field_Changed1</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>FXAnyTPfieldsChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>F_NewTPFieldsChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>INIT_Clear_Collection</targetReference>
+            </connector>
+            <label>Yes, Changes detected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG</name>
+        <label>CHG | BillingStreet Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_CHG_BillingStreet_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Billingstreet_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingStreet</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.BillingStreet</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Billingstreet_FID</targetReference>
+            </connector>
+            <label>Yes, Billingstreet changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Account_Manager_Email_Changed</name>
+        <label>CHG | Account Manager Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Product_Manager_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Account_Manager_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account_Manager_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Account_Manager_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Account_Manager_Email_FID</targetReference>
+            </connector>
+            <label>Yes, Account Manager Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Account_Strag_Change</name>
+        <label>CHG | Account Strag Change?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Account_Trainee_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_account_strag_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Secondary_Account_Technician__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Secondary_Account_Technician__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Account_Tech_Strg_FID</targetReference>
+            </connector>
+            <label>yes, account strag changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Account_Technician_Lead_changed</name>
+        <label>CHG | Account Technician Lead changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Account_Strag_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_account_lead_tech_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account_Technician__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Account_Technician__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Account_Tech_Lead_FID</targetReference>
+            </connector>
+            <label>yes, account lead tech changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Account_Trainee_Change</name>
+        <label>CHG | Account tech Trainee Change?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Touchpoint_Masterid_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_account_tech_trainee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account_Technician_Trainee__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Account_Technician_Trainee__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Account_Tech_Trainee_FID</targetReference>
+            </connector>
+            <label>yes, account tech trainee</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Apollo_Website_URL_Changed</name>
+        <label>CHG | Apollo Website URL Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_VP_Sales_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Apollo_Website_URL_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Apollo_Website_URL__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Apollo_Website_URL__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Apollo_Website_Url_FID</targetReference>
+            </connector>
+            <label>Yes Apollo Website URL Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Auto_Group_External_ID_Changed</name>
+        <label>CHG | Auto Group External ID Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_AutoGroup_Ext_ID_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Auto_Group_External_ID__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Auto_Group_External_ID__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Auto_Group_External_ID_FID_Line</targetReference>
+            </connector>
+            <label>Yes, AutoGroup Ext ID Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_BillingCity_Changed</name>
+        <label>CHG | BillingCity Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_BillingState_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Yes_Billingstreet_2_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingCity</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.BillingCity</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_ADD_Billingstreet_2_FID</targetReference>
+            </connector>
+            <label>Yes, Billing city changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_BillingCountry_Changed</name>
+        <label>CHG | BillingCountry Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Apollo_Website_URL_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_BillingCountry_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingCountry</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.BillingCountry</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_BillingCountry_FID</targetReference>
+            </connector>
+            <label>Yes BillingCountry Changed?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_BillingState_Changed</name>
+        <label>CHG | BillingState Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_BillingCountry_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_BillingState_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingState</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.BillingState</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_BillingState_FID</targetReference>
+            </connector>
+            <label>Yes BillingState Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Cancelled_Reason_Changed</name>
+        <label>CHG | Cancelled Reason Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_New_Vehicle_Inventory_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Cancelled_Reason_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Cancelled_Reason__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Cancelled_Reason__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Cancelled_Reason_FID</targetReference>
+            </connector>
+            <label>Yes, Cancelled Reason Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Client_team_Changed</name>
+        <label>CHG | Client_team Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OEM_SERV_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Client_team_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Client_Team__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Client_Team__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Client_Team_FID</targetReference>
+            </connector>
+            <label>Yes, Client_team Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Client_Type_Team_V_Changed</name>
+        <label>CHG | Client Type Team V Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Ninjacat_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Client_Type_Team_V_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Client_Type_Team_V__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Client_Type_Team_V__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Client_Type_Team_V</targetReference>
+            </connector>
+            <label>Yes, Client Type Team V Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Digital_Go_Live_Date_Changed</name>
+        <label>CHG | Digital Go Live Date Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Retention_Go_Live_Date_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Digital_Go_Live_Date_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Digital_Go_Live_Date_Manual_Entry__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Digital_Go_Live_Date_Manual_Entry__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Digital_Go_Live_Date_FID</targetReference>
+            </connector>
+            <label>Yes, Digital Go Live Date Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Digital_SME_Email_Changed</name>
+        <label>CHG | Digital SME Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Director_of_AM_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Digital_SME_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Digital_SME_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Digital_SME_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Digital_SME_Email_Changed</targetReference>
+            </connector>
+            <label>Yes, Digital SME Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Director_of_AM_Changed</name>
+        <label>CHG | Director of AM Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_SEO_Team_Lead_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Director_of_AM_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Director_of_AM__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Director_of_AM__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Director_of_AM_Changed</targetReference>
+            </connector>
+            <label>Yes, Director of AM Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Distro_Email_Changed</name>
+        <label>CHG | Distro Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Enrollment_Date_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Distro_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Distro_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Distro_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Distro_Email_FID</targetReference>
+            </connector>
+            <label>Yes, Distro Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Effective_Cancelled_Budget_Month_Changed</name>
+        <label>CHG | Effective Cancelled Budget Month Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Digital_Go_Live_Date_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Effective_Cancelled_Budget_Month_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Effective_Cancelled_Budget_Month__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Effective_Cancelled_Budget_Month__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Effective_Cancelled_Budget_Month_FID</targetReference>
+            </connector>
+            <label>Yes, Effective Cancelled Budget Month Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Enrollment_Date_Changed</name>
+        <label>CHG | Enrollment Date Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OB_Build_Doc_Date_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Enrollment_Date_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Enrollment_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Enrollment_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Enrollment_Date_FID</targetReference>
+            </connector>
+            <label>Yes, Enrollment Date Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Excluded_for_Commesions_cancellation_Changed</name>
+        <label>CHG | Excluded_for_Commesions_cancellation Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Trigger_Activation_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Excluded_for_Commesions_cancellation_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Exclude_for_Commissions_Cancellation__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Exclude_for_Commissions_Cancellation__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Excluded_for_Commissions_Cancellation</targetReference>
+            </connector>
+            <label>Yes, Excluded_for_Commesions_cancellation Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_FB_PIXEL_Changed</name>
+        <label>CHG | FB PIXEL Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Client_team_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_FB_PIXEL_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FB_Pixel__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.FB_Pixel__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_FB_Pixel_FID</targetReference>
+            </connector>
+            <label>Yes, FB PIXEL Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_FNDN_Billed_through_Tvm_Changed</name>
+        <label>CHG | FNDN_Billed_through_Tvm Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Foundation_direct_GTM_ID_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_FNDN_Billed_through_Tvm_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FNDN_Billed_Through_TVM__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.FNDN_Billed_Through_TVM__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_FNDN_Billed_Through_TVM_FID</targetReference>
+            </connector>
+            <label>Yes,FNDN_Billed_through_Tvm Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Foundation_direct_GTM_ID_Changed</name>
+        <label>CHG | Foundation _direct_GTM_ID Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_FB_PIXEL_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Foundation_direct_GTM_ID_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Foundation_Direct_GTM_ID__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Foundation_Direct_GTM_ID__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Foundation_Direct_GTM_ID_FID</targetReference>
+            </connector>
+            <label>Yes, Foundation _direct_GTM_ID Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Inventory_Feeds_only_Changed</name>
+        <label>CHG | Inventory Feeds_only Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Excluded_for_Commesions_cancellation_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Inventory_Feeds_only_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Inventory_Feeds_Only__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Inventory_Feeds_Only__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Inventory_Only_FID</targetReference>
+            </connector>
+            <label>Yes, Inventory Feeds_only Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_MSA_Contract_Changed</name>
+        <label>CHG | MSA Contract Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OEM_Dealer_Code_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_MSA_Contract_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.MSA_Contract__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.MSA_Contract__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_MSA_Contract_FID</targetReference>
+            </connector>
+            <label>Yes, MSA Contract Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Name_Changed</name>
+        <label>CHG | Name Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_TP_Master_ID_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Name</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Name_FID_Line</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_New_Vehicle_Inventory_Changed</name>
+        <label>CHG | New Vehicle Inventory Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Inventory_Feeds_only_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_New_Vehicle_Inventory_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.New_Vehicle_Inventory__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.New_Vehicle_Inventory__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_New_Vehicle_Inventory_FID</targetReference>
+            </connector>
+            <label>Yes, New Vehicle Inventory Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Ninjacat_Changed</name>
+        <label>CHG | Ninjacat Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Phone_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_ninja_cat_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.NinjaCat_Recipients__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.NinjaCat_Recipients__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Ninja_FID_Line</targetReference>
+            </connector>
+            <label>yes, ninja cat changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OB_Account_Director_Email_Changed</name>
+        <label>CHG | OB Account Director Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Account_Manager_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YEs_OB_Account_Director_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Onboarding_Account_Director_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Onboarding_Account_Director_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OB_Account_Director_Email_FID</targetReference>
+            </connector>
+            <label>Yes, OB Account Director Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OB_Account_Manager_Email_Changed</name>
+        <label>CHG | OB Account Manager Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OB_Account_Director_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YEs_OB_Account_Manager_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Onboarding_Account_Manager_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Onboarding_Account_Manager_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OB_Account_Manager_Email_FID</targetReference>
+            </connector>
+            <label>Yes. OB Account Manager Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OB_Build_Doc_Date_Changed</name>
+        <label>CHG | OB Build Doc Date Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Effective_Cancelled_Budget_Month_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OB_Build_Doc_Date_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OB_Build_Doc_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.OB_Build_Doc_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OB_Build_Doc_Date_FID</targetReference>
+            </connector>
+            <label>Yes, OB Build Doc Date Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OEM_Dealer_Code_Changed</name>
+        <label>CHG | OEM Dealer Code Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Cancelled_Reason_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OEM_Dealer_Code_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OEM_Dealer_Code__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.OEM_Dealer_Code__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OEM_Dealer_Code_FID</targetReference>
+            </connector>
+            <label>Yes, OEM Dealer Code Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OEM_Product_Allocation_Details_Changed</name>
+        <label>CHG | OEM Product Allocation Details Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Region_ProductionChanged</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OEM_Product_Allocation_Details_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fOEM_Production_Allocation_Clean</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>fOEM_Production_Allocation_Clean_Prior</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OEM_Production_allocation_Details</targetReference>
+            </connector>
+            <label>Yes,OEM Product Allocation Details Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OEM_Region_Changed</name>
+        <label>CHG | OEM Region Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OEM_Product_Allocation_Details_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OEM_Region_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OEM_Region__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.OEM_Region__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OEM_Region</targetReference>
+            </connector>
+            <label>Yes,OEM Region Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OEM_Region_Code_Changed</name>
+        <label>CHG | OEM Region Code Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OEM_Region_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OEM_Region_Code_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OEM_Region_Code__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.OEM_Region_Code__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OEM_Region_Code</targetReference>
+            </connector>
+            <label>Yes,OEM Region Code Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OEM_SERV_Changed</name>
+        <label>CHG | OEM SERV Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OEM_ZOne_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OEM_SERV_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OEM_Serv__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.OEM_Serv__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OEM_Serv_FID</targetReference>
+            </connector>
+            <label>Yes, OEM SERV Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_OEM_ZOne_Changed</name>
+        <label>CHG | OEM ZOne Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OEM_Region_Code_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OEM_ZOne_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OEM_Zone__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.OEM_Zone__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_OEM_Zone</targetReference>
+            </connector>
+            <label>Yes,OEM ZOne Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Onboarding_Status_Change</name>
+        <label>CHG | Onboarding Status Change?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Name_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_onboarding_status_in_progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Onboarding_In_Progress__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Onboarding_In_Progress__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Onboarding_Status</targetReference>
+            </connector>
+            <label>yes, onboarding status in progress</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Phone_Changed</name>
+        <label>CHG | Phone Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Auto_Group_External_ID_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Phone_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phone</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Phone</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Phone_FID_Line</targetReference>
+            </connector>
+            <label>Yes, Phone Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Product_Manager_Email_Changed</name>
+        <label>CHG | Product Manager Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Digital_SME_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Product_Manager_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Product_Manager_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Product_Manager_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Product_Manager_Email_FID</targetReference>
+            </connector>
+            <label>Yes, Product Manager Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_RAD_Email_Changed</name>
+        <label>CHG | RAD Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_RSM_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_RAD_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Account_Director_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Account_Director_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_RAD_Email_FID</targetReference>
+            </connector>
+            <label>Yes, RAD Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Region_ProductionChanged</name>
+        <label>CHG | Regional Performance Manager Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Regional_Performance_Manager_Changed_EM</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_rad_change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Performance_Manager__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Performance_Manager__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_RAD_FID</targetReference>
+            </connector>
+            <label>yes, RPM change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Regional_Performance_Director_Changed</name>
+        <label>CHG | Regional Performance Director Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Account_Technician_Lead_changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_RPD_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Performance_Director__r.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Performance_Director__r.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Regional_Performance_Director</targetReference>
+            </connector>
+            <label>Yes, RPD changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Regional_Performance_Manager_Changed_EM</name>
+        <label>CHG | Regional Performance Manager Changed EM?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Regional_Performance_Director_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_RPM_EM_change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Performance_Manager__r.Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Performance_Manager__r.Email</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_RPM_EM_FID</targetReference>
+            </connector>
+            <label>yes, RPM EM change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Regional_Performance_Manager_Trainee</name>
+        <label>CHG | Regional Performance Manager Trainee</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CALL_Send_Account_to_TouchPoint</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_Regional_Performance_Manager_Trainee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Performance_Manager_Trainee__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Performance_Manager_Trainee__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Regional_Performance_Manager_Trainee</targetReference>
+            </connector>
+            <label>yes, Regional Performance Manager Trainee</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Retention_Go_Live_Date_Changed</name>
+        <label>CHG | Retention Go Live Date Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Website_Go_Live_Date_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Retention_Go_Live_Date_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Retention_Go_Live_Date_Manual_Entry__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Retention_Go_Live_Date_Manual_Entry__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Retention_Go_Live_Date_FID</targetReference>
+            </connector>
+            <label>Yes, Retention Go Live Date Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_RPD_Email_Changed</name>
+        <label>CHG | RPD Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_OB_Account_Manager_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_RPD_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Performance_Director__r.Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Performance_Director__r.Email</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_RPD_Email_FID</targetReference>
+            </connector>
+            <label>Yes, RPD Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_RSD_Email_Changed</name>
+        <label>CHG | RSD Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_RPD_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_RSD_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Sales_Director_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Sales_Director_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_RSD_Email_FID</targetReference>
+            </connector>
+            <label>Yes, RSD Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_RSM_Email_Changed</name>
+        <label>CHG | RSM Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_RSD_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_RSM_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Regional_Sales_Manager_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Regional_Sales_Manager_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_RSM_Email_FID</targetReference>
+            </connector>
+            <label>Yes | RSM Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_SEO_Analyst_Changed</name>
+        <label>CHG | SEO Analyst Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Distro_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_SEO_Analyst_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SEO_Analyst__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.SEO_Analyst__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_SEO_Analyst_FID</targetReference>
+            </connector>
+            <label>Yes, SEO Analyst Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_SEO_Team_Lead_Changed</name>
+        <label>CHG | SEO Team Lead Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_SEO_Analyst_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_SEO_Team_Lead_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SEO_Team_Lead__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.SEO_Team_Lead__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_SEO_Team_Lead_FID</targetReference>
+            </connector>
+            <label>Yes, SEO Team Lead Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Touchpoint_Masterid_Changed</name>
+        <label>CHG | Touchpoint Masterid Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_TVM_Master_ID_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_tp_master_id_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fTPMasterIdChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_TP_Master_ID_FID</targetReference>
+            </connector>
+            <label>yes, tp master id changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_TP_Master_ID_Changed</name>
+        <label>CHG | TP Master ID Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Website_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_Touchpoint_master_ID_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Touchpoint_Master_ID__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Touchpoint_Master_ID__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_touchpoint_master_ID_FID_Line</targetReference>
+            </connector>
+            <label>yes, Touchpoint master ID changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Trigger_Activation_Changed</name>
+        <label>CHG | Trigger Activation Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_FNDN_Billed_through_Tvm_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Trigger_Activation_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Trigger_Activation__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Trigger_Activation__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_38</targetReference>
+            </connector>
+            <label>Yes, Trigger Activation Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_TVM_Master_ID_Change</name>
+        <label>CHG | TVM Master ID Change?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Regional_Performance_Manager_Trainee</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_tvm_master_id_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fTVMMasterIdChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_TVM_Master_ID_FID</targetReference>
+            </connector>
+            <label>yes, tvm master id changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_VP_Client_Services_Email_Changed</name>
+        <label>CHG | VP Client Services Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_RAD_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YEs_VP_Client_Services_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VP_of_Client_Services__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.VP_of_Client_Services__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_VP_Client_Services_Email_FID</targetReference>
+            </connector>
+            <label>Yes, VP Client Services Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_VP_Sales_Email_Changed</name>
+        <label>CHG | VP Sales Email Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_VP_Client_Services_Email_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_VP_Sales_Email_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VP_of_Sales_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.VP_of_Sales_Email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_VP_Sales_Email_FID</targetReference>
+            </connector>
+            <label>Yes VP Sales Email Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Website_Changed</name>
+        <label>CHG | Website Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_Client_Type_Team_V_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_CHG_Website_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Website</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Website</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Website_FID_Line</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHG_Website_Go_Live_Date_Changed</name>
+        <label>CHG | Website Go Live Date Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_MSA_Contract_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Website_Go_Live_Date_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Website_Go_Live_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Website_Go_Live_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ADD_Website_Go_Live_Date_FID</targetReference>
+            </connector>
+            <label>Yes, Website Go Live Date Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_CHG_BillingStreet_Changed</name>
+        <label>CHG | BillingStreet_ 2 Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CHG_BillingCity_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Yes_Billingstreet_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingStreet</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.BillingStreet</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_ADD_Billingstreet_FID</targetReference>
+            </connector>
+            <label>Yes, Billingstreet_ 2 changed</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>F_NewTPFieldsChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+  $Record.Regional_Performance_Manager__c &lt;&gt; $Record__Prior.Regional_Performance_Manager__c,
+  $Record.Regional_Performance_Director__c &lt;&gt; $Record__Prior.Regional_Performance_Director__c,
+  $Record.Account_Technician__c &lt;&gt; $Record__Prior.Account_Technician__c,
+  $Record.Secondary_Account_Technician__c &lt;&gt; $Record__Prior.Secondary_Account_Technician__c,
+  $Record.Account_Technician_Trainee__c &lt;&gt; $Record__Prior.Account_Technician_Trainee__c,
+  $Record.OEM_Region_Code__c &lt;&gt; $Record__Prior.OEM_Region_Code__c, 
+{!$Record.Touchpoint_Master_ID__c} &lt;&gt; {!$Record__Prior.Touchpoint_Master_ID__c},
+{!$Record.Onboarding_In_Progress__c} &lt;&gt; {!$Record__Prior.Onboarding_In_Progress__c},
+
+  $Record.OEM_Region__c &lt;&gt; $Record__Prior.OEM_Region__c,
+  TEXT($Record.Client_Type_Team_V__c) &lt;&gt; TEXT($Record__Prior.Client_Type_Team_V__c),
+  ISCHANGED($Record.NinjaCat_Recipients__c)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fOEM_Production_Allocation_Clean</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+  SUBSTITUTE(
+    SUBSTITUTE(
+      SUBSTITUTE(
+        SUBSTITUTE(
+          SUBSTITUTE(
+            SUBSTITUTE(
+              {!$Record.OEM_Product_Allocation_Details__c},
+              &quot;&lt;p&gt;&quot;, &quot;&quot;
+            ),
+            &quot;&lt;/p&gt;&quot;, &quot;&quot;
+          ),
+          &quot;&lt;br&gt;&quot;, &quot; &quot;
+        ),
+        &quot;&lt;br/&gt;&quot;, &quot; &quot;
+      ),
+      &quot;&lt;div&gt;&quot;, &quot;&quot;
+    ),
+    &quot;&lt;/div&gt;&quot;, &quot;&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fOEM_Production_Allocation_Clean_Prior</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+  SUBSTITUTE(
+    SUBSTITUTE(
+      SUBSTITUTE(
+        SUBSTITUTE(
+          SUBSTITUTE(
+            SUBSTITUTE(
+              {!$Record__Prior.OEM_Product_Allocation_Details__c},
+              &quot;&lt;p&gt;&quot;, &quot;&quot;
+            ),
+            &quot;&lt;/p&gt;&quot;, &quot;&quot;
+          ),
+          &quot;&lt;br&gt;&quot;, &quot; &quot;
+        ),
+        &quot;&lt;br/&gt;&quot;, &quot; &quot;
+      ),
+      &quot;&lt;div&gt;&quot;, &quot;&quot;
+    ),
+    &quot;&lt;/div&gt;&quot;, &quot;&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fTPMasterIdChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+  NOT(ISBLANK({!$Record.Touchpoint_Master_ID__c})),
+  {!$Record.Touchpoint_Master_ID__c} &lt;&gt; {!$Record__Prior.Touchpoint_Master_ID__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fTVMMasterIdChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+  NOT(ISBLANK({!$Record.Team_Velocity_Master_Touchpoint_ID__c})),
+  {!$Record.Team_Velocity_Master_Touchpoint_ID__c} &lt;&gt; {!$Record__Prior.Team_Velocity_Master_Touchpoint_ID__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_ActivationDate_YYYYMMDD</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Activation_Date__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.Activation_Date__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.Activation_Date__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.Activation_Date__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_Digital_go_live_date_manual_entry_YYYYMMDD</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Digital_Go_Live_Date_Manual_Entry__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.Digital_Go_Live_Date_Manual_Entry__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.Digital_Go_Live_Date_Manual_Entry__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.Digital_Go_Live_Date_Manual_Entry__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_Effective_Cancelled_budget_Month_C_YYYYMMDD</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Effective_Cancelled_Budget_Month__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.Effective_Cancelled_Budget_Month__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.Effective_Cancelled_Budget_Month__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.Effective_Cancelled_Budget_Month__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_Enrollment_Date_c_YYYYMMDD</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Enrollment_Date__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.Enrollment_Date__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.Enrollment_Date__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.Enrollment_Date__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_ExcludedforCommmisions_Boolean</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.Exclude_for_Commissions_Cancellation__c}, &quot;1&quot;, &quot;0&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_FNDN_billed_through_tvm_Bool</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.FNDN_Billed_Through_TVM__c}</expression>
+    </formulas>
+    <formulas>
+        <name>FX_FNDN_billed_through_tvm_Boolean</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.FNDN_Billed_Through_TVM__c}, &quot;1&quot;, &quot;0&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_GenerateContractProfile</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Generate_Contract_Profile__c}),
+  &quot;&quot;,
+  TEXT({!$Record.Generate_Contract_Profile__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_Inventory_feed_only_Boolean</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.Inventory_Feeds_Only__c}, &quot;1&quot;, &quot;0&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_MSA_Contract_Boolean</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.MSA_Contract__c}, &quot;1&quot;, &quot;0&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_OB_Build_Doc_Date_c_YYYYMMDD</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.OB_Build_Doc_Date__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.OB_Build_Doc_Date__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.OB_Build_Doc_Date__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.OB_Build_Doc_Date__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_Retention_go_live_date_manual_entry_YYYYMMDD</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Retention_Go_Live_Date_Manual_Entry__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.Retention_Go_Live_Date_Manual_Entry__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.Retention_Go_Live_Date_Manual_Entry__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.Retention_Go_Live_Date_Manual_Entry__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_Trigger_activation_Boolean</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Trigger_Activation__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.Trigger_Activation__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.Trigger_Activation__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.Trigger_Activation__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FX_Website_go_live_Date_YYYYMMDD</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Website_Go_Live_Date__c}),
+  &quot;&quot;,
+  TEXT(YEAR({!$Record.Website_Go_Live_Date__c})) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(MONTH({!$Record.Website_Go_Live_Date__c})), 2) &amp;
+  &quot;-&quot; &amp;
+  RIGHT(&quot;0&quot; &amp; TEXT(DAY({!$Record.Website_Go_Live_Date__c})), 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FXAnyTPfieldsChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+  $Record.Name &lt;&gt; $Record__Prior.Name,
+  $Record.Quickbase_Record_ID__c &lt;&gt; $Record__Prior.Quickbase_Record_ID__c,
+  $Record.Auto_Group_External_ID__c &lt;&gt; $Record__Prior.Auto_Group_External_ID__c,
+
+  $Record.BillingStreet &lt;&gt; $Record__Prior.BillingStreet,
+  $Record.Billing_Street_2__c &lt;&gt; $Record__Prior.Billing_Street_2__c,
+  $Record.BillingCity &lt;&gt; $Record__Prior.BillingCity,
+  $Record.BillingState &lt;&gt; $Record__Prior.BillingState,
+  $Record.BillingPostalCode &lt;&gt; $Record__Prior.BillingPostalCode,
+  $Record.BillingCountry &lt;&gt; $Record__Prior.BillingCountry,
+
+  $Record.Website &lt;&gt; $Record__Prior.Website,
+  $Record.Phone &lt;&gt; $Record__Prior.Phone,
+$Record.Team_Velocity_Master_Touchpoint_ID__c &lt;&gt; $Record__Prior.Team_Velocity_Master_Touchpoint_ID__c,
+
+
+  $Record.VP_of_Sales_Email__c &lt;&gt; $Record__Prior.VP_of_Sales_Email__c,
+  $Record.VP_of_Client_Services_Email__c &lt;&gt; $Record__Prior.VP_of_Client_Services_Email__c,
+  $Record.Regional_Account_Director_Email__c &lt;&gt; $Record__Prior.Regional_Account_Director_Email__c,
+  $Record.Regional_Sales_Manager_Email__c &lt;&gt; $Record__Prior.Regional_Sales_Manager_Email__c,
+  $Record.Onboarding_Account_Manager_Email__c &lt;&gt; $Record__Prior.Onboarding_Account_Manager_Email__c,
+  $Record.Onboarding_Account_Director_Email__c &lt;&gt; $Record__Prior.Onboarding_Account_Director_Email__c,
+  $Record.Regional_Sales_Director_Email__c &lt;&gt; $Record__Prior.Regional_Sales_Director_Email__c,
+  $Record.Account_Manager_Email__c &lt;&gt; $Record__Prior.Account_Manager_Email__c,
+  $Record.Product_Manager_Email__c &lt;&gt; $Record__Prior.Product_Manager_Email__c,
+  $Record.Digital_SME_Email__c &lt;&gt; $Record__Prior.Digital_SME_Email__c,
+  $Record.Distro_Email__c &lt;&gt; $Record__Prior.Distro_Email__c,
+
+  $Record.Activation_Date__c &lt;&gt; $Record__Prior.Activation_Date__c,
+  $Record.Enrollment_Date__c &lt;&gt; $Record__Prior.Enrollment_Date__c,
+  $Record.OB_Build_Doc_Date__c &lt;&gt; $Record__Prior.OB_Build_Doc_Date__c,
+  $Record.Effective_Cancelled_Budget_Month__c &lt;&gt; $Record__Prior.Effective_Cancelled_Budget_Month__c,
+  $Record.Trigger_Activation__c &lt;&gt; $Record__Prior.Trigger_Activation__c,
+  $Record.Digital_Go_Live_Date_Manual_Entry__c &lt;&gt; $Record__Prior.Digital_Go_Live_Date_Manual_Entry__c,
+  $Record.Retention_Go_Live_Date_Manual_Entry__c &lt;&gt; $Record__Prior.Retention_Go_Live_Date_Manual_Entry__c,
+  $Record.Website_Go_Live_Date__c &lt;&gt; $Record__Prior.Website_Go_Live_Date__c,
+  $Record.Generate_Contract_Profile__c &lt;&gt; $Record__Prior.Generate_Contract_Profile__c,
+
+  $Record.MSA_Contract__c &lt;&gt; $Record__Prior.MSA_Contract__c,
+  $Record.Inventory_Feeds_Only__c &lt;&gt; $Record__Prior.Inventory_Feeds_Only__c,
+  $Record.Exclude_for_Commissions_Cancellation__c &lt;&gt; $Record__Prior.Exclude_for_Commissions_Cancellation__c,
+  $Record.FNDN_Billed_Through_TVM__c &lt;&gt; $Record__Prior.FNDN_Billed_Through_TVM__c,
+
+  $Record.OEM_Dealer_Code__c &lt;&gt; $Record__Prior.OEM_Dealer_Code__c,
+  $Record.New_Vehicle_Inventory__c &lt;&gt; $Record__Prior.New_Vehicle_Inventory__c,
+  $Record.Cancelled_Reason__c &lt;&gt; $Record__Prior.Cancelled_Reason__c,
+  $Record.Foundation_Direct_GTM_ID__c &lt;&gt; $Record__Prior.Foundation_Direct_GTM_ID__c,
+  $Record.FB_Pixel__c &lt;&gt; $Record__Prior.FB_Pixel__c,
+  $Record.Client_Team__c &lt;&gt; $Record__Prior.Client_Team__c,
+  $Record.Apollo_Website_URL__c &lt;&gt; $Record__Prior.Apollo_Website_URL__c,
+  $Record.Director_of_AM__c &lt;&gt; $Record__Prior.Director_of_AM__c,
+  $Record.SEO_Team_Lead__c &lt;&gt; $Record__Prior.SEO_Team_Lead__c,
+  $Record.SEO_Analyst__c &lt;&gt; $Record__Prior.SEO_Analyst__c,
+  $Record.OEM_Serv__c &lt;&gt; $Record__Prior.OEM_Serv__c,
+  $Record.OEM_Zone__c &lt;&gt; $Record__Prior.OEM_Zone__c,
+$Record.OEM_Product_Allocation_Details__c&lt;&gt;{!$Record__Prior.OEM_Product_Allocation_Details__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>NewVehiclInventoryCleaned</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(TEXT({!$Record.New_Vehicle_Inventory__c}), &quot;,&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>TT_Regional_Performance_Manager_Email_FID_Line</name>
+        <dataType>String</dataType>
+        <expression>&quot;722, \&quot;&quot;&amp;{!$Record.Regional_Performance_Manager__r.Email}&amp;&quot;\&quot;&quot;</expression>
+    </formulas>
+    <interviewLabel>Account | TP Sync | Detect Changes &amp; Build Payload {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account | TP Sync | Detect Changes &amp; Build Payload</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Any_TP_Field_Changed1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Temporary_Flag__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Quickbase_Record_ID__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>CALL_Send_Account_to_TouchPoint</name>
+        <label>CALL | Send Account to TouchPoint</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>SendAccountToTouchpoint</flowName>
+        <inputAssignments>
+            <name>FIDValueList</name>
+            <value>
+                <elementReference>colFidValueLines</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RID</name>
+            <value>
+                <elementReference>$Record.Quickbase_Record_ID__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>TT_Account_Manager_Email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>39, &quot;{!$Record.Account_Manager_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Account_Technician_FID_Line</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>713, &quot;{!$Record.Account_Technician__r.Full_Name_Formula__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Account_Technician_Trainee_FID_Line</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>715, &quot;{!$Record.Account_Technician_Trainee__r.Full_Name_Formula__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_ActivationDate_FID_Line</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>245, &quot;{!FX_ActivationDate_YYYYMMDD}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_ApolloWebsite_url_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>591, &quot;{!$Record.Apollo_Website_URL__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_AutoGroupExtID_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>41, &quot;{!$Record.Auto_Group_External_ID__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Billing_street2_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>25, &quot;{!$Record.Billing_Street_2__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_BillingCity_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>26, &quot;{!$Record.Billing_Street_2__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_BillingCountry_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>29, &quot;{!$Record.BillingCountry}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_BillingPostalCode_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>28, &quot;{!$Record.BillingPostalCode}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_BillingState_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>27, &quot;{!$Record.BillingState}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_BillingStreet_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>24, &quot;{!$Record.BillingStreet}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_CAncelled_reason_c_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>237, &quot;{!$Record.Cancelled_Reason__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Client_team_fid</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>674, &quot;{!$Record.Client_Team__r.Name}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Client_type_team_v</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>33, &quot;{!$Record.Client_Type_Team_V__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Digital_go_live_Date_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>688, &quot;{!FX_Digital_go_live_date_manual_entry_YYYYMMDD}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Digital_SME_Email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>603, &quot;{!$Record.Digital_SME_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Director_of_AM_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>684, &quot;{!$Record.Director_of_AM__r.Email}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Distro_email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>704, &quot;{!$Record.Distro_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Effective_Cancelled_Budget_month_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>618, &quot;{!FX_Effective_Cancelled_budget_Month_C_YYYYMMDD}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Enrollment_Date_C_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>247, &quot;{!FX_Enrollment_Date_c_YYYYMMDD}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_ExcludedforCommisions_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>619,{!FX_ExcludedforCommmisions_Boolean}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_FB_PIxel_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>271, &quot;{!$Record.FB_Pixel__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_FNDN_billedthroughtvm_Fid</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>620, {!FX_FNDN_billed_through_tvm_Bool}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Foiundation_direct_GTM_ID_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>610, &quot;{!$Record.Foundation_Direct_GTM_ID__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Generate_contract_profile_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>701, &quot;{!FX_GenerateContractProfile}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Inventory_feeds_only_Fid</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>215, {!FX_Inventory_feed_only_Boolean}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_MSA_Contract_c_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>256, &quot;{!FX_MSA_Contract_Boolean}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>FID payload line for Account Name</description>
+        <name>TT_Name_FID_Line</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>23, &quot;{!$Record.Name}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_New_Vehicle_inventory_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>361, {!NewVehiclInventoryCleaned}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Ninjacat_recipient</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>851, &quot;{!$Record.NinjaCat_Recipients__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OB_Build_Doc_Date_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>611, &quot;{!FX_OB_Build_Doc_Date_c_YYYYMMDD}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OEM_Dealer_code_c_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>209, &quot;{!$Record.OEM_Dealer_Code__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OEM_Production_Allocation_details</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>622, &quot;{!fOEM_Production_Allocation_Clean}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OEM_SERV_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>703, &quot;{!$Record.OEM_Serv__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OEM_ZONE_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>702, &quot;{!$Record.OEM_Zone__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OEMREGION</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>230, &quot;{!$Record.OEM_Region__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OEMREGIONCODE</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>231, &quot;{!$Record.OEM_Region_Code__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Onboarding_Account_Manager_Email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>49, &quot;{!$Record.Onboarding_Account_Manager_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Onboarding_accountDirector_email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>50, &quot;{!$Record.Onboarding_Account_Director_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_OnboardinginProgress</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>854, &quot;{!$Record.Onboarding_In_Progress__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Phone_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>31, &quot;{!$Record.Phone}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Product_Manager_email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>239, &quot;{!$Record.Product_Manager_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Quickbase_Record_ID_c</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>43, {!$Record.Quickbase_Record_ID__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Regional_Account_Director_email_c_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>38, &quot;{!$Record.Regional_Account_Director_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Regional_Perfomance_Manager_Email</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>722, &quot;{!$Record.Regional_Performance_Manager__r.Email}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Regional_Performance_Director</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>838, &quot;{!$Record.Regional_Performance_Director__r.Full_Name_Formula__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Regional_Performance_Manager_FID_Line</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>712, &quot;{!$Record.Regional_Performance_Manager__r.Full_Name_Formula__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Regional_Sales_Director_email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>40, &quot;{!$Record.Regional_Sales_Director_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Regional_sales_manager_email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>70, &quot;{!$Record.Regional_Sales_Manager_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_RegionalPerformanceManagerTrainee</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>848, &quot;{!$Record.Regional_Performance_Manager_Trainee__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Retention_go_live_dateFID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>689, &quot;{!FX_Retention_go_live_date_manual_entry_YYYYMMDD}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_RPD_email</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>839, &quot;{!$Record.Regional_Performance_Director__r.Email}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Secondary_Account_Technician_FID_Line</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>714, &quot;{!$Record.Secondary_Account_Technician__r.Full_Name_Formula__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_SEO_Analyst_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>692, &quot;{!$Record.SEO_Analyst__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_SEO_Team_Lead_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>691, &quot;{!$Record.SEO_Team_Lead__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Touchpoint_Master_ID_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>610, &quot;{!$Record.Touchpoint_Master_ID__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Triggered_Activation_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>621, &quot;{!FX_Trigger_activation_Boolean}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_VP_of_client_services_email_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>48, &quot;{!$Record.VP_of_Client_Services_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_VP_of_Sales_email_c_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>36, &quot;{!$Record.VP_of_Sales_Email__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Website_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>30, &quot;{!$Record.Website}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TT_Website_go_live_Date_FID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>616, &quot;{!FX_Website_go_live_Date_YYYYMMDD}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TTTouchpointMasterID</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>717, &quot;{!$Record.Touchpoint_Master_ID__c}&quot;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TTTVMMasterTouchpointIDchange</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>717, &quot;{!$Record.Team_Velocity_Master_Touchpoint_ID__c}&quot;</text>
+    </textTemplates>
+    <triggerOrder>1700</triggerOrder>
+    <variables>
+        <name>colFidValueLines</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>txtFidLine</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

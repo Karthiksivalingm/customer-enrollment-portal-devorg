@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Vendor__c</fullName>
+    <description>FND</description>
+    <label>Call Vendor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CallDrip</fullName>
+                <default>false</default>
+                <label>CallDrip</label>
+            </value>
+            <value>
+                <fullName>CallSource (CallRevu)</fullName>
+                <default>false</default>
+                <label>CallSource (CallRevu)</label>
+            </value>
+            <value>
+                <fullName>CarWars</fullName>
+                <default>false</default>
+                <label>CarWars</label>
+            </value>
+            <value>
+                <fullName>InteractiveTel</fullName>
+                <default>false</default>
+                <label>InteractiveTel</label>
+            </value>
+            <value>
+                <fullName>Marchex</fullName>
+                <default>false</default>
+                <label>Marchex</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

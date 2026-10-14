@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Docusign_Standard__c</fullName>
+    <formula>DocuSign_Ready__c &amp;&amp;
+
+
+ MSA_Contract_Formula__c =false &amp;&amp;
+ Use_Docusign_CXP__c =false &amp;&amp;
+ Use_Docusign_MSA__c =false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Use Docusign Standard</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

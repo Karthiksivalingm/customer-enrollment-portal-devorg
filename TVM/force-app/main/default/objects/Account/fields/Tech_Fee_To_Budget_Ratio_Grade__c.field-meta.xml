@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Fee_To_Budget_Ratio_Grade__c</fullName>
+    <description>FND</description>
+    <externalId>false</externalId>
+    <formula>IF(  AND (Tech_Fee_To_Budget_Ratio__c  &lt; 20,Tech_Fee_To_Budget_Ratio__c  &gt; 0), &quot;A&quot;,
+IF(  AND( Tech_Fee_To_Budget_Ratio__c  &gt;= 20,Tech_Fee_To_Budget_Ratio__c  &lt;30) , &quot;B&quot;,
+IF(  AND( Tech_Fee_To_Budget_Ratio__c  &gt;= 30,Tech_Fee_To_Budget_Ratio__c  &lt;40) , &quot;C&quot;,
+IF(  AND( Tech_Fee_To_Budget_Ratio__c  &gt;= 40,Tech_Fee_To_Budget_Ratio__c  &lt;50) , &quot;D&quot;,
+IF(  Tech_Fee_To_Budget_Ratio__c  &gt;= 50 , &quot;F&quot;,&quot; &quot; 
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tech Fee To Budget Ratio Grade</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

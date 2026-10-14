@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>assign_all_changes</name>
+        <label>assign all changes</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>MasterNewValue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vNewValueAccumulator</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>MasterOldValue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vOldValueAccumulator</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Log_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Client_Teams</name>
+        <label>Assign Client Teams</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vNewValueAccumulator</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fAppendNew_ClientTeam</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vOldValueAccumulator</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fAppendOld_ClientTeam</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>assign_all_changes</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_sme_values</name>
+        <label>assign sme values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vNewValueAccumulator</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fAppendNew_SME</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vOldValueAccumulator</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fAppendOld_SME</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_Client_Team_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Values</name>
+        <label>Set Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vNewValueAccumulator</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fNewValuesText</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vOldValueAccumulator</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fOldValuesText</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Digital_SME_Changed</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_Client_Team_Changed</name>
+        <label>Decision: “Client Team Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>assign_all_changes</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Client_Team__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Client_Team__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_new_Client_Team</targetReference>
+            </connector>
+            <label>yes!</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Digital_SME_Changed</name>
+        <label>Digital SME Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Client_Team_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_change_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Digital_SME__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Digital_SME__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_New_SME_User</targetReference>
+            </connector>
+            <label>yes, change found!</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Tracked_Fields_Changed</name>
+        <label>Tracked Fields Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Log_It</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>fAccountFieldsChanged_BasicLog</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Values</targetReference>
+            </connector>
+            <label>Yes - Log It</label>
+        </rules>
+    </decisions>
+    <description>Creates a log record in the Audit Log if changes are detected in Account.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>fAccountFieldsChanged_BasicLog</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+  /* Checkbox */
+  $Record.Active__c &lt;&gt; $Record__Prior.Active__c,
+
+  /* Lookup / ID */
+  $Record.Active_TVM_Touchpoint_ID__c &lt;&gt; $Record__Prior.Active_TVM_Touchpoint_ID__c,
+
+  /* Date / DateTime */
+  $Record.Cancelled_Date__c &lt;&gt; $Record__Prior.Cancelled_Date__c,
+  $Record.Website_Go_Live_Date__c &lt;&gt; $Record__Prior.Website_Go_Live_Date__c,
+  $Record.Generate_Contract_Profile__c &lt;&gt; $Record__Prior.Generate_Contract_Profile__c,
+
+  /* Text */
+  $Record.Client_Team__c &lt;&gt; $Record__Prior.Client_Team__c,
+
+  /* Multi-Select Picklist */
+  TEXT($Record.Client_Type_Team_V__c) &lt;&gt; TEXT($Record__Prior.Client_Type_Team_V__c),
+
+  /* Text */
+  $Record.Digital_SME__c &lt;&gt; $Record__Prior.Digital_SME__c,
+
+  /* Checkbox */
+  $Record.FNDN_Billed_Through_TVM__c &lt;&gt; $Record__Prior.FNDN_Billed_Through_TVM__c,
+  $Record.TVM_Billed_Through_FNDN__c &lt;&gt; $Record__Prior.TVM_Billed_Through_FNDN__c,
+
+  /* Digital IDs */
+  $Record.Bing_ID__c &lt;&gt; $Record__Prior.Bing_ID__c,
+  $Record.Google_CID__c &lt;&gt; $Record__Prior.Google_CID__c,
+  $Record.Facebook_ID__c &lt;&gt; $Record__Prior.Facebook_ID__c,
+
+  /* OEM Billing Info - Text */
+  $Record.OEM_Dealer_Code__c &lt;&gt; $Record__Prior.OEM_Dealer_Code__c,
+  $Record.OEM_Region__c &lt;&gt; $Record__Prior.OEM_Region__c,
+  $Record.OEM_Zone__c &lt;&gt; $Record__Prior.OEM_Zone__c,
+  $Record.OEM_Serv__c &lt;&gt; $Record__Prior.OEM_Serv__c,
+  $Record.OEM_Service_Parts_Code__c &lt;&gt; $Record__Prior.OEM_Service_Parts_Code__c,
+  $Record.Google_Payment_ID__c &lt;&gt; $Record__Prior.Google_Payment_ID__c,
+
+/* Basic Fields */
+  $Record.OwnerId&lt;&gt; $Record__Prior.OwnerId
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fAppendNew_ClientTeam</name>
+        <dataType>String</dataType>
+        <expression>{!vNewValueAccumulator} &amp; {!fNewClientTeamPiece}</expression>
+    </formulas>
+    <formulas>
+        <name>fAppendNew_SME</name>
+        <dataType>String</dataType>
+        <expression>{!vNewValueAccumulator} &amp; {!fGetNewSME}</expression>
+    </formulas>
+    <formulas>
+        <name>fAppendOld_ClientTeam</name>
+        <dataType>String</dataType>
+        <expression>{!vOldValueAccumulator} &amp; {!fOldClientTeamPiece}</expression>
+    </formulas>
+    <formulas>
+        <name>fAppendOld_SME</name>
+        <dataType>String</dataType>
+        <expression>{!vOldValueAccumulator} &amp; {!fOldSMEPiece}</expression>
+    </formulas>
+    <formulas>
+        <name>fChangedFieldsList</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+  IF($Record.Active__c &lt;&gt; $Record__Prior.Active__c, &quot;Active has been changed; &quot;, &quot;&quot;) &amp;
+  IF($Record.Active_TVM_Touchpoint_ID__c &lt;&gt; $Record__Prior.Active_TVM_Touchpoint_ID__c, &quot;Active TVM Touchpoint ID has been changed; &quot;, &quot;&quot;) &amp;
+  IF($Record.Cancelled_Date__c &lt;&gt; $Record__Prior.Cancelled_Date__c, &quot;Cancelled Date has been changed; &quot;, &quot;&quot;) &amp;
+  IF($Record.Client_Team__c &lt;&gt; $Record__Prior.Client_Team__c, &quot;Client Team has been changed; &quot;, &quot;&quot;) &amp;
+  IF(TEXT($Record.Client_Type_Team_V__c) &lt;&gt; TEXT($Record__Prior.Client_Type_Team_V__c), &quot;Client Type Team V has been changed; &quot;, &quot;&quot;) &amp;
+  IF($Record.Digital_SME__c &lt;&gt; $Record__Prior.Digital_SME__c, &quot;Digital SME has been changed; &quot;, &quot;&quot;) &amp;
+  IF($Record.FNDN_Billed_Through_TVM__c &lt;&gt; $Record__Prior.FNDN_Billed_Through_TVM__c, &quot;FNDN Billed Through TVM has been changed; &quot;, &quot;&quot;) &amp;
+  IF($Record.TVM_Billed_Through_FNDN__c &lt;&gt; $Record__Prior.TVM_Billed_Through_FNDN__c, &quot;TVM Billed Through FNDN has been changed; &quot;, &quot;&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fGetNewSME</name>
+        <dataType>String</dataType>
+        <expression>&quot;Digital SME: &quot; &amp; {!$Record.Digital_SME__r.Full_Name_Formula__c}&amp; &quot;; &quot;</expression>
+    </formulas>
+    <formulas>
+        <name>fNewclientTeamNames</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+  {!vNewValueText},
+  {!$Record.Client_Team__c},
+  {!Get_new_Client_Team.Name}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fNewClientTeamPiece</name>
+        <dataType>String</dataType>
+        <expression>&quot;Client Team: &quot; &amp; {!Get_new_Client_Team.Name} &amp; &quot;; &quot;</expression>
+    </formulas>
+    <formulas>
+        <name>fNewValuesText</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+  IF(
+    $Record.Active__c &lt;&gt; $Record__Prior.Active__c,
+    &quot;Active: &quot; &amp; IF($Record.Active__c, &quot;True&quot;, &quot;False&quot;) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Active_TVM_Touchpoint_ID__c &lt;&gt; $Record__Prior.Active_TVM_Touchpoint_ID__c,
+    &quot;Active TVM Touchpoint ID: &quot; &amp; $Record.Active_TVM_Touchpoint_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Cancelled_Date__c &lt;&gt; $Record__Prior.Cancelled_Date__c,
+    &quot;Cancelled Date: &quot; &amp; IF(ISBLANK($Record.Cancelled_Date__c), &quot;&quot;, TEXT($Record.Cancelled_Date__c)) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Website_Go_Live_Date__c &lt;&gt; $Record__Prior.Website_Go_Live_Date__c,
+    &quot;Website Go Live Date: &quot; &amp; IF(ISBLANK($Record.Website_Go_Live_Date__c), &quot;&quot;, TEXT($Record.Website_Go_Live_Date__c)) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  /* DateTime (New Value) */
+  IF(
+    $Record.Generate_Contract_Profile__c &lt;&gt; $Record__Prior.Generate_Contract_Profile__c,
+    &quot;Generate Contract Profile: &quot; &amp; IF(ISBLANK($Record.Generate_Contract_Profile__c), &quot;&quot;, TEXT($Record.Generate_Contract_Profile__c)) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    TEXT($Record.Client_Type_Team_V__c) &lt;&gt; TEXT($Record__Prior.Client_Type_Team_V__c),
+    &quot;Client Type Team V: &quot; &amp; TEXT($Record.Client_Type_Team_V__c) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.FNDN_Billed_Through_TVM__c &lt;&gt; $Record__Prior.FNDN_Billed_Through_TVM__c,
+    &quot;FNDN Billed Through TVM: &quot; &amp; IF($Record.FNDN_Billed_Through_TVM__c, &quot;True&quot;, &quot;False&quot;) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.TVM_Billed_Through_FNDN__c &lt;&gt; $Record__Prior.TVM_Billed_Through_FNDN__c,
+    &quot;TVM Billed Through FNDN: &quot; &amp; IF($Record.TVM_Billed_Through_FNDN__c, &quot;True&quot;, &quot;False&quot;) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  /* Digital IDs (New Values) */
+  IF(
+    $Record.Bing_ID__c &lt;&gt; $Record__Prior.Bing_ID__c,
+    &quot;Bing ID: &quot; &amp; $Record.Bing_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Google_CID__c &lt;&gt; $Record__Prior.Google_CID__c,
+    &quot;Google CID: &quot; &amp; $Record.Google_CID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Facebook_ID__c &lt;&gt; $Record__Prior.Facebook_ID__c,
+    &quot;Facebook ID: &quot; &amp; $Record.Facebook_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  /* OEM Billing Info (New Values) */
+  IF(
+    $Record.OEM_Dealer_Code__c &lt;&gt; $Record__Prior.OEM_Dealer_Code__c,
+    &quot;OEM Dealer Code: &quot; &amp; $Record.OEM_Dealer_Code__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Region__c &lt;&gt; $Record__Prior.OEM_Region__c,
+    &quot;OEM Region: &quot; &amp; $Record.OEM_Region__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Zone__c &lt;&gt; $Record__Prior.OEM_Zone__c,
+    &quot;OEM Zone: &quot; &amp; $Record.OEM_Zone__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Serv__c &lt;&gt; $Record__Prior.OEM_Serv__c,
+    &quot;OEM Division Code: &quot; &amp; $Record.OEM_Serv__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Service_Parts_Code__c &lt;&gt; $Record__Prior.OEM_Service_Parts_Code__c,
+    &quot;OEM Service Parts Code: &quot; &amp; $Record.OEM_Service_Parts_Code__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Google_Payment_ID__c &lt;&gt; $Record__Prior.Google_Payment_ID__c,
+    &quot;Google Payment ID: &quot; &amp; $Record.Google_Payment_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OwnerId&lt;&gt; $Record__Prior.OwnerId,
+    &quot;Owner ID: &quot; &amp; $Record.OwnerId&amp; &quot;; &quot;,
+    &quot;&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fNewValueText_SMEFixed</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+  SUBSTITUTE(
+    SUBSTITUTE(
+      SUBSTITUTE(
+        {!vNewValueText},
+        &quot;Digital SME: SME: &quot; &amp; {!$Record.Digital_SME__c} &amp; &quot;; &quot;,
+        &quot;Digital SME: &quot; &amp; {!Get_New_SME_User.Full_Name_Formula__c} &amp; &quot;; &quot;
+      ),
+      &quot;Digital SME: SME: &quot; &amp; {!$Record.Digital_SME__c} &amp; &quot;;&quot;,
+      &quot;Digital SME: &quot; &amp; {!Get_New_SME_User.Full_Name_Formula__c} &amp; &quot;;&quot;
+    ),
+    &quot;Digital SME: &quot; &amp; {!$Record.Digital_SME__c} &amp; &quot;; &quot;,
+    &quot;Digital SME: &quot; &amp; {!Get_New_SME_User.Full_Name_Formula__c} &amp; &quot;; &quot;
+  ),
+  &quot;Digital SME: &quot; &amp; {!$Record.Digital_SME__c} &amp; &quot;;&quot;,
+  &quot;Digital SME: &quot; &amp; {!Get_New_SME_User.Full_Name_Formula__c} &amp; &quot;;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fOldClientTeamNames</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+  {!vOldvaluetext},
+  {!$Record__Prior.Client_Team__c},
+  {!OldClientTeam.Name}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fOldClientTeamPiece</name>
+        <dataType>String</dataType>
+        <expression>&quot;Client Team: &quot; &amp; {!Get_Old_Client_Team.Name} &amp; &quot;; &quot;</expression>
+    </formulas>
+    <formulas>
+        <name>fOldSMEPiece</name>
+        <dataType>String</dataType>
+        <expression>&quot;Digital SME: &quot; &amp; {!$Record__Prior.Digital_SME__r.Full_Name_Formula__c} &amp; &quot;; &quot;</expression>
+    </formulas>
+    <formulas>
+        <name>fOldValuesText</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+  IF(
+    $Record.Active__c &lt;&gt; $Record__Prior.Active__c,
+    &quot;Active: &quot; &amp; IF($Record__Prior.Active__c, &quot;True&quot;, &quot;False&quot;) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Active_TVM_Touchpoint_ID__c &lt;&gt; $Record__Prior.Active_TVM_Touchpoint_ID__c,
+    &quot;Active TVM Touchpoint ID: &quot; &amp; $Record__Prior.Active_TVM_Touchpoint_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Cancelled_Date__c &lt;&gt; $Record__Prior.Cancelled_Date__c,
+    &quot;Cancelled Date: &quot; &amp; IF(ISBLANK($Record__Prior.Cancelled_Date__c), &quot;&quot;, TEXT($Record__Prior.Cancelled_Date__c)) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Website_Go_Live_Date__c &lt;&gt; $Record__Prior.Website_Go_Live_Date__c,
+    &quot;Website Go Live Date: &quot; &amp; IF(ISBLANK($Record__Prior.Website_Go_Live_Date__c), &quot;&quot;, TEXT($Record__Prior.Website_Go_Live_Date__c)) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  /* DateTime (Old Value) */
+  IF(
+    $Record.Generate_Contract_Profile__c &lt;&gt; $Record__Prior.Generate_Contract_Profile__c,
+    &quot;Generate Contract Profile: &quot; &amp; 
+      IF(
+        ISBLANK($Record__Prior.Generate_Contract_Profile__c),
+        &quot;&quot;,
+        TEXT($Record__Prior.Generate_Contract_Profile__c)
+      ) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    TEXT($Record.Client_Type_Team_V__c) &lt;&gt; TEXT($Record__Prior.Client_Type_Team_V__c),
+    &quot;Client Type Team V: &quot; &amp; TEXT($Record__Prior.Client_Type_Team_V__c) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.FNDN_Billed_Through_TVM__c &lt;&gt; $Record__Prior.FNDN_Billed_Through_TVM__c,
+    &quot;FNDN Billed Through TVM: &quot; &amp; IF($Record__Prior.FNDN_Billed_Through_TVM__c, &quot;True&quot;, &quot;False&quot;) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.TVM_Billed_Through_FNDN__c &lt;&gt; $Record__Prior.TVM_Billed_Through_FNDN__c,
+    &quot;TVM Billed Through FNDN: &quot; &amp; IF($Record__Prior.TVM_Billed_Through_FNDN__c, &quot;True&quot;, &quot;False&quot;) &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  /* Digital IDs (Old Values) */
+  IF(
+    $Record.Bing_ID__c &lt;&gt; $Record__Prior.Bing_ID__c,
+    &quot;Bing ID: &quot; &amp; $Record__Prior.Bing_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Google_CID__c &lt;&gt; $Record__Prior.Google_CID__c,
+    &quot;Google CID: &quot; &amp; $Record__Prior.Google_CID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Facebook_ID__c &lt;&gt; $Record__Prior.Facebook_ID__c,
+    &quot;Facebook ID: &quot; &amp; $Record__Prior.Facebook_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  /* OEM Billing Info (Old Values) */
+  IF(
+    $Record.OEM_Dealer_Code__c &lt;&gt; $Record__Prior.OEM_Dealer_Code__c,
+    &quot;OEM Dealer Code: &quot; &amp; $Record__Prior.OEM_Dealer_Code__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Region__c &lt;&gt; $Record__Prior.OEM_Region__c,
+    &quot;OEM Region: &quot; &amp; $Record__Prior.OEM_Region__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Zone__c &lt;&gt; $Record__Prior.OEM_Zone__c,
+    &quot;OEM Zone: &quot; &amp; $Record__Prior.OEM_Zone__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Serv__c &lt;&gt; $Record__Prior.OEM_Serv__c,
+    &quot;OEM Division Code: &quot; &amp; $Record__Prior.OEM_Serv__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OEM_Service_Parts_Code__c &lt;&gt; $Record__Prior.OEM_Service_Parts_Code__c,
+    &quot;OEM Service Parts Code: &quot; &amp; $Record__Prior.OEM_Service_Parts_Code__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.Google_Payment_ID__c &lt;&gt; $Record__Prior.Google_Payment_ID__c,
+    &quot;Google Payment ID: &quot; &amp; $Record__Prior.Google_Payment_ID__c &amp; &quot;; &quot;,
+    &quot;&quot;
+  ) &amp;
+
+  IF(
+    $Record.OwnerId&lt;&gt; $Record__Prior.OwnerId,
+    &quot;Owner ID: &quot; &amp; $Record__Prior.OwnerId&amp; &quot;; &quot;,
+    &quot;&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fOldValueTex_SmeFixed</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+  SUBSTITUTE(
+    SUBSTITUTE(
+      SUBSTITUTE(
+        {!vOldvaluetext},
+        &quot;Digital SME: SME: &quot; &amp; {!$Record__Prior.Digital_SME__c} &amp; &quot;; &quot;,
+        &quot;Digital SME: &quot; &amp; {!Get_Old_SME_User.Name} &amp; &quot;; &quot;
+      ),
+      &quot;Digital SME: SME: &quot; &amp; {!$Record__Prior.Digital_SME__c} &amp; &quot;;&quot;,
+      &quot;Digital SME: &quot; &amp; {!Get_Old_SME_User.Name} &amp; &quot;;&quot;
+    ),
+    &quot;Digital SME: &quot; &amp; {!$Record__Prior.Digital_SME__c} &amp; &quot;; &quot;,
+    &quot;Digital SME: &quot; &amp; {!Get_Old_SME_User.Name} &amp; &quot;; &quot;
+  ),
+  &quot;Digital SME: &quot; &amp; {!$Record__Prior.Digital_SME__c} &amp; &quot;;&quot;,
+  &quot;Digital SME: &quot; &amp; {!Get_Old_SME_User.Name} &amp; &quot;;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Parsed_Field_Name</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!MasterNewValue}, &quot;:&quot;),
+  TRIM(
+    LEFT(
+      {!MasterNewValue},
+      FIND(&quot;:&quot;, {!MasterNewValue}) - 1
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Parsed_Old_Field_Name</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!MasterOldValue}, &quot;:&quot;),
+  TRIM(
+    LEFT(
+      {!MasterOldValue},
+      FIND(&quot;:&quot;, {!MasterOldValue}) - 1
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Parsed_Old_Value</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!MasterOldValue}, &quot;:&quot;),
+  TRIM(
+    SUBSTITUTE(
+      MID(
+        {!MasterOldValue},
+        FIND(&quot;:&quot;, {!MasterOldValue}) + 1,
+        9999
+      ),
+      &quot;;&quot;,
+      &quot;&quot;
+    )
+  ),
+  TRIM(SUBSTITUTE({!MasterOldValue}, &quot;;&quot;, &quot;&quot;))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Parsed_values</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!MasterNewValue}, &quot;:&quot;),
+  TRIM(
+    SUBSTITUTE(
+      MID(
+        {!MasterNewValue},
+        FIND(&quot;:&quot;, {!MasterNewValue}) + 1,
+        9999
+      ),
+      &quot;;&quot;,
+      &quot;&quot;
+    )
+  ),
+  TRIM(SUBSTITUTE({!MasterNewValue}, &quot;;&quot;, &quot;&quot;))
+)</expression>
+    </formulas>
+    <interviewLabel>Account Change Tracking Audit Log {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Change Tracking Audit Log</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Log_Record</name>
+        <label>Create Log Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Description__c</field>
+            <value>
+                <elementReference>fChangedFieldsList</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Discrepancy_User__c</field>
+            <value>
+                <elementReference>$User.Full_Name_Formula__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Discrepency__c</field>
+            <value>
+                <stringValue>Tracked Account field changed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Field__c</field>
+            <value>
+                <elementReference>Parsed_Field_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Value__c</field>
+            <value>
+                <elementReference>Parsed_values</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Old_Value__c</field>
+            <value>
+                <elementReference>Parsed_Old_Value</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Record_ID__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Table__c</field>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Log</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Audit_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_new_Client_Team</name>
+        <label>Get new Client Team</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Old_Client_Team</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Client_Team__r.Name</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Client_Team__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_New_SME_User</name>
+        <label>Get New SME User</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Old_SME_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Full_Name_Formula__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Digital_SME__r.Full_Name_Formula__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Old_Client_Team</name>
+        <label>Get Old Client Team</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Client_Teams</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.Client_Team__r.Name</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Client_Team__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Old_SME_User</name>
+        <label>Get Old SME User</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>assign_sme_values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Full_Name_Formula__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.Digital_SME__r.Full_Name_Formula__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Tracked_Fields_Changed</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>MasterNewValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>MasterOldValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewClientTeam</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Client_Team__c</objectType>
+    </variables>
+    <variables>
+        <name>NewClientTeamnames</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OldClientTeam</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Client_Team__c</objectType>
+    </variables>
+    <variables>
+        <name>OldClientTeamNames</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>rvNewSMEUser</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>rvOldSMEUser</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>vNewValueAccumulator</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>vNewValueText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>vOldValueAccumulator</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>vOldvaluetext</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

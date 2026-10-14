@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Tasks_to_Complete_CS</fullName>
+    <columns>Onboarding_Package_Link__c</columns>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Compliance_Team__c</columns>
+    <columns>Designer__c</columns>
+    <columns>Project_Creator__c</columns>
+    <columns>Production_Specialist__c</columns>
+    <columns>Website_QC__c</columns>
+    <columns>Complete__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Dependence_Lock__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Required_Fields_Lock__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Complete__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>My_Task__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Owner_Role__c</field>
+        <operation>equals</operation>
+        <value>Onboarding</value>
+    </filters>
+    <label>My Tasks to Complete CS</label>
+</ListView>

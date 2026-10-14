@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SEO_Package_Level__c</fullName>
+    <label>SEO Package Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SEO Plus</fullName>
+                <default>false</default>
+                <label>SEO Plus</label>
+            </value>
+            <value>
+                <fullName>SEO Pro</fullName>
+                <default>false</default>
+                <label>SEO Pro</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

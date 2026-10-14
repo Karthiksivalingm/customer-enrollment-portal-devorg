@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Products__c</fullName>
+    <label>Website Products</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>W-Apollo Sites</fullName>
+                <default>false</default>
+                <label>Apollo Sites</label>
+            </value>
+            <value>
+                <fullName>W-Group Site</fullName>
+                <default>false</default>
+                <label>Group Site</label>
+            </value>
+            <value>
+                <fullName>W-Apollo Assistant</fullName>
+                <default>false</default>
+                <label>Apollo Assistant</label>
+            </value>
+            <value>
+                <fullName>W-Apollo Transact</fullName>
+                <default>false</default>
+                <label>Apollo Transact</label>
+            </value>
+            <value>
+                <fullName>W-Credit PreQual</fullName>
+                <default>false</default>
+                <label>Credit PreQual</label>
+            </value>
+            <value>
+                <fullName>W-Custom Creative</fullName>
+                <default>false</default>
+                <label>Custom Creative</label>
+            </value>
+            <value>
+                <fullName>W-VDV</fullName>
+                <default>false</default>
+                <label>VDV</label>
+            </value>
+            <value>
+                <fullName>W-SEO</fullName>
+                <default>false</default>
+                <label>SEO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Website Director</name>
+    <queueMembers>
+        <users>
+            <user>bsouders@teamvelocitymarketing.com</user>
+            <user>cschlumpf@teamvelocitymarketing.com</user>
+            <user>kwessling@teamvelocitymarketing.com</user>
+            <user>lmcevoy@teamvelocitymarketing.com</user>
+        </users>
+    </queueMembers>
+</Queue>

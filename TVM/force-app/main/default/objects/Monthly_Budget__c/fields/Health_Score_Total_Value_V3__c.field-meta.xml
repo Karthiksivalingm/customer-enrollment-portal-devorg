@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Score_Total_Value_V3__c</fullName>
+    <externalId>false</externalId>
+    <formula>HS_NRR_Decrease_Calc_V3__c +
+ HS_Single_Product_Calc_V3__c +
+ HS_Credit_Issued__c +
+ HS_Rating_Calc__c +
+ HS_Meeting_Recaps_11_24__c +
+ HS_Bug_Cases_Calc_11_24__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Health Score Total Value V3</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

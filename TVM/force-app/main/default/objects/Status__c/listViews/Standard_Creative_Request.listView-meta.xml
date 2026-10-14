@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Creative_Request</fullName>
+    <columns>Status_Sort_Value__c</columns>
+    <columns>NAME</columns>
+    <columns>Owner_Custom__c</columns>
+    <columns>Queues__c</columns>
+    <columns>Display_Role__c</columns>
+    <columns>Field_Locked__c</columns>
+    <columns>Alert__c</columns>
+    <columns>Info_Needed_Provided__c</columns>
+    <columns>Early_Close_Reason__c</columns>
+    <columns>Closing_Status__c</columns>
+    <columns>Starting_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Creative Request</value>
+    </filters>
+    <filters>
+        <field>Deactivated__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Sub_Types__c</field>
+        <operation>excludes</operation>
+        <value>Best CR Status</value>
+    </filters>
+    <label>Standard Creative Request Statuses</label>
+</ListView>

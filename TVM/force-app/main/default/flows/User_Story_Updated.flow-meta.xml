@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>BDC_Gate</name>
+        <label>BDC Gate</label>
+        <locationX>446</locationX>
+        <locationY>839</locationY>
+        <defaultConnectorLabel>No BDC</defaultConnectorLabel>
+        <rules>
+            <name>Has_BDC_Campaign</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BDC_Campaign__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status</targetReference>
+            </connector>
+            <label>Has BDC Campaign</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Changed_to_In_Progress_Decision</name>
+        <label>Changed to In Progress Decision</label>
+        <locationX>578</locationX>
+        <locationY>623</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Changed_to_In_Progress</name>
+            <conditionLogic>1 AND 2 AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Tracking_Start__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>In_Progress_Update</targetReference>
+            </connector>
+            <label>Changed to In Progress</label>
+        </rules>
+        <rules>
+            <name>Changed_to_Deployed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Client Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Deployment</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Dev_Complete</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Changed to Deployed</label>
+        </rules>
+        <rules>
+            <name>Changed_to_Update_Needed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Update Needed</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Changed to Update Needed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Slack_Gate</name>
+        <label>Slack Gate</label>
+        <locationX>578</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Changed_to_In_Progress_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Slack_Started</name>
+            <conditionLogic>1 OR (2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Start_Slack__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dev Questions</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_to_Open_Slack</targetReference>
+            </connector>
+            <label>Slack Started</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>User Story Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>User Ticket Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Dev_Complete</name>
+        <label>Dev Complete</label>
+        <locationX>446</locationX>
+        <locationY>731</locationY>
+        <connector>
+            <targetReference>BDC_Gate</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Tracking_End__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>In_Progress_Update</name>
+        <label>In Progress Update</label>
+        <locationX>50</locationX>
+        <locationY>731</locationY>
+        <inputAssignments>
+            <field>Tracking_Start__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status</name>
+        <label>Update Status</label>
+        <locationX>314</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Admin List Processed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.BDC_Campaign__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_to_Open_Slack</name>
+        <label>Update to Open Slack</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Changed_to_In_Progress_Decision</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Start_Slack__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Dev Questions</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Slack_Gate</targetReference>
+        </connector>
+        <object>User_Story__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

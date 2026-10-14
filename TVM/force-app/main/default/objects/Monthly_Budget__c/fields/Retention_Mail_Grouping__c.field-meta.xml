@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retention_Mail_Grouping__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Category_Sales_Retention_Active__c &amp;&amp; Category_Service_Retention_Active__c, &quot;01 Sales/Service Retention| &quot;,
+if(Category_Sales_Retention_Active__c , &quot;02 Sales Retention | &quot;,
+if(Category_Service_Retention_Active__c , &quot;03 Service Retention | &quot;,
+&quot;04 No Retention | &quot;
+)))
+&amp;
+if(Category_Sales_Mail_Amount__c&gt;0 &amp;&amp; Category_Service_Mail_Amount__c&gt;0, &quot;01 Sales/Service Mail&quot;, 
+if(Category_Sales_Mail_Amount__c&gt;0, &quot;02 Sales Mail&quot;, 
+if(Category_Service_Mail_Amount__c&gt;0, &quot;03 Service Mail&quot;, &quot;04 No Mail&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Retention Mail Grouping</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

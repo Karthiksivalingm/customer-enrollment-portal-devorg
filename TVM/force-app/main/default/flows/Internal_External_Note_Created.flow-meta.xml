@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>ConvertToColl</name>
+        <label>ConvertToColl</label>
+        <locationX>490</locationX>
+        <locationY>695</locationY>
+        <actionName>ConvertCSVToStringCollection_CP</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Loop_All_Addresses</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>csvString</name>
+            <value>
+                <elementReference>$Record.CC_Email_Address__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>ConvertCSVToStringCollection_CP</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_CC_Address</name>
+        <label>Add CC Address</label>
+        <locationX>754</locationX>
+        <locationY>1019</locationY>
+        <assignmentItems>
+            <assignToReference>CCListFinal</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>,{!Loop_All_Addresses}</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_All_Addresses</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_CC_List</name>
+        <label>Set CC List</label>
+        <locationX>622</locationX>
+        <locationY>479</locationY>
+        <assignmentItems>
+            <assignToReference>CCListFinal</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Case__r.Full_CC_List__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CC_List_Gate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Currents</name>
+        <label>Set Currents</label>
+        <locationX>622</locationX>
+        <locationY>1379</locationY>
+        <assignmentItems>
+            <assignToReference>CurrentHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Case__r.Current_Work_Hour__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CurrentHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Hours</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CurrentWorkHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Case__r.Client_Hold_Workhours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CurrentWorkHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Case__r.Calculate_Client_Hold_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PushList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Case__r.Owner:User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>CC_List_Gate</name>
+        <label>CC List Gate</label>
+        <locationX>622</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>Set_Currents</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No CC List</defaultConnectorLabel>
+        <rules>
+            <name>CC_List_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CC_Email_Address__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ConvertToColl</targetReference>
+            </connector>
+            <label>CC List Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Email_Address_Check</name>
+        <label>Email Address Check</label>
+        <locationX>666</locationX>
+        <locationY>911</locationY>
+        <defaultConnector>
+            <targetReference>Add_CC_Address</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>New Address</defaultConnectorLabel>
+        <rules>
+            <name>Address_Already_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CCListFinal</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Loop_All_Addresses</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_All_Addresses</targetReference>
+            </connector>
+            <label>Address Already Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>External_Comment_Gate</name>
+        <label>External Comment Gate</label>
+        <locationX>777</locationX>
+        <locationY>371</locationY>
+        <defaultConnector>
+            <targetReference>Create_Touch</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Comment_from_External</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.External_Comment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_CC_List</targetReference>
+            </connector>
+            <label>Comment from External</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Hours</name>
+        <dataType>Number</dataType>
+        <expression>({!$Flow.CurrentDateTime}-{!$Record.Case__r.Latest_Client_Sent__c}) * 24</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>NotifyCreatorAddress</name>
+        <dataType>String</dataType>
+        <expression>if( 
+isBlank({!$Record.Case__r.CreatedBy.Email})=false &amp;&amp;
+{!$Record.Case__r.Notify_Me__r.Email} != {!$Record.Case__r.CreatedBy.Email} &amp;&amp;
+{!$Record.Case__r.Alerted_User_2__r.Email} != {!$Record.Case__r.CreatedBy.Email} &amp;&amp;
+{!$Record.Case__r.Account.Regional_Account_Director__r.Email} != {!$Record.Case__r.CreatedBy.Email} &amp;&amp;
+{!$Record.Case__r.Account.Account_Manager__r.Email} != {!$Record.Case__r.CreatedBy.Email} &amp;&amp;
+{!$Record.Case__r.Account.Product_Manager__r.Email} != {!$Record.Case__r.CreatedBy.Email} &amp;&amp;
+{!$Record.Case__r.Owner:User.Email} != {!$Record.Case__r.CreatedBy.Email} &amp;&amp;
+!({!$Record.Case__r.Sync_FD__c} &amp;&amp; {!$Record.Case__r.CreatedBy.Email} = &quot;jseurer@teamvelocitymarketing.com&quot;) &amp;&amp;
+{!$Record.Case__r.CreatedBy.Email} != &quot;noreply@salesforce.teamvelocitymarketing.com&quot;
+,
+{!$Record.Case__r.CreatedBy.Email}, &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>NotifyRADAMAlert</name>
+        <dataType>String</dataType>
+        <expression>if( isBlank({!$Record.Case__r.Notify_Me__r.Email}), &quot;&quot;, {!$Record.Case__r.Notify_Me__r.Email}&amp;&quot;,&quot;)&amp;
+if( isBlank({!$Record.Case__r.Alerted_User_2__r.Email}), &quot;&quot;, {!$Record.Case__r.Alerted_User_2__r.Email}&amp;&quot;,&quot;)&amp;
+if( isBlank({!$Record.Case__r.Regional_Account_Director__r.Email}), &quot;&quot;, {!$Record.Case__r.Regional_Account_Director__r.Email}&amp;&quot;,&quot;)&amp;
+if( isBlank({!$Record.Case__r.Account.Account_Manager__r.Email}), &quot;&quot;, {!$Record.Case__r.Account.Account_Manager__r.Email}&amp;&quot;,&quot;)&amp;
+if( isBlank({!NotifyCreatorAddress}), &quot;&quot;, {!NotifyCreatorAddress})</expression>
+    </formulas>
+    <formulas>
+        <name>NotifyThesePeople</name>
+        <dataType>String</dataType>
+        <expression>if( isBlank({!$Record.Case__r.CreatedBy.Email}) || {!$Record.Case__r.CreatedBy.Email}=&quot;noreply@salesforce.teamvelocitymarketing.com&quot;, &quot;sfintegration@teamvelocitymarketing.com&quot;, {!$Record.Case__r.CreatedBy.Email}&amp;&quot;,&quot;)&amp;
+if({!$Record.Case__r.Notify_Me__r.Email}!=&quot;&quot; &amp;&amp; {!$Record.Case__r.Notify_Me__r.Email}!={!$Record.Case__r.CreatedBy.Email}, &quot;,&quot;&amp;{!$Record.Case__r.Notify_Me__r.Email}, &quot;&quot;)&amp;
+if({!$Record.Case__r.Alerted_User_2__r.Email}!=&quot;&quot; &amp;&amp; {!$Record.Case__r.Alerted_User_2__r.Email}!={!$Record.Case__r.CreatedBy.Email}, &quot;,&quot;&amp;{!$Record.Case__r.Alerted_User_2__r.Email}, &quot;&quot;)&amp;
+if({!$Record.Case__r.Regional_Account_Director__r.Email}!=&quot;&quot; &amp;&amp; {!$Record.Case__r.Regional_Account_Director__r.Email}!={!$Record.Case__r.CreatedBy.Email}, &quot;,&quot;&amp;{!$Record.Case__r.Regional_Account_Director__r.Email}, &quot;&quot;)&amp;
+if({!$Record.Case__r.Account_Manager__r.Email}!=&quot;&quot; &amp;&amp; {!$Record.Case__r.Account_Manager__r.Email}!={!$Record.Case__r.CreatedBy.Email}, &quot;,&quot;&amp;{!$Record.Case__r.Account_Manager__r.Email}, &quot;&quot;)&amp;
+if({!$Record.Case__r.Owner:User.Email}!=&quot;&quot; &amp;&amp; {!$Record.Case__r.Owner:User.Email}!={!$Record.Case__r.CreatedBy.Email}, &quot;,&quot;&amp;{!$Record.Case__r.Owner:User.Email}, &quot;&quot;)&amp;
+if({!$Record.Case__r.Account.Product_Manager__r.Email}!=&quot;&quot;, &quot;,&quot;&amp;{!$Record.Case__r.Account.Product_Manager__r.Email}, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>NotifyWPMFordFDNOwner</name>
+        <dataType>String</dataType>
+        <expression>if({!$Record.Case__r.Sync_FD__c}, &quot;,jseurer@teamvelocitymarketing.com&quot;, &quot;&quot;)&amp;
+if(IsBlank({!$Record.Case__r.Foundation_Additional_Notification__c}), &quot;&quot;, &quot;,&quot;&amp;{!$Record.Case__r.Foundation_Additional_Notification__c})&amp;
+if({!$Record.Case__r.Owner:Group.Name}=&quot;Foundation Digital Support&quot;, &quot;,&quot;&amp;&quot;foundationdigitalsupport@teamvelocitymarketing.com&quot;, &quot;&quot;)&amp;
+if( isBlank({!$Record.Case__r.Owner:User.Email}), &quot;&quot;, &quot;,&quot;&amp;{!$Record.Case__r.Owner:User.Email})</expression>
+    </formulas>
+    <interviewLabel>Internal/External Note Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Internal/External Note Created</label>
+    <loops>
+        <name>Loop_All_Addresses</name>
+        <label>Loop All Addresses</label>
+        <locationX>490</locationX>
+        <locationY>803</locationY>
+        <collectionReference>ConvertToColl.stringCollection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Email_Address_Check</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Set_Currents</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>623</locationX>
+        <locationY>1488</locationY>
+        <connector>
+            <targetReference>Send_Notification</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Client_Hold_Workhours__c</field>
+            <value>
+                <elementReference>CurrentWorkHours</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Client_Hours__c</field>
+            <value>
+                <elementReference>CurrentHours</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Current_CC_List__c</field>
+            <value>
+                <elementReference>$Record.CC_Email_Address__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Full_CC_List__c</field>
+            <value>
+                <elementReference>CCListFinal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Latest_CC_List_Long__c</field>
+            <value>
+                <elementReference>$Record.CC_Email_Address__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Latest_Client_Received__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>External Feedback Provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_CS__c</field>
+            <value>
+                <stringValue>External Feedback Provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Digital__c</field>
+            <value>
+                <stringValue>External Feedback Provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Filtered__c</field>
+            <value>
+                <stringValue>External Feedback Provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_General__c</field>
+            <value>
+                <stringValue>External Feedback Provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Production__c</field>
+            <value>
+                <stringValue>External Feedback Provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Case__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Type</name>
+        <label>Update Type</label>
+        <locationX>622</locationX>
+        <locationY>1703</locationY>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>From External</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>External_Comment_Gate</targetReference>
+        </connector>
+        <object>Internal_External_Note__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Create_Touch</name>
+        <label>Create Touch</label>
+        <locationX>1100</locationX>
+        <locationY>317</locationY>
+        <flowName>Touch_Creator</flowName>
+        <inputAssignments>
+            <name>OptionalInput</name>
+            <value>
+                <stringValue>Comment Added</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>UserID</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Send_Notification</name>
+        <label>Send Notification</label>
+        <locationX>798</locationX>
+        <locationY>1624</locationY>
+        <connector>
+            <targetReference>Update_Type</targetReference>
+        </connector>
+        <flowName>TVM_Master_Notification_Deployment</flowName>
+        <inputAssignments>
+            <name>E1_EmailRecipient</name>
+            <value>
+                <elementReference>NotifyThesePeople</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>E3_EmailSubjectLine</name>
+            <value>
+                <stringValue>New External Comment for {!$Record.Case__r.CaseNumber}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>E4_EmailBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>E_NeedEmail</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>P1_PushCNAPIName</name>
+            <value>
+                <stringValue>Case_External_Note_Notifications</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>P2_PushUserIDList</name>
+            <value>
+                <elementReference>PushList</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>P3_PushTitle</name>
+            <value>
+                <stringValue>External Feedback Provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>P4_PushBody</name>
+            <value>
+                <elementReference>NewCommentBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>P_NeedPush</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordID</name>
+            <value>
+                <elementReference>$Record.Case__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>EmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Here is what was commented: 
+
+{!$Record.Text_Rich__c}
+
+Account: {!$Record.Case__r.Account.Name}
+Case: {!$Record.Case__r.CaseNumber}
+https://teamvelocity.lightning.force.com/lightning/r/Case/{!$Record.Case__r.Case_18_ID__c}/view</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NewCommentBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Here is what was commented:&lt;/p&gt;&lt;p&gt;&lt;em&gt;{!$Record.Text_Rich__c}&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Account: {!$Record.Case__r.Account.Name}&lt;/p&gt;&lt;p&gt;Case: &lt;a href=&quot;https://teamvelocity.lightning.force.com/lightning/r/Case/{!$Record.Case__r.Case_18_ID__c}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!$Record.Case__r.CaseNumber}&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NewCommentSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New External Comment for Case {!$Record.Case__r.CaseNumber}</text>
+    </textTemplates>
+    <variables>
+        <name>CCListFinal</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CurrentHours</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>CurrentWorkHours</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>PushList</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

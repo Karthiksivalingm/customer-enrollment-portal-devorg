@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>General Support</label>
+    <servicePresenceStatusAccesses>
+        <enabled>true</enabled>
+        <servicePresenceStatus>Available_for_All_Support</servicePresenceStatus>
+    </servicePresenceStatusAccesses>
+    <servicePresenceStatusAccesses>
+        <enabled>true</enabled>
+        <servicePresenceStatus>Available_for_Cases_Only</servicePresenceStatus>
+    </servicePresenceStatusAccesses>
+    <servicePresenceStatusAccesses>
+        <enabled>true</enabled>
+        <servicePresenceStatus>AvailableforVoice</servicePresenceStatus>
+    </servicePresenceStatusAccesses>
+    <servicePresenceStatusAccesses>
+        <enabled>true</enabled>
+        <servicePresenceStatus>Voice_Call_Busy</servicePresenceStatus>
+    </servicePresenceStatusAccesses>
+</PermissionSet>

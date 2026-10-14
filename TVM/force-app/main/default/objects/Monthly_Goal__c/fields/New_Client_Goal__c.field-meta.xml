@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Client_Goal__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(Monthly_Goal_Date__c &lt;= Date(2023, 1, 1), 1025, 
+if(Monthly_Goal_Date__c &lt; Date(2024, 1, 1), 1025+(MONTH(Monthly_Goal_Date__c )-1 + (12*(YEAR(Monthly_Goal_Date__c )-2023)))*25,
+1330+(MONTH(Monthly_Goal_Date__c )-1 + (12*(YEAR(Monthly_Goal_Date__c )-2024)))*30
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>New Client Goal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>In-scene</fullName>
+        <default>false</default>
+        <label>In-scene</label>
+    </customValue>
+    <customValue>
+        <fullName>Lifestyle</fullName>
+        <default>false</default>
+        <label>Lifestyle</label>
+    </customValue>
+    <customValue>
+        <fullName>Jelly Bean on Themed Background</fullName>
+        <default>false</default>
+        <label>Jelly Bean on Themed Background</label>
+    </customValue>
+    <customValue>
+        <fullName>Jelly Bean on Abstract Background</fullName>
+        <default>false</default>
+        <label>Jelly Bean on Abstract Background</label>
+    </customValue>
+    <customValue>
+        <fullName>Jelly Bean on Location Background</fullName>
+        <default>false</default>
+        <label>Jelly Bean on Location Background</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Header Image</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Age_60_Days_from_1st_Budget__c</fullName>
+    <formula>AND(
+Created_Date__c &gt;= Account.Earliest_Budget_Month__c,
+Created_Date__c &lt;= Account.Earliest_Budget_Month__c + 60
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Case Created &lt; 60 Days From 1st Budget</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

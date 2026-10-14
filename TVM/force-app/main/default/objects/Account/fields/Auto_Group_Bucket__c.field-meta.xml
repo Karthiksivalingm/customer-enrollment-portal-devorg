@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Group_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Related_Auto_Group__r.Number_of_Accounts__c &gt;=21, &quot;Bucket 1 X-Large &gt;=21&quot;,
+If( Related_Auto_Group__r.Number_of_Accounts__c &gt;=11, &quot;Bucket 2 Large 11-20&quot;,
+If( Related_Auto_Group__r.Number_of_Accounts__c &gt;=4, &quot;Bucket 3 Medium Group 4-10&quot;,
+If( Related_Auto_Group__r.Number_of_Accounts__c &gt;=2, &quot;Bucket 4 Small Group 2-3&quot;,
+&quot;Bucket 5 Single Store(s)&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Auto Group Bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

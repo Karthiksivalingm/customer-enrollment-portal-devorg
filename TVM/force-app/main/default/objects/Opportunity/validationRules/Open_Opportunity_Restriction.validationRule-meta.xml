@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Opportunity_Restriction</fullName>
+    <active>true</active>
+    <description>Restricts Accounts from having more than 1 Open Opportunity at a given time.</description>
+    <errorConditionFormula>Account.Open_Opportunities__c &gt; 1 
+&amp;&amp; RecordTypeId &lt;&gt; &quot;012Vb000007jxvxIAA&quot;
+&amp;&amp; RecordType.Name &lt;&gt; &quot;Foundation Opportunity&quot;
+&amp;&amp; (Text(StageName)!=&quot;Closed Lost&quot;)
+
+&amp;&amp;  Opportunity_Type__c =&quot;New Sale&quot;
+&amp;&amp;  $Profile.Name != &quot;System Administrator&quot;
+&amp;&amp;  $User.Email != &quot;brittani@teamvelocitymarketing.com&quot;</errorConditionFormula>
+    <errorMessage>This Account already has an Open Opportunity. You may not have more than 1 Open Opportunity for an Account at a given time.</errorMessage>
+</ValidationRule>

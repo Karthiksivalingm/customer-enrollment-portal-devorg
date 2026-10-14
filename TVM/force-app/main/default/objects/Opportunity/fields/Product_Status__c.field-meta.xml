@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status__c</fullName>
+    <description>FND</description>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BI Auto Group Dashboard</fullName>
+                <default>false</default>
+                <label>BI Auto Group Dashboard</label>
+            </value>
+            <value>
+                <fullName>BI Enterprise Dashboard</fullName>
+                <default>false</default>
+                <label>BI Enterprise Dashboard</label>
+            </value>
+            <value>
+                <fullName>BI Single Rooftop Dashboard</fullName>
+                <default>false</default>
+                <label>BI Single Rooftop Dashboard</label>
+            </value>
+            <value>
+                <fullName>Collision</fullName>
+                <default>false</default>
+                <label>Collision</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Downgrade</fullName>
+                <default>false</default>
+                <label>Downgrade</label>
+            </value>
+            <value>
+                <fullName>Failure to Launch Product</fullName>
+                <default>false</default>
+                <label>Failure to Launch Product</label>
+            </value>
+            <value>
+                <fullName>Full Package</fullName>
+                <default>false</default>
+                <label>Full Package</label>
+            </value>
+            <value>
+                <fullName>Group Used Strategy</fullName>
+                <default>false</default>
+                <label>Group Used Strategy</label>
+            </value>
+            <value>
+                <fullName>Lite Package</fullName>
+                <default>false</default>
+                <label>Lite Package</label>
+            </value>
+            <value>
+                <fullName>Lite plus Facebook</fullName>
+                <default>false</default>
+                <label>Lite plus Facebook</label>
+            </value>
+            <value>
+                <fullName>Lite plus Video</fullName>
+                <default>false</default>
+                <label>Lite plus Video</label>
+            </value>
+            <value>
+                <fullName>Monitoring and Alerts</fullName>
+                <default>false</default>
+                <label>Monitoring and Alerts</label>
+            </value>
+            <value>
+                <fullName>NCM Digital Intelligence Scorecard</fullName>
+                <default>false</default>
+                <label>NCM Digital Intelligence Scorecard</label>
+            </value>
+            <value>
+                <fullName>NCM Digital Performance Composite</fullName>
+                <default>false</default>
+                <label>NCM Digital Performance Composite</label>
+            </value>
+            <value>
+                <fullName>OEM Program Enrollment</fullName>
+                <default>false</default>
+                <label>OEM Program Enrollment</label>
+            </value>
+            <value>
+                <fullName>OEM Tier 1</fullName>
+                <default>false</default>
+                <label>OEM Tier 1</label>
+            </value>
+            <value>
+                <fullName>OEM Tier 2</fullName>
+                <default>false</default>
+                <label>OEM Tier 2</label>
+            </value>
+            <value>
+                <fullName>OTT Only</fullName>
+                <default>false</default>
+                <label>OTT Only</label>
+            </value>
+            <value>
+                <fullName>Pilot</fullName>
+                <default>false</default>
+                <label>Pilot</label>
+            </value>
+            <value>
+                <fullName>Pilot Conversion</fullName>
+                <default>false</default>
+                <label>Pilot Conversion</label>
+            </value>
+            <value>
+                <fullName>Plus Package</fullName>
+                <default>false</default>
+                <label>Plus Package</label>
+            </value>
+            <value>
+                <fullName>Streaming TV/OTT Advertising</fullName>
+                <default>false</default>
+                <label>Streaming TV/OTT Advertising</label>
+            </value>
+            <value>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+                <label>Upsell</label>
+            </value>
+            <value>
+                <fullName>Used Only</fullName>
+                <default>false</default>
+                <label>Used Only</label>
+            </value>
+            <value>
+                <fullName>YouTube Only</fullName>
+                <default>false</default>
+                <label>YouTube Only</label>
+            </value>
+            <value>
+                <fullName>Hybrid Digital</fullName>
+                <default>false</default>
+                <label>Hybrid Digital</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lock</fullName>
+    <active>true</active>
+    <description>Deactivate this after a few months 1/29/26</description>
+    <errorConditionFormula>AND(
+    $User.Email &lt;&gt; &quot;sknox@teamvelocitymarketing.com&quot;,
+    $User.Email &lt;&gt; &quot;dchen@teamvelocitymarketing.com&quot;,
+    $User.Email &lt;&gt; &quot;soconnell@teamvelocitymarketing.com&quot;,
+    $User.Email &lt;&gt; &quot;lconner@teamvelocitymarketing.com&quot;,
+    $User.Email &lt;&gt; &quot;jbyrd@teamvelocitymarketing.com&quot;,
+    Opportunity_Type__c &lt;&gt; &quot;Try &amp; Buy&quot;,
+    Close_Lock__c, 
+    NOT(ISCHANGED(Close_Lock__c)),
+    OR( 
+        ISCHANGED(Bypass_Validation__c) = false, 
+        Bypass_Validation__c = NOW() 
+    ),
+
+    
+    OR(
+        
+        ISCHANGED(OwnerId),
+        AND(
+            ISCHANGED(Previous_Package_Fee__c),
+            ISCHANGED(Previous_Package__c),
+            NOT(ISCHANGED(Upsell_Team_Assist__c)) 
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>This Opp is Locked! If you feel like this is in error please reach out to SF Admin Team</errorMessage>
+</ValidationRule>

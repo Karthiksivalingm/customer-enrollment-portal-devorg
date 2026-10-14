@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Don&apos;t Know</fullName>
+        <default>true</default>
+        <label>Don&apos;t Know</label>
+    </customValue>
+    <customValue>
+        <fullName>Local Ad Agency</fullName>
+        <default>false</default>
+        <label>Local Ad Agency</label>
+    </customValue>
+    <customValue>
+        <fullName>In House</fullName>
+        <default>false</default>
+        <label>In House</label>
+    </customValue>
+    <customValue>
+        <fullName>4Eyes</fullName>
+        <default>false</default>
+        <label>4Eyes</label>
+    </customValue>
+    <customValue>
+        <fullName>Activator</fullName>
+        <default>false</default>
+        <label>Activator</label>
+    </customValue>
+    <customValue>
+        <fullName>Affinitiv</fullName>
+        <default>false</default>
+        <label>Affinitiv</label>
+    </customValue>
+    <customValue>
+        <fullName>Auto Alert</fullName>
+        <default>false</default>
+        <label>Auto Alert</label>
+    </customValue>
+    <customValue>
+        <fullName>AutoLoop</fullName>
+        <default>false</default>
+        <label>AutoLoop</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive Mastermind</fullName>
+        <default>false</default>
+        <label>Automotive Mastermind</label>
+    </customValue>
+    <customValue>
+        <fullName>Client Command</fullName>
+        <default>false</default>
+        <label>Client Command</label>
+    </customValue>
+    <customValue>
+        <fullName>CRM</fullName>
+        <default>false</default>
+        <label>CRM</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer Wizard</fullName>
+        <default>false</default>
+        <label>Dealer Wizard</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Leads</fullName>
+        <default>false</default>
+        <label>E-Leads</label>
+    </customValue>
+    <customValue>
+        <fullName>Epsilon</fullName>
+        <default>false</default>
+        <label>Epsilon</label>
+    </customValue>
+    <customValue>
+        <fullName>Fullpath</fullName>
+        <default>false</default>
+        <label>Fullpath</label>
+    </customValue>
+    <customValue>
+        <fullName>PureCars (Auto Miner)</fullName>
+        <default>false</default>
+        <label>PureCars (Auto Miner)</label>
+    </customValue>
+    <customValue>
+        <fullName>Revenue Radar</fullName>
+        <default>false</default>
+        <label>Revenue Radar</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <description>Competitors</description>
+    <masterLabel>Retention/Equity</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

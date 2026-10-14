@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designer_Queue</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Project_Name__c</columns>
+    <columns>Type__c</columns>
+    <columns>Stage_Numbers__c</columns>
+    <columns>Status__c</columns>
+    <columns>Escalate_Request__c</columns>
+    <columns>RAD__c</columns>
+    <columns>AM__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Action_Role__c</field>
+        <operation>contains</operation>
+        <value>Designer</value>
+    </filters>
+    <filters>
+        <field>Completed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Designer Queue</label>
+</ListView>

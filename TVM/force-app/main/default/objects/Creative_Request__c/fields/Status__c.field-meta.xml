@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>https://docs.google.com/spreadsheets/d/1d4c39lRBkYbOouG39688BSPdAFgO9MlCUwComH_1NkY/edit#gid=0
+
+update any changes on spreadsheet</description>
+    <label>Status</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status_Dependency__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>00  Request Being Reviewed</fullName>
+                <default>true</default>
+                <label>00  Request Being Reviewed</label>
+            </value>
+            <value>
+                <fullName>01 Ready for Designer</fullName>
+                <default>false</default>
+                <label>01 Ready for Designer</label>
+            </value>
+            <value>
+                <fullName>02 In Progress with Designer</fullName>
+                <default>false</default>
+                <label>02 In Progress with Designer</label>
+            </value>
+            <value>
+                <fullName>03 Changes for Designer</fullName>
+                <default>false</default>
+                <label>03 Changes for Designer</label>
+            </value>
+            <value>
+                <fullName>04 Information Provided - Field</fullName>
+                <default>false</default>
+                <label>04 Information Provided - Field</label>
+            </value>
+            <value>
+                <fullName>05 Creative Review - Design</fullName>
+                <default>false</default>
+                <label>05 Creative Review - Design</label>
+            </value>
+            <value>
+                <fullName>05 - Creative Review - Production Load</fullName>
+                <default>false</default>
+                <label>05 - Creative Review - Production Load</label>
+            </value>
+            <value>
+                <fullName>05 Creative Review Approved - Design</fullName>
+                <default>false</default>
+                <label>05 Creative Review Approved - Design</label>
+            </value>
+            <value>
+                <fullName>06 Assigned to Designer</fullName>
+                <default>false</default>
+                <label>06 Assigned to Designer</label>
+            </value>
+            <value>
+                <fullName>07 Need Information - Field</fullName>
+                <default>false</default>
+                <label>07 Need Information  - Field</label>
+            </value>
+            <value>
+                <fullName>08 Creative Complete</fullName>
+                <default>false</default>
+                <label>08 Creative Complete</label>
+            </value>
+            <value>
+                <fullName>13 Needs Media Instruction</fullName>
+                <default>false</default>
+                <label>13 Needs Media Instruction</label>
+            </value>
+            <value>
+                <fullName>14 Media Instruction Provided</fullName>
+                <default>false</default>
+                <label>14 Media Instruction Provided</label>
+            </value>
+            <value>
+                <fullName>09 Creative Approved - Field</fullName>
+                <default>false</default>
+                <label>09 Awaiting Client Approval</label>
+            </value>
+            <value>
+                <fullName>10 At Compliance - Field</fullName>
+                <default>false</default>
+                <label>10 At Compliance - Field</label>
+            </value>
+            <value>
+                <fullName>11 Asset Live/Deployed - Field</fullName>
+                <default>false</default>
+                <label>11 Asset Live/Deployed - Field</label>
+            </value>
+            <value>
+                <fullName>12 Not Approved to Execute</fullName>
+                <default>false</default>
+                <label>12 Not Approved to Execute</label>
+            </value>
+            <value>
+                <fullName>0 - Request Submitted</fullName>
+                <default>false</default>
+                <label>0 - Request Submitted</label>
+            </value>
+            <value>
+                <fullName>00 - Need Information</fullName>
+                <default>false</default>
+                <label>00 - Need Information</label>
+            </value>
+            <value>
+                <fullName>000 - Creative Complete - Additional Changes Needed</fullName>
+                <default>false</default>
+                <label>000 - Creative Complete - Additional Changes Needed</label>
+            </value>
+            <value>
+                <fullName>01 - Ready for SW</fullName>
+                <default>false</default>
+                <label>01 - Ready for SW</label>
+            </value>
+            <value>
+                <fullName>02 - Script - In Progress</fullName>
+                <default>false</default>
+                <label>02 - Script - In Progress</label>
+            </value>
+            <value>
+                <fullName>03 - Script - Changes Needed</fullName>
+                <default>false</default>
+                <label>03 - Script - Changes Needed</label>
+            </value>
+            <value>
+                <fullName>04 - Script - Complete - Needs Client Approval</fullName>
+                <default>false</default>
+                <label>04 - Script - Complete - Needs Client Approval</label>
+            </value>
+            <value>
+                <fullName>05 - Script - Sent for Client Approval</fullName>
+                <default>false</default>
+                <label>05 - Script - Sent for Client Approval</label>
+            </value>
+            <value>
+                <fullName>06 - Script - Client Approved / Ready for VO</fullName>
+                <default>false</default>
+                <label>06 - Script - Client Approved / Ready for VO</label>
+            </value>
+            <value>
+                <fullName>07 - Script - VO Ordered</fullName>
+                <default>false</default>
+                <label>07 - Script - VO Ordered</label>
+            </value>
+            <value>
+                <fullName>08 - Ready for Designer</fullName>
+                <default>false</default>
+                <label>08 - Ready for Designer</label>
+            </value>
+            <value>
+                <fullName>09 - Designer - In Progress</fullName>
+                <default>false</default>
+                <label>09 - Designer - In Progress</label>
+            </value>
+            <value>
+                <fullName>10 - Designer - Video Complete / Ready for Proofing</fullName>
+                <default>false</default>
+                <label>10 - Designer - Video Complete / Ready for Proofing</label>
+            </value>
+            <value>
+                <fullName>11 - Proofing - In Progress</fullName>
+                <default>false</default>
+                <label>11 - Proofing - In Progress</label>
+            </value>
+            <value>
+                <fullName>12 - Proofing - Changes Needed</fullName>
+                <default>false</default>
+                <label>12 - Proofing - Changes Needed</label>
+            </value>
+            <value>
+                <fullName>13 - Proofing - Approved / Client Approval Needed</fullName>
+                <default>false</default>
+                <label>13 - Proofing - Approved / Client Approval Needed</label>
+            </value>
+            <value>
+                <fullName>14 - Compliance/Client Approval - Pending</fullName>
+                <default>false</default>
+                <label>14 - Compliance/Client Approval - Pending</label>
+            </value>
+            <value>
+                <fullName>15 - Client Approved / Media Instruction Needed</fullName>
+                <default>false</default>
+                <label>15 - Client Approved / Media Instruction Needed</label>
+            </value>
+            <value>
+                <fullName>16 - Media - Ready for Upload</fullName>
+                <default>false</default>
+                <label>16 - Media - Ready for Upload</label>
+            </value>
+            <value>
+                <fullName>17 - Designer - Upload Complete</fullName>
+                <default>false</default>
+                <label>17 - Designer - Upload Complete</label>
+            </value>
+            <value>
+                <fullName>18 - Proofing - Upload Verified</fullName>
+                <default>false</default>
+                <label>18 - Proofing - Upload Verified</label>
+            </value>
+            <value>
+                <fullName>19 - Proofing - Reupload Needed</fullName>
+                <default>false</default>
+                <label>19 - Proofing - Reupload Needed</label>
+            </value>
+            <value>
+                <fullName>19 - Not Approved to Execute</fullName>
+                <default>false</default>
+                <label>20 - Not Approved to Execute</label>
+            </value>
+            <value>
+                <fullName>00 Video Request Placed</fullName>
+                <default>false</default>
+                <label>00 Video Request Placed</label>
+            </value>
+            <value>
+                <fullName>01 Designer PreQ</fullName>
+                <default>false</default>
+                <label>01 Designer PreQ</label>
+            </value>
+            <value>
+                <fullName>02 Changes for Client</fullName>
+                <default>false</default>
+                <label>02 Changes for Client</label>
+            </value>
+            <value>
+                <fullName>03 Video Complete</fullName>
+                <default>false</default>
+                <label>03 Video Complete</label>
+            </value>
+            <value>
+                <fullName>05 Needs Media Instruction</fullName>
+                <default>false</default>
+                <label>05 Needs Media Instruction</label>
+            </value>
+            <value>
+                <fullName>06 Media Instruction Provided</fullName>
+                <default>false</default>
+                <label>06 Media Instruction Provided</label>
+            </value>
+            <value>
+                <fullName>07 Video Designer Upload Complete</fullName>
+                <default>false</default>
+                <label>07 Video Designer Upload Complete</label>
+            </value>
+            <value>
+                <fullName>07 Asset Live/Deployed - Field</fullName>
+                <default>false</default>
+                <label>07 Asset Live/Deployed - Field</label>
+            </value>
+            <value>
+                <fullName>01 In Progress with Designer</fullName>
+                <default>false</default>
+                <label>01 In Progress with Designer</label>
+            </value>
+            <value>
+                <fullName>02 Need Information - Field</fullName>
+                <default>false</default>
+                <label>02 Need Information - Field</label>
+            </value>
+            <value>
+                <fullName>03 Information Provided - Field</fullName>
+                <default>false</default>
+                <label>03 Information Provided - Field</label>
+            </value>
+            <value>
+                <fullName>04 Video Complete</fullName>
+                <default>false</default>
+                <label>04 Video Complete</label>
+            </value>
+            <value>
+                <fullName>05 With Client - Field</fullName>
+                <default>false</default>
+                <label>05 With Client - Field</label>
+            </value>
+            <value>
+                <fullName>06 Changes for Designer</fullName>
+                <default>false</default>
+                <label>06 Changes for Designer</label>
+            </value>
+            <value>
+                <fullName>10 Needs Media Instruction</fullName>
+                <default>false</default>
+                <label>10 Needs Media Instruction</label>
+            </value>
+            <value>
+                <fullName>11 Media Instruction Provided</fullName>
+                <default>false</default>
+                <label>11 Media Instruction Provided</label>
+            </value>
+            <value>
+                <fullName>09 Video Approved - Field</fullName>
+                <default>false</default>
+                <label>09 Video Approved - Field</label>
+            </value>
+            <value>
+                <fullName>10 Asset Live/Deployed - Field</fullName>
+                <default>false</default>
+                <label>10 Asset Live/Deployed - Field</label>
+            </value>
+            <value>
+                <fullName>00 Dealer Provided Video Submitted</fullName>
+                <default>false</default>
+                <label>00 Dealer Provided Video Submitted</label>
+            </value>
+            <value>
+                <fullName>03 Changes Made and Ready to Review</fullName>
+                <default>false</default>
+                <label>03 Changes Made and Ready to Review</label>
+            </value>
+            <value>
+                <fullName>07 Client Approved, Send to Compliance</fullName>
+                <default>false</default>
+                <label>07 Client Approved, Send to Compliance</label>
+            </value>
+            <value>
+                <fullName>08 At Compliance - Designer</fullName>
+                <default>false</default>
+                <label>08 At Compliance - Designer</label>
+            </value>
+            <value>
+                <fullName>09 Video Approved</fullName>
+                <default>false</default>
+                <label>09 Video Approved</label>
+            </value>
+            <value>
+                <fullName>12 Video Designer Upload Complete</fullName>
+                <default>false</default>
+                <label>12 Video Designer Upload Complete</label>
+            </value>
+            <value>
+                <fullName>99 - Cancelled</fullName>
+                <default>false</default>
+                <label>99 - Cancelled</label>
+            </value>
+            <value>
+                <fullName>04a Information Provided - Field</fullName>
+                <default>false</default>
+                <label>04a Information Provided - Field</label>
+            </value>
+            <value>
+                <fullName>06b Proofing Changes - Design</fullName>
+                <default>false</default>
+                <label>06b Proofing Changes - Design</label>
+            </value>
+            <value>
+                <fullName>06c Proofing Changes - Complete</fullName>
+                <default>false</default>
+                <label>06c Proofing Changes - Complete</label>
+            </value>
+            <value>
+                <fullName>04b Need Information - Field</fullName>
+                <default>false</default>
+                <label>04b Need Information - Field</label>
+            </value>
+            <value>
+                <fullName>08a Creative Complete</fullName>
+                <default>false</default>
+                <label>08a Creative Complete</label>
+            </value>
+            <value>
+                <fullName>08b Creative Complete Waiting for Incentives</fullName>
+                <default>false</default>
+                <label>08b Creative Complete Waiting for Incentives</label>
+            </value>
+            <value>
+                <fullName>08c Creative Approved - Proofing Complete</fullName>
+                <default>false</default>
+                <label>08c Creative Approved - Proofing Complete</label>
+            </value>
+            <value>
+                <fullName>06d Proofing in Progress</fullName>
+                <default>false</default>
+                <label>06d Proofing in Progress</label>
+            </value>
+            <value>
+                <fullName>07 Assigned to Designer</fullName>
+                <default>false</default>
+                <label>07 Assigned to Designer</label>
+            </value>
+            <value>
+                <fullName>05 Approved - Ready for Proofing</fullName>
+                <default>false</default>
+                <label>05 Approved - Ready for Proofing</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <controllingFieldValue>Media Request</controllingFieldValue>
+            <valueName>00  Request Being Reviewed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>01 Ready for Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>02 In Progress with Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>03 Changes for Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>04 Information Provided - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>05 Creative Review - Design</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>06 Assigned to Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>07 Need Information - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>08 Creative Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>09 Creative Approved - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>10 At Compliance - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>11 Asset Live/Deployed - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>12 Not Approved to Execute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>0 - Request Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>00 - Need Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>000 - Creative Complete - Additional Changes Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>01 - Ready for SW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>02 - Script - In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>03 - Script - Changes Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>04 - Script - Complete - Needs Client Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>05 - Script - Sent for Client Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>06 - Script - Client Approved / Ready for VO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>07 - Script - VO Ordered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>08 - Ready for Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>09 - Designer - In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>10 - Designer - Video Complete / Ready for Proofing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>11 - Proofing - In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>12 - Proofing - Changes Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>13 - Proofing - Approved / Client Approval Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>14 - Compliance/Client Approval - Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>15 - Client Approved / Media Instruction Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>16 - Media - Ready for Upload</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>17 - Designer - Upload Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>18 - Proofing - Upload Verified</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>19 - Proofing - Reupload Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Custom</controllingFieldValue>
+            <valueName>19 - Not Approved to Execute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>00 Video Request Placed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>01 In Progress with Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>02 Need Information - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>03 Information Provided - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>04 Video Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>05 With Client - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>06 Changes for Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>10 Needs Media Instruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>11 Media Instruction Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>09 Video Approved - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>07 Client Approved, Send to Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>08 At Compliance - Designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>09 Video Approved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <valueName>12 Video Designer Upload Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Semi Custom</controllingFieldValue>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>99 - Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>01 Designer PreQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>02 Changes for Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>05 Needs Media Instruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>06 Media Instruction Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>07 Video Designer Upload Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>00 Dealer Provided Video Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dealer Provided</controllingFieldValue>
+            <valueName>03 Changes Made and Ready to Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>04a Information Provided - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>06b Proofing Changes - Design</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>06c Proofing Changes - Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>04b Need Information - Field</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>08a Creative Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>08b Creative Complete Waiting for Incentives</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>06d Proofing in Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Service</controllingFieldValue>
+            <valueName>07 Assigned to Designer</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

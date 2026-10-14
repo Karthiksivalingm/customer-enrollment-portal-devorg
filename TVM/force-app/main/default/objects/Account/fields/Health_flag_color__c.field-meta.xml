@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_flag_color__c</fullName>
+    <description>FND</description>
+    <externalId>false</externalId>
+    <formula>/*IF( ISPICKVAL( Sys_Health_Status__c ,&quot;Green&quot;),
+&quot;Green&quot;,
+IF( ISPICKVAL(Sys_Health_Status__c,&quot;Yellow&quot;),
+&quot;Yellow&quot;,
+IF( ISPICKVAL(Sys_Health_Status__c,&quot;Red&quot;),
+&quot;Red&quot;,
+IF( ISPICKVAL(Sys_Health_Status__c,&quot;Blue&quot;),
+&quot;Blue&quot;,&quot;&quot;))))*/
+
+IF( Case_Risk_For_Cancellation__c == true || Opportunity_Cancellation_Received__c == true,
+&quot;Red&quot;,
+&quot;Blue&quot;
+)</formula>
+    <label>Health flag color</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

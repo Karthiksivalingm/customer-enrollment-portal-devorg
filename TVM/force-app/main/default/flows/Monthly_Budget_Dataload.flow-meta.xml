@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Was_Last_month_Found</name>
+        <label>Was Last month Found?</label>
+        <locationX>182</locationX>
+        <locationY>396</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Last_Months_Budget.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Monthly_Budget</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>FirstDayPreviousMonth</name>
+        <dataType>Date</dataType>
+        <expression>IF(MONTH({!$Record.Budget_Month_Date__c}) = 1, 
+   DATE(YEAR({!$Record.Budget_Month_Date__c}) - 1, 12, 1),
+   DATE(YEAR({!$Record.Budget_Month_Date__c}), MONTH({!$Record.Budget_Month_Date__c}) - 1, 1)
+)</expression>
+    </formulas>
+    <interviewLabel>Monthly Budget Dataload {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Monthly Budget Dataload</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Last_Months_Budget</name>
+        <label>Last Months Budget</label>
+        <locationX>182</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Was_Last_month_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Budget_Month_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>FirstDayPreviousMonth</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Monthly_Budget__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Monthly_Budget</name>
+        <label>Update Monthly Budget</label>
+        <locationX>50</locationX>
+        <locationY>516</locationY>
+        <inputAssignments>
+            <field>Previous_Month_Total_Monthly_Budget__c</field>
+            <value>
+                <elementReference>Last_Months_Budget.Total_Monthly_Budget__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Last_Months_Budget</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Previous_Month_Total_Monthly_Budget__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Monthly_Budget__c</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2023-03-31</startDate>
+            <startTime>16:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

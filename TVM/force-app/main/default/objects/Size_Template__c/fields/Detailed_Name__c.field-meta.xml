@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Detailed_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>Name &amp; &quot; |&quot; &amp; 
+    IF(TEXT(Medium_s__c) = &quot;Desktop&quot;, &quot; Desktop &quot; &amp; Desktop_Size__c,
+    IF(TEXT(Medium_s__c) = &quot;Mobile&quot;, &quot; Mobile &quot; &amp; Mobile_Size__c,
+    IF(TEXT(Medium_s__c) = &quot;Desktop &amp; Mobile&quot;, &quot; Desktop &quot; &amp; Desktop_Size__c &amp; &quot; &amp; Mobile &quot; &amp; Mobile_Size__c,
+    &quot; No Size Found&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Detailed Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

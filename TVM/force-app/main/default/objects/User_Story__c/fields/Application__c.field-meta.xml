@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application__c</fullName>
+    <defaultValue>&quot;Salesforce&quot;</defaultValue>
+    <description>Specify the App.</description>
+    <label>Application</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Quickbase</fullName>
+                <default>false</default>
+                <label>Quickbase</label>
+            </value>
+            <value>
+                <fullName>Reporting/Dashboards</fullName>
+                <default>false</default>
+                <label>Dashboards</label>
+            </value>
+            <value>
+                <fullName>BDC</fullName>
+                <default>false</default>
+                <label>BDC</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Sales Team</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Retention Team</fullName>
+                <default>false</default>
+                <label>Retention</label>
+            </value>
+            <value>
+                <fullName>Creative Requests</fullName>
+                <default>false</default>
+                <label>Creative Requests</label>
+            </value>
+            <value>
+                <fullName>Service Cloud</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Digital</fullName>
+                <default>false</default>
+                <label>Digital</label>
+            </value>
+            <value>
+                <fullName>DS_Price_Books</fullName>
+                <default>false</default>
+                <label>DS / Price Books</label>
+            </value>
+            <value>
+                <fullName>Slack</fullName>
+                <default>false</default>
+                <label>Slack</label>
+            </value>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Maps</fullName>
+                <default>false</default>
+                <label>Maps</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>QB Load</fullName>
+                <default>false</default>
+                <label>QB Load</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

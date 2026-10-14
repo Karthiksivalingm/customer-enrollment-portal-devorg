@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_to_Log__c</fullName>
+    <description>This field will populate the role lookups when certain statuses are selected. For example: if no designer is assigned and someone selects In progress, this field is meant to tell the system to log the user as the designer in that situation.</description>
+    <inlineHelpText>This is strictly for auto-logging roles when certain statuses are selected</inlineHelpText>
+    <label>User to Log</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Creative_Request_Roles</valueSetName>
+    </valueSet>
+</CustomField>

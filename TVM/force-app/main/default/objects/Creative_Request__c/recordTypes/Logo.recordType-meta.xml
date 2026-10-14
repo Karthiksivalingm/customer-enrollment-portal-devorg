@@ -1,0 +1,2651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Logo</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>T10_Compact_Layout</compactLayoutAssignment>
+    <label>Logo</label>
+    <picklistValues>
+        <picklist>Advid_Creative_Type__c</picklist>
+        <values>
+            <fullName>Dealer Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi Custom</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Advid_OTT_Company__c</picklist>
+        <values>
+            <fullName>Advid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Any_Material_Needed_For_Pres_Slides__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approved_Copy_Creation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approved_WB_Creative__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Assets_to_Build__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Banner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Audio_Type__c</picklist>
+        <values>
+            <fullName>Music %2F Jingle Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Audio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BMW_Sizes__c</picklist>
+        <values>
+            <fullName>1080 x 1080 %7C Meta Motion %7C MP4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1080 x 1080 %7C Meta Still %7C PSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1080 x 1920 %7C Instagram Motion %7C MP4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1080 x 1920 %7C Instagram Still %7C PSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1400x150 %7C FMA VLP%7C PSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>160 x 600 %7C Display %7C Jpeg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1900 x 776 %7C Website FMA %7C PSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2000x200 %7C FMA VLP%7C PSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>300 x 250 %7C Display %7C Jpeg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>600 x 400 %7C Website FMA %7C PSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>728 x 90 %7C Display %7C Jpeg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>800 x 326 %7C Website FMA %7C PSD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Banner_Type__c</picklist>
+        <values>
+            <fullName>CPO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heavy Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bypass_Client_Approval__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bypass_Compliance_Submission__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CTA_1__c</picklist>
+        <values>
+            <fullName>Explore Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View Inventory</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CTA_2__c</picklist>
+        <values>
+            <fullName>Explore Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View Inventory</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CTA_3__c</picklist>
+        <values>
+            <fullName>Explore Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View Inventory</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CTA__c</picklist>
+        <values>
+            <fullName>Build yours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Claim your Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Us</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discover More</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explore Current Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explore My Options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explore Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Learn More</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lock in Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make This Yours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request More Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reserve your Vehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reveal Your Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Test Drive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shop Now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Start Shopping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Start your Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Take me to the Deals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tap to Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value your Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View Service Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>What%E2%80%99s my Car Worth%3F</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_to_Action__c</picklist>
+        <values>
+            <fullName>Have Consumer Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have Consumer Visit the Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have Consumer Visit the Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Campaign__c</picklist>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Change_Type__c</picklist>
+        <values>
+            <fullName>Client Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PreQ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Collateral_Type__c</picklist>
+        <values>
+            <fullName>Banner Stands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Cards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flyers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hang Tags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Key Chains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letterhead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincense Plate Covers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Posters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Ads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shirts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Show Tents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Table Toppers</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Color_or_B_W__c</picklist>
+        <values>
+            <fullName>B%26W</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Color</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Compliance_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Concept_Refrenced__c</picklist>
+        <values>
+            <fullName>Concept 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept 2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Concept__c</picklist>
+        <values>
+            <fullName>Concept 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept 3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deployment_Party__c</picklist>
+        <values>
+            <fullName>Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team V</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Different_Backgrounds_to_Use__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Difficulty__c</picklist>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Easy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Template</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Disclaimer_on_Banner__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_site_UI_overlap_the_banner__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Creation__c</picklist>
+        <values>
+            <fullName>Create Fully in DotDigital</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Create in DotDigital %26 Provide HTML of Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not Create in DotDigital</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Free_Space_Type__c</picklist>
+        <values>
+            <fullName>Sales</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Sales and Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Strategy__c</picklist>
+        <values>
+            <fullName>----------ALL OF SALES----------</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>----------ALL OF SERVICE----------</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All In Drive Off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>At Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Pre-Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Download Coupon But Not Yet Serviced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holiday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lease Expiration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance Reminders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missed Service Appointment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Active Shopper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Sale Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ownership Verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Past Due Maintenance Reminders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal Announcement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Appointment Appraisal Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Appointment Confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Recovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Reimbursement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Statement Email - Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Statement Email - Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thank You For Your Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thank You for Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Active Shopper</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ford_OEM_Asset_Type__c</picklist>
+        <values>
+            <fullName>Email Blast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Banner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fully_Custom_Type__c</picklist>
+        <values>
+            <fullName>Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repurpose</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Go_Live_Month__c</picklist>
+        <values>
+            <fullName>01 JAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02 FEB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03 MAR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04 APR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 MAY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06 JUN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07 JUL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08 AUG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09 SEP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 OCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 NOV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 DEC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ongoing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Image__c</picklist>
+        <values>
+            <fullName>In-scene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jelly Bean on Abstract Background</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jelly Bean on Location Background</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jelly Bean on Themed Background</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lifestyle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Incentive_Status__c</picklist>
+        <values>
+            <fullName>Incentives Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Incentives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting for Incentives</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Include_on_Banner_Email_or_Both_1__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Blast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Banner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Include_on_Banner_Email_or_Both_2__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Blast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Banner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Include_on_Banner_Email_or_Both_3__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Blast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Banner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Language__c</picklist>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Length__c</picklist>
+        <values>
+            <fullName>10 seconds %2825-30 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 seconds %2840-45 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 seconds %2883-93 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 seconds %28185-195 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RADIO - 30 seconds w%2F fast-read disclaimer %2888-103 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RADIO - 30 seconds w%2Fo disclaimer %2883-93 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RADIO - 60 seconds  w%2F fast-read disclaimer %28185-200 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RADIO - 60 seconds w%2Fo disclaimer %28180-190 words%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>List_Strategy__c</picklist>
+        <values>
+            <fullName>Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need to get</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mail_Size__c</picklist>
+        <values>
+            <fullName>Flat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Folded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Medium__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Roll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV%2FOTT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Number_of_CTAs__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OEM_Asset__c</picklist>
+        <values>
+            <fullName>BMW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generic Banner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Monthly Event Build-out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stellantis</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Offer_Type__c</picklist>
+        <values>
+            <fullName>Concept</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generic</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Incentive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PreBuild</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Type__c</picklist>
+        <values>
+            <fullName>Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repurpose</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PreQ_Hold_Flags__c</picklist>
+        <values>
+            <fullName>Clarification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Updates PQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reference%28s%29%2FAttachment%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turnaround Time</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pre_Client_Proofing_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Category__c</picklist>
+        <values>
+            <fullName>Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proofing_Flags__c</picklist>
+        <values>
+            <fullName>Client Updates QC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance %E2%80%93 Artist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance %E2%80%93 MM%2FMD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Filing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grammar - Artist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grammar - MM%2FMD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Images%2FLogos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Links</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer %E2%80%93 Artist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer %E2%80%93 MM%2FMD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Information - MM%2FMD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specs %E2%80%93 Artist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specs %E2%80%93 MM%2FMD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Site_Type__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offersite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sizes__c</picklist>
+        <values>
+            <fullName>1080 x 1920%7C Instagram Still %7C Jpeg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1900 x 776 %7C Website FMA %7C PSD %3Cnew%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>600 x 400 %7C Website FMA %7C PSD %3Cnew%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>800 x 362 %7C Website FMA %7C PSD %3Cnew%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acura Highland Park Desktop %26 Mobile%3A 1920x900 - 600x400 %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alfa Romeo Stuart Desktop %26 Mobile%3A 1600x560 - 500x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audi Honolulu Desktop %26 Mobile%3A 2000x500 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audi Stuart Desktop %26 Mobile%3A 2000x500 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BMW Barrington Desktop %26 Mobile%3A 1900x776 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BMW OEM Homepage Desktop %281900x776%29 and Mobile %28800x326%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BMW of Toledo Desktop %26 Mobile%3A  1900x776 - 600x450  %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Badge%3A %28482x274%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bonus Offer %28600x400%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brickell Buick GMC Desktop %26 Mobile%3A 1600x686 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brickell CDJR Desktop %26 Mobile%3A 2000x500 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cadillac Knoxville Desktop%3A 1600x660 %28mobile sizing N%2FA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castle CDJR%3A 1920x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castle Desktop%3A 1600x686</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castle Digital Billboard%3A 576x144</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castle Kia%2C VW Desktop%3A 2000x700 - 600x800</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castle Subaru Desktop %26 Mobile%3A 2000x500 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chevyland%3A 1800x760 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coral Springs Desktop %26 Mobile -  1342 X 576</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courtesy Chevrolet%3A 1600x686 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cycle City Desktop%3A 1926x627</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Inspire Pencil Banner%3A 1400x510 %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer%2Ecom Pencil Banner 2000x200 - 600x100  %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook %281080x1080%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Cover Photo 820x312 %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ford OEM Homepage Desktop %281920x600%29 and Mobile %28480x320%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeland CDJR Desktop %26 Mobile%3A 1920x900 %E2%80%93 600x800 %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genesis Honolulu Desktop %26 Mobile%3A 1800x650 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genesis Knoxville Desktop%3A 1920x768 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grand Prize%3A 1600x686 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hallmark Digital Billboard%3A 3520x1600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hoffman Ford- 2000x500 and 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INFINITI Stuart Desktop %26 Mobile%3A 1600x560 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instagram Story%3A 1080x1920 %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JLR Honolulu Desktop %26 Mobile%3A 2000x500 %E2%80%93 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN Chevrolet%2C Porsche Hawaii Desktop %26 Mobile%3A 1800x760 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN Group Desktop %26 Mobile%3A 1920x677 - 750x928</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jones Buick GMC Desktop %26 Mobile%3A 1600x686 %E2%80%93 600x400 %3C1x%3E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KBTX- 1024 x 768%2C 768 x 1024%2C 640 x 960</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kia OEM Homepage w%2F6 pack Desktop %281920x768%29 and Mobile %28750x500 %29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large %28Desktop%29 1920x768 %26 Large %28Mobile%29 600x800</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large %28Desktop%29 1920x768 %26 Medium %28Mobile%29 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln Honolulu Desktop %26 Mobile%3A 2000x500 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MB Barrington Laguna %26 Foothill Desktop %26 Mobile%3A 1800x760 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MW Cadillac Desktop %26 Mobile%3A 2000x5000 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mazda Knoxville Desktop%3A 1420x398 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mazda OEM Homepage Desktop %281920x540%29 and Mobile %28768x716%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium %28Desktop%29 1920x500 %26 Large %28Mobile%29 600x800</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium %28Desktop%29 1920x500 %26 Medium %28Mobile%29 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mike Patton CDJR Desktop %26 Mobile%3A 1920x768 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mike Patton Honda%2C Ford Desktop %26 Mobile%3A 970x304 - 880x340</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>My Garage Banners %28Small%29  Desktop %281920x80%29 and Mobile %28375x80%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ocean Cadillac Desktop %26 Mobile%3A 1920x500 %E2%80%93 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMAX%3A 3 Landscape Images 1%2E91%3A1%2C 1200x628 px %28min 600x314 px%29 with max file size 5120 kb%2C 2 Square Image 1%3A1 1200x1200 px %28min 300x300 px%29 with max file size 5120 kb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Chevrolet Desktop %26 Mobile%3A 1170x200 - 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Chevrolet Digital Billboard%3A 6006x3342</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Family Kia Desktop %26 Mobile%3A 1920x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Family Mazda%3A 1422x400 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Porsche Barrington Desktop %26 Mobile%3A 2000x500 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SRP Bonus Offer %28600x800%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safford Brown Desktop %26 Mobile - Mazda 1920x540 - 768x716</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safford Brown Social Sizes %281200x900 - 1080x1080%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Coupon %28200x125%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Size Stored on Object</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small %28Desktop%29 1920x80 %26 Small %28Mobile%29 375x80</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subaru OEM Homepage Desktop %282000x500%29 and Mobile %28600x450%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin City Buick Desktop%3A 1600x686 %28mobile sizing N%2FA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin City Hyundai Desktop %26 Mobile%3A 2000x500 %E2%80%93 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin City Nissan Desktop%3A 1920x768 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volvo Cars Honolulu Desktop %26 Mobile%3A 2000x500 - 600x450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X Large %28Desktop%29 1920x1080 %26 Large %28Mobile%29 600x800</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X Large %28Desktop%29 1920x1080 %26 Medium %28Mobile%29 600x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yark Desktop %26 Mobile%3A 2000 x 500  - 600 x 450</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_Dependency__c</picklist>
+        <values>
+            <fullName>Dealer Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T10</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>0 - Request Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>00  Request Being Reviewed</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>00 - Need Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>00 Dealer Provided Video Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>00 Video Request Placed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000 - Creative Complete - Additional Changes Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01 - Ready for SW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01 Designer PreQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01 In Progress with Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01 Ready for Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02 - Script - In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02 Changes for Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02 In Progress with Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02 Need Information - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03 - Script - Changes Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03 Changes Made and Ready to Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03 Changes for Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03 Information Provided - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03 Video Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04 - Script - Complete - Needs Client Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04 Information Provided - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04 Video Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04a Information Provided - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04b Need Information - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 - Creative Review - Production Load</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 - Script - Sent for Client Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 Approved - Ready for Proofing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 Creative Review - Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 Creative Review Approved - Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 Needs Media Instruction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 With Client - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06 - Script - Client Approved %2F Ready for VO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06 Assigned to Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06 Changes for Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06 Media Instruction Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06b Proofing Changes - Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06c Proofing Changes - Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06d Proofing in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07 - Script - VO Ordered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07 Asset Live%2FDeployed - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07 Assigned to Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07 Client Approved%2C Send to Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07 Need Information - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07 Video Designer Upload Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08 - Ready for Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08 At Compliance - Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08 Creative Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08a Creative Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08b Creative Complete Waiting for Incentives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08c Creative Approved - Proofing Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09 - Designer - In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09 Creative Approved - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09 Video Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09 Video Approved - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 - Designer - Video Complete %2F Ready for Proofing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 Asset Live%2FDeployed - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 At Compliance - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 Needs Media Instruction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 - Proofing - In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 Asset Live%2FDeployed - Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 Media Instruction Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 - Proofing - Changes Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 Not Approved to Execute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 Video Designer Upload Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 - Proofing - Approved %2F Client Approval Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 Needs Media Instruction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 - Compliance%2FClient Approval - Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 Media Instruction Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 - Client Approved %2F Media Instruction Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 - Media - Ready for Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 - Designer - Upload Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 - Proofing - Upload Verified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 - Not Approved to Execute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 - Proofing - Reupload Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>99 - Cancelled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>T10_Job_Type__c</picklist>
+        <values>
+            <fullName>Audio%2FScript</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graphics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TV_Spot_Approval_Type_1__c</picklist>
+        <values>
+            <fullName>Comcast Ad Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dataxu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dropbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extreme Reach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Station FTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yangaroo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TV_Spot_Approval_Type_2__c</picklist>
+        <values>
+            <fullName>Comcast Ad Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dataxu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dropbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extreme Reach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Station FTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yangaroo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Theme_Name__c</picklist>
+        <values>
+            <fullName>3 Great Reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 Checks%2F3 checks %26 Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 Core Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 Great Reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 Great Ways to Save</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>80%25 Service %2F 20%25 Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AC Service Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Always At Your Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>April Showers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Back to School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Friday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buy Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BuyBack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buzzer Beater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dare to Compare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Theme</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dream Car</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exchange Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Express Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extreme Heat Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fall Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ford Private Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get More in 2024</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grand Opening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Halloween</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Handwritten Note</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hit the Road Sales Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holiday Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory Savings Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July 4th</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kick-Off Sales Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Let%27s Trade Keys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March Mania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mega Sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memorial Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monumental Savings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Model Launch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Start Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Vehicle Launch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Contact%2C Pick up and Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Tariff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open For Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perfect Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Owned%2FUsed Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presidents%27 Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Lock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quick Lane %28Ford%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reopening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reserve your Ride</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rev In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Road Ahead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Road Trip Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 2 Save</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring Brake Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Start Your Engines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Summer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tag Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thanksgiving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tire Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>We Want to Buy Your Car</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter Event</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Theme_Type__c</picklist>
+        <values>
+            <fullName>Build From Concept</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer %2F Custom Theme</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TVM Theme</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_10_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_1_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_2_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_3_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_4_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_5_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_6_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_7_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_8_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tile_9_Sizes__c</picklist>
+        <values>
+            <fullName>Large Mega Menu %7C Desktop 1450x850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Mega Menu %7C Mobile 600x600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Desktop 1450x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Mega Menu %7C Mobile 600x300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Desktop 700x400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mega Menu %7C Mobile 300x300</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Traffic_100__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Spot__c</picklist>
+        <values>
+            <fullName>In Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>We Buy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VO_Status__c</picklist>
+        <values>
+            <fullName>VO Obtained</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VO Sent - Waiting for VO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VO Spanish Translation In Progress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Video_Length__c</picklist>
+        <values>
+            <fullName>15 Seconds %2840-45 words%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 Seconds %2883-93 words%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Video_Type__c</picklist>
+        <values>
+            <fullName>Copy Creation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV %2F OTT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Video %2F Social</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>YouTube_Link_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>of_Offers__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>of_Offers_for_Email__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>of_Offers_for_Web_Banner__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

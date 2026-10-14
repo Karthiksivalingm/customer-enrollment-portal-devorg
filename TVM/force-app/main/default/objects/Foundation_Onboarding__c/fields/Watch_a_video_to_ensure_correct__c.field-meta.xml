@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Watch_a_video_to_ensure_correct__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Watch a video to ensure correct dealership name pronunciation, expiration dates in the disclaimer are correct, and that we have an image of a vehicle</description>
+    <label>Watch a video to ensure correct dealersh</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

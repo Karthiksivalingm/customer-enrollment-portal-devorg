@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalated</fullName>
+    <columns>Red_Fire__c</columns>
+    <columns>NAME</columns>
+    <columns>AccountId__c</columns>
+    <columns>Project_Name__c</columns>
+    <columns>Status_Number__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>RAD__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>OwnerId__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Esclate_Request__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Esclate_Request__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>12 Not Approved to Execute</value>
+    </filters>
+    <filters>
+        <field>Closed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Open &amp; Escalated</label>
+</ListView>

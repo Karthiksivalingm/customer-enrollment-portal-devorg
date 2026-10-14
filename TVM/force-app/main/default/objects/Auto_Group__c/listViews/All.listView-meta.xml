@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>State__c</columns>
+    <columns>Website__c</columns>
+    <columns>Address__c</columns>
+    <columns>City__c</columns>
+    <columns>Zip__c</columns>
+    <columns>Quickbase_Record_ID__c</columns>
+    <columns>Number_of_Accounts__c</columns>
+    <columns>of_Active_Accounts__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Synthetic_Record_Type__c</field>
+        <operation>equals</operation>
+        <value>Standard Auto Group</value>
+    </filters>
+    <label>All Auto Groups</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Docusign_CXP__c</fullName>
+    <formula>DocuSign_Ready__c &amp;&amp;
+
+DS_Apollo_CXP_Premium__c
+
+&amp;&amp;  (Text(DocuSign_Template__c) = &quot;General&quot; || Text(DocuSign_Template__c) = &quot;BMW&quot; || Text(DocuSign_Template__c) = &quot;Genesis&quot; || Text(DocuSign_Template__c) = &quot;Honda&quot; || Text(DocuSign_Template__c) = &quot;Kia&quot; || Text(DocuSign_Template__c) = &quot;Mercedes&quot; || Text(DocuSign_Template__c) = &quot;Mitsubishi&quot; || Text(DocuSign_Template__c) = &quot;Stellantis&quot; || Text(DocuSign_Template__c) = &quot;Toyota&quot; || Text(DocuSign_Template__c) = &quot;Acura&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Use Docusign CXP</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

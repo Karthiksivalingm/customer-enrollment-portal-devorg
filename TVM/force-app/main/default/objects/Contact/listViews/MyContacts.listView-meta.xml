@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyContacts</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Auto_Group_Concatenated__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.My_Account__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CONTACT.DO_NOT_CALL</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>No_Longer_With_Company__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>My Contacts</label>
+</ListView>

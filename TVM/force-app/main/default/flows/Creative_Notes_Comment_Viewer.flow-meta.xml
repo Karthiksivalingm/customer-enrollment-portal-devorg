@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Build_List_of_Comments</name>
+        <label>Build List of Comments</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>Comments_Var_V2</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>FirstLine</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Comments_Var_V2</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Comments.Text_Rich__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Comments_Var_V2</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LineBreak</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Comments_Var_V2</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LineBreak</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Comments</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>empty</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </constants>
+    <description>Chages the way creative notes are displayed in compliance requests. Cloned Case Comment Viewer style.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CommentCleaned</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    RIGHT({!Comments.Text_Rich__c}, 3) = BR(),
+    LEFT({!Comments.Text_Rich__c}, LEN({!Comments.Text_Rich__c}) - 3),
+    {!Comments.Text_Rich__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FirstLineTime</name>
+        <dataType>String</dataType>
+        <expression>TEXT(Month(DATEVALUE({!Comments.CreatedDate}))) &amp;&quot;/&quot;&amp; 
+TEXT(Day(DATEVALUE({!Comments.CreatedDate}))) &amp;&quot;/&quot;&amp; 
+TEXT(YEAR(DATEVALUE({!Comments.CreatedDate}))) &amp;&quot; &quot;&amp; 
+IF(
+    VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) &gt; 12,
+    TEXT(VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) - 12) &amp; &apos;:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;PM&apos;,
+    IF(
+        VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) = 12,
+        &apos;12:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;PM&apos;,
+        IF(
+            VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2)) = 0,
+            &apos;12:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;AM&apos;,
+            TEXT(VALUE(MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 12, 2))) &amp; &apos;:&apos; &amp; MID(TEXT(DATETIMEVALUE({!Comments.CreatedDate} - 5/24)), 15, 2) &amp; &apos;AM&apos;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Creative Notes Comment Viewer {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Creative Notes Comment Viewer-v2.3</label>
+    <loops>
+        <name>Comments</name>
+        <label>Comments</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Get_Comments</collectionReference>
+        <iterationOrder>Desc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_Created_By_User</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Screen_1</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Comments</name>
+        <label>Get Comments</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Comments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Compliance_Request__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <limit>
+            <numberValue>100.0</numberValue>
+        </limit>
+        <object>Compliance_Creative_Note__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>CreatedById</queriedFields>
+        <queriedFields>Text_Rich__c</queriedFields>
+        <queriedFields>Compliance_Request__c</queriedFields>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Created_By_User</name>
+        <label>Get Created By User</label>
+        <locationX>264</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Build_List_of_Comments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Comments.CreatedById</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Screen_1</name>
+        <label>Screen 1</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Notes_Comments</name>
+            <fieldText>Compliance &amp; Creative Notes</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Notes_Comments_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>compliancenotes</name>
+                    <fieldText>&lt;p&gt;{!Comments_Var_V2}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Refresh Notes</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Comments</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>FirstLine</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p style=&quot;margin:0;&quot;&gt;
+  &lt;strong&gt;From:&lt;/strong&gt; {!Get_Created_By_User.Name} — {!Comments.CreatedDate}&lt;/p&gt;
+&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>LineBreak</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!empty}&lt;br/&gt;
+{!empty}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TypeLine</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&quot;&quot;</text>
+    </textTemplates>
+    <variables>
+        <name>Comments_Var_V2</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

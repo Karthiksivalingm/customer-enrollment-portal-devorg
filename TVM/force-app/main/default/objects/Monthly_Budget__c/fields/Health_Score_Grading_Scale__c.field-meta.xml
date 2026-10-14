@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Score_Grading_Scale__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&lt;= 10 = A&quot;&amp;BR()&amp;
+&quot;&gt;10 and &lt;=20 = B&quot;&amp;BR()&amp;
+&quot;&gt;20 and &lt;=30 = C&quot;&amp;BR()&amp;
+&quot;&gt;30 and &lt;=45 = D&quot;&amp;BR()&amp;
+&quot;&gt; 45 = F&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Health Score Grading Scale</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

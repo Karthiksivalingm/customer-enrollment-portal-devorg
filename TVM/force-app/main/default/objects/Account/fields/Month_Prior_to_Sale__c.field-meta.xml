@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Month_Prior_to_Sale__c</fullName>
+    <formula>DATE(Year(ADDMONTHS(Latest_New_Sale_Opportunity_Month__c,-1)),Month(ADDMONTHS(Latest_New_Sale_Opportunity_Month__c,-1)), 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Month Prior to Sale</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

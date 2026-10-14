@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Unresolved_Voice_Calls</fullName>
+    <columns>Name</columns>
+    <columns>CallStartDateTime</columns>
+    <columns>Owner</columns>
+    <columns>Related_Contact__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>Related_Auto_Group__c</columns>
+    <columns>Create_Account__c</columns>
+    <columns>Create_Contact__c</columns>
+    <columns>Create_Case__c</columns>
+    <columns>Update_Case__c</columns>
+    <columns>Set_Follow_Up__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CallResolution</field>
+        <operation>equals</operation>
+        <value>Not Resolved,Waiting for Account Creation</value>
+    </filters>
+    <label>My Unresolved Voice Calls</label>
+</ListView>

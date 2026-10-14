@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Service_Retention__c</fullName>
+    <formula>IsBlank(  Category_Service_Retention_Recent_Start__c )=false &amp;&amp;
+Category_Service_Retention_Recent_Start__c &gt;  Category_Service_Retention_Cancelled_Dat__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Service Retention (C)</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

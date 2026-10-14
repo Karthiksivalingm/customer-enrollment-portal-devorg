@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Copy_1_of_Populated_Attended_Date</name>
+        <label>Populated Attended Date?</label>
+        <locationX>1370</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Populated_Registered_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Attended Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Yes_Populated_Attended_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Attended__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Wipe_Attended_Date</targetReference>
+            </connector>
+            <label>Yes, Populated Attended Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Populated_Registered_Date</name>
+        <label>Populated Registered Date?</label>
+        <locationX>1370</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Update_Registered_date_for_Not_Attended</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Registered Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Yes_Populated_Registered_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Registered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Populated Registered Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_Populated_Attended_Date</name>
+        <label>Populated Attended Date?</label>
+        <locationX>578</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Update_the_Attended_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Attended Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Yes_Populated_Attended_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Attended__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_3_of_Populated_Registered_Date</targetReference>
+            </connector>
+            <label>Yes, Populated Attended Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_Populated_Registered_Date</name>
+        <label>Populated Registered Date?</label>
+        <locationX>50</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Update_the_Registered_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Registered Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Yes_Populated_Registered_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Registered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Populated Registered Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_3_of_Populated_Attended_Date</name>
+        <label>Populated Attended Date?</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Update_the_Attended_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Attended Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_3_of_Yes_Populated_Attended_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Attended__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Populated_Registered_Date</targetReference>
+            </connector>
+            <label>Yes, Populated Attended Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_3_of_Populated_Registered_Date</name>
+        <label>Populated Registered Date?</label>
+        <locationX>578</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Update_the_Registered_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Registered Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_3_of_Yes_Populated_Registered_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Registered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Populated Registered Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_4_of_Populated_Attended_Date</name>
+        <label>Populated Attended Date?</label>
+        <locationX>1898</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Copy_5_of_Populated_Registered_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Attended Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_4_of_Yes_Populated_Attended_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Attended__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Wipe_Attended_Date</targetReference>
+            </connector>
+            <label>Yes, Populated Attended Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_4_of_Populated_Registered_Date</name>
+        <label>Populated Registered Date?</label>
+        <locationX>3394</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Copy_3_of_Update_the_Registered_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Registered Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_4_of_Yes_Populated_Registered_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Registered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Populated Registered Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_5_of_Populated_Registered_Date</name>
+        <label>Populated Registered Date?</label>
+        <locationX>1898</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Update_Registered_date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Registered Date</defaultConnectorLabel>
+        <rules>
+            <name>Copy_5_of_Yes_Populated_Registered_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Registered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Populated Registered Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Populated_Attended_Date</name>
+        <label>Populated Attended Date?</label>
+        <locationX>2382</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Populated_Registered_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Attended Date</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Populated_Attended_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Attended__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Update_for_Not_Attended</targetReference>
+            </connector>
+            <label>Yes, Populated Attended Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Populated_Attended_Date_2</name>
+        <label>Populated Attended Date?</label>
+        <locationX>2910</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Populated_Registered_Date2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Attended Date</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Populated_Attended_Date2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Attended__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Wipe_Attended_Date</targetReference>
+            </connector>
+            <label>Yes, Populated Attended Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Populated_Registered_Date</name>
+        <label>Populated Registered Date?</label>
+        <locationX>2382</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>Update_Registered_date_for_Not_Attended</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Registered Date</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Populated_Registered_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Registered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Populated Registered Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Populated_Registered_Date2</name>
+        <label>Populated Registered Date?</label>
+        <locationX>2910</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>Update_the_Registered_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Populated Registered Date</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Populated_Registered_Date2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Marked_Registered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes, Populated Registered Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Status_Changed</name>
+        <label>Was Status Changed?</label>
+        <locationX>1898</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Registered_Attended</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Registered - Attended</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_3_of_Populated_Attended_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Registered - Attended</label>
+        </rules>
+        <rules>
+            <name>Attended</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Attended</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Populated_Attended_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Attended</label>
+        </rules>
+        <rules>
+            <name>Registered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Registered</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Registered_Date_Registered</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Registered</label>
+        </rules>
+        <rules>
+            <name>Registered_No_Showed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Registered - No Showed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Populated_Attended_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Registered - No Showed</label>
+        </rules>
+        <rules>
+            <name>No_Showed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Showed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_4_of_Populated_Attended_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>No Showed</label>
+        </rules>
+        <rules>
+            <name>Not_Attended</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Attended</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populated_Attended_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Not Attended</label>
+        </rules>
+        <rules>
+            <name>No_Attend</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Attend</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populated_Attended_Date_2</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>No Attend</label>
+        </rules>
+        <rules>
+            <name>Converted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Converted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_4_of_Populated_Registered_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Converted</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Campaign Member - Created/Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Campaign Member - Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Registered_date</name>
+        <label>Update Registered date</label>
+        <locationX>1986</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Registered_date_for_Not_Attended</name>
+        <label>Update Registered date</label>
+        <locationX>1502</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Update_the_Attended_Date</name>
+        <label>Update the Attended Date</label>
+        <locationX>138</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Copy_2_of_Populated_Registered_Date</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Marked_Attended__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Update_the_Registered_Date</name>
+        <label>Update the Registered Date</label>
+        <locationX>182</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Wipe_Attended_Date</name>
+        <label>Wipe Attended Date</label>
+        <locationX>1238</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Populated_Registered_Date</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Marked_Attended__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Update_for_Not_Attended</name>
+        <label>Update for Not Attended</label>
+        <locationX>2250</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Populated_Registered_Date</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Marked_Attended__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Update_the_Registered_Date</name>
+        <label>Update the Registered Date</label>
+        <locationX>710</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Wipe_Attended_Date</name>
+        <label>Wipe Attended Date</label>
+        <locationX>1766</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Copy_5_of_Populated_Registered_Date</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Marked_Attended__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_3_of_Update_the_Registered_Date</name>
+        <label>Update the Registered Date</label>
+        <locationX>3482</locationX>
+        <locationY>575</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Registered_date_for_Not_Attended</name>
+        <label>Update Registered date for Not Attended</label>
+        <locationX>2514</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Registered_Date_Registered</name>
+        <label>Update Registered Date - Registered</label>
+        <locationX>974</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_Attended_Date</name>
+        <label>Update the Attended Date</label>
+        <locationX>666</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Copy_3_of_Populated_Registered_Date</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Marked_Attended__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_Registered_Date</name>
+        <label>Update the Registered Date</label>
+        <locationX>3042</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>Date_Marked_Registered__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Wipe_Attended_Date</name>
+        <label>Wipe Attended Date</label>
+        <locationX>2778</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Populated_Registered_Date2</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Marked_Attended__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1772</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Was_Status_Changed</targetReference>
+        </connector>
+        <object>CampaignMember</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

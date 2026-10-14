@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>store_code_in_Dealer_Setup_in_Apollo__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Confirm store code in Dealer Setup in Apollo matches the store code in Google Business Profiles</description>
+    <label>Confirm store code in Dealer Setup in Ap</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

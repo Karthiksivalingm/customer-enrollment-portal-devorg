@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TV_Spot_Approval_Type_1__c</fullName>
+    <label>TV Spot Approval Type 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Comcast Ad Delivery</fullName>
+                <default>false</default>
+                <label>Comcast Ad Delivery</label>
+            </value>
+            <value>
+                <fullName>Yangaroo</fullName>
+                <default>false</default>
+                <label>Yangaroo</label>
+            </value>
+            <value>
+                <fullName>Dropbox</fullName>
+                <default>false</default>
+                <label>Dropbox</label>
+            </value>
+            <value>
+                <fullName>Station FTP</fullName>
+                <default>false</default>
+                <label>Station FTP</label>
+            </value>
+            <value>
+                <fullName>Extreme Reach</fullName>
+                <default>false</default>
+                <label>Extreme Reach</label>
+            </value>
+            <value>
+                <fullName>Dataxu</fullName>
+                <default>false</default>
+                <label>Dataxu</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

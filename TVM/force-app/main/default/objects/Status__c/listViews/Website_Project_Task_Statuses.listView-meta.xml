@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Project_Task_Statuses</fullName>
+    <columns>Status_Sort_Value__c</columns>
+    <columns>NAME</columns>
+    <columns>Project_Task_Owner__c</columns>
+    <columns>Project_Task_Queues__c</columns>
+    <columns>Project_Task_Type__c</columns>
+    <columns>Project_Task_Alert__c</columns>
+    <columns>Closing_Status__c</columns>
+    <columns>Starting_Status__c</columns>
+    <columns>Tagging__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Project Task</value>
+    </filters>
+    <filters>
+        <field>Deactivated__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Project_Task_Type__c</field>
+        <operation>equals</operation>
+        <value>WIM,OD_Web,Onboarding Team,OD_Request,QCS_FinalCheck,QCS_AccessiBe,QCS_LeadForm</value>
+    </filters>
+    <label>Website Project Task Statuses</label>
+</ListView>

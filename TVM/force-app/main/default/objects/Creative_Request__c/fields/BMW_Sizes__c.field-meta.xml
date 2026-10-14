@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMW_Sizes__c</fullName>
+    <label>BMW Sizes</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1900 x 776 | Website FMA | PSD</fullName>
+                <default>false</default>
+                <label>1900 x 776 | Website FMA | PSD</label>
+            </value>
+            <value>
+                <fullName>800 x 326 | Website FMA | PSD</fullName>
+                <default>false</default>
+                <label>800 x 326 | Website FMA | PSD</label>
+            </value>
+            <value>
+                <fullName>600 x 400 | Website FMA | PSD</fullName>
+                <default>false</default>
+                <label>600 x 400 | Website FMA | PSD</label>
+            </value>
+            <value>
+                <fullName>728 x 90 | Display | Jpeg</fullName>
+                <default>false</default>
+                <label>728 x 90 | Display | Jpeg</label>
+            </value>
+            <value>
+                <fullName>160 x 600 | Display | Jpeg</fullName>
+                <default>false</default>
+                <label>160 x 600 | Display | Jpeg</label>
+            </value>
+            <value>
+                <fullName>300 x 250 | Display | Jpeg</fullName>
+                <default>false</default>
+                <label>300 x 250 | Display | Jpeg</label>
+            </value>
+            <value>
+                <fullName>1080 x 1080 | Meta Still | PSD</fullName>
+                <default>false</default>
+                <label>1080 x 1080 | Meta Still | PSD</label>
+            </value>
+            <value>
+                <fullName>1080 x 1920 | Instagram Still | PSD</fullName>
+                <default>false</default>
+                <label>1080 x 1920 | Instagram Still | PSD</label>
+            </value>
+            <value>
+                <fullName>2000x200 | FMA VLP| PSD</fullName>
+                <default>false</default>
+                <label>2000x200 | FMA VLP| PSD</label>
+            </value>
+            <value>
+                <fullName>1400x150 | FMA VLP| PSD</fullName>
+                <default>false</default>
+                <label>1400x150 | FMA VLP| PSD</label>
+            </value>
+            <value>
+                <fullName>1080 x 1080 | Meta Motion | MP4</fullName>
+                <default>false</default>
+                <label>1080 x 1080 | Meta Motion | MP4</label>
+            </value>
+            <value>
+                <fullName>1080 x 1920 | Instagram Motion | MP4</fullName>
+                <default>false</default>
+                <label>1080 x 1920 | Instagram Motion | MP4</label>
+            </value>
+            <value>
+                <fullName>PMax (3 total images): Landscape 1200 x 628, Square 1200 x 1200, Portrait 960 x 1200</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PMax (3 total images): Landscape 1200 x 628, Square 1200 x 1200, Portrait 960 x 1200</label>
+            </value>
+            <value>
+                <fullName>Social: 1080 x 1080</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Social: 1080 x 1080</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

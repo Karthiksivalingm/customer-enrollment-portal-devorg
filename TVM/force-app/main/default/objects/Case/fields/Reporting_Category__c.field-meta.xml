@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Category__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Text(Case_Category__c),
+
+&quot;Advid Creative&quot;, &quot;Digital&quot;,
+&quot;Digital_Support&quot;, &quot;Digital&quot;,
+
+&quot;Command Center&quot;, &quot;Retention&quot;,
+&quot;Data_Support&quot;, &quot;Retention&quot;,
+&quot;Marketing&quot;, &quot;Retention&quot;,
+&quot;Production Support&quot;, &quot;Retention&quot;,
+
+&quot;Apollo Support&quot;, &quot;Website&quot;,
+&quot;SEO Support&quot;, &quot;Website&quot;,
+&quot;Apollo_Websites&quot;, &quot;Website&quot;,
+&quot;Website Analytics&quot;, &quot;Website&quot;,
+&quot;SEO&quot;, &quot;Website&quot;,
+
+&quot;Foundation Digital Support&quot;, &quot;Exclude&quot;,
+&quot;Digital SD&quot;, &quot;Exclude&quot;,
+&quot;General Support&quot;, &quot;Exclude&quot;,
+&quot;OEM&quot;, &quot;OEM&quot;,
+&quot;Error&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reporting Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

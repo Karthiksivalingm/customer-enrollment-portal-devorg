@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incoming_Line__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Incoming_Line_T__c,
+&quot;Outbound&quot;, IMAGE(&quot;/resource/outbound&quot;, &quot;Outbound&quot;, 70, 270),
+&quot;FordDirect&quot;, IMAGE(&quot;/resource/forddirect&quot;, &quot;FordDirect&quot;, 70, 270),
+&quot;TVM&quot;, IMAGE(&quot;/resource/tvm&quot;, &quot;TVM&quot;, 70, 270),
+&quot;Test&quot;, IMAGE(&quot;/resource/test&quot;, &quot;TEST&quot;, 70, 270),
+&quot;HUH?&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Incoming Line</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

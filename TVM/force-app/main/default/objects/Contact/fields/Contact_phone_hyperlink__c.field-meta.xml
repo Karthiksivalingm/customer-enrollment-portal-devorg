@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_phone_hyperlink__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(Contact_Direct_Phone__c)),
+    HYPERLINK(&quot;tel:&quot; &amp; Contact_Direct_Phone__c, Contact_Direct_Phone__c),
+    IF(
+        NOT(ISBLANK(Dealership_Phone_Number__c)),
+        HYPERLINK(&quot;tel:&quot; &amp; Dealership_Phone_Number__c, Dealership_Phone_Number__c),
+        NULL
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contact Phone (link)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

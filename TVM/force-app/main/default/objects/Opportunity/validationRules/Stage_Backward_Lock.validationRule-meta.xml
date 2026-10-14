@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Backward_Lock</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Profile.Name != &quot;System Administrator&quot; &amp;&amp;
+ISCHANGED( Bypass_Validation__c ) = false &amp;&amp;
+
+AND(RecordType.Name=&quot;Prospect&quot;,
+RecordType.Name &lt;&gt; &quot;Foundation Opportunity&quot;,
+
+
+CASE(StageName,
+&quot;Not Yet Contacted&quot;,1,
+&quot;Initiated Contact&quot;,2,
+&quot;Working on Setting Demo&quot;,4,
+&quot;Demo Scheduled&quot;,4,
+&quot;Demo Completed&quot;,4,
+&quot;Next Steps&quot;,5,
+&quot;Committed&quot;,5,
+7)
+&lt;
+CASE(PRIORVALUE(StageName),
+&quot;Not Yet Contacted&quot;,1,
+&quot;Initiated Contact&quot;,2,
+&quot;Working on Setting Demo&quot;,4,
+&quot;Demo Scheduled&quot;,4,
+&quot;Demo Completed&quot;,4,
+&quot;Next Steps&quot;,5,
+&quot;Committed&quot;,5,
+0))</errorConditionFormula>
+    <errorMessage>You cannot move the stage backwards.</errorMessage>
+</ValidationRule>

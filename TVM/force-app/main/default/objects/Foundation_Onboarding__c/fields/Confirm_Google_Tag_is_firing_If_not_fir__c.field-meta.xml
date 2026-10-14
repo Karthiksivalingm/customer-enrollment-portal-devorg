@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_Google_Tag_is_firing_If_not_fir__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Confirm Google Tag is firing. If not firing, email Lisa Cascone with tag code</description>
+    <label>Confirm Google Tag is firing If not fir</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

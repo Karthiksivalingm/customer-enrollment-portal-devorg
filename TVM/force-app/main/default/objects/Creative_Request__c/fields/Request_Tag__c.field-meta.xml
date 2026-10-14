@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Tag__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(RecordType.Name = &quot;Custom Email Blast&quot;, &quot;CEB&quot;, 
+if(RecordType.Name = &quot;Display&quot;, &quot;DISP&quot;,
+if(RecordType.Name = &quot;Landing Page&quot;, &quot;LP&quot;, 
+if(RecordType.Name = &quot;Web Banner&quot;, &quot;WEBB&quot;, 
+if(RecordType.Name = &quot;Batched Email Template Updates&quot;, &quot;BETU&quot;, 
+if(RecordType.Name = &quot;Bonus Offer (600x400)&quot;, &quot;BO&quot;, 
+if(RecordType.Name = &quot;Email Free Space&quot;, &quot;EFS&quot;, 
+if(RecordType.Name = &quot;Advid / OTT&quot; &amp;&amp;  ISPICKVAL(Advid_OTT_Company__c, &quot;Advid&quot;), &quot;ADVD&quot;, 
+if(RecordType.Name = &quot;Advid / OTT&quot; &amp;&amp; ISPICKVAL(Advid_OTT_Company__c, &quot;OTT&quot;), &quot;OTT&quot;, 
+if(RecordType.Name = &quot;Website Header Image&quot;, &quot;WHI&quot;,
+if(RecordType.Name = &quot;Website Image&quot;, &quot;WHI&quot;,
+if(RecordType.Name = &quot;Automated Banner Asset&quot;, &quot;ABA&quot;,
+if(RecordType.Name = &quot;VDV&quot;, &quot;VDV&quot;,
+if(RecordType.Name = &quot;Collateral&quot;, &quot;CLAT&quot;,
+if(RecordType.Name = &quot;Dealer Monthly Logo&quot;, &quot;DML&quot;,
+if(RecordType.Name = &quot;Media&quot; &amp;&amp; TEXT(Video_Type__c) = &quot;TV / OTT&quot;, &quot;TV&quot;,
+if(RecordType.Name = &quot;Media&quot; &amp;&amp; TEXT(Video_Type__c) = &quot;Web Video / Social&quot;, &quot;WebVid&quot;,
+if(RecordType.Name = &quot;Media&quot; &amp;&amp; TEXT(Video_Type__c) = &quot;Radio&quot;, &quot;RADOLD&quot;,
+if(RecordType.Name = &quot;Media&quot; &amp;&amp; TEXT(Video_Type__c) = &quot;Copy Creation&quot;, &quot;CC&quot;,
+if(RecordType.Name = &quot;OEM Asset&quot;, &quot;OEM&quot;,
+if(RecordType.Name = &quot;Web Banner and Email Combo&quot;, &quot;COMBO&quot;,
+if(RecordType.Name = &quot;Mega Menu Image&quot;, &quot;MMI&quot;,
+if(RecordType.Name = &quot;Apollo Batched/Trigger Email Update&quot;, &quot;ABTEU&quot;,
+if(RecordType.Name = &quot;Concept Web Banner&quot;, &quot;CWB&quot;,
+
+if(RecordType.Name = &quot;Custom Merchandise&quot;, &quot;CM&quot;,
+if(RecordType.Name = &quot;Direct Mail&quot;, &quot;DM&quot;,
+if(RecordType.Name = &quot;Email Blast (Dotmailer)&quot;, &quot;EBD&quot;,
+if(RecordType.Name = &quot;Email Blast (Static JPG - 640px wide)&quot;, &quot;EBS&quot;,
+if(RecordType.Name = &quot;Graphic Translation (Spanish)&quot;, &quot;GT&quot;,
+if(RecordType.Name = &quot;Landing Page Design&quot;, &quot;LPD&quot;,
+if(RecordType.Name = &quot;Logo&quot;, &quot;LOGO&quot;,
+if(RecordType.Name = &quot;Radio&quot;, &quot;RADO&quot;,
+if(RecordType.Name = &quot;Standard POS&quot;, &quot;POS&quot;,
+if(RecordType.Name = &quot;Pitch/Presentation&quot;, &quot;PRES&quot;,
+if(RecordType.Name = &quot;Print Ad&quot;, &quot;PRNT&quot;,
+if(RecordType.Name = &quot;Script/VO/Storyboard&quot;, &quot;TALK&quot;,
+if(RecordType.Name = &quot;Social/SMA&quot;, &quot;SMA&quot;,
+if(RecordType.Name = &quot;TV Spot Upload&quot;, &quot;TVSU&quot;,
+if(RecordType.Name = &quot;TV / OTT&quot;, &quot;TVOTT&quot;,
+if(RecordType.Name = &quot;Web Banner (T10)&quot;, &quot;WBT10&quot;,
+&quot;error&quot;))))))))))))))))))))))))))))))))))))))))+ &quot;-&quot; + Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Request Tag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

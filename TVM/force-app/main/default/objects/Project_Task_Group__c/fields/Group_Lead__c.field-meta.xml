@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Lead__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(Text(Responsibility__c),
+&quot;Designer&quot;, Designer__c,
+&quot;Production Specialist&quot;, Production_Specialist__c,
+&quot;Compliance Team&quot;, Compliance_Team__c,
+&quot;Website Team&quot;, Website_Team__c,
+&quot;Onboarding Rep&quot;, Project_Creator__r.FirstName +&quot; &quot;+ Project_Creator__r.LastName,
+&quot;None Assigned&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Group Lead</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

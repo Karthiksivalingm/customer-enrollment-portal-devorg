@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Recent_Product_Resale</fullName>
+    <active>true</active>
+    <description>Prevents Apollo Assistant AI, Credit PreQual, and VDV from being sold on an Opportunity if the related Account has a Recent Start Date for the same product within the last 2 months.</description>
+    <errorConditionFormula>OR(
+    AND(
+        Apollo_Assistant__c = &quot;Sold&quot;,
+        NOT(ISBLANK( Account.Apollo_Assistant_AI_First_Billing_Date__c )),
+        Account.Apollo_Assistant_AI_First_Billing_Date__c  &gt;= ADDMONTHS(TODAY(), -2)
+    ),
+    AND(
+        Credit_PreQual__c = &quot;Sold Prequal&quot;,
+        NOT(ISBLANK(Account.Credit_Prequal_First_Billing_Date__c)),
+        Account.Credit_Prequal_First_Billing_Date__c&gt;= ADDMONTHS(TODAY(), -2)
+    ),
+    AND(
+        VDV__c = &quot;Sold VDV&quot;,
+        NOT(ISBLANK( Account.VDV_Plus_First_Billing_Date__c )),
+        Account.VDV_Plus_First_Billing_Date__c &gt;= ADDMONTHS(TODAY(), -2)
+    )
+)
+&amp;&amp; $Profile.Name != &quot;System Administrator&quot;
+&amp;&amp;  Bypass_Closing_Rules__c =false</errorConditionFormula>
+    <errorMessage>This product was active within the last 2 months on the related Account. Please review the Account Recent Start Date before marking it sold again.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreQual_Status__c</fullName>
+    <label>Credit PreQual Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Need to Send Form</fullName>
+                <default>false</default>
+                <label>Need to Send Form</label>
+            </value>
+            <value>
+                <fullName>Sent Credentials Form to Dealer</fullName>
+                <default>false</default>
+                <label>Sent Credentials Form to Dealer</label>
+            </value>
+            <value>
+                <fullName>Sent Equifax Application to Dealer</fullName>
+                <default>false</default>
+                <label>Sent Equifax Application to Dealer</label>
+            </value>
+            <value>
+                <fullName>Sent Equifax Application to Equifax</fullName>
+                <default>false</default>
+                <label>Sent Equifax Application to Equifax</label>
+            </value>
+            <value>
+                <fullName>Sent OfferLogix Team for Source Code</fullName>
+                <default>false</default>
+                <label>Sent OfferLogix Team for Source Code</label>
+            </value>
+            <value>
+                <fullName>Ready to go LIVE</fullName>
+                <default>false</default>
+                <label>Ready to go LIVE</label>
+            </value>
+            <value>
+                <fullName>Refused Credentials</fullName>
+                <default>false</default>
+                <label>Refused Credentials</label>
+            </value>
+            <value>
+                <fullName>Question for RAD</fullName>
+                <default>false</default>
+                <label>Question for RAD</label>
+            </value>
+            <value>
+                <fullName>RAD Question Answered</fullName>
+                <default>false</default>
+                <label>RAD Question Answered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

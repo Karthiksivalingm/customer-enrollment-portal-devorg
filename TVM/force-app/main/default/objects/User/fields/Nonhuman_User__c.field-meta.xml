@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nonhuman_User__c</fullName>
+    <formula>IF(CONTAINS(Profile.Name, &quot;Integration&quot;), TRUE, 
+IF(LastName = &quot;User&quot;, TRUE,
+IF(FirstName = &quot;TaskRay&quot;, TRUE,
+IF( Profile.Name = &quot;&quot;, TRUE,
+IF(FirstName = &quot;Salesforce&quot;, TRUE,
+FALSE )))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Nonhuman User</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

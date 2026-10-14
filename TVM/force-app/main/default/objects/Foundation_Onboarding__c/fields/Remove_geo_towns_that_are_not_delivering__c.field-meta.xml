@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remove_geo_towns_that_are_not_delivering__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Remove geo towns that are not delivering because of Negative Keywords</description>
+    <label>Remove geo towns that are not delivering</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

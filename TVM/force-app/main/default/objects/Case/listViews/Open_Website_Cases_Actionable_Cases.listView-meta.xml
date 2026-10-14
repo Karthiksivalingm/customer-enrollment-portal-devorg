@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Website_Cases_Actionable_Cases</fullName>
+    <columns>Red_Fire__c</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.ORIGIN</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>Case_Category__c</columns>
+    <columns>Case_Subcategory__c</columns>
+    <columns>Status_Filtered__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Case_Category__c</field>
+        <operation>equals</operation>
+        <value>Apollo_Websites</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Major AG General Support</value>
+    </filters>
+    <filters>
+        <field>Status_Filtered__c</field>
+        <operation>notEqual</operation>
+        <value>On Hold,Needs Information,Waiting on Development,Awaiting Approval,External Feedback Needed,In Progress with Dev,Selected for Dev</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Open Website Cases - Actionable Cases</label>
+</ListView>

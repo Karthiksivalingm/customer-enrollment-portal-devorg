@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Numbers__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(Stage__c),
+&quot;Preq&quot;,&quot;01 Preq&quot;,
+&quot;Design&quot;,&quot;02 Design&quot;,
+&quot;PC Proofing&quot;,&quot;03 PC Proofing&quot;,
+&quot;Client Approval&quot;,&quot;04 Client Approval&quot;,
+&quot;Compliance Approval&quot;,&quot;05 Compliance Approval&quot;,
+&quot;Proofing&quot;,&quot;06 Proofing&quot;,
+&quot;Sent for Approval&quot;,&quot;07 Sent for Approval&quot;,
+&quot;Upload to Apollo&quot;,&quot;08 Upload to Apollo&quot;,
+&quot;Deploy Email&quot;,&quot;07 Deploy Email&quot;,
+&quot;Send Print Ad&quot;,&quot;07 Send Print Ad&quot;,
+&quot;Deploy Dealer Monthly Logo&quot;,&quot;07 Deploy Dealer Monthly Logo&quot;,
+&quot;Deploy Web Banner&quot;,&quot;07 Deploy Web Banner&quot;,
+&quot;Deploy Collateral&quot;,&quot;07 Deploy Collateral&quot;,
+&quot;Final Client Approval&quot;,&quot;07 Final Client Approval&quot;,
+&quot;Copywriter&quot;,&quot;02 Copywriter&quot;,
+&quot;Script PC Proofing&quot;,&quot;03 Script PC Proofing&quot;,
+&quot;Script Client Approval&quot;,&quot;04 Script Client Approval&quot;,
+&quot;Script Compliance Approval&quot;,&quot;05 Script Compliance Approval&quot;,
+&quot;Upload Compliance Approved Script&quot;,&quot;06 Upload Compliance Approved Script&quot;,
+&quot;Order VO&quot;,&quot;07 Order VO&quot;,
+&quot;AV Production&quot;,&quot;08 AV Production&quot;,
+&quot;Final Proofing&quot;,&quot;09 Final Proofing&quot;,
+&quot;Media Prep&quot;,&quot;10 Media Prep&quot;,
+&quot;Media Trafficking&quot;,&quot;11 Media Trafficking&quot;,
+&quot;Cancelled&quot;,&quot;99 Cancelled&quot;,
+&quot;98 No Stage&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stage Numbers</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

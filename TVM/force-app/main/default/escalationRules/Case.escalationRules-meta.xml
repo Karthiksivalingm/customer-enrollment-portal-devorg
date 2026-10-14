@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <escalationRule>
+        <fullName>Inactivity for Cases</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <businessHours>Default</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <criteriaItems>
+                <field>Case.Status_Filtered__c</field>
+                <operation>equals</operation>
+                <value>Internal Feedback Provided</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status_Filtered__c</field>
+                <operation>equals</operation>
+                <value>External Feedback Provided</value>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>120</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+                <notifyEmail>acalacci@teamvelocitymarketing.com</notifyEmail>
+                <notifyEmail>svogelgesang@teamvelocitymarketing.com </notifyEmail>
+                <notifyEmail>maria@teamvelocitymarketing.com</notifyEmail>
+                <notifyToTemplate>unfiled$public/Case_New_Case_W2C</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseLastModified</escalationStartTime>
+        </ruleEntry>
+        <ruleEntry>
+            <businessHours>Default</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <criteriaItems>
+                <field>Case.Status_Filtered__c</field>
+                <operation>equals</operation>
+                <value>Internal Feedback Needed</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status_Filtered__c</field>
+                <operation>equals</operation>
+                <value>External Feedback Needed</value>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>480</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+                <notifyEmail>acalacci@teamvelocitymarketing.com</notifyEmail>
+                <notifyEmail>svogelgesang@teamvelocitymarketing.com </notifyEmail>
+                <notifyEmail>maria@teamvelocitymarketing.com</notifyEmail>
+                <notifyToTemplate>unfiled$public/Case_New_Case_W2C</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseLastModified</escalationStartTime>
+        </ruleEntry>
+        <ruleEntry>
+            <businessHoursSource>Case</businessHoursSource>
+            <criteriaItems>
+                <field>Case.Status_Filtered__c</field>
+                <operation>notEqual</operation>
+                <value>Closed</value>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>2880</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+                <notifyEmail>acalacci@teamvelocitymarketing.com</notifyEmail>
+                <notifyEmail>svogelgesang@teamvelocitymarketing.com </notifyEmail>
+                <notifyEmail>maria@teamvelocitymarketing.com</notifyEmail>
+                <notifyToTemplate>unfiled$public/Case_New_Case_W2C</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseLastModified</escalationStartTime>
+        </ruleEntry>
+        <ruleEntry>
+            <businessHours>Default</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <criteriaItems>
+                <field>Case.X3rd_Party_Integration_Approval_Status__c</field>
+                <operation>equals</operation>
+                <value>Approval Needed</value>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>1440</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+                <notifyEmail>acalacci@teamvelocitymarketing.com</notifyEmail>
+                <notifyEmail>svogelgesang@teamvelocitymarketing.com </notifyEmail>
+                <notifyEmail>maria@teamvelocitymarketing.com</notifyEmail>
+                <notifyToTemplate>unfiled$public/Case_New_Case_W2C</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseLastModified</escalationStartTime>
+        </ruleEntry>
+    </escalationRule>
+</EscalationRules>

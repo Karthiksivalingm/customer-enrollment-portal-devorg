@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Team_Reporting__c</fullName>
+    <formula>Owner_Name__c = &quot;Eric Millar&quot; ||
+Owner_Name__c = &quot;Matthew Altomare&quot; ||
+Owner_Name__c = &quot;Alexander Rosales&quot; ||
+Owner_Name__c = &quot;Bob Librizzi&quot; ||
+Owner_Name__c = &quot;Austin Beachler&quot; ||
+Owner_Name__c = &quot;Derek Krucelyak&quot; ||
+Owner_Name__c = &quot;Erin Whittington&quot; ||
+Owner_Name__c = &quot;Matthew Abbott&quot; ||
+Owner_Name__c = &quot;Rick Covault&quot; ||
+Owner_Name__c = &quot;Jen Moor&quot; ||
+Owner_Name__c = &quot;Nick Beachler&quot; ||
+Owner_Name__c = &quot;James Green&quot; ||
+Owner_Name__c = &quot;Alex Parziale&quot; ||
+Owner_Name__c = &quot;Justin Byrd&quot;
+
+/*Owner_Name__c = &quot;Craig Santucci&quot; ||*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Team Reporting</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancelled_Date_Date__c</fullName>
+    <formula>if(Count_Apollo_AI_Assistant__c&gt;0, Opportunity.Account.Apollo_Assistant_AI_Cancelled_Date__c ,
+if(Count_Agency_Fee__c&gt;0,  Opportunity.Account.Category_Agency_Fee_Cancelled_Date__c ,
+if(Count_Display_New__c+Count_Display_Pre_Owned__c+Count_Display_Service__c&gt;0,  Opportunity.Account.Category_Display_Cancelled_Date__c ,
+if(Count_Apollo_Sales__c+Count_Equity_Mining__c+Count_1_1__c&gt;0,  Opportunity.Account.Category_Sales_Retention_Cancelled_Date__c ,
+if(Count_Search_New__c+Count_Search_Pre_Owned__c+Count_Search_Service__c&gt;0,  Opportunity.Account.Category_Search_Cancelled_Date__c ,
+if(Count_SEO__c&gt;0,  Opportunity.Account.Category_SEO_Cancelled_Date__c ,
+if(Count_Apollo_Service__c&gt;0,  Opportunity.Account.Category_Service_Retention_Cancelled_Dat__c ,
+if(Count_Facebook_Marketplace__c+Count_Fully_Managed_Paid_Social__c+Count_Reputation_Management__c+Count_Snapchat__c+Count_Social_New__c+Count_Social_Pre_Owned__c+Count_Social_Service__c+Count_SocialDealer_Craigslist__c+Count_SocialDealer_Equipment_Fee__c+Count_SocialDealer_New_Vehicle_Listing__c+Count_SocialDealer_Platform_Fee__c+Count_Soft_Credit_Pull__c+Count_Social_Media_Posting_Management__c&gt;0,  Opportunity.Account.Category_Social_Cancelled_Date__c ,
+if(Count_Apollo_Text__c&gt;0,  Opportunity.Account.Category_Text_Cancelled_Date__c ,
+if(Count_Advid_New__c+Count_Advid_Pre_Owned__c&gt;0,  Opportunity.Account.Category_Video_Cancelled_Date__c ,
+if(Count_Apollo_Sites__c+Count_Group_Site__c&gt;0,  Opportunity.Account.Category_Website_Cancelled_Date__c ,
+if(Count_Soft_Credit_Pull__c&gt;0,  Opportunity.Account.Credit_Prequal_Cancelled_Date__c ,
+if(Count_Custom_Creative__c&gt;0, Opportunity.Account.Custom_Creative_Website_Cancelled_Date__c ,
+if(Count_Streaming_OTT__c&gt;0,  Opportunity.Account.OTT_Premium_Dynamic_Cancelled_Date__c ,
+if(Count_Streaming_OTT_Custom__c&gt;0,  Opportunity.Account.OTT_Premium_Custom_Cancelled_Date__c , 
+/*if(Count_VDV__c &gt;0,   Opportunity.Account.PP_VDV_Plus_Cancelled_Date__c ,*/
+null
+)))))))))))))))/*)*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cancelled Date (Date)</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

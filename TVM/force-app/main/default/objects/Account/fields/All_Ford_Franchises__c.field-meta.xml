@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Ford_Franchises__c</fullName>
+    <formula>OR(
+ISPICKVAL(Analytics_Franchise__c,&quot;FORD&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;LINCOLN&quot;))</formula>
+    <label>All Ford Franchises</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospect_State_OEM_Map__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/bfnijpmiv?a=q&amp;qid=1330&amp;nv=3&amp;v0=&quot;&amp; BillingState &amp;&quot;&amp;v1=&quot;&amp;if(BillingState = &quot;OR&quot;, &quot;Oregon&quot;, &quot;&quot;)&amp;&quot;&amp;v2=&quot;&amp; Text(Analytics_Franchise__c) , &quot;Map of Same State/OEM&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Prospect State/OEM Map</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_GA4_Case__c</fullName>
+    <formula>GA4_Case_ID__c = &quot;&quot; &amp;&amp;  Today()+10&gt;=Website_Go_Live_Date__c &amp;&amp; 
+
+(
+Dealer_GA4_Code__c !=&quot;&quot; &amp;&amp;
+Trim(Lower(Dealer_GA4_Code__c)) != &quot;na&quot; &amp;&amp;
+Trim(Lower(Dealer_GA4_Code__c)) != &quot;n/a&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Create GA4 Case</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

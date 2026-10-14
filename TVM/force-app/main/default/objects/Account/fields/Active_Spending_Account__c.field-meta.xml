@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Spending_Account__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Text(Client_Type_Team_V__c ) = &quot;Active&quot; &amp;&amp; (HasCurrentMonthBudget__c ||  (Latest_Budget_Month__c &gt; Today() &amp;&amp;  Latest_Budget_Month_Amount__c &gt;0)) , &quot;Active Account With Spend&quot;,
+if( Text(Client_Type_Team_V__c ) = &quot;Active&quot;, &quot;Active Account Without Spend&quot;,
+Text(Client_Type_Team_V__c )
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Spending Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

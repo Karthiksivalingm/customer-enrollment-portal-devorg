@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_OEM_Enrollment_Complete__c</fullName>
+    <label>Latest OEM Enrollment Complete</label>
+    <summarizedField>OEM_Enrollment__c.Enrollment_Complete_Date__c</summarizedField>
+    <summaryForeignKey>OEM_Enrollment__c.Account__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

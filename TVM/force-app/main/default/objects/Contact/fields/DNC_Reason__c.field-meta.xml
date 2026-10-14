@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DNC_Reason__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+DoNotCall, &quot;Marked Do Not Call&quot;,
+if(
+No_Longer_With_Company__c, &quot;No Longer With Company&quot;,
+if(
+Account.Hide_Dealership__c, &quot;Dealership Closed&quot;,
+if(
+Account.Program_Excluded__c, &quot;OEM Program Excluded&quot;,
+/*if(
+Do_Not_Contact__c, &quot;Marked Do Not Contact&quot;,*/
+if(
+Do_Not_Contact_Internal__c, &quot;Marked Do Not Contact&quot;,
+if(
+ Delete_Contact__c , &quot;Marked Delete&quot;,
+if(
+Account.Do_Not_Contact__c, &quot;Account Marked Do Not Contact&quot;, 
+if(
+Account.Related_Auto_Group__r.DNC__c, &quot;Auto Group Marked DNC&quot;,
+if(
+Account.Related_20_Group__r.DNC__c, &quot;20 Group Marked DNC&quot;,
+if(
+Account.Related_Auto_Group__r.DNC_Non_Actives__c &amp;&amp;   Text(Account.Client_Type_Team_V__c)!=&quot;Active&quot;  , &quot;Auto Group Marked DNC NonActive&quot;,
+if(
+Account.Related_20_Group__r.DNC_Non_Actives__c &amp;&amp;  Text(Account.Client_Type_Team_V__c)!=&quot;Active&quot; , &quot;20 Group Marked DNC NonActive&quot;,
+
+/*if(
+ Email_Contact__r.of_DNCs__c &gt;0, &quot;Duplicate Email DNC&quot;,*/
+&quot;&quot;
+)))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>DNC Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

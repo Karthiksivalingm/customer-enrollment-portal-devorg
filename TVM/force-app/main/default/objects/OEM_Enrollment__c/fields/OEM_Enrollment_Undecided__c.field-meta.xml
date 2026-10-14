@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Enrollment_Undecided__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( OEM_Enrolled_Approved_Bundle__c = false &amp;&amp; OEM_Unenrolled_Approved_Bundle__c = false, &quot;Approved Bundle&quot;&amp;BR(), &quot;&quot;) &amp;
+if( OEM_Enrolled_Website__c = false &amp;&amp; OEM_Unenrolled_Website__c = false, &quot;Website &quot;&amp;BR(), &quot;&quot;) &amp;
+if( OEM_Enrolled_OTT__c = false &amp;&amp; OEM_Unenrolled_OTT__c = false, &quot;OTT &quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Rep_Man__c = false &amp;&amp; OEM_Unenrolled_Rep_Man__c = false, &quot;Rep Man&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Apollo_Assistant_AI__c = false &amp;&amp; OEM_Unenrolled_Apollo_Assistant_AI__c = false, &quot;Apollo Assistant AI&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Custom_Creative__c = false &amp;&amp; OEM_Unenrolled_Custom_Creative__c = false, &quot;Custom Creative&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Text__c = false &amp;&amp; OEM_Unenrolled_Text__c = false, &quot;Text&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Credit_Prequal__c = false &amp;&amp; OEM_Unenrolled_Credit_Prequal__c = false, &quot;Credit Prequal&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Search__c = false &amp;&amp; OEM_Unenrolled_Search__c = false, &quot;Search&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Display__c = false &amp;&amp; OEM_Unenrolled_Display__c = false, &quot;Display&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Social__c = false &amp;&amp; OEM_Unenrolled_Social__c = false, &quot;Social&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Video__c = false &amp;&amp; OEM_Unenrolled_Video__c = false, &quot;Video&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Sales_Mail__c = false &amp;&amp; OEM_Unenrolled_Sales_Mail__c = false, &quot;Sales Mail&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Service_Retention__c = false &amp;&amp; OEM_Unenrolled_Service_Retention__c = false, &quot;Service Retention&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Service_Mail__c = false &amp;&amp; OEM_Unenrolled_Service_Mail__c = false, &quot;Service Mail&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_SEO__c = false &amp;&amp; OEM_Unenrolled_SEO__c = false, &quot;SEO&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_VDV__c = false &amp;&amp; OEM_Unenrolled_VDV__c = false, &quot;VDV&quot;&amp;BR(), &quot;&quot;)&amp;
+if( OEM_Enrolled_Transact__c = false &amp;&amp; OEM_Unenrolled_Transact__c = false, &quot;Transact&quot;&amp;BR(), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OEM Enrollment Undecided</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defects_Ready_To_Test</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Defect_Status__c</field>
+        <operation>notEqual</operation>
+        <value>In Progress,Resolved,Not Reproducible</value>
+    </filters>
+    <label>Defects Ready To Test</label>
+</ListView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Detailed_Name__c</columns>
+    <columns>Sort_Column__c</columns>
+    <columns>Type__c</columns>
+    <columns>Include_CTA__c</columns>
+    <columns>Include_Dealer_Logo__c</columns>
+    <columns>Include_Disclaimer_on_Banner__c</columns>
+    <columns>Note__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date_Deactivated__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>All</label>
+</ListView>

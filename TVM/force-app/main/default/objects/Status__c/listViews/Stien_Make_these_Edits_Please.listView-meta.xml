@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stien_Make_these_Edits_Please</fullName>
+    <columns>Status_Sort_Value__c</columns>
+    <columns>NAME</columns>
+    <columns>Owner_Custom__c</columns>
+    <columns>Queues__c</columns>
+    <columns>Display_Role__c</columns>
+    <columns>Alert__c</columns>
+    <columns>Status_Description__c</columns>
+    <columns>Sub_Types__c</columns>
+    <columns>Closing_Status__c</columns>
+    <columns>X18_Digit_Status_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Media Request</value>
+    </filters>
+    <filters>
+        <field>Deactivated__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Media Request Statuses</label>
+</ListView>

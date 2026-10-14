@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Product_Score_Grade__c</fullName>
+    <description>FND</description>
+    <externalId>false</externalId>
+    <formula>IF( AND(  OR(INCLUDES(Product_Type__c,&quot;NCM Digital Intelligence Scorecard&quot;),INCLUDES(Product_Type__c,&quot;NCM Digital Performance Composite&quot;),INCLUDES(Product_Type__c,&quot;BI Auto Group Dashboard&quot;),INCLUDES(Product_Type__c,&quot;BI Single Rooftop Dashboard&quot;)),  OR(INCLUDES(Product_Type__c,&quot;Collision&quot;),INCLUDES(Product_Type__c,&quot;Consulting&quot;),INCLUDES(Product_Type__c,&quot;Full Package&quot;), INCLUDES(Product_Type__c,&quot;Group Used Strategy&quot;) ,INCLUDES(Product_Type__c,&quot;Lite Package&quot;) ,INCLUDES(Product_Type__c,&quot;Lite plus Facebook&quot;) ,INCLUDES(Product_Type__c,&quot;Lite plus Video&quot;) ,INCLUDES(Product_Type__c,&quot;Used Only&quot;),INCLUDES(Product_Type__c,&quot;YouTube Only&quot;)) ,PICKLISTCOUNT(Product_Type__c) &gt;= 2), &quot;A&quot;,
+IF( OR( INCLUDES(Product_Type__c,&quot;Full Package&quot;) ,INCLUDES(Product_Type__c,&quot;Lite plus Video&quot;), INCLUDES(Product_Type__c,&quot;Lite plus Facebook&quot;) , INCLUDES(Product_Type__c,&quot;Group Used Strategy&quot;) ), &quot;B&quot;,
+IF( OR( INCLUDES(Product_Type__c,&quot;Lite Package&quot;),INCLUDES(Product_Type__c,&quot;Used Only&quot;)), &quot;C&quot;, &quot;&quot;) ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Key Product Score Grade</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

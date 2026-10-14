@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Already_Display</fullName>
+    <active>false</active>
+    <errorConditionFormula>Account.Active_Display__c &amp;&amp;  Count_Display_New_Products__c &gt;0 &amp;&amp; Account.Active_Account_C__c &amp;&amp; IsClosed =false
+
+&amp;&amp; Contains( $UserRole.Name , &quot;VP of Retention&quot;)=false
+&amp;&amp; Contains( $Profile.Name , &quot;System Administrator&quot;)=false
+
+&amp;&amp;  Foundation_Record__c =false</errorConditionFormula>
+    <errorMessage>Display is Already Active, you cannot upsell it.</errorMessage>
+</ValidationRule>

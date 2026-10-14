@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workday_Hours_Since_Assigned__c</fullName>
+    <description>This field starts counting when the ticket is assigned to a user (no longer owned by queue/group). It stops when the ticket is closed.</description>
+    <externalId>false</externalId>
+    <formula>Case_Age_Workdays_Hours__c-Workday_Hours_Unassigned__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Workday Hours Since Assigned</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

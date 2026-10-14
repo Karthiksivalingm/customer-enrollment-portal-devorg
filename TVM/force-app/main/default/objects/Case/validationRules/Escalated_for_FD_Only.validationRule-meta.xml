@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalated_for_FD_Only</fullName>
+    <active>true</active>
+    <errorConditionFormula>Text( Status_Filtered__c ) = &quot;Escalated&quot; &amp;&amp;   Sync_FD__c = false &amp;&amp;  PA_Code__c =&quot;&quot; &amp;&amp; ( $User.Full_Name_Formula__c = &quot;Adriana Namuche&quot; || $User.Full_Name_Formula__c = &quot;Blake Souders&quot; || $User.Full_Name_Formula__c = &quot;Jess Seurer&quot;)</errorConditionFormula>
+    <errorMessage>Escalated is for FordDirect Only. Adriana, Blake, or Jess has to Escalate.</errorMessage>
+</ValidationRule>

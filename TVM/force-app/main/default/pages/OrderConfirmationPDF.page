@@ -1,0 +1,232 @@
+<apex:page controller="OrderConfirmationSend" renderAs="pdf" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ORDER CONFIRMATION</title>
+<style>
+  @page {
+    margin: 0.5in;
+    margin-bottom: 0.75in; /* Added extra space so content doesn't bleed into the footer */
+    @bottom-center {
+      content: element(footer);
+    }
+  }
+  body {
+    margin: 0;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+  }
+  .page {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .top-table {
+    width: 100%;
+    margin-bottom: 26px;
+  }
+  .logo {
+    font-size: 44px;
+    font-weight: 700;
+    color: #0b2e53;
+    line-height: 1;
+  }
+  .logo sup {
+    font-size: 12px;
+    color: #555;
+    vertical-align: super;
+  }
+  .doc-title {
+    text-align: right;
+    color: #555;
+    font-size: 22px;
+    line-height: 1.18;
+    font-weight: 400;
+    letter-spacing: .2px;
+  }
+  .subtext {
+    font-size: 17px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .band {
+    background: #0b2e53;
+    color: #fff;
+    font-size: 23px;
+    line-height: 1;
+    padding: 10px 12px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+  }
+  .details, .products {
+    border-spacing: 0 8px;
+    margin-top: 2px;
+  }
+  .details td, .products td {
+    font-size: 17px;
+    vertical-align: middle;
+  }
+  .details .label {
+    width: 32%;
+    font-weight: 700;
+    color: #555;
+    padding: 0 14px 0 8px;
+  }
+  .details .field-wrap {
+    padding: 0 10px; /* Added right padding to balance the box */
+  }
+  .details .field-wrap.split-left {
+    padding-right: 6px;
+  }
+  .details .field-wrap.split-right {
+    padding-left: 6px;
+  }
+  .fill-box, .product-box, .price-box, .single-box {
+    border: 2px solid #c8c8c8;
+    background: #fff;
+    display: block; /* Allows natural block flow without overflowing */
+    padding: 6px 10px;
+    min-height: 32px;
+  }
+  .products .hdr {
+    font-weight: 700;
+    color: #555;
+    padding: 2px 8px 0 8px;
+  }
+  .products .cell-wrap-left, .products .cell-wrap-right {
+    padding: 0 8px 0 8px;
+  }
+  .products .labelcell {
+    text-align: right;
+    font-weight: 700;
+    color: #555;
+    padding: 0 14px 0 8px;
+    width: 32%;
+  }
+  .money-in-box {
+    color: #444;
+    font-size: 20px;
+  }
+  .addendum-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.4;
+    padding: 10px 12px;
+  }
+  /* Footer has been updated to be a running element */
+  div.footer {
+    display: block;
+    position: running(footer);
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="footer">
+      &#169;{!YEAR(TODAY())} TeamVelocity. All rights reserved.
+  </div>
+  
+  <table class="top-table" cellpadding="0" cellspacing="0">
+    <tr>
+      <td style="text-align: left; vertical-align: top;">
+        <div class="logo">TeamVelocity<sup>&#174;</sup></div>
+      </td>
+      <td style="text-align: right; vertical-align: top;">
+        <div class="doc-title">ORDER CONFIRMATION</div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="subtext">
+    <div>Thank you for your recent product order. Below are the details regarding your order.</div>
+    <div>Please contact your Account Representative if you have any questions.</div>
+  </div>
+
+  <div class="band">ORDER DETAILS</div>
+  <table class="details">
+    <colgroup>
+      <col style="width:32%"/>
+      <col style="width:34%"/>
+      <col style="width:34%"/>
+    </colgroup>
+    <tr><td class="label">Dealership Name</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account.Name}</div></td></tr>
+    
+    <apex:outputPanel layout="none" rendered="{!showOemDealerCode}">
+        <tr><td class="label">OEM Dealer Code</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.OEM_Dealer_Code__c}</div></td></tr>
+    </apex:outputPanel>
+
+    <tr><td class="label">Street Address</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account.BillingStreet}</div></td></tr>
+    <tr><td class="label">City</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account.BillingCity}</div></td></tr>
+    <tr>
+        <td class="label">State / ZIP</td>
+        <td class="field-wrap split-left"><div class="fill-box">{!opportunity.Account.BillingState}</div></td>
+        <td class="field-wrap split-right"><div class="fill-box">{!opportunity.Account.BillingPostalCode}</div></td>
+    </tr>
+    <tr><td class="label">Contact Name</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Dealer_DocuSign_Contact__r.Name}</div></td></tr>
+    <tr><td class="label">Title</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Dealer_DocuSign_Contact__r.Contact_Title__c}</div></td></tr>
+    <tr><td class="label">Target Launch Month</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Launch_Month__c}</div></td></tr>
+    <tr><td class="label">RAD</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Account_RAD__c}</div></td></tr>
+    <tr><td class="label">OEM</td><td class="field-wrap" colspan="2"><div class="fill-box">{!opportunity.Analytics_Franchise__c}</div></td></tr>
+  </table>
+
+  <div class="band">PRODUCTS</div>
+  <table class="products">
+    <colgroup>
+      <col style="width:50%"/>
+      <col style="width:50%"/>
+    </colgroup>
+    <tr><td class="hdr">Product</td><td class="hdr">Price</td></tr>
+    
+    <apex:repeat var="a" value="{!lineItems}">
+        <tr>
+            <td class="cell-wrap-left"><div class="product-box">{!a.Contract_Product_Name__c}</div></td>
+            <td class="cell-wrap-right"><div class="price-box money-in-box">$<apex:outputText value="{!a.MRR__c}"/></div></td>
+        </tr>
+    </apex:repeat>
+
+    <tr>
+        <td class="labelcell">Order Date</td>
+        <td class="cell-wrap-right">
+            <div class="single-box money-in-box">
+                <apex:outputText value="{0, date, M/d/yyyy}">
+                    <apex:param value="{!NOW()}" />
+                </apex:outputText>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="labelcell">Total</td>
+        <td class="cell-wrap-right"><div class="single-box money-in-box">${!opportunity.Contracted_Amount__c}</div></td>
+    </tr>
+  </table>
+
+  <apex:outputPanel rendered="{!hasAddendum}">
+    <div class="band" style="margin-top: 30px;">ADDENDUM</div>
+    <div class="addendum-text">
+        <apex:repeat var="a" value="{!lineItems}">
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(a.Product2.Addendum_Language__c))}">
+                <p><strong>{!a.Contract_Product_Name__c} - Service Term: </strong>{!a.Product2.Addendum_Language__c}</p>
+            </apex:outputPanel>
+        </apex:repeat>
+        
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(specialNotes))}">
+            <p><strong>Additional Terms: </strong>{!specialNotes}</p>
+        </apex:outputPanel>
+    </div>
+  </apex:outputPanel>
+
+</div>
+
+</body>
+</html>
+</apex:page>

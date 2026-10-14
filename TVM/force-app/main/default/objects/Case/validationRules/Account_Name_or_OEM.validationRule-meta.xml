@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Name_or_OEM</fullName>
+    <active>false</active>
+    <errorConditionFormula>IsBlank(AccountId) &amp;&amp; IsBlank(Text (OEM__c )) &amp;&amp;
+IsBlank( SuppliedName )</errorConditionFormula>
+    <errorMessage>Please pick an Account or OEM</errorMessage>
+</ValidationRule>

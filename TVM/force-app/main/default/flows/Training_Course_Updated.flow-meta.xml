@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>All_Presentations_Complete</name>
+        <label>All Presentations Complete?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_All_presentations_are_complete_too</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Presentation1Complete</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Presentation2Complete</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Presentation3Complete</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Course_Complete_Date__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Open_Quizzes</targetReference>
+            </connector>
+            <label>Yes All presentations are complete too</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>All_Quizzes_Complete</name>
+        <label>All Quizzes Complete?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Quizzes Open</defaultConnectorLabel>
+        <rules>
+            <name>Yes_All_Quizzes_Complete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Open_Quizzes</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_Course_Complete</targetReference>
+            </connector>
+            <label>Yes All Quizzes Complete</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Presentation1Complete</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(ISBLANK({!$Record.Presentation_1__c}),TRUE,
+IF(ISBLANK({!$Record.Presentation_1_Link__c}), FALSE,
+TRUE))</expression>
+    </formulas>
+    <formulas>
+        <name>Presentation2Complete</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(ISBLANK({!$Record.Presentation_2__c}),TRUE,
+IF(ISBLANK({!$Record.Presentation_2_Link__c}), FALSE,
+TRUE))</expression>
+    </formulas>
+    <formulas>
+        <name>Presentation3Complete</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(ISBLANK({!$Record.Presentation_3__c}),TRUE,
+IF(ISBLANK({!$Record.Presentation_3_Link__c}), FALSE,
+TRUE))</expression>
+    </formulas>
+    <interviewLabel>Training Course - Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Training Course - Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Open_Quizzes</name>
+        <label>Get Open Quizzes</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>All_Quizzes_Complete</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Quiz_Completed__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Training_Course__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Quiz__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Stamp_Course_Complete</name>
+        <label>Stamp Course Complete</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Course_Complete_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>All_Presentations_Complete</targetReference>
+        </connector>
+        <object>Training_Course__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

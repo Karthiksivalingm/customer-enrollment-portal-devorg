@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Retention_Section__c</fullName>
+    <formula>DS_CXP_Bundle_Add_On__c || DS_Apollo_Sales__c || DS_Apollo_Service__c 
+/*true*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice Retention Section</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

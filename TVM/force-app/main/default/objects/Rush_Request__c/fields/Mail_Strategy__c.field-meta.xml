@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mail_Strategy__c</fullName>
+    <label>Mail Strategy</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AIDO</fullName>
+                <default>false</default>
+                <label>AIDO</label>
+            </value>
+            <value>
+                <fullName>Core Service</fullName>
+                <default>false</default>
+                <label>Core Service</label>
+            </value>
+            <value>
+                <fullName>Declined Service</fullName>
+                <default>false</default>
+                <label>Declined Service</label>
+            </value>
+            <value>
+                <fullName>Equifax Lease Exp</fullName>
+                <default>false</default>
+                <label>Equifax Lease Exp</label>
+            </value>
+            <value>
+                <fullName>Equifax Lower APR</fullName>
+                <default>false</default>
+                <label>Equifax Lower APR</label>
+            </value>
+            <value>
+                <fullName>Equifax Payment Reduction</fullName>
+                <default>false</default>
+                <label>Equifax Payment Reduction</label>
+            </value>
+            <value>
+                <fullName>Ford Direct</fullName>
+                <default>false</default>
+                <label>Ford Direct</label>
+            </value>
+            <value>
+                <fullName>FordDirect Declined Services</fullName>
+                <default>false</default>
+                <label>FordDirect Declined Services</label>
+            </value>
+            <value>
+                <fullName>General Service</fullName>
+                <default>false</default>
+                <label>General Service</label>
+            </value>
+            <value>
+                <fullName>In Market All</fullName>
+                <default>false</default>
+                <label>In Market All</label>
+            </value>
+            <value>
+                <fullName>Lease Exp</fullName>
+                <default>false</default>
+                <label>Lease Exp</label>
+            </value>
+            <value>
+                <fullName>Lower APR</fullName>
+                <default>false</default>
+                <label>Lower APR</label>
+            </value>
+            <value>
+                <fullName>Low Mileage</fullName>
+                <default>false</default>
+                <label>Low Mileage</label>
+            </value>
+            <value>
+                <fullName>New Start Bankruptcy</fullName>
+                <default>false</default>
+                <label>New Start Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>New Start Credit</fullName>
+                <default>false</default>
+                <label>New Start Credit</label>
+            </value>
+            <value>
+                <fullName>Off Brand</fullName>
+                <default>false</default>
+                <label>Off Brand</label>
+            </value>
+            <value>
+                <fullName>Preowned Buyer</fullName>
+                <default>false</default>
+                <label>Preowned Buyer</label>
+            </value>
+            <value>
+                <fullName>Previous Buyer</fullName>
+                <default>false</default>
+                <label>Previous Buyer</label>
+            </value>
+            <value>
+                <fullName>Recalls</fullName>
+                <default>false</default>
+                <label>Recalls</label>
+            </value>
+            <value>
+                <fullName>RP</fullName>
+                <default>false</default>
+                <label>RP</label>
+            </value>
+            <value>
+                <fullName>Same Brand Conquest</fullName>
+                <default>false</default>
+                <label>Same Brand Conquest</label>
+            </value>
+            <value>
+                <fullName>Service Reimbursement</fullName>
+                <default>false</default>
+                <label>Service Reimbursement</label>
+            </value>
+            <value>
+                <fullName>Trade Value</fullName>
+                <default>false</default>
+                <label>Trade Value</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

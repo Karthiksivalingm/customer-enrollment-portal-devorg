@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Budget_Health_Score_Description__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Total_Monthly_Budget__c&gt;9000, 
+	&quot;**Monthly Budget &gt; 9000 = 15pts**&quot;, 
+	&quot;Monthly Budget &gt; 9000 = 15pts&quot;)&amp;BR()&amp;
+if(Total_Monthly_Budget__c&lt;=9000 &amp;&amp; Total_Monthly_Budget__c&gt;7000, 
+	&quot;**Monthly Budget &lt;= 9000 and &gt; 7000 = 10pts**&quot;, 
+	&quot;Monthly Budget &lt;= 9000 and &gt; 7000 = 10pts&quot;)&amp;BR()&amp;
+if(Total_Monthly_Budget__c&lt;=7000 &amp;&amp; Total_Monthly_Budget__c&gt;3000, 
+	&quot;**Monthly Budget &lt;= 7000 and &gt; 3000 = 5pts**&quot;, 
+	&quot;Monthly Budget &lt;= 7000 and &gt; 3000 = 5pts&quot;)&amp;BR()&amp;
+if(Total_Monthly_Budget__c&lt;=3000, 
+	&quot;**Monthly Budget &lt;= 3000 = 0pts**&quot;, 
+	&quot;Monthly Budget &lt;= 3000 = 0pts&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Calculation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

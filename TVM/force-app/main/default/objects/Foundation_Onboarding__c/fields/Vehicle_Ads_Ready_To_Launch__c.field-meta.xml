@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_Ads_Ready_To_Launch__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Put &quot;Vehicle Ads Ready To Launch&quot; case into &quot;Ready For QA&quot; status</description>
+    <label>Put &quot;Vehicle Ads Ready To Launch&quot; case</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

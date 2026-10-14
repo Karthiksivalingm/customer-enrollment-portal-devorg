@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Primary</fullName>
+        <default>false</default>
+        <label>Primary</label>
+    </customValue>
+    <customValue>
+        <fullName>Portal</fullName>
+        <default>false</default>
+        <label>Portal</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Site</fullName>
+        <default>false</default>
+        <label>Other Site</label>
+    </customValue>
+    <customValue>
+        <fullName>Offersite</fullName>
+        <default>false</default>
+        <label>Offersite</label>
+    </customValue>
+    <customValue>
+        <fullName>Cancelled</fullName>
+        <default>false</default>
+        <label>Cancelled</label>
+    </customValue>
+    <masterLabel>Site Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

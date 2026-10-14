@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_Business_Name_in_Dealer_Setup__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Confirm “Business Name” in Dealer Setup</description>
+    <label>Confirm &quot;Business Name&quot; in Dealer Setup</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

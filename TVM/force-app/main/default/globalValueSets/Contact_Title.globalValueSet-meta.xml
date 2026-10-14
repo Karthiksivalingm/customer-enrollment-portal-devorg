@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accounting Professional</fullName>
+        <default>false</default>
+        <label>Accounting Professional</label>
+    </customValue>
+    <customValue>
+        <fullName>Agency/Consultant</fullName>
+        <default>false</default>
+        <label>Agency/Consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>BDC Director</fullName>
+        <default>false</default>
+        <label>BDC Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Certified Product Manager</fullName>
+        <default>false</default>
+        <label>Certified Product Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Chief Executive Officer</fullName>
+        <default>false</default>
+        <label>Chief Executive Officer</label>
+    </customValue>
+    <customValue>
+        <fullName>Chief Financial Officer</fullName>
+        <default>false</default>
+        <label>Chief Financial Officer</label>
+    </customValue>
+    <customValue>
+        <fullName>Chief Marketing Officer</fullName>
+        <default>false</default>
+        <label>Chief Marketing Officer</label>
+    </customValue>
+    <customValue>
+        <fullName>Chief Operating Officer</fullName>
+        <default>false</default>
+        <label>Chief Operating Officer</label>
+    </customValue>
+    <customValue>
+        <fullName>Controller</fullName>
+        <default>false</default>
+        <label>Controller</label>
+    </customValue>
+    <customValue>
+        <fullName>Corporate HQ Contact</fullName>
+        <default>false</default>
+        <label>Corporate HQ Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Corporate HQ Digital Manager</fullName>
+        <default>false</default>
+        <label>Corporate HQ Digital Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Corporate HQ Marketing Manager</fullName>
+        <default>false</default>
+        <label>Corporate HQ Marketing Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer Principal</fullName>
+        <default>false</default>
+        <label>Dealer Principal</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Performance Consultant</fullName>
+        <default>false</default>
+        <label>Digital Performance Consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Director of Business Development</fullName>
+        <default>false</default>
+        <label>Director of Business Development</label>
+    </customValue>
+    <customValue>
+        <fullName>Director of Digital Marketing</fullName>
+        <default>false</default>
+        <label>Director of Digital Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Director of Fixed Ops</fullName>
+        <default>false</default>
+        <label>Director of Fixed Ops</label>
+    </customValue>
+    <customValue>
+        <fullName>Director of Internet Sales</fullName>
+        <default>false</default>
+        <label>Director of Internet Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>Director of Marketing</fullName>
+        <default>false</default>
+        <label>Director of Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>DMS Administrator</fullName>
+        <default>false</default>
+        <label>DMS Administrator</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Commerce Director</fullName>
+        <default>false</default>
+        <label>E-Commerce Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Executive Assistant</fullName>
+        <default>false</default>
+        <label>Executive Assistant</label>
+    </customValue>
+    <customValue>
+        <fullName>Executive Vice President</fullName>
+        <default>false</default>
+        <label>Executive Vice President</label>
+    </customValue>
+    <customValue>
+        <fullName>FordDirect DPC</fullName>
+        <default>false</default>
+        <label>FordDirect DPC</label>
+    </customValue>
+    <customValue>
+        <fullName>FordDirect DPR</fullName>
+        <default>false</default>
+        <label>FordDirect DPR</label>
+    </customValue>
+    <customValue>
+        <fullName>General Manager</fullName>
+        <default>false</default>
+        <label>General Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>General Sales Manager</fullName>
+        <default>false</default>
+        <label>General Sales Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Internet Manager</fullName>
+        <default>false</default>
+        <label>Internet Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>IT Director</fullName>
+        <default>false</default>
+        <label>IT Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Manager</fullName>
+        <default>false</default>
+        <label>Marketing Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>New Car Sales Manager</fullName>
+        <default>false</default>
+        <label>New Car Sales Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>OEM Rep</fullName>
+        <default>false</default>
+        <label>OEM Rep</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding Contact (temporary)</fullName>
+        <default>false</default>
+        <label>Onboarding Contact (temporary)</label>
+    </customValue>
+    <customValue>
+        <fullName>Operations Manager</fullName>
+        <default>false</default>
+        <label>Operations Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Owner</fullName>
+        <default>false</default>
+        <label>Owner</label>
+    </customValue>
+    <customValue>
+        <fullName>President</fullName>
+        <default>false</default>
+        <label>President</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Manager</fullName>
+        <default>false</default>
+        <label>Sales Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Director</fullName>
+        <default>false</default>
+        <label>Service Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Manager</fullName>
+        <default>false</default>
+        <label>Service Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Upgrade Manager</fullName>
+        <default>false</default>
+        <label>Upgrade Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Used Car Sales Manager</fullName>
+        <default>false</default>
+        <label>Used Car Sales Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Vice President</fullName>
+        <default>false</default>
+        <label>Vice President</label>
+    </customValue>
+    <customValue>
+        <fullName>Voice Support Hold</fullName>
+        <default>false</default>
+        <label>Voice Support Hold</label>
+    </customValue>
+    <customValue>
+        <fullName>Website Administrator</fullName>
+        <default>false</default>
+        <label>Website Administrator</label>
+    </customValue>
+    <masterLabel>Contact Title</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

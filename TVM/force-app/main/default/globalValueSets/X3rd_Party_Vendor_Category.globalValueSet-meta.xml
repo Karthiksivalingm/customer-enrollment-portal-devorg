@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agency</fullName>
+        <default>false</default>
+        <label>Agency</label>
+    </customValue>
+    <customValue>
+        <fullName>AI</fullName>
+        <default>false</default>
+        <label>AI</label>
+    </customValue>
+    <customValue>
+        <fullName>BDC</fullName>
+        <default>false</default>
+        <label>BDC</label>
+    </customValue>
+    <customValue>
+        <fullName>Chat</fullName>
+        <default>false</default>
+        <label>Chat</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliance</fullName>
+        <default>false</default>
+        <label>Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>CRM</fullName>
+        <default>false</default>
+        <label>CRM Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Data</fullName>
+        <default>false</default>
+        <label>Data</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital</fullName>
+        <default>false</default>
+        <label>Digital</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Retailing</fullName>
+        <default>false</default>
+        <label>Digital Retailing</label>
+    </customValue>
+    <customValue>
+        <fullName>Direct Mail</fullName>
+        <default>false</default>
+        <label>Direct Mail</label>
+    </customValue>
+    <customValue>
+        <fullName>DMS</fullName>
+        <default>false</default>
+        <label>DMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </customValue>
+    <customValue>
+        <fullName>F&amp;I Software</fullName>
+        <default>false</default>
+        <label>F&amp;I Software</label>
+    </customValue>
+    <customValue>
+        <fullName>Full Finance Application</fullName>
+        <default>false</default>
+        <label>Full Finance Application</label>
+    </customValue>
+    <customValue>
+        <fullName>Images</fullName>
+        <default>false</default>
+        <label>Images</label>
+    </customValue>
+    <customValue>
+        <fullName>New Inventory</fullName>
+        <default>false</default>
+        <label>New Inventory</label>
+    </customValue>
+    <customValue>
+        <fullName>Payments</fullName>
+        <default>false</default>
+        <label>Payments</label>
+    </customValue>
+    <customValue>
+        <fullName>Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>Pre Qualification</fullName>
+        <default>false</default>
+        <label>Pre Qualification</label>
+    </customValue>
+    <customValue>
+        <fullName>Reserve Your Vehicle</fullName>
+        <default>false</default>
+        <label>Reserve Your Vehicle</label>
+    </customValue>
+    <customValue>
+        <fullName>Retention/Equity</fullName>
+        <default>false</default>
+        <label>Retention/Equity</label>
+    </customValue>
+    <customValue>
+        <fullName>Sell Your Car</fullName>
+        <default>false</default>
+        <label>Sell Your Car</label>
+    </customValue>
+    <customValue>
+        <fullName>SEO</fullName>
+        <default>false</default>
+        <label>SEO</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Scheduler</fullName>
+        <default>false</default>
+        <label>Service Scheduler</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Advertising</fullName>
+        <default>false</default>
+        <label>Social Advertising</label>
+    </customValue>
+    <customValue>
+        <fullName>Test Drive</fullName>
+        <default>false</default>
+        <label>Test Drive</label>
+    </customValue>
+    <customValue>
+        <fullName>Text</fullName>
+        <default>false</default>
+        <label>Text</label>
+    </customValue>
+    <customValue>
+        <fullName>Used Inventory</fullName>
+        <default>false</default>
+        <label>Used Inventory</label>
+    </customValue>
+    <customValue>
+        <fullName>Value Your Trade</fullName>
+        <default>false</default>
+        <label>Value Your Trade</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Delivery</fullName>
+        <default>false</default>
+        <label>Vehicle Delivery</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle History</fullName>
+        <default>false</default>
+        <label>Vehicle History</label>
+    </customValue>
+    <customValue>
+        <fullName>Video/Photo</fullName>
+        <default>false</default>
+        <label>Video/Photo</label>
+    </customValue>
+    <customValue>
+        <fullName>Website Analytics</fullName>
+        <default>false</default>
+        <label>Website Analytics</label>
+    </customValue>
+    <customValue>
+        <fullName>Website Provider</fullName>
+        <default>false</default>
+        <label>Website Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Window Sticker</fullName>
+        <default>false</default>
+        <label>Window Sticker</label>
+    </customValue>
+    <customValue>
+        <fullName>Chat / Text</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Chat / Text</label>
+    </customValue>
+    <masterLabel>3rd Party Vendor Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

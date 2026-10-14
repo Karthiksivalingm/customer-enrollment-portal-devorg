@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NCM_Composite_Last_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(NCM_Composite_Name__c, &quot; &quot;), RIGHT(NCM_Composite_Name__c , LEN(NCM_Composite_Name__c ) - FIND(&quot; &quot;, NCM_Composite_Name__c)), NCM_Composite_Name__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>NCM Composite - Last Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

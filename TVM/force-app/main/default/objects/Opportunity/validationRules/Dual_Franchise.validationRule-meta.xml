@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dual_Franchise</fullName>
+    <active>true</active>
+    <errorConditionFormula>FordDirect_Dual_Franchise_Deal__c &amp;&amp; 
+Analytics_Franchise__c != &quot;LINCOLN&quot; &amp;&amp; IsBlank(Dual_Franchise_Account__c )</errorConditionFormula>
+    <errorMessage>Please choose a related Dual Account</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_From_Previous__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(  Digital_Change_From_Prev__c &gt;0, &quot;Increase&quot;,
+if(Digital_Change_From_Prev__c&lt;0, &quot;Decrease&quot;,
+if(Digital_Change_From_Prev__c =0, &quot;No Change&quot;,
+&quot;Error&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Digital From Previous</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

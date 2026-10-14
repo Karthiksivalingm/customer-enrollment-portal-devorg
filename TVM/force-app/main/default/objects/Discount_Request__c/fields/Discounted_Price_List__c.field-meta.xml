@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discounted_Price_List__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( isNull(Opportunity_Product_1__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_1__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_2__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_2__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_3__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_3__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_4__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_4__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_5__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_5__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_6__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_6__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_7__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_7__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_8__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_8__c)  &amp;BR(), &quot;&quot;)&amp;
+if( isNull(Opportunity_Product_9__r.Contract_Product_Name__c ), &quot;$&quot;&amp;Text(Requested_Discounted_Selling_Price_9__c)  &amp;BR(), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Discounted Price List</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

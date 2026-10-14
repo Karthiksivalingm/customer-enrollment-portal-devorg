@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Count_Website_Advert_Bundle__c</fullName>
+    <label>Count - Website Advert Bundle</label>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Apollo_Ads_Premium__c</field>
+        <operation>equals</operation>
+        <value>Website + Advertising Package</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

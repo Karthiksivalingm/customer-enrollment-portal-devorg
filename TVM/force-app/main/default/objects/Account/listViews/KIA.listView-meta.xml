@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KIA</fullName>
+    <columns>Quickbase_Record_ID__c</columns>
+    <columns>Client_Type_Team_V__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Regional_Sales_Director__c</columns>
+    <columns>Regional_Account_Director__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Dealership_Closed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>KIA</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>equals</operation>
+        <value>CA</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>KIA</label>
+</ListView>

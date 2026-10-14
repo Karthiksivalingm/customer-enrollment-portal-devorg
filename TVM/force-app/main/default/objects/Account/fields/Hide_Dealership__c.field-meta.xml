@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hide_Dealership__c</fullName>
+    <description>Add in criteria for hiding dealerships on lists and reports</description>
+    <formula>Dealership_Closed__c==True || Test_Account__c=true</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Hide Dealership</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

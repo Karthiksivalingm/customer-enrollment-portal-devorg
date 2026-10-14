@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hold</fullName>
+                <default>false</default>
+                <label>Hold</label>
+            </value>
+            <value>
+                <fullName>Building</fullName>
+                <default>true</default>
+                <label>Building</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>List Needs Processing</fullName>
+                <default>false</default>
+                <label>List Needs Processing</label>
+            </value>
+            <value>
+                <fullName>List Processed</fullName>
+                <default>false</default>
+                <label>List Processed</label>
+            </value>
+            <value>
+                <fullName>Send to SF Admins to Upload</fullName>
+                <default>false</default>
+                <label>Send to SF Admins to Upload</label>
+            </value>
+            <value>
+                <fullName>Admin List Processed</fullName>
+                <default>false</default>
+                <label>Admin List Processed</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

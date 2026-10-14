@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Designer_Queue__c</fullName>
+    <formula>/*Is_Actionable__c
+
+&amp;&amp;*/
+INCLUDES(Status_Lookup__r.Project_Task_Queues__c , &quot;Designer&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>In Designer Queue (DEP)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

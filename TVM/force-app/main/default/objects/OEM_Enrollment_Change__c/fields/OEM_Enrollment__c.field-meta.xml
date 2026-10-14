@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Enrollment__c</fullName>
+    <label>OEM Enrollment</label>
+    <referenceTo>OEM_Enrollment__c</referenceTo>
+    <relationshipLabel>OEM Enrollment Changes</relationshipLabel>
+    <relationshipName>OEM_Enrollment_Changes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

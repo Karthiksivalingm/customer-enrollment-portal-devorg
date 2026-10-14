@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Score_Total_Value_N_11_24__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*New Score
+if( Budget_Month_Date__c &lt;= ADDMONTHS(TODAY(),-1),
+HS_Total_Monthly_Budget_Calc_11_24__c +
+HS_Rating_Calc_11_24__c +
+HS_Net_Revenue_Calc_11_24__c +
+HS_Mail_Ordered_Calc_11_24__c +
+HS_Website_SRetention_Calc_11_24__c+
+HS_Meeting_Recaps_11_24__c+
+HS_Bug_Cases_Calc_11_24__c 
+,
+0)
+Old Score
+if( Budget_Month_Date__c &lt;= ADDMONTHS(TODAY(),-1),
+HS_Total_Monthly_Budget_Calc__c+
+HS_Rating_Calc__c+
+HS_Net_Revenue_Calc__c+
+HS_Mail_Ordered_Calc__c+
+HS_Website_SRetention_Calc__c,
+0)*/
+ /* Newest Score*/
+HS_NRR_Decrease_Calc_V3__c +
+HS_Single_Product_Calc_V3__c +
+HS_Credit_Issued__c +
+HS_Rating_Calc__c +
+HS_Meeting_Recaps_11_24__c +
+HS_Bug_Cases_Calc_11_24__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Health Score Total Value (N) 11/24</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

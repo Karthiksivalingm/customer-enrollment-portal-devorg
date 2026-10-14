@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hyundai_Prospects_Not_Foundation</fullName>
+    <columns>Account.Client_Type_Team_V__c</columns>
+    <columns>Account.Analytics_Franchise__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Account.Regional_Sales_Director__c</columns>
+    <columns>CONTACT.EMAIL_BOUNCED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Account.Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Prospect,Inactive</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>Hyundai</value>
+    </filters>
+    <filters>
+        <field>Email_Bounce_Clear_Log__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>BDC_Standard_Filter__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>DNC__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Contact_Role__c</field>
+        <operation>equals</operation>
+        <value>BDC Contact,Digital Contact,General Manager,General Sales Manager,Owner/Dealer Principal,Primary POC</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Hyundai Prospects - Not Foundation</label>
+</ListView>

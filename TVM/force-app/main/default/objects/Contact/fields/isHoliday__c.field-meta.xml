@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isHoliday__c</fullName>
+    <description>FND</description>
+    <formula>IF( OR(
+TODAY() == DATEVALUE(&quot;2023-11-22&quot;),
+TODAY() == DATEVALUE(&quot;2023-12-25&quot;),
+TODAY() == DATEVALUE(&quot;2023-12-22&quot;),
+TODAY() == DATEVALUE(&quot;2023-12-26&quot;),
+TODAY() == DATEVALUE(&quot;2024-07-05&quot;),
+TODAY() == DATEVALUE(&quot;2024-11-22&quot;),
+TODAY() == DATEVALUE(&quot;2024-07-04&quot;),
+TODAY() == DATEVALUE(&quot;2024-06-19&quot;),
+TODAY() == DATEVALUE(&quot;2024-09-02&quot;),
+TODAY() == DATEVALUE(&quot;2024-01-15&quot;),
+TODAY() == DATEVALUE(&quot;2024-05-27&quot;),
+TODAY() == DATEVALUE(&quot;2024-01-01&quot;),
+TODAY() == DATEVALUE(&quot;2023-12-31&quot;),
+TODAY() == DATEVALUE(&quot;2024-02-19&quot;),
+TODAY() == DATEVALUE(&quot;2024-11-28&quot;)
+),
+true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>isHoliday</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

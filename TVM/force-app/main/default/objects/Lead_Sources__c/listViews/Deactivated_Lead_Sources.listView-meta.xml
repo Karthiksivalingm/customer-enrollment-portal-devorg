@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deactivated_Lead_Sources</fullName>
+    <columns>NAME</columns>
+    <columns>X18_Lead_Source_ID__c</columns>
+    <columns>Who_Can_Select_NS__c</columns>
+    <columns>Who_Can_Select_Upsell__c</columns>
+    <columns>Deactivated__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deactivated__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Deactivated Lead Sources</label>
+</ListView>

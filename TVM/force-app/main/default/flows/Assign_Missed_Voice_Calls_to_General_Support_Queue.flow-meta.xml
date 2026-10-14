@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <constants>
+        <description>Queue ID for General Support Missed Calls</description>
+        <name>GeneralSupportMissedCallQueueID</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>00GVb00000EgPd5</stringValue>
+        </value>
+    </constants>
+    <description>Automatically assigns new Voice Call records marked as missed calls with caller input to the General Support Missed Calls queue.</description>
+    <environments>Default</environments>
+    <interviewLabel>Assign Missed Voice Calls to General Support Queue {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Assign Missed Voice Calls to General Support Queue</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Assign_to_General_Support_Missed_Calls_Queue</name>
+        <label>Assign to General Support Missed Calls Queue</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>GeneralSupportMissedCallQueueID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_to_General_Support_Missed_Calls_Queue</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Current_Owner__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Missed Call</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Caller_Input__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>VoiceCall</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

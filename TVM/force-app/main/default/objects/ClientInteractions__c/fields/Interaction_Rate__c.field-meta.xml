@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interaction_Rate__c</fullName>
+    <label>Interaction Rate</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Individual for this Account Only</fullName>
+                <default>false</default>
+                <label>Individual for this Account Only</label>
+            </value>
+            <value>
+                <fullName>Group Reporting 2-4 Stores</fullName>
+                <default>false</default>
+                <label>Group Reporting 2-4 Stores</label>
+            </value>
+            <value>
+                <fullName>Group Reporting 5-9 Stores</fullName>
+                <default>false</default>
+                <label>Group Reporting 5-9 Stores</label>
+            </value>
+            <value>
+                <fullName>Group Reporting 10+ Stores</fullName>
+                <default>false</default>
+                <label>Group Reporting 10+ Stores</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

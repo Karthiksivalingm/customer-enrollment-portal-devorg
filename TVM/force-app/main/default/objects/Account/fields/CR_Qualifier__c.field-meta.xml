@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CR_Qualifier__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Creative_Requests_Allowed_Override__c, &quot;Manual Override&quot;, 
+    IF(NOT(ISBLANK(TEXT(Custom_Creative_Level__c))),TEXT(Custom_Creative_Level__c),&quot;Doesn&apos;t Qualify&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CR Qualifier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

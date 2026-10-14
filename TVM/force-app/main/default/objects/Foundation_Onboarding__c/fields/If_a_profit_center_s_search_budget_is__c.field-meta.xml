@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_a_profit_center_s_search_budget_is__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - If a profit center&apos;s search budget is less than $ 1000 total, request a 0% Bing allocation for that profit center.</description>
+    <label>If a profit center&apos;s search budget is le</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

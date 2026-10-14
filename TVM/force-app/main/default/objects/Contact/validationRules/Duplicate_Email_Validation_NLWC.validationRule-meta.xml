@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Email_Validation_NLWC</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( Email ) &amp;&amp;
+Duplicate_Email_Validation_NLWC__c</errorConditionFormula>
+    <errorMessage>A Contact with this Email Address has been deactivated.  Reactivate in TP or Pipeline</errorMessage>
+</ValidationRule>

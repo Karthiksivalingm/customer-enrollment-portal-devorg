@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Website_Cases_Minus_Waiting_On_Dev</fullName>
+    <columns>Red_Fire__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Status_Number__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Comment_Last_Edited_Time__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Case_Subcategory__c</columns>
+    <columns>Case_Request__c</columns>
+    <columns>CASES.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Case_Category__c</field>
+        <operation>equals</operation>
+        <value>Apollo_Websites</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>On Hold,Waiting on Development,Escalated,Closed,Cancelled,Selected for Dev,In Progress with Dev</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Open Website Cases Minus Waiting On Dev</label>
+    <sharedTo>
+        <group>Apollo_Websites_Support</group>
+        <group>General_Support</group>
+    </sharedTo>
+</ListView>

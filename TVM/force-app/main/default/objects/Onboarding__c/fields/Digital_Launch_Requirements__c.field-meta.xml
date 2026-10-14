@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Launch_Requirements__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( INCLUDES(Launch_Type__c, &quot;Digital&quot;)=false &amp;&amp; INCLUDES(Launch_Type__c, &quot;CXP&quot;)=false, &quot;&quot; ,
+
+IF(Digital_Brand_Diffs_Completed__c, &quot;&quot;, &quot;Digital Brand Diffs not Completed&quot;+BR())
++if( (Includes( Digital_Products__c , &quot;D-Search Service&quot;) || Includes( Digital_Products__c , &quot;D-Social Service&quot;))&amp;&amp; Text(Service_Coupons_Selected__c )=&quot;&quot; , &quot;Service Coupons Required&quot;+BR(), &quot;&quot;)
++if( Text(GMB_Status__c )=&quot;Complete&quot; || Text(GMB_Status__c )=&quot;Not Executing&quot;, &quot;&quot;, &quot;GMB&quot;+BR())
++if( Text(GTM_Status__c )=&quot;Complete&quot; || Text(GTM_Status__c )=&quot;Not Executing&quot;, &quot;&quot;, &quot;GTM&quot;+BR())
++if( Text(Vehicle_Ads_Status__c )=&quot;Complete&quot; || Text(Vehicle_Ads_Status__c )=&quot;Not Executing&quot;, &quot;&quot;, &quot;Vehicle Ads&quot;+BR())
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Digital Launch Requirements</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

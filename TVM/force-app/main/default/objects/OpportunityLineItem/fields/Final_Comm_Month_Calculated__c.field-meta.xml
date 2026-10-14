@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Comm_Month_Calculated__c</fullName>
+    <formula>if(Text(First_Billing_Comm_Month_Override__c) &lt;&gt;&quot;&quot;,  First_Billing_Comm_Month_Override__c , First_Billing_Month__c  )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Final Comm Month Calculated</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

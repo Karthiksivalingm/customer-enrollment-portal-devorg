@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T3__c</fullName>
+    <formula>(ISPICKVAL( Region__c, &quot;NorthEast&quot;) || 
+ISPICKVAL( Region__c, &quot;SouthEast&quot;) ||
+ISPICKVAL( Region__c, &quot;Central&quot;) ||
+ISPICKVAL( Region__c, &quot;West&quot;)) &amp;&amp;
+
+Inventory_Feeds_Only__c = false &amp;&amp;
+
+Test_Account__c = false &amp;&amp;
+
+ Dealership_Name__c &lt;&gt; &quot;Test T3&quot; &amp;&amp;
+ Dealership_Name__c &lt;&gt; &quot;Chad&apos;s Test Account&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>T3 Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

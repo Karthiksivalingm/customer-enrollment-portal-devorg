@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Stellantis_Franchises__c</fullName>
+    <formula>OR(
+ISPICKVAL(Analytics_Franchise__c,&quot;STELLANTIS&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;DODGE&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;JEEP&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;RAM&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;FIAT&quot;),
+ISPICKVAL(Analytics_Franchise__c,&quot;ALFA ROMEO&quot;))</formula>
+    <label>All Stellantis Franchises</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

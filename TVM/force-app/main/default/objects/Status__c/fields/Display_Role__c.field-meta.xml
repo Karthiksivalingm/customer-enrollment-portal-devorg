@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Role__c</fullName>
+    <description>Who Can Select What Status</description>
+    <label>Creative Request Display Role</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Creative_Request_Roles</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Alerted Users</fullName>
+        <default>false</default>
+        <label>Alerted Users</label>
+    </customValue>
+    <customValue>
+        <fullName>AM</fullName>
+        <default>false</default>
+        <label>AM</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliance Team</fullName>
+        <default>false</default>
+        <label>Compliance Team</label>
+    </customValue>
+    <customValue>
+        <fullName>QCS_Web</fullName>
+        <default>false</default>
+        <label>QCS_Web</label>
+    </customValue>
+    <customValue>
+        <fullName>Designer</fullName>
+        <default>false</default>
+        <label>Designer</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Admin</fullName>
+        <default>false</default>
+        <label>Digital Admin</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Auditor</fullName>
+        <default>false</default>
+        <label>Digital Auditor</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Team</fullName>
+        <default>false</default>
+        <label>Digital Team</label>
+    </customValue>
+    <customValue>
+        <fullName>Ernie Frate</fullName>
+        <default>false</default>
+        <label>Ernie Frate</label>
+    </customValue>
+    <customValue>
+        <fullName>OD_Web</fullName>
+        <default>false</default>
+        <label>OD_Web</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding Director (Creator)</fullName>
+        <default>false</default>
+        <label>Onboarding Director (Creator)</label>
+    </customValue>
+    <customValue>
+        <fullName>Owner</fullName>
+        <default>false</default>
+        <label>Owner</label>
+    </customValue>
+    <customValue>
+        <fullName>Admin</fullName>
+        <default>false</default>
+        <label>Production Admin</label>
+    </customValue>
+    <customValue>
+        <fullName>Production Specialist</fullName>
+        <default>false</default>
+        <label>Production Specialist</label>
+    </customValue>
+    <customValue>
+        <fullName>RAD</fullName>
+        <default>false</default>
+        <label>RAD</label>
+    </customValue>
+    <customValue>
+        <fullName>Website_Leader</fullName>
+        <default>false</default>
+        <label>Website_Leader</label>
+    </customValue>
+    <customValue>
+        <fullName>WIM</fullName>
+        <default>false</default>
+        <label>WIM</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding Product Specialist</fullName>
+        <default>false</default>
+        <label>Onboarding Product Specialist</label>
+    </customValue>
+    <customValue>
+        <fullName>Upsell Team</fullName>
+        <default>false</default>
+        <label>Upsell Team</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding Manager</fullName>
+        <default>false</default>
+        <label>Onboarding Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>WCS</fullName>
+        <default>false</default>
+        <label>WCS</label>
+    </customValue>
+    <masterLabel>Project Task Roles</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

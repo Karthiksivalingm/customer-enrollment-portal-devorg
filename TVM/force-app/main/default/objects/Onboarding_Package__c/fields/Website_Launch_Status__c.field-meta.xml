@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Launch_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(of_Website_Task_Groups__c =0 &amp;&amp;  Text(Website_Go_Live_Date__c) != &quot;&quot;, &quot;01 Indicated No Website but has Go Live Date&quot;,
+if(of_Website_Task_Groups__c &gt;0 &amp;&amp;  Text(Website_Go_Live_Date__c) = &quot;&quot;, &quot;02 No Go Live Date Yet&quot;,
+if(Text( No_Website_Launch_Verification__c ) != &quot;&quot;, &quot;99 Verified No Website&quot;,
+if(of_Website_Task_Groups__c =0,&quot;99 Indicated No Website on Package&quot;,
+if(of_Website_Task_Groups__c &gt;0 &amp;&amp;  Text(Website_Go_Live_Date__c) != &quot;&quot;, &quot;99 Go Live Date Set&quot;,
+&quot;03 Verify No Website Launch&quot;
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Website Launch Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kanban_Status__c</fullName>
+    <label>Kanban Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>a34Vb00000CiJKzIAN</fullName>
+                <default>false</default>
+                <label>01 OPS Not Started</label>
+            </value>
+            <value>
+                <fullName>a34Vb00000CiJMbIAN</fullName>
+                <default>false</default>
+                <label>02 OPS in Progress</label>
+            </value>
+            <value>
+                <fullName>a34Vb00000CiJODIA3</fullName>
+                <default>false</default>
+                <label>03 OPS Delayed</label>
+            </value>
+            <value>
+                <fullName>a34Vb00000B8OQGIA3</fullName>
+                <default>false</default>
+                <label>07 Complete</label>
+            </value>
+            <value>
+                <fullName>a34Vb00000B8OQSIA3</fullName>
+                <default>false</default>
+                <label>09 Not Executing</label>
+            </value>
+            <value>
+                <fullName>a34Vb00000B8OQPIA3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>01 Onboarding Not Started</label>
+            </value>
+            <value>
+                <fullName>a34Vb00000Bh0WHIAZ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>02 Onboarding In Progress</label>
+            </value>
+            <value>
+                <fullName>a34Vb00000BdCMLIA3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>06 Delayed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

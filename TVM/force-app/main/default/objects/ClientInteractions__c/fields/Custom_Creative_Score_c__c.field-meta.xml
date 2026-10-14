@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Creative_Score_c__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    ISBLANK(Custom_Creative_Requests__c),
+    Custom_Creative_Requests__c = 0
+  ),
+  0,
+  IF(
+    Custom_Creative_Requests__c &lt;= 2,
+    1,
+    IF(
+      Custom_Creative_Requests__c &lt;= 5,
+      2,
+      3
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Custom Creative Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

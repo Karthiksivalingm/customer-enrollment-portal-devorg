@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Goal__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Monthly Goal</label>
+    <referenceTo>Monthly_Goal__c</referenceTo>
+    <relationshipLabel>Monthly Budgets</relationshipLabel>
+    <relationshipName>Monthly_Budgets</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

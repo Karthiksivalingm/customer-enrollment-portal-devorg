@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Open</fullName>
+    <columns>Test_Lead_Form_Status__c</columns>
+    <columns>Website_Go_Live_Date__c</columns>
+    <columns>NAME</columns>
+    <columns>TP_ID__c</columns>
+    <columns>Website_Launch_Status__c</columns>
+    <columns>QC_Status__c</columns>
+    <columns>QCS_Notes__c</columns>
+    <columns>QCS_Checkist__c</columns>
+    <columns>URL__c</columns>
+    <columns>Staging_URL__c</columns>
+    <columns>Onboarding_Team__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>AccessiBe__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Completion_Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>Onboarding_Package_TypeVtwo__c</field>
+        <operation>includes</operation>
+        <value>Primary Website</value>
+    </filters>
+    <label>QCS Queue (editor)</label>
+    <sharedTo>
+        <role>Onboarding</role>
+    </sharedTo>
+</ListView>

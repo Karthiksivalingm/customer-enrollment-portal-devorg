@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total__c</fullName>
+    <description>FND</description>
+    <formula>(PPC_Budget_Sales__c + PPC_Budget_Service__c + PPC_Budget_DISC__c + SMA_Budget_Sales__c + SMA_Budget_Service__c+ Display_Budget_Sales__c + Display_Budget_Preowned__c + Video_Budget_Sales__c + Video_Budget_Preowned__c + SMA_Budget_Preowned__c + PPC_Budget_VLA_New__c + PPC_Budget_VLA_Used__c + Performance_Max_New_Budget__c + Performance_Max_Used_Budget__c + OTT_Premium_Custom_Budget__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Media Budget</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

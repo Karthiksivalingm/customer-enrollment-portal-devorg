@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ford_Inactive_Prospect_entire_Country</fullName>
+    <columns>Client_Type_Team_V__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>Open_Opportunity_Status__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Latest_Closed_Opportunity__c</columns>
+    <columns>Do_Not_Contact__c</columns>
+    <columns>OEM_Dealer_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>FORD,LINCOLN</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Do_Not_Contact__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Active_Account_C__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Ford Inactive Prospect entire Country</label>
+</ListView>

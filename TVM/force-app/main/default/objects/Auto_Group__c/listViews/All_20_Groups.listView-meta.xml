@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_20_Groups</fullName>
+    <columns>NAME</columns>
+    <columns>State__c</columns>
+    <columns>Website__c</columns>
+    <columns>Address__c</columns>
+    <columns>City__c</columns>
+    <columns>Zip__c</columns>
+    <columns>Quickbase_Record_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Synthetic_Record_Type__c</field>
+        <operation>equals</operation>
+        <value>20 Group</value>
+    </filters>
+    <filters>
+        <field>X18_Digit_Auto_Group_ID__c</field>
+        <operation>notEqual</operation>
+        <value>a0q5f000001P3JNAA0</value>
+    </filters>
+    <label>All 20 Groups</label>
+</ListView>

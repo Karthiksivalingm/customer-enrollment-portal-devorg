@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_video_was_set_live_after_launch_go_t__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - If video was set live after launch and 7 day QA, go through launch day steps to ensure proper setup</description>
+    <label>If video was set live after launch go t</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

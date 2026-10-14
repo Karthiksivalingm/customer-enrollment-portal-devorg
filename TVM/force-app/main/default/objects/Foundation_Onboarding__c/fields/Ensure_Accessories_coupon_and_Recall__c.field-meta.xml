@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Accessories_coupon_and_Recall__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Ensure Accessories coupon and Recall coupons are NOT marked &quot;include in Digital&quot;</description>
+    <label>Ensure Accessories coupon and Recall</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

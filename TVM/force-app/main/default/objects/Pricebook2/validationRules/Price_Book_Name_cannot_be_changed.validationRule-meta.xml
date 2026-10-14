@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Book_Name_cannot_be_changed</fullName>
+    <active>true</active>
+    <description>Restricts Users from changing the name of the Price Book. If the name must be changed, first deactivate this validation rule, make the change and update the Flow &quot;Account - Created or Updated - Analytics Franchise Populated&quot;.</description>
+    <errorConditionFormula>ISCHANGED(Name)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>The Price Book Name cannot be changed as the name impacts automation. To make this change, please contact your System Administrator.</errorMessage>
+</ValidationRule>

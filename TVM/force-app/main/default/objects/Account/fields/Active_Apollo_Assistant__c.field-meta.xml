@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Apollo_Assistant__c</fullName>
+    <formula>isblank(Apollo_Assistant_AI_Recent_Start_Date__c)=false&amp;&amp;
+Apollo_Assistant_AI_Recent_Start_Date__c &gt; Apollo_Assistant_AI_Cancelled_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Apollo Assistant</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

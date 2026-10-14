@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>MinPrice_Set</name>
+        <label>MinPrice Set</label>
+        <locationX>564</locationX>
+        <locationY>306</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opportunity_Product_Counts</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Set_Min_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Min_Price_Static__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateMin</targetReference>
+            </connector>
+            <label>Set Min Price</label>
+        </rules>
+    </decisions>
+    <description>This flow will update the Opportunity Product&apos;s Count fields based on which descriptions are populated on the Price Book Entry. These counts are used in Opportunity Rollup Summary fields to prevent duplicates.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CountADACompliance</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.ADA_Compliance__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountAdvidNew</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Advid_New__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountAdvidPreOwned</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Advid_Pre_Owned__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountAgencyFee</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Agency Fee&quot;),
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloAds</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+OR(
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Base__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Plus__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Premium__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Sport__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Touring__c}))),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloAdsService</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+OR(
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Base_Service__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Plus_Service__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Premium_Service__c}))),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloAIAssistant</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_AI_Assistant__c})) ||
+Contains({!$Record.PricebookEntry.Overflow_Description__c}, &quot;Apollo Assistant.AI&quot;)
+,
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloSales</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Sales__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloService</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Service__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloSites</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+OR(
+/*NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Sport__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Ads_Touring__c})),*/
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Sites_Base__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Sites_Plus__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Sites_Premium__c}))),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloText</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Text__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountApolloTransact</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Apollo_Transact__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountAutomotiveInventoryAds</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+{!$Record.PricebookEntry.Overflow_Description__c}=&quot;Automotive Inventory Ads&quot;,
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountCallTracking</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+OR(
+NOT(ISBLANK({!$Record.PricebookEntry.Call_Tracking_Base__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.Call_Tracking_Premium__c}))),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountCommandCenter</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Command Center&quot;),
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountCoopSubmission</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Co-Op Submission&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountCreditPrequal</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+CONTAINS({!$Record.PricebookEntry.Overflow_Description__c}, &quot;Soft Credit Pull&quot;) ||
+CONTAINS({!$Record.PricebookEntry.Overflow_Description__c}, &quot;PreQual&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountCustomCreative</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Custom_Creative__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountCXPBundle</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.CXP_Bundle_Add_On__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountDisplayNew</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Display_New__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountDisplayPreOwned</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Display_Pre_Owned__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountDisplayService</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Display_Service__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountDMSWriteBack</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.DMS_Write_Back__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountEquityMining</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Equity Mining&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountFacebookMarketplace</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Facebook Marketplace&quot;),
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountFullyManagedPaidSocial</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Fully Managed Paid Social&quot;),
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountGroupSite</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Group Sites&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountLinkedIn</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;LinkedIn&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountMotionMediaPlus</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Motion_Media_Plus__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountPerformanceDirector</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Performance_Director__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountReputationManagement</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Reputation_Management__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountROAlerts</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Open RO Alerts&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSearchNew</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Search_New__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSearchPreOwned</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Search_Pre_Owned__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSearchService</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Search_Service__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSEO</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+OR(
+NOT(ISBLANK({!$Record.PricebookEntry.SEO_Base__c})),
+NOT(ISBLANK({!$Record.PricebookEntry.SEO_Plus__c}))),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSmartCommunications</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Smart_Communications__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSnapchat</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Snapchat&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialDealerCraigslist</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;SocialDealer Craigslist&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialDealerEquipmentFee</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;SocialDealer Equipment Fee&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialDealerNewVehicleListing</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;SocialDealer New Vehicle Listing&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialDealerPlatformFee</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;SocialDealer Platform Fee&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialMediaPosting</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Social_Media_Posting_Management__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialNew</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Social_New__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialPreOwned</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Social_Pre_Owned__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountSocialService</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.PricebookEntry.Social_Service__c})),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountStreamingOTT</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Advid OTT Dynamic&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountStreamingOTTCustom</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Advid OTT Custom&quot;),
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountTikTok</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;TikTok&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CountUpsell</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+{!$Record.PricebookEntry.Contract_Product_Name__c}=&quot;Upsell Only&quot;,
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountVDV</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;Vehicle Display Videos - Plus&quot;) ||
+Contains({!$Record.PricebookEntry.Overflow_Description__c}, &quot;VDV&quot;)
+,
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CountXTime</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;X-time Integration&quot;),
+1,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>FDMessaging</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+({!$Record.PricebookEntry.Overflow_Description__c}=&quot;1:1 Messaging Package&quot;),
+1,
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Opportunity Product - Created - Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Product - Created - Before Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Opportunity_Product_Counts</name>
+        <label>Update Opportunity Product Counts</label>
+        <locationX>872</locationX>
+        <locationY>481</locationY>
+        <inputAssignments>
+            <field>Count_1_1__c</field>
+            <value>
+                <elementReference>FDMessaging</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_ADA_Compliance__c</field>
+            <value>
+                <elementReference>CountADACompliance</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Advid_New__c</field>
+            <value>
+                <elementReference>CountAdvidNew</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Advid_Pre_Owned__c</field>
+            <value>
+                <elementReference>CountAdvidPreOwned</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Agency_Fee__c</field>
+            <value>
+                <elementReference>CountAgencyFee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_AI_Assistant__c</field>
+            <value>
+                <elementReference>CountApolloAIAssistant</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_Ads_Service__c</field>
+            <value>
+                <elementReference>CountApolloAdsService</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_Ads__c</field>
+            <value>
+                <elementReference>CountApolloAds</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_Sales__c</field>
+            <value>
+                <elementReference>CountApolloSales</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_Service__c</field>
+            <value>
+                <elementReference>CountApolloService</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_Sites__c</field>
+            <value>
+                <elementReference>CountApolloSites</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_Text__c</field>
+            <value>
+                <elementReference>CountApolloText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Apollo_Transact__c</field>
+            <value>
+                <elementReference>CountApolloTransact</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Automotive_Inventory_Ads__c</field>
+            <value>
+                <elementReference>CountAutomotiveInventoryAds</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_CXP_Bundle_Add_On__c</field>
+            <value>
+                <elementReference>CountCXPBundle</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Call_Tracking__c</field>
+            <value>
+                <elementReference>CountCallTracking</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Co_Op_Submission__c</field>
+            <value>
+                <elementReference>CountCoopSubmission</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Command_Center__c</field>
+            <value>
+                <elementReference>CountCommandCenter</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Custom_Creative__c</field>
+            <value>
+                <elementReference>CountCustomCreative</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_DMS_Write_Back__c</field>
+            <value>
+                <elementReference>CountDMSWriteBack</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Display_New__c</field>
+            <value>
+                <elementReference>CountDisplayNew</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Display_Pre_Owned__c</field>
+            <value>
+                <elementReference>CountDisplayPreOwned</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Display_Service__c</field>
+            <value>
+                <elementReference>CountDisplayService</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Equity_Mining__c</field>
+            <value>
+                <elementReference>CountEquityMining</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Facebook_Marketplace__c</field>
+            <value>
+                <elementReference>CountFacebookMarketplace</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Fully_Managed_Paid_Social__c</field>
+            <value>
+                <elementReference>CountFullyManagedPaidSocial</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Group_Site__c</field>
+            <value>
+                <elementReference>CountGroupSite</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_LinkedIn__c</field>
+            <value>
+                <elementReference>CountLinkedIn</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Motion_Media_Plus__c</field>
+            <value>
+                <elementReference>CountMotionMediaPlus</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Open_RO_Alerts__c</field>
+            <value>
+                <elementReference>CountROAlerts</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Performance_Director__c</field>
+            <value>
+                <elementReference>CountPerformanceDirector</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Reputation_Management__c</field>
+            <value>
+                <elementReference>CountReputationManagement</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_SEO__c</field>
+            <value>
+                <elementReference>CountSEO</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Search_New__c</field>
+            <value>
+                <elementReference>CountSearchNew</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Search_Pre_Owned__c</field>
+            <value>
+                <elementReference>CountSearchPreOwned</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Search_Service__c</field>
+            <value>
+                <elementReference>CountSearchService</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Smart_Communications__c</field>
+            <value>
+                <elementReference>CountSmartCommunications</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Snapchat__c</field>
+            <value>
+                <elementReference>CountSnapchat</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_SocialDealer_Craigslist__c</field>
+            <value>
+                <elementReference>CountSocialDealerCraigslist</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_SocialDealer_Equipment_Fee__c</field>
+            <value>
+                <elementReference>CountSocialDealerEquipmentFee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_SocialDealer_New_Vehicle_Listing__c</field>
+            <value>
+                <elementReference>CountSocialDealerNewVehicleListing</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_SocialDealer_Platform_Fee__c</field>
+            <value>
+                <elementReference>CountSocialDealerPlatformFee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Social_Media_Posting_Management__c</field>
+            <value>
+                <elementReference>CountSocialMediaPosting</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Social_New__c</field>
+            <value>
+                <elementReference>CountSocialNew</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Social_Pre_Owned__c</field>
+            <value>
+                <elementReference>CountSocialPreOwned</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Social_Service__c</field>
+            <value>
+                <elementReference>CountSocialService</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Soft_Credit_Pull__c</field>
+            <value>
+                <elementReference>CountCreditPrequal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Streaming_OTT_Custom__c</field>
+            <value>
+                <elementReference>CountStreamingOTTCustom</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Streaming_OTT__c</field>
+            <value>
+                <elementReference>CountStreamingOTT</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Tiktok__c</field>
+            <value>
+                <elementReference>CountTikTok</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_Upsell__c</field>
+            <value>
+                <elementReference>CountUpsell</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count_VDV__c</field>
+            <value>
+                <elementReference>CountVDV</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Count__c</field>
+            <value>
+                <elementReference>CountXTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MRR__c</field>
+            <value>
+                <elementReference>$Record.UnitPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Product_Label__c</field>
+            <value>
+                <elementReference>$Record.Product_Label__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Setup_Fee__c</field>
+            <value>
+                <elementReference>$Record.PricebookEntry.Product_Value__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateMin</name>
+        <label>UpdateMin</label>
+        <locationX>572</locationX>
+        <locationY>585</locationY>
+        <connector>
+            <targetReference>Update_Opportunity_Product_Counts</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Min_Price_Static__c</field>
+            <value>
+                <elementReference>$Record.PricebookEntry.Min_Price__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>696</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>MinPrice_Set</targetReference>
+        </connector>
+        <object>OpportunityLineItem</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

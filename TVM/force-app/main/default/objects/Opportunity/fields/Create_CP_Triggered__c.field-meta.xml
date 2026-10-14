@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_CP_Triggered__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Marks that this Opportunity has already triggered the Contract Profile creation process. Used by automation flows to prevent duplicate Account updates or Contract Profile creations.</description>
+    <label>Create CP Triggered</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

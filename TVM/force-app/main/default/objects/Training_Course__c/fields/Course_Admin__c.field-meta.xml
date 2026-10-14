@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_Admin__c</fullName>
+    <formula>OR(
+    $Profile.Name = &quot;System Administrator&quot;,
+    $Profile.Name = &quot;Client Team Lead&quot;,
+    $Profile.Name = &quot;Exec&quot;,
+    $User.Full_Name_Formula__c = &quot;Matt Hill&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Course Admin</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

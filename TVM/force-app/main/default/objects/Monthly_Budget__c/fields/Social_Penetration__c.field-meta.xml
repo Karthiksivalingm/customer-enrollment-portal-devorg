@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Social_Penetration__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+ Category_Social_Active__c , &quot;Currently Active&quot;,
+if(
+ Account__r.Sellable_Social__c = &quot;Not Sellable&quot;, &quot;Not Available to Sell&quot;,
+if(
+ADDMONTHS( Account__r.Earliest_Budget_Month__c , 3) &gt;  Budget_Month_Date__c , &quot;Launched Within 90 Days&quot;,
+&quot;Available to Sell&quot;
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Social Penetration</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

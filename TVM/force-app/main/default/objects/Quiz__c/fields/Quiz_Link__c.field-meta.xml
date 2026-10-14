@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quiz_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Quiz_Completed__c, &quot;Quiz Completed&quot;,
+HYPERLINK(
+Substitute(
+&quot;https://teamvelocity.lightning.force.com/flow/Quiz_Editor?recordId=&quot;&amp; Id &amp; &quot;&amp;retURL=/&quot; &amp; Id,
+    &quot;Launch Quiz Editor&quot;,
+    &quot;_self&quot;)
+,
+&quot;Take Quiz&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quiz Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

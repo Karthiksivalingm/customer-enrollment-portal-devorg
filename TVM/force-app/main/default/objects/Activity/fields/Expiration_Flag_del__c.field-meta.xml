@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiration_Flag_del__c</fullName>
+    <formula>Expiration_Date__c &gt;  TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Expiration Flag</label>
+    <type>Checkbox</type>
+</CustomField>

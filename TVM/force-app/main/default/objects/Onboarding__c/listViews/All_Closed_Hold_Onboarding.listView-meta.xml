@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Closed_Hold_Onboarding</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>Current_Onboarding_Month__c</columns>
+    <columns>NAME</columns>
+    <columns>Onboarding_Status__c</columns>
+    <columns>Call_Stage__c</columns>
+    <columns>Data_Status__c</columns>
+    <columns>Retention_Go_Live_Date__c</columns>
+    <columns>Website_Go_Live_Date__c</columns>
+    <columns>Digital_Go_Live_Date_Manual__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Open_Onboarding__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Current_Onboarding_Month__c</field>
+        <operation>equals</operation>
+        <value>0000 On Hold 00</value>
+    </filters>
+    <label>All Closed/Hold Onboarding</label>
+</ListView>

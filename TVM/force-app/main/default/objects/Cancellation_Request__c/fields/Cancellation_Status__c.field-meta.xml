@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Status__c</fullName>
+    <label>Cancellation Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Team Working</fullName>
+                <default>false</default>
+                <label>Team Working</label>
+            </value>
+            <value>
+                <fullName>Cancellation Saved</fullName>
+                <default>false</default>
+                <label>Cancellation Saved</label>
+            </value>
+            <value>
+                <fullName>Dealer on Pause</fullName>
+                <default>false</default>
+                <label>Dealer on Pause</label>
+            </value>
+            <value>
+                <fullName>Approved by DJ</fullName>
+                <default>false</default>
+                <label>Approved by DJ</label>
+            </value>
+            <value>
+                <fullName>Cancel Complete</fullName>
+                <default>false</default>
+                <label>Cancel Complete</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

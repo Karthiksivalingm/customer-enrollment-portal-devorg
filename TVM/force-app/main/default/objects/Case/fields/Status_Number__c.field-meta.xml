@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Number__c</fullName>
+    <description>Digital Requested this field so they can sort in list views</description>
+    <externalId>false</externalId>
+    <formula>If( Text(Case_Category__c) = &quot;Apollo_Websites&quot;,
+CASE(Status_Filtered__c,
+&quot;New&quot;, &quot;01 - New&quot;,
+&quot;Information Provided&quot;, &quot;02 - Internal Feedback Provided&quot;,
+&quot;Internal Feedback Provided&quot;, &quot;02 - Internal Feedback Provided&quot;,
+&quot;External Feedback Provided&quot;, &quot;02- External Feedback Provided&quot;,
+&quot;Ready for Testing&quot;, &quot;03 - Ready for Testing&quot;,
+&quot;Ready for Review&quot;, &quot;03 - Ready for Review&quot;,
+&quot;Assigned&quot;, &quot;04 - Assigned&quot;,
+&quot;In Progress&quot;, &quot;05 - In Progress&quot;,
+&quot;Needs Information&quot;, &quot;06 - Internal Feedback Needed&quot;,
+&quot;Internal Feedback Needed&quot;, &quot;06 - Internal Feedback Needed&quot;,
+&quot;External Feedback Needed&quot;, &quot;06 - External Feedback Needed&quot;,
+&quot;Awaiting Approval&quot;, &quot;07 - Awaiting Approval&quot;,
+&quot;Waiting on Development&quot;, &quot;08 - Waiting on Development&quot;,
+
+&quot;Cancelled&quot;, &quot;98 - Cancelled&quot;,
+&quot;Closed&quot;, &quot;99 - Closed&quot;,
+&quot;None&quot;),
+
+CASE(Status_Filtered__c,
+&quot;New&quot;, &quot;00 - New&quot;,
+&quot;Assigned&quot;, &quot;01 - Assigned&quot;,
+&quot;In Progress&quot;, &quot;01 - In Progress&quot;,
+&quot;Information Provided&quot;, &quot;03 - Internal Feedback Provided&quot;,
+&quot;Internal Feedback Provided&quot;, &quot;03 - Internal Feedback Provided&quot;,
+&quot;Changes Needed&quot;, &quot;04 - Changes Needed&quot;,
+&quot;Production Complete&quot;, &quot;05 - Production Complete&quot;,
+&quot;Approved For Upload&quot;, &quot;06 - Approved For Upload&quot;,
+&quot;Awaiting Approval&quot;, &quot;07 - Awaiting Approval&quot;,
+&quot;Needs Information&quot;, &quot;08 - Internal Feedback Needed&quot;,
+&quot;Internal Feedback Needed&quot;, &quot;08 - Internal Feedback Needed&quot;,
+&quot;On Hold&quot;, &quot;09 - On Hold&quot;,
+&quot;Waiting on Development&quot;, &quot;10 - Waiting on Development&quot;,
+&quot;External Feedback Needed&quot;, &quot;11 - External Feedback Needed&quot;,
+&quot;External Feedback Provided&quot;, &quot;03 - External Feedback Provided&quot;,
+&quot;Ready for Testing&quot;, &quot;05 - Ready for Testing&quot;,
+&quot;Cancelled&quot;, &quot;98 - Cancelled&quot;,
+&quot;Closed&quot;, &quot;99 - Closed&quot;,
+&quot;None&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

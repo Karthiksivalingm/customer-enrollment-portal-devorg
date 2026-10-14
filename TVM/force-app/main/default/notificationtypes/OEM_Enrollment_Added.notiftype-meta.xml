@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomNotificationType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customNotifTypeName>OEM Enrollment Added</customNotifTypeName>
+    <description>Notify Account Team on OEM Enrollment Added</description>
+    <desktop>true</desktop>
+    <masterLabel>OEM Enrollment Added</masterLabel>
+    <mobile>true</mobile>
+    <slack>false</slack>
+</CustomNotificationType>

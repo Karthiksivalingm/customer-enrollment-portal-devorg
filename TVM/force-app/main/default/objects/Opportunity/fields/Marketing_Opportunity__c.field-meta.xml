@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Opportunity__c</fullName>
+    <formula>Lead_Source_Lookup__r.Marketing_Lead__c ||
+
+(DateValue(CreatedDate) &lt; Date(2024 , 1 , 1) &amp;&amp;
+
+(
+
+ISPICKVAL ( LeadSource , &quot;NADA 2023&quot; ) ||
+
+ISPICKVAL ( LeadSource , &quot;FordDirect - Platform Solution&quot; ) ||
+
+ISPICKVAL ( LeadSource , &quot;FordDirect - 1:1 Customer Messaging&quot; ) ||
+
+ISPICKVAL ( LeadSource , &quot;NADA 2023 - Lead Scan&quot; )
+
+))
+
+
+/*IF(
+AND(
+ RecordType.Name != &quot;Active&quot;,
+ RecordType.Name != &quot;Ford/Lincoln Active&quot;,
+NOT(OR(
+    ISPICKVAL(LeadSource, &quot;Sales Prospecting - Cold Call&quot;),
+    ISPICKVAL(LeadSource, &quot;&quot;),
+    ISPICKVAL(LeadSource, &quot;Sales Prospecting - Email&quot;),
+    ISPICKVAL(LeadSource, &quot;Sales Prospecting - Social&quot;),
+    ISPICKVAL(LeadSource, &quot;Referral - RAD Referral&quot;),
+    ISPICKVAL(LeadSource, &quot;Sales Prospecting - Walk-in&quot;),
+( DateValue(CreatedDate) &lt; Date(2024, 1, 1) &amp;&amp;
+    (
+    ISPICKVAL(LeadSource, &quot;NADA 2023&quot;) ||
+    ISPICKVAL(LeadSource, &quot;FordDirect - Platform Solution&quot;) ||
+    ISPICKVAL(LeadSource, &quot;FordDirect - 1:1 Customer Messaging&quot;)||
+    ISPICKVAL(LeadSource, &quot;NADA 2023 - Lead Scan&quot;)
+    )
+),
+
+    ISPICKVAL(LeadSource, &quot;Sales Prospecting - FordDirect&quot;)
+  ))),
+  true,
+IF(
+AND(
+OR(
+ RecordType.Name = &quot;Active&quot;,
+ RecordType.Name = &quot;Ford/Lincoln Active&quot;
+),
+OR(
+    ISPICKVAL(LeadSource, &quot;Upsell - Marketing Qualified&quot;),
+    ISPICKVAL(LeadSource, &quot;Upsell - Webinar&quot;)
+  )),
+true,
+false
+)
+)*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Marketing Lead Opportunity</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

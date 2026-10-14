@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Go_Live_Month__c</fullName>
+    <label>Go Live Month</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ongoing</fullName>
+                <default>false</default>
+                <label>Ongoing</label>
+            </value>
+            <value>
+                <fullName>01 JAN</fullName>
+                <default>false</default>
+                <label>01 JAN</label>
+            </value>
+            <value>
+                <fullName>02 FEB</fullName>
+                <default>false</default>
+                <label>02 FEB</label>
+            </value>
+            <value>
+                <fullName>03 MAR</fullName>
+                <default>false</default>
+                <label>03 MAR</label>
+            </value>
+            <value>
+                <fullName>04 APR</fullName>
+                <default>false</default>
+                <label>04 APR</label>
+            </value>
+            <value>
+                <fullName>05 MAY</fullName>
+                <default>false</default>
+                <label>05 MAY</label>
+            </value>
+            <value>
+                <fullName>06 JUN</fullName>
+                <default>false</default>
+                <label>06 JUN</label>
+            </value>
+            <value>
+                <fullName>07 JUL</fullName>
+                <default>false</default>
+                <label>07 JUL</label>
+            </value>
+            <value>
+                <fullName>08 AUG</fullName>
+                <default>false</default>
+                <label>08 AUG</label>
+            </value>
+            <value>
+                <fullName>09 SEP</fullName>
+                <default>false</default>
+                <label>09 SEP</label>
+            </value>
+            <value>
+                <fullName>10 OCT</fullName>
+                <default>false</default>
+                <label>10 OCT</label>
+            </value>
+            <value>
+                <fullName>11 NOV</fullName>
+                <default>false</default>
+                <label>11 NOV</label>
+            </value>
+            <value>
+                <fullName>12 DEC</fullName>
+                <default>false</default>
+                <label>12 DEC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

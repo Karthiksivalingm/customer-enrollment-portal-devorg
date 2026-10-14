@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_New_Sale_Opportunity_Month__c</fullName>
+    <label>Latest OEM Closed Opportunity Month</label>
+    <summarizedField>Opportunity.Close_Date_Actual__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.IsWon</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Skip_OEM_Enrollment__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

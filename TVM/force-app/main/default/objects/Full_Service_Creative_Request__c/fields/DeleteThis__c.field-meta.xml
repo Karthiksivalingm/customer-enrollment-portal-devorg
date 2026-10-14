@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeleteThis__c</fullName>
+    <label>Delete This</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dealer Logo</fullName>
+                <default>false</default>
+                <label>Dealer Logo</label>
+            </value>
+            <value>
+                <fullName>OEM Logo</fullName>
+                <default>false</default>
+                <label>OEM Logo</label>
+            </value>
+            <value>
+                <fullName>Dealer Event Logo</fullName>
+                <default>false</default>
+                <label>Dealer Event Logo</label>
+            </value>
+            <value>
+                <fullName>National Event Logo</fullName>
+                <default>false</default>
+                <label>National Event Logo</label>
+            </value>
+            <value>
+                <fullName>CPO Logo</fullName>
+                <default>false</default>
+                <label>CPO Logo</label>
+            </value>
+            <value>
+                <fullName>Other Logo</fullName>
+                <default>false</default>
+                <label>Other Logo</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

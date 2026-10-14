@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Intro_Launch_Agenda__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>After OB sends intro email, confirm in-store launch date, time and audience members</inlineHelpText>
+    <label>dep</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

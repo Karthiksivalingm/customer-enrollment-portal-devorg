@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sync_FD__c</fullName>
+    <formula>Account.Test_Account__c = false &amp;&amp;
+(
+Text( Account.FD_Package__c ) &lt;&gt;&quot;&quot;  ||
+FD_Case_ID__c != &quot;&quot;
+) &amp;&amp;
+(FD_Case_ID__c != &quot;&quot; ||
+(
+(
+Request_Type__c =&quot;Bug&quot; ||
+Text(Escalated_To__c) = &quot;FordDirect&quot;
+) &amp;&amp;
+(
+Text(Case_Request__c )!=&quot;Problem/Issue&quot; &amp;&amp;
+Text(Case_Request__c )!=&quot;Budget App&quot; &amp;&amp;
+Text(Case_Request__c )!=&quot;Hot Opportunities&quot; &amp;&amp;
+Text(Case_Request__c )!=&quot;XML Sitemaps or Robots.txt Issue&quot; &amp;&amp;
+Text(Case_Request__c )!=&quot;Broken Links&quot; &amp;&amp;
+Text(Case_Request__c )!=&quot;Display Issue&quot; &amp;&amp;
+Text(Case_Request__c )!=&quot;Platform Issues&quot; &amp;&amp;
+Text(Case_Request__c )!=&quot;Image/Banner Update&quot;
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sync FD</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

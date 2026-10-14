@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Web_Type_Temp__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Name,
+&quot;Complete Website Getting Started Research&quot;, &quot;Both&quot;,
+&quot;Submit site to Wayback Machine&quot;, &quot;Both&quot;,
+&quot;Confirm OEM Program is Enabled&quot;, &quot;Both&quot;,
+&quot;Add Dealertrack/RouteOne&quot;, &quot;Both&quot;,
+&quot;XTime Integration&quot;, &quot;Both&quot;,
+&quot;Request DNS Zone File from Current Provider&quot;, &quot;Both&quot;,
+&quot;Access to Dealer Managed GA / GA4 ID&quot;, &quot;Both&quot;,
+&quot;Map out Current Website&quot;, &quot;Both&quot;,
+&quot;Select Template &amp; Nav (Menu Style), VDP&quot;, &quot;Both&quot;,
+&quot;Review Default Settings&quot;, &quot;Both&quot;,
+&quot;Add Content - Review OEM Pages and Add to Navigation&quot;, &quot;Both&quot;,
+&quot;Add Content - Create Custom Pages and Add to Navigation&quot;, &quot;Both&quot;,
+&quot;Pre-qual Credentialing&quot;, &quot;Both&quot;,
+&quot;Set Up Pre-Qual&quot;, &quot;Both&quot;,
+&quot;Set Up Assistant.AI&quot;, &quot;Both&quot;,
+&quot;Add Page Titles &amp; Descriptions to all pages (SEO)&quot;, &quot;Both&quot;,
+&quot;Update Header &amp; Footer Navigation&quot;, &quot;Both&quot;,
+&quot;Review Site on Mobile&quot;, &quot;Both&quot;,
+&quot;Update Status to Dealer Review Needed&quot;, &quot;Both&quot;,
+&quot;Complete Website Checklist in Master Onboarding Checklist&quot;, &quot;Both&quot;,
+&quot;Complete WIK items on Corresponding OEM Checklist in Master Onboard&quot;, &quot;Both&quot;,
+&quot;Set Up My Garage Page&quot;, &quot;Both&quot;,
+&quot;Initial Site Review Call with Dealer&quot;, &quot;Both&quot;,
+&quot;Complete Post-Review Changes&quot;, &quot;Both&quot;,
+&quot;Upload DNS Zone File to primary_website_launch Slack Channel&quot;, &quot;Both&quot;,
+&quot;Final Site Review &amp; Dealer Approval to Go Live&quot;, &quot;Both&quot;,
+&quot;Schedule Website Launch w/ Dealer and Team V IT&quot;, &quot;Both&quot;,
+&quot;Create URL Redirects Doc, Upload to Apollo&quot;, &quot;Both&quot;,
+&quot;Confirm Dealer Provided All Third-Party Tracking Scripts &amp; Pixels&quot;, &quot;Both&quot;,
+&quot;Change Staging URL to Primary URL, Change Status to Live on Monday Board&quot;, &quot;Both&quot;,
+&quot;Move Site to Website Onboarded Monday Board&quot;, &quot;Both&quot;,
+&quot;Set Up accessiBe ADA Tool, Add Script to Site&quot;, &quot;Both&quot;,
+&quot;Test Lead Forms - QC Process&quot;, &quot;Both&quot;,
+&quot;Complete Primary Website QC&quot;, &quot;Both&quot;,
+&quot;Website Launch&quot;, &quot;Both&quot;,
+&quot;Create Dealer Folder in Apollo Image Library&quot;, &quot;Primary&quot;,
+&quot;Getting Started Call - Primary Website Section&quot;, &quot;Primary&quot;,
+&quot;Run GA Top Pages Report&quot;, &quot;Primary&quot;,
+&quot;Set Up Home Page&quot;, &quot;Primary&quot;,
+&quot;Add Blog Content and Add Blog to Navigation&quot;, &quot;Primary&quot;,
+&quot;Complete Staff Page&quot;, &quot;Primary&quot;,
+&quot;Set Up Service Scheduler&quot;, &quot;Primary&quot;,
+&quot;Set Up Credit App&quot;, &quot;Primary&quot;,
+&quot;Add Content - Review Platform Pages and Add to Navigation&quot;, &quot;Primary&quot;,
+&quot;Add Third Party Tools / Scripts / Tracking Pixels&quot;, &quot;Primary&quot;,
+&quot;Ensure Integrations are Enabled&quot;, &quot;Primary&quot;,
+&quot;Add Disclaimers to SRP &amp; VDP&quot;, &quot;Primary&quot;,
+&quot;Website Ready for QC&quot;, &quot;Primary&quot;,
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Web Type Temp</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

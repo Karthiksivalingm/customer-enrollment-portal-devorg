@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_to_Assigned</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &quot;New&quot;) &amp;&amp;
+NOT(ISPICKVAL(Status__c, &quot;02 Assigned&quot;) || ISPICKVAL(Status__c, &quot;New&quot;)) &amp;&amp;
+NOT(ISNEW())</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>The next status has to be 02 Assigned.</errorMessage>
+</ValidationRule>

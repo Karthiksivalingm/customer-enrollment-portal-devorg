@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isProspect__c</fullName>
+    <description>Pulls everyone who’s a prospect and excludes people who have a demo scheduled or further in the sales process.</description>
+    <formula>AND(
+/*Account.Open_Demos_Scheduled__c = 0,*/
+Account.Pending_Activation__c = FALSE,
+ISPICKVAL(Account.Client_Type_Team_V__c,&quot;Prospect&quot;),
+DNC__c = FALSE)</formula>
+    <label>isProspect</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

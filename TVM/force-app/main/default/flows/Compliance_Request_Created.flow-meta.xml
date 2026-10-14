@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Just sends to Request owner</description>
+        <name>Request_Assigned</name>
+        <label>Request Assigned</label>
+        <locationX>248</locationX>
+        <locationY>1055</locationY>
+        <actionName>Compliance_Request__c.Compliance_Request_Assigned</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Compliance_Request__c.Compliance_Request_Assigned</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>Email sent to request owner, Creator, Complianceteam@teamvelocitymarketing.com, AM, and RAD</description>
+        <name>Request_Created</name>
+        <label>Request Created</label>
+        <locationX>380</locationX>
+        <locationY>839</locationY>
+        <actionName>Compliance_Request__c.Compliance_Request_Created</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Any_Owner</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Compliance_Request__c.Compliance_Request_Created</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>AI_Agent_Working</name>
+        <label>AI Agent Working?</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Recurring_Creation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_AI_Agent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AI_Agent_Started__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Store_AI_Date_Time</targetReference>
+            </connector>
+            <label>Yes, AI Agent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Any_Owner</name>
+        <label>Any Owner?</label>
+        <locationX>380</locationX>
+        <locationY>947</locationY>
+        <defaultConnectorLabel>No Owner</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Owner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Request_Assigned</targetReference>
+            </connector>
+            <label>Yes, Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Recurring_Creation</name>
+        <label>Recurring Creation</label>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
+        <defaultConnector>
+            <targetReference>Set_Information</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Recurring</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Monthly_Recurring__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Recurring</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Compliance Request Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Compliance Request Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Information</name>
+        <label>Set Information</label>
+        <locationX>380</locationX>
+        <locationY>731</locationY>
+        <connector>
+            <targetReference>Request_Created</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Manager__c</field>
+            <value>
+                <elementReference>$Record.AccountId__r.Account_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Enterprise_Ops_Manager__c</field>
+            <value>
+                <elementReference>$Record.AccountId__r.Enterprise_Op_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RAD__c</field>
+            <value>
+                <elementReference>$Record.AccountId__r.Regional_Account_Director__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WPM__c</field>
+            <value>
+                <elementReference>$Record.AccountId__r.Product_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Store_AI_Date_Time</name>
+        <label>Store AI Date Time</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Recurring_Creation</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AI_Agent_Start_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AI_Agent_Working</targetReference>
+        </connector>
+        <object>Compliance_Request__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

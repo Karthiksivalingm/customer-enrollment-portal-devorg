@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_to_see_if_there_are_any_products__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Check to see if there are any products (VAs/FB/YT/PMAX/etc) not yet live that have budget</description>
+    <label>Check to see if there are any products</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

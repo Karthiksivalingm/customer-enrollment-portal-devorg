@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete__c</fullName>
+    <formula>OR(
+ NOT(ISNULL(End_Date__c)),
+ISPICKVAL(Status__c,&quot;Not Executing&quot;),
+ISPICKVAL(Status__c,&quot;09 Not Executing&quot;),
+ISPICKVAL(Status__c,&quot;Complete&quot;),
+ISPICKVAL(Status__c,&quot;07 Complete&quot;),
+ISPICKVAL(Status__c,&quot;Live&quot;),
+ISPICKVAL(Status__c,&quot;Deployed&quot;),
+ISPICKVAL(Status__c,&quot;Approved&quot;),
+ISPICKVAL(Status__c,&quot;Using Existing Library Asset&quot;),
+ISPICKVAL(Status__c,&quot;Complete Loaded on Site&quot;),
+TEXT(Status__c) = &quot;OB Approved&quot;,
+TEXT(Status__c) = &quot;Mail Ordered&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Complete</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retention_Go_Live_DateF__c</fullName>
+    <formula>/*if( IsNull(Account__r.Retention_Go_Live_Date_Manual_Entry__c ),  Account__r.Earliest_Budget_Month__c , Account__r.Retention_Go_Live_Date_Manual_Entry__c )*/
+Retention_Go_Live_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Retention Go Live Date Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

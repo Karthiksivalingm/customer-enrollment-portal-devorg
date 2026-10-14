@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selling_Price_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(
+(Count_OTT_Premium_Custom__c&gt;0 || Count_Streaming_OTT__c&gt;0) &amp;&amp; (Total_Selling_Price__c=495 || Total_Selling_Price__c=990), &quot;Sold At Retail&quot;,
+if(
+Round(Total_Retail_Price__c, 0) &lt; Round(Total_Selling_Price__c, 0), &quot;Sold Above Retail&quot;,
+If(Round(Total_Retail_Price__c, 0) &gt; Round(Total_Selling_Price__c, 0), &quot;Sold Below Retail&quot;,
+&quot;Sold At Retail&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Selling Price Bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

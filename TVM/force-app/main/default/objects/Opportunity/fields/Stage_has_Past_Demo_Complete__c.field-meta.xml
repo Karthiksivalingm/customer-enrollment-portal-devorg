@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_has_Past_Demo_Complete__c</fullName>
+    <formula>OR(
+IsClosed,
+IF(TEXT(StageName) = &quot;Committed&quot;, TRUE, FALSE),
+IF(TEXT(StageName) = &quot;Contract Sent&quot;, TRUE, FALSE),
+IF(TEXT(StageName) = &quot;Next Steps&quot;, TRUE, FALSE),
+IF(TEXT(StageName) = &quot;Pending&quot;, TRUE, FALSE),
+IF(TEXT(StageName) = &quot;Demo Completed&quot;, TRUE, FALSE)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stage has Past Demo Complete</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

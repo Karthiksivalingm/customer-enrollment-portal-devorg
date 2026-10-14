@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Stage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apollo Production Approved</fullName>
+                <default>false</default>
+                <label>Apollo Production Approved</label>
+            </value>
+            <value>
+                <fullName>Asset Live / Deployed</fullName>
+                <default>false</default>
+                <label>Asset Live / Deployed</label>
+            </value>
+            <value>
+                <fullName>Changes Complete</fullName>
+                <default>false</default>
+                <label>Changes Complete</label>
+            </value>
+            <value>
+                <fullName>Changes Needed</fullName>
+                <default>false</default>
+                <label>Changes Needed</label>
+            </value>
+            <value>
+                <fullName>Client Approval</fullName>
+                <default>false</default>
+                <label>Client Approval</label>
+            </value>
+            <value>
+                <fullName>Client Approved - Ready to Send to Compliance</fullName>
+                <default>false</default>
+                <label>Client Approved - Ready to Send to Compliance</label>
+            </value>
+            <value>
+                <fullName>Client Changes</fullName>
+                <default>false</default>
+                <label>Client Changes</label>
+            </value>
+            <value>
+                <fullName>Client Changes Complete</fullName>
+                <default>false</default>
+                <label>Client Changes Complete</label>
+            </value>
+            <value>
+                <fullName>Compliance Approved - Ready For Proofer</fullName>
+                <default>false</default>
+                <label>Compliance Approved - Ready For Proofer</label>
+            </value>
+            <value>
+                <fullName>Compliance Approved - Ready to Upload Script</fullName>
+                <default>false</default>
+                <label>Compliance Approved - Ready to Upload Script</label>
+            </value>
+            <value>
+                <fullName>Compliance Changes</fullName>
+                <default>false</default>
+                <label>Compliance Changes</label>
+            </value>
+            <value>
+                <fullName>Compliance Changes Complete</fullName>
+                <default>false</default>
+                <label>Compliance Changes Complete</label>
+            </value>
+            <value>
+                <fullName>Creative Complete</fullName>
+                <default>false</default>
+                <label>Creative Complete</label>
+            </value>
+            <value>
+                <fullName>Creative Complete - Ready for Proofer</fullName>
+                <default>false</default>
+                <label>Creative Complete - Ready for Proofer</label>
+            </value>
+            <value>
+                <fullName>Deployed</fullName>
+                <default>false</default>
+                <label>Deployed</label>
+            </value>
+            <value>
+                <fullName>Deployment on Hold</fullName>
+                <default>false</default>
+                <label>Deployment on Hold</label>
+            </value>
+            <value>
+                <fullName>Design Prepared - Waiting for Incentives</fullName>
+                <default>false</default>
+                <label>Design Prepared - Waiting for Incentives</label>
+            </value>
+            <value>
+                <fullName>Final Media Parameters</fullName>
+                <default>false</default>
+                <label>Final Media Parameters</label>
+            </value>
+            <value>
+                <fullName>Final Proofing - Ready for Proofer</fullName>
+                <default>false</default>
+                <label>Final Proofing - Ready for Proofer</label>
+            </value>
+            <value>
+                <fullName>Incentives Released</fullName>
+                <default>false</default>
+                <label>Incentives Released</label>
+            </value>
+            <value>
+                <fullName>Information Needed</fullName>
+                <default>false</default>
+                <label>Information Needed</label>
+            </value>
+            <value>
+                <fullName>Information Provided</fullName>
+                <default>false</default>
+                <label>Information Provided</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>In Review</fullName>
+                <default>false</default>
+                <label>In Review</label>
+            </value>
+            <value>
+                <fullName>Media Trafficking Complete</fullName>
+                <default>false</default>
+                <label>Media Trafficking Complete</label>
+            </value>
+            <value>
+                <fullName>PC Proofer Changes</fullName>
+                <default>false</default>
+                <label>PC Proofer Changes</label>
+            </value>
+            <value>
+                <fullName>PC Proofer Changes Complete</fullName>
+                <default>false</default>
+                <label>PC Proofer Changes Complete</label>
+            </value>
+            <value>
+                <fullName>PC Proofing Complete - Ready to Send to Client</fullName>
+                <default>false</default>
+                <label>PC Proofing Complete - Ready to Send to Client</label>
+            </value>
+            <value>
+                <fullName>Pre-Incentive Approved - Waiting for Incentives</fullName>
+                <default>false</default>
+                <label>Pre-Incentive Approved - Waiting for Incentives</label>
+            </value>
+            <value>
+                <fullName>Print Ad Sent</fullName>
+                <default>false</default>
+                <label>Print Ad Sent</label>
+            </value>
+            <value>
+                <fullName>Production Hold</fullName>
+                <default>false</default>
+                <label>Production Hold</label>
+            </value>
+            <value>
+                <fullName>Proofing Approved</fullName>
+                <default>false</default>
+                <label>Proofing Approved</label>
+            </value>
+            <value>
+                <fullName>Proofing Complete</fullName>
+                <default>false</default>
+                <label>Proofing Complete</label>
+            </value>
+            <value>
+                <fullName>QC Approved - Ready to Start Final Proofing</fullName>
+                <default>false</default>
+                <label>QC Approved - Ready to Start Final Proofing</label>
+            </value>
+            <value>
+                <fullName>Ready for Media Trafficking</fullName>
+                <default>false</default>
+                <label>Ready for Media Trafficking</label>
+            </value>
+            <value>
+                <fullName>Ready for Print</fullName>
+                <default>false</default>
+                <label>Ready for Print</label>
+            </value>
+            <value>
+                <fullName>Ready for QC</fullName>
+                <default>false</default>
+                <label>Ready for QC</label>
+            </value>
+            <value>
+                <fullName>Ready to Start</fullName>
+                <default>false</default>
+                <label>Ready to Start</label>
+            </value>
+            <value>
+                <fullName>Ready to Traffic</fullName>
+                <default>false</default>
+                <label>Ready to Traffic</label>
+            </value>
+            <value>
+                <fullName>Request Platform Link</fullName>
+                <default>false</default>
+                <label>Request Platform Link</label>
+            </value>
+            <value>
+                <fullName>Schedule Deployments</fullName>
+                <default>false</default>
+                <label>Schedule Deployments</label>
+            </value>
+            <value>
+                <fullName>Script Change Needed</fullName>
+                <default>false</default>
+                <label>Script Change Needed</label>
+            </value>
+            <value>
+                <fullName>Send for Translation</fullName>
+                <default>false</default>
+                <label>Send for Translation</label>
+            </value>
+            <value>
+                <fullName>Send to Compliance</fullName>
+                <default>false</default>
+                <label>Send to Compliance</label>
+            </value>
+            <value>
+                <fullName>Sent to Apollo Production for Approval</fullName>
+                <default>false</default>
+                <label>Sent to Apollo Production for Approval</label>
+            </value>
+            <value>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+                <label>Submitted</label>
+            </value>
+            <value>
+                <fullName>Uploaded to Apollo</fullName>
+                <default>false</default>
+                <label>Uploaded to Apollo</label>
+            </value>
+            <value>
+                <fullName>Upload File</fullName>
+                <default>false</default>
+                <label>Upload File</label>
+            </value>
+            <value>
+                <fullName>Upload Final Files</fullName>
+                <default>false</default>
+                <label>Upload Final Files</label>
+            </value>
+            <value>
+                <fullName>Upload - Submit for VO</fullName>
+                <default>false</default>
+                <label>Upload - Submit for VO</label>
+            </value>
+            <value>
+                <fullName>Video Change Needed</fullName>
+                <default>false</default>
+                <label>Video Change Needed</label>
+            </value>
+            <value>
+                <fullName>VO Change Needed</fullName>
+                <default>false</default>
+                <label>VO Change Needed</label>
+            </value>
+            <value>
+                <fullName>VO Obtained</fullName>
+                <default>false</default>
+                <label>VO Obtained</label>
+            </value>
+            <value>
+                <fullName>Waiting Client Response</fullName>
+                <default>false</default>
+                <label>Waiting Client Response</label>
+            </value>
+            <value>
+                <fullName>Waiting Compliance Response</fullName>
+                <default>false</default>
+                <label>Waiting Compliance Response</label>
+            </value>
+            <value>
+                <fullName>Waiting for VO</fullName>
+                <default>false</default>
+                <label>Waiting for VO</label>
+            </value>
+            <value>
+                <fullName>Not Approved to Execute</fullName>
+                <default>false</default>
+                <label>Not Approved to Execute</label>
+            </value>
+            <value>
+                <fullName>Building</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Building</label>
+            </value>
+            <value>
+                <fullName>QC Approved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QC Approved</label>
+            </value>
+            <value>
+                <fullName>Request Being Reviewed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Request Being Reviewed</label>
+            </value>
+            <value>
+                <fullName>Submit for VO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Submit for VO</label>
+            </value>
+            <value>
+                <fullName>Upload / Done</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Upload / Done</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <controllingFieldValue>Preq</controllingFieldValue>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <valueName>Information Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <controllingFieldValue>Preq</controllingFieldValue>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <valueName>Information Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <controllingFieldValue>Preq</controllingFieldValue>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <valueName>Ready to Start</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <valueName>Send for Translation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <controllingFieldValue>Upload Compliance Approved Script</controllingFieldValue>
+            <valueName>Upload - Submit for VO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <valueName>VO Change Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <valueName>VO Obtained</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <valueName>Waiting for VO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order VO</controllingFieldValue>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <controllingFieldValue>Preq</controllingFieldValue>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <controllingFieldValue>Media Trafficking</controllingFieldValue>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <controllingFieldValue>Media Prep</controllingFieldValue>
+            <controllingFieldValue>Script PC Proofing</controllingFieldValue>
+            <controllingFieldValue>Script Client Approval</controllingFieldValue>
+            <controllingFieldValue>Script Compliance Approval</controllingFieldValue>
+            <controllingFieldValue>Upload Compliance Approved Script</controllingFieldValue>
+            <valueName>Not Approved to Execute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <valueName>Creative Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <controllingFieldValue>Script PC Proofing</controllingFieldValue>
+            <valueName>In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <valueName>QC Approved - Ready to Start Final Proofing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <valueName>Ready for QC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AV Production</controllingFieldValue>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <valueName>Video Change Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Preq</controllingFieldValue>
+            <valueName>Production Hold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Preq</controllingFieldValue>
+            <valueName>Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <valueName>Client Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <valueName>Proofing Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <valueName>Script Change Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <valueName>Send to Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Final Proofing</controllingFieldValue>
+            <valueName>Upload File</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media Trafficking</controllingFieldValue>
+            <valueName>Final Media Parameters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media Trafficking</controllingFieldValue>
+            <valueName>Media Trafficking Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media Trafficking</controllingFieldValue>
+            <valueName>Ready for Media Trafficking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media Trafficking</controllingFieldValue>
+            <controllingFieldValue>Media Prep</controllingFieldValue>
+            <valueName>Upload Final Files</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <controllingFieldValue>Script PC Proofing</controllingFieldValue>
+            <valueName>Creative Complete - Ready for Proofer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <valueName>Design Prepared - Waiting for Incentives</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Copywriter</controllingFieldValue>
+            <valueName>Incentives Released</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media Prep</controllingFieldValue>
+            <valueName>Ready to Traffic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media Prep</controllingFieldValue>
+            <valueName>Request Platform Link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script PC Proofing</controllingFieldValue>
+            <valueName>Changes Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script PC Proofing</controllingFieldValue>
+            <valueName>Changes Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script PC Proofing</controllingFieldValue>
+            <controllingFieldValue>Script Client Approval</controllingFieldValue>
+            <valueName>PC Proofing Complete - Ready to Send to Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Client Approval</controllingFieldValue>
+            <controllingFieldValue>Script Compliance Approval</controllingFieldValue>
+            <valueName>Client Approved - Ready to Send to Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Client Approval</controllingFieldValue>
+            <valueName>Client Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Client Approval</controllingFieldValue>
+            <valueName>Client Changes Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Client Approval</controllingFieldValue>
+            <valueName>Waiting Client Response</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Compliance Approval</controllingFieldValue>
+            <controllingFieldValue>Upload Compliance Approved Script</controllingFieldValue>
+            <valueName>Compliance Approved - Ready to Upload Script</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Compliance Approval</controllingFieldValue>
+            <valueName>Compliance Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Compliance Approval</controllingFieldValue>
+            <valueName>Compliance Changes Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Script Compliance Approval</controllingFieldValue>
+            <valueName>Waiting Compliance Response</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

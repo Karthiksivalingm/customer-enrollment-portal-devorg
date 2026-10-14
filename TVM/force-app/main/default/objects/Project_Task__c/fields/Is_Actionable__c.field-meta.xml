@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Actionable__c</fullName>
+    <formula>Project_Task_Group__r.New_Client_Project__r.Completion_Status__c = &quot;Open&quot; &amp;&amp; Status_Lookup__r.Closing_Status__c =false &amp;&amp; Dependence_Lock__c = false &amp;&amp;  TEXT(Status__c) != &quot;Not Executing&quot; &amp;&amp;  (Required_Fields_Lock__c  = false || Required_Fields_Needed__c = &quot;Fill in the Instructions field&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Open Task</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

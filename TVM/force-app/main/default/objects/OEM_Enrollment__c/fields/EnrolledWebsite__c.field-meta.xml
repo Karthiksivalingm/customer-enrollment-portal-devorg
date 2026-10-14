@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EnrolledWebsite__c</fullName>
+    <label>EnrolledWebsite</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>SEO</fullName>
+                <default>false</default>
+                <label>SEO</label>
+            </value>
+            <value>
+                <fullName>VDV</fullName>
+                <default>false</default>
+                <label>VDV</label>
+            </value>
+            <value>
+                <fullName>Transact</fullName>
+                <default>false</default>
+                <label>Transact</label>
+            </value>
+            <value>
+                <fullName>Credit Prequal</fullName>
+                <default>false</default>
+                <label>Credit Prequal</label>
+            </value>
+            <value>
+                <fullName>Custom Creative</fullName>
+                <default>false</default>
+                <label>Custom Creative</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

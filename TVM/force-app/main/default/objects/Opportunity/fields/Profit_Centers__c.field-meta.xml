@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profit_Centers__c</fullName>
+    <description>FND</description>
+    <label>Profit Centers</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Google New</fullName>
+                <default>false</default>
+                <label>Google New</label>
+            </value>
+            <value>
+                <fullName>Google Used</fullName>
+                <default>false</default>
+                <label>Google Used</label>
+            </value>
+            <value>
+                <fullName>Google Service</fullName>
+                <default>false</default>
+                <label>Google Service</label>
+            </value>
+            <value>
+                <fullName>YouTube</fullName>
+                <default>false</default>
+                <label>YouTube</label>
+            </value>
+            <value>
+                <fullName>Bing New</fullName>
+                <default>false</default>
+                <label>Bing New</label>
+            </value>
+            <value>
+                <fullName>Bing Used</fullName>
+                <default>false</default>
+                <label>Bing Used</label>
+            </value>
+            <value>
+                <fullName>Bing Service</fullName>
+                <default>false</default>
+                <label>Bing Service</label>
+            </value>
+            <value>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <label>Facebook</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

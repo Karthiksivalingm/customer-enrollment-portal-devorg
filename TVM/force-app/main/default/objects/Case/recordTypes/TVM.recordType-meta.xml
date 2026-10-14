@@ -1,0 +1,2481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM</fullName>
+    <active>false</active>
+    <businessProcess>TVM</businessProcess>
+    <compactLayoutAssignment>TVM_Main_Layout</compactLayoutAssignment>
+    <label>TVM</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bounceback_Reason__c</picklist>
+        <values>
+            <fullName>Ads%3A Missing Campaign Setting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apollo%3A Missing Campaign Setting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Action Taken</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Category__c</picklist>
+        <values>
+            <fullName>Advid Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data_Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital_Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Request__c</picklist>
+        <values>
+            <fullName>3rd Party Integration Modification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ad Copy Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ad Copy Updates - Not Triggering or Wrong Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add 3rd Party Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add Content or Page Text</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add Email Report Recipients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Branding Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broken Links</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coop Document Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creative Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom List Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DMS Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DMS Change Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Feed Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Needs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Reporting Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Display Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Custom List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enable Site Indexing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equity Numbers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Cover Photo Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Profile Photo Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lagging Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Landing Page Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Location Targeting Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Message Extentions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miscellaneous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Reporting Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Data Feed Ford Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Heavy Up Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PDF Report Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacing Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Page Creation %28Basic%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem%2FIssue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Program Requirement Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recommendations Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting Dashboard Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requests for OEM Data Lists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Tools</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Results</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEO Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales - Ad Copy update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales - Enhance Social Ad Creative- TIkTok Pinterest Snapchat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales - Facebook Ad Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales - Facebook Post Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scorecard Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Facebook Post Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Appts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Set up of New Email Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategy Definition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tagging Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Name%2C Address%2C Phone%2C Hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update SEO Meta Values</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Offer Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XML Sitemaps or Robots%2Etxt Issue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Subcategory__c</picklist>
+        <values>
+            <fullName>Apollo Login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DMS Feed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Feed Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Data Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTT Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTT Dynamic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic Social Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacing Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid Social Ad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recommendations Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reputation Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tagging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Updates</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Type_Override__c</picklist>
+        <values>
+            <fullName>Bug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Requested_Campaigns__c</picklist>
+        <values>
+            <fullName>AIA - All New Inventory - No Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AIA - All New Inventory - Selling Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conquest Make Model Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Name Supplemental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Why Buy Display Behavioral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Why Buy Display Remarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealership Why Buy Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electric Make Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electric Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Esp Dealership Why Buy Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Dealer Custom Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Model Video Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai ioniq 5 video 15 s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai ioniq 5 video 30 s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Specific Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New - AIA - Inventory - Remarketing - No Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New - AIA - Inventory - Remarketing - Selling Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Brand Exact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Collision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Conquest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Custom Creative Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Custom Video Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Online Parts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Rust Proofing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish New Car Campaigns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Ioniq 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Make Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Service - Body Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Service - Collision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Service - Conquest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Service - Detailing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Service - Make Specific</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Service - Non Branded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Used Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Used Year Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplemental - Custom Video Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplemental - Low Credit%2FNo Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used - AIA - Inventory - No Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used - AIA - Inventory - Remarketing - No Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Brand Conquest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Car Acquisition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Custom Video Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Make Specific Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Specific Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Specific Year Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle ads - new - dealer-owned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle ads - used - dealer-owned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Core_Campaigns__c</picklist>
+        <values>
+            <fullName>Certified Make</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certified Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certified Year Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealership Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Display - Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dynamic - Display - Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Geo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Model Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Near Me</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Model Geo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Model Lease</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Model Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New - AIA - Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New - AIA - Inventory - Remarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New - Vehicle Ads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Conversion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Dealer Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Make</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used - AIA - Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used - AIA - Inventory - Remarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used - Vehicle Ads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Dealership Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Make</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Year Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Ads - Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Ads - Used - Dealer-owned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video - Make</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video - Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video - Used - Segment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dealer_is_Satisfied_with_the_partnership__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dealership_Name_Change__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Decision_Maker_attended_Performance_call__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Decline__c</picklist>
+        <values>
+            <fullName>Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer budget is too low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doesn%27t align with client strategy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Notes in internal comments%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Digital_Product__c</picklist>
+        <values>
+            <fullName>Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Escalated_To__c</picklist>
+        <values>
+            <fullName>FordDirect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Velocity</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>External_Status__c</picklist>
+        <values>
+            <fullName>Default</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FD_Brand__c</picklist>
+        <values>
+            <fullName>Ford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FD_Case_Type__c</picklist>
+        <values>
+            <fullName>FD Escalated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FD_Status_PL__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FordDirect_Package_Level__c</picklist>
+        <values>
+            <fullName>Teamvelocity 1%3A1 Customer Messaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teamvelocity Platform Solution</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Foundation_Request_Type__c</picklist>
+        <values>
+            <fullName>14 Launch Day QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 Min%2E Consult</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 Group Pitch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 Min%2E Recorded Recap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 Launch Day QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT Monthly Deep Dive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT QA Notes%2FAdjustments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT Recommendation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Cancellation - Account Cancelled%3A Run Final Payments %22Day after Last Day of Service%22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Cancellation - Account Cancelled%3A Set Automated Cancellation Rules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounting Invoice Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ad Account Name Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adjust Meta Budget Automated Rules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ads Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alert %26 Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bid Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boost Admin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budget Accuracy - Pacing Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budget Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Intelligence Kickoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CID List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign Build - Client Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign Build - Get Me More</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign Build - Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Video%2FAd Copy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CoOp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboard Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Deep Dive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Cancellation - Remove Looker Credentials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealership Deep Dive %28%24195%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elantra RPM Sprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expected Billing File</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Campaigns Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Not Yet Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure To Create GTM API ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Create GA4 Property ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Budget Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Campaign Build - Client Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Campaign Build - Get Me More</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Campaign Build - Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA4 Build Is Not Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM Email Not Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM Not On Site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geo Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google%2FBing Allocation Adjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai CoOp - Digital Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Keyword%2FAudience Audit%2FAdjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Launch Day QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Link Google Ads Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Login%2FAccess Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Enrollment Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Executive Roll Up Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Offers Update %28Ad Feed%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Performance Summary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Search Term Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCM Intelligence Scorecard Kickoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCM Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCM Member Status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Platform %28Social%2FVA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Regional Offers Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer Language Removal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer-Based Video Creative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Long SLA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over%2FUnder Spend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMax Ready to Launch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacing Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pause Campaign %28same day SLA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pause Campaigns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Inquiry%2FAnalysis Keyword</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pod Leader - Account Launch QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre%2FPost Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>President%27s Day Sales Event Material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Program Insights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QBR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPM Sprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reset Facebook Budgets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rollbacks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Coupons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Share Active Retailer File</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Share Hyundai and Genesis Monthly Dealer List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shift Billing File</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sitelink Extension build%2Fchange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TVM Tagging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Dealer Differentiators</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Enrollment Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Landing Page%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Ads Campaigns Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video Ad Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Data Deep Dive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WER Alert Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WER Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Not Verified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly Enrollment Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter Sales Event Material</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Future_Start_Year__c</picklist>
+        <values>
+            <fullName>2023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2024</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2026</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2027</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2028</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2029</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2030</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2031</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2032</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2033</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Get_Me_More_Campaigns__c</picklist>
+        <values>
+            <fullName>Hyundai In-Market Reach %26 Awareness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Model Specific Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Model Specific Upper Funnel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Model Upper Funnel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New PMax Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Brand Service Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Brand %2F Off Brand Used Make</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Brand %2F Off Brand Used Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Brand %2F Off Brand Used Year Make Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Priority Model Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Supplemental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish Used Car</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Make Model Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Make Purchase Intent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Car Acquisition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Fuel-Efficient Segment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used PMax Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video - Model - Supplemental</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Grant_DealerAnalytics_Access__c</picklist>
+        <values>
+            <fullName>Dealer Notified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Granted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Health_Status__c</picklist>
+        <values>
+            <fullName>Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_the_Dealer_meeting_sales_objectives__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_this_client_at_risk_for_cancellation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Messaging__c</picklist>
+        <values>
+            <fullName>Allow for URL link field for video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allow for image uploads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allow for text ad callouts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_Build_in_Apollo_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_Stakeholder__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OEM__c</picklist>
+        <values>
+            <fullName>AUDI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BENTLEY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BMW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HONDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAND ROVER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MASERATI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAZDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MITSUBISHI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PORSCHE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STELLANTIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUBARU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOYOTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VOLKSWAGEN</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Platform__c</picklist>
+        <values>
+            <fullName>Google</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meta</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Highest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lowest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>New Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New PMax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Vehicle Ads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used PMax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Vehicle Ads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Products__c</picklist>
+        <values>
+            <fullName>Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Profit_Center__c</picklist>
+        <values>
+            <fullName>New Profit Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Profit Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Profit Center</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RPM_Bounceback_Reason__c</picklist>
+        <values>
+            <fullName>Missing Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unclear Ask</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Routing_Skill__c</picklist>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SD_Digital_Products__c</picklist>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SnapChat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TikTok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SLA_Override__c</picklist>
+        <values>
+            <fullName>Level 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Start_Month__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_CS__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changes Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_Digital__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changes Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Development</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_Filtered__c</picklist>
+        <values>
+            <fullName>Approved For Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changes Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Development</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_General__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Development</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_Production__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changes Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Feedback Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Development</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Queue__c</picklist>
+        <values>
+            <fullName>Analytics%2FGA4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Alerts%2FErrors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heavy Up Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Asset Build</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Pacing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sonic Automotive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subaru_Model_Type__c</picklist>
+        <values>
+            <fullName>Ascent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BRZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crosstrek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evoltis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impreza</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solterra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRX</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TVM_Escalated__c</picklist>
+        <values>
+            <fullName>Escalation Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalation Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalation Requested</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Targeting__c</picklist>
+        <values>
+            <fullName>Exclude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Include</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Topics_Covered__c</picklist>
+        <values>
+            <fullName>Black Friday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboard Relaunch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search Demand Dashboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter Sales Event</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Spam__c</picklist>
+        <values>
+            <fullName>Not Spam</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Spam Email</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Web_To_Case_Type__c</picklist>
+        <values>
+            <fullName>Apollo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Login Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Will_Dealer_s_Managment_be_Changing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3rd_Party_Integration_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3rd_Party_Vendor_Category__c</picklist>
+        <values>
+            <fullName>AI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Retailing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%26I Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Finance Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Images</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reserve Your Vehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retention%2FEquity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sell Your Car</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Scheduler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Advertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test Drive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Text</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Your Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video%2FPhoto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Window Sticker</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>third_Party_vendor_consistent_involvemen__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

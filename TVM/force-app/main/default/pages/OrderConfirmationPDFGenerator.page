@@ -1,0 +1,111 @@
+<apex:page standardcontroller="Opportunity" renderAs="pdf">
+ <body>
+<table width="700" border="0" align="center">
+  <tbody>
+    <tr style="padding: 10px;">
+      <td width="200"><img src="https://teamvelocity.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0685f00000FmOoh&operationContext=DELIVERY&contentId=05T5f00000wQ8T1&page=0&d=/a/5f000000skHd/DgzVxqY2yIk74EM9RPP454sBaJzRKX4FbxuIYdRxcgU&oid=00D5f000005XvQ4&dpt=null&viewId=" width="200"/></td>
+      <td width="200"> </td>
+      <td width="300" align="right" style="color: #555555; font-family: 'Trebuchet MS', 'sans-serif'; text-transform: capitalize; text-align: right;">ORDER CONFIRMATION</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="background-color: #082642; color: #FFFFFF; font-family: 'Trebuchet MS', 'sans-serif'; text-transform: capitalize; padding: 5px 10px;">ORDER DETAILS</td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">Dealership Name</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Account.Name}"/> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">Street Address</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Account.BillingStreet}"/> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">City</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Account.BillingCity}"/> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">State / ZIP</td>
+      <td style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Account.BillingState}"/> </td>
+      <td style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Account.BillingPostalCode}"/> </td>
+    </tr>
+    <tr>
+      <td colspan="3"> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">Contact Name</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Dealer_DocuSign_Contact__r.Name}"/> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">Title</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Dealer_DocuSign_Contact__r.Contact_Title__c}"/> </td>
+    </tr>
+    <tr>
+      <td colspan="3"> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">Target Launch Month</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Launch_Month__c}"/> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">Opportunity Owner</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Owner.FirstName} {!Opportunity.Owner.LastName}"/></td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">RAD</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Account_RAD__c}"/> </td>
+    </tr>
+    <tr>
+      <td style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; padding:5px;">OEM</td>
+      <td colspan="2" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px;"><apex:outputText value="{!Opportunity.Analytics_Franchise__c}"/> </td>
+    </tr>
+    <tr>
+      <td colspan="3"> </td>
+    </tr>
+    <tr>
+      <td colspan="3" style="background-color: #082642; color: #FFFFFF; font-family: 'Trebuchet MS', 'sans-serif'; text-transform: capitalize; padding: 5px 10px;">PRODUCTS</td>
+    </tr>  
+    <tr>
+      <td valign= "top" colspan="3" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:14px;">
+          <table width="700" border="0" align="center">
+          <tr>
+              <td valign= "top" style="font-family: 'Open Sans', 'sans-serif'; font-size:14px;">
+                  <apex:outputText escape="false" value="{!Opportunity.Order_Confirmation_Products__c}"/>
+               </td>
+              <td valign= "top" style="font-family: 'Open Sans', 'sans-serif'; font-size:14px; text-align:right;">
+                  <apex:outputText escape="false" value="{!Opportunity.Order_Confirmation_Prices__c}"/>
+               </td>
+          </tr>
+          </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:12px; font-weight: bold; text-align: right; ">Order Date</td>
+<td style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:12px; text-align: right; ">
+  <apex:outputText value="{0,date,MM/dd/yyyy}">
+    <apex:param value="{!Opportunity.Close_Date_Actual__c}" />
+  </apex:outputText>
+</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="color: #555555; font-family: 'Open Sans', 'sans-serif'; font-size:14px; font-weight: bold; text-align: right;">Total</td>
+      <td style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:14px; text-align:right;"><apex:outputText value="${0, number, ###,###,##0.00}"> <apex:param value="{!Opportunity.Contracted_Amount__c}" /> </apex:outputText> </td>
+    </tr>
+      <apex:outputPanel rendered="{!NOT(ISBLANK(Opportunity.Addendum__c))}">
+
+     <tr>
+    <td colspan="3" width= "700" style="background-color: #082642; color: #FFFFFF; font-family: 'Trebuchet MS', 'sans-serif'; text-transform: capitalize; padding: 5px 10px;">ADDENDUM</td>
+   </tr>
+   <tr>
+    <td valign= "top" colspan="3" style="border: 1px solid #cdcccb; font-family: 'Open Sans', 'sans-serif'; font-size:14px;">
+      <apex:outputText escape="false" value="{!Opportunity.Addendum__c}"/>
+    </td>
+  </tr>
+</apex:outputPanel>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+ </table>
+ </body>
+</apex:page>

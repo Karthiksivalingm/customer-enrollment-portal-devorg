@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>East_West__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(BillingState), NULL,
+  CASE(BillingState,
+&quot;AL&quot;, &quot;East&quot;,
+&quot;CT&quot;, &quot;East&quot;,
+&quot;DE&quot;, &quot;East&quot;,
+&quot;DC&quot;, &quot;East&quot;,
+&quot;FL&quot;, &quot;East&quot;,
+&quot;GA&quot;, &quot;East&quot;,
+&quot;IL&quot;, &quot;East&quot;,
+&quot;IN&quot;, &quot;East&quot;,
+&quot;KY&quot;, &quot;East&quot;,
+&quot;ME&quot;, &quot;East&quot;,
+&quot;MD&quot;, &quot;East&quot;,
+&quot;MA&quot;, &quot;East&quot;,
+&quot;MI&quot;, &quot;East&quot;,
+&quot;MS&quot;, &quot;West&quot;,
+&quot;NH&quot;, &quot;East&quot;,
+&quot;NJ&quot;, &quot;East&quot;,
+&quot;NY&quot;, &quot;East&quot;,
+&quot;NC&quot;, &quot;East&quot;,
+&quot;OH&quot;, &quot;East&quot;,
+&quot;PA&quot;, &quot;East&quot;,
+&quot;RI&quot;, &quot;East&quot;,
+&quot;SC&quot;, &quot;East&quot;,
+&quot;TN&quot;, &quot;East&quot;,
+&quot;VT&quot;, &quot;East&quot;,
+&quot;VA&quot;, &quot;East&quot;,
+&quot;WV&quot;, &quot;East&quot;,
+&quot;WI&quot;, &quot;West&quot;,
+&quot;AK&quot;, &quot;West&quot;,
+&quot;AZ&quot;, &quot;West&quot;,
+&quot;AR&quot;, &quot;West&quot;,
+&quot;AS&quot;, &quot;West&quot;,
+&quot;CA&quot;, &quot;West&quot;,
+&quot;CO&quot;, &quot;West&quot;,
+&quot;HI&quot;, &quot;West&quot;,
+&quot;ID&quot;, &quot;West&quot;,
+&quot;IA&quot;, &quot;West&quot;,
+&quot;KS&quot;, &quot;West&quot;,
+&quot;LA&quot;, &quot;West&quot;,
+&quot;MN&quot;, &quot;West&quot;,
+&quot;MO&quot;, &quot;West&quot;,
+&quot;MT&quot;, &quot;West&quot;,
+&quot;NE&quot;, &quot;West&quot;,
+&quot;NV&quot;, &quot;West&quot;,
+&quot;NM&quot;, &quot;West&quot;,
+&quot;ND&quot;, &quot;West&quot;,
+&quot;OK&quot;, &quot;West&quot;,
+&quot;OR&quot;, &quot;West&quot;,
+&quot;SD&quot;, &quot;West&quot;,
+&quot;TX&quot;, &quot;West&quot;,
+&quot;UT&quot;, &quot;West&quot;,
+&quot;WA&quot;, &quot;West&quot;,
+&quot;WY&quot;, &quot;West&quot;,
+&quot;Other&quot;
+  )
+)</formula>
+    <label>East / West</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

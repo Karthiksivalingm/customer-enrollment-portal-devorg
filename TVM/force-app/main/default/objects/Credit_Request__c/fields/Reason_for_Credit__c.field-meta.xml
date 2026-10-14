@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Credit__c</fullName>
+    <label>Reason for Credit</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Human Error</fullName>
+                <default>false</default>
+                <label>Human Error</label>
+            </value>
+            <value>
+                <fullName>Billing Adjustment</fullName>
+                <default>false</default>
+                <label>Billing Adjustment</label>
+            </value>
+            <value>
+                <fullName>Never Ran</fullName>
+                <default>false</default>
+                <label>Never Ran</label>
+            </value>
+            <value>
+                <fullName>3:1 Guarantee</fullName>
+                <default>false</default>
+                <label>3:1 Guarantee</label>
+            </value>
+            <value>
+                <fullName>3:1 Guarantee	(No Fault)</fullName>
+                <default>false</default>
+                <label>3:1 Guarantee	(No Fault)</label>
+            </value>
+            <value>
+                <fullName>Sales Team Promotion</fullName>
+                <default>false</default>
+                <label>Sales Team Promotion</label>
+            </value>
+            <value>
+                <fullName>Save a Deal Credit</fullName>
+                <default>false</default>
+                <label>Save a Deal Credit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

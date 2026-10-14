@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TP_Links__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Link to TP: &quot;&amp;  QB_ID__c &amp; &quot; | Link to Staging: &quot;&amp; HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/br3gp5dfd/tablereport?a=q&amp;qid=11&amp;nv=1&amp;v0=&quot;&amp; SUBSTITUTE( Name , &quot; &quot;, &quot;+&quot;), &quot;Staging&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TP Links</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Budget_Recap</name>
+        <label>Set Budget Recap</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Monthly_Budget.HS_Recap_Location__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Meeting_Recap_Location__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Monthly_Budget.HS_Recap_Frequency__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>var_RecapFrequency</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Monthly_Budget_Recap</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Found_Budget</name>
+        <label>Found Budget?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Budget_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Monthly_Budget.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Budget_Recap</targetReference>
+            </connector>
+            <label>Yes, Budget Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_To_Populated</name>
+        <label>Is To Populated?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Store_To_False</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>To W/o Email</defaultConnectorLabel>
+        <rules>
+            <name>Yes_To_Populated_W_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.To_New__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>@</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Store_To</targetReference>
+            </connector>
+            <label>Yes, To Populated W/ Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Location_Changed</name>
+        <label>Location Changed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Recap_Month_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Location_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Meeting_Location__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Virtual_or_not</targetReference>
+            </connector>
+            <label>Yes, Location Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Recap_Month_Changed</name>
+        <label>Recap Month Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Recap_Month_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Recap_Month_Selection__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Should_Account_be_updated</targetReference>
+            </connector>
+            <label>Yes, Recap Month Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Should_Account_be_updated</name>
+        <label>Should the Account be updated?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Subject</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Recap_Month_Selection__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Dealership__r.Latest_Recap_Month__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>To_Updated</name>
+        <label>To Updated?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Location_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_To_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.To_New__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_To_Populated</targetReference>
+            </connector>
+            <label>Yes, &quot;To&quot; Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Virtual_or_not</name>
+        <label>Virtual or not</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Recap_Month_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Virtual</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Meeting_Recap_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Virtual</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Previous_Month_Meeting_Recap__r.Meeting_Recap_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Virtual</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Consecutive</targetReference>
+            </connector>
+            <label>Consecutive Virtual</label>
+        </rules>
+        <rules>
+            <name>Unmark_Consecutive</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Dealership__r.Consecutive_Months_Of_Virtual_Meetings__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unmark_Consecutive345</targetReference>
+            </connector>
+            <label>Unmark Consecutive</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>MonthConversion</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+  MONTH({!$Record.Recap_Month_Formula__c}),
+  1, &quot;January&quot;,
+  2, &quot;February&quot;,
+  3, &quot;March&quot;,
+  4, &quot;April&quot;,
+  5, &quot;May&quot;,
+  6, &quot;June&quot;,
+  7, &quot;July&quot;,
+  8, &quot;August&quot;,
+  9, &quot;September&quot;,
+  10, &quot;October&quot;,
+  11, &quot;November&quot;,
+  12, &quot;December&quot;,
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>var_budgetmonthstart</name>
+        <dataType>Date</dataType>
+        <expression>DATE( YEAR($Record.Meeting_Date__c), MONTH($Record.Meeting_Date__c), 1 )</expression>
+    </formulas>
+    <formulas>
+        <name>var_RecapFrequency</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!var_budgetmonthstart} = DATE(YEAR(TODAY()), MONTH(TODAY()), 1),
+    &quot;Recap This Month&quot;,
+    IF(
+        {!var_budgetmonthstart} = ADDMONTHS(DATE(YEAR(TODAY()), MONTH(TODAY()), 1), -1),
+        &quot;No Recap This Month, Recap Last Month&quot;,
+        &quot;No Recap Last 2 Months&quot;
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Meeting Recap - Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Meeting Recap - Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Monthly_Budget</name>
+        <label>Get Monthly Budget</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Budget</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Dealership__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Budget_Month_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>var_budgetmonthstart</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Monthly_Budget__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Mark_Consecutive</name>
+        <label>Mark Consecutive</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Recap_Month_Changed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Consecutive_Months_Of_Virtual_Meetings__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Dealership__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Store_To</name>
+        <label>Store To True</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Location_Changed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Is_To_Populated__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Store_To_False</name>
+        <label>Store To False</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Location_Changed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Is_To_Populated__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Unmark_Consecutive345</name>
+        <label>Unmark Consecutive</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Recap_Month_Changed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Consecutive_Months_Of_Virtual_Meetings__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Dealership__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Subject</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Latest_Recap_Month__c</field>
+            <value>
+                <elementReference>$Record.Recap_Month_Selection__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Dealership__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Monthly_Budget_Recap</name>
+        <label>Update Monthly Budget Recap</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>Get_Monthly_Budget</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Subject</name>
+        <label>Update Subject</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Monthly_Budget</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Subject__c</field>
+            <value>
+                <elementReference>SubjectTT</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>To_Updated</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>MR_System__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Post 8/28/25</stringValue>
+            </value>
+        </filters>
+        <object>Meeting_Recap__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>SubjectTT</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!MonthConversion} Meeting Recap - {!$Record.Dealership__r.Name}</text>
+    </textTemplates>
+</Flow>

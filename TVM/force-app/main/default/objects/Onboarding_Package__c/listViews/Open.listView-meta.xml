@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open</fullName>
+    <columns>NAME</columns>
+    <columns>Onboarding_Team__c</columns>
+    <columns>Types__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>Completion_Status__c</columns>
+    <columns>URL__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Website_Go_Live_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Completion_Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <label>Open</label>
+</ListView>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalated_From_FordDirect</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Ticket__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>FD_Status__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Escalated_To__c</columns>
+    <columns>FD_Date_Opened__c</columns>
+    <columns>Sync_FD__c</columns>
+    <columns>SLA_Level__c</columns>
+    <columns>SLA_Resolve_Time__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Escalated_To__c</field>
+        <operation>equals</operation>
+        <value>Team Velocity</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Escalated From FordDirect</label>
+</ListView>

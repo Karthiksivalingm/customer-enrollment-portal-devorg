@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Program__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Audi_Digital_Program__c, &quot;Audi&quot;,
+	IF(BMW_Website_Program__c, &quot;BMW&quot;,
+		IF(Honda_Website_Digital_Program__c, &quot;Honda&quot;,
+			IF(Kia_Website_Program__c , &quot;Kia&quot;, 
+				IF(Maserati_OEM_Digital_Program__c , &quot;Maserati&quot;, 
+					IF(Mazda_Digital_Certified_Program__c ,&quot;Mazda&quot;, 
+						IF(Mitsubishi_Website_Program__c ,&quot;Mitsubishi&quot;,
+							IF(Porsche_Website_Program__c , &quot;Porsche&quot;,
+								IF(Subaru_OEM_Program__c , &quot;Subaru&quot;,
+									IF(Acura_Digital_Certified_Program__c , &quot;Acura&quot;,
+										IF( VW_Website_Program__c , &quot;VW&quot;, &quot;Standard&quot;)
+									)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OEM Program</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

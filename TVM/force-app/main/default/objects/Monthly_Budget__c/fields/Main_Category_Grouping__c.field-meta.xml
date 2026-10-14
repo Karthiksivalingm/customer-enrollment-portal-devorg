@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_Category_Grouping__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( MC_Digital__c &amp;&amp; MC_Retention__c  &amp;&amp; MC_Website__c , &quot;3 Digital, Website, Retention&quot;, 
+if( MC_Digital__c &amp;&amp; MC_Retention__c, &quot;2 Digital, Retention&quot;,
+if( MC_Digital__c &amp;&amp; MC_Website__c , &quot;2 Digital, Website&quot;,
+if( MC_Retention__c  &amp;&amp; MC_Website__c , &quot;2 Website, Retention&quot;,
+if( MC_Digital__c , &quot;1 Digital&quot;,
+if( MC_Website__c , &quot;1 Website&quot;,
+if( MC_Retention__c , &quot;1 Retention&quot;, 
+if( Category_Other_Amount__c &gt;0, &quot;0 Other Fees Only&quot;, &quot;&quot;)
+)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Main Category Grouping</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

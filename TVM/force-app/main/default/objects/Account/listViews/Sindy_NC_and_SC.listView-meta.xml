@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sindy_NC_and_SC</fullName>
+    <columns>Client_Type_Team_V__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>Regional_Sales_Manager__c</columns>
+    <columns>Regional_Sales_Director__c</columns>
+    <columns>Affiliated_with_an_Active_store__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Prospect,Inactive</value>
+    </filters>
+    <filters>
+        <field>Hide_Dealership__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>KIA,MAZDA,MITSUBISHI,PORSCHE,SUBARU,TOYOTA,VOLKSWAGEN</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>equals</operation>
+        <value>NC,SC</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Sindy NC and SC Scorecards Target</label>
+</ListView>

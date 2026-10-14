@@ -1,0 +1,37 @@
+# TVM .forceignore: files the Salesforce CLI must not push, retrieve or deploy.
+package.xml
+
+# LWC tooling
+**/jsconfig.json
+**/.eslintrc.json
+**/__tests__/**
+node_modules/
+
+# TVM: secret-bearing custom metadata records are managed in the org only
+**/customMetadata/TouchPoint_Callout.*
+
+# Managed-package children on standard/custom objects (fields, list views, record types, etc.).
+# TVM source holds unmanaged metadata only. One line per installed namespace.
+**/objects/*/*/Email_Composer__*
+**/objects/*/*/Gong__*
+**/objects/*/*/JCFS__*
+**/objects/*/*/Profile2PermSet__*
+**/objects/*/*/ailabs__*
+**/objects/*/*/awsac__*
+**/objects/*/*/cdpactvstrgptnr__*
+**/objects/*/*/contextual__*
+**/objects/*/*/dflowp__*
+**/objects/*/*/dfsle__*
+**/objects/*/*/highspot__*
+**/objects/*/*/joshdaymentlabs__*
+**/objects/*/*/lwcc__*
+**/objects/*/*/maps__*
+**/objects/*/*/mondayapp__*
+**/objects/*/*/pi__*
+**/objects/*/*/rcsfl__*
+**/objects/*/*/relateiq__*
+**/objects/*/*/sfdcInternalInt__*
+**/objects/*/*/sfsp__*
+**/objects/*/*/slackv2__*
+**/objects/*/*/trailheadapp__*
+**/objects/*/*/usf3__*

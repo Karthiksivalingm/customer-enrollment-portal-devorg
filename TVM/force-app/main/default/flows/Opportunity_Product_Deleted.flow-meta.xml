@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Adds the current Product&apos;s discount and main category amounts to a variable that will be used to update the Opportunity.</description>
+        <name>Assign_Total_Discount_and_Main_Category_Amounts</name>
+        <label>Assign Total Discount and Main Category Amounts</label>
+        <locationX>1054</locationX>
+        <locationY>635</locationY>
+        <assignmentItems>
+            <assignToReference>TotalDiscount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SingleOpportunityProductDiscount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>MainCategoryDigital</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SingleOpportunityProduct_MainCategoryDigital</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>MainCategoryRetention</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SingleOpportunityProduct_MainCategoryRetention</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>MainCategoryWebsite</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SingleOpportunityProduct_MainCategoryWebsite</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_all_Opportunity_Products</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Reset_Confirmation</name>
+        <label>Reset Try &amp; Buy</label>
+        <locationX>820</locationX>
+        <locationY>1082</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Try_Buy_Confirmed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.Confirm_Products__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Confirmed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opp</targetReference>
+            </connector>
+            <label>Try &amp; Buy Confirmed</label>
+        </rules>
+    </decisions>
+    <description>This flow will loop through all of the Opportunity Products for this Opportunity to determine the Opportunity&apos;s Total Discount and Main Category Amounts.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>SingleOpportunityProduct_MainCategoryDigital</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+ISPICKVAL({!Loop_through_all_Opportunity_Products.Product2.Main_Category__c},&quot;Digital&quot;),
+{!Loop_through_all_Opportunity_Products.TotalPrice},
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>SingleOpportunityProduct_MainCategoryRetention</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+ISPICKVAL({!Loop_through_all_Opportunity_Products.Product2.Main_Category__c},&quot;Retention&quot;),
+{!Loop_through_all_Opportunity_Products.TotalPrice},
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>SingleOpportunityProduct_MainCategoryWebsite</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+ISPICKVAL({!Loop_through_all_Opportunity_Products.Product2.Main_Category__c},&quot;Website&quot;),
+{!Loop_through_all_Opportunity_Products.TotalPrice},
+0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>SingleOpportunityProductDiscount</name>
+        <dataType>Currency</dataType>
+        <expression>{!Loop_through_all_Opportunity_Products.ListPrice} - {!Loop_through_all_Opportunity_Products.UnitPrice}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Opportunity Product - Deleted {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Product - Deleted</label>
+    <loops>
+        <description>Loops through all of the Opportunity Products associated with the Opportunity.</description>
+        <name>Loop_through_all_Opportunity_Products</name>
+        <label>Loop through all Opportunity Products</label>
+        <locationX>822</locationX>
+        <locationY>635</locationY>
+        <collectionReference>Get_Opportunity_Products_associated_with_Opp</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Total_Discount_and_Main_Category_Amounts</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Total_Discount_and_Main_Category_Amounts_on_Opportunity</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Captures all Opportunity Products associated with the Opportunity.</description>
+        <name>Get_Opportunity_Products_associated_with_Opp</name>
+        <label>Get Opportunity Products associated with Opp</label>
+        <locationX>822</locationX>
+        <locationY>397</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_all_Opportunity_Products</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsDeleted</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opp</name>
+        <label>Update Opp</label>
+        <locationX>631</locationX>
+        <locationY>1213</locationY>
+        <inputAssignments>
+            <field>Confirm_Products__c</field>
+            <value>
+                <stringValue>Changed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Opportunity</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Populates the Total Discount and Main Category Amounts on the Opportunity.</description>
+        <name>Update_Total_Discount_and_Main_Category_Amounts_on_Opportunity</name>
+        <label>Update Total Discount and Main Category Amounts on Opportunity</label>
+        <locationX>822</locationX>
+        <locationY>903</locationY>
+        <connector>
+            <targetReference>Reset_Confirmation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Main_Category_Digital_Amount__c</field>
+            <value>
+                <elementReference>MainCategoryDigital</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Main_Category_Retention_Amount__c</field>
+            <value>
+                <elementReference>MainCategoryRetention</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Main_Category_Website_Amount__c</field>
+            <value>
+                <elementReference>MainCategoryWebsite</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sys_DocuSign_Status__c</field>
+            <value>
+                <stringValue>Reset</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Discount__c</field>
+            <value>
+                <elementReference>TotalDiscount</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <start>
+        <locationX>696</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Opportunity_Products_associated_with_Opp</targetReference>
+        </connector>
+        <object>OpportunityLineItem</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>MainCategoryDigital</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>MainCategoryRetention</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>MainCategoryWebsite</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>TotalDiscount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

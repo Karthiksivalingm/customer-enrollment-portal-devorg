@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Account_OAM__c</fullName>
+    <formula>$User.Id = Onboarding_Account_Manager__r.Id</formula>
+    <label>My Account - OAM</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

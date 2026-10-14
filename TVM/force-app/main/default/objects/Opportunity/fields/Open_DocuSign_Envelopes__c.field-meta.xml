@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_DocuSign_Envelopes__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Managed through flow and calculates the number of associated DocuSign Status records that have an open Status. Used in the dynamic actions to ensure that DocuSign Actions are not displayed when there is already and open DocuSign Envelope for a given Opportunity.</description>
+    <externalId>false</externalId>
+    <label>Open DocuSign Envelopes</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

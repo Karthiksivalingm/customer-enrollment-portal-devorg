@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_RSD_RAD_Lock</fullName>
+    <active>false</active>
+    <errorConditionFormula>IsChanged( OwnerId ) &amp;&amp;
+Contains( $Profile.Name , &quot;System Administrator&quot;)=false &amp;&amp;
+$Profile.Name != &quot;Marketing&quot; &amp;&amp;
+ Foundation_Record__c =false &amp;&amp;
+(
+ OwnerId !=  Account.Regional_Account_Director__c &amp;&amp;
+ OwnerId !=  Account.Regional_Sales_Director__c
+)</errorConditionFormula>
+    <errorMessage>Opportunity Owner MUST be the RSD/RAD on the Account.  If you want to change this update it on the account.</errorMessage>
+</ValidationRule>

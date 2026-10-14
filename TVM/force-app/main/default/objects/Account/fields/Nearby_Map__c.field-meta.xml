@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nearby_Map__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Near this Dealer: &quot;&amp;HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/bfnijpmiv?a=q&amp;qid=1484&amp;nv=1&amp;v0=&quot; &amp;Nearby_Zips_For_Maps__c, &quot;Map of Nearby Dealers&quot;, &quot;_blank&quot;) &amp; &quot; | Same City: &quot;&amp;HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/bfnijpmiv?a=q&amp;qid=1481&amp;nv=2&amp;v0=&quot;&amp; BillingCity &amp;&quot;&amp;v1=&quot;&amp; BillingState , &quot;Map of Same City/State&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Map Active &amp; Prospects</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T10_Script_Vid_Creative_Request_Statuses</fullName>
+    <columns>Name_Sorted__c</columns>
+    <columns>Status_Sort_Value__c</columns>
+    <columns>NAME</columns>
+    <columns>Owner_Custom__c</columns>
+    <columns>Queues__c</columns>
+    <columns>Display_Role__c</columns>
+    <columns>Field_Locked__c</columns>
+    <columns>Alert__c</columns>
+    <columns>Info_Needed_Provided__c</columns>
+    <columns>Early_Close_Reason__c</columns>
+    <columns>Closing_Status__c</columns>
+    <columns>Starting_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>T10 Script/Video Statuses</value>
+    </filters>
+    <filters>
+        <field>Deactivated__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>T10 Script/Vid Creative Request Statuses</label>
+</ListView>

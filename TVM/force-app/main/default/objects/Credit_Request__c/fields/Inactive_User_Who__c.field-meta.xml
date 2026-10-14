@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive_User_Who__c</fullName>
+    <label>Inactive User Who Caused Is</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aaron Byrd</fullName>
+                <default>false</default>
+                <label>Aaron Byrd</label>
+            </value>
+            <value>
+                <fullName>Andi Mowrey</fullName>
+                <default>false</default>
+                <label>Andi Mowrey</label>
+            </value>
+            <value>
+                <fullName>Anthony Willshire</fullName>
+                <default>false</default>
+                <label>Anthony Willshire</label>
+            </value>
+            <value>
+                <fullName>Brendan Whipkey</fullName>
+                <default>false</default>
+                <label>Brendan Whipkey</label>
+            </value>
+            <value>
+                <fullName>Daniel Ibrahim</fullName>
+                <default>false</default>
+                <label>Daniel Ibrahim</label>
+            </value>
+            <value>
+                <fullName>Danielle Bowler</fullName>
+                <default>false</default>
+                <label>Danielle Bowler</label>
+            </value>
+            <value>
+                <fullName>Emily Grell</fullName>
+                <default>false</default>
+                <label>Emily Grell</label>
+            </value>
+            <value>
+                <fullName>Greg Kelley</fullName>
+                <default>false</default>
+                <label>Greg Kelley</label>
+            </value>
+            <value>
+                <fullName>Jacqui Beyer</fullName>
+                <default>false</default>
+                <label>Jacqui Beyer</label>
+            </value>
+            <value>
+                <fullName>John Russell</fullName>
+                <default>false</default>
+                <label>John Russell</label>
+            </value>
+            <value>
+                <fullName>Kevin Dogherty</fullName>
+                <default>false</default>
+                <label>Kevin Dogherty</label>
+            </value>
+            <value>
+                <fullName>Meg McSherry</fullName>
+                <default>false</default>
+                <label>Meg McSherry</label>
+            </value>
+            <value>
+                <fullName>Nathan Williams</fullName>
+                <default>false</default>
+                <label>Nathan Williams</label>
+            </value>
+            <value>
+                <fullName>Robert Vilchez</fullName>
+                <default>false</default>
+                <label>Robert Vilchez</label>
+            </value>
+            <value>
+                <fullName>Shannon Boone</fullName>
+                <default>false</default>
+                <label>Shannon Boone</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

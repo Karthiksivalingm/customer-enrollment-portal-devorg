@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stalled_Case__c</fullName>
+    <formula>IF(Workday_Hours_Since_Last_Edit__c &gt; 40 &amp;&amp; NOT(ISPICKVAL(Status,  &quot;Closed&quot;)) &amp;&amp; NOT(ISPICKVAL(Status, &quot;Cancelled&quot;)) &amp;&amp; NOT(ISPICKVAL(Status, &quot;Waiting on Development&quot;)), true, false)</formula>
+    <label>Stalled Case</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

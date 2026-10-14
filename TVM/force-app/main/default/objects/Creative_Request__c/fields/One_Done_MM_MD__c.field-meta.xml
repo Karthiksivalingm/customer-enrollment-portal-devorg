@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_Done_MM_MD__c</fullName>
+    <formula>NOT(
+  OR(
+    /* Proofing Flags */
+    INCLUDES(Proofing_Flags__c, &quot;Offer – MM/MD&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Specs – MM/MD&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Compliance – MM/MD&quot;),
+    INCLUDES(Proofing_Flags__c, &quot;Order Information - MM/MD&quot;),
+    
+    /* PreQ Hold Flags */
+    INCLUDES(PreQ_Hold_Flags__c, &quot;Order Details&quot;),
+    INCLUDES(PreQ_Hold_Flags__c, &quot;Offer Details&quot;),
+    INCLUDES(PreQ_Hold_Flags__c, &quot;Compliance&quot;),
+    INCLUDES(PreQ_Hold_Flags__c, &quot;Clarification&quot;),
+    INCLUDES(PreQ_Hold_Flags__c, &quot;Turnaround Time&quot;),
+    INCLUDES(PreQ_Hold_Flags__c, &quot;Reference(s)/Attachment(s)&quot;),
+    INCLUDES(PreQ_Hold_Flags__c, &quot;Client Updates&quot;)
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>One &amp; Done (MM/MD)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

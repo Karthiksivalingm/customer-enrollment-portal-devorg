@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Active Client</fullName>
+        <default>false</default>
+        <label>Active Client</label>
+    </customValue>
+    <customValue>
+        <fullName>Inbound Marketing - Call</fullName>
+        <default>false</default>
+        <label>Inbound Marketing - Call</label>
+    </customValue>
+    <customValue>
+        <fullName>Inbound Marketing - Text</fullName>
+        <default>false</default>
+        <label>Inbound Marketing - Text</label>
+    </customValue>
+    <customValue>
+        <fullName>Outbound Marketing - Digital</fullName>
+        <default>false</default>
+        <label>Outbound Marketing - Digital</label>
+    </customValue>
+    <customValue>
+        <fullName>Outbound Marketing - Disruptive Campaign</fullName>
+        <default>false</default>
+        <label>Outbound Marketing - Disruptive Campaign</label>
+    </customValue>
+    <customValue>
+        <fullName>Outbound Marketing - Email</fullName>
+        <default>false</default>
+        <label>Outbound Marketing - Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Outbound Marketing - Social - Facebook</fullName>
+        <default>false</default>
+        <label>Outbound Marketing - Social - Facebook</label>
+    </customValue>
+    <customValue>
+        <fullName>Outbound Marketing - Social - LinkedIn</fullName>
+        <default>false</default>
+        <label>Outbound Marketing - Social - LinkedIn</label>
+    </customValue>
+    <customValue>
+        <fullName>Advertising - Automotive News</fullName>
+        <default>false</default>
+        <label>Advertising - Automotive News</label>
+    </customValue>
+    <customValue>
+        <fullName>Advertising - AutoSuccess</fullName>
+        <default>false</default>
+        <label>Advertising - AutoSuccess</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Prospecting - Cold Call</fullName>
+        <default>false</default>
+        <label>Sales Prospecting - Cold Call</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Prospecting - Email</fullName>
+        <default>false</default>
+        <label>Sales Prospecting - Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Prospecting - Social</fullName>
+        <default>false</default>
+        <label>Sales Prospecting - Social</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Prospecting - Walk-in</fullName>
+        <default>false</default>
+        <label>Sales Prospecting - Walk-in</label>
+    </customValue>
+    <customValue>
+        <fullName>Expanded Opportunity</fullName>
+        <default>false</default>
+        <label>Expanded Opportunity</label>
+    </customValue>
+    <customValue>
+        <fullName>Referral - Client Referral</fullName>
+        <default>false</default>
+        <label>Referral - Client Referral</label>
+    </customValue>
+    <customValue>
+        <fullName>Referral - RAD Referral</fullName>
+        <default>false</default>
+        <label>Referral - RAD Referral</label>
+    </customValue>
+    <customValue>
+        <fullName>NADA 2023</fullName>
+        <default>false</default>
+        <label>NADA 2023</label>
+    </customValue>
+    <customValue>
+        <fullName>Webinar - Attended</fullName>
+        <default>false</default>
+        <label>Webinar - Attended</label>
+    </customValue>
+    <customValue>
+        <fullName>Webinar - Registered</fullName>
+        <default>false</default>
+        <label>Webinar - Registered</label>
+    </customValue>
+    <customValue>
+        <fullName>Inbound Marketing - Email</fullName>
+        <default>false</default>
+        <label>Inbound Marketing - Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Website - Demo Request - General</fullName>
+        <default>false</default>
+        <label>Website - Demo Request - General</label>
+    </customValue>
+    <customValue>
+        <fullName>Website - Demo Request - OEM</fullName>
+        <default>false</default>
+        <label>Website - Demo Request - OEM</label>
+    </customValue>
+    <customValue>
+        <fullName>Website - Active Shopper</fullName>
+        <default>false</default>
+        <label>Website - Active Shopper</label>
+    </customValue>
+    <customValue>
+        <fullName>Volvo Roadshow 2023</fullName>
+        <default>false</default>
+        <label>Volvo Roadshow 2023</label>
+    </customValue>
+    <customValue>
+        <fullName>FordDirect - 1:1 Customer Messaging</fullName>
+        <default>false</default>
+        <label>FordDirect - 1:1 Customer Messaging</label>
+    </customValue>
+    <customValue>
+        <fullName>FordDirect - Platform Solution</fullName>
+        <default>false</default>
+        <label>FordDirect - Platform Solution</label>
+    </customValue>
+    <masterLabel>Lead Source</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

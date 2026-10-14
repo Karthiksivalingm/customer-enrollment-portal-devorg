@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Digital__c</fullName>
+    <label>Status Digital</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status_Filtered__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Internal Feedback Needed</fullName>
+                <default>false</default>
+                <label>Internal Feedback Needed</label>
+            </value>
+            <value>
+                <fullName>Internal Feedback Provided</fullName>
+                <default>false</default>
+                <label>Internal Feedback Provided</label>
+            </value>
+            <value>
+                <fullName>Waiting on Development</fullName>
+                <default>false</default>
+                <label>Waiting on Development</label>
+            </value>
+            <value>
+                <fullName>Digital Complete</fullName>
+                <default>false</default>
+                <label>Digital Complete</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Changes Needed</fullName>
+                <default>false</default>
+                <label>Changes Needed</label>
+            </value>
+            <value>
+                <fullName>External Feedback Needed</fullName>
+                <default>false</default>
+                <label>External Feedback Needed</label>
+            </value>
+            <value>
+                <fullName>External Feedback Provided</fullName>
+                <default>false</default>
+                <label>External Feedback Provided</label>
+            </value>
+            <value>
+                <fullName>OEM Feedback Provided</fullName>
+                <default>false</default>
+                <label>OEM Feedback Provided</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <controllingFieldValue>Selected for Dev</controllingFieldValue>
+            <controllingFieldValue>Internal Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Awaiting Approval</controllingFieldValue>
+            <controllingFieldValue>Internal Feedback Needed</controllingFieldValue>
+            <controllingFieldValue>Changes Needed</controllingFieldValue>
+            <controllingFieldValue>Upload Complete - Ready to Send to Dealer</controllingFieldValue>
+            <controllingFieldValue>Approved For Upload</controllingFieldValue>
+            <controllingFieldValue>OEM Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>External Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Ready for Testing</controllingFieldValue>
+            <controllingFieldValue>New</controllingFieldValue>
+            <controllingFieldValue>Assigned</controllingFieldValue>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <controllingFieldValue>On Hold</controllingFieldValue>
+            <controllingFieldValue>Waiting on Development</controllingFieldValue>
+            <controllingFieldValue>Production Complete</controllingFieldValue>
+            <controllingFieldValue>Digital Complete</controllingFieldValue>
+            <controllingFieldValue>In Progress with Dev</controllingFieldValue>
+            <valueName>Closed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <controllingFieldValue>Selected for Dev</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Internal Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Awaiting Approval</controllingFieldValue>
+            <controllingFieldValue>Internal Feedback Needed</controllingFieldValue>
+            <controllingFieldValue>Changes Needed</controllingFieldValue>
+            <controllingFieldValue>Upload Complete - Ready to Send to Dealer</controllingFieldValue>
+            <controllingFieldValue>Approved For Upload</controllingFieldValue>
+            <controllingFieldValue>OEM Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>External Feedback Needed</controllingFieldValue>
+            <controllingFieldValue>External Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Ready for Testing</controllingFieldValue>
+            <controllingFieldValue>New</controllingFieldValue>
+            <controllingFieldValue>Assigned</controllingFieldValue>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <controllingFieldValue>On Hold</controllingFieldValue>
+            <controllingFieldValue>Waiting on Development</controllingFieldValue>
+            <controllingFieldValue>Production Complete</controllingFieldValue>
+            <controllingFieldValue>Digital Complete</controllingFieldValue>
+            <controllingFieldValue>Escalated</controllingFieldValue>
+            <controllingFieldValue>In Progress with Dev</controllingFieldValue>
+            <valueName>Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>OEM Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>External Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>New</controllingFieldValue>
+            <controllingFieldValue>Assigned</controllingFieldValue>
+            <valueName>In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>OEM Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>External Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Ready for Testing</controllingFieldValue>
+            <controllingFieldValue>Assigned</controllingFieldValue>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Internal Feedback Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>External Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Assigned</controllingFieldValue>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Waiting on Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Changes Needed</controllingFieldValue>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <controllingFieldValue>Waiting on Development</controllingFieldValue>
+            <valueName>Digital Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Feedback Needed</controllingFieldValue>
+            <valueName>Internal Feedback Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>External Feedback Provided</controllingFieldValue>
+            <controllingFieldValue>Ready for Testing</controllingFieldValue>
+            <controllingFieldValue>Assigned</controllingFieldValue>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>External Feedback Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>External Feedback Needed</controllingFieldValue>
+            <valueName>Changes Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>External Feedback Needed</controllingFieldValue>
+            <valueName>External Feedback Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <valueName>Assigned</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

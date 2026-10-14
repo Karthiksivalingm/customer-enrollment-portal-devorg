@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rush_Admin__c</fullName>
+    <formula>OR(
+$Profile.Name = &quot;System Administrator&quot;,
+$User.Email = &quot;bkerxton@teamvelocitymarketing.com&quot;,
+$User.Email = &quot;lmcgowan@teamvelocitymarketing.com&quot;,
+$User.Email = &quot;slupetin@teamvelocitymarketing.com&quot;,
+$User.Email = &quot;ewalton@teamvelocitymarketing.com&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Rush Admin</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

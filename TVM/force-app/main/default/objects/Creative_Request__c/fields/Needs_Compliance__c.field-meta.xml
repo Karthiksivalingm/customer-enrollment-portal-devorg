@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_Compliance__c</fullName>
+    <formula>AND(
+  CASE(Analytics_Franchise__c,
+    &quot;ALFA ROMEO&quot;, 0,
+    &quot;ASTON MARTIN&quot;, 0,
+    &quot;AUDI&quot;, 0,
+    &quot;BMW&quot;, 0,
+    &quot;BUICK&quot;, 0,
+    &quot;CADILLAC&quot;, 0,
+    &quot;CHEVROLET&quot;, 0,
+    &quot;Chrysler&quot;, 0,
+    &quot;DODGE&quot;, 0,
+    &quot;JEEP&quot;, 0,
+    &quot;RAM&quot;, 0,
+    &quot;STELLANTIS&quot;, 0,
+    &quot;FORD&quot;, 0,
+    &quot;GMC&quot;, 0,
+    &quot;INFINITI&quot;, 0,
+    &quot;JAGUAR&quot;, 0,
+    &quot;LAND ROVER&quot;, 0,
+    &quot;LEXUS&quot;, 0,
+    &quot;LINCOLN&quot;, 0,
+    &quot;MASERATI&quot;, 0,
+    &quot;MINI&quot;, 0,
+    &quot;MITSUBISHI&quot;, 0,
+    &quot;PORSCHE&quot;, 0,
+    &quot;SUBARU&quot;, 0,
+    &quot;VOLVO&quot;, 0,
+    1
+  ) = 1,
+  NOT(ISPICKVAL(Compliance_Needed__c, &quot;No&quot;))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Needs Compliance</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

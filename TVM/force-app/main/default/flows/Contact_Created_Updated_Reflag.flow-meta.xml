@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Remove_DP</name>
+        <label>Remove DP</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultContactFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DPRemoved</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remove_PP_Flag_Gate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Remove_DP_0_0</name>
+        <label>Remove DP</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultContactFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SPRemoved</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Remove_General_Manager</name>
+        <label>Remove General Manager</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultContactFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GMRemoved</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remove_DP_Flag_Gate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Remove_PP</name>
+        <label>Remove PP</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultContactFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PPRemoved</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remove_SP_Flag_Gate</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Remove_DP_Flag_Gate</name>
+        <label>Remove DP Flag Gate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Remove_PP_Flag_Gate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Remove_Flag_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop.Contact_Role__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Owner/Dealer Principal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>DefaultContactFlag</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Owner/Dealer Principal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_DP</targetReference>
+            </connector>
+            <label>Remove Flag</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Remove_Flag_Gate</name>
+        <label>Remove GM Flag Gate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Remove_DP_Flag_Gate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Remove_Flag</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop.Contact_Role__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>General Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>DefaultContactFlag</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>General Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_General_Manager</targetReference>
+            </connector>
+            <label>Remove Flag</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Remove_PP_Flag_Gate</name>
+        <label>Remove PP Flag Gate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Remove_SP_Flag_Gate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Remove_Flag_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop.Contact_Role__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Primary POC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>DefaultContactFlag</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Primary POC</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_PP</targetReference>
+            </connector>
+            <label>Remove Flag</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Remove_SP_Flag_Gate</name>
+        <label>Remove SP Flag Gate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Loop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Remove_Flag_0_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop.Contact_Role__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Secondary POC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>DefaultContactFlag</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Secondary POC</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_DP_0_0</targetReference>
+            </connector>
+            <label>Remove Flag</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Terminate</name>
+        <label>Terminate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Terminate_Flow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Terminate_Flow__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Terminate Flow</label>
+        </rules>
+        <rules>
+            <name>Run_Me</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contact_Role__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Do_Not_Survey__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Do_Not_Contact_Internal__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Test_Field__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DC Manual Refresh</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_All_Flagged_Contacts</targetReference>
+            </connector>
+            <label>Run Me</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>DPRemoved</name>
+        <dataType>String</dataType>
+        <expression>Trim(Substitute({!DefaultContactFlag}, &quot;Owner/Dealer Principal;&quot;, &quot;&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>GMRemoved</name>
+        <dataType>String</dataType>
+        <expression>Trim(Substitute({!DefaultContactFlag}, &quot;General Manager;&quot;, &quot;&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>isNew()</expression>
+    </formulas>
+    <formulas>
+        <name>PPRemoved</name>
+        <dataType>String</dataType>
+        <expression>Trim(Substitute({!DefaultContactFlag}, &quot;Primary POC;&quot;, &quot;&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>SPRemoved</name>
+        <dataType>String</dataType>
+        <expression>Trim(Substitute({!DefaultContactFlag}, &quot;Secondary POC;&quot;, &quot;&quot;))</expression>
+    </formulas>
+    <interviewLabel>Contact Created/Updated Reflag {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact Created/Updated Reflag</label>
+    <loops>
+        <name>Loop</name>
+        <label>Loop</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_All_Flagged_Contacts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Remove_Flag_Gate</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Account</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_All_Flagged_Contacts</name>
+        <label>Get All Flagged Contacts</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3 OR 4 OR 5) AND 6 AND 7 AND 8 AND 9</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>General_Manager__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>General Manager</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Owner_Dealer_Principal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Owner/Dealer Principal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Primary_POC__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Primary POC</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Secondary_POC__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Secondary POC</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Do_Not_Contact_Internal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Do_Not_Survey__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DNC__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Emailable__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Contact_Flag__c</field>
+            <value>
+                <elementReference>DefaultContactFlag</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Terminate</targetReference>
+        </connector>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>DefaultContactFlag</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>General Manager; Owner/Dealer Principal; Primary POC; Secondary POC;</stringValue>
+        </value>
+    </variables>
+</Flow>

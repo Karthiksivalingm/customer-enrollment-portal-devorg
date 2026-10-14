@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Enrollment_Eligible__c</fullName>
+    <formula>(
+Text( Analytics_Franchise__c ) = &quot;ACURA&quot; ||
+Text( Analytics_Franchise__c ) = &quot;AUDI&quot; ||
+Text( Analytics_Franchise__c ) = &quot;ALFA ROMEO&quot; ||
+Text( Analytics_Franchise__c ) = &quot;BMW&quot; ||
+Text( Analytics_Franchise__c ) = &quot;BUICK&quot; ||
+Text( Analytics_Franchise__c ) = &quot;BUICK GMC&quot; ||
+Text( Analytics_Franchise__c ) = &quot;CADILLAC&quot; ||
+Text( Analytics_Franchise__c ) = &quot;CHEVROLET&quot; ||
+Text( Analytics_Franchise__c ) = &quot;JEEP&quot; ||
+Text( Analytics_Franchise__c ) = &quot;FIAT&quot; ||
+Text( Analytics_Franchise__c ) = &quot;GM&quot; ||
+Text( Analytics_Franchise__c ) = &quot;GMC&quot; ||
+Text( Analytics_Franchise__c ) = &quot;GENESIS&quot; ||
+Text( Analytics_Franchise__c ) = &quot;HONDA&quot; ||
+Text( Analytics_Franchise__c ) = &quot;INFINITI&quot; ||
+Text( Analytics_Franchise__c ) = &quot;JEEP&quot; ||
+Text( Analytics_Franchise__c ) = &quot;KIA&quot; ||
+Text( Analytics_Franchise__c ) = &quot;MASERATI&quot; ||
+Text( Analytics_Franchise__c ) = &quot;MAZDA&quot; ||
+Text( Analytics_Franchise__c ) = &quot;MITSUBISHI&quot; ||
+Text( Analytics_Franchise__c ) = &quot;NISSAN&quot; ||
+Text( Analytics_Franchise__c ) = &quot;PORSCHE&quot; ||
+Text( Analytics_Franchise__c ) = &quot;RAM&quot; ||
+Text( Analytics_Franchise__c ) = &quot;STELLANTIS&quot; ||
+Text( Analytics_Franchise__c ) = &quot;SUBARU&quot; ||
+Text( Analytics_Franchise__c ) = &quot;TOYOTA&quot; ||
+Text( Analytics_Franchise__c ) = &quot;VOLKSWAGEN&quot; ||
+Text( Analytics_Franchise__c ) = &quot;VOLVO&quot;/*||
+Text( Analytics_Franchise__c ) = &quot;FORD&quot;||
+Text( Analytics_Franchise__c ) = &quot;LINCOLN&quot;*/
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OEM Enrollment Eligible</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

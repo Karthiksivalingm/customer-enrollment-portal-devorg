@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Other_Section__c</fullName>
+    <formula>DS_Custom_Creative__c ||  DS_DMS_Write_Back__c || DS_Apollo_AI_Assistant__c ||DS_Soft_Credit_Pull__c ||  DS_Agency_Fee__c  ||  DS_Equity_Mining__c ||  DS_Social_Custom_Creative__c ||  DS_Facebook_Marketplace__c 
+||  DS_LinkedIn__c 
+||  DS_Snapchat__c
+||  DS_Tiktok__c 
+||  DS_Pinterest__c 
+||  DS_X__c 
+||  DS_Facebook_Organic_Events__c 
+
+ || (Invoice_Website_Section__c=false &amp;&amp;(DS_Transact__c || DS_Text__c || DS_SEO__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice Other Section</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

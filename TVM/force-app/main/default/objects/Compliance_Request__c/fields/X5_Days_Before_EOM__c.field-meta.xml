@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X5_Days_Before_EOM__c</fullName>
+    <formula>ADDMONTHS(
+  DATE( YEAR( DATEVALUE(CreatedDate) ), MONTH( DATEVALUE(CreatedDate) ), 1),
+  1
+) - 6</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>5 Days Before EOM</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

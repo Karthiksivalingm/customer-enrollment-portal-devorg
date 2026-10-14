@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IF_LAUNCHING_IN_EXISTING_CID_Allocate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - IF LAUNCHING IN EXISTING CID: Allocate Budget in Placeholder Budget Group Based On MTD Spend Across Previous Provider Campaigns.</description>
+    <label>IF LAUNCHING IN EXISTING CID Allocate</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

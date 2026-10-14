@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Month_Day_Created__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(DAY(DATEVALUE(CreatedDate)) &lt; 16, &quot;Before or on 15th&quot;, &quot;After 15th&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Month Day Created</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

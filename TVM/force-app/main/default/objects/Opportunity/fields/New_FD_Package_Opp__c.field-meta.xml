@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_FD_Package_Opp__c</fullName>
+    <formula>DS_FD_Package_Amount__c &gt;0 &amp;&amp;
+
+(
+IsBlank(Previous_Package__c) ||
+(Contains(Previous_Package__c, &quot;1:1&quot;) &amp;&amp; (DS_Ford_CXP_Package_1__c || DS_Ford_CXP_Package_2__c || DS_Ford_CXP_Package_3__c))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>New FD Package Opp</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

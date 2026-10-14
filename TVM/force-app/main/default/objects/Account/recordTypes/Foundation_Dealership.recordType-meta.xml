@@ -1,0 +1,6083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foundation_Dealership</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>FND_Account_Layout</compactLayoutAssignment>
+    <description>Foundation Account (Temporary until we merge all accounts)</description>
+    <label>Foundation Dealership</label>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>ALR - DC - 2025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event - Vincue Unleashed - 2025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expanded Marketing Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FD Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FordDirect - 1%3A1 Customer Messaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FordDirect - Platform Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM Roadshow - 2025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Expansion%2FSister Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Highspot - Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Highspot - Marketing Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NADA - Party - 2026</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NADA 2025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Lead - Inbound Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Lead - Relationship Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Marketing - Disruptive Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Marketing - Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-engagement - Marketing Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - 20 Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - Client Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - Foundation Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - RAD Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - Vincue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Prospecting - Cold Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Prospecting - JB Initiative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Prospecting - Walk In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell - Marketing Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell - Product Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell - Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar - Attended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar - Registered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar - Watched Recording</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website - Active Shopper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website - Demo Request - General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website - Demo Request - OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website - Demo Request - Product</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Add_On_Product_Type__c</picklist>
+        <values>
+            <fullName>DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Analytics_Franchise__c</picklist>
+        <values>
+            <fullName>ACURA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ALFA ROMEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASTON MARTIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AUDI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BENTLEY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BMW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BODY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BUICK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BUICK GMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CADILLAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHEVROLET</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chrysler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collision Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DODGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FERRARI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FISKER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FORD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GENESIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Motors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HARLEY-DAVIDSON</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HONDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HUMMER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HYUNDAI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harley Davidson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INEOS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INFINITI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUZU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JAGUAR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JEEP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAMBORGHINI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAND ROVER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LEXUS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LINCOLN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOTUS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MARINE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MASERATI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAZDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCLAREN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MERCEDES-BENZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MERCURY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MINI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MITSUBISHI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NISSAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON-AUTOMOTIVE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Categorized</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Categorized%3A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POLESTAR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PONTIAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PORSCHE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PREOWNED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROLLS-ROYCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreational Vehicle %28RV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAAB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SATURN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STELLANTIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUBARU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUZUKI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOYOTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VINFAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VOLKSWAGEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VOLVO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CMA_Sales_Mail__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CRM_Provider__c</picklist>
+        <values>
+            <fullName>ActivEngage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDK Global</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Peak</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerSocket - CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vinsolutions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Chat_Tool__c</picklist>
+        <values>
+            <fullName>ActivEngage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRM Built In Chat Tool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Chat 24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarNow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ChatGPT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conversations %28DI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Edmunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FordDirect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FullPath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gubagoo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Ad Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matador</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NyxtApp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TradePending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Type_Team_V__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Package_v2__c</picklist>
+        <values>
+            <fullName>1%3A1 Messaging Package 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%3A1 Messaging Package 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%3A1 Messaging Package 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%3A1 Messaging Package 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Solutions Package 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Solutions Package 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Solutions Package 3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Custom_Creative_Level__c</picklist>
+        <values>
+            <fullName>Base</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DMA_Id__c</picklist>
+        <values>
+            <fullName>200500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200501</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200502</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200503</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200504</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200505</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200506</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200507</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200508</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200509</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200510</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200511</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200512</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200513</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200514</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200515</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200516</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200517</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200518</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200519</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200520</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200521</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200522</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200523</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200524</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200525</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200526</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200527</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200528</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200529</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200530</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200531</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200532</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200533</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200534</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200535</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200536</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200537</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200538</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200539</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200540</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200541</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200542</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200543</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200544</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200545</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200546</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200547</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200548</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200549</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200550</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200551</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200552</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200553</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200554</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200555</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200556</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200557</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200558</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200559</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200560</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200561</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200563</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200564</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200565</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200566</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200567</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200569</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200570</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200571</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200573</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200574</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200575</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200576</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200577</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200581</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200582</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200583</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200584</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200588</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200592</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200596</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200597</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200598</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200602</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200603</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200604</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200605</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200606</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200609</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200610</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200611</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200612</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200613</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200616</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200617</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200618</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200619</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200622</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200623</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200624</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200625</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200626</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200627</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200628</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200630</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200631</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200632</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200633</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200634</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200635</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200636</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200637</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200638</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200639</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200640</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200641</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200642</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200643</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200644</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200647</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200648</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200649</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200650</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200651</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200652</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200656</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200657</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200658</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200659</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200661</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200662</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200669</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200670</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200671</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200673</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200675</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200676</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200678</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200679</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200682</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200686</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200687</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200691</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200692</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200693</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200698</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200702</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200705</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200709</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200710</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200711</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200716</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200717</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200718</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200722</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200724</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200725</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200734</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200736</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200737</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200740</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200743</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200744</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200745</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200746</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200747</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200749</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200751</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200752</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200753</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200754</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200755</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200756</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200757</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200758</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200759</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200760</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200762</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200764</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200765</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200766</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200767</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200770</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200771</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200773</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200789</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200790</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200798</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200800</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200801</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200802</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200803</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200804</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200807</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200810</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200811</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200813</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200820</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200821</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200825</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200828</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200839</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200855</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200862</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200866</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200868</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200881</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DMA_Name__c</picklist>
+        <values>
+            <fullName>Abilene-Sweetwater%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Albany%2C GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Albany-Schenectady-Troy%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Albuquerque-Santa Fe%2C NM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alexandria%2C LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alpena%2C MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amarillo%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anchorage%2C AK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atlanta%2C GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augusta%2C GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austin%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bakersfield%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baltimore%2C MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bangor%2C ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baton Rouge%2C LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beaumont-Port Arthur%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bend%2C OR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billings%2C MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biloxi-Gulfport%2C MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Binghamton%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Birmingham%2C AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bluefield-Beckley-Oak Hill%2C WV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boise%2C ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boston%2C MA-Manchester%2C NH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bowling Green%2C KY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buffalo%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burlington%2C VT-Plattsburgh%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Butte-Bozeman%2C MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casper-Riverton%2C WY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cedar Rapids-Waterloo-Iowa City %26 Dubuque%2C IA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Champaign %26 Springfield-Decatur%2CIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charleston%2C SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charleston-Huntington%2C WV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charlotte%2C NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charlottesville%2C VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chattanooga%2C TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cheyenne%2C WY-Scottsbluff%2C NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chicago%2C IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chico-Redding%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cincinnati%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clarksburg-Weston%2C WV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleveland-Akron %28Canton%29%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colorado Springs-Pueblo%2C CO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbia%2C SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbia-Jefferson City%2C MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbus%2C GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbus%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbus-Tupelo-West Point%2C MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corpus Christi%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dallas-Ft%2E Worth%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Davenport%2CIA-Rock Island-Moline%2CIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dayton%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denver%2C CO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Des Moines-Ames%2C IA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Detroit%2C MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dothan%2C AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duluth%2C MN-Superior%2C WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>El Paso%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elmira%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erie%2C PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eugene%2C OR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eureka%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evansville%2C IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fairbanks%2C AK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fargo-Valley City%2C ND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flint-Saginaw-Bay City%2C MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florence-Myrtle Beach%2C SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fresno-Visalia%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ft%2E Myers-Naples%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ft%2E Smith-Fayetteville-Springdale-Rogers%2C AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ft%2E Wayne%2C IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gainesville%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glendive%2C MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grand Junction-Montrose%2C CO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grand Rapids-Kalamazoo-Battle Creek%2C MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Great Falls%2C MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Bay-Appleton%2C WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greensboro-High Point-Winston Salem%2C NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenville-New Bern-Washington%2C NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenville-Spartanburg%2C SC-Asheville%2C NC-Anderson%2C SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenwood-Greenville%2C MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harlingen-Weslaco-Brownsville-McAllen%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harrisburg-Lancaster-Lebanon-York%2C PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harrisonburg%2C VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hartford %26 New Haven%2C CT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hattiesburg-Laurel%2C MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Helena%2C MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honolulu%2C HI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Houston%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huntsville-Decatur %28Florence%29%2C AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Idaho Falls-Pocatello%2C ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indianapolis%2C IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jackson%2C MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jackson%2C TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jacksonville%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Johnstown-Altoona%2C PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jonesboro%2C AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Joplin%2C MO-Pittsburg%2C KS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Juneau%2C AK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kansas City%2C MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Knoxville%2C TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>La Crosse-Eau Claire%2C WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lafayette%2C IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lafayette%2C LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lake Charles%2C LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lansing%2C MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laredo%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Las Vegas%2C NV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lexington%2C KY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lima%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln %26 Hastings-Kearney%2C NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Little Rock-Pine Bluff%2C AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Los Angeles%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Louisville%2C KY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lubbock%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Macon%2C GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Madison%2C WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mankato%2C MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marquette%2C MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medford-Klamath Falls%2C OR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memphis%2C TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meridian%2C MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miami-Ft%2E Lauderdale%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milwaukee%2C WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minneapolis-St%2E Paul%2C MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minot-Bismarck-Dickinson%28Williston%29%2C ND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missoula%2C MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile%2C AL-Pensacola %28Ft%2E Walton Beach%29%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monroe%2C LA-El Dorado%2C AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monterey-Salinas%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Montgomery %28Selma%29%2C AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nashville%2C TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Orleans%2C LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New York%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norfolk-Portsmouth-Newport News%2CVA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Platte%2C NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odessa-Midland%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oklahoma City%2C OK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omaha%2C NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orlando-Daytona Beach-Melbourne%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ottumwa%2C IA-Kirksville%2C MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paducah%2C KY-Cape Girardeau%2C MO-Harrisburg-Mount Vernon%2C IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palm Springs%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panama City%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkersburg%2C WV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peoria-Bloomington%2C IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia%2C PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phoenix%2C AZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pittsburgh%2C PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portland%2C OR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portland-Auburn%2C ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presque Isle%2C ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Providence%2C RI-New Bedford%2C MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quincy%2C IL-Hannibal%2C MO-Keokuk%2C IA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raleigh-Durham %28Fayetteville%29%2C NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rapid City%2C SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reno%2C NV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richmond-Petersburg%2C VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roanoke-Lynchburg%2C VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rochester%2C MN-Mason City%2C IA-Austin%2C MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rochester%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rockford%2C IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sacramento-Stockton-Modesto%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salisbury%2C MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salt Lake City%2C UT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Angelo%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Antonio%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Diego%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Francisco-Oakland-San Jose%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Santa Barbara-Santa Maria-San Luis Obispo%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Savannah%2C GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seattle-Tacoma%2C WA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sherman%2C TX-Ada%2C OK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shreveport%2C LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sioux City%2C IA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sioux Falls%28Mitchell%29%2C SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Bend-Elkhart%2C IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spokane%2C WA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Springfield%2C MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Springfield-Holyoke%2C MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St%2E Joseph%2C MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St%2E Louis%2C MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Syracuse%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tallahassee%2C FL-Thomasville%2C GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tampa-St Petersburg %28Sarasota%29%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terre Haute%2C IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toledo%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Topeka%2C KS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traverse City-Cadillac%2C MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tri-Cities%2C TN-VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tucson %28Sierra Vista%29%2C AZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tulsa%2C OK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin Falls%2C ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tyler-Longview%28Lufkin %26 Nacogdoches%29%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utica%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Victoria%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waco-Temple-Bryan%2C TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington%2C DC %28Hagerstown%2C MD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watertown%2C NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wausau-Rhinelander%2C WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Palm Beach-Ft%2E Pierce%2C FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wheeling%2C WV-Steubenville%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wichita Falls%2C TX %26 Lawton%2C OK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wichita-Hutchinson%2C KS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wilkes Barre-Scranton%2C PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wilmington%2C NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yakima-Pasco-Richland-Kennewick%2C WA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youngstown%2C OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yuma%2C AZ-El Centro%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zanesville%2C OH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DATA COMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discrepancies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FORD DIRECT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In QC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Account Areas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need 90 Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need Source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ordered%2C In Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ordered%2C Need Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>With Bl</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dealer_Ad_Association_Tier_2__c</picklist>
+        <values>
+            <fullName>HDAA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Digital_Ads_Provider__c</picklist>
+        <values>
+            <fullName>Adpearance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C-4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Here Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Constellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Alchemist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Inspire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Teamwork</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer eProcess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Force Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fountain Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FullPath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L2T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Ad Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local IQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Masters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Max Connect Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morang Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mud Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netsertive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PureCars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red Rider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rooks Advertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SoKal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stream</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZeroSum</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Digital_Issue_List__c</picklist>
+        <values>
+            <fullName>Budget removal%3E why it%E2%80%99s important for pacing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GMB missing access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory feed not setup correctly %28no inventory%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual videos need to be updated monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing FB page access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Must provide creative and budget to run manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Wildcard Selected%3E Service Brand %26 General don%E2%80%99t spend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not enough Coupons selected to generate spend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Old marketing partner claiming website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pause Ticket Request%3A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spend Mismatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Store Codes can%E2%80%99t start with 0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tag not placed %2F website not verified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Digital_Retailing__c</picklist>
+        <values>
+            <fullName>AutoFi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capital One</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarNow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Darwin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Inspire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer eProcess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer%2Ecom%2FAcellerate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerOn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Fountain Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM Buy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gubagoo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Ad Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nissan Buy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Path</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upstart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eShop</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Digital_Spending_Issues__c</picklist>
+        <values>
+            <fullName>Digital Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue%28s%29 Field Resolved</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FD_Package__c</picklist>
+        <values>
+            <fullName>1%3A1 Messaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Solutions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FND_OEM_Program__c</picklist>
+        <values>
+            <fullName>Acura Digital Advertising Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honda Boost Campaign 2024</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honda CRV Heavyup 2026</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honda Digital Advertising Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai 2024 Boost Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai Boost Funds July 2023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai Digital Advertising Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai Tactical Fund Program Q4 2023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subaru Digital Advertising Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volvo Digital Advertising Pilot 2023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volvo Digital Dealer Advertising Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volvo Houston Boost Program 2025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volvo WER Boost Program 2024</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volvo WER Boost Program 2025</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Foundation_Hybrid_Billing__c</picklist>
+        <values>
+            <fullName>Hybrid FNDN Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inventory_Feed_Provider_New_Car__c</picklist>
+        <values>
+            <fullName>360VinSpin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACS%2F%2FAutomotive Computer Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADIMS%2FIntelliventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AIM Experts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASN Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AST%2FAuto Search Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affordable Computer Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All Auto Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Applied Computer Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auction 123</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authenticom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Ad Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Corner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Exact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Fusion%2FMotion Pix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Nexus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Revo%2FAXX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Revolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Uplink</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Xplorer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoConX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoDealerPro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoFlexiLog Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoMatrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoRevo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoStar Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autobase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autoexperts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autofunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autolahome</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autolot Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automanager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonet Dealer Solution%2FASL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autopoint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autosoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autoxloo%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU Aux Feed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bargain News</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Big Voice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boost Motor Group %28Boost Media%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booth Creek IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDK DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDK Dash %28Websuite 1000%2FAlliance%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDK Lightspeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Wizard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camping World-Reminder to follow specifics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Spot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarPages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarThink</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarWeek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carbase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cargigi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carlot Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarsForSale%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chroma Cars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Dealer-This will delay your Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D2C Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DCS Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPC Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DVIM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data One Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealTimer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Car Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Click</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer FTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Fire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Fusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Impact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Inspire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Made</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Motive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Peak</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Specialties</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Sync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Trend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Vision %28formally Auto Express%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Websites</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer eProcess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer-Soft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer123</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerBuilt%2FLightyear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerCorp%2FDeskIt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerEbiz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerFront</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerMate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerSocket DMS%2FFinance Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerSpike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerVault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealercue %28VinCue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealeron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealerpull</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealersCloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealership IDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealership Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealerskins</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealerslink</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealersource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealertrack DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealr%2ECloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Devventure%2FAuto Sweet of Texas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond Lot %28via Autobase%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dominion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dubuque Data Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ELeads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EZ Results</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Everlogic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evolio%2FDealercity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FCA Database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Look</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ford VinReal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frazer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friday Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GST%2FKST Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Motors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genesys%2FSalesLifter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get My Auto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goxee Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Homenet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IOCOM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>InfinitiNet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Innovative Dealer Solution-IDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrated Dealer Systems-IDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>InteractRV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory %2B %28formally eCarList%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory Command Center %28ICC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory Marketing%2FVehicle Promote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JD Byrider API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JTZ Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelley Karpower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAutopak</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larry H Miller Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lexus API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln Elite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Link to the Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liquid Motors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lithia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lithia%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lookatusedcars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lot Boys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MPK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manheim UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Max Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro 21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsft VPN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motorcar Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motortrack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Naked Lime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netlook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nexteppe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nextgear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis Auto Complete Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Eighty Corp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRCO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pro Response to HN server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pro-motion Pix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procede Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proquotes%2FQuorum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quantech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiant Concepts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RedLine Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redbumper%2FCDK Connected Lot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reynolds RCI %28won%27t include photos%2Fcomments%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reynolds Web Solutions %28Naked Lime%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RyanTech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SacAutos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search Optics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SelectQu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ShiftPoint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sincro%2FColbalt Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skyworks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions Media 360 %28SM360%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sonic%2FDDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speed Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SpinCar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strathcom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>String Automotiv Captive Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SureFire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Systems 2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tesla Batch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teton Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toyota Shift %28SDIS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trader%2Eca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trans World Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traver Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UCS Datacaster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USC Feed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uautobee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unity Media Works</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V12 Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIN Solutions%2FESP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIN Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VINsource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Command-DMI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VinStickers%2FESP Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walk The Lot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wayne Reaves</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webentory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wilson Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XI Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Your Car Lot-GW Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zeus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>cDemo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eBizAutos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eDealer%2Eca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eVN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iDealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iMagicLabs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>vAuto</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inventory_Feed_Provider_Used_Car__c</picklist>
+        <values>
+            <fullName>360VinSpin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACS%2F%2FAutomotive Computer Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADIMS%2FIntelliventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AIM Experts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASN Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AST%2FAuto Search Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affordable Computer Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All Auto Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Applied Computer Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auction 123</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authenticom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Ad Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Corner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Exact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Fusion%2FMotion Pix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Nexus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Revo%2FAXX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Revolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Uplink</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Xplorer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoConX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoDealerPro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoFlexiLog Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoMatrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoRevo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoStar Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autobase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autoexperts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autofunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autolahome</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autolot Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automanager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonet Dealer Solution%2FASL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autopoint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autosoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autoxloo%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU Aux Feed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bargain News</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Big Voice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boost Motor Group %28Boost Media%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booth Creek IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDK DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDK Dash %28Websuite 1000%2FAlliance%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDK Lightspeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Wizard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camping World-Reminder to follow specifics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Spot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarPages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarThink</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarWeek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carbase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cargigi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carlot Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarsForSale%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chroma Cars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Dealer-This will delay your Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D2C Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DCS Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPC Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DVIM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data One Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealTimer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Car Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Click</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer FTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Fire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Fusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Impact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Inspire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Made</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Motive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Peak</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Specialties</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Sync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Trend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Vision %28formally Auto Express%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Websites</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer eProcess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer-Soft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer123</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerBuilt%2FLightyear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerCorp%2FDeskIt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerEbiz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerFront</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerMate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerSocket DMS%2FFinance Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerSpike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerVault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealercue %28VinCue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealeron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealerpull</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealersCloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealership IDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealership Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealerskins</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealerslink</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealersource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealertrack DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealr%2ECloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Devventure%2FAuto Sweet of Texas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond Lot %28via Autobase%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dominion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dubuque Data Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ELeads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EZ Results</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Everlogic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evolio%2FDealercity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FCA Database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Look</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ford VinReal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frazer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friday Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GST%2FKST Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Motors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genesys%2FSalesLifter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get My Auto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goxee Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Homenet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IOCOM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>InfinitiNet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Innovative Dealer Solution-IDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrated Dealer Systems-IDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>InteractRV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory %2B %28formally eCarList%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory Command Center %28ICC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory Marketing%2FVehicle Promote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JD Byrider API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JTZ Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelley Karpower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAutopak</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larry H Miller Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lexus API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln Elite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Link to the Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liquid Motors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lithia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lithia%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lookatusedcars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lot Boys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MPK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manheim UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Max Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro 21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsft VPN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motorcar Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motortrack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Naked Lime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netlook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nexteppe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nextgear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis Auto Complete Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Eighty Corp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other DMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRCO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pro Response to HN server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pro-motion Pix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procede Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proquotes%2FQuorum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quantech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiant Concepts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RedLine Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redbumper%2FCDK Connected Lot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reynolds RCI %28won%27t include photos%2Fcomments%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reynolds Web Solutions %28Naked Lime%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RyanTech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SacAutos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search Optics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SelectQu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ShiftPoint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sincro%2FColbalt Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skyworks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions Media 360 %28SM360%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sonic%2FDDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speed Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SpinCar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strathcom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>String Automotiv Captive Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SureFire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Systems 2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tesla Batch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teton Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toyota Shift %28SDIS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trader%2Eca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trans World Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traver Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UCS Datacaster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USC Feed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uautobee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unity Media Works</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V12 Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIN Solutions%2FESP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIN Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VINsource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Command-DMI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VinStickers%2FESP Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walk The Lot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wayne Reaves</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webentory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wilson Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XI Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Your Car Lot-GW Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zeus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>cDemo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eBizAutos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eDealer%2Eca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eVN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iDealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iMagicLabs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>vAuto</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inventory_Received_Automation__c</picklist>
+        <values>
+            <fullName>Inventory Feed Disconnected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Link_Google_Ads_CID_to_GA4_Property__c</picklist>
+        <values>
+            <fullName>Ad Account is no longer linked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed No Ad Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Link Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent Linking Instructions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Region__c</picklist>
+        <values>
+            <fullName>East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Measurement_Strategy__c</picklist>
+        <values>
+            <fullName>Clarivoy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vistadash</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OEM__c</picklist>
+        <values>
+            <fullName>Acura</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alfa Romeo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aston Martin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BMW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BODY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BUICK GMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bentley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cadillac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chevrolet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chrysler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collision Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dodge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FERRARI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fiat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fisker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Motors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genesis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HUMMER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harley Davidson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyundai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INEOS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INFINITI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUZU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jaguar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOTUS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lamborghini</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Land Rover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lexus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MARINE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCLAREN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MERCURY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MINI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maserati</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mazda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mercedes-Benz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mitsubishi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON-AUTOMOTIVE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nissan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Categorized</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PONTIAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PREOWNED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polestar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Porsche</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROLLS-ROYCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreational Vehicle %28RV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAAB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SATURN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUZUKI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stellantis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subaru</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toyota</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VINFAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volkswagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volvo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>BI Auto Group Dashboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BI Enterprise Dashboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BI Single Rooftop Dashboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Launch Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Used Strategy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hybrid Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hybrid OTT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lite Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lite plus Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lite plus Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitoring and Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCM Digital Intelligence Scorecard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCM Digital Performance Composite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Program Enrollment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTT Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pilot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pilot Conversion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plus Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Streaming TV%2FOTT Advertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YouTube Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Red_Fire_Dealer_Resolution__c</picklist>
+        <values>
+            <fullName>Converted to Full CXP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downgraded Package%2FProducts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issued Credits %2F Guarantees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-established Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Change</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>Advid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NorthEast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SouthEast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T10-Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Retention_Equity__c</picklist>
+        <values>
+            <fullName>4Eyes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Activator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affinitiv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoLoop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Mastermind</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Command</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Wizard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>E-Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fullpath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Ad Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PureCars %28Auto Miner%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Radar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SEO_Analyst_V2__c</picklist>
+        <values>
+            <fullName>D072RCXRPHC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D072XTP5M6F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D073LRFCWM6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emil Haarmaans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U01KRT7ULJ3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U020JN3AV4P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U022TTQQ415</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U02L6JL6002</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03LHAQCK7G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03LU28LY3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03M4SZDY73</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03PA0Y73QC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U04L79CMV09</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U04MNAFMBL2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U050FK87RCJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U05DRJYLL0K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U05QJDWBP3M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U064R8GLRE2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U066A5V8KSN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06AZ9YMB39</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06E7F6ETCM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06GHTCGATA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06P4KTG3MW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UH8RX249G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>URC9Z9N6N</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SEO_Team_Lead_v2__c</picklist>
+        <values>
+            <fullName>U01KRT7ULJ3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U020JN3AV4P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U022TTQQ415</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U02L6JL6002</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03LHAQCK7G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03LU28LY3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03M4SZDY73</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U03PA0Y73QC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U04L79CMV09</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U04MNAFMBL2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U050FK87RCJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U05DRJYLL0K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U05QJDWBP3M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U05SLUWM5KM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U064R8GLRE2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U066A5V8KSN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06E7F6ETCM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06GHTCGATA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06P4KTG3MW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U06PD57JK55</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U070GANC1NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U072S5LR3PY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U08PQDNC1J9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U08TR6X0FGV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UH8RX249G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>URC9Z9N6N</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Salesforce_Region__c</picklist>
+        <values>
+            <fullName>Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NorthEast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SouthEast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sys_Health_Status__c</picklist>
+        <values>
+            <fullName>Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TVM_Website_Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offersite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trade_Tool__c</picklist>
+        <values>
+            <fullName>Accu-trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoFi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blackbook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarFax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ClearCar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Edmunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JD Power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KBB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KBB ICO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Ad Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade-In Valet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eAuto Appraise</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Business Intelligence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Advertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCM 20 Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Advertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Pilot Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Website_Lost_Competitory__c</picklist>
+        <values>
+            <fullName>Adchoices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All Auto Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ansira</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoGo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Alchemist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Fire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Inspire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Masters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Spike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Venom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer eProcess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerOn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Fox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDM LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jazel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Ad Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NabThat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overfuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pixel Motion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remora</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SoKal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Website_Lost_Status__c</picklist>
+        <values>
+            <fullName>Buy%2FSell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Website_Providers__c</picklist>
+        <values>
+            <fullName>Adchoices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All Auto Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ansira</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoGo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Alchemist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Fire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Inspire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Masters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Spike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer Venom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer eProcess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealerOn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Fox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDM LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jazel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Ad Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NabThat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overfuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pixel Motion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remora</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SoKal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

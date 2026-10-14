@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eric_Millar_Grid_Edit</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Opportunity_Type__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>FordDirect_Package__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Order_Confirmation_Products__c</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Activated in Budget App,Demo Scheduled,Demo Completed,Next Steps,Pending,Nearing Try &amp; Buy Deadline,Try &amp; Buy Reviewed</value>
+    </filters>
+    <filters>
+        <field>Upsell_Team_Assist__c</field>
+        <operation>equals</operation>
+        <value>Eric Millar</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Active</value>
+    </filters>
+    <label>Eric Millar Grid Edit</label>
+    <sharedTo>
+        <role>Upsell_Team</role>
+    </sharedTo>
+</ListView>

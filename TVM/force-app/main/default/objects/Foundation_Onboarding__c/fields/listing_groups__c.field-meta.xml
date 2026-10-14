@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>listing_groups__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Check &quot;listing groups&quot; for each campaign to ensure the proper condition (new/used) for advertised products</description>
+    <label>Check &quot;listing groups&quot; for each campaign</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

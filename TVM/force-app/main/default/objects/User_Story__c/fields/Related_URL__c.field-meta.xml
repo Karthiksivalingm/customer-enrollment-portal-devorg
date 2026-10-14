@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_URL__c</fullName>
+    <description>Please provide a URL to the page in question if applicable.</description>
+    <inlineHelpText>URL link to the page with the issue if necessary.</inlineHelpText>
+    <label>Related URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

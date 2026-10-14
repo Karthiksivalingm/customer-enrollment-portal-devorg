@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_GM_Accounts</fullName>
+    <columns>Quickbase_Record_ID__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Related_Auto_Group__c</columns>
+    <columns>Analytics_Franchise__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Regional_Sales_Director__c</columns>
+    <columns>Regional_Account_Director__c</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Hide_Dealership__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>CHEVROLET,BUICK,BUICK GMC,CADILLAC,GM,General Motors,GMC</value>
+    </filters>
+    <label>All Active GM Accounts</label>
+</ListView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Responsibility__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(RIGHT(TEXT(Status__c), LEN(TEXT(Status__c)) - 3),
+&quot; Request Submitted&quot;, &quot;Production Admin&quot;,
+&quot;- Need Information&quot;, &quot;Field&quot;,
+&quot; - Creative Complete - Additional Changes Needed&quot;, &quot;Production Admin&quot;,
+&quot;- Ready for SW&quot;, &quot;Script Writer&quot;,
+&quot;- Script - In Progress&quot;, &quot;Script Writer&quot;,
+&quot;- Script - Complete - Needs Client Approval&quot;, &quot;Field&quot;,
+&quot;- Script - Sent for Client Approval&quot;, &quot;Field&quot;,
+&quot;- Script - Changes Needed&quot;, &quot;Script Writer&quot;,
+&quot;- Script - Client Approved / Ready for VO&quot;, &quot;Script Writer&quot;,
+&quot;- Script - VO Ordered&quot;, &quot;Script Writer&quot;,
+&quot;- Ready for Designer&quot;, &quot;Designer&quot;,
+&quot;- Designer - In Progress&quot;, &quot;Designer&quot;,
+&quot;- Designer - Video Complete / Ready for Proofing&quot;, &quot;Editor&quot;,
+&quot;- Proofing - In Progress&quot;, &quot;Editor&quot;,
+&quot;- Proofing - Changes Needed&quot;, &quot;Designer&quot;,
+&quot;- Proofing - Approved / Client Approval Needed&quot;, &quot;Field&quot;,
+&quot;- Compliance/Client Approval - Pending&quot;, &quot;Field&quot;,
+&quot;- Client Approved / Media Instruction Needed&quot;, &quot;Media&quot;,
+&quot;- Media - Ready for Upload&quot;, &quot;Designer&quot;,
+&quot;- Designer - Upload Complete&quot;, &quot;Editor&quot;,
+&quot;- Proofing - Upload Verified&quot;, &quot;Media&quot;,
+&quot;- Proofing - Reupload Needed&quot;, &quot;Designer&quot;,
+&quot;- Not Approved to Execute&quot;, &quot;Production Admin&quot;,
+&quot;Error&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Responsibility Fully Custom</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

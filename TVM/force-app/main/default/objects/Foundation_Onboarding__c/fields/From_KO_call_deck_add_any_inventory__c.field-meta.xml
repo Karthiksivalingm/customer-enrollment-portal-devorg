@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_KO_call_deck_add_any_inventory__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - From KO call deck, add any inventory filters/exclusions if necessary</description>
+    <label>From KO call deck add any inventory</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

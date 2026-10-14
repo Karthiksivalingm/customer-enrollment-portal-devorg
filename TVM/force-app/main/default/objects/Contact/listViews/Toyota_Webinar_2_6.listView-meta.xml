@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Toyota_Webinar_2_6</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Contact_Role__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>ACTION_CADENCE_ASSIGNEE</columns>
+    <columns>ACTION_CADENCE_STATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BDC_Initiative__c</field>
+        <operation>equals</operation>
+        <value>Toyota Webinar 2/6</value>
+    </filters>
+    <filters>
+        <field>Account.My_Account_RSM__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Account.Client_Type_Team_V__c</field>
+        <operation>notEqual</operation>
+        <value>Active</value>
+    </filters>
+    <label>My Toyota Webinar 2/6</label>
+</ListView>

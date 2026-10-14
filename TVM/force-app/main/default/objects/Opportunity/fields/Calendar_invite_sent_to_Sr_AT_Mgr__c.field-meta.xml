@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calendar_invite_sent_to_Sr_AT_Mgr__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND</description>
+    <label>Calendar invite sent to Sr. AT + Mgr</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

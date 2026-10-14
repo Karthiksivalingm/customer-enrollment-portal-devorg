@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dealer_Group_Account__c</fullName>
+    <formula>Text( Analytics_Franchise__c ) = &quot;GROUP&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Dealer Group Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

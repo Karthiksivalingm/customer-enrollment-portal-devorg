@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Responsibility__c</fullName>
+    <label>Responsibility</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Designer</fullName>
+                <default>false</default>
+                <label>Designer</label>
+            </value>
+            <value>
+                <fullName>Production Specialist</fullName>
+                <default>false</default>
+                <label>Production Specialist</label>
+            </value>
+            <value>
+                <fullName>Compliance Team</fullName>
+                <default>false</default>
+                <label>Compliance Team</label>
+            </value>
+            <value>
+                <fullName>Website Team</fullName>
+                <default>false</default>
+                <label>Website Team</label>
+            </value>
+            <value>
+                <fullName>Onboarding Rep</fullName>
+                <default>false</default>
+                <label>Onboarding Rep</label>
+            </value>
+            <value>
+                <fullName>Digital</fullName>
+                <default>false</default>
+                <label>Digital</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

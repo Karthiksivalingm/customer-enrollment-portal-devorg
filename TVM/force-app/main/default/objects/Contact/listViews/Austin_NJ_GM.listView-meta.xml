@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Austin_NJ_GM</fullName>
+    <columns>CONTACT.EMAIL_BOUNCED_DATE</columns>
+    <columns>Account.Client_Type_Team_V__c</columns>
+    <columns>Account.Analytics_Franchise__c</columns>
+    <columns>Auto_Group_Concatenated__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Account.Related_Auto_Group__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Client_Type_Team_V__c</field>
+        <operation>equals</operation>
+        <value>Prospect,Inactive</value>
+    </filters>
+    <filters>
+        <field>No_Longer_With_Company__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Contact_Title__c</field>
+        <operation>equals</operation>
+        <value>BDC Director,Director of Business Development,Director of Digital Marketing,Director of Internet Sales,Director of Marketing,General Manager,General Sales Manager,Internet Manager,Marketing Manager,Chief Marketing Officer</value>
+    </filters>
+    <filters>
+        <field>DNC__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>equals</operation>
+        <value>NJ</value>
+    </filters>
+    <filters>
+        <field>Account.Analytics_Franchise__c</field>
+        <operation>equals</operation>
+        <value>BUICK,BUICK GMC,CADILLAC,CHEVROLET,GM,GMC</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Austin NJ GM</label>
+</ListView>

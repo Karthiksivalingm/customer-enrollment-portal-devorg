@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submission_Issues__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Meeting_Location__c, &apos;&apos;), &quot;Meeting Location is blank&quot; + BR(), &quot;&quot;)
++
+IF(IsBlank(Meeting_Date__c), &quot;Meeting Date is blank&quot; + BR(), &quot;&quot;)
++
+IF(Is_To_Populated__c = false, &quot;The To line has no valid email&quot; + BR(), &quot;&quot;)
++
+IF(IsBlank(Attendees__c), &quot;Attendees is blank&quot; + BR(), &quot;&quot;)
++
+IF(IsBlank(Recap_Month_Selection__c), &quot;Recap Month is blank&quot; + BR(), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Submission Issues</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

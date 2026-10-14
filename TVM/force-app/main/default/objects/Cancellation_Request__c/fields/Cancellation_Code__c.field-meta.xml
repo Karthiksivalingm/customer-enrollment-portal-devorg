@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Primary_Cancelled_Reason__c , 
+&quot;Lack of Customer Service&quot;, &quot;(LCS)&quot;,
+&quot;Budget PCS Out of Line&quot;, &quot;(PCS)&quot;,
+&quot;Buy/Sell/Closed&quot;, &quot;(BSC)&quot;,
+&quot;Buy/Sell&quot;, &quot;(BSC)&quot;,
+&quot;Closed Point&quot;, &quot;(CLD)&quot;,
+&quot;Management Change&quot;, &quot;(MCL)&quot;,
+&quot;Lack of Utilization/Lack of Buy In/Not Feeling It&quot;, &quot;(NFI)&quot;,
+&quot;Cost/Value (Dealer Perceives Too Expensive)&quot;, &quot;(CTV)&quot;,
+&quot;Missed Expecations/Loss&quot;, &quot;(MEL)&quot;,
+&quot;Product Competiveness/Loss&quot;, &quot;(PCL)&quot;,
+&quot;Not Supported by OEM Initiatives (Coop)&quot;, &quot;(OEM)&quot;,
+&quot;Production/Execution Issues&quot;, &quot;(PEI)&quot;,
+&quot;Never Launched&quot;, &quot;(NWL)&quot;,
+&quot;Not Coded&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cancellation Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

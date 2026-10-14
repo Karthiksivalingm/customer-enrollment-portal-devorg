@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assign_to_Pit_Crew__c</fullName>
+    <formula>Text( Case_Request__c )= &quot;Feed Export Issue&quot; ||
+Text( Case_Request__c ) = &quot;Feed Export Setup&quot; ||
+Text( Case_Request__c ) = &quot;Inventory Grouping Issue&quot; ||
+Text( Case_Request__c ) = &quot;Inventory Grouping Setup&quot; ||
+Text( Case_Request__c ) = &quot;Inventory Quantity Issue&quot; ||
+Text( Case_Request__c ) = &quot;Inventory Source Change&quot; ||
+Text( Case_Request__c ) = &quot;Key Features Issue&quot; ||
+Text( Case_Request__c ) = &quot;New HomeNet Feed/Order&quot; ||
+Text( Case_Request__c ) = &quot;Other&quot; ||
+Text( Case_Request__c ) = &quot;VDV Issue&quot; ||
+Text( Case_Request__c ) = &quot;Vehicle Information Issue&quot; ||
+Text( Case_Request__c ) = &quot;Vehicle Photos Issue&quot; ||
+Text( Case_Request__c ) = &quot;Manual Vehicle Offers&quot; ||
+Text( Case_Request__c ) = &quot;New Vehicle Payment Specials&quot; ||
+Text( Case_Request__c ) = &quot;Pre-Owned Specials&quot; ||
+Text( Case_Request__c ) = &quot;Payment Disclaimer Change&quot; ||
+Text( Case_Request__c ) = &quot;Payment Disclaimer Issue&quot; ||
+Text( Case_Request__c ) = &quot;Pricing/Payment Issue&quot; ||
+Text( Case_Request__c ) = &quot;Pricing/Payments Update&quot; ||
+Text( Case_Request__c ) = &quot;Rollbacks&quot; ||
+Text( Case_Request__c ) = &quot;Taxes &amp; Fees Changes&quot; ||
+Text( Case_Request__c ) = &quot;Taxes &amp; Fees Issues&quot; ||
+Text( Case_Request__c ) = &quot;Unlock Price/Discount Issue&quot; ||
+Text( Case_Request__c ) = &quot;Unlock Price/Discount Setup&quot; ||
+Text( Case_Request__c ) = &quot;Incentives/Rebates Issue&quot; ||
+Text( Case_Request__c ) = &quot;Incentives/Rebates Update&quot; ||
+Text( Case_Request__c ) = &quot;Apollo Assistant Issue&quot; ||
+Text( Case_Request__c ) = &quot;Apollo Assistant Setup&quot; ||
+Text( Case_Request__c ) = &quot;Finance Application iFrame Setup&quot; ||
+Text( Case_Request__c ) = &quot;Finance Application Integration Setup&quot; ||
+Text( Case_Request__c ) = &quot;Finance Application Issue&quot; ||
+Text( Case_Request__c ) = &quot;Inbound Text Issue&quot; ||
+Text( Case_Request__c ) = &quot;Inbound Text Setup&quot; ||
+Text( Case_Request__c ) = &quot;My Credit Drive Login Setup&quot; ||
+Text( Case_Request__c ) = &quot;Pre-Qual Issue&quot; ||
+Text( Case_Request__c ) = &quot;Pre-Qual Setup&quot; ||
+Text( Case_Request__c ) = &quot;Schedule Test Drive Setup&quot; ||
+Text( Case_Request__c ) = &quot;Service Scheduler iFrame Setup&quot; ||
+Text( Case_Request__c ) = &quot;Service Scheduler Integration Setup&quot; ||
+Text( Case_Request__c ) = &quot;Transact Issue&quot; ||
+Text( Case_Request__c ) = &quot;Transact Setup&quot; ||
+Text( Case_Request__c ) = &quot;Value Trade / Sell Us Your Car&quot; ||
+Text( Case_Request__c ) = &quot;VDV Setup&quot; ||
+Text( Case_Request__c ) = &quot;Blogs&quot; ||
+Text( Case_Request__c ) = &quot;Custom SRP Tile&quot; ||
+Text( Case_Request__c ) = &quot;Disaster Message&quot; ||
+Text( Case_Request__c ) = &quot;Dynamic Number Insertion Issue&quot; ||
+Text( Case_Request__c ) = &quot;Menu/Navigation Updates&quot; ||
+Text( Case_Request__c ) = &quot;Privacy Policy or Site Disclaimers&quot; ||
+Text( Case_Request__c ) = &quot;Reserve Your Car&quot; ||
+Text( Case_Request__c ) = &quot;Update SEO Page Content&quot; ||
+Text( Case_Request__c ) = &quot;URL Redirects&quot; ||
+Text( Case_Request__c ) = &quot;Custom Form Creation&quot; ||
+Text( Case_Request__c ) = &quot;Lead Routing Issue&quot; ||
+Text( Case_Request__c ) = &quot;Lead Routing Updates&quot; ||
+Text( Case_Request__c ) = &quot;TCPA/Form Disclaimers&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Assign to Pit Crew</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

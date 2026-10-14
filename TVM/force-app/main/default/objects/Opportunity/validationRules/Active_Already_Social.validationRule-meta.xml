@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Already_Social</fullName>
+    <active>false</active>
+    <errorConditionFormula>Account.Active_Social__c &amp;&amp;  Count_Social_New_Products__c &gt;0 &amp;&amp; Account.Active_Account_C__c &amp;&amp; IsClosed =false
+
+&amp;&amp; Contains( $UserRole.Name , &quot;VP of Retention&quot;)=false
+&amp;&amp; Contains( $Profile.Name , &quot;System Administrator&quot;)=false</errorConditionFormula>
+    <errorMessage>Social is Already Active, you cannot upsell it.</errorMessage>
+</ValidationRule>

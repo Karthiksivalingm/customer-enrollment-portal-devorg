@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Ford_Mail_Checklist_Complete__c</fullName>
+    <formula>AND(
+    Xmpie_Plan_Alert_Dev_team_see_link__c,
+    Setup_confirmed_for_variability__c,
+    FD_Announced_to_RAM__c,
+    Load_in_Apollo_strategy_auto_order__c,
+    Prod_call_slides_quick_proofing_note__c,
+    Layers_data_fields_from_dev_see_link__c,
+    Confirm_setup_coupon_pricing_ALC__c,
+    FD_Provided_Auto_Order_Dates__c,
+    Set_Auto_Order_Date__c,
+    Cheat_sheets_updated_w_coupon_pricing__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Ford Mail Checklist Complete</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

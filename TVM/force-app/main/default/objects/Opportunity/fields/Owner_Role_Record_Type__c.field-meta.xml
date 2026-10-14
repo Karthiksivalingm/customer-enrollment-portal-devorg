@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Role_Record_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF((Owner.Profile.Name = &quot;VP of Client Services&quot; || Owner.Profile.Name = &quot;VP of Customer Success&quot; || Owner.Profile.Name = &quot;RAD&quot; || Owner.Profile.Name = &quot;Account Manager&quot; || Owner.Profile.Name = &quot;Product Manager&quot;) &amp;&amp;  Opportunity_Type__c = &quot;New Sale&quot;, &quot;RAD New Sale&quot;,
+
+IF((Owner.Profile.Name = &quot;VP of Client Services&quot; || Owner.Profile.Name = &quot;VP of Customer Success&quot; || Owner.Profile.Name = &quot;RAD&quot; || Owner.Profile.Name = &quot;Account Manager&quot;  || Owner.Profile.Name = &quot;Product Manager&quot;) &amp;&amp;  Opportunity_Type__c = &quot;Upsell&quot;, &quot;RAD Upsell&quot;,
+
+IF((Owner.Profile.Name = &quot;VP Advid&quot; || Owner.Profile.Name = &quot;VP of BDC&quot; || Owner.Profile.Name = &quot;VP of Sales&quot; || Owner.Profile.Name = &quot;VP of Sales West&quot; || Owner.Profile.Name = &quot;VP of Sales East&quot; || Owner.Profile.Name = &quot;RSD&quot; || Owner.Profile.Name = &quot;VP of Websites&quot; || Owner.Profile.Name = &quot;VP of Full Service&quot; || Owner.Profile.Name = &quot;Apollo Websites Support&quot; || Owner.Profile.Name = &quot;RSD&quot;) &amp;&amp;  Opportunity_Type__c = &quot;New Sale&quot;, &quot;RSD New Sale&quot;,
+
+IF((Owner.Profile.Name = &quot;VP Advid&quot; || Owner.Profile.Name = &quot;VP of BDC&quot; || Owner.Profile.Name = &quot;VP of Sales&quot; || Owner.Profile.Name = &quot;VP of Sales West&quot; || Owner.Profile.Name = &quot;VP of Sales East&quot; || Owner.Profile.Name = &quot;RSD&quot; || Owner.Profile.Name = &quot;VP of Websites&quot; || Owner.Profile.Name = &quot;VP of Full Service&quot; || Owner.Profile.Name = &quot;Apollo Websites Support&quot;)&amp;&amp;  Opportunity_Type__c = &quot;Upsell&quot;, &quot;RSD Upsell&quot;,
+
+IF(Opportunity_Type__c = &quot;Historical&quot;, &quot;Historical&quot;,
+&quot;Other&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner Role &amp; Record Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

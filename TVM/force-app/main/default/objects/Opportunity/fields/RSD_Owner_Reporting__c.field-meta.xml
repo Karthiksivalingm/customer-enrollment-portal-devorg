@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RSD_Owner_Reporting__c</fullName>
+    <formula>(Owner.FirstName = &quot;Justin&quot; &amp;&amp; Owner.LastName = &quot;Byrd&quot;)|| 
+(Owner.FirstName = &quot;Nick&quot; &amp;&amp; Owner.LastName = &quot;Beachler&quot;)|| 
+(Owner.FirstName = &quot;James&quot; &amp;&amp; Owner.LastName = &quot;Green&quot;)|| 
+(Owner.FirstName = &quot;Rick&quot; &amp;&amp; Owner.LastName = &quot;Covault&quot;)||
+Owner.Profile_Name__c = &quot;RSD&quot;
+
+|| Owner.Profile.Name = &quot;BDC Captain&quot; || Owner.Profile.Name = &quot;RSM&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RSD Owner Reporting</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

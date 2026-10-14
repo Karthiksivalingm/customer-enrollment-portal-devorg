@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Logo_Request_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(IsBlank(Logo_Compliance_Request_ID__c )=false, HYPERLINK(&quot;https://teamvelocity.lightning.force.com/lightning/r/Compliance_Request__c/&quot;&amp; Logo_Compliance_Request_ID__c &amp;&quot;/view&quot;, &quot;Logo Request&quot;, &quot;_blank&quot;), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Logo Request Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

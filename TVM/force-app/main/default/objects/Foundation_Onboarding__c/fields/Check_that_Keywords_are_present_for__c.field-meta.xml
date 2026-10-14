@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_that_Keywords_are_present_for__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Check that Keywords are present for each search campaign</description>
+    <label>Check that Keywords are present for</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

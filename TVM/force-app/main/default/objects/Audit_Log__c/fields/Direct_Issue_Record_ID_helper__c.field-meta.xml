@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_Issue_Record_ID_helper__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(SFID_Case__c)),
+    SFID_Case__c,
+    IF(
+        NOT(ISBLANK(SFID_Opportunity__c)),
+        SFID_Opportunity__c,
+        IF(
+            NOT(ISBLANK(SFID_Compliance__c)),
+            SFID_Compliance__c,
+            IF(
+                NOT(ISBLANK(SFID_Account__c)),
+                SFID_Account__c,
+                &quot;&quot;
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Direct Issue Record ID (helper)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

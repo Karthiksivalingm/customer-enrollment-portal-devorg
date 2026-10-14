@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Don&apos;t Know</fullName>
+        <default>true</default>
+        <label>Don&apos;t Know</label>
+    </customValue>
+    <customValue>
+        <fullName>Local Ad Agency</fullName>
+        <default>false</default>
+        <label>Local Ad Agency</label>
+    </customValue>
+    <customValue>
+        <fullName>In House</fullName>
+        <default>false</default>
+        <label>In House</label>
+    </customValue>
+    <customValue>
+        <fullName>Accu-trade</fullName>
+        <default>false</default>
+        <label>Accu-trade</label>
+    </customValue>
+    <customValue>
+        <fullName>AutoFi</fullName>
+        <default>false</default>
+        <label>AutoFi</label>
+    </customValue>
+    <customValue>
+        <fullName>Blackbook</fullName>
+        <default>false</default>
+        <label>Blackbook</label>
+    </customValue>
+    <customValue>
+        <fullName>CarFax</fullName>
+        <default>false</default>
+        <label>CarFax</label>
+    </customValue>
+    <customValue>
+        <fullName>ClearCar</fullName>
+        <default>false</default>
+        <label>ClearCar</label>
+    </customValue>
+    <customValue>
+        <fullName>eAuto Appraise</fullName>
+        <default>false</default>
+        <label>eAuto Appraise</label>
+    </customValue>
+    <customValue>
+        <fullName>Edmunds</fullName>
+        <default>false</default>
+        <label>Edmunds</label>
+    </customValue>
+    <customValue>
+        <fullName>JD Power</fullName>
+        <default>false</default>
+        <label>JD Power</label>
+    </customValue>
+    <customValue>
+        <fullName>KBB</fullName>
+        <default>false</default>
+        <label>KBB</label>
+    </customValue>
+    <customValue>
+        <fullName>KBB ICO</fullName>
+        <default>false</default>
+        <label>KBB ICO</label>
+    </customValue>
+    <customValue>
+        <fullName>Trade-In Valet</fullName>
+        <default>false</default>
+        <label>Trade-In Valet</label>
+    </customValue>
+    <customValue>
+        <fullName>Trade Pending</fullName>
+        <default>false</default>
+        <label>Trade Pending</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>AutoAlert</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>AutoAlert</label>
+    </customValue>
+    <customValue>
+        <fullName>Deal Activator</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Deal Activator</label>
+    </customValue>
+    <description>Competitors</description>
+    <masterLabel>Trade Tool</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

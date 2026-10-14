@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Length__c</fullName>
+    <label>Length</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>10 seconds (25-30 words)</fullName>
+                <default>false</default>
+                <label>10 seconds (25-30 words)</label>
+            </value>
+            <value>
+                <fullName>15 seconds (40-45 words)</fullName>
+                <default>false</default>
+                <label>15 seconds (40-45 words)</label>
+            </value>
+            <value>
+                <fullName>30 seconds (83-93 words)</fullName>
+                <default>false</default>
+                <label>30 seconds (83-93 words)</label>
+            </value>
+            <value>
+                <fullName>60 seconds (185-195 words)</fullName>
+                <default>false</default>
+                <label>60 seconds (185-195 words)</label>
+            </value>
+            <value>
+                <fullName>RADIO - 30 seconds w/o disclaimer (83-93 words)</fullName>
+                <default>false</default>
+                <label>RADIO - 30 seconds w/o disclaimer (83-93 words)</label>
+            </value>
+            <value>
+                <fullName>RADIO - 30 seconds w/ fast-read disclaimer (88-103 words)</fullName>
+                <default>false</default>
+                <label>RADIO - 30 seconds w/ fast-read disclaimer (88-103 words)</label>
+            </value>
+            <value>
+                <fullName>RADIO - 60 seconds w/o disclaimer (180-190 words)</fullName>
+                <default>false</default>
+                <label>RADIO - 60 seconds w/o disclaimer (180-190 words)</label>
+            </value>
+            <value>
+                <fullName>RADIO - 60 seconds  w/ fast-read disclaimer (185-200 words)</fullName>
+                <default>false</default>
+                <label>RADIO - 60 seconds  w/ fast-read disclaimer (185-200 words)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

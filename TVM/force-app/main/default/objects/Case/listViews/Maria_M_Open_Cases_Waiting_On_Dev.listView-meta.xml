@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maria_M_Open_Cases_Waiting_On_Dev</fullName>
+    <columns>Red_Fire__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Status_Number__c</columns>
+    <columns>Status_Filtered__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Comment_Last_Edited_Time__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Case_Subcategory__c</columns>
+    <columns>Case_Request__c</columns>
+    <columns>Dynamic_Support_Workday_Hours__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status_Filtered__c</field>
+        <operation>notEqual</operation>
+        <value>Waiting on Development,Production Complete,Digital Complete,Closed,Cancelled,In Progress with Dev,Selected for Dev,On Hold</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>mmych</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Maria M - Open Cases</label>
+    <sharedTo>
+        <group>Apollo_Websites_Support</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Command_Center_Cases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Case_Subcategory__c</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>CASES.CLOSED_DATE</columns>
+    <columns>CASES.SUBJECT</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Case_Category__c</field>
+        <operation>equals</operation>
+        <value>Command Center</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Closed Command Center Cases</label>
+    <sharedTo>
+        <group>Command_Center_Support</group>
+    </sharedTo>
+</ListView>

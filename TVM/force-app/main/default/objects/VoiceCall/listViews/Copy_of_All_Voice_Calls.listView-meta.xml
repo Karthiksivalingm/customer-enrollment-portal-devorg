@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_All_Voice_Calls</fullName>
+    <columns>Name</columns>
+    <columns>CallType</columns>
+    <columns>FromPhoneNumber</columns>
+    <columns>CallResolution</columns>
+    <columns>CallStartDateTime</columns>
+    <columns>EndUser</columns>
+    <columns>Owner</columns>
+    <columns>CallOrigin</columns>
+    <columns>QualityScore</columns>
+    <columns>CallDurationInSeconds</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FromPhoneNumber</field>
+        <operation>notEqual</operation>
+        <value>+14045688000</value>
+    </filters>
+    <label>All Voice Calls minus 8000 #</label>
+</ListView>

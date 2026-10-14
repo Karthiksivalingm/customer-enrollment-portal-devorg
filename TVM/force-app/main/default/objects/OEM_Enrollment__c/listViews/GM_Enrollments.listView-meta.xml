@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GM_Enrollments</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Enrollment_Attention_Needed__c</columns>
+    <columns>Enrolled_Products__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account__c</field>
+        <operation>contains</operation>
+        <value>GM</value>
+    </filters>
+    <label>GM Enrollments</label>
+</ListView>

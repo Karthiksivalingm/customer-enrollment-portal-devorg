@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OTT_Premium_Custom_Budget__c</fullName>
+    <inlineHelpText>Foundation Direct OTT Budget</inlineHelpText>
+    <label>OTT Premium Custom Budget</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

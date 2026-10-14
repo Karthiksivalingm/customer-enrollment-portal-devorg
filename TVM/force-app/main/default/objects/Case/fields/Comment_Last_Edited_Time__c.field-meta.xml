@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comment_Last_Edited_Time__c</fullName>
+    <label>Comment Last Edited Time</label>
+    <summarizedField>Internal_External_Note__c.CreatedDate</summarizedField>
+    <summaryFilterItems>
+        <field>Internal_External_Note__c.LastModifiedById</field>
+        <operation>notEqual</operation>
+        <value>0055f000004Ux7PAAS</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Internal_External_Note__c.CreatedById</field>
+        <operation>notEqual</operation>
+        <value>0055f000004Ux7PAAS</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Internal_External_Note__c.LastModifiedById</field>
+        <operation>notEqual</operation>
+        <value>0055f000007vB07AAE</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Internal_External_Note__c.CreatedById</field>
+        <operation>notEqual</operation>
+        <value>0055f000007vB07AAE</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Internal_External_Note__c.Case__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

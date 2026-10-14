@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forcasted_Close_Month__c</fullName>
+    <formula>/*If close date is in the future, use close date*/
+if( IsNull(Close_Date_Actual__c)=false ,   Close_Date_Actual__c ,
+if( CloseDate&gt;=Today(), CloseDate,  
+
+/*else if close date is passed, but before 25h*/
+if(Day(Today())&lt;=25,
+
+/*Current Month 25th*/
+DateValue(Text(Year(Today()))&amp;&quot;-&quot;&amp;Text(MONTH(Today()))&amp;&quot;-25&quot;),
+
+/*else if next month*/
+/*Next Month 25th*/
+DateValue(Text(if(MONTH(TODAY())=12, Year(Today())+1, Year(Today())))&amp;&quot;-&quot;&amp;Text(if(MONTH(TODAY())=12, 1, MONTH(Today())+1))&amp;&quot;-25&quot;)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Forcasted Close Month</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

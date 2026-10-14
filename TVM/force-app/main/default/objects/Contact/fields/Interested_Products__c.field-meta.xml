@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interested_Products__c</fullName>
+    <description>FND</description>
+    <label>Interested Products?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NCM Digital Performance Composite</fullName>
+                <default>false</default>
+                <label>NCM Digital Performance Composite</label>
+            </value>
+            <value>
+                <fullName>Digital Advertising</fullName>
+                <default>false</default>
+                <label>Digital Advertising</label>
+            </value>
+            <value>
+                <fullName>Business Intelligence</fullName>
+                <default>false</default>
+                <label>Business Intelligence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

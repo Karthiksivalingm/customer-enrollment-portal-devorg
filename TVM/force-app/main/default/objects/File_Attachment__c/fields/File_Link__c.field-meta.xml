@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>File_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;https://teamvelocity.lightning.force.com/lightning/r/ContentDocument/&apos;&amp; CDL_ID__c &amp;&quot;/view&quot;, &apos;View&apos;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>File Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

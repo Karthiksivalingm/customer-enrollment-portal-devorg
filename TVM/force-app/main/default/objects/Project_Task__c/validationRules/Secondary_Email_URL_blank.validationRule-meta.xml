@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Email_URL_blank</fullName>
+    <active>true</active>
+    <description>The user tried to close Secondary Email URL task when the Secondary Email URL field is blank</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status__c, &quot;Complete&quot;),
+    ISBLANK(Secondary_Email_URL__c),
+    ISPICKVAL(Task_Name__c, &quot;Secondary Email URL&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Secondary_Email_URL__c</errorDisplayField>
+    <errorMessage>You can&apos;t mark this Task completed until you fill in the Secondary Email URL</errorMessage>
+</ValidationRule>

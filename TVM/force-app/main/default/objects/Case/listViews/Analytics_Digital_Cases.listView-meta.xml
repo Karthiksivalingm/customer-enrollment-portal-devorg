@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Analytics_Digital_Cases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Name__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>Case_Request__c</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Case_Request__c</field>
+        <operation>equals</operation>
+        <value>Add Dealer Managed GA4</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Production Complete,Digital Complete,Closed</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Queue Analytics/GA4</label>
+    <sharedTo>
+        <group>Apollo_Websites_Support</group>
+        <group>Digital_Support</group>
+    </sharedTo>
+</ListView>

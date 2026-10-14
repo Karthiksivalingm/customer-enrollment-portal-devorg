@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recent_Triggers</fullName>
+    <columns>NAME</columns>
+    <columns>Request_Object__c</columns>
+    <columns>Message_Type__c</columns>
+    <columns>Response_Status_Code__c</columns>
+    <columns>Response_Message__c</columns>
+    <columns>Event_Time__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Record_Sent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Event_Time__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>N_DAYS_AGO:2</value>
+    </filters>
+    <label>Recent Triggers</label>
+</ListView>

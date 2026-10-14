@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_Recap_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Latest_Recap_ID__c=&quot;&quot;, &quot;&quot;,
+HYPERLINK(&quot;https://teamvelocity.lightning.force.com/lightning/r/Meeting_Recap__c/&quot;&amp; Latest_Recap_ID__c &amp;&quot;/view&quot;, &quot;Latest Recap&quot;, &quot;_blank&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Latest Recap Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

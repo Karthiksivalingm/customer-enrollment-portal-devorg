@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FordLincoln_Owner</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED(OwnerId) &amp;&amp;
+
+(Text( Account.Analytics_Franchise__c )=&quot;FORD&quot; || Text( Account.Analytics_Franchise__c)=&quot;LINCOLN&quot;) &amp;&amp;
+
+(Text(Account.Client_Type_Team_V__c)=&quot;Prospect&quot; || Text( Account.Client_Type_Team_V__c)=&quot;Inactive&quot;) &amp;&amp;
+
+ $Profile.Name  != &quot;System Administrator&quot; &amp;&amp;
+
+Owner.LastName != &quot;Green&quot; &amp;&amp; $User.LastName != &quot;Jackintelle&quot; &amp;&amp; Owner.LastName != &quot;Winkler&quot; &amp;&amp; $User.LastName != &quot;Winkler&quot; &amp;&amp; Owner.LastName != &quot;Jackintelle&quot; &amp;&amp; $User.LastName != &quot;Green&quot; &amp;&amp; Owner.LastName != &quot;Beachler&quot;&amp;&amp; Owner.LastName != &quot;Decker&quot;</errorConditionFormula>
+    <errorMessage>This is a Ford/Lincoln dealer please reach out to Salesforce Information to update.</errorMessage>
+</ValidationRule>

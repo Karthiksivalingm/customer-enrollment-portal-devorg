@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Project Task Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status_Filter_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Information Needed</fullName>
+                <default>false</default>
+                <label>Information Needed</label>
+            </value>
+            <value>
+                <fullName>Information Provided</fullName>
+                <default>false</default>
+                <label>Information Provided</label>
+            </value>
+            <value>
+                <fullName>Design Review</fullName>
+                <default>false</default>
+                <label>Design Review</label>
+            </value>
+            <value>
+                <fullName>Designer Review</fullName>
+                <default>false</default>
+                <label>Designer Review</label>
+            </value>
+            <value>
+                <fullName>Ernie Review</fullName>
+                <default>false</default>
+                <label>Ernie Review</label>
+            </value>
+            <value>
+                <fullName>Changes</fullName>
+                <default>false</default>
+                <label>Changes</label>
+            </value>
+            <value>
+                <fullName>Production Complete</fullName>
+                <default>false</default>
+                <label>Production Complete</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Live</fullName>
+                <default>false</default>
+                <label>Live</label>
+            </value>
+            <value>
+                <fullName>With Compliance</fullName>
+                <default>false</default>
+                <label>With Compliance</label>
+            </value>
+            <value>
+                <fullName>Complete Loaded on Site</fullName>
+                <default>false</default>
+                <label>Complete Loaded on Site</label>
+            </value>
+            <value>
+                <fullName>Submitted on Apollo</fullName>
+                <default>false</default>
+                <label>Submitted on Apollo</label>
+            </value>
+            <value>
+                <fullName>Mail Ordered</fullName>
+                <default>false</default>
+                <label>Mail Ordered</label>
+            </value>
+            <value>
+                <fullName>Waiting to go Live</fullName>
+                <default>false</default>
+                <label>Waiting to go Live</label>
+            </value>
+            <value>
+                <fullName>Ready to Submit</fullName>
+                <default>false</default>
+                <label>Ready to Submit</label>
+            </value>
+            <value>
+                <fullName>Complete and Ready for OB</fullName>
+                <default>false</default>
+                <label>Complete and Ready for OB</label>
+            </value>
+            <value>
+                <fullName>OB Approved</fullName>
+                <default>false</default>
+                <label>OB Approved</label>
+            </value>
+            <value>
+                <fullName>Passed to RAD</fullName>
+                <default>false</default>
+                <label>Passed to RAD</label>
+            </value>
+            <value>
+                <fullName>Not Executing</fullName>
+                <default>false</default>
+                <label>Not Executing</label>
+            </value>
+            <value>
+                <fullName>Using Existing Library Asset</fullName>
+                <default>false</default>
+                <label>Using Existing Library Asset</label>
+            </value>
+            <value>
+                <fullName>OBAD Action Required</fullName>
+                <default>false</default>
+                <label>OBAD Action Required</label>
+            </value>
+            <value>
+                <fullName>OBAD Action Completed</fullName>
+                <default>false</default>
+                <label>OBAD Action Completed</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>OD Admin</controllingFieldValue>
+            <controllingFieldValue>Creative7</controllingFieldValue>
+            <controllingFieldValue>FD_Statuses</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <controllingFieldValue>Info</controllingFieldValue>
+            <valueName>Not Started</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>FD_Statuses</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <valueName>In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>OD Admin</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <valueName>Information Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>OD Admin</controllingFieldValue>
+            <controllingFieldValue>Creative7</controllingFieldValue>
+            <controllingFieldValue>FD_Statuses</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <controllingFieldValue>Info</controllingFieldValue>
+            <valueName>Information Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <valueName>Approved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <valueName>Complete and Ready for OB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>OD Admin</controllingFieldValue>
+            <controllingFieldValue>Creative7</controllingFieldValue>
+            <controllingFieldValue>FD_Statuses</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <controllingFieldValue>Info</controllingFieldValue>
+            <valueName>Not Executing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>OD Admin</controllingFieldValue>
+            <controllingFieldValue>Creative7</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <controllingFieldValue>Info</controllingFieldValue>
+            <valueName>OBAD Action Required</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative6</controllingFieldValue>
+            <controllingFieldValue>OD Admin</controllingFieldValue>
+            <controllingFieldValue>Creative7</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <controllingFieldValue>Info</controllingFieldValue>
+            <valueName>OBAD Action Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OD Admin</controllingFieldValue>
+            <controllingFieldValue>Creative7</controllingFieldValue>
+            <controllingFieldValue>FD_Statuses</controllingFieldValue>
+            <controllingFieldValue>Request</controllingFieldValue>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <controllingFieldValue>Info</controllingFieldValue>
+            <valueName>Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <valueName>Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative</controllingFieldValue>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <valueName>Production Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative2</controllingFieldValue>
+            <valueName>Live</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Compliance</controllingFieldValue>
+            <valueName>Passed to RAD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative3</controllingFieldValue>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <valueName>Complete Loaded on Site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative4</controllingFieldValue>
+            <valueName>Using Existing Library Asset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <valueName>Submitted on Apollo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Creative5</controllingFieldValue>
+            <valueName>Mail Ordered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <valueName>With Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <valueName>Waiting to go Live</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Compliance2</controllingFieldValue>
+            <valueName>Ready to Submit</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

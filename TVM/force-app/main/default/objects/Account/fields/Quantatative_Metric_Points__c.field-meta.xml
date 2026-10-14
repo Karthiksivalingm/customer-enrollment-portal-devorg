@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantatative_Metric_Points__c</fullName>
+    <description>FND</description>
+    <externalId>false</externalId>
+    <formula>IF(Quantatative_Metric_Score__c&lt;=19,0,IF(AND(Quantatative_Metric_Score__c&gt;19,Quantatative_Metric_Score__c&lt;=29),5,IF(AND(Quantatative_Metric_Score__c&gt;29,Quantatative_Metric_Score__c&lt;=39),10,IF(AND(Quantatative_Metric_Score__c&gt;39,Quantatative_Metric_Score__c&lt;=50),15,0))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quantatative Metric Points</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

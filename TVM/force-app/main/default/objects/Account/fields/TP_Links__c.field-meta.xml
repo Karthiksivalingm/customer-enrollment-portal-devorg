@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TP_Links__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Link to TP: &quot;&amp; Quickbase_ID_URL__c  &amp; &quot; | Link to Staging: &quot;&amp;  HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/br3gp5dad/tablereport?a=q&amp;qid=36&amp;nv=1&amp;v0=&quot;&amp; SUBSTITUTE( Name , &quot; &quot;, &quot;+&quot;), &quot;Staging&quot;, &quot;_blank&quot;)
+&amp; &quot; | Link to Budgets: &quot;&amp;  HYPERLINK(&quot;https://touchpointcrm.quickbase.com/nav/app/bfrwt3xfj/table/bpitvipen/action/q?qid=1027&amp;nv=1&amp;v0=&quot;&amp; SUBSTITUTE( Name , &quot; &quot;, &quot;+&quot;), &quot;Budgets&quot;, &quot;_blank&quot;) &amp; &quot; | Link to CP: &quot;&amp;HYPERLINK(&quot;https://touchpointcrm.quickbase.com/db/bf7c4xiip?a=dr&amp;rid=&quot;&amp; CPID__c, &quot;Contract Profile&quot;, &quot;_blank&quot;) &amp; &quot; | Budget App: &quot;&amp;Link_to_Budget_App__c&amp; 
+
+if(IsBlank(Foundation_Account__c), &quot;&quot;, &quot; | Foundation Account: &quot;&amp;HYPERLINK(&quot;https://teamvelocity.lightning.force.com/lightning/r/Account/&quot;&amp;  Foundation_Account__c &amp; &quot;/view&quot;, Name ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TP Links</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

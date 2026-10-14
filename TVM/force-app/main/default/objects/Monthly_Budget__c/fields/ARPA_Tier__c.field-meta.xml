@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARPA_Tier__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt; 7500 , &quot;7500 + Net Revenue&quot;,
+IF(Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt; 5000 , &quot;5001 - 7500 Net Revenue&quot;,
+IF(Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt; 2500 , &quot;2501 - 5000 Net Revenue&quot;,
+IF(Net_Total_Monthly_Budget_Ex_Digital_Spe__c &gt; 0 , &quot;1 - 2500 Net Revenue&quot;,
+&quot;No Net Rev&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ARPA Tier</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

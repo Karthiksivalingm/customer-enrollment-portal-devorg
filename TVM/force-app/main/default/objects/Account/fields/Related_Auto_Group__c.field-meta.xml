@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Auto_Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Related Auto Group</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Auto_Group__c.Synthetic_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Standard Auto Group</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Auto_Group__c</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>Accounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

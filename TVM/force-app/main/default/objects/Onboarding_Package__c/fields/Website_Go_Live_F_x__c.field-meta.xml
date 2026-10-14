@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Go_Live_F_x__c</fullName>
+    <formula>CASE(
+    TEXT(Onboarding__r.Website_Go_Live_Time_Manual__c),
+    &quot;TBD&quot;, TIMEVALUE(&quot;23:58:00.000&quot;),
+    &quot;6:00 AM EST&quot;, TIMEVALUE(&quot;06:00:00.000&quot;),
+    &quot;6:30 AM EST&quot;, TIMEVALUE(&quot;06:30:00.000&quot;),
+    &quot;7:00 AM EST&quot;, TIMEVALUE(&quot;07:00:00.000&quot;),
+    &quot;7:30 AM EST&quot;, TIMEVALUE(&quot;07:30:00.000&quot;),
+    &quot;8:00 AM EST&quot;, TIMEVALUE(&quot;08:00:00.000&quot;),
+    &quot;8:30 AM EST&quot;, TIMEVALUE(&quot;08:30:00.000&quot;),
+    &quot;9:00 AM EST&quot;, TIMEVALUE(&quot;09:00:00.000&quot;),
+    &quot;9:30 AM EST&quot;, TIMEVALUE(&quot;09:30:00.000&quot;),
+    &quot;10:00 AM EST&quot;, TIMEVALUE(&quot;10:00:00.000&quot;),
+    &quot;10:30 AM EST&quot;, TIMEVALUE(&quot;10:30:00.000&quot;),
+    &quot;11:00 AM EST&quot;, TIMEVALUE(&quot;11:00:00.000&quot;),
+    &quot;11:30 AM EST&quot;, TIMEVALUE(&quot;11:30:00.000&quot;),
+    &quot;12:00 PM EST&quot;, TIMEVALUE(&quot;12:00:00.000&quot;),
+    &quot;12:30 PM EST&quot;, TIMEVALUE(&quot;12:30:00.000&quot;),
+    &quot;1:00 PM EST&quot;, TIMEVALUE(&quot;13:00:00.000&quot;),
+    &quot;1:30 PM EST&quot;, TIMEVALUE(&quot;13:30:00.000&quot;),
+    &quot;2:00 PM EST&quot;, TIMEVALUE(&quot;14:00:00.000&quot;),
+    &quot;2:30 PM EST&quot;, TIMEVALUE(&quot;14:30:00.000&quot;),
+    &quot;3:00 PM EST&quot;, TIMEVALUE(&quot;15:00:00.000&quot;),
+    &quot;3:30 PM EST&quot;, TIMEVALUE(&quot;15:30:00.000&quot;),
+    &quot;4:00 PM EST&quot;, TIMEVALUE(&quot;16:00:00.000&quot;),
+    &quot;4:30 PM EST&quot;, TIMEVALUE(&quot;16:30:00.000&quot;),
+    &quot;5:00 PM EST&quot;, TIMEVALUE(&quot;17:00:00.000&quot;),
+    &quot;5:30 PM EST&quot;, TIMEVALUE(&quot;17:30:00.000&quot;),
+    &quot;6:00 PM EST&quot;, TIMEVALUE(&quot;18:00:00.000&quot;),
+    &quot;6:30 PM EST&quot;, TIMEVALUE(&quot;18:30:00.000&quot;),
+    &quot;7:00 PM EST&quot;, TIMEVALUE(&quot;19:00:00.000&quot;),
+    &quot;7:30 PM EST&quot;, TIMEVALUE(&quot;19:30:00.000&quot;),
+    &quot;8:00 PM EST&quot;, TIMEVALUE(&quot;20:00:00.000&quot;),
+    TIMEVALUE(&quot;23:58:00.000&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Website Go Live F(x)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Time</type>
+</CustomField>

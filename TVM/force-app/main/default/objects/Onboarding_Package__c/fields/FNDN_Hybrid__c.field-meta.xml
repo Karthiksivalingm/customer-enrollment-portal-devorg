@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FNDN_Hybrid__c</fullName>
+    <formula>Client_Badge_T__c = &quot;FNDN Managed TVM Billed&quot; || Onboarding__r.Foundation_Sold_Opp__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FNDN Hybrid</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

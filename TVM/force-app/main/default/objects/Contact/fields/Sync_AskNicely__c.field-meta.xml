@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sync_AskNicely__c</fullName>
+    <formula>Email != &quot;&quot; &amp;&amp;
+(Primary_POC__c &lt;&gt;&quot;&quot; || 
+ Owner_Dealer_Principal__c &lt;&gt;&quot;&quot; || 
+ General_Manager__c &lt;&gt;&quot;&quot; || 
+ Service_Contact__c &lt;&gt;&quot;&quot; || 
+ Secondary_POC__c &lt;&gt;&quot;&quot; 
+)
+
+&amp;&amp;
+ Account.T3__c 
+&amp;&amp;
+ Text(Account.Client_Type_Team_V__c )=&quot;Active&quot;
+&amp;&amp;
+ Contains( Account.Name , &quot;Boost&quot;) = false
+&amp;&amp;
+ Contains( Account.Name , &quot;Sonic&quot;) = false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sync AskNicely</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

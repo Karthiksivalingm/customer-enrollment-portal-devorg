@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Google_Search__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://www.google.com/search?q=&quot;&amp; Substitute(Account_Manual_Entry__c, &quot; &quot;, &quot;+&quot;)  &amp;Substitute(Account_Manual_Entry_State__c, &quot; &quot;, &quot;+&quot;) , &quot;Google Search&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Google Search</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meeting_Recaps_Health_Score_Description__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( HS_Meeting_Recaps_11_24__c = 10 ,&quot;**&quot;&amp; TEXT(Recaps__c) &amp; &quot; Meetings / &quot; &amp; TEXT( Age__c )&amp;&quot; Months = &quot;&amp;  TEXT(ROUND(Recaps__c/Age__c,2)) &amp;&quot;% | &gt;50% 10/10pts**&quot;,TEXT(Recaps__c) &amp; &quot; Meetings / &quot; &amp; TEXT( Age__c )&amp;&quot; Months = &quot;&amp;  TEXT(ROUND(Recaps__c/Age__c,2))&amp;&quot;% | &gt;50% 10/10pts&quot;)&amp;BR()&amp;
+
+if( HS_Meeting_Recaps_11_24__c = 5 ,&quot;**&quot;&amp; TEXT(Recaps__c) &amp; &quot; Meetings / &quot; &amp; TEXT( Age__c )&amp;&quot; Months = &quot;&amp;  TEXT(ROUND(Recaps__c/Age__c,2)) &amp;&quot;% | &gt;25% 5/10pts**&quot;,TEXT(Recaps__c) &amp; &quot; Meetings / &quot; &amp; TEXT( Age__c )&amp;&quot; Months = &quot;&amp;  TEXT(ROUND(Recaps__c/Age__c,2)) &amp;&quot;% | &gt;25% 5/10pts&quot;)&amp;BR()&amp;
+
+if( HS_Meeting_Recaps_11_24__c = 0 ,&quot;**&quot;&amp; TEXT(Recaps__c) &amp; &quot; Meetings / &quot; &amp; TEXT( Age__c )&amp;&quot; Months = &quot;&amp;  TEXT(ROUND(Recaps__c/Age__c,2)) &amp;&quot;% | &lt;25% 0/10pts**&quot;,TEXT(Recaps__c) &amp; &quot; Meetings / &quot; &amp; TEXT( Age__c )&amp;&quot; Months = &quot;&amp;  TEXT(ROUND(Recaps__c/Age__c,2)) &amp;&quot;% | &lt;25% 0/10pts&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Calculation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

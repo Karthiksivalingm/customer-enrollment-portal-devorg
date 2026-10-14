@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Restrictions_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(StageName)&amp;&amp;
+RecordType.Name &lt;&gt; &quot;Foundation Opportunity&quot; &amp;&amp;
+(
+ $User.LastName != &quot;Chen&quot; &amp;&amp;(
+ISPICKVAL(StageName,&quot;Closed Lost&quot;) ||
+ISPICKVAL(StageName,&quot;Not Upsold&quot;))
+) &amp;&amp;
+(
+$Profile.Name != &quot;System Administrator&quot; &amp;&amp;
+ Flow_Closed_Opportunity__c =false
+) &amp;&amp;
+RecordTypeId &lt;&gt; &quot;012Vb000007jxvxIAA&quot;</errorConditionFormula>
+    <errorMessage>Please use the &quot;Close Opportunity&quot; button in the top right of the screen.</errorMessage>
+</ValidationRule>

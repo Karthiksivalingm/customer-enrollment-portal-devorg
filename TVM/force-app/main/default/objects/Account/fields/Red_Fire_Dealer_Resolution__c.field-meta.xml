@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Red_Fire_Dealer_Resolution__c</fullName>
+    <label>Red Fire Dealer Resolution</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Converted to Full CXP</fullName>
+                <default>false</default>
+                <label>Converted to Full CXP</label>
+            </value>
+            <value>
+                <fullName>Downgraded Package/Products</fullName>
+                <default>false</default>
+                <label>Downgraded Package/Products</label>
+            </value>
+            <value>
+                <fullName>Issued Credits / Guarantees</fullName>
+                <default>false</default>
+                <label>Issued Credits / Guarantees</label>
+            </value>
+            <value>
+                <fullName>Re-established Value</fullName>
+                <default>false</default>
+                <label>Re-established Value</label>
+            </value>
+            <value>
+                <fullName>Support Change</fullName>
+                <default>false</default>
+                <label>Support Change</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

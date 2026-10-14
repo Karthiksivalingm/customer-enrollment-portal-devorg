@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Step__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*CASE(Status__c,
+&quot;00 Request Being Reviewed&quot;, &quot;In PreQ&quot;,
+&quot;01 Ready for Designer&quot;, &quot;Designer Assigned&quot;,
+&quot;02 In Progress with Designer&quot;, &quot;Designer In Progress&quot;,
+&quot;03 Changes for Designer&quot;, &quot;Designer Changes&quot;,
+&quot;04 Information Provided - Field&quot;, &quot;Info Provided&quot;,
+&quot;05 Creative Review - Design&quot;, &quot;Creative Review&quot;,
+&quot;05 Creative Review Approved - Design&quot;, &quot;Creative Review Approved&quot;,
+&quot;06 Assigned to Designer&quot;, &quot;Designer Assigned&quot;,
+&quot;07 Need Information - Field&quot;, &quot;Waiting for Info&quot;,
+&quot;08 Creative Complete&quot;, &quot;Production Complete&quot;,
+&quot;09 Creative Approved - Field&quot;, &quot;Creative Approved&quot;,
+&quot;10 At Compliance - Field&quot;, &quot;Waiting for Compliance Approval&quot;,
+&quot;11 Asset Live/Deployed - Field&quot;, &quot;Complete&quot;,
+&quot;12 Not Approved to Execute&quot;, &quot;Rejected&quot;,
+&quot;&quot;
+)*/
+Text(Status__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Step</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

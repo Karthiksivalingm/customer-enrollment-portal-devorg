@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requirements_Missing__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(IsNull(Date_of_Cancellation_Notice__c), &quot;Cancellation Notice Date&quot;&amp;BR(), &quot;&quot;)&amp;
+if(IsNull(Date_of_Cancellation_Requested__c) , &quot;Cancelled Date&quot;&amp;BR(), &quot;&quot;)&amp;
+if(IsNull(Date_and_Time_of_Internal_Huddle__c) , &quot;Internal Huddle Date&quot;&amp;BR(), &quot;&quot;)&amp;
+if(IsNull(Date_of_Last_GM_DP_Comunication__c) , &quot;Last GM/DP Communication Date&quot;&amp;BR(), &quot;&quot;)&amp;
+if(Text(Primary_Cancelled_Reason__c)=&quot;&quot;, &quot;Cancelled Reason&quot;&amp;BR(), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Requirements Missing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AMSI</fullName>
+        <default>false</default>
+        <label>AMSI</label>
+    </customValue>
+    <customValue>
+        <fullName>Honda Boost</fullName>
+        <default>false</default>
+        <label>Honda Boost</label>
+    </customValue>
+    <customValue>
+        <fullName>Lithia</fullName>
+        <default>false</default>
+        <label>Lithia</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Penske</fullName>
+        <default>false</default>
+        <label>Penske</label>
+    </customValue>
+    <customValue>
+        <fullName>Standard</fullName>
+        <default>true</default>
+        <label>Standard</label>
+    </customValue>
+    <customValue>
+        <fullName>Team Velocity</fullName>
+        <default>false</default>
+        <label>Team Velocity</label>
+    </customValue>
+    <customValue>
+        <fullName>OTT Only</fullName>
+        <default>false</default>
+        <label>OTT Only</label>
+    </customValue>
+    <customValue>
+        <fullName>ASC Standard</fullName>
+        <default>false</default>
+        <label>ASC Standard</label>
+    </customValue>
+    <customValue>
+        <fullName>NCM</fullName>
+        <default>false</default>
+        <label>NCM</label>
+    </customValue>
+    <customValue>
+        <fullName>Porche OEM Website</fullName>
+        <default>false</default>
+        <label>Porche OEM Website</label>
+    </customValue>
+    <masterLabel>Measurement Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

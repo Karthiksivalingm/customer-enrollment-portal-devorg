@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dual_Franchise_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Dual Franchise Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Analytics_Franchise__c</field>
+            <operation>equals</operation>
+            <value>LINCOLN</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.BillingState</field>
+            <operation>equals</operation>
+            <valueField>Account.BillingState</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

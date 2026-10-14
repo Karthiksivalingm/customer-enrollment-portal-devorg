@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Latest_Deployment_Set</name>
+        <label>Latest Deployment Set</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Trigger</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Latest_Deployment_Created__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Deployment</targetReference>
+            </connector>
+            <label>Trigger</label>
+        </rules>
+    </decisions>
+    <description>Obj Survey Schedules | Trigger</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DeploymentName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Name}&amp;&quot; - &quot;&amp;
+Text(Year({!$Flow.CurrentDate}))&amp;
+if(Month({!$Flow.CurrentDate})&gt;10, Text(Month({!$Flow.CurrentDate})), &quot;0&quot;&amp;Text(Month({!$Flow.CurrentDate})))&amp;
+if(Day({!$Flow.CurrentDate})&gt;10, Text(Day({!$Flow.CurrentDate})), &quot;0&quot;&amp;Text(Day({!$Flow.CurrentDate})))</expression>
+    </formulas>
+    <interviewLabel>Survey - Deploy Surveys {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Survey - Deploy Surveys</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Deployment</name>
+        <label>Create Deployment</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Deployment_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>DeploymentName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SurveyTemplate__c</field>
+            <value>
+                <elementReference>$Record.Survey_Template__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Survey_Schedule__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Survey_Deployment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Latest_Deployment_Set</targetReference>
+        </connector>
+        <object>Survey_Schedule__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>media@teamvelocitymarketing.com</email>
+    <name>Media Team</name>
+    <queueMembers>
+        <users>
+            <user>astanco@tier10.com</user>
+            <user>charly@teamvelocitymarketing.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>ContactRequest</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Certified Make</fullName>
+        <default>false</default>
+        <label>Certified Make</label>
+    </customValue>
+    <customValue>
+        <fullName>Certified Make Model</fullName>
+        <default>false</default>
+        <label>Certified Make Model</label>
+    </customValue>
+    <customValue>
+        <fullName>Certified Year Make Model</fullName>
+        <default>false</default>
+        <label>Certified Year Make Model</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealership Name</fullName>
+        <default>false</default>
+        <label>Dealership Name</label>
+    </customValue>
+    <customValue>
+        <fullName>Display - Model</fullName>
+        <default>false</default>
+        <label>Display - Model</label>
+    </customValue>
+    <customValue>
+        <fullName>Dynamic - Display - Used</fullName>
+        <default>false</default>
+        <label>Dynamic - Display - Used</label>
+    </customValue>
+    <customValue>
+        <fullName>Make Geo</fullName>
+        <default>false</default>
+        <label>Make Geo</label>
+    </customValue>
+    <customValue>
+        <fullName>Make Model Purchase Intent</fullName>
+        <default>false</default>
+        <label>Make Model Purchase Intent</label>
+    </customValue>
+    <customValue>
+        <fullName>Make Near Me</fullName>
+        <default>false</default>
+        <label>Make Near Me</label>
+    </customValue>
+    <customValue>
+        <fullName>Make Purchase Intent</fullName>
+        <default>false</default>
+        <label>Make Purchase Intent</label>
+    </customValue>
+    <customValue>
+        <fullName>Model Geo</fullName>
+        <default>false</default>
+        <label>Model Geo</label>
+    </customValue>
+    <customValue>
+        <fullName>Model Lease</fullName>
+        <default>false</default>
+        <label>Model Lease</label>
+    </customValue>
+    <customValue>
+        <fullName>Model Purchase Intent</fullName>
+        <default>false</default>
+        <label>Model Purchase Intent</label>
+    </customValue>
+    <customValue>
+        <fullName>New - AIA - Inventory</fullName>
+        <default>false</default>
+        <label>New - AIA - Inventory</label>
+    </customValue>
+    <customValue>
+        <fullName>New - AIA - Inventory - Remarketing</fullName>
+        <default>false</default>
+        <label>New - AIA - Inventory - Remarketing</label>
+    </customValue>
+    <customValue>
+        <fullName>New - Vehicle Ads</fullName>
+        <default>false</default>
+        <label>New - Vehicle Ads</label>
+    </customValue>
+    <customValue>
+        <fullName>Service - Conversion</fullName>
+        <default>false</default>
+        <label>Service - Conversion</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Dealer Name</fullName>
+        <default>false</default>
+        <label>Service Dealer Name</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Make</fullName>
+        <default>false</default>
+        <label>Service Make</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Offers</fullName>
+        <default>false</default>
+        <label>Service Offers</label>
+    </customValue>
+    <customValue>
+        <fullName>Used - AIA - Inventory</fullName>
+        <default>false</default>
+        <label>Used - AIA - Inventory</label>
+    </customValue>
+    <customValue>
+        <fullName>Used - AIA - Inventory - Remarketing</fullName>
+        <default>false</default>
+        <label>Used - AIA - Inventory - Remarketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Used Dealership Name</fullName>
+        <default>false</default>
+        <label>Used Dealership Name</label>
+    </customValue>
+    <customValue>
+        <fullName>Used Make</fullName>
+        <default>false</default>
+        <label>Used Make</label>
+    </customValue>
+    <customValue>
+        <fullName>Used Make Model</fullName>
+        <default>false</default>
+        <label>Used Make Model</label>
+    </customValue>
+    <customValue>
+        <fullName>Used - Vehicle Ads</fullName>
+        <default>false</default>
+        <label>Used - Vehicle Ads</label>
+    </customValue>
+    <customValue>
+        <fullName>Used Year Make Model</fullName>
+        <default>false</default>
+        <label>Used Year Make Model</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Ads - Used</fullName>
+        <default>false</default>
+        <label>Vehicle Ads - Used</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Ads - Used - Dealer-owned</fullName>
+        <default>false</default>
+        <label>Vehicle Ads - Used - Dealer-owned</label>
+    </customValue>
+    <customValue>
+        <fullName>Video - Make</fullName>
+        <default>false</default>
+        <label>Video - Make</label>
+    </customValue>
+    <customValue>
+        <fullName>Video - Model</fullName>
+        <default>false</default>
+        <label>Video - Model</label>
+    </customValue>
+    <customValue>
+        <fullName>Video - Used - Segment</fullName>
+        <default>false</default>
+        <label>Video - Used - Segment</label>
+    </customValue>
+    <description>FND</description>
+    <masterLabel>Core Campaigns</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

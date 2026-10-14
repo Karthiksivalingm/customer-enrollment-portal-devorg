@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DepreciateTaskGroupName__c</fullName>
+    <label>Depreciate Task Group Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Email Account Creation</fullName>
+                <default>false</default>
+                <label>Email Account Creation</label>
+            </value>
+            <value>
+                <fullName>Email Creative</fullName>
+                <default>false</default>
+                <label>Email Creative</label>
+            </value>
+            <value>
+                <fullName>Email Admin</fullName>
+                <default>false</default>
+                <label>Email Admin</label>
+            </value>
+            <value>
+                <fullName>Compliance Account Setup</fullName>
+                <default>false</default>
+                <label>Compliance Account Setup</label>
+            </value>
+            <value>
+                <fullName>Dealer Logo</fullName>
+                <default>false</default>
+                <label>Dealer Logo</label>
+            </value>
+            <value>
+                <fullName>Service Offers Creative</fullName>
+                <default>false</default>
+                <label>Service Offers Creative</label>
+            </value>
+            <value>
+                <fullName>General Sales / Service Offers Creative</fullName>
+                <default>false</default>
+                <label>General Sales / Service Offers Creative</label>
+            </value>
+            <value>
+                <fullName>Bonus Offer Creative</fullName>
+                <default>false</default>
+                <label>Bonus Offer Creative</label>
+            </value>
+            <value>
+                <fullName>Brand Diff Banners</fullName>
+                <default>false</default>
+                <label>Brand Diff Banners</label>
+            </value>
+            <value>
+                <fullName>Mail Creative Requested</fullName>
+                <default>false</default>
+                <label>Mail Creative Requested</label>
+            </value>
+            <value>
+                <fullName>Website Going LIve</fullName>
+                <default>false</default>
+                <label>Website Going LIve</label>
+            </value>
+            <value>
+                <fullName>Information Collection</fullName>
+                <default>false</default>
+                <label>Information Collection</label>
+            </value>
+            <value>
+                <fullName>Email Compliance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Email Compliance</label>
+            </value>
+            <value>
+                <fullName>Header Creation and Upload</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Header Creation and Upload</label>
+            </value>
+            <value>
+                <fullName>Logo Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Logo Approval</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

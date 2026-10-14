@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Asset_File</fullName>
+    <active>false</active>
+    <description>Digital Asset Requires File
+If &quot;Digital Asset  (Facebook, Advid, Display)&quot; &amp; Related URL is blank, error</description>
+    <errorConditionFormula>Text(Case_Request__c)=&quot;Digital Asset (Facebook, Advid, Display)&quot; &amp;&amp;  Related_URL__c=&quot;&quot;</errorConditionFormula>
+    <errorMessage>Digital Asset Requires File</errorMessage>
+</ValidationRule>

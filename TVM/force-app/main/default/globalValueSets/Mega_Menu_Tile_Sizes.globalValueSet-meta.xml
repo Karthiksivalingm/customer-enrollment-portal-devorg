@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Small Mega Menu | Mobile 300x300</fullName>
+        <default>false</default>
+        <label>Small Mega Menu | Mobile 300x300</label>
+    </customValue>
+    <customValue>
+        <fullName>Large Mega Menu | Mobile 600x600</fullName>
+        <default>false</default>
+        <label>Large Mega Menu | Mobile 600x600</label>
+    </customValue>
+    <customValue>
+        <fullName>Small Mega Menu | Desktop 700x400</fullName>
+        <default>false</default>
+        <label>Small Mega Menu | Desktop 700x400</label>
+    </customValue>
+    <customValue>
+        <fullName>Medium Mega Menu | Desktop 1450x400</fullName>
+        <default>false</default>
+        <label>Medium Mega Menu | Desktop 1450x400</label>
+    </customValue>
+    <customValue>
+        <fullName>Medium Mega Menu | Mobile 600x300</fullName>
+        <default>false</default>
+        <label>Medium Mega Menu | Mobile 600x300</label>
+    </customValue>
+    <customValue>
+        <fullName>Large Mega Menu | Desktop 1450x850</fullName>
+        <default>false</default>
+        <label>Large Mega Menu | Desktop 1450x850</label>
+    </customValue>
+    <masterLabel>Mega Menu Tile Sizes</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

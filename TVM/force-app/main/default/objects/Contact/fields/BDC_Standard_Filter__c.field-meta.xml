@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDC_Standard_Filter__c</fullName>
+    <formula>Emailable__c &amp;&amp;  Active_Account__c =false &amp;&amp;  Account.MSA_Contract__c =false &amp;&amp;  DNC__c =false &amp;&amp;  IsBlank(Exclude_from_BDC_As_Of__c ) &amp;&amp;  Foundation_Record__c =false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>BDC Eligible</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

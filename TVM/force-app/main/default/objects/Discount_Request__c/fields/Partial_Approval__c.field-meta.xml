@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partial_Approval__c</fullName>
+    <formula>OR(
+Approved_Price_1__c &lt;&gt; 0,
+Approved_Price_2__c &lt;&gt; 0,
+Approved_Price_3__c &lt;&gt; 0,
+Approved_Price_4__c &lt;&gt; 0,
+Approved_Price_5__c &lt;&gt; 0,
+Approved_Price_6__c &lt;&gt; 0,
+Approved_Price_7__c &lt;&gt; 0,
+Approved_Price_8__c &lt;&gt; 0,
+Approved_Price_9__c &lt;&gt; 0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Partial Approval?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OB_Build_Doc_Date__c</fullName>
+    <label>OB Build Doc Date</label>
+    <summarizedField>Previous_Sales_Result__c.Onboarding_Requirements_Met_Date__c</summarizedField>
+    <summaryForeignKey>Previous_Sales_Result__c.Account_Name__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

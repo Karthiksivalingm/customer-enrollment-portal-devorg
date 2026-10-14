@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomNotificationType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customNotifTypeName>Marketing Lead Opportunity</customNotifTypeName>
+    <description>Notify RSD &amp; RSM on Marketing Lead Opportunity</description>
+    <desktop>true</desktop>
+    <masterLabel>Marketing Lead Opportunity</masterLabel>
+    <mobile>true</mobile>
+    <slack>false</slack>
+</CustomNotificationType>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_Subaru_UTM_parameters_pushed_thr__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - Confirm Subaru UTM parameters pushed through from Apollo in all platforms</description>
+    <label>Confirm Subaru UTM parameters are applie</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

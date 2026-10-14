@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Discount__c</fullName>
+    <description>Used to calculate the summarized difference between the List Price and the Sales Price for all Products associated with this Opportunity. Then used in the logic for the approval process routing. This is calculated in flow.</description>
+    <label>Total Discount (Dep)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

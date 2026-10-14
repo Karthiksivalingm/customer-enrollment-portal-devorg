@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAD__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This field is populated by the Update/Create flow for Monthly Budget.</description>
+    <inlineHelpText>Shows the RAD at the time the budget was made</inlineHelpText>
+    <label>This Month&apos;s RAD</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Monthly_Budgets</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

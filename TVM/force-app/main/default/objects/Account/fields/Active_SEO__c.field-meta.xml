@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_SEO__c</fullName>
+    <formula>IsBlank(  Category_SEO_Recent_Start_Date__c )=false &amp;&amp;
+Category_SEO_Recent_Start_Date__c &gt; Category_SEO_Cancelled_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active SEO (C)</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

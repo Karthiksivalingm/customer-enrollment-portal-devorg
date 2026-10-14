@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Group_Read_Only_Field_Validation</fullName>
+    <active>true</active>
+    <description>This validation will make sure that certain fields on the Auto Group will not be able to be edited after the Auto Group is created</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ $User.X18_Digit_User_ID__c &lt;&gt; &quot;0055f0000099Oy1AAE&quot;,
+ $User.Email &lt;&gt;&quot;dchen@teamvelocitymarketing.com&quot;,
+OR(
+ISCHANGED(Name),
+ISCHANGED(Quickbase_Record_ID__c)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot edit the Auto Group Name or Quickbase ID after the record is created.</errorMessage>
+</ValidationRule>

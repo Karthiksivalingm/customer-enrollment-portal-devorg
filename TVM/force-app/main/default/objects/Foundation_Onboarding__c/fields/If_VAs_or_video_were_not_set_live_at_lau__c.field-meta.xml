@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_VAs_or_video_were_not_set_live_at_lau__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND - If VAs or video were not set live at launch, see if you can figure out if they are ready (Ads account, SF, PMAX, etc)</description>
+    <label>If VAs or video were not set live at lau</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

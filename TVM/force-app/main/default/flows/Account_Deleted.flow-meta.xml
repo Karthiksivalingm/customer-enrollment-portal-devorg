@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>When an Account is deleted, this flow will review if the Auto Group is populated.</description>
+    <formulas>
+        <name>DecreaseCountBy1</name>
+        <dataType>Number</dataType>
+        <expression>{!Get_Auto_Group.Number_of_Accounts__c} - 1</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Account - Deleted {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account - Deleted</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Captures the Auto Group to which the Account is associated.</description>
+        <name>Get_Auto_Group</name>
+        <label>Get Auto Group</label>
+        <locationX>776</locationX>
+        <locationY>391</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Subtract_1_from_the_Auto_Group_s_Count</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Related_Auto_Group__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Auto_Group__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Subtracts 1 from the Count for the Auto Group to which the Account is associated.</description>
+        <name>Subtract_1_from_the_Auto_Group_s_Count</name>
+        <label>Subtract 1 from the Auto Group&apos;s Count</label>
+        <locationX>776</locationX>
+        <locationY>576</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Auto_Group.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Number_of_Accounts__c</field>
+            <value>
+                <elementReference>DecreaseCountBy1</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Auto_Group__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>74</locationY>
+        <connector>
+            <targetReference>Get_Auto_Group</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Related_Auto_Group__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

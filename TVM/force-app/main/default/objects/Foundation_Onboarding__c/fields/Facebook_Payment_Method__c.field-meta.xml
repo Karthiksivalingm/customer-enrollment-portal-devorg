@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Facebook_Payment_Method__c</fullName>
+    <description>FND</description>
+    <label>Facebook Payment Method</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dealer Credit Card</fullName>
+                <default>false</default>
+                <label>Dealer Credit Card</label>
+            </value>
+            <value>
+                <fullName>Dealer Monthly Invoicing</fullName>
+                <default>false</default>
+                <label>Dealer Monthly Invoicing</label>
+            </value>
+            <value>
+                <fullName>Foundation Credit Card - Temporary</fullName>
+                <default>false</default>
+                <label>Foundation Credit Card - Temporary</label>
+            </value>
+            <value>
+                <fullName>Foundation LOC</fullName>
+                <default>false</default>
+                <label>Foundation LOC</label>
+            </value>
+            <value>
+                <fullName>Foundation LOC - Subaru</fullName>
+                <default>false</default>
+                <label>Foundation LOC - Subaru</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

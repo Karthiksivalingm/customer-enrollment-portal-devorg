@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_internal_Signed_Contract_Build__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FND</description>
+    <label>Send internal Signed Contract &amp; Build</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

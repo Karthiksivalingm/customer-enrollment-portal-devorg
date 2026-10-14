@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Cannot_Unhold</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsChanged(Status__c) &amp;&amp;
+Text(Status__c) = &quot;99 On Hold&quot; &amp;&amp;
+( $Profile.Name = &quot;RAD&quot; ||  $Profile.Name = &quot;Account Manager&quot; )</errorConditionFormula>
+    <errorMessage>You cannot mark this &quot;unhold&quot; please reach out to SF Issues Channel if you feel like you got this in error.</errorMessage>
+</ValidationRule>

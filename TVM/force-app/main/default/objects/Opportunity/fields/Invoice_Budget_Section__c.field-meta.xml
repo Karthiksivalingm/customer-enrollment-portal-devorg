@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Budget_Section__c</fullName>
+    <formula>DS_Streaming_OTT_Budget__c  &gt;0 || DS_OTT_Premium_Custom_Budget__c &gt;0 ||
+ DS_GM_Advid_Budget__c &gt;0 ||  DS_Search_Budget__c &gt;0 || DS_Display_Budget__c &gt;0 ||  
+ DS_GM_Budget_Total__c &gt;0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice Budget Section</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

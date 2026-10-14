@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_Account_or_Auto_Group</fullName>
+    <active>false</active>
+    <description>Requires_Account_or_Auto_Group</description>
+    <errorConditionFormula>(isBlank( AccountId ) &amp;&amp;  isBlank(Auto_Group__c ))
+&amp;&amp;
+ $Profile.Name != &quot;System Administrator&quot;</errorConditionFormula>
+    <errorMessage>Must Choose an Account or Auto Group</errorMessage>
+</ValidationRule>

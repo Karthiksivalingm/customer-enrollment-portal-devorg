@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VLA_Status__c</fullName>
+    <label>VLA Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Build Request</fullName>
+                <default>true</default>
+                <label>Full Build Request</label>
+            </value>
+            <value>
+                <fullName>Ready to Build</fullName>
+                <default>false</default>
+                <label>Ready to Build</label>
+            </value>
+            <value>
+                <fullName>Tag Provided</fullName>
+                <default>false</default>
+                <label>Tag Provided</label>
+            </value>
+            <value>
+                <fullName>Tag Placed</fullName>
+                <default>false</default>
+                <label>Tag Placed</label>
+            </value>
+            <value>
+                <fullName>GMB Access Requested</fullName>
+                <default>false</default>
+                <label>GMB Access Requested</label>
+            </value>
+            <value>
+                <fullName>GMB Access Granted</fullName>
+                <default>false</default>
+                <label>GMB Access Granted</label>
+            </value>
+            <value>
+                <fullName>In Progress (TVM)</fullName>
+                <default>false</default>
+                <label>In Progress (TVM)</label>
+            </value>
+            <value>
+                <fullName>Website Verified and Claimed</fullName>
+                <default>false</default>
+                <label>Website Verified and Claimed</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

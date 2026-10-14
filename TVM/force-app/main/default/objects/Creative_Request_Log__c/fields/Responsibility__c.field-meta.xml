@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Responsibility__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Previous_Status__c ,
+
+&quot;00 Request Being Reviewed&quot;, &quot;Production Specialist&quot;,
+&quot;05 Creative Review - Design&quot;, &quot;Production Specialist&quot;,
+&quot;05 - Creative Review - Production Load&quot;, &quot;Production Specialist&quot;,
+&quot;12 Not Approved to Execute&quot;, &quot;Production Specialist&quot;,
+&quot;Not Escalated&quot;, &quot;Production Specialist&quot;,
+&quot;Escalated&quot;, &quot;Production Specialist&quot;,
+&quot;&quot;, &quot;Production Specialist&quot;,
+
+&quot;01 Ready for Designer&quot;, &quot;Designer&quot;,
+&quot;02 Assigned&quot;, &quot;Designer&quot;,
+&quot;06 Assigned to Designer&quot;, &quot;Designer&quot;,
+&quot;02 In Progress with Designer&quot;, &quot;Designer&quot;,
+&quot;03 In Progress&quot;, &quot;Designer&quot;,
+&quot;03 Changes for Designer&quot;, &quot;Designer&quot;,
+&quot;05 Designer Changes Needed&quot;, &quot;Designer&quot;,
+&quot;07 Need Information - Field&quot;, &quot;Field&quot;,
+&quot;05 Creative Review Approved - Design&quot;, &quot;Field&quot;,
+&quot;08 Creative Complete&quot;, &quot;Field&quot;,
+&quot;09 Creative Approved - Field&quot;, &quot;Field&quot;,
+&quot;10 At Compliance - Field&quot;, &quot;Field&quot;,
+&quot;11 Asset Live/Deployed - Field&quot;, &quot;Field&quot;,
+&quot;04 Production Completed&quot;, &quot;Field&quot;,
+&quot;06 Designer Changes Complete&quot;, &quot;Field&quot;,
+&quot;11 Enterprise Team - at Compliance&quot;, &quot;Field&quot;,
+
+
+/*This one is special, because it depends on who previously put it on hold.*/
+&quot;04 Information Provided - Field&quot;,  Needs_Info_Requested_By__c ,
+&quot;08 Information Provided - Field&quot;,  Needs_Info_Requested_By__c ,
+
+&quot;12 Completed&quot;, &quot;Complete&quot;,
+&quot;13 Locked&quot;, &quot;Locked&quot;,
+
+&quot;Error&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Responsibility</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

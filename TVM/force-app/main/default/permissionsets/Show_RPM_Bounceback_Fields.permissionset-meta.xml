@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Show_RPM_Bounceback_Fields</name>
+    </customPermissions>
+    <description>FND</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Show RPM Bounceback Fields</label>
+</PermissionSet>

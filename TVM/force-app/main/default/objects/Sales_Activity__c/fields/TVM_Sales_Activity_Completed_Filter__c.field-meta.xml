@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Sales_Activity_Completed_Filter__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( 
+TVM_Sales_Month_Filter_Month_Completed__c = AddMonths(TVM_Sales_Month_Static_Completed__c, 0),
+&quot;Current Month|&quot;,
+
+if(
+TVM_Sales_Month_Filter_Month_Completed__c = AddMonths(TVM_Sales_Month_Static_Completed__c, 1),
+&quot;Last Month|&quot;,
+
+if(
+TVM_Sales_Month_Filter_Month_Completed__c = AddMonths(TVM_Sales_Month_Static_Completed__c, 2),
+&quot;2 Months Ago|&quot;,
+
+if(
+TVM_Sales_Month_Filter_Month_Completed__c = AddMonths(TVM_Sales_Month_Static_Completed__c, 3),
+&quot;3 Months Ago|&quot;,
+&quot;&quot;
+))))&amp; 
+
+if( YEAR(TODAY()) = YEAR(TVM_Sales_Month_Static_Completed__c) , &quot;YTD|&quot;,
+if( YEAR(TODAY())-1 = YEAR(TVM_Sales_Month_Static_Completed__c) , &quot;Last Year|&quot;,
+&quot;None&quot;
+))
+&amp; &quot;Q&quot;&amp;Text(Ceiling(Month(TVM_Sales_Month_Static_Completed__c)/3))
+/*
+Current Quarter
+Last Quarter
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVM Sales Activity (Set) Filter</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

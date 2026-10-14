@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drop_Date_Health_Score_Description__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Category_Sales_Mail_Active__c=false &amp;&amp; Category_Sales_Mail_Active__c=false, &quot; * No Mail: 0pts&quot;, &quot;No Mail: 0pts&quot;)&amp;BR()&amp;
+
+if(First_Sales_Mail_Ordered_Date__c&lt;Date(Year(Budget_Month_Date__c), Month(Budget_Month_Date__c),1), 
+	&quot;**Mail Ordered Before 1st of the Budget Month = 10pts**&quot;, 
+	&quot;Mail Ordered Before 1st of the Budget Month = 10pts&quot;)&amp;BR()&amp;
+if(First_Sales_Mail_Ordered_Date__c&gt;Date(Year(Budget_Month_Date__c), Month(Budget_Month_Date__c),1) &amp;&amp; First_Sales_Mail_Ordered_Date__c&lt;Date(Year(Budget_Month_Date__c), Month(Budget_Month_Date__c),7), 
+	&quot;**Mail Ordered Before 7th of the Budget Month = 7pts**&quot;, 
+	&quot;Mail Ordered Before 7th of the Budget Month = 7pts&quot;)&amp;BR()&amp;
+if(First_Sales_Mail_Ordered_Date__c&gt;Date(Year(Budget_Month_Date__c), Month(Budget_Month_Date__c),7), 
+	&quot;**Mail Ordered After 7th of the Budget Month = 3pts**&quot;, 
+	&quot;Mail Ordered After 7th of the Budget Month = 3pts&quot;)
+	&amp;BR()&amp;BR()&amp;
+if(Category_Service_Mail_Active__c,
+	&quot;**Service Mail = +5pts**&quot;, 
+	&quot;Service Mail = +5pts&quot;)&amp;BR()&amp;
+if(Category_Service_Mail_Active__c=false,	
+	&quot;**No Service Mail = +0pts**&quot;,
+	&quot;No Service Mail = +0pts&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Calculation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

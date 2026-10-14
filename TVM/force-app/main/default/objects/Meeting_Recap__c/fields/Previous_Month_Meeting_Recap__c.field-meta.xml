@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Month_Meeting_Recap__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Most Recent Meeting Recap</label>
+    <referenceTo>Meeting_Recap__c</referenceTo>
+    <relationshipLabel>Meeting Recaps</relationshipLabel>
+    <relationshipName>Meeting_Recaps</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

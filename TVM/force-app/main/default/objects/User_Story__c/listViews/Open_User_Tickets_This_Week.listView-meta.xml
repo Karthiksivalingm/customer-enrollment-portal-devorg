@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_User_Tickets_This_Week</fullName>
+    <columns>NAME</columns>
+    <columns>Classification__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Status__c</columns>
+    <columns>Request_User__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Difficulty__c</columns>
+    <columns>Application__c</columns>
+    <columns>With_UnitedTechno__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Ready for Deployment,Cancelled</value>
+    </filters>
+    <filters>
+        <field>Due_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_WEEK</value>
+    </filters>
+    <label>Open User Tickets This Week</label>
+</ListView>

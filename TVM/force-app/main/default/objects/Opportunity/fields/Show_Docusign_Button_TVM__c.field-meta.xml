@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Docusign_Button_TVM__c</fullName>
+    <formula>AND(
+Or(
+TEXT(Approval_Status__c) = &quot;Approved&quot;,
+Use_Docusign_MSA__c 
+),
+IsClosed = FALSE,
+ OR(
+ Opportunity_Type__c = &quot;New Sale&quot;,
+ Opportunity_Type__c = &quot;Parent MSA&quot;,
+ Opportunity_Type__c = &quot;Child MSA&quot;
+ ),
+Analytics_Franchise__c != &quot;Ford&quot;,
+Analytics_Franchise__c != &quot;Lincoln&quot;,
+Open_DocuSign_Envelopes__c = 0,
+Open_Demo_ID__c = &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Show DNS Docusign Button TVM</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

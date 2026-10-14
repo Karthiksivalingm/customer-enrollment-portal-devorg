@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Account__c</fullName>
+    <formula>OR(
+My_Account_VP_of_Sales__c,
+My_Account_RSD__c,
+My_Account_RSM__c,
+My_Account_OAD__c,
+My_Account_OAM__c,
+My_Account_VP_of_Client_Services__c,
+My_Account_RAD__c,
+My_Account_Account_Manager__c,
+My_Account_PM__c,
+My_Account_SME__c
+)</formula>
+    <label>My Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

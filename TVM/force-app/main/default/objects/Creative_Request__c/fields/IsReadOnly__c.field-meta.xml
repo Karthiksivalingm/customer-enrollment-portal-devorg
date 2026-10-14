@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsReadOnly__c</fullName>
+    <formula>AND(
+     $User.Email  &lt;&gt; &quot;ashley@tier10.com&quot;,
+     $User.Email  &lt;&gt; &quot;ksmith@tier10.com&quot;,
+     $User.Email  &lt;&gt; &quot;john@tier10.com&quot;,
+     $User.Email  &lt;&gt; &quot;zach@tier10.com&quot;,
+     $User.Email  &lt;&gt; &quot;alex@tier10.com&quot;,
+     $User.Email  &lt;&gt; &quot;noah@tier10.com&quot;,
+     $User.Email  &lt;&gt; &quot;noah@teamvelocitymarketing.com&quot;,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+/* This below part will make it false if Status = 000 PreQ Hold - Information Needed, and will allow the field to edit*/
+ Status_Lookup__r.X18_Digit_Status_ID__c &lt;&gt; &quot;a34Vb00000JXUKXIA5&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsReadOnly</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

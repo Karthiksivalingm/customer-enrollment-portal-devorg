@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_General_Cases</fullName>
+    <columns>Red_Fire__c</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.ORIGIN</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>Case_Category__c</columns>
+    <columns>Case_Subcategory__c</columns>
+    <columns>Status_Filtered__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Jira_Link__c</columns>
+    <columns>Jira_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Case_Category__c</field>
+        <operation>equals</operation>
+        <value>General Support</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Major AG General Support</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Open General Cases</label>
+    <sharedTo>
+        <group>Apollo_Support</group>
+        <group>General_Support</group>
+    </sharedTo>
+</ListView>

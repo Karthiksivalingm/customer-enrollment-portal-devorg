@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trigger_Recurring_Compliance__c</fullName>
+    <description>****** This should automatically adjust for new years ********</description>
+    <formula>IF( Flagged_Recurring_to_Duplicate__c,
+  IF( DAY(Created_Date_Non_Native__c) &lt;= 5,
+    DATE( YEAR(Created_Date_Non_Native__c), MONTH(Created_Date_Non_Native__c), 5),
+    DATE( 
+       YEAR( ADDMONTHS(Created_Date_Non_Native__c, 1) ), 
+       MONTH( ADDMONTHS(Created_Date_Non_Native__c, 1) ), 
+       2
+    )
+  ),
+  NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Trigger Recurring Compliance</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

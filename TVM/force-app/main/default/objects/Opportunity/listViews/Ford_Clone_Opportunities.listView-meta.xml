@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ford_Clone_Opportunities</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Close_Date_Actual__c</columns>
+    <columns>Contracted_Amount__c</columns>
+    <columns>Opportunity_Type__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Product_List__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>Opportunity.Historical</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSED</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Not Yet Contacted,Initiated Contact</value>
+    </filters>
+    <filters>
+        <field>Analytics_Franchise__c</field>
+        <operation>contains</operation>
+        <value>FORD</value>
+    </filters>
+    <filters>
+        <field>Foundation_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Ford Closed Opportunities</label>
+</ListView>

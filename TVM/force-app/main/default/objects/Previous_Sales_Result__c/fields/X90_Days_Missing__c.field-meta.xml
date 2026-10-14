@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X90_Days_Missing__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Date_1__c), &quot;Date 1&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Date_2__c), &quot;Date 2&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Date_3__c), &quot;Date 3&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(New_Sale_1__c ), &quot;New Vehicle Sales 1&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(New_Sale_2__c ), &quot;New Vehicle Sales 2&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(New_Sale_3__c ), &quot;New Vehicle Sales 3&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Used_Sale_1__c ), &quot;Used Vehicle Sales 1&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Used_Sale_2__c ), &quot;Used Vehicle Sales 2&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Used_Sale_3__c ), &quot;Used Vehicle Sales 3&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Service_RO_Customer_Pay_1__c), &quot;Customer Pay ROs 1&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Service_RO_Customer_Pay_2__c ), &quot;Customer Pay ROs 2&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Service_RO_Customer_Pay_3__c ), &quot;Customer Pay ROs 3&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Service_RO_Warrantee_1__c ), &quot;Warranty ROs 1&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Service_RO_Warrantee_2__c  ), &quot;Warranty ROs 2&quot;&amp;BR(), &quot;&quot;) &amp;
+IF(ISBLANK(Service_RO_Warrantee_3__c ), &quot;Warranty ROs 3&quot;&amp;BR(), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>90 Days Missing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

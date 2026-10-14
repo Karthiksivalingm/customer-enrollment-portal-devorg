@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TVM_Account_ID__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISBLANK(Quickbase_ID_URL__c),
+  &quot;&quot;,
+  IF(
+    CONTAINS(Quickbase_ID_URL__c, &quot;rid=&quot;),
+
+    /* CASE 1: extract from rid= */
+    LEFT(
+      MID(
+        Quickbase_ID_URL__c,
+        FIND(&quot;rid=&quot;, Quickbase_ID_URL__c) + 4,
+        LEN(Quickbase_ID_URL__c)
+      ),
+      FIND(&quot;_&quot;, MID(
+        Quickbase_ID_URL__c,
+        FIND(&quot;rid=&quot;, Quickbase_ID_URL__c) + 4,
+        LEN(Quickbase_ID_URL__c)
+      ) &amp; &quot;_&quot;) - 1
+    ),
+
+    /* CASE 2: fallback – number before _HL_ */
+    LEFT(
+      Quickbase_ID_URL__c,
+      FIND(&quot;_&quot;, Quickbase_ID_URL__c &amp; &quot;_&quot;) - 1
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVM Account ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

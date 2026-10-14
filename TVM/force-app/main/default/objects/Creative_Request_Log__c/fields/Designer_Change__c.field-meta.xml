@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designer_Change__c</fullName>
+    <formula>Designer_Change_Bucket__c != &quot;&quot; &amp;&amp; Initial_Complete_Event__c=false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Designer Change</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AgeEndpointHour__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( NOT(ISBLANK(Date_Time_Closed__c)),
+if(Hour(TimeValue(Date_Time_Closed__c))&lt;=5, 24, 0)+
+Hour(TimeValue(Date_Time_Closed__c))-5,
+
+Hour(TimeValue(Now()))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AgeEndpointHour</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

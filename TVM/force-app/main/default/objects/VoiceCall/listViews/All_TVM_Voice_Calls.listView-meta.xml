@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_TVM_Voice_Calls</fullName>
+    <columns>Name</columns>
+    <columns>Incoming_Line_T__c</columns>
+    <columns>Case__c</columns>
+    <columns>CallResolution</columns>
+    <columns>CallStartDateTime</columns>
+    <columns>Current_Owner__c</columns>
+    <columns>Caller_Input__c</columns>
+    <columns>CallType</columns>
+    <columns>Call_From__c</columns>
+    <columns>Related_Contact__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>CallDurationInSeconds</columns>
+    <columns>Account_Found__c</columns>
+    <columns>CreatedDate</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ToPhoneNumber</field>
+        <operation>equals</operation>
+        <value>+18444081840,+15715003470</value>
+    </filters>
+    <label>All TVM Calls</label>
+</ListView>

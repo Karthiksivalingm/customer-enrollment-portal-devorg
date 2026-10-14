@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date__c</fullName>
+    <formula>DATEVALUE(TEXT( Budget_Year__c )+&quot;-&quot; +
+CASE(
+TEXT( Budget_Month__c),
+&quot;Jan&quot;,&quot;1&quot;,
+&quot;Feb&quot;,&quot;2&quot;,
+&quot;Mar&quot;,&quot;3&quot;,
+&quot;Apr&quot;,&quot;4&quot;,
+&quot;May&quot;,&quot;5&quot;,
+&quot;Jun&quot;,&quot;6&quot;,
+&quot;Jul&quot;,&quot;7&quot;,
+&quot;Aug&quot;,&quot;8&quot;,
+&quot;Sep&quot;,&quot;9&quot;,
+&quot;Oct&quot;,&quot;10&quot;,
+&quot;Nov&quot;,&quot;11&quot;,
+&quot;12&quot;
+) + &quot;-&quot; + &quot;01&quot;
+
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

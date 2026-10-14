@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_It</fullName>
+    <active>false</active>
+    <errorConditionFormula>And($User.FirstName &lt;&gt; &quot;Salesforce&quot;, $User.FirstName &lt;&gt; &quot;Derrick&quot;, $User.FirstName &lt;&gt; &quot;Shane&quot;)
+&amp;&amp; ISCHANGED( Meeting_Recap_ID__c )=false</errorConditionFormula>
+    <errorMessage>Budgets are not Editable</errorMessage>
+</ValidationRule>

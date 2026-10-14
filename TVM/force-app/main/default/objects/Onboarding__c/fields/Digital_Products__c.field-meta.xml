@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Products__c</fullName>
+    <label>Digital Products</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>D-Search New</fullName>
+                <default>false</default>
+                <label>Search New</label>
+            </value>
+            <value>
+                <fullName>D-Search Pre-Owned</fullName>
+                <default>false</default>
+                <label>Search Pre-Owned</label>
+            </value>
+            <value>
+                <fullName>D-Search Service</fullName>
+                <default>false</default>
+                <label>Search Service</label>
+            </value>
+            <value>
+                <fullName>D-Display New</fullName>
+                <default>false</default>
+                <label>Display New</label>
+            </value>
+            <value>
+                <fullName>D-Display Pre-Owned</fullName>
+                <default>false</default>
+                <label>Display Pre-Owned</label>
+            </value>
+            <value>
+                <fullName>D-Social New</fullName>
+                <default>false</default>
+                <label>Social New/Used</label>
+            </value>
+            <value>
+                <fullName>D-Social Service</fullName>
+                <default>false</default>
+                <label>Social Service</label>
+            </value>
+            <value>
+                <fullName>D-Advid New</fullName>
+                <default>false</default>
+                <label>Advid New</label>
+            </value>
+            <value>
+                <fullName>D-Advid Pre-Owned</fullName>
+                <default>false</default>
+                <label>Advid Pre-Owned</label>
+            </value>
+            <value>
+                <fullName>D-Streaming OTT Dynamic</fullName>
+                <default>false</default>
+                <label>OTT Dynamic</label>
+            </value>
+            <value>
+                <fullName>D-OTT Premium Custom</fullName>
+                <default>false</default>
+                <label>OTT Custom</label>
+            </value>
+            <value>
+                <fullName>Performance Max New</fullName>
+                <default>false</default>
+                <label>Performance Max New</label>
+            </value>
+            <value>
+                <fullName>Performance Max Used</fullName>
+                <default>false</default>
+                <label>Performance Max Used</label>
+            </value>
+            <value>
+                <fullName>Shopping New</fullName>
+                <default>false</default>
+                <label>Shopping New</label>
+            </value>
+            <value>
+                <fullName>Shopping Used</fullName>
+                <default>false</default>
+                <label>Shopping Used</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
