@@ -1,24 +1,25 @@
 # 02-Knowledge-Base
 
-Evidence-based overview of the Arizona implementation, built only from retrieved Arizona sandbox metadata and authorized requirements.
-Statements are labelled **VERIFIED**, **INFERRED** or **OPEN QUESTION** ([Documentation-Rules.md](../01-Instructions/Documentation-Rules.md) §5).
+Evidence-based overview of the Arizona implementation, built only from retrieved Arizona sandbox metadata, read-only org queries and
+authorized requirements. Statements are labelled **VERIFIED**, **INFERRED** or **OPEN QUESTION**
+([Documentation-Rules.md](../01-Instructions/Documentation-Rules.md) §5). Update a page's History table whenever confirmed information changes.
 
-## Status (2026-10-15)
-
-**Not yet written.** The metadata baseline has been retrieved, but the analysis of the source was interrupted before any Knowledge Base
-page was produced. Planned pages: `Project-Overview.md`, `Salesforce-Org-Context.md`, `Data-Model-and-Relationships.md`,
-`Automation-and-Processes.md`, `Integrations.md`, `Security-and-Permissions.md`, `Experience-Cloud-Portals.md`, `Known-Constraints-and-Open-Questions.md`.
-
-## Verified so far
-| Fact | Evidence |
+| Page | Contents |
 |---|---|
-| Org: Azlionhearts sandbox, Org ID `00DWH000005wW9V2AU`, Enterprise Edition, instance USA766S | `Organization` query, 2026-10-15 ([Salesforce-Safety-Rules.md](../01-Instructions/Salesforce-Safety-Rules.md)) |
-| 23 installed packages, including PandaDoc, Pardot / Account Engagement, RingCentral (`rcsfl`), 360 SMS (`tdc_tsw`), Adobe Acrobat Sign, Calendly, TS Documents (`docb`), Data Cloud packages | `sf package installed list`, 2026-10-15 |
-| Unmanaged footprint: 56 Apex classes, 4 triggers, 10 flows, 14 LWCs, 5 Aura bundles, 28 VF pages, 5 custom objects, 6 custom metadata types, 2 platform events, Knowledge, 4 Experience sites | [Metadata-Inventory.md](../07-Technical-Documents/Metadata-Inventory.md) |
+| [Project-Overview.md](Project-Overview.md) | What the org is for, main capabilities, size of the customisation — **start here** |
+| [Salesforce-Org-Context.md](Salesforce-Org-Context.md) | Org identity, installed packages, licences, scheduled jobs |
+| [Data-Model-and-Relationships.md](Data-Model-and-Relationships.md) | Objects, relationships, Contact field groups, custom metadata, platform events |
+| [Automation-and-Processes.md](Automation-and-Processes.md) | Business processes and the automation behind them; execution order per object |
+| [Integrations.md](Integrations.md) | PandaDoc, TS Documents, Google, 360 SMS, Pardot, Calendly |
+| [Experience-Cloud-Portals.md](Experience-Cloud-Portals.md) | Portals, sites and portal components |
+| [Security-and-Permissions.md](Security-and-Permissions.md) | Sharing model, permission sets, portal and guest security patterns |
+| [Known-Constraints-and-Open-Questions.md](Known-Constraints-and-Open-Questions.md) | Constraints, inconsistencies and questions for the business |
 
-Until the pages exist, use the [Metadata Inventory](../07-Technical-Documents/Metadata-Inventory.md) and the source directly.
+Coverage limits: profiles, managed-package internals, Data Cloud objects, record data and the page content of three Aura sites are not part of the
+retrieved source ([Metadata-Scope.md](../07-Technical-Documents/Metadata-Scope.md), CF-001, CF-002).
 
 ## History
 | Date | Change |
 |---|---|
-| 2026-10-15 | Folder created; status recorded after the analysis was interrupted. |
+| 2026-10-15 | Folder created; status recorded after the first analysis attempt was interrupted. |
+| 2026-10-15 | Knowledge Base pages written from the retrieved source and read-only CronTrigger query. |

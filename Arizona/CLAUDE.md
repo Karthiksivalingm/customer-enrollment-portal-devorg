@@ -16,7 +16,7 @@ Work only inside `Arizona/`. Never change, stage or commit any other project fol
 - Record actual results only. Never invent requirement IDs, approvals, record values, dates or test results: write **TO BE CONFIRMED**.
 - Never print, copy or commit credential values. Run `node scripts/secret-scan.js` before every commit.
 - Git: stage explicit `Arizona/` paths only, never `git add .` / `-A`; no force-push. See Git-Rules.md.
-- Project background: [02-Knowledge-Base/README.md](02-Knowledge-Base/README.md) (Knowledge Base pages pending). Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
+- Project background: [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md). Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
 
 ## Standing instructions (imported)
 @01-Instructions/Arizona-Working-Instructions.md

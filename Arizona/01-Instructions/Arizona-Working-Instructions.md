@@ -43,7 +43,7 @@ Full routing rules: [Documentation-Rules.md](Documentation-Rules.md).
 4. **Retrieve the current version** of every component you will touch (after checking `git status` for local work):
    `sf project retrieve start --metadata <Type>:<Name> --target-org Arizona`. Never edit a stale local copy.
 5. **Analyse impact** with the [Metadata Inventory](../07-Technical-Documents/Metadata-Inventory.md) and the source: what else reads or
-   writes the same objects and fields (Knowledge Base page `Automation-and-Processes.md`, pending: see [02-Knowledge-Base](../02-Knowledge-Base/README.md)).
+   writes the same objects and fields ([Automation-and-Processes.md](../02-Knowledge-Base/Automation-and-Processes.md)).
    Write the approach into the REQ record and get the user's agreement before building.
 6. **Make the minimal change** in `force-app/main/default/` (Salesforce DX source format). Do not refactor beyond the request.
 7. **Validate** without changing the org:

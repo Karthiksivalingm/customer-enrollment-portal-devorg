@@ -4,7 +4,7 @@ Independent Arizona project in the shared `sfdcut/SFDC` repository. `force-app/`
 Arizona sandbox (alias `Arizona`, org name Azlionhearts, Org ID `00DWH000005wW9V2AU`).
 
 **Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions/Arizona-Working-Instructions.md](01-Instructions/Arizona-Working-Instructions.md).
-Project overview: [02-Knowledge-Base/README.md](02-Knowledge-Base/README.md) (Knowledge Base pages pending). Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
+Project overview: [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md). Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
 
 | Folder | Contents |
 |---|---|

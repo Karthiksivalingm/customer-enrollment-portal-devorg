@@ -16,7 +16,15 @@
 
 ## 02-Knowledge-Base
 
+- [Business Processes and Automation](02-Knowledge-Base/Automation-and-Processes.md)
+- [Data Model and Relationships](02-Knowledge-Base/Data-Model-and-Relationships.md)
+- [Experience Cloud Portals](02-Knowledge-Base/Experience-Cloud-Portals.md)
+- [Integrations and External Systems](02-Knowledge-Base/Integrations.md)
+- [Known Constraints, Risks and Open Questions](02-Knowledge-Base/Known-Constraints-and-Open-Questions.md)
+- [Project Overview](02-Knowledge-Base/Project-Overview.md)
 - [02-Knowledge-Base](02-Knowledge-Base/README.md)
+- [Salesforce Org Context](02-Knowledge-Base/Salesforce-Org-Context.md)
+- [Security and Permissions](02-Knowledge-Base/Security-and-Permissions.md)
 
 ## 03-Requirements
 
