@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Amounts_After_Approval_SoD</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+  AND(
+    OR(
+      ISCHANGED(Gross_Amount__c),
+      ISCHANGED(Net_Amount__c),
+      ISCHANGED(Admin_Fee__c),
+      ISCHANGED(Chargeback_Amount__c)
+    ),
+    OR(
+      ISPICKVAL(Status__c, &quot;Approved&quot;),
+      ISPICKVAL(Status__c, &quot;Paid&quot;)
+    )
+  ),
+  AND(
+    ISCHANGED(Payment_Batch__c),
+    OR(
+      ISPICKVAL(Payment_Batch__r.Status__c, &quot;Submitted&quot;),
+      ISPICKVAL(Payment_Batch__r.Status__c, &quot;Approved&quot;),
+      ISPICKVAL(Payment_Batch__r.Status__c, &quot;Paid&quot;)
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Financial fields cannot be modified after batch approval or payment. The Payment Batch assignment cannot be changed once the batch is Submitted, Approved, or Paid.</errorMessage>
+</ValidationRule>

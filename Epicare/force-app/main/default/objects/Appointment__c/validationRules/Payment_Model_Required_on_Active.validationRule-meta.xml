@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Model_Required_on_Active</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Status__c),
+ISPICKVAL(Status__c, &quot;Active&quot;),
+ISBLANK(TEXT(Payment_Model__c))
+)</errorConditionFormula>
+    <errorDisplayField>Payment_Model__c</errorDisplayField>
+    <errorMessage>Payment Model is required when Appointment Status is Active.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approver_not_equal_to_Submitter</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status__c, &quot;Approved&quot;),
+    Approved_By__c = Submitted_By__c
+)</errorConditionFormula>
+    <errorDisplayField>Approved_By__c</errorDisplayField>
+    <errorMessage>Approver cannot be the same person who submitted the batch.</errorMessage>
+</ValidationRule>

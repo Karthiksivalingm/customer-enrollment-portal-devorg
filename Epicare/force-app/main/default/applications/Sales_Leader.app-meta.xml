@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>Sales_leadersship</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Monitor sales activity, and guide your team to help them meet and exceed sales targets.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Sales Leader</label>
+    <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Forecasting3</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>Product__c</tabs>
+    <tabs>Notes__c</tabs>
+    <tabs>License__c</tabs>
+    <tabs>Product_State__c</tabs>
+    <tabs>Commission_Forecast__c</tabs>
+    <tabs>Commission_Record__c</tabs>
+    <tabs>Payment_Batch__c</tabs>
+    <tabs>Agreement__c</tabs>
+    <tabs>Certification__c</tabs>
+    <tabs>Onboarding_Checklist__c</tabs>
+    <tabs>Banking_Info__c</tabs>
+    <tabs>Commission_Exception__c</tabs>
+    <tabs>Referral_Record__c</tabs>
+    <tabs>Renewal_Schedule__c</tabs>
+    <tabs>Commission_Import_Log__c</tabs>
+    <tabs>Security_Incident__c</tabs>
+    <tabs>Upline_Policy__c</tabs>
+    <tabs>Carrier_Alias__c</tabs>
+    <tabs>DOI__c</tabs>
+    <tabs>LOA__c</tabs>
+    <tabs>NAICProducerCode__c</tabs>
+    <tabs>Product_Holder__c</tabs>
+    <tabs>Error_Log__c</tabs>
+    <tabs>Premium_Payments__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Sales_Leadership_UtilityBar</utilityBar>
+</CustomApplication>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Term</fullName>
+                <default>false</default>
+                <label>Term</label>
+            </value>
+            <value>
+                <fullName>Rapid Disenrollment</fullName>
+                <default>false</default>
+                <label>Rapid Disenrollment</label>
+            </value>
+            <value>
+                <fullName>Future_Disenrollment</fullName>
+                <default>false</default>
+                <label>Future Disenrollment</label>
+            </value>
+            <value>
+                <fullName>Updated_on_each_import</fullName>
+                <default>false</default>
+                <label>Updated on each import</label>
+            </value>
+            <value>
+                <fullName>Binder Payment</fullName>
+                <default>false</default>
+                <label>Binder Payment</label>
+            </value>
+            <value>
+                <fullName>Not Register</fullName>
+                <default>false</default>
+                <label>Not Register</label>
+            </value>
+            <value>
+                <fullName>Late Payment</fullName>
+                <default>false</default>
+                <label>Late Payment</label>
+            </value>
+            <value>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+                <label>Terminated</label>
+            </value>
+            <value>
+                <fullName>Estimated</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Estimated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

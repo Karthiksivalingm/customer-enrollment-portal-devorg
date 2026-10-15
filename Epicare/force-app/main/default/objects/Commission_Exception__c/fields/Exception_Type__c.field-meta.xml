@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exception_Type__c</fullName>
+    <label>Exception Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Missing_Payment</fullName>
+                <default>false</default>
+                <label>Missing Payment</label>
+            </value>
+            <value>
+                <fullName>Unknown_Policy</fullName>
+                <default>false</default>
+                <label>Unknown Policy</label>
+            </value>
+            <value>
+                <fullName>Cancelled_Still_Paid</fullName>
+                <default>false</default>
+                <label>Cancelled Still Paid</label>
+            </value>
+            <value>
+                <fullName>Agent_Mismatch</fullName>
+                <default>false</default>
+                <label>Agent Mismatch</label>
+            </value>
+            <value>
+                <fullName>Payment_Flow_Mismatch</fullName>
+                <default>false</default>
+                <label>Payment Flow Mismatch</label>
+            </value>
+            <value>
+                <fullName>Blocked_Unpaid_Bill</fullName>
+                <default>false</default>
+                <label>Blocked Unpaid Bill</label>
+            </value>
+            <value>
+                <fullName>Underpaid</fullName>
+                <default>false</default>
+                <label>Underpaid</label>
+            </value>
+            <value>
+                <fullName>Overpaid</fullName>
+                <default>false</default>
+                <label>Overpaid</label>
+            </value>
+            <value>
+                <fullName>Missing_Rate</fullName>
+                <default>false</default>
+                <label>Missing Rate</label>
+            </value>
+            <value>
+                <fullName>Unresolved_Appointment</fullName>
+                <default>false</default>
+                <label>Unresolved Appointment</label>
+            </value>
+            <value>
+                <fullName>Invalid_Payload</fullName>
+                <default>false</default>
+                <label>Invalid Payload</label>
+            </value>
+            <value>
+                <fullName>No_Matching_Estimate</fullName>
+                <default>false</default>
+                <label>No Matching Estimate</label>
+            </value>
+            <value>
+                <fullName>Amount_Mismatch</fullName>
+                <default>false</default>
+                <label>Amount Mismatch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

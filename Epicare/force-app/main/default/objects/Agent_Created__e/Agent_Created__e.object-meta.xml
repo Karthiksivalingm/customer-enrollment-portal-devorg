@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Fired after a new Agent Contact is inserted</description>
+    <eventType>HighVolume</eventType>
+    <label>Agent Created</label>
+    <pluralLabel>Agent Created</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

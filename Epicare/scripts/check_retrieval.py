@@ -1,0 +1,116 @@
+"""Compare manifest/package.xml with what the last retrieval actually returned.
+
+Usage (from Epicare/):  python scripts/check_retrieval.py
+Reads .project-state/retrieve/*.json (written by scripts/retrieve.py) and the source tree.
+Writes 07-Technical-Documents/Retrieval/Retrieval-Report.md. Exit 1 when a batch failed or in-scope
+components are missing without an explanation. Offline.
+"""
+import glob
+import json
+import os
+import re
+import sys
+import urllib.parse
+import xml.etree.ElementTree as ET
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
+import projlib  # noqa: E402
+
+NS = "{http://soap.sforce.com/2006/04/metadata}"
+STATE = os.path.join(projlib.PROJECT_DIR, ".project-state", "retrieve")
+SRC = os.path.join(projlib.PROJECT_DIR, "force-app", "main", "default")
+# Known, explained gaps: (type, name) -> reason. Keep in step with 07-Technical-Documents/Metadata-Scope.md.
+EXPLAINED = {
+    ("ConnectedApp", "CPQIntegrationUserApp"): "Metadata API error 'Load of metadata from db failed' (Salesforce-provided "
+                                              "connected app). See CF-001.",
+}
+# Known gaps by name prefix: (type, prefix) -> reason.
+EXPLAINED_PREFIX = {
+    ("Report", "unfiled$public"): "Pseudo-folder; never returned as a component (its reports are listed individually).",
+    ("EmailTemplate", "unfiled$public"): "Pseudo-folder; never returned as a component.",
+    ("Report", "CRM_180925_"): "Salesforce-generated sample Sales Engagement report: Metadata API error 'Load of metadata "
+                               "from db failed'. See CF-001.",
+    ("Dashboard", "CRM_180925_"): "Salesforce-generated sample dashboard: Metadata API error 'Load of metadata from db "
+                                  "failed'. See CF-001.",
+}
+
+
+def norm(name):
+    return urllib.parse.unquote(name or "").strip().lower()
+
+
+def main():
+    root = ET.parse(os.path.join(projlib.PROJECT_DIR, "manifest", "package.xml")).getroot()
+    manifest = {t.find(NS + "name").text: [m.text for m in t.findall(NS + "members")] for t in root.findall(NS + "types")}
+    batches = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(os.path.join(STATE, "*.json")))]
+    if not batches:
+        projlib.fail("No retrieval results found. Run scripts/retrieve.py first.")
+    got = {}
+    for b in batches:
+        for typ, name in b["components"]:
+            got.setdefault(typ, set()).add(norm(name))
+
+    rows, missing_all, problems = [], [], 0
+    total_in, total_got = 0, 0
+    for typ in sorted(manifest):
+        names = manifest[typ]
+        if names == ["*"]:
+            ok = bool(got.get(typ))
+            rows.append(f"| {typ} | all (*) | {'yes' if ok else '**no**'} | |")
+            problems += 0 if ok else 1
+            continue
+        # Email template folders are listed in the manifest as members of EmailTemplate.
+        folder_types = {"EmailTemplate": ("EmailFolder", "EmailTemplateFolder"), "Report": ("ReportFolder",),
+                        "Dashboard": ("DashboardFolder",)}.get(typ, ())
+        returned = got.get(typ, set()).union(*(got.get(ft, set()) for ft in folder_types))
+        # Nested folders come back with their parent path (e.g. 'Operations/Contracting/<item>').
+        missing = [n for n in names if norm(n) not in returned and not any(r.endswith("/" + norm(n)) for r in returned)]
+        total_in += len(names)
+        total_got += len(names) - len(missing)
+        for n in missing:
+            reason = EXPLAINED.get((typ, n), "") or next((r for (t, prefix), r in EXPLAINED_PREFIX.items()
+                                                          if t == typ and n.startswith(prefix)), "")
+            missing_all.append(f"| {typ} | `{n}` | {reason or '**not returned — investigate**'} |")
+            problems += 0 if reason else 1
+        rows.append(f"| {typ} | {len(names)} | {len(names) - len(missing)} | {len(missing) or ''} |")
+
+    batch_rows, warn_rows = [], []
+    for b in batches:
+        batch_rows.append(f"| {b['batch']} | {b['timestamp']} | {b['status']} | {b['attempts']} | {len(b['components'])} | "
+                          f"{len(b['failed'])} | {len(b['warnings'])} |")
+        if b["status"] == "Failed":
+            problems += 1
+            warn_rows.append(f"| {b['batch']} | batch failed: {re.sub(r'[|\n]', ' ', b.get('error', ''))[:200]} |")
+        for f in b["failed"]:
+            warn_rows.append(f"| {b['batch']} | {f['type']} `{f['fullName']}` failed: {re.sub(r'[|\n]', ' ', str(f['error']))[:200]} |")
+        for w in sorted(set(b["warnings"])):
+            warn_rows.append(f"| {b['batch']} | {re.sub(r'[|\n]', ' ', w)[:240]} |")
+
+    per_dir = []
+    for d in sorted(os.listdir(SRC)):
+        full = os.path.join(SRC, d)
+        if os.path.isdir(full):
+            per_dir.append(f"| `{d}/` | {sum(len(fs) for _, _, fs in os.walk(full))} |")
+    total_files = sum(len(fs) for _, _, fs in os.walk(SRC))
+
+    doc = ["# Retrieval report — UTDEV baseline", "",
+           "_Generated by `scripts/check_retrieval.py` from the results of `scripts/retrieve.py`. "
+           "Metadata retrieval is not a record change and not a deployment._", "",
+           f"**{total_got} of {total_in} named in-scope components returned** by the org "
+           f"(plus wildcard types). **{total_files} source files** under `force-app/main/default/`. "
+           f"Unexplained gaps or failures: **{problems}**.", "",
+           "## Batches", "", "| Batch | Finished | Status | Attempts | Components returned | Failed | Warnings |",
+           "|---|---|---|---|---|---|---|", *batch_rows, "",
+           "## Manifest vs retrieved, per type", "", "| Type | In manifest | Returned | Missing |", "|---|---|---|---|", *rows, "",
+           "## Components not returned", "",
+           *(["| Type | Component | Explanation |", "|---|---|---|", *missing_all] if missing_all else ["None."]), "",
+           "## Warnings and errors reported by the Metadata API", "",
+           *(["| Batch | Message |", "|---|---|", *warn_rows] if warn_rows else ["None."]), "",
+           "## Files per source folder", "", "| Folder | Files |", "|---|---|", *per_dir]
+    projlib.write_if_changed(os.path.join(projlib.PROJECT_DIR, "07-Technical-Documents", "Retrieval", "Retrieval-Report.md"), "\n".join(doc) + "\n")
+    print(f"{total_got}/{total_in} named components returned; {total_files} files; unexplained problems: {problems}")
+    sys.exit(1 if problems else 0)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_Date_for_RTS</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        ISCHANGED(Status__c),
+        ISCHANGED(Sub_Status__c)
+    ),
+    ISPICKVAL(Status__c, &quot;Active&quot;),
+    ISPICKVAL(Sub_Status__c, &quot;Ready to sell&quot;),
+    ISBLANK(Effective_Date__c)
+)</errorConditionFormula>
+    <errorDisplayField>Effective_Date__c</errorDisplayField>
+    <errorMessage>Effective Date required for active appointments.</errorMessage>
+</ValidationRule>

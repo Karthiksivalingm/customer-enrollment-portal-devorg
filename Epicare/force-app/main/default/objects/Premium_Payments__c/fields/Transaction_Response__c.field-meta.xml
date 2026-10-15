@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Response__c</fullName>
+    <label>Transaction Response</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>This transaction has been declined.</fullName>
+                <default>false</default>
+                <label>This transaction has been declined.</label>
+            </value>
+            <value>
+                <fullName>E00040 - The record cannot be found. The customer profile ID, payment profile ID, shipping address ID, or transaction ID for this request is not valid for this merchant.</fullName>
+                <default>false</default>
+                <label>E00040 - The record cannot be found. The customer profile ID, payment profile ID, shipping address ID, or transaction ID for this request is not valid for this merchant.</label>
+            </value>
+            <value>
+                <fullName>ACH Payment Return/Chargeback</fullName>
+                <default>false</default>
+                <label>ACH Payment Return/Chargeback</label>
+            </value>
+            <value>
+                <fullName>E00027 - The transaction was unsuccessful. An approval was not returned for the transaction.</fullName>
+                <default>false</default>
+                <label>E00027 - The transaction was unsuccessful. An approval was not returned for the transaction.</label>
+            </value>
+            <value>
+                <fullName>Returned ~ Insufficient Funds</fullName>
+                <default>false</default>
+                <label>Returned ~ Insufficient Funds</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

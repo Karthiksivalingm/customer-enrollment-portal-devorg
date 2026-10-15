@@ -1,0 +1,120 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+```
+    .container {
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #0B5CAB;
+        margin-bottom: 20px;
+    }
+
+    .section {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .details-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .details-table th,
+    .details-table td {
+        border: 1px solid #dddddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .details-table th {
+        background-color: #f4f4f4;
+        width: 220px;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+
+    .warning {
+        color: #C23934;
+        font-weight: bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<div class="header">
+    AHIP / FFM Certification Expiry Alert
+</div>
+
+<div class="section">
+    Dear {!Recipient.Name},
+</div>
+
+<div class="section">
+    This is a reminder that your AHIP / FFM certification is approaching expiration.
+</div>
+
+<table class="details-table">
+
+    <tr>
+        <th>Certification Name</th>
+        <td>{!Certification__c.Name}</td>
+    </tr>
+
+    <tr>
+        <th>Certification Type</th>
+        <td>{!Certification__c.Certification_Type__c}</td>
+    </tr>
+
+    <tr>
+        <th>Status</th>
+        <td>{!Certification__c.Status__c}</td>
+    </tr>
+
+    <tr>
+        <th>Days Remaining</th>
+        <td>
+            <span class="warning">
+                {!Certification__c.Days_Until_Expiry__c} Days
+            </span>
+        </td>
+    </tr>
+
+</table>
+
+<div class="section">
+    Please complete your renewal before the expiration date to avoid interruption in compliance or appointment eligibility.
+</div>
+
+<div class="section">
+    If you have already renewed your certification, please disregard this message.
+</div>
+
+<div class="footer">
+    Thank you,<br/>
+    <strong>Compliance Team</strong>
+</div>
+```
+
+</div>
+
+</body>
+</html>

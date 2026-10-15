@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Types_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Onboarding_Step__c),
+    ISPICKVAL(PRIORVALUE(Onboarding_Step__c), &quot;Invited&quot;),
+    NOT(ISPICKVAL(Onboarding_Step__c, &quot;Invited&quot;)),
+    ISBLANK(Insurance_Types__c)
+)</errorConditionFormula>
+    <errorDisplayField>Insurance_Types__c</errorDisplayField>
+    <errorMessage>Insurance Types must be selected before onboarding can proceed.</errorMessage>
+</ValidationRule>

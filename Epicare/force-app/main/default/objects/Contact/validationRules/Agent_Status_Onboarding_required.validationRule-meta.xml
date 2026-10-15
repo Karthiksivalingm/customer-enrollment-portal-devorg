@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agent_Status_Onboarding_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(Bypass_VR__c),
+    ISNEW(),
+    RecordType.Name = &quot;Agent&quot;,
+    NOT(
+        ISPICKVAL(Agent_Status__c , &quot;Onboarding&quot;)
+    )
+)</errorConditionFormula>
+    <errorMessage>Agent Status must be selected as Onboarding while creating Agent record.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>At_least_one_LOB_must_be_selected</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK(Supported_Lines_of_Business__c)</errorConditionFormula>
+    <errorDisplayField>Supported_Lines_of_Business__c</errorDisplayField>
+    <errorMessage>Please select at least one Line of Business before saving</errorMessage>
+</ValidationRule>

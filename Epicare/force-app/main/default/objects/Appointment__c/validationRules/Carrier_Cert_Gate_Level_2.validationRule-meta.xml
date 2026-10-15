@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier_Cert_Gate_Level_2</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        ISCHANGED(Status__c),
+        ISCHANGED(Sub_Status__c)
+    ),
+    ISPICKVAL(Status__c, &quot;Active&quot;),
+    ISPICKVAL(Sub_Status__c, &quot;Ready to sell&quot;),
+    Carrier_Cert_Required__c = TRUE,
+    NOT(ISPICKVAL(Carrier_Cert_Status__c, &quot;Completed&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Carrier_Cert_Required__c</errorDisplayField>
+    <errorMessage>Carrier certification must be completed before activation.</errorMessage>
+</ValidationRule>

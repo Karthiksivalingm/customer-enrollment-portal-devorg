@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACA_Carriers</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Supported_Lines_of_Business__c</field>
+        <operation>includes</operation>
+        <value>ACA</value>
+    </filters>
+    <label>ACA Carriers</label>
+    <sharedTo>
+        <role>Contracting_Manager</role>
+    </sharedTo>
+</ListView>

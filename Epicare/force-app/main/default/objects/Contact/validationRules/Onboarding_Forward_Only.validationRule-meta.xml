@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Forward_Only</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Onboarding_Step__c),
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    TEXT(Onboarding_Step__c) &lt; TEXT(PRIORVALUE(Onboarding_Step__c))
+)</errorConditionFormula>
+    <errorDisplayField>Onboarding_Step__c</errorDisplayField>
+    <errorMessage>Onboarding steps cannot move backward.</errorMessage>
+</ValidationRule>

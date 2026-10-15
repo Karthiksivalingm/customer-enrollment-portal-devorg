@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation_Type__c</fullName>
+    <label>Compensation Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Override</fullName>
+                <default>false</default>
+                <label>Override</label>
+            </value>
+            <value>
+                <fullName>Chargeback</fullName>
+                <default>false</default>
+                <label>Chargeback</label>
+            </value>
+            <value>
+                <fullName>Commission</fullName>
+                <default>false</default>
+                <label>Commission</label>
+            </value>
+            <value>
+                <fullName>Bonus</fullName>
+                <default>false</default>
+                <label>Bonus</label>
+            </value>
+            <value>
+                <fullName>Administrative_fee</fullName>
+                <default>false</default>
+                <label>Administrative fee</label>
+            </value>
+            <value>
+                <fullName>New Business</fullName>
+                <default>false</default>
+                <label>New Business</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>APPT_FEE</fullName>
+                <default>false</default>
+                <label>Appt Fee</label>
+            </value>
+            <value>
+                <fullName>NEG_BALANCE</fullName>
+                <default>false</default>
+                <label>NEG BALANCE</label>
+            </value>
+            <value>
+                <fullName>APPT FEE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Appt Fee</label>
+            </value>
+            <value>
+                <fullName>COM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COM</label>
+            </value>
+            <value>
+                <fullName>Neg Balance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Neg Balance</label>
+            </value>
+            <value>
+                <fullName>Pass Through</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pass Through</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Spread</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Spread</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

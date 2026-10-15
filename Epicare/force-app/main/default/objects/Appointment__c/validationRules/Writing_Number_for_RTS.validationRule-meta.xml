@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Writing_Number_for_RTS</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        ISCHANGED(Status__c),
+        ISCHANGED(Sub_Status__c)
+    ),
+    ISPICKVAL(Status__c, &quot;Active&quot;),
+    ISPICKVAL(Sub_Status__c, &quot;Ready to sell&quot;),
+    ISBLANK(Writing_Number__c)
+)</errorConditionFormula>
+    <errorDisplayField>Writing_Number__c</errorDisplayField>
+    <errorMessage>Writing Number is required before activating.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_Type__c</fullName>
+    <label>Commission Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annuity Premium Credit</fullName>
+                <default>false</default>
+                <label>Annuity Premium Credit</label>
+            </value>
+            <value>
+                <fullName>Base Premium</fullName>
+                <default>false</default>
+                <label>Base Premium</label>
+            </value>
+            <value>
+                <fullName>Child Rider</fullName>
+                <default>false</default>
+                <label>Child Rider</label>
+            </value>
+            <value>
+                <fullName>DI Premium Credit</fullName>
+                <default>false</default>
+                <label>DI Premium Credit</label>
+            </value>
+            <value>
+                <fullName>Early Cash Value Rider</fullName>
+                <default>false</default>
+                <label>Early Cash Value Rider</label>
+            </value>
+            <value>
+                <fullName>Excess Premium</fullName>
+                <default>false</default>
+                <label>Excess Premium</label>
+            </value>
+            <value>
+                <fullName>Level Term Rider</fullName>
+                <default>false</default>
+                <label>Level Term Rider</label>
+            </value>
+            <value>
+                <fullName>Paid-Up Rider</fullName>
+                <default>false</default>
+                <label>Paid-Up Rider</label>
+            </value>
+            <value>
+                <fullName>Target Premium</fullName>
+                <default>false</default>
+                <label>Target Premium</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

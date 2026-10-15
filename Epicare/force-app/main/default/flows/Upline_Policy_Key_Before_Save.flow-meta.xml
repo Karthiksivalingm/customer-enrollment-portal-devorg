@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Upline_Policy_Key</name>
+        <label>Set Upline Policy Key</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Upline_Policy_Key__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UplinePolicyKeyFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>NormalizedCarrierName</name>
+        <dataType>String</dataType>
+        <expression>UPPER(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!$Record.Carrier__r.Name}, &quot; &quot;, &quot;&quot;), &quot;&apos;&quot;, &quot;&quot;), &quot;.&quot;, &quot;&quot;), &quot;,&quot;, &quot;&quot;), &quot;-&quot;, &quot;&quot;), &quot;&amp;&quot;, &quot;&quot;), &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>UplinePolicyKeyFormula</name>
+        <dataType>String</dataType>
+        <expression>{!NormalizedCarrierName} &amp; &quot;_&quot; &amp; {!$Record.Policy_Number__c}</expression>
+    </formulas>
+    <interviewLabel>Upline Policy Key - Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Upline Policy Key Auto-Populate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Upline_Policy_Key</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Carrier__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Upline_Policy__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

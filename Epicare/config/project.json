@@ -1,0 +1,23 @@
+{
+  "_comment": "Single source of truth for Epicare automation. Scripts in Epicare/scripts read this file. Never store credentials here.",
+  "project": "Epicare",
+  "projectDir": "Epicare",
+  "salesforce": {
+    "alias": "UTDEV",
+    "orgId": "00DWB000008ALkv2AG",
+    "username": "sandipp@epicareinsurance.com.utdev",
+    "instanceUrl": "https://epicareinsurance--utdev.sandbox.my.salesforce.com",
+    "organizationName": "Epicare Insurance",
+    "mustBeSandbox": true,
+    "apiVersion": "68.0"
+  },
+  "git": {
+    "remoteName": "origin",
+    "remoteUrl": "https://github.com/sfdcut/SFDC.git",
+    "workingBranch": "main",
+    "protectedBranches": ["master"],
+    "autoCommit": false,
+    "autoPush": false
+  },
+  "secretRecords": []
+}

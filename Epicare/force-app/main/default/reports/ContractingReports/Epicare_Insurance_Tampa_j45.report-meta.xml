@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.Agent__c</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.State_s__c</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.Carrier__c</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.Line_of_Business__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Epicare Insurance Tampa</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Appointment__c.Line_of_Business__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Supplementary,Life</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Epicare Insurance Tampa</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Appointment__c@Appointment__c.Agency__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Appointment__c.Effective_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

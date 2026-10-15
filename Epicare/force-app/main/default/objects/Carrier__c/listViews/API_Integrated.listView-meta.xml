@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>API_Integrated</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>API_Integrated__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>API Integrated</label>
+    <sharedTo>
+        <group>System_Admin</group>
+        <role>Contracting_Manager</role>
+    </sharedTo>
+</ListView>

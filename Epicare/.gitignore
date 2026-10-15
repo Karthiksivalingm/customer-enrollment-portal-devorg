@@ -1,0 +1,36 @@
+# Epicare: local Salesforce CLI state and auth (never commit)
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+**/lwc/jsconfig.json
+.eslintcache
+coverage/
+node_modules/
+__pycache__/
+*.pyc
+
+# Claude Code personal settings and automation state stay local
+.claude/settings.local.json
+.project-state/
+
+# Logs and OS files
+*.log
+logs/
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+
+# Secrets and keys
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+*.crt
+authUrl*.txt
+*sfdxAuthUrl*
+
+# Epicare: org source files holding credentials (config/secret-files.json, CF-002). Local only.
+force-app/main/default/labels/CustomLabels.labels-meta.xml

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    Certification_Complete__c,
+    IMAGE(&apos;https://epicareinsurance--utdev--c.sandbox.vf.force.com/resource/Green_Flag&apos;,&apos;Green&apos;,20,20),
+    IMAGE(&apos;https://epicareinsurance--utdev--c.sandbox.vf.force.com/resource/Red_Flag&apos;,&apos;Red&apos;,20,20)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Certification Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

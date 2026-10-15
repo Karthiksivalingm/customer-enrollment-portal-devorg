@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Life_Supplementary</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Supported_Lines_of_Business__c</field>
+        <operation>equals</operation>
+        <value>Life,Supplementary</value>
+    </filters>
+    <label>Life / Supplementary</label>
+    <sharedTo>
+        <role>Contracting_Manager</role>
+    </sharedTo>
+</ListView>

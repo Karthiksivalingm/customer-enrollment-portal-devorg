@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Type__c</fullName>
+    <label>Activity Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACA_PMPM</fullName>
+                <default>false</default>
+                <label>ACA PMPM</label>
+            </value>
+            <value>
+                <fullName>Agent_On_Record_PBP</fullName>
+                <default>false</default>
+                <label>Agent On Record PBP</label>
+            </value>
+            <value>
+                <fullName>Carry_Over</fullName>
+                <default>false</default>
+                <label>Carry Over</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>PDP</fullName>
+                <default>false</default>
+                <label>PDP</label>
+            </value>
+            <value>
+                <fullName>Appt_Fee</fullName>
+                <default>false</default>
+                <label>Appt Fee</label>
+            </value>
+            <value>
+                <fullName>Neg_Balance</fullName>
+                <default>false</default>
+                <label>Neg Balance</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>None_Info_Only</fullName>
+                <default>false</default>
+                <label>None Info Only</label>
+            </value>
+            <value>
+                <fullName>Term</fullName>
+                <default>false</default>
+                <label>Term</label>
+            </value>
+            <value>
+                <fullName>New_Sale</fullName>
+                <default>false</default>
+                <label>New Sale</label>
+            </value>
+            <value>
+                <fullName>New Sale</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Sale</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

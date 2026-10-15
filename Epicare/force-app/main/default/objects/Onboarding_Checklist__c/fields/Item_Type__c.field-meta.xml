@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Type__c</fullName>
+    <label>Item Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>W9</fullName>
+                <default>false</default>
+                <label>W9</label>
+            </value>
+            <value>
+                <fullName>ID Front</fullName>
+                <default>false</default>
+                <label>ID Front</label>
+            </value>
+            <value>
+                <fullName>ID Back</fullName>
+                <default>false</default>
+                <label>ID Back</label>
+            </value>
+            <value>
+                <fullName>SSN</fullName>
+                <default>false</default>
+                <label>SSN</label>
+            </value>
+            <value>
+                <fullName>Banking Info</fullName>
+                <default>false</default>
+                <label>Banking Info</label>
+            </value>
+            <value>
+                <fullName>License Verification</fullName>
+                <default>false</default>
+                <label>License Verification</label>
+            </value>
+            <value>
+                <fullName>E O Insurance</fullName>
+                <default>false</default>
+                <label>E O Insurance</label>
+            </value>
+            <value>
+                <fullName>Background Check</fullName>
+                <default>false</default>
+                <label>Background Check</label>
+            </value>
+            <value>
+                <fullName>AML Cert</fullName>
+                <default>false</default>
+                <label>AML Cert</label>
+            </value>
+            <value>
+                <fullName>FFM Cert</fullName>
+                <default>false</default>
+                <label>FFM Cert</label>
+            </value>
+            <value>
+                <fullName>AHIP Cert</fullName>
+                <default>false</default>
+                <label>AHIP Cert</label>
+            </value>
+            <value>
+                <fullName>Carrier Cert</fullName>
+                <default>false</default>
+                <label>Carrier Cert</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

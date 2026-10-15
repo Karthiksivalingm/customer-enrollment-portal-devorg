@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidatePercentageOrFixedRate</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+    AND(
+        ISPICKVAL(Product_State__r.Payment_Type__c, &quot;Percentage&quot;),
+        OR(
+            ISBLANK(Percentage__c),
+            NOT(ISBLANK(Fixed_Rate__c))
+        )
+    ),
+    AND(
+        ISPICKVAL(Product_State__r.Payment_Type__c, &quot;Fixed Rate&quot;),
+        OR(
+            ISBLANK(Fixed_Rate__c),
+            NOT(ISBLANK(Percentage__c))
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Populate either Percentage or Fixed Rate based on the Product State Payment Type. Only one value is allowed.</errorMessage>
+</ValidationRule>

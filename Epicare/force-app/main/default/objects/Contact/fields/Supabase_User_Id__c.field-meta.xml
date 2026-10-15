@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supabase_User_Id__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>UUID from Supabase Auth. Links SF Contact to GO AMS identity.</description>
+    <externalId>true</externalId>
+    <label>Supabase User Id</label>
+    <length>36</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

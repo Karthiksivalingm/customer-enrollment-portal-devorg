@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Reconciled</fullName>
+                <default>false</default>
+                <label>Reconciled</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Paid</fullName>
+                <default>false</default>
+                <label>Paid</label>
+            </value>
+            <value>
+                <fullName>Disputed</fullName>
+                <default>false</default>
+                <label>Disputed</label>
+            </value>
+            <value>
+                <fullName>Written Off</fullName>
+                <default>false</default>
+                <label>Written Off</label>
+            </value>
+            <value>
+                <fullName>Estimated</fullName>
+                <default>false</default>
+                <label>Estimated</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Binder Payment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Binder Payment</label>
+            </value>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>Late Payment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Late Payment</label>
+            </value>
+            <value>
+                <fullName>Not Register</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Register</label>
+            </value>
+            <value>
+                <fullName>Term</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Term</label>
+            </value>
+            <value>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Terminated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

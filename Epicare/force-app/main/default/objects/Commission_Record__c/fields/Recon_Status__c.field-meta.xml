@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recon_Status__c</fullName>
+    <label>Recon Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Matched</fullName>
+                <default>false</default>
+                <label>Matched</label>
+            </value>
+            <value>
+                <fullName>Discrepancy</fullName>
+                <default>false</default>
+                <label>Discrepancy</label>
+            </value>
+            <value>
+                <fullName>No Match Found</fullName>
+                <default>false</default>
+                <label>No Match Found</label>
+            </value>
+            <value>
+                <fullName>Unmatched - No Agent Code</fullName>
+                <default>false</default>
+                <label>Unmatched - No Agent Code</label>
+            </value>
+            <value>
+                <fullName>Integration Error - Not Reconciled</fullName>
+                <default>false</default>
+                <label>Integration Error - Not Reconciled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

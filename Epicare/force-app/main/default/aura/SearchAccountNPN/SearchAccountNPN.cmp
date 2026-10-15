@@ -1,0 +1,20 @@
+<aura:component controller="NiprNPNsearch"
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+    access="global">
+
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="accountRecord" type="Object"/>
+    <aura:attribute name="accountFields" type="Object"/>
+
+    <force:recordData 
+        aura:id="recordLoader"
+        recordId="{!v.recordId}"
+        layoutType="FULL"
+        targetFields="{!v.accountFields}"
+        targetRecord="{!v.accountRecord}"
+        mode="VIEW" />
+
+    <lightning:button variant="brand" label="Search NPN" onclick="{!c.NpnTracking}" />
+      <lightning:recordForm  recordId="{!v.recordId}" objectApiName="Account" fields="NIPR_LastUpdated_Date__c" mode="readonly"/>
+    <lightning:recordForm  recordId="{!v.recordId}" objectApiName="Account" fields="Days_Since_NIPR_Updated__c"/>
+</aura:component>

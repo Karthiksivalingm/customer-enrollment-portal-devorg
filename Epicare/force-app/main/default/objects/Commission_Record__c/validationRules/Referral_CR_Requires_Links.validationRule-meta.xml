@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_CR_Requires_Links</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISCHANGED(Payment_Flow__c),
+  ISPICKVAL(Payment_Flow__c, &quot;Referral&quot;),
+  OR(
+    ISBLANK(Referral_Record__c),
+    ISBLANK(Original_Commission__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Referral_Record and Original_Commission are both required when Payment_Flow is Referral.</errorMessage>
+</ValidationRule>

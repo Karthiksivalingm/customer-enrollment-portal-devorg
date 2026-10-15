@@ -1,0 +1,21 @@
+Dear {!Contact.Name},
+
+<br/><br/>
+
+This is a reminder that your certification is nearing expiry.
+
+<br/><br/>
+
+<strong>Certification Details:</strong><br/>
+Name: {!Certification__c.Name}<br/>
+Type: {!Certification__c.Certification_Type__c}<br/>
+Days Remaining: {!Certification__c.Days_Until_Expiry__c}<br/>
+
+<br/>
+
+Please take necessary action to renew it before expiry.
+
+<br/><br/>
+
+Regards,<br/>
+Compliance Team

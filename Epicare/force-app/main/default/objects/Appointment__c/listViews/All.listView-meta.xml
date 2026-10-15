@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Line_of_Business__c</columns>
+    <columns>Carrier__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Agent__c</columns>
+    <columns>Levels__c</columns>
+    <columns>Status__c</columns>
+    <columns>State_s__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Agency__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Agent__c</field>
+        <operation>equals</operation>
+        <value>Manuel Depool</value>
+    </filters>
+    <label>All Appointments</label>
+    <sharedTo>
+        <group>System_Admin</group>
+        <role>Contracting_Manager</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Aetna Healthcare Plan</fullName>
+        <default>false</default>
+        <label>Aetna Healthcare Plan</label>
+    </customValue>
+    <customValue>
+        <fullName>Anthem Blue Cross Blue Shield</fullName>
+        <default>false</default>
+        <label>Anthem Blue Cross Blue Shield</label>
+    </customValue>
+    <customValue>
+        <fullName>Cigna Healthcare</fullName>
+        <default>false</default>
+        <label>Cigna Healthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>Doctors HealthCare Plans, Inc.</fullName>
+        <default>false</default>
+        <label>Doctors HealthCare Plans, Inc.</label>
+    </customValue>
+    <customValue>
+        <fullName>Solis Health Plans</fullName>
+        <default>false</default>
+        <label>Solis Health Plans</label>
+    </customValue>
+    <customValue>
+        <fullName>Ultimate Health Plans</fullName>
+        <default>false</default>
+        <label>Ultimate Health Plans</label>
+    </customValue>
+    <customValue>
+        <fullName>UnitedHealthcare</fullName>
+        <default>false</default>
+        <label>UnitedHealthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>WellCare Health Plans</fullName>
+        <default>false</default>
+        <label>WellCare Health Plans</label>
+    </customValue>
+    <masterLabel>Medicare Carriers</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

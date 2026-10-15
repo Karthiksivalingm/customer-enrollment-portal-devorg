@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accrual_Source__c</fullName>
+    <label>Accrual Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Statement_Reconciled</fullName>
+                <default>false</default>
+                <label>Statement Reconciled</label>
+            </value>
+            <value>
+                <fullName>Advance_Accrual_Batch</fullName>
+                <default>false</default>
+                <label>Advance Accrual Batch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

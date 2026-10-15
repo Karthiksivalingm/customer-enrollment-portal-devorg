@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_Commission_Owned_Payment_Batches_with_COO_Read_Write_Access_for_Approval</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Commission-Owned Payment Batches with COO (Read/Write Access for Approval)</label>
+        <sharedTo>
+            <role>COO</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Commissions_Director</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

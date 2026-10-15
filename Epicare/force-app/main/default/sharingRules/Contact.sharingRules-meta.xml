@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Agent_Contacts_with_COO_Read_Only</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Agent Contacts with COO (Read Only)</label>
+        <sharedTo>
+            <role>COO</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Agent</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Agent_Contacts_with_Commissions_Read_Only</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Agent Contacts with Commissions (Read Only)</label>
+        <sharedTo>
+            <role>Commissions_Director</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Agent</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Agent_Contacts_with_Contracting_Read_Write_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Agent Contacts with Contracting (Read/Write Access)</label>
+        <sharedTo>
+            <role>Contracting_Manager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Agent</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

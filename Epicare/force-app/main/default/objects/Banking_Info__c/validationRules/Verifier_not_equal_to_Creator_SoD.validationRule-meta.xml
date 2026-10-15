@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verifier_not_equal_to_Creator_SoD</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    Verified__c = TRUE,
+    Verified_By__c = CreatedById
+)</errorConditionFormula>
+    <errorDisplayField>Verified_By__c</errorDisplayField>
+    <errorMessage>Banking info must be verified by a different user than the creator.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+# Epicare .forceignore: files the Salesforce CLI must not push, retrieve or deploy.
+package.xml
+**/jsconfig.json
+**/.eslintrc.json
+**/__tests__/**
+node_modules/
+
+# Managed-package children on objects (UTDEV namespaces at 2026-10-15)
+**/objects/*/*/OIQ__*
+**/objects/*/*/sf_com_apps__*
+**/objects/*/*/sfdcInternalInt__*

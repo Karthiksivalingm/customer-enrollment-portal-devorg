@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agent_cannot_be_activated</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Onboarding_Step__c, &quot;Active&quot;),
+    OR(
+        Overall_Semaphore__c &lt;&gt; &quot;Green&quot;,
+        E_O_Termination_Date__c &lt;= TODAY(),
+        ISBLANK(Insurance_Types__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Agent cannot be activated.
+
+Complete all required onboarding checklist items, ensure E&amp;O Insurance is valid, and populate Insurance Types before setting Onboarding Step to Active.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>E&amp;O Insurance Expiry Alert</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>E&amp;O Insurance Expiry Alert</name>
+    <style>none</style>
+    <subject>E&amp;O Insurance Expiry Alert</subject>
+    <textOnly>```
+E&amp;O Insurance Expiration Alert
+Dear {!Recipient.Name},
+This is an important reminder that your Errors &amp; Omissions (E&amp;O) Insurance is approaching expiration.
+
+Agent Name {!Recipient.Name}
+Agent Status {!Contact.Agent_Status__c}
+E&amp;O Insurance Expiration Date   {!Contact.E_O_Termination_Date__c}
+
+Please renew your E&amp;O Insurance before the expiration date to avoid interruption in appointment eligibility and compliance status.
+If you have already renewed your insurance, please disregard this notification.
+Thank you,
+Compliance Team
+```</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

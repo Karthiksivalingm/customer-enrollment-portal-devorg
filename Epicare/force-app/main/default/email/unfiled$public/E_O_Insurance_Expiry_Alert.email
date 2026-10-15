@@ -1,0 +1,115 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+```
+    .container {
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 22px;
+        font-weight: bold;
+        color: #C23934;
+        margin-bottom: 20px;
+    }
+
+    .section {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .details-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .details-table th,
+    .details-table td {
+        border: 1px solid #dddddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .details-table th {
+        background-color: #f4f4f4;
+        width: 240px;
+    }
+
+    .warning {
+        color: #C23934;
+        font-weight: bold;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<div class="header">
+    E&amp;O Insurance Expiration Alert
+</div>
+
+<div class="section">
+    Dear {!Recipient.Name},
+</div>
+
+<div class="section">
+    This is an important reminder that your Errors &amp; Omissions (E&amp;O) Insurance is approaching expiration.
+</div>
+
+<table class="details-table">
+
+    <tr>
+        <th>Agent Name</th>
+        <td>{!Recipient.Name}</td>
+    </tr>
+
+    <tr>
+        <th>Agent Status</th>
+        <td>{!Contact.Agent_Status__c}</td>
+    </tr>
+
+    <tr>
+        <th>E&amp;O Insurance Expiration Date</th>
+        <td>
+            <span class="warning">
+                {!Contact.E_O_Termination_Date__c}
+            </span>
+        </td>
+    </tr>
+
+</table>
+
+<div class="section">
+    Please renew your E&amp;O Insurance before the expiration date to avoid interruption in appointment eligibility and compliance status.
+</div>
+
+<div class="section">
+    If you have already renewed your insurance, please disregard this notification.
+</div>
+
+<div class="footer">
+    Thank you,<br/>
+    <strong>Compliance Team</strong>
+</div>
+```
+
+</div>
+
+</body>
+</html>
