@@ -1,0 +1,92 @@
+<template>
+  <c-loading-spinner if:true={loading}></c-loading-spinner>
+  <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+    <div class="slds-col slds-size_1-of-1">
+      <div class="slds-text-heading_large">{headingMessage}</div>
+    </div>
+
+    <!-- Rates table -->
+    <div class="slds-col slds-size_1-of-1 slds-border_bottom margin-top-25" id="rate-table">
+      <lightning-datatable
+        columns={columns}
+        data={rates}
+        key-field="id"
+        max-row-selection="1"
+        onrowselection={onRateRowSelection}
+      ></lightning-datatable>
+    </div>
+
+    <!-- Adjust Face Amount -->
+    <div class="slds-col slds-size_1-of-1 margin-top-25">
+      <div class="slds-text-heading_medium">Adjust Face Amount</div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-4">
+      <lightning-input
+        type="number"
+        name="faceAmount"
+        label="Face Amount"
+        value={faceAmount}
+        disabled={hasNoSelectedRate}
+        onchange={onFaceAmountChange}
+      ></lightning-input>
+    </div>
+
+    <div class="slds-col slds-size_2-of-4">
+      <c-oda-slider
+        min-value={faceAmountMinValue}
+        max-value={faceAmountMaxValue}
+        step={faceAmountStepValue}
+        value={faceAmount}
+        is-disabled={hasNoSelectedRate}
+        onslidervaluechange={onFaceAmountChange}
+      ></c-oda-slider>
+    </div>
+
+    <div class="slds-col slds-size_1-of-4 slds-align-bottom">
+      <c-stretched-button
+        variant="brand"
+        label="Confirm Quotes"
+        is-disabled={hasNoSelectedRate}
+        onselection={onConfirmQuote}
+      ></c-stretched-button>
+    </div>
+
+    <!-- CONFIRMED QUOTE TABLE -->
+    <div
+      class="slds-col slds-size_1-of-1 slds-border_bottom margin-top-25"
+      id="confirmed-quote-table"
+    >
+      <lightning-datatable
+        columns={columns}
+        data={quotes}
+        key-field="id"
+        max-row-selection="1"
+        onrowselection={onConfirmedQuoteSelection}
+      ></lightning-datatable>
+
+      <template if:true={hasNoConfirmedQuotes}>
+        <div class="slds-m-top_medium"></div>
+        <div class="slds-align_absolute-center">
+          <lightning-icon
+            icon-name="utility:recurring_exception"
+            alternative-text="No Data"
+          ></lightning-icon>
+        </div>
+        <div class="slds-align_absolute-center slds-text-heading_small">
+          No Quotes Confirmed
+        </div>
+      </template>
+    </div>
+
+    <!-- E-App -->
+    <div class="slds-col slds-size_1-of-1 margin-top-25">
+      <c-stretched-button
+        label="Launch E-App"
+        onselection={onLaunchEapp}
+        variant="success"
+        is-disabled={isLaunchEappDisabled}
+      ></c-stretched-button>
+    </div>
+  </div>
+</template>

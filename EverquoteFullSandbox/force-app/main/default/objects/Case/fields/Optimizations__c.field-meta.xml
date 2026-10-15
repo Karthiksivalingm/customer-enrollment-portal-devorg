@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Optimizations__c</fullName>
+    <label>Optimizations</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Strategic_Account_Management__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Caps not met</fullName>
+                <default>false</default>
+                <label>Caps not met</label>
+            </value>
+            <value>
+                <fullName>Cap met too frequently</fullName>
+                <default>false</default>
+                <label>Cap met too frequently</label>
+            </value>
+            <value>
+                <fullName>Disposition Request</fullName>
+                <default>false</default>
+                <label>Disposition Request</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Optimizations</controllingFieldValue>
+            <valueName>Caps not met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Optimizations</controllingFieldValue>
+            <valueName>Cap met too frequently</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Optimizations</controllingFieldValue>
+            <valueName>Disposition Request</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

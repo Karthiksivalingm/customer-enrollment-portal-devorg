@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Fields_Required_for_AgencyCSOpps</fullName>
+    <active>false</active>
+    <description>Requires that fields on the account be populated before moving an agency cs opportunity to the Closed won</description>
+    <errorConditionFormula>RecordType.Name= &quot;Agency CS&quot;&amp;&amp; 
+Account.RecordType.DeveloperName= &quot;Agency&quot;&amp;&amp; 
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;&amp;&amp;
+ISPICKVAL(StageName, &quot;Closed Won&quot;)&amp;&amp; 
+OR( 
+ISPICKVAL(Account.LMS__c,&quot;&quot; ), 
+ISPICKVAL(Account.Rater__c,&quot;&quot; ), 
+ISBLANK(Account.Years_as_an_Agent__c), 
+ISPICKVAL(Account.Track_Metrics__c, &quot;&quot;), 
+ISBLANK(Account.Selling_Producers__c), 
+ISPICKVAL(Account.Business_Strategy__c, &quot;&quot;), 
+ISPICKVAL(Account.Has_Defined_Sales_Process__c, &quot;&quot;), 
+ISPICKVAL(Account.Buys_Weekend_Leads__c, &quot;&quot;), 
+ISBLANK(Account.Target_Monthly_Policies__c), 
+ISBLANK(Account.Total_Leads_Purchased_Monthly__c))</errorConditionFormula>
+    <errorMessage>One or more agency fields are not populated on the account for this opportunity. Please go to the account to update the fields.</errorMessage>
+</ValidationRule>

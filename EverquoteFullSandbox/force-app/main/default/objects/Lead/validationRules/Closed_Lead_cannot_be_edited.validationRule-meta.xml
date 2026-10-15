@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lead_cannot_be_edited</fullName>
+    <active>false</active>
+    <errorConditionFormula>lead_restrict__c = TRUE
+&amp;&amp;
+ $User.ProfileId &lt;&gt; &quot;00e1a000000lWln&quot;</errorConditionFormula>
+    <errorMessage>Record is Read Only.</errorMessage>
+</ValidationRule>

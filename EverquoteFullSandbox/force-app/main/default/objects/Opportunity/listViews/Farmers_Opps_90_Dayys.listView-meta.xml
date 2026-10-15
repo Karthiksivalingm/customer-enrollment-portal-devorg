@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Farmers_Opps_90_Dayys</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <filterScope>SalesTeam</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CREATED_DATE</field>
+        <operation>lessThan</operation>
+        <value>LAST_N_MONTHS:3</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Discovery Meeting,Go/No-Go</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Agency</value>
+    </filters>
+    <label>Opps &gt; 90 Days Old</label>
+    <sharedTo>
+        <group>Allstate_Team</group>
+        <group>Farmers_Team</group>
+        <group>IA_and_Growth_Team</group>
+        <group>Life_Team</group>
+        <group>Sales_Strategy_and_Ops</group>
+        <group>State_Farm_Team</group>
+    </sharedTo>
+</ListView>

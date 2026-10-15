@@ -1,0 +1,100 @@
+<apex:component >
+    <apex:attribute name="upsell" type="Upsell__c" required="true"
+                    description="upsell"/>
+    <apex:attribute name="vertical" type="String" required="true"
+                    description="vertical"/>
+    
+    <apex:pageBlockSection title="Lead Type" rendered="{!vertical == 'Auto'}">
+        <table class="infoTable">
+            <tr>
+                <th>Lead Type</th>
+                <th>Weekly Lift</th>
+                <th> Currently Taking </th>
+                <th>Exclusive Available</th>
+            </tr>
+            <tr>
+                <th>Premium</th>
+                <td>{!upsell.Premium_Lift__c}</td>
+               	<td>{!upsell.Taking_Premium__c} </td> 
+                <td>{!upsell.Premium_Exclusive_Available__c} </td> 
+            </tr>
+            <tr>
+                <th>Preferred</th>
+                <td>{!upsell.Preferred_Lift__c}</td>
+                <td>{!upsell.Taking_Preferred__c} </td>
+                <td>{!upsell.Preferred_Exclusive_Available__c} </td>
+
+            </tr>
+            <tr>
+                <th>Standard</th>
+                <td>{!upsell.Standard_Lift__c}</td>
+               	<td>{!upsell.Taking_Standard__c} </td> 
+               	<td>{!upsell.Standard_Exclusive_Available__c} </td>
+            </tr>
+            <tr>
+                <th>Non-Standard</th>
+                <td>{!upsell.Non_Standard_Lift__c}</td>
+               	<td>{!upsell.Taking_Non_Standard__c} </td> 
+                <td>{!upsell.Non_standard_Exclusive_Available__c} </td>
+            </tr>
+        </table>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Lead Type" rendered="{!vertical == 'Home'}">
+        <table class="infoTable">
+            <tr>
+                <th>Lead Type</th>
+                <th>Weekly Lift</th>
+                <th>Currently Taking </th>
+                <th>Exclusive Available</th>
+            </tr>
+            <tr>
+                <th>Premium</th>
+                <td>{!upsell.Home_Premium_Lift__c}</td>
+               	<td>{!upsell.Taking_Premium__c} </td> 
+                <td>{!upsell.Premium_Exclusive_Available__c} </td> 
+            </tr>
+            <tr>
+                <th>Basic</th>
+                <td>{!upsell.Home_Basic_Lift__c}</td>
+                <td>{!upsell.Taking_Basic__c} </td> 
+                <td>{!upsell.Basic_Exclusive_Available__c} </td> 
+            </tr>
+            <tr>
+                <th>Home</th>
+                <td></td>
+                <td>{!upsell.Taking_Home__c} </td> 
+                <td>{!upsell.Home_Exclusive_Available__c} </td> 
+            </tr>
+        </table>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection title="Lead Type" rendered="{!vertical == 'Life'}">
+        <table class="infoTable">
+            <tr>
+                <th>Lead Type</th>
+                <th>Weekly Lift</th>
+                <th>Currently Taking </th>
+                <th>Exclusive Available</th>
+            </tr>
+            <tr>
+                <th>Premium</th>
+                <td>{!upsell.Premium_Lift__c}</td>
+                <td>{!upsell.Taking_Premium__c} </td>
+                <td>{!upsell.Premium_Exclusive_Available__c} </td>
+            </tr>
+            <tr>
+                <th>Preferred</th>
+                <td>{!upsell.Preferred_Lift__c}</td>
+                <td>{!upsell.Taking_Preferred__c} </td> 
+                <td>{!upsell.Preferred_Exclusive_Available__c} </td> 
+
+            </tr>
+            <tr>
+                <th>Standard</th>
+                <td>{!upsell.Standard_Lift__c}</td>
+                <td>{!upsell.Taking_Standard__c} </td>
+                <td>{!upsell.Standard_Exclusive_Available__c} </td> 
+            </tr>
+        </table>
+    </apex:pageBlockSection>
+</apex:component>

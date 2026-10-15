@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023_Q4_Farmers_Central_DM_trainees</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>2023-Q4 Farmers Central DM trainees</label>
+    <sharedTo></sharedTo>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Cannot_Be_Blank</fullName>
+    <active>true</active>
+    <description>New Accounts must have a phone number, phone numbers cannot be removed from existing accounts.
+
+Existing Accounts can have a blank phone number - this is to avoid issues with automations while we still have Accounts missing phone number.
+S3P-857</description>
+    <errorConditionFormula>AND(
+     ISBLANK(Phone),
+     ISCHANGED(Phone)
+)</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Account Phone is required</errorMessage>
+</ValidationRule>

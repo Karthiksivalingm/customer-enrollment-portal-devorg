@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessFlowMigration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <destinationFlowDefinition>Upsell_Notes_from_last_opp_1</destinationFlowDefinition>
+    <destinationFlowVersion>Upsell_Notes_from_last_opp_1-1</destinationFlowVersion>
+    <developerName>myRule_1_301VZ00000zMHfCYAW</developerName>
+    <masterLabel>Upsell: Notes from last opp_1</masterLabel>
+    <migratedCriteriaLabel>Upsell opp is closed</migratedCriteriaLabel>
+    <migratedCriteriaName>myRule_1</migratedCriteriaName>
+    <processVersion>Upsell_Notes_from_last_opp-1</processVersion>
+</ProcessFlowMigration>

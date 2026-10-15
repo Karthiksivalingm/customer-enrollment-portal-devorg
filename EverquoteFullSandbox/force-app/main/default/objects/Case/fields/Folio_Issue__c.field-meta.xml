@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Folio_Issue__c</fullName>
+    <description>The distinction between Billing File Error and Billing Reporting Error is that Billing File Error is on us generating the file, whereas Billing Reporting Error is on them to correctly read and report from the file.</description>
+    <label>Folio Issue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Folio_Dispute__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Billing File Error</fullName>
+                <default>false</default>
+                <label>Billing File Error</label>
+            </value>
+            <value>
+                <fullName>Billing Reporting Error</fullName>
+                <default>false</default>
+                <label>Billing Reporting Error</label>
+            </value>
+            <value>
+                <fullName>Agent Misunderstanding</fullName>
+                <default>false</default>
+                <label>Agent Misunderstanding</label>
+            </value>
+            <value>
+                <fullName>Credit Dispute</fullName>
+                <default>false</default>
+                <label>Credit Dispute</label>
+            </value>
+            <value>
+                <fullName>EverQuote Miscommunication</fullName>
+                <default>false</default>
+                <label>EverQuote Miscommunication</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Billing File Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Billing Reporting Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Agent Misunderstanding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Credit Dispute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>EverQuote Miscommunication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

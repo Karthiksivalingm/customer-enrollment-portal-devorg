@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Independent_Agent_Network__c</fullName>
+    <label>Independent Agent Network</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Goosehead Insurance</fullName>
+                <default>false</default>
+                <label>Goosehead Insurance</label>
+            </value>
+            <value>
+                <fullName>Brightway Insurance</fullName>
+                <default>false</default>
+                <label>Brightway Insurance</label>
+            </value>
+            <value>
+                <fullName>Colorado Insurance</fullName>
+                <default>false</default>
+                <label>Colorado Insurance</label>
+            </value>
+            <value>
+                <fullName>Steele Insurance</fullName>
+                <default>false</default>
+                <label>Steele Insurance</label>
+            </value>
+            <value>
+                <fullName>SmartChoice</fullName>
+                <default>false</default>
+                <label>SmartChoice</label>
+            </value>
+            <value>
+                <fullName>Florida First</fullName>
+                <default>false</default>
+                <label>Florida First</label>
+            </value>
+            <value>
+                <fullName>SafeguardCasualty</fullName>
+                <default>false</default>
+                <label>SafeguardCasualty</label>
+            </value>
+            <value>
+                <fullName>Great Florida Insurance</fullName>
+                <default>false</default>
+                <label>Great Florida Insurance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

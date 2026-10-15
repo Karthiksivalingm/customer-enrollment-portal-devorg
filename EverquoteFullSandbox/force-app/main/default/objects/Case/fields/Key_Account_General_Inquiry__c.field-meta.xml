@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Account_General_Inquiry__c</fullName>
+    <label>Key Account General Inquiry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Key_Account_Support__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Review</fullName>
+                <default>false</default>
+                <label>Account Review</label>
+            </value>
+            <value>
+                <fullName>Dispo Analysis</fullName>
+                <default>false</default>
+                <label>Dispo Analysis</label>
+            </value>
+            <value>
+                <fullName>Lead Pricing</fullName>
+                <default>false</default>
+                <label>Lead Pricing</label>
+            </value>
+            <value>
+                <fullName>Control Spending</fullName>
+                <default>false</default>
+                <label>Control Spending</label>
+            </value>
+            <value>
+                <fullName>Edit Users</fullName>
+                <default>false</default>
+                <label>Edit Users</label>
+            </value>
+            <value>
+                <fullName>Edit Raters</fullName>
+                <default>false</default>
+                <label>Edit Raters</label>
+            </value>
+            <value>
+                <fullName>Edit LMS</fullName>
+                <default>false</default>
+                <label>Edit LMS</label>
+            </value>
+            <value>
+                <fullName>New Feature Education</fullName>
+                <default>false</default>
+                <label>New Feature Education</label>
+            </value>
+            <value>
+                <fullName>New Feature Request</fullName>
+                <default>false</default>
+                <label>New Feature Request</label>
+            </value>
+            <value>
+                <fullName>Platform Issue</fullName>
+                <default>false</default>
+                <label>Platform Issue</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Account Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Dispo Analysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Lead Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Control Spending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Edit Users</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Edit Raters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Edit LMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>New Feature Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>New Feature Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Account Inquiry</controllingFieldValue>
+            <valueName>Platform Issue</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

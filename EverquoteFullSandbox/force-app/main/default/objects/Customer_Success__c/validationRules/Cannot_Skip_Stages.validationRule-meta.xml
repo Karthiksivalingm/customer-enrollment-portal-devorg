@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Skip_Stages</fullName>
+    <active>false</active>
+    <errorConditionFormula>$Profile.Name &lt;&gt;&quot;System Administrator&quot;&amp;&amp;
+(ISCHANGED(Onboarding_Stage__c) 
+&amp;&amp; 
+CASE( Onboarding_Stage__c , 
+&quot;Handoff&quot;,1, 
+&quot;Training Complete&quot;, 2,
+&quot;1st Check-In Complete&quot;,3, 
+&quot;2nd Check-In Complete&quot;,4,  
+&quot;Onboarding Complete&quot;,5, 
+&quot;Onboarding Abandoned&quot;,6,0)-1 
+&lt;&gt; 
+CASE(PRIORVALUE(Onboarding_Stage__c) , 
+&quot;Handoff&quot;,1, 
+&quot;Training Complete&quot;, 2,
+&quot;1st Check-In Complete&quot;,3, 
+&quot;2nd Check-In Complete&quot;,4,  
+&quot;Onboarding Complete&quot;,5, 
+&quot;Onboarding Abandoned&quot;,6,0) 
+&amp;&amp; 
+NOT(ISPICKVAL(Onboarding_Stage__c, &quot;Handoff&quot;)) 
+&amp;&amp; 
+NOT(ISPICKVAL(Onboarding_Stage__c, &quot;Onboarding Abandoned&quot;)))</errorConditionFormula>
+    <errorMessage>Cannot Skip Stages</errorMessage>
+</ValidationRule>

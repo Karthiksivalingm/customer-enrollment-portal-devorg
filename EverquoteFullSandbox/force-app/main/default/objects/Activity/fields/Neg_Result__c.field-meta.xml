@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Neg_Result__c</fullName>
+    <formula>INCLUDES( Negative_Results__c , &quot;Lowered Products&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Neg Result: Lowered Products</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier_Hubspot__c</fullName>
+    <label>Carrier Hubspot</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Allstate</fullName>
+                <default>false</default>
+                <label>Allstate</label>
+            </value>
+            <value>
+                <fullName>State Farm</fullName>
+                <default>false</default>
+                <label>State Farm</label>
+            </value>
+            <value>
+                <fullName>Farmers</fullName>
+                <default>false</default>
+                <label>Farmers</label>
+            </value>
+            <value>
+                <fullName>Independent Agent</fullName>
+                <default>false</default>
+                <label>Independent Agent</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

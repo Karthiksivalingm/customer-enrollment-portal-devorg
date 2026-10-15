@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wizard_Incomplete</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Wizard_Stage__c</columns>
+    <columns>CONTACT.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Wizard_Stage__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Choice_UUID__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Wizard Incomplete</label>
+    <sharedTo>
+        <group>BDR</group>
+    </sharedTo>
+</ListView>

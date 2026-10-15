@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IfStageGoNoGoComplete_Current_State</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(
+    AND(
+        TEXT(StageName) = &quot;Go/No-Go&quot;, 
+        ISBLANK(Current_State__c)), True, False
+ )</errorConditionFormula>
+    <errorDisplayField>Current_State__c</errorDisplayField>
+    <errorMessage>If stage changed to Go/No-Go please complete Current State field</errorMessage>
+</ValidationRule>

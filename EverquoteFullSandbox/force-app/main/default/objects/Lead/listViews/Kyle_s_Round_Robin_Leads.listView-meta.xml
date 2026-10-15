@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kyle_s_Round_Robin_Leads</fullName>
+    <booleanFilter>1 and 2</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD_SCORE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Campaign__c</columns>
+    <columns>How_many_prdrs_agents_including_yourself__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Kyle</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Lost,Unqualified,Do Not Call,No Longer There,Bad Data,Not Interested</value>
+    </filters>
+    <label>Kyle&apos;s Round Robin Leads</label>
+</ListView>

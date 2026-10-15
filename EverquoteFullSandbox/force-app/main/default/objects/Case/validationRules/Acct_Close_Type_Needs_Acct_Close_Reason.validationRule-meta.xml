@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acct_Close_Type_Needs_Acct_Close_Reason</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR( 
+AND( 
+ISPICKVAL( Customer_Support_Type__c , &quot;Account Closure&quot;), 
+ISPICKVAL( Account_Closure__c ,&quot;&quot;), 
+ISPICKVAL( Status , &quot;Closed&quot;),
+NOT(ISPICKVAL( Credit_Offered__c ,&quot;&quot;))), 
+AND( 
+ISPICKVAL( Account_Management_Type__c , &quot;Account Closure&quot;), 
+ISPICKVAL( Account_Closure__c ,&quot;&quot;), 
+ISPICKVAL( Status , &quot;Closed&quot;)),
+And(
+ISPICKVAL( Key_Account_Support__c , &quot;Account Closure&quot;),
+ISPICKVAL( Account_Closure__c ,&quot;&quot;),
+ISPICKVAL( Status , &quot;Closed&quot;)))
+&amp;&amp;
+ Datevalue(CreatedDate) &gt;  DATE(2017,04,01)</errorConditionFormula>
+    <errorDisplayField>Account_Closure__c</errorDisplayField>
+    <errorMessage>Account closed case needs account closure reason</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Under_1_Bus_Day__c</fullName>
+    <formula>IF( Age_Bus_Days_Intro__c &lt; 2, true, false)</formula>
+    <label>Under 1 Bus Day</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

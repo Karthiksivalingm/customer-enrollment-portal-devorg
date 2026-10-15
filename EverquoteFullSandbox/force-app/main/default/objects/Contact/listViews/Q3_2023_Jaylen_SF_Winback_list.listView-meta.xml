@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q3_2023_Jaylen_SF_Winback_list</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>contains</operation>
+        <value>statefarm</value>
+    </filters>
+    <label>Q1 2024 camielle winback list</label>
+    <sharedTo>
+        <group>State_Farm_BDR</group>
+    </sharedTo>
+</ListView>

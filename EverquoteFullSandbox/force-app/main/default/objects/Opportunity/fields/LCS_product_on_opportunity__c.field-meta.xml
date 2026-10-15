@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LCS_product_on_opportunity__c</fullName>
+    <label>LCS product on opportunity</label>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Product__c</field>
+        <operation>contains</operation>
+        <value>Lead Connection Service</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

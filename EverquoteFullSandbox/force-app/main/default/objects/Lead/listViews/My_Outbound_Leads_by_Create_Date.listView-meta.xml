@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Outbound_Leads_by_Create_Date</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>Lead_Outcome__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Lead_Outcome__c</field>
+        <operation>notContain</operation>
+        <value>Knock Out - Replacement,Knock Out - US Citizen,Knock Out - Health,App. Complete - SALE,App. Complete - Referred,App. Complete - Declined,App. Complete - Payment Issue,App. Complete - Other Non-Sale,Do Not Call,No Sale - Ineligible</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.Life_Leads</value>
+    </filters>
+    <filters>
+        <field>OwnerIsUser__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Policy_Number__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>My Outbound Leads by Create Date</label>
+    <sharedTo></sharedTo>
+</ListView>

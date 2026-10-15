@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Picklist__c</fullName>
+    <label>Update Picklist</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pro Overwrite</fullName>
+                <default>false</default>
+                <label>Pro Overwrite</label>
+            </value>
+            <value>
+                <fullName>Dummy</fullName>
+                <default>false</default>
+                <label>Dummy</label>
+            </value>
+            <value>
+                <fullName>Nap AS Oct 9</fullName>
+                <default>false</default>
+                <label>Nap AS Oct 9</label>
+            </value>
+            <value>
+                <fullName>June 22</fullName>
+                <default>false</default>
+                <label>June 22</label>
+            </value>
+            <value>
+                <fullName>Jake January</fullName>
+                <default>false</default>
+                <label>Jake January</label>
+            </value>
+            <value>
+                <fullName>Jamaal January</fullName>
+                <default>false</default>
+                <label>Jamaal January</label>
+            </value>
+            <value>
+                <fullName>Hubspot Contact Me</fullName>
+                <default>false</default>
+                <label>Hubspot Contact Me</label>
+            </value>
+            <value>
+                <fullName>Ryan to Jerome</fullName>
+                <default>false</default>
+                <label>Ryan to Jerome</label>
+            </value>
+            <value>
+                <fullName>Set up in Partnerstack</fullName>
+                <default>false</default>
+                <label>Set up in Partnerstack</label>
+            </value>
+            <value>
+                <fullName>active new</fullName>
+                <default>false</default>
+                <label>active new</label>
+            </value>
+            <value>
+                <fullName>greg</fullName>
+                <default>false</default>
+                <label>greg</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

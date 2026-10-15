@@ -1,0 +1,39 @@
+<template>
+  <c-loading-spinner if:true={loading}></c-loading-spinner>
+  <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+    <div class="slds-col slds-size_1-of-1">
+      <div class="slds-text-heading_large">Reliashield - Begin a New Application</div>
+    </div>
+  </div>
+
+  <div class="slds-grid slds-gutters slds-wrap mb">
+    <!-- COMPARISON PLAN BUTTON -->
+    <div class="slds-col slds-size_1-of-1 margin-top-25" id="load-previous-application">
+      <c-stretched-button
+        label="To see Reliashield plan comparison, click here"
+        variant="brand"
+        onselection={openComparisonImage}
+      ></c-stretched-button>
+    </div>
+  </div>
+  <!-- RATES TABLE-->
+  <div class="slds-col slds-size_1-of-1 slds-border_bottom margin-top-25" id="rate-table">
+    <c-oda-datatable
+      columns={columns}
+      data={rates}
+      key-field="id"
+      hide-checkbox-column
+      oncellclick={handleRateCellClick}
+    ></c-oda-datatable>
+  </div>
+
+  <!-- E-APP -->
+  <div class="slds-col slds-size_1-of-1 margin-top-25">
+    <c-stretched-button
+      label="Launch E-App"
+      onselection={onLaunchEapp}
+      variant="success"
+      is-disabled={isLaunchEappDisabled}
+    ></c-stretched-button>
+  </div>
+</template>

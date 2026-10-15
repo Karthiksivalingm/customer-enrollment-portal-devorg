@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LMS_Vendor__c</fullName>
+    <label>LMS Vendor</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Blitz</fullName>
+                <default>false</default>
+                <label>Blitz</label>
+            </value>
+            <value>
+                <fullName>Boberdoo</fullName>
+                <default>false</default>
+                <label>Boberdoo</label>
+            </value>
+            <value>
+                <fullName>Doesn&apos;t Use an LMS</fullName>
+                <default>false</default>
+                <label>Doesn&apos;t Use an LMS</label>
+            </value>
+            <value>
+                <fullName>DYL</fullName>
+                <default>false</default>
+                <label>DYL</label>
+            </value>
+            <value>
+                <fullName>eCRM</fullName>
+                <default>false</default>
+                <label>eCRM</label>
+            </value>
+            <value>
+                <fullName>Follow Up Tool</fullName>
+                <default>false</default>
+                <label>Follow Up Tool</label>
+            </value>
+            <value>
+                <fullName>Lead Capsule</fullName>
+                <default>false</default>
+                <label>Lead Capsule</label>
+            </value>
+            <value>
+                <fullName>Lead Management Lab</fullName>
+                <default>false</default>
+                <label>Lead Management Lab</label>
+            </value>
+            <value>
+                <fullName>PL Rater</fullName>
+                <default>false</default>
+                <label>PL Rater</label>
+            </value>
+            <value>
+                <fullName>Ricochet</fullName>
+                <default>false</default>
+                <label>Ricochet</label>
+            </value>
+            <value>
+                <fullName>SIMS</fullName>
+                <default>false</default>
+                <label>SIMS</label>
+            </value>
+            <value>
+                <fullName>Velocify</fullName>
+                <default>false</default>
+                <label>Velocify</label>
+            </value>
+            <value>
+                <fullName>Zoho</fullName>
+                <default>false</default>
+                <label>Zoho</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timeago__c</fullName>
+    <defaultValue>NOW() - 58*(1/24/60)</defaultValue>
+    <description>for referral round robin notification - a PB called active referral owner in steps 2 and 3 invokes a round robin dispatcher app that is run every minute to assign the opp owner https://retrology.net/how-to-start-process-builder-after-one-minute-in-salesforce/</description>
+    <label>Timeago</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

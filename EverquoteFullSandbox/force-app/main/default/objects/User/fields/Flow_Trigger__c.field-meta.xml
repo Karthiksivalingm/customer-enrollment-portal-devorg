@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Trigger__c</fullName>
+    <description>This picklist is used in flows to ensure a flow is only triggered when a user with the correct setting is completing the action. Created for the Quarterly Tiering process; the person doing the tiering selects the picklist value and this ensures the flows related to quarterly tiering are triggered.
+Used a picklist so it could be expanded to other use cases as they arise.
+
+S3P-1209 (S3P - 1432) - Created.</description>
+    <inlineHelpText>Used only while completing the quarterly tiering to ensure flows trigger.</inlineHelpText>
+    <label>Flow Trigger</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quarterly Tiering</fullName>
+                <default>false</default>
+                <label>Quarterly Tiering</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

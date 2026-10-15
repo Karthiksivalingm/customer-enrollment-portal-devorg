@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Rock_Lead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Update by PB when Referral Rock campaign added to the lead</description>
+    <label>Referral Rock Lead</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

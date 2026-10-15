@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_Follow_up_after_10_days_Alert</fullName>
+        <description>Case Follow up after 10 days	Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>nick.kildiroglu@everquote.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Case_Follow_up_after_10_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Follow_up_after_14_days_Alert</fullName>
+        <description>Case Follow up after 14 days	Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Follow_up_after_14_days</template>
+    </alerts>
+    <alerts>
+        <fullName>No_show_alert</fullName>
+        <description>No show alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Strategy_Ops/No_show_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_fresh_hot_task_assigned</fullName>
+        <description>Notify fresh/hot task assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Task_Fresh_Hot_Lead</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_new_task_was_assigned</fullName>
+        <description>Notify new task was assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Task_Assigned_v2</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_users_when_an_existing_task_was_assigned_to_them</fullName>
+        <description>Notify users when an existing task was assigned to them</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Existing_Task_assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>ODA_call_requires_your_attention</fullName>
+        <ccEmails>ilevinsky@everquote.com</ccEmails>
+        <ccEmails>jxu@everquote.com</ccEmails>
+        <description>ODA call requires your attention</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ODA_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Task_Assigned</fullName>
+        <description>Task Assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Task_Assigned</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_type_to_Email</fullName>
+        <field>Type</field>
+        <literalValue>Email</literalValue>
+        <name>Update type to Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>isLead_field_update</fullName>
+        <description>updates when an activity occurs on a lead</description>
+        <field>isLead__c</field>
+        <literalValue>1</literalValue>
+        <name>isLead field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>task_type_for_calls</fullName>
+        <description>update task type to call for inbound or outbound calls</description>
+        <field>Type</field>
+        <literalValue>Call</literalValue>
+        <name>task type for calls</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Callback Follow-up</fullName>
+        <actions>
+            <name>Follow_up_with_Lead</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Task.Call_Outcome__c</field>
+            <operation>equals</operation>
+            <value>&quot;Callback scheduled, still in market&quot;</value>
+        </criteriaItems>
+        <description>Creates a task to follow up with the Lead when Call Outcome = Callback Scheduled</description>
+        <failedMigrationToolVersion>262.12.11</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Contact Field on Activity</fullName>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <field>Task.CallDisposition</field>
+            <operation>equals</operation>
+            <value>Spoke to Decision Maker</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.CallDisposition</field>
+            <operation>equals</operation>
+            <value>Spoke to Non Decision Maker</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.CallDisposition</field>
+            <operation>equals</operation>
+            <value>Live Message</value>
+        </criteriaItems>
+        <description>update correct contact when call results is correct contact</description>
+        <failedMigrationToolVersion>262.12.10</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Correct Contact</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.CallDisposition</field>
+            <operation>equals</operation>
+            <value>Spoke to Decision Maker</value>
+        </criteriaItems>
+        <description>update correct contact when call results is correct contact</description>
+        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update IsLead for activity on lead</fullName>
+        <actions>
+            <name>isLead_field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>BEGINS(WhoId , &quot;00Q&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update type to Email</fullName>
+        <actions>
+            <name>Update_type_to_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>If an ISR logs an email as a task, update the task type to Email.</description>
+        <formula>BEGINS( Subject  , &quot;Email:&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>task type for calls</fullName>
+        <actions>
+            <name>task_type_for_calls</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Task.Subject</field>
+            <operation>equals</operation>
+            <value>Outbound Call,Inbound Call</value>
+        </criteriaItems>
+        <description>update task type for outbound or inbound calls to &quot;call&quot;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Follow_up_with_Lead</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>2</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Follow up with Lead</subject>
+    </tasks>
+</Workflow>

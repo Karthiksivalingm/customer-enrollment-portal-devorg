@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pipeline__c</fullName>
+    <label>Pipeline</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+                <label>Engaged</label>
+            </value>
+            <value>
+                <fullName>Not Engaged</fullName>
+                <default>true</default>
+                <label>Not Engaged</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Live Promo</fullName>
+                <default>false</default>
+                <label>Live Promo</label>
+            </value>
+            <value>
+                <fullName>Live Ongoing</fullName>
+                <default>false</default>
+                <label>Live Ongoing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CASE_Acct_Closure_Underwrit_Restriction</fullName>
+    <active>false</active>
+    <description>require the fields &quot;restrictions changed&quot; and &quot;which agencies does this change affect&quot; fields when account closure reason is underwriting restrictions</description>
+    <errorConditionFormula>ISPICKVAL( Account_Closure__c , &quot;Underwriting Restrictions&quot;)
+&amp;&amp;
+OR(
+ISBLANK( Restrictions_changed__c ),
+ISBLANK(  Which_Agencies_does_this_change_affect__c )
+)
+&amp;&amp;
+Datevalue(CreatedDate) &gt; DATE(2017,04,01)</errorConditionFormula>
+    <errorMessage>&quot;Restrictions Changed&quot; and &quot;Which Agencies does this change affect?&quot; are required when account closure reason is &quot;Underwriting Restrictions&quot;.</errorMessage>
+</ValidationRule>

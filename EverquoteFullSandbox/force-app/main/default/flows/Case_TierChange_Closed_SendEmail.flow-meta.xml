@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Send the appropriate email (body assigned above) based on the Case Subject and whether or not the</description>
+        <name>Send_Email_to_Contact_from_Case_Owner</name>
+        <label>Send Email to Contact from Case Owner</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <targetReference>Assign_Failing_Flow_Component</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>$Record.Contact.Email</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>Formula_EmailCC</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>CurrentUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Variable_EmailSubject_Final</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Variable_EmailBody_Final</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>addThreadingTokenToBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <description>Send the appropriate email (body assigned above) based on the Case Subject and whether or not the</description>
+        <name>Send_Email_to_Contact_from_Customer_Support</name>
+        <label>Send Email to Contact from Customer Support</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <targetReference>Assign_Failing_Flow_Component_From_Customer_Support</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>$Record.Contact.Email</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>Formula_EmailCC</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>customersupport@everquote.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Variable_EmailSubject_Final</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Variable_EmailBody_Final</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>addThreadingTokenToBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign the email body and subject we will send based on the Case&apos;s subject.</description>
+        <name>Assign_Email_Body_Subject_AGP_to_Premier</name>
+        <label>Assign Email Body &amp; Subject - AGP to Premier</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_EmailBody_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextTemplate_EmailBody_AGPtoPremier</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Variable_EmailSubject_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Welcome to AGP Premier</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Contact_from_Case_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the email body and subject we will send based on the Case&apos;s subject.</description>
+        <name>Assign_Email_Body_Subject_Premier_to_AGP</name>
+        <label>Assign Email Body &amp; Subject - Premier to AGP</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_EmailBody_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextTemplate_EmailBody_PremierToAGP</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Variable_EmailSubject_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Introducing your new Business Consultant in AGP</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Contact_from_Case_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the email body and subject we will send based on the Case&apos;s subject.</description>
+        <name>Assign_Email_Body_Subject_To_Starter</name>
+        <label>Assign Email Body &amp; Subject - To Starter</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_EmailBody_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextTemplate_EmailBody_ToStarter</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Variable_EmailSubject_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Important Information Regarding Your EverQuote Account</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Contact_from_Customer_Support</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Flow_Component</name>
+        <label>Assign Failing Flow Component</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_FailingFlowComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Case_TierChange_Closed_SendEmail - Send Email to Contact from Case Owner</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_Fault_Path_Subflow</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Flow_Component_From_Customer_Support</name>
+        <label>Assign Failing Flow Component - From Customer Support</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_FailingFlowComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Case_TierChange_Closed_SendEmail - Send Email to Contact from Customer Support</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Run_Fault_Path_Subflow</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Does the contact have an email that is not bounced?</description>
+        <name>Is_Contact_Emailable</name>
+        <label>Is Contact Emailable?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Non_bounced_email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contact.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contact.EmailBouncedReason</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>What_is_the_Case_Subject</targetReference>
+            </connector>
+            <label>Non-bounced email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>We will assign the correct email subject, body, and cc recipient based on the Case&apos;s Subject</description>
+        <name>What_is_the_Case_Subject</name>
+        <label>What is the Case Subject?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
+        <rules>
+            <name>AGP_to_Premier</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Accelerated-AGP to Accelerated-AGP Premier</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Email_Body_Subject_AGP_to_Premier</targetReference>
+            </connector>
+            <label>AGP to Premier</label>
+        </rules>
+        <rules>
+            <name>Premier_to_AGP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Accelerated-AGP Premier to Accelerated-AGP</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Email_Body_Subject_Premier_to_AGP</targetReference>
+            </connector>
+            <label>Premier to AGP</label>
+        </rules>
+        <rules>
+            <name>AGP_Premier_to_Starter</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>to Starter</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Email_Body_Subject_To_Starter</targetReference>
+            </connector>
+            <label>AGP/Premier to Starter</label>
+        </rules>
+    </decisions>
+    <description>When a Case of Project Account Tier Change is closed, send an email if the subject indicates a tier change that requires an email.
+-AGP to Premier
+-Premier to AGP
+- AGP to Starter
+S3P-1432 - Created.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_ActiveAccountWithSupportRep</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    AND(
+             OR(
+                     ISPICKVAL({!$Record.Account.Type}, &quot;Core&quot;),
+                     ISPICKVAL({!$Record.Account.Type}, &quot;Accelerated-AGP&quot;),
+                     ISPICKVAL({!$Record.Account.Type}, &quot;Accelerated-AGP Premier&quot;)
+              ),
+             NOT(ISBLANK({!$Record.Account.Support_Rep__c})),
+             {!$Record.Account.Support_Rep__r.IsActive}
+     ),
+TRUE, FALSE)</expression>
+    </formulas>
+    <formulas>
+        <description>If the Account has a support rep, display their calendar link to be added at the bottom of the email body. Otherwise display nothing.</description>
+        <name>Formula_EmailBody_CalendarLink</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!Formula_ActiveAccountWithSupportRep},
+    &quot;&lt;a href=&apos;&quot; + {!$Record.Account.Support_Rep__r.Salesforce_Meeting_Link__c} + &quot;&apos; target=&apos;_blank&apos;&gt;Book time with me&lt;/a&gt;&quot;,
+    null
+)</expression>
+    </formulas>
+    <formulas>
+        <description>If the Account has an active support rep (and is currently Core, AGP, or Premier), the email signature should be the Support Rep, otherwise it should be &quot;The EverQuote Customer Support Team&quot;</description>
+        <name>Formula_EmailBody_Signer</name>
+        <dataType>String</dataType>
+        <expression>IF({!Formula_ActiveAccountWithSupportRep}, {!$Record.Account.Support_Rep__r.FirstName} &amp; &quot; &quot; &amp;{!$Record.Account.Support_Rep__r.LastName},
+&quot;The EverQuote Customer Support Team&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Returns either the Account Support Rep or blank depending on the Account Type</description>
+        <name>Formula_EmailCC</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!Formula_ActiveAccountWithSupportRep},
+     {!$Record.Account.Support_Rep__r.Email}, /*CC account support rep if Account Type is Core or AGP */
+      &quot;&quot; /* Leave CC blank because Starter accounts shouldn&apos;t CC anyone */
+)</expression>
+    </formulas>
+    <interviewLabel>Case_TierChange_Closed_SendEmail {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case_TierChange_Closed_SendEmail</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Contact_Emailable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account Tier Change</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ContactId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Do_Not_Send_Automated_Email__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Notifies specific users of flow errors.</description>
+        <name>Run_Fault_Path_Subflow</name>
+        <label>Run Fault Path Subflow</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>Variable_FailingFlowComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <description>The body of the email if the case is for an Account that moved from AGP to Premier</description>
+        <name>TextTemplate_EmailBody_AGPtoPremier</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(29, 28, 29); font-family: sans-serif; font-size: 14px;&quot;&gt;Hello {!$Record.Contact.FirstName},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(29, 28, 29); font-family: sans-serif; font-size: 14px;&quot;&gt;I am pleased to inform you that your account is transitioning to &lt;/span&gt;&lt;strong style=&quot;background-color: transparent; color: rgb(29, 28, 29); font-family: sans-serif; font-size: 14px;&quot;&gt;AGP Premier&lt;/strong&gt;&lt;span style=&quot;background-color: transparent; color: rgb(29, 28, 29); font-family: sans-serif; font-size: 14px;&quot;&gt;, our highest partnership tier for top agencies investing $10,000 or more per month. This transition ensures that you will retain your current AGP benefits while unlocking exclusive advantages designed to facilitate more rapid and efficient scaling.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(29, 28, 29); font-family: sans-serif; font-size: 14px;&quot;&gt;The new benefits include the following:&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-family: sans-serif; background-color: transparent; color: rgb(29, 28, 29); font-size: 14px;&quot;&gt;Monthly loyalty credits, with up to 17.5% of your expenditure credited back to your account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: sans-serif; background-color: transparent; color: rgb(29, 28, 29); font-size: 14px;&quot;&gt;A dedicated Business Consultant specializing in large-scale agencies&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: sans-serif; background-color: transparent; color: rgb(29, 28, 29); font-size: 14px;&quot;&gt;Early access to new products and features&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: sans-serif; background-color: transparent; color: rgb(29, 28, 29); font-size: 14px;&quot;&gt;Custom LMS integrations&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: sans-serif; background-color: transparent; color: rgb(29, 28, 29); font-size: 14px;&quot;&gt;A direct line to provide input regarding EverQuote&apos;s product roadmap&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(29, 28, 29); font-family: sans-serif; font-size: 14px;&quot;&gt;As part of this transition, you will be working with {!$Record.Account.Support_Rep__r.FirstName} {!$Record.Account.Support_Rep__r.LastName} (copied here) as your dedicated Business Consultant moving forward. They will serve as your primary point of contact for strategic guidance and support.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(29, 28, 29); font-family: sans-serif; font-size: 14px;&quot;&gt;It has been an absolute pleasure working with you over the past several months. Please do not hesitate to reach out should you have any questions.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Best,&lt;/p&gt;&lt;p&gt;{!$Record.Owner:User.FirstName} {!$Record.Owner:User.LastName}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Body of email sent if Subject is contains Premier to AGP</description>
+        <name>TextTemplate_EmailBody_PremierToAGP</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;Hello {!$Record.Contact.FirstName},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;I am writing to provide an update regarding the status of your account. Due to your monthly investment falling below the required $10,000 minimum for the AGP Premier tier, your account is being transitioned to our standard AGP tier.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;Please be assured that the core components of your account will remain unchanged, including your lead discounts, monthly loyalty credits, and dedicated support. The primary modification is a change in your designated Business Consultant, as you will transition from a senior team member to &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;{!$Record.Account.Support_Rep__r.FirstName} &lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;{!$Record.Account.Support_Rep__r.LastName}. Additionally, please note that access to analytics support, custom LMS integrations, and annual EverQuoteAgent events will no longer be available under this tier.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;Should your investment increase in the future, we would be pleased to reinstate your account to the Premier tier once the $10,000 monthly minimum is consistently maintained. You may discuss this opportunity with {!$Record.Account.Support_Rep__r.FirstName} or contact me directly to review the requirements for returning to AGP Premier.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;{!$Record.Account.Support_Rep__r.FirstName} &lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;will serve as your primary point of contact moving forward.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px;&quot;&gt;Best,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px;&quot;&gt;{!$Record.Owner:User.FirstName} {!$Record.Owner:User.LastName}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TextTemplate_EmailBody_ToStarter</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;Dear {!$Record.Contact.FirstName},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;Thank you for being a valued EverQuote customer.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;This email is to inform you that your account volume and spend have not met the requirements of our Accelerated Growth Program (AGP) for the quarter. Your account will be transitioned out of the AGP program, and into our standard offering. As a result, you may notice an adjustment in your pricing, as the discounted rates previously received within the AGP program will no longer apply.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;We are always pleased to welcome clients back to the AGP program when their spending aligns with the program&apos;s requirements. If you wish to remain in AGP or would like to better understand the criteria for program participation, please contact &lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(17, 85, 204);&quot;&gt;agp-sales@everquote.com&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt; for a consultation to optimize your account.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;For future support for your account, &lt;/span&gt;&lt;a href=&quot;mailto:support@everquote.com&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(17, 85, 204);&quot;&gt;support@everquote.com&lt;/a&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt; can help! We appreciate your business and look forward to continuing our partnership.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;Sincerely,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif;&quot;&gt;The EverQuote Customer Success Team&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Stores the email body that will actually be sent. Assigned the appropriate text template based on Case Subject and Account Type/Support Rep</description>
+        <name>Variable_EmailBody_Final</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Variable_EmailSubject_Final</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the name of the flow component where the flow fails, if it fails.</description>
+        <name>Variable_FailingFlowComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

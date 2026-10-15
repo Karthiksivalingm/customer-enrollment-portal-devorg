@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outcome_for_Dispo_data__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(ISPICKVAL(Disposition_Data_Shared__c, &apos;Monthly Review - Dispo data not shared&apos;) , ISPICKVAL(Disposition_Data_Shared__c, &apos;Monthly Review - Dispo data shared&apos;)), 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Monthly Review</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

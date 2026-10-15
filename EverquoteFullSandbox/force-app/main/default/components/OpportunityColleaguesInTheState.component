@@ -1,0 +1,21 @@
+<apex:component >
+    <apex:attribute name="colleaguesInTheState" type="WrapperContactTenure[]" required="true"
+                    description="List of Contacts"/>
+    
+    <apex:pageBlock title="Colleagues in the State">
+        <apex:pageblocktable value="{!colleaguesInTheState}" var="a">
+            <apex:column headerValue="Account">
+                <apex:outputLink value="/{!a.Account.Id}" >
+                    {!a.Account.Name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Contact">
+                <apex:outputLink value="/{!a.Contact.Id}" >
+                    {!a.Contact.Name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="City" value="{!a.Account.BillingCity}"/>
+            <apex:column headerValue="Tenure" value="{!a.tenure}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+</apex:component>

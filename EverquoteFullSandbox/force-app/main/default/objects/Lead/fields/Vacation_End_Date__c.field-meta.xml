@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vacation_End_Date__c</fullName>
+    <description>if the DM is out of the office, put the date the DM will return. The lead will be taken out of the picker until the end date</description>
+    <inlineHelpText>if the DM is out of the office, put the date the DM will return. The lead will be taken out of the picker until the end date</inlineHelpText>
+    <label>Vacation End Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

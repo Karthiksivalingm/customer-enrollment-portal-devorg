@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coverage_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  CONTAINS(Carrier__r.Name, &quot;State Farm&quot;)&amp;&amp;  Incremental_Revenue_Percentage__c  &gt;= 0.35, 
+IMAGE(&quot;https://c.cs68.visual.force.com/resource/1551126788000/High&quot;, &quot;High&quot;),
+IF(  CONTAINS(Carrier__r.Name, &quot;State Farm&quot;)&amp;&amp; Incremental_Revenue_Percentage__c  &gt; 0.0 &amp;&amp; Incremental_Revenue_Percentage__c  &lt;= 0.23, 
+IMAGE(&quot;https://c.cs68.visual.force.com/resource/1551126836000/Low&quot;, &quot;Low&quot;) ,
+IF( Incremental_Revenue_Percentage__c &gt; 400,
+IMAGE(&quot;/resource/image&quot;, &quot;Third Range&quot;), 
+IF( Incremental_Revenue_Percentage__c  &gt; 400, 
+IMAGE(&quot;/resource/image&quot;, &quot;Other&quot;, 30, 30),&quot;&quot;)
+)))</formula>
+    <label>Coverage Score</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

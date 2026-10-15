@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_must_have_either_Phone_or_Email</fullName>
+    <active>true</active>
+    <description>A phone number or email is required to create or save a record</description>
+    <errorConditionFormula>AND(NOT( $User.ProfileId =&quot;00e1a000000lWln&quot;),
+ISBLANK( Phone ),
+ISBLANK(  Email ))</errorConditionFormula>
+    <errorMessage>A Phone Number or Email is required to save the record.</errorMessage>
+</ValidationRule>

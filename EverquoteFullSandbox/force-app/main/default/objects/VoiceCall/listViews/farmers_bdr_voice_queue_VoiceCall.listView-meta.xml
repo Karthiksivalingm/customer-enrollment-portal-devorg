@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>farmers_bdr_voice_queue_VoiceCall</fullName>
+    <filterScope>Queue</filterScope>
+    <label>farmers_bdr_voice_queue</label>
+    <queue>farmers_bdr_voice_queue</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

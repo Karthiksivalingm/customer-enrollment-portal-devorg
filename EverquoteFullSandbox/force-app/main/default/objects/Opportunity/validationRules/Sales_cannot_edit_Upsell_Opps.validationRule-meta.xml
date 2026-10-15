@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_cannot_edit_Upsell_Opps</fullName>
+    <active>true</active>
+    <description>Sales Managers and Sales Reps cannot edit Upsell opportunities that are for customer success.</description>
+    <errorConditionFormula>AND( 
+RecordTypeId = &apos;0123C000000Gxj7&apos;, 
+OR( 
+$Profile.Id = &apos;00e1a000000hycc&apos;, 
+$Profile.Id = &apos;00e1a000000i01k&apos;, 
+$Profile.Id = &apos;00e1a000000hyVb&apos;, 
+$Profile.Id = &apos;00e1a000000hybK&apos; 
+))</errorConditionFormula>
+    <errorMessage>You do not have permission to edit this opportunity.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+.active,
+.clickable:hover {
+  background-color: #1d5297 !important;
+  color: white;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.cell {
+  width: 100vw;
+}

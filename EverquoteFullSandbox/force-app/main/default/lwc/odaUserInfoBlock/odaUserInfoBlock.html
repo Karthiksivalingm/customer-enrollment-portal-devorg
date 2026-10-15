@@ -1,0 +1,9 @@
+<template>
+  <div class="slds-grid slds-gutters">
+    <template for:each={displayInfo} for:item="item">
+      <div class="slds-col slds-size_1-of-4" key={item.apiName}>
+        <b>{item.label}:</b> {item.value}
+      </div>
+    </template>
+  </div>
+</template>

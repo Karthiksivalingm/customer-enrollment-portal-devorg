@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_PreventPhone_8447078800</fullName>
+    <active>true</active>
+    <description>The phone number cannot be set to 8447078800 (EverQuote phone line&apos;s main number)</description>
+    <errorConditionFormula>/*The nested SUBSTITUTE functions sequentially remove common formatting characters: (, ), -, + and (space) from the value entered in the various phone field.
+The resulting string, which should only contain digits, is then evaluated by the REGEX function for the forbidden phone number */
+
+OR(
+REGEX(
+    SUBSTITUTE(
+        SUBSTITUTE(
+            SUBSTITUTE(
+                SUBSTITUTE(
+                    SUBSTITUTE(Phone, &apos;(&apos;, &apos;&apos;),
+                &apos;)&apos;, &apos;&apos;),
+             &apos;-&apos;, &apos;&apos;),
+         &apos; &apos;, &apos;&apos;),
+    &apos;+&apos;, &apos;&apos;),
+&apos;.*8447078800.*&apos;
+),
+REGEX(
+    SUBSTITUTE(
+        SUBSTITUTE(
+            SUBSTITUTE(
+                SUBSTITUTE(
+                    SUBSTITUTE( Alt_Phone__c , &apos;(&apos;, &apos;&apos;),
+                &apos;)&apos;, &apos;&apos;),
+             &apos;-&apos;, &apos;&apos;),
+         &apos; &apos;, &apos;&apos;),
+    &apos;+&apos;, &apos;&apos;),
+&apos;.*8447078800.*&apos;
+),
+REGEX(
+    SUBSTITUTE(
+        SUBSTITUTE(
+            SUBSTITUTE(
+                SUBSTITUTE(
+                    SUBSTITUTE( Alt_Phone_2__c , &apos;(&apos;, &apos;&apos;),
+                &apos;)&apos;, &apos;&apos;),
+             &apos;-&apos;, &apos;&apos;),
+         &apos; &apos;, &apos;&apos;),
+    &apos;+&apos;, &apos;&apos;),
+&apos;.*8447078800.*&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Phone number 844-707-8800 cannot be in any phone field</errorMessage>
+</ValidationRule>

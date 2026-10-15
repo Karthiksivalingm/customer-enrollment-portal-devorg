@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MARTY_NEW_IA_LEADS</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>LEAD_SCORE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Lost,Unqualified,Duplicate,Do Not Call,No Longer There,Bad Data</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>State Farm</value>
+    </filters>
+    <filters>
+        <field>LAST_ACTIVITY_DATETIME</field>
+        <operation>lessThan</operation>
+        <value>2/28/2024 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>LEAD.PHONE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2022 12:00 AM</value>
+    </filters>
+    <label>MARTY NEW IA LEADS</label>
+</ListView>

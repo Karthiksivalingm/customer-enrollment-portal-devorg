@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Me_Checkbox_date__c</fullName>
+    <description>updated by a workflow when contact me checkbox comes in from Ringlead salesforce trigger</description>
+    <label>Contact Me Checkbox date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

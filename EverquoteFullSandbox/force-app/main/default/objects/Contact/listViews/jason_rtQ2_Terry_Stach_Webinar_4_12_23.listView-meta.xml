@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>jason_rtQ2_Terry_Stach_Webinar_4_12_23</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Carrier__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>contains</operation>
+        <value>marsh,lightn,BUNT,mill,arch,delan,hutch,jones</value>
+    </filters>
+    <label>2023-Q3 Jason Stefely Webinar (8/16/23)</label>
+    <sharedTo>
+        <group>BDR</group>
+    </sharedTo>
+</ListView>

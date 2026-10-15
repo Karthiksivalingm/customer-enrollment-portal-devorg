@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessFlowMigration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <destinationFlowDefinition>Campaign_Response_after_closed_won_1</destinationFlowDefinition>
+    <destinationFlowVersion>Campaign_Response_after_closed_won_1-1</destinationFlowVersion>
+    <developerName>myRule_1_301VZ00000zMC05YAG</developerName>
+    <masterLabel>Campaign Response after closed won_1</masterLabel>
+    <migratedCriteriaLabel>Responds but  already a customer</migratedCriteriaLabel>
+    <migratedCriteriaName>myRule_1</migratedCriteriaName>
+    <processVersion>Campaign_Response_after_closed_won-1</processVersion>
+</ProcessFlowMigration>

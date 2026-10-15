@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Remove_target_from_cadence</name>
+        <label>Remove target from cadence</label>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
+        <actionName>removeTargetFromSalesCadenceNotFound</actionName>
+        <actionType>removeTargetFromSalesCadence</actionType>
+        <faultConnector>
+            <targetReference>Assign_Failing_Flow_Component</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.TargetId__NotFound</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>completionReasonCode</name>
+            <value>
+                <stringValue>ManuallyRemoved</stringValue>
+            </value>
+        </inputParameters>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Failing_Flow_Component</name>
+        <label>Assign Failing Flow Component</label>
+        <locationX>314</locationX>
+        <locationY>684</locationY>
+        <assignmentItems>
+            <assignToReference>FailingFlowComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>CadenceStep_Daily_OverdueAndStateIsActiveOrError_UpdateStateToSkipped_RemoveFromCadence -- Remove target from cadence</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_Fault_Path_Subflow</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Days_Overdue</name>
+        <label>Check Days Overdue</label>
+        <locationX>534</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Older_than_34_days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DueDateTime</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>ThirtyFourDaysAgo</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Parent_Cadence_Tracker</targetReference>
+            </connector>
+            <label>Older than 34 days</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>if the target was removed but the step wasn&apos;t marked as &quot;Skipped,&quot; that timer just keeps ticking in the database even though the person isn&apos;t technically in the cadence anymore.</description>
+        <name>Is_the_Step_still_related_to_a_Cadence_Tracker</name>
+        <label>Is the Step still related to a Cadence Tracker?</label>
+        <locationX>314</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Cadence_Tracker_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Parent_Cadence_Tracker</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_target_from_cadence</targetReference>
+            </connector>
+            <label>Cadence Tracker Exists</label>
+        </rules>
+    </decisions>
+    <description>When a Cadence step is 34 days overdue, remove the target from the cadence.
+
+S3P-1317- Replace flow &quot;Lamp_Cadence_step_idle_for_30_days&quot;.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates 34 days before today</description>
+        <name>ThirtyFourDaysAgo</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() -34</expression>
+    </formulas>
+    <interviewLabel>CadenceStep_Daily_OverdueAndStateIsActiveOrError_RemoveFromCadence {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CadenceStep_Daily_OverdueAndStateIsActiveOrError_RemoveFromCadence</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Get the Cadence Tracker that the Step belongs to</description>
+        <name>Get_Parent_Cadence_Tracker</name>
+        <label>Get Parent Cadence Tracker</label>
+        <locationX>314</locationX>
+        <locationY>360</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_the_Step_still_related_to_a_Cadence_Tracker</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id__NotFound</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ActionCadenceTrackerId__NotFound</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CompletionReason__NotFound</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ActionCadenceTracker__NotFound</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>408</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Days_Overdue</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>State__NotFound</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>State__NotFound</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </filters>
+        <object>ActionCadenceStepTracker__NotFound</object>
+        <schedule>
+            <dayOfMonthToRun>0</dayOfMonthToRun>
+            <frequency>Daily</frequency>
+            <frequencyNumber>0</frequencyNumber>
+            <startDate>2023-12-27</startDate>
+            <startTime>01:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Run_Fault_Path_Subflow</name>
+        <label>Run Fault Path Subflow</label>
+        <locationX>314</locationX>
+        <locationY>792</locationY>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>FailingFlowComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.ActionCadenceStepId__NotFound</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>FailingFlowComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

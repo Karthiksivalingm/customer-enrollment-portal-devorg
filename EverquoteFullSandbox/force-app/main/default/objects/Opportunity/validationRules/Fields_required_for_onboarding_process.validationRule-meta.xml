@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fields_required_for_onboarding_process</fullName>
+    <active>false</active>
+    <description>Before on onboaring opportunity can be closed won, the define onboarding process and schedule onboarding fields must be checked.</description>
+    <errorConditionFormula>OR(
+Define_Onboarding_Process__c = FALSE,
+Schedule_Onboarding__c = FALSE) 
+&amp;&amp;  
+ISPICKVAL(Onboarding_Treatment__c, &quot;Yes&quot;)
+&amp;&amp; 
+IsWon= TRUE</errorConditionFormula>
+    <errorMessage>Define Onboarding Process &amp; Scheduleing Onboarding must be checked before this opportunity can be closed won.</errorMessage>
+</ValidationRule>

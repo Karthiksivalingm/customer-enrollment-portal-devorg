@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Everlife_Time_Off_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>Employee__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Reason_for_Request__c</columns>
+    <columns>Number_of_Days__c</columns>
+    <columns>Approved__c</columns>
+    <columns>Rejected__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Employee_Role__c</field>
+        <operation>contains</operation>
+        <value>Everlife</value>
+    </filters>
+    <label>Everlife Time Off Requests</label>
+    <sharedTo></sharedTo>
+</ListView>

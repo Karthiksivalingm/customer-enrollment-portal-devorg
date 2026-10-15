@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cap_Filled_Rate_Sun__c</fullName>
+    <description>Cap Filled Rate - Sun</description>
+    <inlineHelpText>Cap Filled Rate - Sun</inlineHelpText>
+    <label>Cap Filled Rate - Sun</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

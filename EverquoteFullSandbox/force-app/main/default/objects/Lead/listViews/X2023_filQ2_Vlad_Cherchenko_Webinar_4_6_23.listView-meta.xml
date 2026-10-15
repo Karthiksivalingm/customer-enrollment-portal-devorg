@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023_filQ2_Vlad_Cherchenko_Webinar_4_6_23</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Carrier__c</columns>
+    <columns>mkto71_Lead_Score__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>activity_in_last_30_days__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>2023-Q2 Andrew Filar Webinar (6/21/23)</label>
+    <sharedTo>
+        <group>BDR</group>
+    </sharedTo>
+</ListView>

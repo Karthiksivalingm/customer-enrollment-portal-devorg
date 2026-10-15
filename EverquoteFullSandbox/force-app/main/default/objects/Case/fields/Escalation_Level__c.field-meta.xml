@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalation_Level__c</fullName>
+    <label>Escalation Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Level 2 - Ned P</fullName>
+                <default>false</default>
+                <label>Level 1 - Starter</label>
+            </value>
+            <value>
+                <fullName>Level 1 - Elias A</fullName>
+                <default>false</default>
+                <label>Level 1 - Core Ammerman</label>
+            </value>
+            <value>
+                <fullName>Level 1 - Core Farrell</fullName>
+                <default>false</default>
+                <label>Level 1 - Core Farrell</label>
+            </value>
+            <value>
+                <fullName>Level 1 - Accelerated</fullName>
+                <default>false</default>
+                <label>Level 1 - Accelerated</label>
+            </value>
+            <value>
+                <fullName>Level 1 - Ben W.</fullName>
+                <default>false</default>
+                <label>Level 2 - CS VP</label>
+            </value>
+            <value>
+                <fullName>BC Escalation</fullName>
+                <default>false</default>
+                <label>BC Escalation</label>
+            </value>
+            <value>
+                <fullName>CSM Escalation</fullName>
+                <default>false</default>
+                <label>CSM Escalation</label>
+            </value>
+            <value>
+                <fullName>Level 2 - Support</fullName>
+                <default>false</default>
+                <label>Level 2 - Support</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <label>Manager</label>
+            </value>
+            <value>
+                <fullName>Sr Management</fullName>
+                <default>false</default>
+                <label>Sr Management</label>
+            </value>
+            <value>
+                <fullName>Level 1 - Ben P</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Level 1 - Starter</label>
+            </value>
+            <value>
+                <fullName>Level 2 - Joe B</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Level 2 - Joe B</label>
+            </value>
+            <value>
+                <fullName>Level 2 - Lindsay</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Level 2 - Lindsay</label>
+            </value>
+            <value>
+                <fullName>Rejected Returns - 20% Cap</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rejected Returns - 20% Cap</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

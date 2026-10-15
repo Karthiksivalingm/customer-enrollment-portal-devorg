@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Reason_2</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(Credit_Reason__c, &quot;&quot;)&amp;&amp; 
+OR( 
+ISPICKVAL( General_Account_Inquiry__c , &quot;Credit Request&quot;), 
+ISPICkVAL(Key_Account_Support__c , &quot;Credit Request&quot;))</errorConditionFormula>
+    <errorDisplayField>Credit_Reason__c</errorDisplayField>
+    <errorMessage>Please select a credit reason</errorMessage>
+</ValidationRule>

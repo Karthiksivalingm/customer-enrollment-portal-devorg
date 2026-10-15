@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closure_Reason__c</fullName>
+    <description>Updated by PB when an account closure case is closed</description>
+    <label>Closure Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ad compliance issues</fullName>
+                <default>false</default>
+                <label>Ad compliance issues</label>
+            </value>
+            <value>
+                <fullName>Adonis Quality Pilot</fullName>
+                <default>false</default>
+                <label>Adonis Quality Pilot</label>
+            </value>
+            <value>
+                <fullName>Agency - Agent Leaving Industry</fullName>
+                <default>false</default>
+                <label>Agency - Agent Leaving Industry</label>
+            </value>
+            <value>
+                <fullName>Agency - Agent Leaving Office</fullName>
+                <default>false</default>
+                <label>Agency - Agent Leaving Office</label>
+            </value>
+            <value>
+                <fullName>Agency - Budget</fullName>
+                <default>false</default>
+                <label>Agency - Budget</label>
+            </value>
+            <value>
+                <fullName>gencyStaffing Changes</fullName>
+                <default>false</default>
+                <label>Agency - Staffing Changes</label>
+            </value>
+            <value>
+                <fullName>Bind Rate - Agent Did Not Bind Enough to Hit ROI Target</fullName>
+                <default>false</default>
+                <label>Bind Rate - Agent Did Not Bind Enough to Hit ROI Target</label>
+            </value>
+            <value>
+                <fullName>Contact Rate - Consumers Did Not Answer Phone</fullName>
+                <default>false</default>
+                <label>Contact Rate - Consumers Did Not Answer Phone</label>
+            </value>
+            <value>
+                <fullName>Contact Rate - Incorrect Contact Information</fullName>
+                <default>false</default>
+                <label>Contact Rate - Incorrect Contact Information</label>
+            </value>
+            <value>
+                <fullName>Farmers Cost Share drop to 50%</fullName>
+                <default>false</default>
+                <label>Farmers Cost Share drop to 50%</label>
+            </value>
+            <value>
+                <fullName>Misc - Agent Is Consolidating Multiple Accounts</fullName>
+                <default>false</default>
+                <label>Misc - Agent Is Consolidating Multiple Accounts</label>
+            </value>
+            <value>
+                <fullName>Misc - Repeated Inactivity</fullName>
+                <default>false</default>
+                <label>Misc - Repeated Inactivity</label>
+            </value>
+            <value>
+                <fullName>Misc - Unable to Discern Reason</fullName>
+                <default>false</default>
+                <label>Misc - Unable to Discern Reason</label>
+            </value>
+            <value>
+                <fullName>No Longer Buying Internet Leads</fullName>
+                <default>false</default>
+                <label>No Longer Buying Internet Leads</label>
+            </value>
+            <value>
+                <fullName>Product - Auto-Billing Complaint</fullName>
+                <default>false</default>
+                <label>Product - Auto-Billing Complaint</label>
+            </value>
+            <value>
+                <fullName>Product - Automatic Unpause</fullName>
+                <default>false</default>
+                <label>Product - Automatic Unpause</label>
+            </value>
+            <value>
+                <fullName>Product - Lead Returns Process Complaint</fullName>
+                <default>false</default>
+                <label>Product - Lead Returns Process Complaint</label>
+            </value>
+            <value>
+                <fullName>Product - Leads Do Not Match Risk Filters</fullName>
+                <default>false</default>
+                <label>Product - Leads Do Not Match Risk Filters</label>
+            </value>
+            <value>
+                <fullName>Product - Lead Types Poor Fit For Agent or Carrier</fullName>
+                <default>false</default>
+                <label>Product - Lead Types Poor Fit For Agent or Carrier</label>
+            </value>
+            <value>
+                <fullName>Product - Platform Deficiency</fullName>
+                <default>false</default>
+                <label>Product - Platform Deficiency</label>
+            </value>
+            <value>
+                <fullName>Product - Volume Too Low</fullName>
+                <default>false</default>
+                <label>Product - Volume Too Low</label>
+            </value>
+            <value>
+                <fullName>Pro technical issues</fullName>
+                <default>false</default>
+                <label>Pro technical issues</label>
+            </value>
+            <value>
+                <fullName>Quote Rate</fullName>
+                <default>false</default>
+                <label>Quote Rate</label>
+            </value>
+            <value>
+                <fullName>Related to COVID-19 - Temporary</fullName>
+                <default>false</default>
+                <label>Related to COVID-19 - Temporary</label>
+            </value>
+            <value>
+                <fullName>AGP Disqualified</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AGP Disqualified</label>
+            </value>
+            <value>
+                <fullName>Agency - Staffing Changes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Agency - Staffing Changes</label>
+            </value>
+            <value>
+                <fullName>Agency Closing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Agency Closing</label>
+            </value>
+            <value>
+                <fullName>CPA too high/Low ROI</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CPA too high/Low ROI</label>
+            </value>
+            <value>
+                <fullName>Dissatisfied with Service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dissatisfied with Service</label>
+            </value>
+            <value>
+                <fullName>Launchpad Blowup</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Launchpad Blowup</label>
+            </value>
+            <value>
+                <fullName>Low Bind Rate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low Bind Rate</label>
+            </value>
+            <value>
+                <fullName>Low Contact/Quote Rate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low Contact/Quote Rate</label>
+            </value>
+            <value>
+                <fullName>Low fulfillment/volume</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low fulfillment/volume</label>
+            </value>
+            <value>
+                <fullName>No additional deposit match</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No additional deposit match</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Unpause reactive credits</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unpause reactive credits</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

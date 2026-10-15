@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Specific__c</fullName>
+    <description>specfic detail on lead source</description>
+    <inlineHelpText>specfic detail on lead source</inlineHelpText>
+    <label>Lead Source Specific</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>LeadSource</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Carrier</fullName>
+                <default>false</default>
+                <label>Carrier</label>
+            </value>
+            <value>
+                <fullName>Interest</fullName>
+                <default>false</default>
+                <label>Interest</label>
+            </value>
+            <value>
+                <fullName>Host</fullName>
+                <default>false</default>
+                <label>Host</label>
+            </value>
+            <value>
+                <fullName>Co-Host</fullName>
+                <default>false</default>
+                <label>Co-Host</label>
+            </value>
+            <value>
+                <fullName>Live</fullName>
+                <default>false</default>
+                <label>Live</label>
+            </value>
+            <value>
+                <fullName>On-Demand</fullName>
+                <default>false</default>
+                <label>On-Demand</label>
+            </value>
+            <value>
+                <fullName>Mailers</fullName>
+                <default>false</default>
+                <label>Mailers</label>
+            </value>
+            <value>
+                <fullName>Gifts</fullName>
+                <default>false</default>
+                <label>Gifts</label>
+            </value>
+            <value>
+                <fullName>BI</fullName>
+                <default>false</default>
+                <label>BI</label>
+            </value>
+            <value>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+                <label>Purchased List</label>
+            </value>
+            <value>
+                <fullName>State Farm</fullName>
+                <default>false</default>
+                <label>State Farm</label>
+            </value>
+            <value>
+                <fullName>Farmers</fullName>
+                <default>false</default>
+                <label>Farmers</label>
+            </value>
+            <value>
+                <fullName>Remarketing</fullName>
+                <default>false</default>
+                <label>Remarketing</label>
+            </value>
+            <value>
+                <fullName>Display Ads</fullName>
+                <default>false</default>
+                <label>Display Ads</label>
+            </value>
+            <value>
+                <fullName>Newsletter Ads</fullName>
+                <default>false</default>
+                <label>Newsletter Ads</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <label>Facebook</label>
+            </value>
+            <value>
+                <fullName>Organic</fullName>
+                <default>false</default>
+                <label>Organic</label>
+            </value>
+            <value>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+                <label>Paid Search</label>
+            </value>
+            <value>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+                <label>Twitter</label>
+            </value>
+            <value>
+                <fullName>Contact Now</fullName>
+                <default>false</default>
+                <label>Contact Now</label>
+            </value>
+            <value>
+                <fullName>Email Contact</fullName>
+                <default>false</default>
+                <label>Email Contact</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+                <label>Prospect</label>
+            </value>
+            <value>
+                <fullName>Hubspot</fullName>
+                <default>false</default>
+                <label>Hubspot</label>
+            </value>
+            <value>
+                <fullName>List Import</fullName>
+                <default>false</default>
+                <label>List Import</label>
+            </value>
+            <value>
+                <fullName>Consumer Search</fullName>
+                <default>false</default>
+                <label>Consumer Search</label>
+            </value>
+            <value>
+                <fullName>Consumer Display</fullName>
+                <default>false</default>
+                <label>Consumer Display</label>
+            </value>
+            <value>
+                <fullName>farmers_scraper</fullName>
+                <default>false</default>
+                <label>farmers_scraper</label>
+            </value>
+            <value>
+                <fullName>allstate_scraper</fullName>
+                <default>false</default>
+                <label>allstate_scraper</label>
+            </value>
+            <value>
+                <fullName>new_york_life_scraper</fullName>
+                <default>false</default>
+                <label>new_york_life_scraper</label>
+            </value>
+            <value>
+                <fullName>liberty_mutual_scraper</fullName>
+                <default>false</default>
+                <label>liberty_mutual_scraper</label>
+            </value>
+            <value>
+                <fullName>farm_bureau_michigan_scraper</fullName>
+                <default>false</default>
+                <label>farm_bureau_michigan_scraper</label>
+            </value>
+            <value>
+                <fullName>farm_bureau_wisconsin_scraper</fullName>
+                <default>false</default>
+                <label>farm_bureau_wisconsin_scraper</label>
+            </value>
+            <value>
+                <fullName>farmers_district_manager_scraper</fullName>
+                <default>false</default>
+                <label>farmers_district_manager_scraper</label>
+            </value>
+            <value>
+                <fullName>american_national_scraper</fullName>
+                <default>false</default>
+                <label>american_national_scraper</label>
+            </value>
+            <value>
+                <fullName>quotewizard_scraper</fullName>
+                <default>false</default>
+                <label>quotewizard_scraper</label>
+            </value>
+            <value>
+                <fullName>ZoomInfo</fullName>
+                <default>false</default>
+                <label>ZoomInfo</label>
+            </value>
+            <value>
+                <fullName>Live Transfer</fullName>
+                <default>false</default>
+                <label>Live Transfer</label>
+            </value>
+            <value>
+                <fullName>Internal Form</fullName>
+                <default>false</default>
+                <label>Internal Form</label>
+            </value>
+            <value>
+                <fullName>External Form</fullName>
+                <default>false</default>
+                <label>External Form</label>
+            </value>
+            <value>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+                <label>Inbound Call</label>
+            </value>
+            <value>
+                <fullName>Field Event</fullName>
+                <default>false</default>
+                <label>Field Event</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Social</controllingFieldValue>
+            <controllingFieldValue>Advertising</controllingFieldValue>
+            <valueName>LinkedIn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Social</controllingFieldValue>
+            <controllingFieldValue>Advertising</controllingFieldValue>
+            <valueName>Facebook</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Social</controllingFieldValue>
+            <valueName>Twitter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Webinar</controllingFieldValue>
+            <valueName>Live</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Webinar</controllingFieldValue>
+            <valueName>On-Demand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Import</controllingFieldValue>
+            <controllingFieldValue>Email</controllingFieldValue>
+            <controllingFieldValue>Live Event</controllingFieldValue>
+            <controllingFieldValue>Advertising</controllingFieldValue>
+            <valueName>Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Import</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Prospect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <valueName>Organic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <valueName>Paid Search</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Live Event</controllingFieldValue>
+            <valueName>Carrier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Live Event</controllingFieldValue>
+            <valueName>Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Direct Mail</controllingFieldValue>
+            <valueName>Mailers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Direct Mail</controllingFieldValue>
+            <valueName>Gifts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roadshow</controllingFieldValue>
+            <valueName>Host</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roadshow</controllingFieldValue>
+            <valueName>Co-Host</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web Form</controllingFieldValue>
+            <valueName>Contact Now</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web Form</controllingFieldValue>
+            <valueName>Email Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Call</controllingFieldValue>
+            <valueName>BI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Call</controllingFieldValue>
+            <valueName>Purchased List</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Call</controllingFieldValue>
+            <valueName>State Farm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Call</controllingFieldValue>
+            <valueName>Farmers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advertising</controllingFieldValue>
+            <valueName>Remarketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advertising</controllingFieldValue>
+            <valueName>Display Ads</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advertising</controllingFieldValue>
+            <valueName>Newsletter Ads</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

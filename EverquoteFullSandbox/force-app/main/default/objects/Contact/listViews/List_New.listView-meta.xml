@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_New</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>State Farm</value>
+    </filters>
+    <filters>
+        <field>Account.OpenOpp__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Account.Relationship__c</field>
+        <operation>notContain</operation>
+        <value>DO NOT CONTACT</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>notContain</operation>
+        <value>CA,CT,DC,NV,NJ,NY</value>
+    </filters>
+    <filters>
+        <field>Pro_Account_Canceled_Date__c</field>
+        <operation>lessThan</operation>
+        <value>11/1/2024</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>11/13/2024</value>
+    </filters>
+    <filters>
+        <field>CONTACT.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>11/13/2024</value>
+    </filters>
+    <label>List New</label>
+</ListView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>all_Q1_Webinar_Leadsall</fullName>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>Campaign__c</columns>
+    <columns>Carrier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Campaign__c</field>
+        <operation>startsWith</operation>
+        <value>2022-Q4,2023-Q1</value>
+    </filters>
+    <filters>
+        <field>Campaign__c</field>
+        <operation>contains</operation>
+        <value>Webinar</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Duplicate,Do Not Call,No Longer There</value>
+    </filters>
+    <filters>
+        <field>BDR_Main_View__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>all Webinar leads</label>
+    <sharedTo></sharedTo>
+</ListView>

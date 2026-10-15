@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3_My_Team_Leads_Life</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>Time_Zone__c</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>LEAD.FIRST_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <filterScope>Queue</filterScope>
+    <label>3. My Team Leads - Life</label>
+    <queue>Life_Team</queue>
+    <sharedTo>
+        <group>Life_Team</group>
+    </sharedTo>
+</ListView>

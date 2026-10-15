@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Occupation__c</fullName>
+    <label>Occupation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Administrative Clerical</fullName>
+                <default>false</default>
+                <label>Administrative Clerical</label>
+            </value>
+            <value>
+                <fullName>Architect</fullName>
+                <default>false</default>
+                <label>Architect</label>
+            </value>
+            <value>
+                <fullName>Business Owner</fullName>
+                <default>false</default>
+                <label>Business Owner</label>
+            </value>
+            <value>
+                <fullName>Certified Public Accountant</fullName>
+                <default>false</default>
+                <label>Certified Public Accountant</label>
+            </value>
+            <value>
+                <fullName>Clergy</fullName>
+                <default>false</default>
+                <label>Clergy</label>
+            </value>
+            <value>
+                <fullName>Construction Trades</fullName>
+                <default>false</default>
+                <label>Construction Trades</label>
+            </value>
+            <value>
+                <fullName>Dentist</fullName>
+                <default>false</default>
+                <label>Dentist</label>
+            </value>
+            <value>
+                <fullName>Disabled</fullName>
+                <default>false</default>
+                <label>Disabled</label>
+            </value>
+            <value>
+                <fullName>Engineer</fullName>
+                <default>false</default>
+                <label>Engineer</label>
+            </value>
+            <value>
+                <fullName>Homemaker</fullName>
+                <default>false</default>
+                <label>Homemaker</label>
+            </value>
+            <value>
+                <fullName>Lawyer</fullName>
+                <default>false</default>
+                <label>Lawyer</label>
+            </value>
+            <value>
+                <fullName>Manager/Supervisor</fullName>
+                <default>false</default>
+                <label>Manager/Supervisor</label>
+            </value>
+            <value>
+                <fullName>Military Enlisted</fullName>
+                <default>false</default>
+                <label>Military Enlisted</label>
+            </value>
+            <value>
+                <fullName>Military Officer</fullName>
+                <default>false</default>
+                <label>Military Officer</label>
+            </value>
+            <value>
+                <fullName>Minor/NA</fullName>
+                <default>false</default>
+                <label>Minor/NA</label>
+            </value>
+            <value>
+                <fullName>Other Non-technical</fullName>
+                <default>false</default>
+                <label>Other Non-technical</label>
+            </value>
+            <value>
+                <fullName>Other Technical</fullName>
+                <default>false</default>
+                <label>Other Technical</label>
+            </value>
+            <value>
+                <fullName>Physician</fullName>
+                <default>false</default>
+                <label>Physician</label>
+            </value>
+            <value>
+                <fullName>Professional Salaried</fullName>
+                <default>false</default>
+                <label>Professional Salaried</label>
+            </value>
+            <value>
+                <fullName>Professor</fullName>
+                <default>false</default>
+                <label>Professor</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Retired</fullName>
+                <default>false</default>
+                <label>Retired</label>
+            </value>
+            <value>
+                <fullName>Sales, Inside</fullName>
+                <default>false</default>
+                <label>Sales, Inside</label>
+            </value>
+            <value>
+                <fullName>Sales, Outside</fullName>
+                <default>false</default>
+                <label>Sales, Outside</label>
+            </value>
+            <value>
+                <fullName>School Teacher</fullName>
+                <default>false</default>
+                <label>School Teacher</label>
+            </value>
+            <value>
+                <fullName>Scientist</fullName>
+                <default>false</default>
+                <label>Scientist</label>
+            </value>
+            <value>
+                <fullName>Self Employed</fullName>
+                <default>false</default>
+                <label>Self Employed</label>
+            </value>
+            <value>
+                <fullName>Skilled/Semi Skilled</fullName>
+                <default>false</default>
+                <label>Skilled/Semi Skilled</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>Unemployed</fullName>
+                <default>false</default>
+                <label>Unemployed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

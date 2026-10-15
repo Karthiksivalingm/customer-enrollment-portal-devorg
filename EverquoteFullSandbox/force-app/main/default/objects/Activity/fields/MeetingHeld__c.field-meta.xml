@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MeetingHeld__c</fullName>
+    <formula>IF(OR(
+ISPICKVAL(  Meeting_Result__c , &quot;Held - Correct Contact&quot;),
+ISPICKVAL( Meeting_Result__c, &quot;Held - Contact&quot;)
+), TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Meeting Held</label>
+    <type>Checkbox</type>
+</CustomField>

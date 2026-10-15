@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Joe_s_List_8_24</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Farmers</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>Account.Relationship__c</field>
+        <operation>notContain</operation>
+        <value>DO NOT CONTACT</value>
+    </filters>
+    <filters>
+        <field>Account.OpenOpp__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Pro_Account_Canceled_Date__c</field>
+        <operation>lessThan</operation>
+        <value>4/1/2024</value>
+    </filters>
+    <filters>
+        <field>Pro_Account_Canceled_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2021</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>MI,CO,TX,OR,IL,WA,OK,KS,MN,WI,AR,AZ,NM,NV,OH,NE,IA,MO,TN,AL,IN,KY</value>
+    </filters>
+    <label>Joe&apos;s List 8/24</label>
+</ListView>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Stage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Value Driving/Communication</fullName>
+                <default>false</default>
+                <label>Value Driving/Communication</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Lead quality</fullName>
+                <default>false</default>
+                <label>Lead quality</label>
+            </value>
+            <value>
+                <fullName>Moved to core/starter</fullName>
+                <default>false</default>
+                <label>Moved to core/starter</label>
+            </value>
+            <value>
+                <fullName>Loss of staff</fullName>
+                <default>false</default>
+                <label>Loss of staff</label>
+            </value>
+            <value>
+                <fullName>Closing agency</fullName>
+                <default>false</default>
+                <label>Closing agency</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Launch failure</fullName>
+                <default>false</default>
+                <label>Launch failure</label>
+            </value>
+            <value>
+                <fullName>Moving to another rep</fullName>
+                <default>false</default>
+                <label>Moving to another rep</label>
+            </value>
+            <value>
+                <fullName>Carrier Changes</fullName>
+                <default>false</default>
+                <label>Carrier Changes</label>
+            </value>
+            <value>
+                <fullName>State Farm Subsidy Loss</fullName>
+                <default>false</default>
+                <label>State Farm Subsidy Loss</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Intro Call</controllingFieldValue>
+            <controllingFieldValue>Agency Training</controllingFieldValue>
+            <valueName>Onboarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1st Monthly Review</controllingFieldValue>
+            <controllingFieldValue>2nd Monthly Review</controllingFieldValue>
+            <controllingFieldValue>3rd Monthly Review</controllingFieldValue>
+            <valueName>Value Driving/Communication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <valueName>Closed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lead quality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Moved to core/starter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Loss of staff</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Closing agency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Duplicate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Launch failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Moving to another rep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>State Farm Subsidy Loss</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Budget</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Premium</fullName>
+                <default>false</default>
+                <label>Premium</label>
+            </value>
+            <value>
+                <fullName>Preferred</fullName>
+                <default>false</default>
+                <label>Preferred</label>
+            </value>
+            <value>
+                <fullName>Auto Warm Transfer</fullName>
+                <default>false</default>
+                <label>Auto Warm Transfer</label>
+            </value>
+            <value>
+                <fullName>Auto Inbound Calls</fullName>
+                <default>false</default>
+                <label>Auto Inbound Calls</label>
+            </value>
+            <value>
+                <fullName>Home</fullName>
+                <default>false</default>
+                <label>Home</label>
+            </value>
+            <value>
+                <fullName>Home Warm Transfer</fullName>
+                <default>false</default>
+                <label>Home Warm Transfer</label>
+            </value>
+            <value>
+                <fullName>Health</fullName>
+                <default>false</default>
+                <label>Health</label>
+            </value>
+            <value>
+                <fullName>Life</fullName>
+                <default>false</default>
+                <label>Life</label>
+            </value>
+            <value>
+                <fullName>Life Warm Transfer</fullName>
+                <default>false</default>
+                <label>Life Warm Transfer</label>
+            </value>
+            <value>
+                <fullName>Renters</fullName>
+                <default>false</default>
+                <label>Renters</label>
+            </value>
+            <value>
+                <fullName>Calls</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Calls</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

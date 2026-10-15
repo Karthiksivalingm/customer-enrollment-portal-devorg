@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_Farm_Marty_leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>notEqual</operation>
+        <value>state farm,farmers,allstate</value>
+    </filters>
+    <filters>
+        <field>LEAD_SCORE</field>
+        <operation>greaterThan</operation>
+        <value>70</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Duplicate,Do Not Call,No Longer There,Bad Data,Not Interested</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2022 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>LEAD.EMAIL</field>
+        <operation>contains</operation>
+        <value>INS</value>
+    </filters>
+    <filters>
+        <field>Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>Trusted Choice - May Scrape</value>
+    </filters>
+    <label>State Farm (Marty leads)</label>
+</ListView>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Marketing_Service__c</fullName>
+    <label>Current Marketing Service</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Melon Local</fullName>
+                <default>false</default>
+                <label>Melon Local</label>
+            </value>
+            <value>
+                <fullName>DAC</fullName>
+                <default>false</default>
+                <label>DAC</label>
+            </value>
+            <value>
+                <fullName>Agent Tag Media</fullName>
+                <default>false</default>
+                <label>Agent Tag Media</label>
+            </value>
+            <value>
+                <fullName>YPC</fullName>
+                <default>false</default>
+                <label>YPC</label>
+            </value>
+            <value>
+                <fullName>Uptown</fullName>
+                <default>false</default>
+                <label>Uptown</label>
+            </value>
+            <value>
+                <fullName>LoHi Digital</fullName>
+                <default>false</default>
+                <label>LoHi Digital</label>
+            </value>
+            <value>
+                <fullName>Direct Clicks</fullName>
+                <default>false</default>
+                <label>Direct Clicks</label>
+            </value>
+            <value>
+                <fullName>Search King/AMG</fullName>
+                <default>false</default>
+                <label>Search King/AMG</label>
+            </value>
+            <value>
+                <fullName>Search Perfect</fullName>
+                <default>false</default>
+                <label>Search Perfect</label>
+            </value>
+            <value>
+                <fullName>AMS (Agency Media Solutions)</fullName>
+                <default>false</default>
+                <label>AMS (Agency Media Solutions)</label>
+            </value>
+            <value>
+                <fullName>Modern Marketing</fullName>
+                <default>false</default>
+                <label>Modern Marketing</label>
+            </value>
+            <value>
+                <fullName>Carroll Media</fullName>
+                <default>false</default>
+                <label>Carroll Media</label>
+            </value>
+            <value>
+                <fullName>Relative Ratings</fullName>
+                <default>false</default>
+                <label>Relative Ratings</label>
+            </value>
+            <value>
+                <fullName>Top 3 Spots</fullName>
+                <default>false</default>
+                <label>Top 3 Spots</label>
+            </value>
+            <value>
+                <fullName>First 4</fullName>
+                <default>false</default>
+                <label>First 4</label>
+            </value>
+            <value>
+                <fullName>Top Avenues</fullName>
+                <default>false</default>
+                <label>Top Avenues</label>
+            </value>
+            <value>
+                <fullName>Agent Compass</fullName>
+                <default>false</default>
+                <label>Agent Compass</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

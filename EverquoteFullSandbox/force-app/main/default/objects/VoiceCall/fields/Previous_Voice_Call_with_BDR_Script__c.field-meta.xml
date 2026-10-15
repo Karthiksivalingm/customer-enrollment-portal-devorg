@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Voice_Call_with_BDR_Script__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Filled out upon voice call creation by record triggered flow, VoiceCall_Created_AssignPreviousVoiceCallWithBDRScript
+S3P-1267 - Created.</description>
+    <inlineHelpText>Most recent voice call related to this Contact/Lead that had an answer to any of the BDR Script questions.</inlineHelpText>
+    <label>Previous Voice Call with BDR Script</label>
+    <referenceTo>VoiceCall</referenceTo>
+    <relationshipLabel>Voice Calls</relationshipLabel>
+    <relationshipName>Voice_Calls</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessFlowMigration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <destinationFlowDefinition>File_a_Ticket_Resolution_1</destinationFlowDefinition>
+    <destinationFlowVersion>File_a_Ticket_Resolution_1-2</destinationFlowVersion>
+    <developerName>myRule_1_301VZ00000zMNT9YAO</developerName>
+    <masterLabel>File a Ticket Resolution_1</masterLabel>
+    <migratedCriteriaLabel>Resolution Entered</migratedCriteriaLabel>
+    <migratedCriteriaName>myRule_1</migratedCriteriaName>
+    <processVersion>File_a_Ticket_Resolution-3</processVersion>
+</ProcessFlowMigration>

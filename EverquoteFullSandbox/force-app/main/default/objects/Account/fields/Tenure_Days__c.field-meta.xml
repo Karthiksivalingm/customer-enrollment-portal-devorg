@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenure_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+/* Step 1: Check if the Win Date is empty. If it is, return null */
+ISBLANK(Most_Recent_Win_Date__c),
+NULL,
+
+
+((TODAY()) - (Most_Recent_Win_Date__c))
+)</formula>
+    <inlineHelpText>Number of days since the most recent win date.</inlineHelpText>
+    <label>Tenure (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

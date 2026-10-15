@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Change</fullName>
+    <active>false</active>
+    <description>Must select a reason for change for all lead purchasing values and the control spending value in General Account Inquiry.</description>
+    <errorConditionFormula>AND(
+OR(
+ ISPICKVAL( Lead_Purchasing__c , &quot;Adjust Hours&quot;), 
+ISPICKVAL( Lead_Purchasing__c , &quot;Adjust Lead Types&quot;),
+ISPICKVAL( Lead_Purchasing__c , &quot;Adjust Volume Cap&quot;),
+ISPICKVAL( Lead_Purchasing__c , &quot;Adjust Zip Codes&quot;),
+ISPICKVAL( Lead_Purchasing__c , &quot;Lead Volume&quot;),
+ISPICKVAL(  General_Account_Inquiry__c  , &quot;Control Spending&quot;)),
+
+ISPICKVAL( Reason_for_Change__c , &quot;&quot;),
+Datevalue(CreatedDate) &gt; DATE(2017,04,01))</errorConditionFormula>
+    <errorDisplayField>Reason_for_Change__c</errorDisplayField>
+    <errorMessage>Please select a reason for the change.</errorMessage>
+</ValidationRule>

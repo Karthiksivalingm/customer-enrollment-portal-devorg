@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISbLANK(Lead_Status__c )),&quot;Prospect&quot;,
+IF(  Account_status__c = &quot;open&quot;,&quot;Customer&quot;,
+IF( Account_status__c =&quot;closed&quot;,&quot;Winback&quot;,
+&quot;Prospect&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contact Type</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

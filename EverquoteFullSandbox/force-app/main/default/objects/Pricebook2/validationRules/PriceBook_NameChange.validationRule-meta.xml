@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PriceBook_NameChange</fullName>
+    <active>true</active>
+    <description>If this is the Agency Price Book or Accelerated Price Book, you cannot change the name. This rule is to ensure the flow that references these names isn&apos;t broken: Opportunity_Created_AssignPriceBook</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(Name),
+    OR(
+        PRIORVALUE(Name) = &quot;Agency Price Book&quot;,
+        PRIORVALUE(Name) = &quot;Accelerated Price Book&quot;
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>You cannot change this Price Book&apos;s name because it is referenced in a flow.</errorMessage>
+</ValidationRule>

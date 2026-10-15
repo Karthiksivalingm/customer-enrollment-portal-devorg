@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AGP_Opp_Fields_Required_Closed_Won</fullName>
+    <active>true</active>
+    <description>Requires that fields on the opportunituy be populated before moving a core IO opportunity to the Closed Won stage.</description>
+    <errorConditionFormula>RecordType.Name= &quot;Accelerated-AGP&quot;&amp;&amp;  
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;&amp;&amp;
+ISPICKVAL(StageName, &quot;Closed Won&quot;)&amp;&amp; 
+OR( 
+ISBLANK(  Intro_Call_Scheduled_Date_Time__c  ))</errorConditionFormula>
+    <errorMessage>Please enter a value for the Intro Call Schedule Date/Time field</errorMessage>
+</ValidationRule>

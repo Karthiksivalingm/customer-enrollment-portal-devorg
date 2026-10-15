@@ -1,0 +1,22 @@
+<apex:component >
+    <apex:attribute name="activityHistories" type="Opportunity" required="true"
+                    description="Activity Histories"/>
+    
+    <apex:pageBlock title="Activity Histories">
+        <apex:outputText rendered="{!activityHistories.ActivityHistories.size = 0}">
+            No records to display
+        </apex:outputText>
+        <apex:pageblocktable rendered="{!activityHistories.ActivityHistories.size > 0}"						     
+                             value="{!activityHistories.ActivityHistories}" var="a">
+            <apex:column value="{!a.ActivityDate}"/>
+            <apex:column headerValue="Subject">
+                <apex:outputLink value="/{!a.Id}" target="_top">
+                    {!a.Subject}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column value="{!a.OwnerId}"/>
+            <apex:column value="{!a.CallDisposition}"/>
+            <apex:column style="word-break:break-all;" value="{!a.Description}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+</apex:component>

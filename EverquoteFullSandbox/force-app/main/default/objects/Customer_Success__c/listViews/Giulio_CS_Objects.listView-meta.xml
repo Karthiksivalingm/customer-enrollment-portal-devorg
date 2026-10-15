@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Giulio_CS_Objects</fullName>
+    <columns>NAME</columns>
+    <columns>MTD_Revenue__c</columns>
+    <columns>Last_Month_s_Revenue__c</columns>
+    <columns>Intro_Call_Finalized_Date__c</columns>
+    <columns>Stage__c</columns>
+    <columns>Customer_Mode_at_Handoffpicklist__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>marc</value>
+    </filters>
+    <filters>
+        <field>Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Lost,Closed Won</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Customer_Success__c.Core_Onboarding</value>
+    </filters>
+    <filters>
+        <field>Customer_Mode_at_Handoffpicklist__c</field>
+        <operation>notEqual</operation>
+        <value>No Show</value>
+    </filters>
+    <label>Giulio CS Objects</label>
+</ListView>

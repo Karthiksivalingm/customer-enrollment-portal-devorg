@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Subject</fullName>
+    <active>false</active>
+    <description>call subject must be chosen from the picklist</description>
+    <errorConditionFormula>AND( 
+Subject &lt;&gt; &quot;Initial Meeting&quot;, 
+Subject &lt;&gt; &quot;Onsite Visit&quot;, 
+Subject &lt;&gt; &quot;Follow Up&quot;, 
+Subject &lt;&gt; &quot;Conference&quot;, 
+Subject &lt;&gt; &quot;Optimization&quot;, 
+Subject &lt;&gt; &quot;Product Review&quot;, 
+Subject &lt;&gt; &quot;Closing&quot;,
+Subject &lt;&gt; &quot;Call&quot;,
+Subject &lt;&gt; &quot;Follow Up&quot;,
+Subject &lt;&gt; &quot;Outbound Call&quot;,
+Subject &lt;&gt; &quot;Inbound Call&quot;,
+Subject &lt;&gt; &quot;Call Back Later&quot;)</errorConditionFormula>
+    <errorDisplayField>Subject</errorDisplayField>
+    <errorMessage>Please choose a value from the picklist.</errorMessage>
+</ValidationRule>

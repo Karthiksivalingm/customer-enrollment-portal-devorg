@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_Melissa_and_Noah_when_Customer_or_Sales_process_or_Lumico_e_app_issue</fullName>
+        <description>Notify Melissa and Noah when Customer or Sales process or Lumico e-app issue</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mrumball@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nwizer-vecchi@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ODA_Ticket_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Noah_and_Richa</fullName>
+        <description>Notify Noah and Richa</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>nwizer-vecchi@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rkohli@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ODA_Ticket_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Support_Contacts_of_new_ticket</fullName>
+        <description>Notify Support Contacts of new ticket</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>akumar@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jdewalt@oakgrovegroup.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jxu@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nwizer-vecchi@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ODA_Ticket_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Twilio_Support_Contacts_of_new_ticket</fullName>
+        <description>Notify Twilio Support Contacts of new ticket</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ilevinsky@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jxu@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nwizer-vecchi@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ODA_Ticket_Notification</template>
+    </alerts>
+    <rules>
+        <fullName>ODA Notify Request</fullName>
+        <actions>
+            <name>Notify_Noah_and_Richa</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>File_a_Ticket__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Referred Case Status Request,Post-Issue Policy Request</value>
+        </criteriaItems>
+        <description>Notifies Noah and Richa when there is a Referred Case Status Request or
+Post-Issue Policy Request</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ODA Notify SF Support Users</fullName>
+        <actions>
+            <name>Notify_Support_Contacts_of_new_ticket</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>File_a_Ticket__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Salesforce issue</value>
+        </criteriaItems>
+        <description>Notifies the Salesforce Support Users when a new ticket is created.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ODA Notify Sales or Lumico Support Users</fullName>
+        <actions>
+            <name>Notify_Melissa_and_Noah_when_Customer_or_Sales_process_or_Lumico_e_app_issue</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>File_a_Ticket__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Customer or Sales process issue,Lumico e-app issue</value>
+        </criteriaItems>
+        <description>Notifies Melissa and Noah when there is a Customer, Sales process or
+Lumico e-app ticket created.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ODA Notify Twilio Support Users</fullName>
+        <actions>
+            <name>Notify_Twilio_Support_Contacts_of_new_ticket</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>File_a_Ticket__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Twilio issue,Other issue</value>
+        </criteriaItems>
+        <description>Notifies the Twilio or Other Support Users when a new ticket is created or Category is edited.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Contact that responded to the survey.
+Populated by flow (SurveyResponse_CreateLookupRelationships) upon record creation using the Contact Id field populated by Typeform.
+Read Only for all except Admins (via profile) and Typeform Integration user (via permission set)</description>
+    <inlineHelpText>Contact that responded to the survey</inlineHelpText>
+    <label>Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Survey Responses</relationshipLabel>
+    <relationshipName>Feedback_Survey_Responses</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

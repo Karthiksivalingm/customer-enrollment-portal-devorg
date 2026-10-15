@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to by CS to create a case manually to track opt outs of Dynamic Pricing, when someone calls them directly to opt out.
+S3P-1212 - Created.</description>
+    <fieldOverrides>
+        <field>AccountId</field>
+        <formula>Contact.Account.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>ContactId</field>
+        <formula>Contact.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Description</field>
+        <formula>&quot;Starting in May 2026 we will opt in all AZ &amp; MN agents into Dynamic Pricing. This only applies to:&quot; &amp; BR() &amp;
+&quot;- State Farm Auto Lead Campaigns &quot; &amp; BR() &amp;
+&quot;- Farmers Home &amp; Auto Lead Campaigns&quot; &amp; BR() &amp;
+
+&quot;Use your Dynamic Pricing Playbook as a guide for handling objections when agents wish to opt out of Dynamic Pricing.&quot; &amp; BR() &amp;
+
+&quot;If the agent decides to opt out please document this in the results field and disposition the outcome as “No Success”.&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Origin</field>
+        <literalValue>Internal</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Project__c</field>
+        <literalValue>New Product Adoption</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Subject</field>
+        <formula>&quot;Dynamic Pricing Pilot Opt Out&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Topic__c</field>
+        <literalValue>Go-to-Market</literalValue>
+    </fieldOverrides>
+    <label>Create Case: Dynamic Pricing Opt Out</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>ContactId</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>AccountId</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Status</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Subject</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Description</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>OwnerId</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Project__c</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Topic__c</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Outcome__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Results__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+    </quickActionLayout>
+    <successMessage>Your Dynamic Pricing opt out case was created.</successMessage>
+    <targetObject>Case</targetObject>
+    <targetParentField>Contact</targetParentField>
+    <targetRecordType>Case.Account_Management</targetRecordType>
+    <type>Create</type>
+</QuickAction>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CaseNumber__c</fullName>
+    <description>number used for account closure round robin</description>
+    <displayFormat>{0}</displayFormat>
+    <externalId>false</externalId>
+    <inlineHelpText>number used for account closure round robin</inlineHelpText>
+    <label>CaseNumber</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

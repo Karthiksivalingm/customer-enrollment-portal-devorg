@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ASAccount_Closure_in_56_day_windows_as</fullName>
+        <description>Account Closure in 56 day window allstate</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dmitchell@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>AM_CS_Email_Templates/Closure_in_56_day_window</template>
+    </alerts>
+    <alerts>
+        <fullName>Cancellation_Reason_Slack</fullName>
+        <ccEmails>w1z3n4b7o8p7f4t0@everquote.slack.com</ccEmails>
+        <description>Cancellation Reason Slack</description>
+        <protected>false</protected>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Strategy_Ops/Cancellation_Reason_Slack</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Close_Alert</fullName>
+        <description>Case Close Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Strategy_Ops/Case_Complete_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Email_Alert_to_owner_on_Creation_by_Fill_Rate</fullName>
+        <description>Case Email Alert to owner on Creation by Fill Rate</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CaseEmail_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Escalation_1_AlertBenw</fullName>
+        <description>Case Escalation 1 Alert - Ben W</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bwang@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lwhite@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/SUPPORTCaseescalationnotification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Escalation_1_AlertMorgan</fullName>
+        <description>Case Escalation 1 Alert - Morgan</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mfarrell@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/SUPPORTCaseescalationnotification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Escalation_2_AlertJoeB</fullName>
+        <description>Case Escalation 2 Alert - Joe B</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eammerman@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lwhite@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/SUPPORTCaseescalationnotification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Escalation_2_AlertNedP</fullName>
+        <description>Case Escalation 2 Alert - Ned P</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>nprickett@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/SUPPORTCaseescalationnotification</template>
+    </alerts>
+    <alerts>
+        <fullName>Core_IO_30_Call_Completed_alert</fullName>
+        <description>Core Day 30 Call Completed alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Onboarding_Emails/Core_30day_Completed_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>FMAccount_Closure_in_56_day_window</fullName>
+        <description>Account Closure in 56 day window Farmers</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>dmitchell@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>AM_CS_Email_Templates/Closure_in_56_day_window</template>
+    </alerts>
+    <alerts>
+        <fullName>IAAccount_Closure_in_56_day_windows_ialife</fullName>
+        <description>Account Closure in 56 day window IA life</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>AM_CS_Email_Templates/Closure_in_56_day_window</template>
+    </alerts>
+    <alerts>
+        <fullName>Low_IBC_Billable_Rate_Warning_Alert</fullName>
+        <description>Low IBC Billable Rate Warning Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Low_IBC_Billable_Rate_Warning</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Case_Assignment</fullName>
+        <description>New Case Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>AM_CS_Email_Templates/Case_Assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>SFAccount_Closure_in_56_day_windowsf</fullName>
+        <description>Account Closure in 56 day window state far,</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>AM_CS_Email_Templates/Closure_in_56_day_window</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_Alert_when_the_Owner_is_changed</fullName>
+        <description>Send Email Alert when the Owner is changed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>andrew.nelson@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mfarrell@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nprickett@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>yancy.perry@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Send_email_when_the_Case_Owner_is_changed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_Closure_CF</fullName>
+        <field>Customer_Support_Type__c</field>
+        <literalValue>Account Closure</literalValue>
+        <name>Account Closure - CF</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Closure_CF_reason</fullName>
+        <field>Account_Closure__c</field>
+        <literalValue>Office Closing</literalValue>
+        <name>Account Closure - CF reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Closure_Record_Update</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Account_Closure</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Account Closure Record Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Closure_Updates</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Account_Closure</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Account Closure Updates</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CBR_Completed_Date_with_Close_Date</fullName>
+        <field>Completed_Date__c</field>
+        <formula>TODAY ()</formula>
+        <name>CBR Completed Date with Close Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CF_Termination_High_Priority</fullName>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+        <name>CF Termination - High Priority</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Transfer_Date</fullName>
+        <field>Case_Transferred__c</field>
+        <formula>TODAY()</formula>
+        <name>Case Transfer Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ChangePriorityToHigh</fullName>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+        <name>Changes the case priority to high.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Close_Lead_Delivery_Failure_case</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Close Lead Delivery Failure case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Change_to_Smart_Campaign_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Smart_Campaign</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Owner Change to Smart Campaign Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_type_to_DNC</fullName>
+        <description>case record type to DNC</description>
+        <field>RecordTypeId</field>
+        <lookupValue>DNC_Consumer</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record type to DNC</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Referral_Credit_Update_Record_Type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Referral_Credit</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Referral Credit Update Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Send_CSAT_survey_AGP_first_QBR</fullName>
+        <field>Send_CSAT_survey_AGP_first_QBR__c</field>
+        <literalValue>1</literalValue>
+        <name>Send CSAT survey AGP first QBR</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Test</fullName>
+        <field>Subject</field>
+        <name>Test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Subject</fullName>
+        <field>Subject</field>
+        <formula>&quot;Country Financial Account Closure&quot;</formula>
+        <name>Update Subject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_initial_solve_date_on_first_close</fullName>
+        <field>Initial_Solve_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update initial solve date on first close</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>count_charge_attempts</fullName>
+        <field>Charge_Attempts__c</field>
+        <formula>Charge_Attempts__c +1</formula>
+        <name>count charge attempts</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account Closure Record Type Update</fullName>
+        <actions>
+            <name>Account_Closure_Updates</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Customer_Support_Type__c</field>
+            <operation>equals</operation>
+            <value>Account Closure</value>
+        </criteriaItems>
+        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CF Terminations case detail update</fullName>
+        <actions>
+            <name>Account_Closure_CF</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Closure_CF_reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CF_Termination_High_Priority</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Subject</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.SuppliedEmail</field>
+            <operation>equals</operation>
+            <value>reporting@adharmonics.com,reporting@everquote.com</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>equals</operation>
+            <value>Terminated Representatives - Action Required</value>
+        </criteriaItems>
+        <description>update CF termination cases with account closure &amp; high priority</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cancellation Reason Slack</fullName>
+        <actions>
+            <name>Cancellation_Reason_Slack</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Case_Results__c</field>
+            <operation>equals</operation>
+            <value>Closed,Save</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Customer_Support_Type__c</field>
+            <operation>equals</operation>
+            <value>Account Closure</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <description>When a Case is closed, send an email to the Cancellation Reason Slack channel.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Record type to DNC</fullName>
+        <actions>
+            <name>Record_type_to_DNC</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Customer_Support_Type__c</field>
+            <operation>equals</operation>
+            <value>DNC Request</value>
+        </criteriaItems>
+        <description>Case Record type to DNC</description>
+        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Charge Attempts</fullName>
+        <actions>
+            <name>count_charge_attempts</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>update the number of charge attempts when the date last charged changes</description>
+        <formula>ISCHANGED( Last_Charge_Attempt_Date__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Choice Lead Delivery Failure Auto close</fullName>
+        <actions>
+            <name>Close_Lead_Delivery_Failure_case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Lead Delivery Failure</value>
+        </criteriaItems>
+        <description>For Core and Core IO account types</description>
+        <failedMigrationToolVersion>262.12.10</failedMigrationToolVersion>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Core Business Review Completed Date</fullName>
+        <actions>
+            <name>CBR_Completed_Date_with_Close_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Core Business Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Case_Results__c</field>
+            <operation>equals</operation>
+            <value>Completed Review</value>
+        </criteriaItems>
+        <description>When closing a CBR case with a &quot;completed&quot; case status, update the completed date with closed date</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Move to Smart Campaign Queue</fullName>
+        <actions>
+            <name>Owner_Change_to_Smart_Campaign_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Remove_Smart_Campaign__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <failedMigrationToolVersion>262.12.10</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Credit Update Record Type</fullName>
+        <actions>
+            <name>Test</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Customer_Support_Type__c</field>
+            <operation>equals</operation>
+            <value>Referral Credit</value>
+        </criteriaItems>
+        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send CSAT survey AGP first QBR</fullName>
+        <actions>
+            <name>Send_CSAT_survey_AGP_first_QBR</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Monthly_Calls_Review_QBR__c</field>
+            <operation>equals</operation>
+            <value>First QBR</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Transfer Date</fullName>
+        <actions>
+            <name>Case_Transfer_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Owner: QA, Customer Support, Choice Lead Delivery Failures, Account Closures
+Record Types: Customer Support,Audit,Account Check,Account Closure,DNC Consumer,Dunning</description>
+        <formula>AND ( LEFT(PRIORVALUE(OwnerId),3) = &apos;00G&apos;, LEFT(OwnerId,3) = &apos;005&apos; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update initial solve date on first close</fullName>
+        <actions>
+            <name>Update_initial_solve_date_on_first_close</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Initial_Solve_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

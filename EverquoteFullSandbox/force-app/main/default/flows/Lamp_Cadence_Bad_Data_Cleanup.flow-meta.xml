@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Cadence_Target_Filter</name>
+        <label>Cadence Target Filter</label>
+        <locationX>644</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>leads</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TargetId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Lead</targetReference>
+            </connector>
+            <label>leads</label>
+        </rules>
+        <rules>
+            <name>contacts</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TargetId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>003</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact</targetReference>
+            </connector>
+            <label>contacts</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Contact_Exist</name>
+        <label>Does Contact Exist?</label>
+        <locationX>710</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Contact Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Contact_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_contacts_from_cases</targetReference>
+            </connector>
+            <label>Contact Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the Lead was found</description>
+        <name>Does_Lead_Exist</name>
+        <label>Does Lead Exist?</label>
+        <locationX>182</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Lead Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Lead</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_leads</targetReference>
+            </connector>
+            <label>Lead Exists</label>
+        </rules>
+    </decisions>
+    <description>Added Start Critiria that the Target Id must not be null (so we aren&apos;t reprocessing cadence trackers where we have already deleted the target)
+Removed the step that updated the Lead/Contact Age fields before they were deleted (this seems to have been related to a batch process in RingLead that was meant to delete bad data but we do not seem to use ZoomInfo/Ringlead anymore).
+Added a decision element that checks whether the Lead or Contact can be found before we try to delete it (Target Ids can still exist even after the related Lead/Contact has been deleted).</description>
+    <environments>Default</environments>
+    <interviewLabel>Lamp - Cadence Bad Data Cleanup {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SCH_CadenceTracker_BadData_DeleteLeadContact</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_contacts</name>
+        <label>Delete contacts</label>
+        <locationX>578</locationX>
+        <locationY>684</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.TargetId__NotFound</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </recordDeletes>
+    <recordDeletes>
+        <description>Delete the Lead that was connected to the Cadence Tracker</description>
+        <name>Delete_leads</name>
+        <label>Delete leads</label>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.TargetId__NotFound</elementReference>
+            </value>
+        </filters>
+        <object>Lead</object>
+    </recordDeletes>
+    <recordLookups>
+        <description>Need to attempt to get the record before deleting, because it is possible the the CadenceTargetId is populated even after the target Contact or Lead has been deleted.</description>
+        <name>Get_Contact</name>
+        <label>Get Contact</label>
+        <locationX>710</locationX>
+        <locationY>360</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Contact_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.TargetId__NotFound</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Need to attempt to get the record before deleting, because it is possible the the CadenceTargetId is populated even after the target Contact or Lead has been deleted.</description>
+        <name>Get_Lead</name>
+        <label>Get Lead</label>
+        <locationX>182</locationX>
+        <locationY>360</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Lead_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.TargetId__NotFound</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Remove_contacts_from_cases</name>
+        <label>Remove contacts from cases</label>
+        <locationX>578</locationX>
+        <locationY>576</locationY>
+        <connector>
+            <targetReference>Delete_contacts</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.TargetId__NotFound</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ContactId</field>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <start>
+        <locationX>518</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Cadence_Target_Filter</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CompletionDisposition__NotFound</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Bad Data</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TargetId__NotFound</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>ActionCadenceTracker__NotFound</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-11-14</startDate>
+            <startTime>12:50:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,36 @@
+<apex:component >
+    <apex:attribute name="upsell" type="Upsell__c" required="true"
+                    description="upsell"/>
+    <apex:attribute name="vertical" type="String" required="true"
+                    description="vertical"/>
+    
+    <apex:pageBlockSection title="Geo">
+        <table class="infoTable">
+            <tr>
+                <th>Radius</th>
+                <th> Weekly Lift</th>
+                <th> Available Zips </th>
+            </tr>
+            <tr>
+                <th>10 miles</th>
+                <td>{!upsell.X10_mi_Radius_Lift__c}</td>
+                <td>{!upsell.X10_mi_Radius_Zip__c}</td>
+            </tr>
+            <tr>
+                <th>25 miles</th>
+                <td>{!upsell.X25_mi_Radius_Lift__c}</td>
+                <td>{!upsell.X25_mi_Radius_Zip__c}</td>
+            </tr>
+            <tr>
+                <th>50 miles</th>
+                <td>{!upsell.X50_mi_Radius_Lift__c}</td>
+                <td>{!upsell.X50_mi_Radius_Zip__c}</td>
+            </tr>
+            <tr>
+                <th>Whole State</th>
+                <td>{!upsell.Whole_State_Lift__c}</td>
+                <td>{!upsell.Whole_State_Zip__c}</td>
+            </tr>
+        </table>
+    </apex:pageBlockSection>
+</apex:component>

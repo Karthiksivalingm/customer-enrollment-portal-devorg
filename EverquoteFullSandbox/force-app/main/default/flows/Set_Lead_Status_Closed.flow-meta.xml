@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: Set Lead Status Closed workflow rule
+Workflow rule description: Sets the Lead Status to Closed based on agent selected Lead Outcome&quot;</description>
+    <label>Set Lead Status Closed</label>
+    <migratedFromWorkflowRuleName>Set Lead Status Closed</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>mainUpdate</name>
+        <label>mainUpdate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>mainUpdate</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>(1 OR 2 OR 3 OR 4 OR 5)</filterLogic>
+        <filters>
+            <field>Lead_Outcome__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Outbound Call - Bad Data</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Outcome__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Knock Out - US Citizen</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Outcome__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Do Not Call</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Outcome__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Call Dropped</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Outcome__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lead Not Qualified</stringValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

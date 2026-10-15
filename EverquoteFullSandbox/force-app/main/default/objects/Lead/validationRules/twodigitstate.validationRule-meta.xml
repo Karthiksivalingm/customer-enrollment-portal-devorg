@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>twodigitstate</fullName>
+    <active>true</active>
+    <description>Make sure agents don&apos;t enter the full state for Life Lead Record Type</description>
+    <errorConditionFormula>(LEN(State)&gt; 2) &amp;&amp; (RecordTypeId  = &apos;0121a000000VlZ7AAK&apos;)</errorConditionFormula>
+    <errorMessage>The State field must be the two digit state code (e.g., Texas is TX)</errorMessage>
+</ValidationRule>

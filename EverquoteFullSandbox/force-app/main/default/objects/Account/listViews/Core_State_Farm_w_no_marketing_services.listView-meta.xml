@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Core_State_Farm_w_no_marketing_services</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Support_Rep__c</columns>
+    <columns>X30_Day_Revenue__c</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Current_Marketing_Service__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>state farm</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>open</value>
+    </filters>
+    <filters>
+        <field>X30_Day_Revenue__c</field>
+        <operation>notEqual</operation>
+        <value>,0</value>
+    </filters>
+    <filters>
+        <field>EQ_Marketing_Services_Pilot__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Core,Core IO</value>
+    </filters>
+    <label>Core State Farm w/ no marketing services</label>
+</ListView>

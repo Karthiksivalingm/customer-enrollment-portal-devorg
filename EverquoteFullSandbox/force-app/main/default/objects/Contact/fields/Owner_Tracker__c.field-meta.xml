@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Tracker__c</fullName>
+    <description>- In general, equals to the Owner field.
+- When recirculate, equals to &quot;Recycle&quot;</description>
+    <externalId>false</externalId>
+    <label>Owner Tracker</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

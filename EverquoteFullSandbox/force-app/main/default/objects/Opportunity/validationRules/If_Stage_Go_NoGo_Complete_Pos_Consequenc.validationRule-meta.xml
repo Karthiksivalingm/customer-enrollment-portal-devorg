@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Stage_Go_NoGo_Complete_Pos_Consequenc</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(
+    AND(
+        TEXT(StageName) = &quot;Go/No-Go&quot;, 
+        ISBLANK(Positive_Outcomes__c)), True, False
+ )</errorConditionFormula>
+    <errorDisplayField>Positive_Outcomes__c</errorDisplayField>
+    <errorMessage>If stage changed to Go/No-Go please complete Positive Outcomes field</errorMessage>
+</ValidationRule>

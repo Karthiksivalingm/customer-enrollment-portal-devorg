@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Major_Condition</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordTypeId = &quot;0121a000000VlZ7AAK&quot;,  ISPICKVAL(Major_Condition_Past_Year__c, &quot;Yes&quot;), OR(ISBlank(What_is_your_major_condition__c),ISBLANK( Details__c )))</errorConditionFormula>
+    <errorDisplayField>What_is_your_major_condition__c</errorDisplayField>
+    <errorMessage>Please indicated the major condition as well as the details.</errorMessage>
+</ValidationRule>

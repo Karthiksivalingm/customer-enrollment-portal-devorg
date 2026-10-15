@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Najiah_to_Work</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CAMPAIGN_MEMBER.STATUS</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>BDR_Main_View__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BDR_Main_View__c</field>
+        <operation>equals</operation>
+        <value>Najiah Lightner</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN_MEMBER.STATUS</field>
+        <operation>equals</operation>
+        <value>Elisa,Jaida,Jeff,Najiah</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Do Not Call,No Longer There,Re-visit</value>
+    </filters>
+    <filters>
+        <field>Account.OpenOpp__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Najiah to Work</label>
+    <sharedTo>
+        <group>State_Farm_BDR</group>
+    </sharedTo>
+</ListView>

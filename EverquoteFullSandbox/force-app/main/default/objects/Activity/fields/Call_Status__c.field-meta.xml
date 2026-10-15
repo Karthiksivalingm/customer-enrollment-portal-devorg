@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Status__c</fullName>
+    <label>Call Status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+                <label>No Answer</label>
+            </value>
+            <value>
+                <fullName>Spoke to Decision Maker</fullName>
+                <default>false</default>
+                <label>Spoke to Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Spoke to Gate Keeper</fullName>
+                <default>false</default>
+                <label>Spoke to GKeeper/Producer</label>
+            </value>
+            <value>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+                <label>Transferred</label>
+            </value>
+            <value>
+                <fullName>Left Voicemail</fullName>
+                <default>false</default>
+                <label>Left Voicemail</label>
+            </value>
+            <value>
+                <fullName>Left message w/gatekeeper</fullName>
+                <default>false</default>
+                <label>Left message w/gatekeeper</label>
+            </value>
+            <value>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+                <label>Left Message</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

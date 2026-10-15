@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Class__c</fullName>
+    <description>These values will be dependent on the Product picklist.</description>
+    <label>Product Class</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Add Clicks</fullName>
+                <default>false</default>
+                <label>Add Clicks</label>
+            </value>
+            <value>
+                <fullName>Add Calls - WT</fullName>
+                <default>false</default>
+                <label>Add Calls - WT</label>
+            </value>
+            <value>
+                <fullName>Add Calls - CTC</fullName>
+                <default>false</default>
+                <label>Add Calls - CTC</label>
+            </value>
+            <value>
+                <fullName>Add Leads</fullName>
+                <default>false</default>
+                <label>Add Leads</label>
+            </value>
+            <value>
+                <fullName>Auction Insights Win</fullName>
+                <default>false</default>
+                <label>Auction Insights Win</label>
+            </value>
+            <value>
+                <fullName>Integration - CTPF</fullName>
+                <default>false</default>
+                <label>Integration - CTPF</label>
+            </value>
+            <value>
+                <fullName>Integration - CTQ</fullName>
+                <default>false</default>
+                <label>Integration - CTQ</label>
+            </value>
+            <value>
+                <fullName>Integration - QIA</fullName>
+                <default>false</default>
+                <label>Integration - QIA</label>
+            </value>
+            <value>
+                <fullName>Affinity List</fullName>
+                <default>false</default>
+                <label>Affinity List</label>
+            </value>
+            <value>
+                <fullName>Retention Campaign</fullName>
+                <default>false</default>
+                <label>Retention Campaign</label>
+            </value>
+            <value>
+                <fullName>Agency Cost-Share</fullName>
+                <default>false</default>
+                <label>Agency Cost-Share</label>
+            </value>
+            <value>
+                <fullName>BD Wins</fullName>
+                <default>false</default>
+                <label>BD Wins</label>
+            </value>
+            <value>
+                <fullName>VPN</fullName>
+                <default>false</default>
+                <label>VPN</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

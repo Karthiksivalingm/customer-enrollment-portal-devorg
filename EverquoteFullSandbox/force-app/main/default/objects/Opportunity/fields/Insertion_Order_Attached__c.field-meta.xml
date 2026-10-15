@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insertion_Order_Attached__c</fullName>
+    <businessOwnerUser>svc-salesforce-docusign@everquote.com.eqfullsb</businessOwnerUser>
+    <defaultValue>false</defaultValue>
+    <description>Docusign envelopes should be configured to check this box when an IO is signed.
+Field is used to trigger Account Type and Account/Opportunity Support Rep automations.</description>
+    <inlineHelpText>Completed IO is attached. Field checked by Docusign Integration upon IO signing.</inlineHelpText>
+    <label>Insertion Order Attached</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

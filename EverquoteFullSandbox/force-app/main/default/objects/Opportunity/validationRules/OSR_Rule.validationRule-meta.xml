@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OSR_Rule</fullName>
+    <active>false</active>
+    <errorConditionFormula>And( RecordTypeId = &quot;0121a000000EqqS&quot;,
+OR (
+00N1a000008JUIi.Profile = &quot;00e1a000000i0iR&quot;,
+00N1a000008JUIi.Profile = &quot;00e1a000000i01k&quot;,
+00N1a000008JUIi.Profile = &quot;00e1a000000hyVb&quot;,
+00N1a000008JUIi.Profile = &quot;00e1a000000hybK&quot;
+))</errorConditionFormula>
+    <errorMessage>Outside Sales Rep cannot contain Inside Sales Rep username. Clear Outside Sales Rep Field.</errorMessage>
+</ValidationRule>

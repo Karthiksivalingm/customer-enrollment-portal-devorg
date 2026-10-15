@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessFlowMigration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <destinationFlowDefinition>Case_Update_Case_Owner_to_Account_Support_Rep_2</destinationFlowDefinition>
+    <destinationFlowVersion>Case_Update_Case_Owner_to_Account_Support_Rep_2-1</destinationFlowVersion>
+    <developerName>myRule_1_301VZ00000zMgosYAC</developerName>
+    <masterLabel>Case: Update Case Owner to Account Support Rep_2</masterLabel>
+    <migratedCriteriaLabel>Account has a Support Rep</migratedCriteriaLabel>
+    <migratedCriteriaName>myRule_1</migratedCriteriaName>
+    <processVersion>Case_Update_Case_Owner_to_Account_Support_Rep-14</processVersion>
+</ProcessFlowMigration>

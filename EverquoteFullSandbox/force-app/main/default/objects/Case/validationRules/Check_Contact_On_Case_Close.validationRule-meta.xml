@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Contact_On_Case_Close</fullName>
+    <active>true</active>
+    <description>Show error if Case&apos;s Subject is &quot;Account Tier Change&quot;, it has no contact, and the Status is changed to Closed.</description>
+    <errorConditionFormula>/* Show error if Case&apos;s Subject is &quot;Account Tier Change&quot;, it has no contact, and the Status is changed to Closed. */
+AND(  
+     ISPICKVAL( Status , &quot;Closed&quot;),
+     ISCHANGED(Status), 
+     ISBLANK( ContactId ),
+     CONTAINS( Subject , &quot;Account Tier Change&quot;) 
+   )</errorConditionFormula>
+    <errorDisplayField>ContactId</errorDisplayField>
+    <errorMessage>Please select Primary Contact for Account</errorMessage>
+</ValidationRule>

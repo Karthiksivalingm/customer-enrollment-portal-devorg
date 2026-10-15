@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <description>revisit these picklist values</description>
+    <label>Product</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Calls</fullName>
+                <default>false</default>
+                <label>Calls</label>
+            </value>
+            <value>
+                <fullName>Clicks</fullName>
+                <default>false</default>
+                <label>Clicks</label>
+            </value>
+            <value>
+                <fullName>Leads</fullName>
+                <default>false</default>
+                <label>Leads</label>
+            </value>
+            <value>
+                <fullName>Exchange</fullName>
+                <default>false</default>
+                <label>Exchange</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Display</fullName>
+                <default>false</default>
+                <label>Display</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Inbound Calls</fullName>
+                <default>false</default>
+                <label>Inbound Calls</label>
+            </value>
+            <value>
+                <fullName>Add Calls - CTC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Add Calls - CTC</label>
+            </value>
+            <value>
+                <fullName>Add Calls - WT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Add Calls - WT</label>
+            </value>
+            <value>
+                <fullName>Add Clicks</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Add Clicks</label>
+            </value>
+            <value>
+                <fullName>Add Leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Add Leads</label>
+            </value>
+            <value>
+                <fullName>Affinity List</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Affinity List</label>
+            </value>
+            <value>
+                <fullName>Agency Cost-Share</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Agency Cost-Share</label>
+            </value>
+            <value>
+                <fullName>Auction Insights Win</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Auction Insights Win</label>
+            </value>
+            <value>
+                <fullName>Integration - CTPF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration - CTPF</label>
+            </value>
+            <value>
+                <fullName>Integration - CTQ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration - CTQ</label>
+            </value>
+            <value>
+                <fullName>Integration - QIA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration - QIA</label>
+            </value>
+            <value>
+                <fullName>Retention Campaign</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retention Campaign</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

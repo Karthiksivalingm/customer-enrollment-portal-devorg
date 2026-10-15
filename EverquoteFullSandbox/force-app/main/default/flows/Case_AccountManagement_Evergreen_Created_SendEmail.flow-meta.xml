@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Send the appropriate email (body assigned above) based on the Case Subject and whether or not the</description>
+        <name>Send_Email_to_Contact</name>
+        <label>Send Email to Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <targetReference>Assign_Failing_Flow_Component</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>$Record.Contact.Email</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>Formula_EmailCC</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>customersupport@everquote.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Variable_EmailSubject_Final</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Variable_EmailBody_Final</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>addThreadingTokenToBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign the email body and subject we will send based on the Case&apos;s subject.</description>
+        <name>Assign_Email_Body_Subject_Billing_Errors</name>
+        <label>Assign Email Body &amp; Subject - Billing Errors</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_EmailBody_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextTemplate_EmailBody_BillingError</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Variable_EmailSubject_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Action Required: Update your EverQuote Pro Billing Information</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Contact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the email body and subject we will send based on the Case&apos;s subject.</description>
+        <name>Assign_Email_Body_Subject_Increase_Cap</name>
+        <label>Assign Email Body &amp; Subject - Increase Cap</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_EmailBody_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextTemplate_EmailBody_IncreaseCap</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Variable_EmailSubject_Final</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Don&apos;t miss out: extra lead volume is available in your area!</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Contact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Flow_Component</name>
+        <label>Assign Failing Flow Component</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Variable_FailingFlowComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Case_AccountManagement_Evergreen_Created_SendEmail   - Send Email to Contact</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_Fault_Path_Subflow</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>We will assign the correct email subject, body, and cc recipient based on the Case&apos;s Subject</description>
+        <name>What_is_the_Case_Subject</name>
+        <label>What is the Case Subject?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
+        <rules>
+            <name>Increase_Cap</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Increase Cap - High Fill Rate Area</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Email_Body_Subject_Increase_Cap</targetReference>
+            </connector>
+            <label>Increase Cap</label>
+        </rules>
+        <rules>
+            <name>Billing_Errors</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Health - Account Has Billing Error(s)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Email_Body_Subject_Billing_Errors</targetReference>
+            </connector>
+            <label>Billing Errors</label>
+        </rules>
+    </decisions>
+    <description>When an Account Management case is created with the Topic &quot;Evergreen Automation&quot;, check the Subject and Account Type, then send the appropriate email.
+
+Subject is &quot;Increase Cap - High Fill Rate Area&quot; or &quot;Account Health - Account Has Billing Error(s)&quot; - send appropriate email. Other subject, do nothing.
+
+S3P-1134 - Created.
+S3P-1291 - Moved actions to a scheduled path to prevent locked row error from mass simple loader update.
+S3P-1345 - Updated scheduled path to wait an hour. Simplified logic by using formulas to prepare for addition of more emails in future.
+S3P-1346 - Added Billing Error email. Updated start criteria to exclude Contacts without an email or that have opted out of email.
+Hot Fix - Emails with &quot;other&quot; subject should not be sending an email, flow should end.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_ActiveAccountWithSupportRep</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    AND(
+             OR(
+                     ISPICKVAL({!$Record.Account.Type}, &quot;Core&quot;),
+                     ISPICKVAL({!$Record.Account.Type}, &quot;Accelerated-AGP&quot;),
+                     ISPICKVAL({!$Record.Account.Type}, &quot;Accelerated-AGP Premier&quot;)
+              ),
+             NOT(ISBLANK({!$Record.Account.Support_Rep__c})),
+             {!$Record.Account.Support_Rep__r.IsActive}
+     ),
+TRUE, FALSE)</expression>
+    </formulas>
+    <formulas>
+        <description>If the Account has a support rep, display their calendar link to be added at the bottom of the email body. Otherwise display nothing.</description>
+        <name>Formula_EmailBody_CalendarLink</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!Formula_ActiveAccountWithSupportRep},
+    &quot;&lt;a href=&apos;&quot; + {!$Record.Account.Support_Rep__r.Salesforce_Meeting_Link__c} + &quot;&apos; target=&apos;_blank&apos;&gt;Book time with me&lt;/a&gt;&quot;,
+    null
+)</expression>
+    </formulas>
+    <formulas>
+        <description>If the Account has an active support rep (and is currently Core, AGP, or Premier), the email signature should be the Support Rep, otherwise it should be &quot;The EverQuote Customer Support Team&quot;</description>
+        <name>Formula_EmailBody_Signer</name>
+        <dataType>String</dataType>
+        <expression>IF({!Formula_ActiveAccountWithSupportRep}, {!$Record.Account.Support_Rep__r.FirstName} &amp; &quot; &quot; &amp;{!$Record.Account.Support_Rep__r.LastName},
+&quot;The EverQuote Customer Support Team&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Returns either the Account Support Rep or blank depending on the Account Type</description>
+        <name>Formula_EmailCC</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!Formula_ActiveAccountWithSupportRep},
+     {!$Record.Account.Support_Rep__r.Email}, /*CC account support rep if Account Type is Core or AGP */
+      &quot;&quot; /* Leave CC blank because Starter accounts shouldn&apos;t CC anyone */
+)</expression>
+    </formulas>
+    <interviewLabel>Case_AccountManagement_Evergreen_Created_SendEmail {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case_AccountManagement_Evergreen_Created_SendEmail</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterFormula>AND(
+         {!$Record.RecordType.DeveloperName} = &quot;Account_Management&quot;,
+         ISPICKVAL({!$Record.Topic__c}, &quot;Evergreen&quot;),
+         NOT(ISBLANK({!$Record.ContactId})),
+         NOT(ISBLANK({!$Record.Contact.Email})),
+         ISBLANK({!$Record.Contact.EmailBouncedReason}),
+         NOT({!$Record.Contact.HasOptedOutOfEmail}),
+         {!$Record.Do_Not_Send_Automated_Email__c} = FALSE
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>X1_Hour_After_Creation</name>
+            <connector>
+                <targetReference>What_is_the_Case_Subject</targetReference>
+            </connector>
+            <label>1 Hour After Creation</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Notifies specific users of flow errors.</description>
+        <name>Run_Fault_Path_Subflow</name>
+        <label>Run Fault Path Subflow</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>Variable_FailingFlowComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <description>The body of the email if the case is a Billing error case.</description>
+        <name>TextTemplate_EmailBody_BillingError</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;Hello {!$Record.Contact.FirstName},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;We are reaching out to let you know that we recently identified a billing error on your account and we were unable to process your latest payment.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;To ensure there is minimal interruption to your service, please update your payment details as soon as possible. You can easily do this directly within the EverQuote Pro platform:&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; font-size: 14px; font-family: sans-serif;&quot;&gt;Log in to your EverQuote Pro account at [&lt;/span&gt;&lt;a href=&quot;https://pro.everquote.com/eq&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;background-color: transparent; font-size: 14px; color: rgb(17, 85, 204); font-family: sans-serif;&quot;&gt;&lt;u&gt;Click Here&lt;/u&gt;&lt;/a&gt;&lt;span style=&quot;background-color: transparent; font-size: 14px; font-family: sans-serif;&quot;&gt;].&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; font-size: 14px; font-family: sans-serif;&quot;&gt;Click on the “Billing” option on the left-hand side of your screen.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; font-size: 14px; font-family: sans-serif;&quot;&gt;Scroll down to the “Credit Card” section on the billing page to review and/or update your card information.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;If you have any questions, believe you received this in error, or need help navigating the EverQuote Pro platform, I’m happy to help! Just reply directly to this email or book time with me directly using the link below.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px;&quot;&gt;Best regards,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px;&quot;&gt;{!Formula_EmailBody_Signer}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px;&quot;&gt;{!Formula_EmailBody_CalendarLink}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Body of email sent if Subject is &quot;Increase Cap - High Fill Rate Area&quot;</description>
+        <name>TextTemplate_EmailBody_IncreaseCap</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Hello {!$Record.Contact.FirstName},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;We’re currently seeing increased shopper activity in one or more of your targeted zip-codes. That means additional lead volume is available for your EverQuote account.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;If you’re looking to drive new policy growth, this is an opportunity to capture more consumer demand in areas where you’re already writing business.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;To access this additional lead volume, you can:&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px; background-color: transparent;&quot;&gt;Adjust your volume caps under your campaign settings in your EverQuote account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px; background-color: transparent;&quot;&gt;Reply to this email or schedule time with me directly below so we can review your current caps, budget and growth goals.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;We’ll continue to monitor activity in your geographies and notify you when any additional opportunities arise.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px;&quot;&gt;{!Formula_EmailBody_Signer}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 14px;&quot;&gt;{!Formula_EmailBody_CalendarLink}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Stores the email body that will actually be sent. Assigned the appropriate text template based on Case Subject and Account Type/Support Rep</description>
+        <name>Variable_EmailBody_Final</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Variable_EmailSubject_Final</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the name of the flow component where the flow fails, if it fails.</description>
+        <name>Variable_FailingFlowComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

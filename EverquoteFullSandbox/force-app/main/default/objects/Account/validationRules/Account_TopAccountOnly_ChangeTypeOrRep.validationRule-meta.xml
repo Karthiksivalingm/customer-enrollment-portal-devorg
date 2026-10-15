@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_TopAccountOnly_ChangeTypeOrRep</fullName>
+    <active>true</active>
+    <description>If a user tries to change the Record Type, Type, or Rep on an Account that is a child in an account hierarchy, they will be prompted to update the top account to make a change.</description>
+    <errorConditionFormula>/* If the BypassAcountValidation checbox wasn&apos;t changed and this Account is not the top parent account in the hierarchy and the record type, type or support rep was changed, show error*/
+
+AND(
+    NOT( ISCHANGED( BypassAccountValidation__c )),
+    NOT( ISBLANK( ParentId )),
+    OR(
+        ISCHANGED( RecordTypeId ),
+        ISCHANGED( Type ),
+        ISCHANGED(  Support_Rep__c )
+    )
+)</errorConditionFormula>
+    <errorMessage>Record Type, Type, or Support Rep must match the Top Account in the hierarchy, please update the Account at the top of the Account Hierarchy rather than this child account.</errorMessage>
+</ValidationRule>

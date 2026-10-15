@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Notify_Twilio_Support_Contacts_of_new_ticket</name>
+        <label>File_a_Ticket__c.Notify_Twilio_Support_Contacts_of_new_ticket</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>File_a_Ticket__c.Notify_Twilio_Support_Contacts_of_new_ticket</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>File_a_Ticket__c.Notify_Twilio_Support_Contacts_of_new_ticket</nameSegment>
+    </actionCalls>
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: ODA Notify Twilio Support Users workflow rule
+Workflow rule description: Notifies the Twilio or Other Support Users when a new ticket is created or Category is edited.&quot;</description>
+    <label>ODA Notify Twilio Support Users</label>
+    <migratedFromWorkflowRuleName>ODA Notify Twilio Support Users</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Notify_Twilio_Support_Contacts_of_new_ticket</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>(1 OR 2)</filterLogic>
+        <filters>
+            <field>Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Twilio issue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Other issue</stringValue>
+            </value>
+        </filters>
+        <object>File_a_Ticket__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
