@@ -1,0 +1,94 @@
+{
+  "project": "Arizona",
+  "repository": "https://github.com/sfdcut/SFDC.git",
+  "projectFolder": "Arizona/",
+  "org": {
+    "alias": "Arizona",
+    "orgName": "Azlionhearts",
+    "orgId": "00DWH000005wW9V2AU",
+    "username": "sandipp@unitedtechno.com.az.arizonalh",
+    "instanceUrl": "https://azlionhearts--arizonalh.sandbox.my.salesforce.com",
+    "isSandbox": true,
+    "edition": "Enterprise Edition",
+    "verified": "2026-10-15"
+  },
+  "forbiddenAliases": [
+    "PROD"
+  ],
+  "scope": {
+    "includeAllUnmanaged": [
+      "ApexClass",
+      "ApexTrigger",
+      "ApexPage",
+      "ApexComponent",
+      "LightningComponentBundle",
+      "AuraDefinitionBundle",
+      "StaticResource",
+      "Flow",
+      "CustomMetadata",
+      "GlobalValueSet",
+      "FlexiPage",
+      "CustomTab",
+      "CustomApplication",
+      "PermissionSet",
+      "CustomPermission",
+      "NamedCredential",
+      "ExternalCredential",
+      "RemoteSiteSetting",
+      "CspTrustedSite",
+      "ConnectedApp",
+      "Workflow",
+      "AssignmentRules",
+      "AutoResponseRules",
+      "EscalationRules",
+      "DuplicateRule",
+      "MatchingRule",
+      "PlatformEventChannel",
+      "Queue",
+      "ReportType",
+      "EmailTemplate",
+      "Network",
+      "CustomSite",
+      "ExperienceBundle",
+      "DigitalExperienceBundle"
+    ],
+    "customObjectSuffixes": [
+      "__c",
+      "__mdt",
+      "__e",
+      "__kav"
+    ],
+    "standardObjectsWithCustomFields": [
+      "Account",
+      "Contact",
+      "Lead",
+      "Case",
+      "Opportunity",
+      "Activity"
+    ],
+    "extraCustomFieldsOnManagedObjects": [
+      "pandadoc__PandaDocDocument__c"
+    ],
+    "objectScopedTypes": [
+      "Layout",
+      "QuickAction",
+      "SharingRules"
+    ],
+    "excludedReportFolderPatterns": [
+      "^EinsteinBotReports",
+      "^EBotR_",
+      "^sfdw_"
+    ],
+    "excluded": {
+      "Profile": "Profiles are excluded from the baseline (same decision as the TVM project); permission sets are retrieved.",
+      "AuthProvider": "12 auth providers are platform-generated for Data Cloud / ad / web connectors, not project configuration.",
+      "Data Cloud objects": "__dll, __dlm, __hd and ssot__ objects are system-generated Data 360 objects.",
+      "Managed packages": "Components with a namespace prefix belong to installed packages.",
+      "CustomLabels": "Only two unmanaged labels exist (PandaDoc_API_Key, PandaDoc_Webhook_Key); both are named as credentials and are not retrieved.",
+      "DigitalExperienceBundle marketing/*": "CMS content workspaces are content, not site configuration."
+    },
+    "digitalExperienceBundlePrefixes": [
+      "site/"
+    ]
+  }
+}

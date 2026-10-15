@@ -1,0 +1,300 @@
+<template>
+    <lightning-card icon-name="standard:file">
+    <div slot="title" class="card-title-slot">
+        <div class="progress-ring-header">
+            <div class="title-with-count">
+                <h1 class="card-main-title">Certificate and Documents</h1>
+                <span class="form-count-text">{formCountLabel}</span>
+            </div>
+            <div class="progress-ring-container">
+                <svg class="progress-ring-svg" viewBox="0 0 120 120">
+                    <defs>
+        <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00c9a7" />
+            <stop offset="50%" stop-color="#2e844a" />
+            <stop offset="100%" stop-color="#0070d2" />
+        </linearGradient>
+    </defs>
+                    <circle class="progress-ring-background" cx="60" cy="60" r="54"></circle>
+                    <circle class="progress-ring-circle" cx="60" cy="60" r="54" style={progressRingStyle}></circle>
+                </svg>
+                <div class="progress-text">
+                    <span class="percentage">{completionPercentage}%</span>
+                    <span class="label">Complete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <template if:true={isLoading}>
+            <div class="slds-p-around_medium slds-align_absolute-center">
+                <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={errorMessage}>
+            <div class="slds-p-around_medium slds-text-color_error">
+                {errorMessage}
+            </div>
+        </template>
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={hasAutoRows}>
+                <div class="section-heading section-heading_basic">{basicDocumentsHeading}</div>
+                <template for:each={autoRows} for:item="doc">
+                    <div key={doc.fieldApiName} class={doc.rowClass}>
+                        <!-- CHANGED: the name column is now a stacked block -
+                             label on top, attached file underneath, matching
+                             the Forms tab. The file link and its delete "X"
+                             moved here out of .document-action below. -->
+                        <div class="document-name">
+                            <span class="document-name-text">{doc.label}</span>
+                            <template if:true={doc.hasFile}>
+                                <div class="uploaded-files">
+                                    <div class="file-link-row">
+                                        <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                        <template if:true={doc.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Remove file"
+                                                data-docid={doc.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <div class={doc.dropdownWrapClass}>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                label="Status"
+                                value={doc.status}
+                                options={doc.statusOptions}
+                                disabled={doc.isCompleted}
+                                data-field={doc.fieldApiName}
+                                onchange={handleStatusChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div class="document-action">
+                            <template if:false={doc.hasFile}>
+                                <!-- CHANGED: was if:false={doc.isCompleted}. canUpload is
+                                     false for Completed (same as before) and now also for
+                                     "Not Needed", which hides the Upload button. -->
+                                <template if:true={doc.canUpload}>
+                                    <lightning-button
+                                        label={doc.uploadLabel}
+                                        variant="brand"
+                                        class="upload-button"
+                                        data-field={doc.fieldApiName}
+                                        onclick={handleUploadButtonClick}>
+                                    </lightning-button>
+                                </template>
+                                <!-- NEW: explains why there's no button on this row. -->
+                                <template if:true={doc.isNotNeeded}>
+                                    <span class="not-needed-note">Not required</span>
+                                </template>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template if:true={hasCertificationRows}>
+                <div class="section-heading section-heading_certification slds-p-top_medium">Certification Status</div>
+                <template for:each={certificationRows} for:item="doc">
+                    <div key={doc.fieldApiName} class={doc.rowClass}>
+                        <!-- CHANGED: file now sits under the name. -->
+                        <div class="document-name">
+                            <span class="document-name-text">{doc.label}</span>
+                            <template if:true={doc.hasFile}>
+                                <div class="uploaded-files">
+                                    <div class="file-link-row">
+                                        <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                        <template if:true={doc.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Remove file"
+                                                data-docid={doc.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <div class={doc.dropdownWrapClass}>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                label="Status"
+                                value={doc.status}
+                                options={doc.statusOptions}
+                                disabled={doc.isCompleted}
+                                data-field={doc.fieldApiName}
+                                onchange={handleStatusChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div class="document-action">
+                            <template if:false={doc.hasFile}>
+                                <!-- CHANGED: was if:false={doc.isCompleted}. -->
+                                <template if:true={doc.canUpload}>
+                                    <lightning-button
+                                        label={doc.uploadLabel}
+                                        variant="brand"
+                                        class="upload-button"
+                                        data-field={doc.fieldApiName}
+                                        onclick={handleUploadButtonClick}>
+                                    </lightning-button>
+                                </template>
+                                <!-- NEW -->
+                                <template if:true={doc.isNotNeeded}>
+                                    <span class="not-needed-note">Not required</span>
+                                </template>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template if:true={hasDriverRows}>
+                <div class="section-heading section-heading_driver slds-p-top_medium">{driverDocumentsHeading}</div>
+                <template for:each={driverRows} for:item="doc">
+                    <div key={doc.fieldApiName} class={doc.rowClass}>
+                        <!-- CHANGED: file now sits under the name. -->
+                        <div class="document-name">
+                            <span class="document-name-text">{doc.label}</span>
+                            <template if:true={doc.hasFile}>
+                                <div class="uploaded-files">
+                                    <div class="file-link-row">
+                                        <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                        <template if:true={doc.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Remove file"
+                                                data-docid={doc.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <div class={doc.dropdownWrapClass}>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                label="Status"
+                                value={doc.status}
+                                options={doc.statusOptions}
+                                disabled={doc.isCompleted}
+                                data-field={doc.fieldApiName}
+                                onchange={handleStatusChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div class="document-action">
+                            <template if:false={doc.hasFile}>
+                                <!-- CHANGED: was if:false={doc.isCompleted}. -->
+                                <template if:true={doc.canUpload}>
+                                    <lightning-button
+                                        label={doc.uploadLabel}
+                                        variant="brand"
+                                        class="upload-button"
+                                        data-field={doc.fieldApiName}
+                                        onclick={handleUploadButtonClick}>
+                                    </lightning-button>
+                                </template>
+                                <!-- NEW -->
+                                <template if:true={doc.isNotNeeded}>
+                                    <span class="not-needed-note">Not required</span>
+                                </template>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template if:true={hasServiceRows}>
+                <div class="section-heading section-heading_service slds-p-top_medium">{serviceSectionHeading}</div>
+                <template for:each={serviceRows} for:item="doc">
+                    <div key={doc.fieldApiName} class={doc.rowClass}>
+                        <!-- CHANGED: file now sits under the name. -->
+                        <div class="document-name">
+                            <span class="document-name-text">{doc.label}</span>
+                            <template if:true={doc.hasFile}>
+                                <div class="uploaded-files">
+                                    <div class="file-link-row">
+                                        <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                        <template if:true={doc.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Remove file"
+                                                data-docid={doc.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <div class={doc.dropdownWrapClass}>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                label="Status"
+                                value={doc.status}
+                                options={doc.statusOptions}
+                                disabled={doc.isCompleted}
+                                data-field={doc.fieldApiName}
+                                onchange={handleStatusChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div class="document-action">
+                            <template if:false={doc.hasFile}>
+                                <!-- CHANGED: was if:false={doc.isCompleted}. -->
+                                <template if:true={doc.canUpload}>
+                                    <lightning-button
+                                        label={doc.uploadLabel}
+                                        variant="brand"
+                                        class="upload-button"
+                                        data-field={doc.fieldApiName}
+                                        onclick={handleUploadButtonClick}>
+                                    </lightning-button>
+                                </template>
+                                <!-- NEW -->
+                                <template if:true={doc.isNotNeeded}>
+                                    <span class="not-needed-note">Not required</span>
+                                </template>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+        </div>
+
+        <!-- Single hidden native file input, reused for every row. Which
+             field it's uploading for is tracked in JS via
+             pendingFieldApiName, set right before this input is clicked. -->
+        <input type="file" class="hidden-file-input" onchange={handleFileSelected} accept=".pdf,.png,.jpg,.jpeg" />
+
+    </lightning-card>
+</template>

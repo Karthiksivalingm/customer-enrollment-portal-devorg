@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Article 9 Certificate Expiration Reminder - Arizona Lionhearts</name>
+    <style>none</style>
+    <subject>Certificatin Expiration Remainder</subject>
+    <textOnly>Document Expiration Reminder - Arizona Lionhearts
+
+Hi {!Contact.Name}
+
+This is a friendly reminder from Arizona Lionhearts that one of your required documents is coming up for renewal.
+
+Document / Certification  {{Recipient.Expiring_Document_Name__c}}
+Expiration Date  {!Contact.Article_9_Expiration_Date__c}
+Status  Expires in approximately 2 months
+
+To stay compliant and avoid any interruption to your services with Arizona Lionhearts, please renew this document and upload the updated copy through your portal as soon as possible.
+
+What to do next:
+
+Renew or complete the document listed above
+Log in to your Arizona Lionhearts portal
+Upload the updated document under Documents and Certifications
+
+Upload Renewed Document
+
+If you have questions about this requirement or need help uploading your document, our team is here to help.
+
+Warm regards,
+Arizona Lionhearts Team
+
+Contact Us - Call at 480-253-9360 or Text at 480-253-9377
+
+Manage Preferences | Unsubscribe
+
+© 2025 Arizona Lionhearts. All rights reserved.
+
+This is an automated message. Please do not reply.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

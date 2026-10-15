@@ -1,0 +1,384 @@
+.account-documents {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 0;
+    overflow: visible !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== DOCUMENT CARD ===== */
+
+.document-card {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    background: #ffffff;
+    overflow: visible !important;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative;
+    z-index: 1;
+    min-height: auto;
+}
+
+/* While a row's dropdown is open (input inside has focus), lift the
+   whole card above sibling cards - otherwise a later row in the DOM
+   (e.g. PCSP) paints over the open option list of an earlier row
+   (e.g. Authorizations) since both share the same base z-index. */
+.document-card:focus-within {
+    z-index: 10;
+}
+
+/* ===== DOCUMENT ROW (Main Controls) ===== */
+
+.document-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: none;
+    background: #ffffff;
+    min-height: 50px;
+    flex-wrap: nowrap;
+    overflow: visible !important;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0px;
+}
+
+/* Document Name Section - LEFT */
+.document-name-section {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.document-name {
+    font-size: 0.95rem;
+    color: #181818;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== STATUS DROPDOWN - MIDDLE ===== */
+
+.status-dropdown-wrap {
+    flex: 0 0 auto;
+    width: 140px;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.status-dropdown-wrap_completed {
+    background: #dff0e5;
+}
+
+.status-dropdown-wrap_pending {
+    background: #fff5da;
+}
+
+.status-dropdown-wrap_rejected,
+.status-dropdown-wrap_expired {
+    background: #fde3e1;
+}
+
+.status-dropdown-wrap_not-started {
+    background: #ecebea;
+}
+
+/* ===== UPLOAD BUTTON - RIGHT ===== */
+
+.document-action {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.upload-button {
+    --slds-c-button-brand-color-background: #0b6e4f;
+    --slds-c-button-brand-color-background-hover: #095a40;
+    --slds-c-button-brand-color-border: #0b6e4f;
+    white-space: nowrap;
+}
+
+.upload-button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== UPLOADED FILES SECTION ===== */
+
+.uploaded-files-section {
+    background: #f9f9f9;
+    border-top: 1px solid #e8e8e8;
+    padding: 12px 16px;
+    display: block;
+}
+
+.uploaded-files-section_completed {
+    background: #f5f5f5;
+    opacity: 0.6;
+}
+
+.uploaded-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* File Item */
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #e3e5e7;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.file-item:hover {
+    background: #f0f8ff;
+    border-color: #0176d3;
+    box-shadow: 0 1px 3px rgba(1, 118, 211, 0.1);
+}
+
+.file-item_greyed-out {
+    background: #e8e8e8;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+.file-item_greyed-out:hover {
+    background: #e8e8e8;
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+/* File Icon */
+.file-icon {
+    color: #0176d3;
+    flex-shrink: 0;
+}
+
+.file-item_greyed-out .file-icon {
+    color: #999;
+}
+
+/* File Link */
+.uploaded-file-link {
+    flex: 1;
+    color: #0176d3;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    word-break: break-word;
+    min-width: 0;
+    cursor: pointer;
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.uploaded-file-link:hover {
+    text-decoration: underline;
+    color: #0a5cb5;
+}
+
+.uploaded-file-link:focus {
+    outline: 2px solid #0176d3;
+    outline-offset: 2px;
+}
+
+.uploaded-file-link_disabled {
+    color: #999;
+    cursor: not-allowed;
+    font-weight: 400;
+}
+
+.uploaded-file-link_disabled:hover {
+    text-decoration: none;
+    color: #999;
+}
+
+.uploaded-file-link_disabled:focus {
+    outline: none;
+}
+
+/* Delete File Button */
+.delete-file-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ba0517;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.delete-file-button:hover {
+    background: #fde3e1;
+    box-shadow: 0 1px 3px rgba(186, 5, 23, 0.15);
+}
+
+.delete-file-button:active {
+    background: #fcbab5;
+    transform: scale(0.95);
+}
+
+/* Section Heading */
+.section-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: #032d60;
+    padding: 12px 14px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+/* Hidden File Input */
+.hidden-file-input {
+    display: none;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1200px) {
+    .document-row {
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .document-name {
+        font-size: 0.9rem;
+    }
+
+    .status-dropdown-wrap {
+        flex: 0 0 140px;
+        width: 140px;
+    }
+
+    .upload-button {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .document-row {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 12px;
+        min-height: auto;
+        align-items: stretch;
+    }
+
+    .document-name-section {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+
+    .document-name {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .status-dropdown-wrap {
+        flex: 0 1 45%;
+        width: auto;
+        min-width: 120px;
+    }
+
+    .document-action {
+        flex: 0 1 45%;
+        margin-left: 0;
+        justify-content: flex-end;
+    }
+
+    .upload-button {
+        font-size: 0.8rem;
+        width: auto;
+    }
+
+    .uploaded-files-section {
+        padding: 10px 12px;
+    }
+
+    .file-item {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .uploaded-file-link {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-documents {
+        padding: 0;
+    }
+
+    .section-heading {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .document-card {
+        margin-bottom: 8px;
+        border-radius: 2px;
+    }
+
+    .document-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .document-name-section {
+        flex: none;
+    }
+
+    .status-dropdown-wrap {
+        flex: 1;
+        width: 100%;
+        min-width: auto;
+    }
+
+    .document-action {
+        flex: 1;
+        width: 100%;
+        margin-left: 0;
+        justify-content: stretch;
+    }
+
+    .upload-button {
+        width: 100%;
+    }
+
+    .uploaded-files-section {
+        padding: 8px 10px;
+    }
+
+    .file-item {
+        padding: 6px 8px;
+        gap: 6px;
+    }
+}

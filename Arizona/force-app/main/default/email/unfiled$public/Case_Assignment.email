@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Case Assignment</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 0;">
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 20px;">
+        <tr>
+            <td align="center">
+                
+                <!-- Main Container -->
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+                    
+                    <!-- Header Section -->
+                    <tr>
+                        <td align="center" style="padding: 20px; background-color: rgb(33, 25, 79);">
+                            
+                           <img src="https://azlionhearts--arizonalh--c.sandbox.vf.force.com/resource/1775804826000/ArizonaLogo?" 
+         alt="Arizona Lionhearts Logo"
+         style="width:100%; max-width:500px; margin-top:10px; border-radius:8px;">
+
+                        </td>
+                    </tr>
+
+                    <!-- Content Section -->
+                    <tr>
+                        <td style="padding: 25px; color: #333333;">
+                            
+                            <p style="margin-bottom:15px;">Hi {!User.FirstName},</p>
+
+                            <p style="margin-bottom:20px;">A new case has been assigned to you.</p>
+
+                            <!-- Case Details -->
+                            <table cellpadding="6" cellspacing="0" border="0" width="100%" 
+                                   style="background-color: #ffffff; border-radius: 6px;">
+
+                                <tr>
+                                    <td style="font-weight:bold; width:180px; white-space:nowrap;">Case Number :</td>
+                                    <td>{!Case.CaseNumber}</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-weight:bold; white-space:nowrap;">Subject :</td>
+                                    <td>{!Case.Subject}</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-weight:bold; white-space:nowrap;">Priority :</td>
+                                    <td>{!Case.Priority}</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-weight:bold; white-space:nowrap;">Status :</td>
+                                    <td>{!Case.Status}</td>
+                                </tr>
+
+                            </table>
+
+                            <!-- Description -->
+                            <table cellpadding="6" cellspacing="0" border="0" width="100%" style="margin-top:15px;">
+                                <tr>
+                                    <td style="font-weight:bold; width:180px; vertical-align:top;">Description :</td>
+                                    <td style="line-height:1.6;">{!Case.Description}</td>
+                                </tr>
+                            </table>
+
+                            <p style="margin-top:20px;">Please review and take necessary action.</p>
+
+                            <p style="margin-top:20px;">
+                                Thanks,<br/>
+                                Support Team
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer Section -->
+                    <tr>
+                        <td style="padding: 15px; background-color: #f1f1f1; font-size: 12px; color: #555555; text-align: center;">
+                            
+                            <p style="margin: 5px 0;">
+                                Contact Us - Call at <strong>480-253-9360</strong> or Text at <strong>480-253-9377</strong>
+                            </p>
+
+                            <p style="margin: 5px 0; color: #888888;">
+                                This is an automated message. Please do not reply to this email.
+                            </p>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

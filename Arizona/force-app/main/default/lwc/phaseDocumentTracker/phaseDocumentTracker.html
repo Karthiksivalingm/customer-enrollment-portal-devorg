@@ -1,0 +1,653 @@
+<template>
+    <lightning-card title={cardTitle} icon-name="standard:task">
+        <div slot="actions">
+            <lightning-button-icon
+                icon-name="utility:refresh"
+                variant="border-filled"
+                alternative-text="Refresh status"
+                title="Refresh status"
+                onclick={handleRefreshClick}>
+            </lightning-button-icon>
+        </div>
+
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-p-around_medium slds-align_absolute-center">
+                <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error Message -->
+        <template if:true={errorMessage}>
+            <div class="slds-p-around_medium">
+                <div class="slds-text-color_error">{errorMessage}</div>
+            </div>
+        </template>
+
+        <!-- Main Content Area -->
+        <template if:true={tabs.length}>
+            <div class="slds-p-around_medium">
+
+                <!-- Phase Progress Bar -->
+                <div class="phase-bar" role="tablist">
+                    <template for:each={displayTabs} for:item="tab">
+                        <button
+                            key={tab.key}
+                            class={tab.segmentClass}
+                            data-phase={tab.phaseName}
+                            onclick={handleTabClick}
+                            role="tab"
+                            aria-selected={tab.isActive}>
+                            <span class="phase-text">{tab.phaseName}</span>
+                            <template if:true={tab.isCompleted}>
+                                <span class="phase-checkmark">&#10003;</span>
+                            </template>
+                        </button>
+                    </template>
+                </div>
+
+                <!-- Based Forms: document set varies per Division
+                     (Member / Parent Provider / Provider / Tutor),
+                     language read automatically from the Contact.
+
+                     Each row now also carries an Upload button, and shows
+                     the uploaded file name once something has been stored
+                     against that form's label. -->
+                <template if:true={showBasedFormsSection}>
+                    <div class="based-forms-section">
+                        <div class="section-heading">Based Forms</div>
+                        <template for:each={basedFormsDocuments} for:item="doc">
+                            <div key={doc.key} class={doc.rowClass}>
+                                <div class="document-name">{doc.label}</div>
+                                <div class="status-dropdown-wrap">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Status"
+                                        value={doc.status}
+                                        options={statusOptions}
+                                        disabled>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="document-action">
+                                    <!-- Latest file for this form -->
+                                    <template if:true={doc.hasFile}>
+                                        <a href="javascript:void(0);"
+                                           data-docid={doc.contentDocumentId}
+                                           onclick={handleFileClick}
+                                           class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file"
+                                                            size="xx-small"
+                                                            class="slds-m-right_xx-small">
+                                            </lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                    </template>
+
+                                    <!-- Opens the PandaDoc link in a new tab.
+                                         Hidden once the form is Completed. -->
+                                    <template if:true={doc.canSend}>
+                                        <lightning-button
+                                            label={doc.buttonLabel}
+                                            variant={doc.buttonVariant}
+                                            data-label={doc.label}
+                                            data-template={doc.tsTemplate}
+                                            onclick={handleBasedFormReviewClick}
+                                            class="view-button">
+                                        </lightning-button>
+                                    </template>
+
+                                    <!-- Appears once the form has been sent,
+                                         and again for the owner's final copy -->
+                                    <template if:true={doc.canUpload}>
+                                        <lightning-button
+                                            label={doc.uploadLabel}
+                                            variant="brand"
+                                            class="upload-button"
+                                            data-label={doc.label}
+                                            data-action={doc.nextAction}
+                                            onclick={handleBasedFormUploadClick}>
+                                        </lightning-button>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Documents and Certifications: split into
+                     Certification Status (always, for Member division)
+                     and Driver Documents (only when Driving_Status__c
+                     indicates a driver). Each row shows the live status
+                     picklist value from Contact and, unless a file has
+                     already been uploaded, an upload control that
+                     attaches a file straight to the Contact and flips
+                     the status to Pending. Once uploaded, the row shows
+                     the file name as a clickable link instead - the "X"
+                     delete icon next to it only appears when canDelete
+                     is true (i.e. this file was uploaded from the
+                     portal, or is an untagged legacy file). -->
+                <template if:true={showDocsCertSection}>
+                    <div class="based-forms-section">
+
+                        <!-- Auto Documents - always shown for Member division -->
+                        <div class="section-heading">{uiText.autoDocumentsHeading}</div>
+                        <template for:each={autoDocumentRows} for:item="doc">
+                            <div key={doc.key} class={doc.rowClass}>
+                                <div class="document-name">{doc.label}</div>
+                                <div class="status-dropdown-wrap">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Status"
+                                        value={doc.status}
+                                        options={statusOptions}
+                                        disabled>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="document-action">
+                                    <template if:true={doc.hasFile}>
+                                        <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                        <template if:true={doc.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Remove file"
+                                                data-docid={doc.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                            </button>
+                                        </template>
+                                    </template>
+                                    <template if:false={doc.hasFile}>
+                                        <template if:false={doc.isCompleted}>
+                                            <lightning-button
+                                                label={doc.uploadLabel}
+                                                variant="brand"
+                                                class="upload-button"
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleUploadButtonClick}>
+                                            </lightning-button>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+
+                        <!-- Certifications -->
+                        <div class="section-heading">{uiText.certificationHeading}</div>
+                        <template for:each={certificationRows} for:item="doc">
+                            <div key={doc.key} class={doc.rowClass}>
+                                <div class="document-name">{doc.label}</div>
+                                <div class="status-dropdown-wrap">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Status"
+                                        value={doc.status}
+                                        options={statusOptions}
+                                        disabled>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="document-action">
+                                    <template if:true={doc.hasFile}>
+                                        <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                        <template if:true={doc.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Remove file"
+                                                data-docid={doc.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                            </button>
+                                        </template>
+                                    </template>
+                                    <template if:false={doc.hasFile}>
+                                        <template if:false={doc.isCompleted}>
+                                            <lightning-button
+                                                label={doc.uploadLabel}
+                                                variant="brand"
+                                                class="upload-button"
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleUploadButtonClick}>
+                                            </lightning-button>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+
+                        <!-- Driver Documents - only when Driving_Status__c = Driver -->
+                        <template if:true={hasDriverDocumentRows}>
+                            <div class="section-heading">{uiText.driverHeading}</div>
+                            <template for:each={driverDocumentRows} for:item="doc">
+                                <div key={doc.key} class={doc.rowClass}>
+                                    <div class="document-name">{doc.label}</div>
+                                    <div class="status-dropdown-wrap">
+                                        <lightning-combobox
+                                            variant="label-hidden"
+                                            label="Status"
+                                            value={doc.status}
+                                            options={statusOptions}
+                                            disabled>
+                                        </lightning-combobox>
+                                    </div>
+                                    <div class="document-action">
+                                        <template if:true={doc.hasFile}>
+                                            <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                                <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                                {doc.fileName}
+                                            </a>
+                                            <template if:true={doc.canDelete}>
+                                                <button
+                                                    class="delete-file-button"
+                                                    title="Remove file"
+                                                    data-docid={doc.contentDocumentId}
+                                                    data-field={doc.fieldApiName}
+                                                    onclick={handleDeleteFile}>
+                                                    <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                                </button>
+                                            </template>
+                                        </template>
+                                        <template if:false={doc.hasFile}>
+                                            <template if:false={doc.isCompleted}>
+                                                <lightning-button
+                                                    label={doc.uploadLabel}
+                                                    variant="brand"
+                                                    class="upload-button"
+                                                    data-field={doc.fieldApiName}
+                                                    onclick={handleUploadButtonClick}>
+                                                </lightning-button>
+                                            </template>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+
+                        <!-- Driver Forms - only when Driving_Status__c = Driver.
+                             Review opens the PandaDoc link in a new tab. Once the
+                             form is Completed, the saved final PDF name is shown
+                             instead of the button. -->
+                        <template if:true={hasDriverFormRows}>
+                            <div class="section-heading">{uiText.driverFormsHeading}</div>
+                            <template for:each={driverFormRows} for:item="doc">
+                                <div key={doc.key} class={doc.rowClass}>
+                                    <div class="document-name">{doc.label}</div>
+                                    <div class="status-dropdown-wrap">
+                                        <lightning-combobox
+                                            variant="label-hidden"
+                                            label="Status"
+                                            value={doc.status}
+                                            options={statusOptions}
+                                            disabled>
+                                        </lightning-combobox>
+                                    </div>
+                                    <div class="document-action">
+                                        <!-- Saved final PDF, shown once PandaDoc completes -->
+                                        <template if:true={doc.hasFile}>
+                                            <a href="javascript:void(0);"
+                                               data-docid={doc.contentDocumentId}
+                                               onclick={handleFileClick}
+                                               class="uploaded-file-link">
+                                                <lightning-icon icon-name="utility:file"
+                                                                size="xx-small"
+                                                                class="slds-m-right_xx-small">
+                                                </lightning-icon>
+                                                {doc.fileName}
+                                            </a>
+                                        </template>
+
+                                        <!-- Hidden once the form is Completed -->
+                                        <template if:false={doc.isCompleted}>
+                                            <lightning-button
+                                                label={uiText.reviewAndComplete}
+                                                variant="brand"
+                                                data-label={doc.label}
+                                                data-page={doc.page}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleFormViewClick}
+                                                class="view-button">
+                                            </lightning-button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+
+                        <!-- Non-Driver Forms - only when Driving_Status__c is
+                             NOT Driver. Same pattern as Driver Forms. -->
+                        <template if:true={hasNonDriverFormRows}>
+                            <div class="section-heading">{uiText.nonDriverFormsHeading}</div>
+                            <template for:each={nonDriverFormRows} for:item="doc">
+                                <div key={doc.key} class={doc.rowClass}>
+                                    <div class="document-name">{doc.label}</div>
+                                    <div class="status-dropdown-wrap">
+                                        <lightning-combobox
+                                            variant="label-hidden"
+                                            label="Status"
+                                            value={doc.status}
+                                            options={statusOptions}
+                                            disabled>
+                                        </lightning-combobox>
+                                    </div>
+                                    <div class="document-action">
+                                        <template if:true={doc.hasFile}>
+                                            <a href="javascript:void(0);"
+                                               data-docid={doc.contentDocumentId}
+                                               onclick={handleFileClick}
+                                               class="uploaded-file-link">
+                                                <lightning-icon icon-name="utility:file"
+                                                                size="xx-small"
+                                                                class="slds-m-right_xx-small">
+                                                </lightning-icon>
+                                                {doc.fileName}
+                                            </a>
+                                        </template>
+
+                                        <template if:false={doc.isCompleted}>
+                                            <lightning-button
+                                                label={uiText.reviewAndComplete}
+                                                variant="brand"
+                                                data-label={doc.label}
+                                                data-page={doc.page}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleFormViewClick}
+                                                class="view-button">
+                                            </lightning-button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+
+                    </div>
+                </template>
+
+                <!-- Pay and Tax Forms: document set varies per
+                     Contract Type (1099 / W-4). Same upload + file-name
+                     treatment as Based Forms. -->
+                <template if:true={showPayTaxSection}>
+                    <div class="based-forms-section">
+                        <div class="section-heading">Pay and Tax Forms</div>
+                        <template for:each={payTaxDocuments} for:item="doc">
+                            <div key={doc.key} class={doc.rowClass}>
+                                <div class="document-name">{doc.label}</div>
+                                <div class="status-dropdown-wrap">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Status"
+                                        value={doc.status}
+                                        options={statusOptions}
+                                        disabled>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="document-action">
+                                    <!-- Latest file for this form -->
+                                    <template if:true={doc.hasFile}>
+                                        <a href="javascript:void(0);"
+                                           data-docid={doc.contentDocumentId}
+                                           onclick={handleFileClick}
+                                           class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file"
+                                                            size="xx-small"
+                                                            class="slds-m-right_xx-small">
+                                            </lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                    </template>
+
+                                    <!-- Opens the PandaDoc link in a new tab.
+                                         Hidden once the form is Completed. -->
+                                    <template if:true={doc.canSend}>
+                                        <lightning-button
+                                            label={doc.buttonLabel}
+                                            variant={doc.buttonVariant}
+                                            data-label={doc.label}
+                                            data-template={doc.tsTemplate}
+                                            onclick={handleBasedFormReviewClick}
+                                            class="view-button">
+                                        </lightning-button>
+                                    </template>
+
+                                    <!-- Appears once the form has been sent,
+                                         and again for the owner's final copy -->
+                                    <template if:true={doc.canUpload}>
+                                        <lightning-button
+                                            label={doc.uploadLabel}
+                                            variant="brand"
+                                            class="upload-button"
+                                            data-label={doc.label}
+                                            data-action={doc.nextAction}
+                                            onclick={handleBasedFormUploadClick}>
+                                        </lightning-button>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Live-In documents: shown alongside Service Forms
+                     when Living_Status__c = Live-In. Same upload + file-name
+                     treatment as Based Forms. -->
+                <template if:true={showLiveInSection}>
+                    <div class="based-forms-section">
+                        <div class="section-heading">Live-In Forms</div>
+                        <template for:each={liveInDocuments} for:item="doc">
+                            <div key={doc.key} class={doc.rowClass}>
+                                <div class="document-name">{doc.label}</div>
+                                <div class="status-dropdown-wrap">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Status"
+                                        value={doc.status}
+                                        options={statusOptions}
+                                        disabled>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="document-action">
+                                    <!-- Latest file for this form -->
+                                    <template if:true={doc.hasFile}>
+                                        <a href="javascript:void(0);"
+                                           data-docid={doc.contentDocumentId}
+                                           onclick={handleFileClick}
+                                           class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file"
+                                                            size="xx-small"
+                                                            class="slds-m-right_xx-small">
+                                            </lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                    </template>
+
+                                    <!-- Opens the PandaDoc link in a new tab.
+                                         Hidden once the form is Completed. -->
+                                    <template if:true={doc.canSend}>
+                                        <lightning-button
+                                            label={doc.buttonLabel}
+                                            variant={doc.buttonVariant}
+                                            data-label={doc.label}
+                                            data-template={doc.tsTemplate}
+                                            onclick={handleBasedFormReviewClick}
+                                            class="view-button">
+                                        </lightning-button>
+                                    </template>
+
+                                    <!-- Appears once the form has been sent,
+                                         and again for the owner's final copy -->
+                                    <template if:true={doc.canUpload}>
+                                        <lightning-button
+                                            label={doc.uploadLabel}
+                                            variant="brand"
+                                            class="upload-button"
+                                            data-label={doc.label}
+                                            data-action={doc.nextAction}
+                                            onclick={handleBasedFormUploadClick}>
+                                        </lightning-button>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Service Forms: status rows sourced from Contact
+                     fields per Service__c (ATC / HAH today; RSP pending
+                     field names). Same status-badge + upload pattern as
+                     Documents and Certifications above. Heading renamed
+                     dynamically to "Service ATC Certification" / "Service
+                     HAH Certification" based on service type. -->
+                <template if:true={showServiceFormsSection}>
+                    <div class="based-forms-section">
+                        <div class="section-heading">{serviceCertificationHeading}</div>
+                        <template for:each={serviceFormStatusRows} for:item="doc">
+                            <div key={doc.key} class={doc.rowClass}>
+                                <div class="document-name">{doc.label}</div>
+                                <div class="status-dropdown-wrap">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Status"
+                                        value={doc.status}
+                                        options={statusOptions}
+                                        disabled>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="document-action">
+                                    <template if:true={doc.hasFile}>
+                                        <a href="javascript:void(0);" data-docid={doc.contentDocumentId} onclick={handleFileClick} class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                        <template if:true={doc.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Remove file"
+                                                data-docid={doc.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon icon-name="utility:close" size="xx-small"></lightning-icon>
+                                            </button>
+                                        </template>
+                                    </template>
+                                    <template if:false={doc.hasFile}>
+                                        <template if:false={doc.isCompleted}>
+                                            <lightning-button
+                                                label={doc.uploadLabel}
+                                                variant="brand"
+                                                class="upload-button"
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleUploadButtonClick}>
+                                            </lightning-button>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Service Agreement Forms: ATC (Attendant Care Service
+                     Work Agreement + DCW Guidelines Acknowledgement), HAH
+                     (Habilitation Work Agreement), and RSP (Respite
+                     Provider Job Description + Respite Sleep Policy)
+                     work-agreement / policy forms, filtered by service
+                     type AND preferred language. Same Review / saved-file
+                     pattern as Driver Forms. -->
+                <template if:true={hasServiceAgreementFormRows}>
+                    <div class="based-forms-section">
+                        <div class="section-heading">{serviceAgreementFormsHeading}</div>
+                        <template for:each={serviceAgreementFormRows} for:item="doc">
+                            <div key={doc.key} class={doc.rowClass}>
+                                <div class="document-name">{doc.label}</div>
+                                <div class="status-dropdown-wrap">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Status"
+                                        value={doc.status}
+                                        options={statusOptions}
+                                        disabled>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="document-action">
+                                    <template if:true={doc.hasFile}>
+                                        <a href="javascript:void(0);"
+                                           data-docid={doc.contentDocumentId}
+                                           onclick={handleFileClick}
+                                           class="uploaded-file-link">
+                                            <lightning-icon icon-name="utility:file"
+                                                            size="xx-small"
+                                                            class="slds-m-right_xx-small">
+                                            </lightning-icon>
+                                            {doc.fileName}
+                                        </a>
+                                    </template>
+
+                                    <template if:false={doc.isCompleted}>
+                                        <lightning-button
+                                            label={uiText.reviewAndComplete}
+                                            variant="brand"
+                                            data-label={doc.label}
+                                            data-page={doc.page}
+                                            data-field={doc.fieldApiName}
+                                            onclick={handleFormViewClick}
+                                            class="view-button">
+                                        </lightning-button>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Not eligible message - shown for whichever special
+                     category tab is active when its gating condition
+                     isn't met. -->
+                <template if:true={showNotEligibleMessage}>
+                    <div class="based-forms-section">
+                        <div class="slds-text-color_weak slds-p-around_medium">
+                            {notEligibleMessage}
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Other Document Tabs Section (any phase tab that
+                     isn't one of the four special categories above) -->
+                <template if:true={isOtherDocumentTab}>
+                    <template if:true={activeTabHasAction}>
+                        <div class="action-row">
+                            <lightning-button
+                                label={activeTabButtonLabel}
+                                variant="brand"
+                                onclick={handleViewClick}
+                                class="view-button">
+                            </lightning-button>
+                        </div>
+                    </template>
+
+                    <template if:true={activeTabIsNotApplicable}>
+                        <div class="slds-text-color_weak slds-p-top_small">
+                            No document is required for this phase.
+                        </div>
+                    </template>
+                </template>
+
+            </div>
+        </template>
+
+        <!-- Single hidden native file input, reused for every row. Which
+             row it's uploading for is tracked in JS via pendingUploadKind
+             plus either pendingFieldApiName (status rows) or
+             pendingFormLabel (Based Forms rows), set right before this
+             input is clicked. -->
+        <input type="file"
+               class="hidden-file-input"
+               onchange={handleFileSelected}
+               accept=".pdf,.png,.jpg,.jpeg,.doc,.docx" />
+
+    </lightning-card>
+</template>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Remainder before 2 weeks</name>
+    <style>none</style>
+    <subject>Updated to &quot;Certification Expiring Soon&quot;</subject>
+    <textOnly>Certification Expiring Soon – Arizona Lionhearts
+
+Hi {{Recipient.FirstName}},
+
+This is a friendly reminder that your certification with Arizona Lionhearts is expiring within the next 2 weeks.
+
+To continue participating in our programs and services without interruption, please take action to renew your certification as soon as possible.
+
+⚠ Certification Expiry Notice
+
+Your certification is due to expire within 2 weeks
+Expired certifications may affect your program eligibility
+Renewal is quick and easy — don&apos;t wait until the last day
+
+How to renew your certification:
+
+Log in to your Arizona Lionhearts account
+Navigate to My Certifications
+Follow the renewal steps and submit your documents
+Contact us if you need assistance with the process
+
+Don&apos;t let your certification lapse — renew today to stay connected with our community!
+
+Renew My Certification
+
+If you have already completed your renewal or believe you received this message in error, please disregard this email or contact us and we&apos;ll be happy to assist.
+
+Warm regards,
+Arizona Lionhearts Team
+
+Contact Us - Call at 480-253-9360 or Text at 480-253-9377
+
+Manage Preferences | Unsubscribe
+
+© 2025 Arizona Lionhearts. All rights reserved.
+
+This is an automated message. Please do not reply.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

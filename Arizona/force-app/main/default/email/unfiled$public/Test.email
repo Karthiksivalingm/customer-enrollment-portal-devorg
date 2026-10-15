@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8" />
+  <title>Document Expiration Reminder - Arizona Lionhearts</title>
+ </head>
+ <body style="margin: 0; padding: 0; background-color: #f4f6f9; font-family: Arial, sans-serif">
+  <table bgcolor="#f4f6f9" border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tbody>
+    <tr>
+     <td align="center" style="padding: 20px">
+      <table border="0" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 8px" width="600">
+       <!-- HEADER -->
+       <tbody>
+        <tr>
+         <td align="center" style="background-color: #21194f; padding: 20px">
+          <img
+           alt="Arizona Lionhearts Logo"
+           src="https://storage.pardot.com/1126833/1781259488F0jGv9HY/Arizona_logo.png"
+           style="display: block; width: 100%; max-width: 480px; height: auto; border: 0"
+           width="480"
+          />
+         </td>
+        </tr>
+
+        <!-- BODY -->
+        <tr>
+         <td style="padding: 25px; color: #333333; font-size: 15px; line-height: 1.6">
+          <h2 style="margin-top: 0">Hi {!Contact.Name}</h2>
+
+          <p>
+           This is a friendly reminder from <strong>Arizona Lionhearts</strong> that one of your required documents is
+           coming up for renewal.
+          </p>
+
+          <table
+           border="0"
+           cellpadding="15"
+           cellspacing="0"
+           style="background: #fff8e6; border: 1px solid #ffce7a; border-radius: 6px"
+           width="100%"
+          >
+           <tbody>
+            <tr>
+             <td>
+              <table border="0" cellpadding="4" cellspacing="0" width="100%">
+               <tbody>
+                <tr>
+                 <td style="color: #555555; width: 45%">Document / Certification</td>
+                 <td style="font-weight: bold; color: #21194f">DDD-EVV Member Contingency Back-Up Plan</td>
+                </tr>
+                <tr>
+                 <td style="color: #555555">Expiration Date</td>
+                 <td style="font-weight: bold; color: #21194f">
+                  {!Contact.DDD_EVV_Member_Contingency_Back_Up_For__c}}
+                 </td>
+                </tr>
+                <tr>
+                 <td style="color: #555555">Status</td>
+                 <td style="font-weight: bold; color: #c25400">
+                  {!Contact.DDD_EVV_Member_Contingency_Back_Up_Plan__c}
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+
+          <p style="margin-top: 20px">
+           To stay compliant and avoid any interruption to your services with Arizona Lionhearts, please renew this
+           document and upload the updated copy through your portal as soon as possible.
+          </p>
+
+          <table border="0" cellpadding="15" cellspacing="0" style="background: #f9fafc" width="100%">
+           <tbody>
+            <tr>
+             <td>
+              <strong>What to do next:</strong>
+              <ul style="padding-left: 20px; margin: 10px 0">
+               <li>Renew or complete the document listed above</li>
+               <li>Log in to your Arizona Lionhearts portal</li>
+               <li>Upload the updated document under Documents and Certifications</li>
+              </ul>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+
+          <table align="center" border="0" cellpadding="0" cellspacing="0" style="margin-top: 10px">
+           <tbody>
+            <tr>
+             <td bgcolor="#ff6b00" style="padding: 12px 24px; border-radius: 5px">
+              <a href="https://azlionhearts.com/" style="color: #ffffff; text-decoration: none; font-weight: bold"
+               >Upload Renewed Document</a
+              >
+             </td>
+            </tr>
+           </tbody>
+          </table>
+
+          <p style="margin-top: 20px">
+           If you have questions about this requirement or need help uploading your document, our team is here to help.
+          </p>
+
+          <p>
+           Warm regards,<br />
+           <strong>Arizona Lionhearts Team</strong>
+          </p>
+         </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+         <td align="center" style="background: #f1f1f1; padding: 15px; font-size: 12px; color: #555">
+          <p style="margin: 5px 0">
+           Contact Us - Call at <strong>480-253-9360</strong> or Text at
+           <strong>480-253-9377</strong>
+          </p>
+          <p style="margin: 5px 0">
+           <a href="{{EmailPreferenceCenter}}" style="color: #555; text-decoration: none">Manage Preferences</a>
+           |
+           <a href="{{Unsubscribe}}" style="color: #555; text-decoration: none">Unsubscribe</a>
+          </p>
+          <p style="margin: 5px 0; color: #888">© 2025 Arizona Lionhearts. All rights reserved.</p>
+          <p style="margin: 5px 0; color: #888">This is an automated message. Please do not reply.</p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

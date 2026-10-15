@@ -1,0 +1,31 @@
+# Arizona: local Salesforce CLI state and auth (never commit)
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+**/lwc/jsconfig.json
+.eslintcache
+coverage/
+node_modules/
+
+# Claude Code: personal settings and local working state stay local
+.claude/settings.local.json
+.arizona-state/
+
+# Logs and OS files
+*.log
+logs/
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+
+# Secrets and keys
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+*.crt
+authUrl*.txt
+*sfdxAuthUrl*

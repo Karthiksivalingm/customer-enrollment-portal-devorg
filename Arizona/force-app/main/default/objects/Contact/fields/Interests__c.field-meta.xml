@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interests__c</fullName>
+    <label>Interests</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HAH</fullName>
+                <default>false</default>
+                <label>HAH</label>
+            </value>
+            <value>
+                <fullName>ATC</fullName>
+                <default>false</default>
+                <label>ATC</label>
+            </value>
+            <value>
+                <fullName>RSP</fullName>
+                <default>false</default>
+                <label>RSP</label>
+            </value>
+            <value>
+                <fullName>Parent Provider Program</fullName>
+                <default>false</default>
+                <label>Parent Provider Program</label>
+            </value>
+            <value>
+                <fullName>DDD Application</fullName>
+                <default>false</default>
+                <label>DDD Application</label>
+            </value>
+            <value>
+                <fullName>ALTCS Application</fullName>
+                <default>false</default>
+                <label>ALTCS Application</label>
+            </value>
+            <value>
+                <fullName>DDD Services</fullName>
+                <default>false</default>
+                <label>DDD Services</label>
+            </value>
+            <value>
+                <fullName>Family Advocacy</fullName>
+                <default>false</default>
+                <label>Family Advocacy</label>
+            </value>
+            <value>
+                <fullName>Tutoring</fullName>
+                <default>false</default>
+                <label>Tutoring</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

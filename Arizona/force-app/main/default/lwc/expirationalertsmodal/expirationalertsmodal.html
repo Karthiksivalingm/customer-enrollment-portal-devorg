@@ -1,0 +1,82 @@
+<template>
+    <template if:true={showModal}>
+        <div class="modal-backdrop">
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+
+                <div class="modal-header">
+                    <span id="modal-heading" class="modal-title">Expiration Alerts</span>
+                    <button class="close-button" title="Close" onclick={handleClose}>
+                        <lightning-icon icon-name="utility:close" size="x-small" variant="inverse"></lightning-icon>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <template if:true={errorMessage}>
+                        <div class="slds-p-around_medium slds-text-color_error">
+                            {errorMessage}
+                        </div>
+                    </template>
+
+                    <template if:true={certificationAlerts.length}>
+                        <div class="alert-group-heading">Certifications Expiring</div>
+                        <template for:each={certificationAlerts} for:item="alert">
+                            <div key={alert.fieldApiName} class={alert.rowClass}>
+                                <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                                <div class="alert-text">
+                                    <div class="alert-message">{alert.message}</div>
+                                    <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:true={documentAlerts.length}>
+                        <div class="alert-group-heading slds-p-top_medium">Documents Expiring</div>
+                        <template for:each={documentAlerts} for:item="alert">
+                            <div key={alert.fieldApiName} class={alert.rowClass}>
+                                <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                                <div class="alert-text">
+                                    <div class="alert-message">{alert.message}</div>
+                                    <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:true={serviceAlerts.length}>
+                        <div class="alert-group-heading slds-p-top_medium">ATC Documents Expiring</div>
+                        <template for:each={serviceAlerts} for:item="alert">
+                            <div key={alert.fieldApiName} class={alert.rowClass}>
+                                <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                                <div class="alert-text">
+                                    <div class="alert-message">{alert.message}</div>
+                                    <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:true={hahAlerts.length}>
+                        <div class="alert-group-heading slds-p-top_medium">HAH Documents Expiring</div>
+                        <template for:each={hahAlerts} for:item="alert">
+                            <div key={alert.fieldApiName} class={alert.rowClass}>
+                                <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                                <div class="alert-text">
+                                    <div class="alert-message">{alert.message}</div>
+                                    <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="dismiss-button" onclick={handleClose}>Dismiss</button>
+                </div>
+
+            </div>
+        </div>
+    </template>
+</template>

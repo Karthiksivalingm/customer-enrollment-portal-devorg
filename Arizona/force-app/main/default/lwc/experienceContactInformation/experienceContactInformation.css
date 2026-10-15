@@ -1,0 +1,240 @@
+/* ============================================================
+ * experienceContactInformation.css
+ * ============================================================
+ * Design language matches the rest of the Experience Portal (the Forms
+ * component's navy section banners, green accent): #16325c navy for
+ * headers/identity, #2e844a green for "active/positive" status badges,
+ * a soft slate background for the card well, and a warm neutral gray
+ * for secondary badges - so this page reads as part of the same product
+ * rather than a bolted-on screen.
+ * ============================================================ */
+
+.contact-info-root {
+    width: 100%;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid #e2e6ec;
+}
+
+/* ---- Header: avatar + name banner ---- */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #16325c 0%, #1f4275 100%);
+    padding: 1.5rem;
+}
+
+.profile-avatar {
+    flex: 0 0 auto;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: #2e844a;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.profile-header-text {
+    min-width: 0;
+}
+
+.profile-name {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ---- Grouped sections ----
+   No colored banner text between groups anymore (removed per feedback) -
+   grouping is now conveyed purely through a bit of extra top spacing plus
+   a light divider line, kept subtle rather than a heavy repeated navy bar. */
+.profile-container {
+    padding: 0 0 1rem 0;
+}
+
+.info-section {
+    margin-bottom: 0.5rem;
+}
+
+.info-section_last {
+    margin-bottom: 0;
+}
+
+.info-section + .info-section {
+    border-top: 1px solid #e2e6ec;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+/* ---- Field rows ---- */
+.field-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #f0f2f5;
+    transition: background-color 0.15s ease;
+}
+
+.field-row:hover {
+    background-color: #fafbfd;
+}
+
+.field-row_last {
+    border-bottom: none;
+}
+
+.field-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 220px;
+    min-width: 220px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.field-icon {
+    --sds-c-icon-color-foreground: #8a97a8;
+    --slds-c-icon-color-foreground: #8a97a8;
+    flex: 0 0 auto;
+}
+
+.field-value {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.9375rem;
+    color: #181818;
+    line-height: 1.6;
+    padding-top: 0.0625rem;
+}
+
+.address-row .field-value div {
+    margin-bottom: 2px;
+}
+
+/* ---- Status badges/pills ----
+   Static color per FIELD (not per value) - keeps this purely CSS, no
+   extra JS needed to inspect picklist values, while still giving
+   status-type fields visual weight distinct from plain text fields
+   like name/email. */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1875rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.badge lightning-output-field {
+    color: inherit;
+}
+
+.badge-navy {
+    background-color: #e8edf5;
+    color: #16325c;
+}
+
+.badge-green {
+    background-color: #e5f3ea;
+    color: #1c5730;
+}
+
+.badge-blue {
+    background-color: #e6f0fb;
+    color: #0b5cab;
+}
+
+.badge-neutral {
+    background-color: #eef0f3;
+    color: #4b5563;
+}
+
+/* Force dark, readable text on plain (non-badge) output field values.
+ *
+ * IMPORTANT: lightning-formatted-phone and lightning-formatted-email
+ * render their own <a href="tel:...">/<a href="mailto:..."> internally,
+ * inside that component's OWN shadow DOM - a plain `color:` rule here
+ * cannot reach through that shadow boundary, which is why Mobile/Email
+ * were still showing SLDS's default light/muted link-blue regardless of
+ * the color rules below. CSS custom properties (design tokens) DO cross
+ * shadow boundaries, so overriding the token these components actually
+ * read for their link color is what fixes it. The exact token name can
+ * differ slightly by SLDS/LWS release, so a broad set of aliases
+ * (current + legacy naming) is set here to maximize the odds one of
+ * them matches what your org's version actually reads - if Mobile/Email
+ * are STILL pale after deploying this, a screenshot of the rendered
+ * page plus your Salesforce release (Setup > Company Information) will
+ * let me look up the exact token name instead of guessing further. */
+.field-value {
+    --slds-c-link-text-color: #181818;
+    --slds-c-link-text-color-hover: #181818;
+    --slds-c-link-text-color-active: #181818;
+    --slds-c-link-color: #181818;
+    --slds-c-link-color-hover: #181818;
+    --slds-g-link-color: #181818;
+    --slds-g-link-color-hover: #181818;
+    --slds-g-color-brand-base-50: #181818;
+    --lwc-colorTextLink: #181818;
+    --lwc-colorTextLinkActive: #181818;
+    --lwc-colorTextLinkHover: #181818;
+    --lwc-brandTextLink: #181818;
+    --dxp-s-link-text-color: #181818;
+    --dxp-g-brand: #181818;
+    opacity: 1;
+}
+
+.field-value > lightning-output-field,
+.field-value lightning-formatted-email,
+.field-value lightning-formatted-phone,
+.field-value a {
+    color: #181818 !important;
+    opacity: 1 !important;
+    font-weight: 500;
+}
+
+.field-value lightning-formatted-email a,
+.field-value lightning-formatted-phone a {
+    color: #181818 !important;
+    text-decoration: none;
+}
+
+.field-value lightning-formatted-email a:hover,
+.field-value lightning-formatted-phone a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Responsive: stack label above value on narrow viewports ---- */
+@media (max-width: 480px) {
+    .profile-header {
+        padding: 1.25rem 1rem;
+    }
+
+    .field-row {
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .field-label {
+        width: 100%;
+        min-width: 0;
+    }
+}

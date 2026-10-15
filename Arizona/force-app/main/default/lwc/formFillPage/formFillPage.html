@@ -1,0 +1,135 @@
+<template>
+    <div class="fill-shell">
+
+        <template if:true={isLoading}>
+            <div class="centred">
+                <lightning-spinner alternative-text="Loading your form..." size="medium">
+                </lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={fatalError}>
+            <div class="panel">
+                <div class="notice notice-error">
+                    <lightning-icon icon-name="utility:error" variant="error" size="small">
+                    </lightning-icon>
+                    <span class="notice-text">{fatalError}</span>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={isSubmitted}>
+            <div class="panel">
+                <div class="notice notice-success">
+                    <lightning-icon icon-name="utility:success" variant="success" size="small">
+                    </lightning-icon>
+                    <span class="notice-text">{successMessage}</span>
+                </div>
+                <p class="after-text">
+                    Your completed form has been saved. You can close this page.
+                </p>
+            </div>
+        </template>
+
+        <template if:true={showForm}>
+            <div class="panel">
+                <h1 class="fill-title">{formLabel}</h1>
+                <p class="fill-sub">for {contactName}</p>
+
+                <template if:true={softError}>
+                    <div class="notice notice-error">
+                        <lightning-icon icon-name="utility:error" variant="error" size="small">
+                        </lightning-icon>
+                        <span class="notice-text">{softError}</span>
+                    </div>
+                </template>
+
+                <p class="instructions">
+                    Please complete the fields below and sign, then choose Submit.
+                    Your details will be added to the form and returned to us.
+                </p>
+
+                <template for:each={inputFields} for:item="field">
+                    <div key={field.name} class="field-row">
+                        <template if:true={field.isCheckbox}>
+                            <lightning-input
+                                type="checkbox"
+                                label={field.label}
+                                data-name={field.name}
+                                checked={field.value}
+                                onchange={handleFieldChange}>
+                            </lightning-input>
+                        </template>
+                        <template if:true={field.isDate}>
+                            <lightning-input
+                                type="date"
+                                label={field.label}
+                                data-name={field.name}
+                                value={field.value}
+                                required={field.required}
+                                onchange={handleFieldChange}>
+                            </lightning-input>
+                        </template>
+                        <template if:true={field.isText}>
+                            <lightning-input
+                                type="text"
+                                label={field.label}
+                                data-name={field.name}
+                                value={field.value}
+                                required={field.required}
+                                onchange={handleFieldChange}>
+                            </lightning-input>
+                        </template>
+                    </div>
+                </template>
+
+                <template if:true={signatureField}>
+                    <div class="field-row">
+                        <label class="sig-label">{signatureField.label}</label>
+                        <p class="sig-hint">Draw your signature in the box below.</p>
+                        <div class="sig-wrap">
+                            <canvas class="sig-canvas" width="600" height="180"></canvas>
+                        </div>
+                        <lightning-button
+                            variant="neutral"
+                            label="Clear signature"
+                            onclick={handleClearSignature}
+                            class="sig-clear">
+                        </lightning-button>
+                    </div>
+                </template>
+
+                <div class="actions">
+                    <lightning-button
+                        variant="brand"
+                        label="Submit"
+                        onclick={handleSubmit}
+                        disabled={isSaving}>
+                    </lightning-button>
+                    <template if:true={isSaving}>
+                        <span class="saving-text">Saving...</span>
+                    </template>
+                </div>
+
+                <!-- Calibration aid. Set "Show Calibration Info" to false
+                     on the component once the coordinates are right. -->
+                <template if:true={showCalibration}>
+                    <div class="calib">
+                        <p class="calib-title">Calibration</p>
+                        <p class="calib-line">Page size: {pageSizeText}</p>
+                        <template for:each={fields} for:item="f">
+                            <p key={f.name} class="calib-line">
+                                {f.name}: page {f.page}, x {f.x}, y {f.y}
+                            </p>
+                        </template>
+                        <p class="calib-note">
+                            Origin is bottom-left. Value sitting too low on the
+                            page means increase Y; too far left means increase X.
+                        </p>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+    </div>
+</template>

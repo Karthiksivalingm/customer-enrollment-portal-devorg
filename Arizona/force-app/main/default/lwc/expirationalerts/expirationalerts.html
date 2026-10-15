@@ -1,0 +1,89 @@
+<template>
+    <div class="alert-card">
+
+        <div class="alert-card-header">
+            <span class="alert-card-title">Expiration Alerts</span>
+        </div>
+
+        <div class="alert-card-body">
+
+            <template if:true={isLoading}>
+                <div class="slds-p-around_medium slds-align_absolute-center">
+                    <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={errorMessage}>
+                <div class="slds-p-around_medium slds-text-color_error">
+                    {errorMessage}
+                </div>
+            </template>
+
+            <template if:true={hasAlerts}>
+
+                <template if:true={certificationAlerts.length}>
+                    <div class="alert-group-heading">Certifications Expiring</div>
+                    <template for:each={certificationAlerts} for:item="alert">
+                        <div key={alert.fieldApiName} class={alert.rowClass}>
+                            <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                            <div class="alert-text">
+                                <div class="alert-message">{alert.message}</div>
+                                <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+                <template if:true={documentAlerts.length}>
+                    <div class="alert-group-heading slds-p-top_medium">Documents Expiring</div>
+                    <template for:each={documentAlerts} for:item="alert">
+                        <div key={alert.fieldApiName} class={alert.rowClass}>
+                            <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                            <div class="alert-text">
+                                <div class="alert-message">{alert.message}</div>
+                                <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+                <template if:true={serviceAlerts.length}>
+                    <div class="alert-group-heading slds-p-top_medium">ATC Documents Expiring</div>
+                    <template for:each={serviceAlerts} for:item="alert">
+                        <div key={alert.fieldApiName} class={alert.rowClass}>
+                            <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                            <div class="alert-text">
+                                <div class="alert-message">{alert.message}</div>
+                                <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+                <template if:true={hahAlerts.length}>
+                    <div class="alert-group-heading slds-p-top_medium">HAH Documents Expiring</div>
+                    <template for:each={hahAlerts} for:item="alert">
+                        <div key={alert.fieldApiName} class={alert.rowClass}>
+                            <lightning-icon icon-name={alert.iconName} size="x-small" variant={alert.iconVariant} class="slds-m-right_small"></lightning-icon>
+                            <div class="alert-text">
+                                <div class="alert-message">{alert.message}</div>
+                                <div class="alert-date">Expiration date: {alert.formattedDate}</div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+            </template>
+
+            <template if:false={hasAlerts}>
+                <template if:false={isLoading}>
+                    <div class="slds-p-around_medium slds-text-color_weak">
+                        No certifications or documents are expiring soon.
+                    </div>
+                </template>
+            </template>
+
+        </div>
+
+    </div>
+</template>

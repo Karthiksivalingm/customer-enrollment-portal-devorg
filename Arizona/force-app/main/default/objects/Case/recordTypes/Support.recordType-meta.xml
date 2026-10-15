@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support</fullName>
+    <active>true</active>
+    <businessProcess>Case Process</businessProcess>
+    <compactLayoutAssignment>Custom_Case_layout</compactLayoutAssignment>
+    <label>Support</label>
+    <picklistValues>
+        <picklist>Case_Reason_Custom__c</picklist>
+        <values>
+            <fullName>ATC Monitoring Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Difficulty of Care Form Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Article 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired CPR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Central Registry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Criminal History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Fingerprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired First Aid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Liability Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete Report Follow Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial PCSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invalid Fingerprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Job Reference Letter Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Visit Approval Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Article 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing CPR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Central Registry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Criminal History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Fingerprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing First Aid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Liability Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Service Units</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCSP Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCSP Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paychex Account Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paychex Unable to Login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Discrepancies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paystub Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specific Errors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supp Docs Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Schedule Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Weekly Limits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update in Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>ATC Monitoring Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Difficulty of Care Form Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Article 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired CPR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Central Registry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Criminal History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Fingerprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired First Aid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired Liability Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete Report Follow Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial PCSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invalid Fingerprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Job Reference Letter Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Visit Approval Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Article 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing CPR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Central Registry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Criminal History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Fingerprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing First Aid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Liability Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Service Units</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCSP Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCSP Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paychex Account Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paychex Unable to Login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Discrepancies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paystub Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specific Errors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supp Docs Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Schedule Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Weekly Limits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update in Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Authorizations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLCR Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timesheets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>vTrack</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

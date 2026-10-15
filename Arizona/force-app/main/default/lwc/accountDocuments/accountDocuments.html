@@ -1,0 +1,116 @@
+<template>
+    <div class="account-documents">
+
+        <template if:true={isLoading}>
+            <div class="slds-p-around_medium slds-align_absolute-center">
+                <lightning-spinner
+                    alternative-text="Loading"
+                    size="small">
+                </lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={errorMessage}>
+            <div class="slds-p-around_medium slds-text-color_error">
+                {errorMessage}
+            </div>
+        </template>
+
+        <div class="slds-p-around_medium">
+
+            <div class="section-heading">
+                Documents
+            </div>
+
+            <template for:each={documentRows} for:item="doc">
+
+                <div key={doc.fieldApiName} class="document-card">
+
+                    <!-- Row 1: Document Name + Status + Upload Button -->
+                    <div class="document-row">
+                        
+                        <!-- Left: Document Name -->
+                        <div class="document-name-section">
+                            <div class="document-name">
+                                {doc.label}
+                            </div>
+                        </div>
+
+                        <!-- Middle: Status Dropdown -->
+                        <div class={doc.dropdownWrapClass}>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                value={doc.status}
+                                options={statusOptions}
+                                data-field={doc.fieldApiName}
+                                onchange={handleStatusChange}>
+                            </lightning-combobox>
+                        </div>
+
+                        <!-- Right: Upload Button -->
+                        <div class="document-action">
+                            <lightning-button
+                                label={doc.uploadLabel}
+                                variant="brand"
+                                class="upload-button"
+                                data-field={doc.fieldApiName}
+                                onclick={handleUploadButtonClick}>
+                            </lightning-button>
+                        </div>
+
+                    </div>
+
+                    <!-- Row 2: Uploaded Files List (Full Width Below) -->
+                    <template if:true={doc.hasFile}>
+                        <div class={doc.filesContainerClass}>
+                            <div class="uploaded-files-list">
+                                <template for:each={doc.files} for:item="file">
+                                    <div key={file.contentDocumentId} class={file.itemClass}>
+                                        <lightning-icon
+                                            icon-name="utility:file"
+                                            size="x-small"
+                                            class="file-icon">
+                                        </lightning-icon>
+
+                                        <a
+                                            href="javascript:void(0)"
+                                            class={file.linkClass}
+                                            data-docid={file.contentDocumentId}
+                                            onclick={handleFileClick}>
+                                            {file.fileName}
+                                        </a>
+
+                                        <!-- Only show delete button for latest file when not Completed -->
+                                        <template if:true={file.canDelete}>
+                                            <button
+                                                class="delete-file-button"
+                                                title="Delete File"
+                                                data-docid={file.contentDocumentId}
+                                                data-field={doc.fieldApiName}
+                                                onclick={handleDeleteFile}>
+                                                <lightning-icon
+                                                    icon-name="utility:close"
+                                                    size="x-small">
+                                                </lightning-icon>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+
+                </div>
+
+            </template>
+
+        </div>
+
+        <input
+            type="file"
+            class="hidden-file-input"
+            accept=".pdf,.png,.jpg,.jpeg,.doc,.docx,.xlsx"
+            onchange={handleFileSelected} />
+
+    </div>
+</template>

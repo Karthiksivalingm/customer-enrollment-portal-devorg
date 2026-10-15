@@ -1,0 +1,668 @@
+<apex:page standardStylesheets="false" renderAs="pdf" showHeader="false" sidebar="false" applyHtmlTag="false">
+    <html>
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+                line-height: 1.4;
+                color: #000;
+                background: white;
+                padding: 20px;
+            }
+            
+            .page {
+                max-width: 8.5in;
+                height: 11in;
+                margin: 0 auto;
+                padding: 0.5in;
+                background: white;
+                page-break-after: always;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+            
+            .header {
+                text-align: center;
+                margin-bottom: 15px;
+                border-bottom: 2px solid #333;
+                padding-bottom: 10px;
+            }
+            
+            .header-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+                font-size: 10px;
+            }
+            
+            .form-number {
+                font-weight: bold;
+            }
+            
+            .page-number {
+                text-align: right;
+                font-weight: bold;
+            }
+            
+            .header-title {
+                font-size: 13px;
+                font-weight: bold;
+                margin: 8px 0;
+            }
+            
+            .header-subtitle {
+                font-size: 10px;
+                margin: 4px 0;
+            }
+            
+            .form-title {
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                margin: 10px 0;
+                text-transform: uppercase;
+            }
+            
+            .info-section {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
+            }
+            
+            .info-field {
+                flex: 1;
+                margin-right: 20px;
+            }
+            
+            .info-field:last-child {
+                margin-right: 0;
+            }
+            
+            .field-label {
+                font-size: 10px;
+                font-weight: italic;
+                margin-bottom: 4px;
+            }
+            
+            .field-input {
+                border-bottom: 1px solid #000;
+                height: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .field-input-text {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #000;
+                font-size: 11px;
+                padding: 2px 0;
+                font-family: Arial, sans-serif;
+            }
+            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            
+            thead {
+                background-color: #1a3a6b;
+                color: white;
+            }
+            
+            th {
+                padding: 8px;
+                text-align: left;
+                font-weight: bold;
+                font-size: 11px;
+                border: 1px solid #000;
+            }
+            
+            td {
+                padding: 8px;
+                border: 1px solid #000;
+                font-size: 11px;
+            }
+            
+            tbody tr:nth-child(odd) {
+                background-color: #e6f0ff;
+            }
+            
+            tbody tr:nth-child(even) {
+                background-color: #f5f5f5;
+            }
+            
+            .preference-section {
+                background-color: #e6f0ff;
+                padding: 10px;
+                margin: 15px 0;
+                border: 1px solid #1a3a6b;
+            }
+            
+            .preference-table {
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .preference-table td {
+                padding: 8px;
+                border: 1px solid #000;
+            }
+            
+            .preference-level {
+                background-color: #1a3a6b;
+                color: white;
+                font-weight: bold;
+                width: 40px;
+                text-align: center;
+            }
+            
+            .section-title {
+                background-color: #1a3a6b;
+                color: white;
+                padding: 8px;
+                font-weight: bold;
+                margin: 15px 0 10px 0;
+                border: 1px solid #000;
+            }
+            
+            .backup-plan-table {
+                width: 100%;
+                margin: 15px 0;
+                border-collapse: collapse;
+            }
+            
+            .backup-plan-table th {
+                background-color: #1a3a6b;
+                color: white;
+                padding: 8px;
+                text-align: left;
+                font-weight: bold;
+            }
+            
+            .backup-plan-table td {
+                padding: 8px;
+                border: 1px solid #000;
+            }
+            
+            .step-label {
+                background-color: #1a3a6b;
+                color: white;
+                font-weight: bold;
+                width: 50px;
+                text-align: center;
+                padding: 8px;
+            }
+            
+            .step-content {
+                padding: 8px;
+            }
+            
+            .signature-section {
+                margin: 20px 0;
+            }
+            
+            .signature-line {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            
+            .sig-field {
+                flex: 1;
+                margin-right: 30px;
+            }
+            
+            .sig-field:last-child {
+                margin-right: 0;
+            }
+            
+            .sig-line {
+                border-bottom: 1px solid #000;
+                height: 20px;
+                margin-bottom: 4px;
+            }
+            
+            .sig-label {
+                font-size: 9px;
+                font-weight: bold;
+            }
+            
+            .checkbox {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #000;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            
+            .acknowledgement-section {
+                margin: 15px 0;
+                line-height: 1.6;
+            }
+            
+            .acknowledgement-text {
+                font-size: 10px;
+                margin: 10px 0;
+                text-align: justify;
+            }
+            
+            .bold-text {
+                font-weight: bold;
+            }
+            
+            .italic-text {
+                font-style: italic;
+            }
+            
+            .footer {
+                font-size: 9px;
+                margin-top: 20px;
+                text-align: center;
+                border-top: 1px solid #000;
+                padding-top: 10px;
+            }
+            
+            .hcpcs-table {
+                font-size: 10px;
+                margin: 15px 0;
+            }
+            
+            .hcpcs-table th {
+                background-color: #1a3a6b;
+                color: white;
+                padding: 6px;
+            }
+            
+            .hcpcs-table td {
+                padding: 6px;
+                border: 1px solid #000;
+            }
+            
+            .input-field {
+                background-color: white;
+                border: none;
+                border-bottom: 1px solid #000;
+                width: 100%;
+                padding: 2px 0;
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+            }
+            
+            .checkbox-container {
+                display: flex;
+                gap: 30px;
+                margin: 10px 0;
+            }
+            
+            .checkbox-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <!-- PAGE 1 -->
+        <div class="page">
+            <div class="header-top">
+                <span class="form-number">DDD-2099A FORSFF (9-21)</span>
+                <span class="page-number">Página 1 de 3</span>
+            </div>
+            
+            <div class="header">
+                <div class="header-title">ARIZONA DEPARTMENT OF ECONOMIC SECURITY</div>
+                <div class="header-subtitle">División de Discapacidades del Desarrollo</div>
+            </div>
+            
+            <div class="form-title">PLAN DE CONTINGENCIA/RESPALDO DEL MIEMBRO PARA LA VERIFICACIÓN DE VISITA ELECTRÓNICA (EVV)</div>
+            
+            <div class="info-section">
+                <div class="info-field">
+                    <div class="field-label">Nombre del Miembro</div>
+                    <input type="text" class="input-field"/>
+                </div>
+                <div class="info-field">
+                    <div class="field-label">Núm. de ID de AHCCCS</div>
+                    <input type="text" class="input-field"/>
+                </div>
+                <div class="info-field">
+                    <div class="field-label">Fecha del plan</div>
+                    <input type="text" class="input-field"/>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">Nº</th>
+                        <th style="width: 35%;">SERVICIOS PRESTADOS</th>
+                        <th style="width: 30%;">FRECUENCIA</th>
+                        <th style="width: 30%;">NIVEL DE PREFERENCIA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1.</td>
+                        <td>Respiro</td>
+                        <td><input type="text" class="input-field"/></td>
+                        <td><input type="text" class="input-field"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2.</td>
+                        <td>Habilitación</td>
+                        <td><input type="text" class="input-field"/></td>
+                        <td><input type="text" class="input-field"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3.</td>
+                        <td>Atención de asistente</td>
+                        <td><input type="text" class="input-field"/></td>
+                        <td><input type="text" class="input-field"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="acknowledgement-text">
+                <span class="bold-text">NIVEL DE PREFERENCIA DE SERVICIO PARA MIEMBROS -</span> <span class="italic-text">Basado en la elección del miembro sobre la rapidez con la que se necesitará un cuidador de reemplazo si el cuidador programado no está disponible. Se debe informar a los miembros que tienen derecho a solicitar un cuidador de respaldo en un plazo de dos horas si así lo desean. Coloque la letra del Nivel de Preferencia (A, B, C, etc.) en la línea correspondiente del Nivel de Preferencia del servicio:</span>
+            </div>
+            
+            <table class="preference-table">
+                <tr>
+                    <td class="preference-level">A</td>
+                    <td>Debe reprogramarse dentro de las dos horas posteriores a la hora de inicio programado originalmente.</td>
+                </tr>
+                <tr>
+                    <td class="preference-level">B</td>
+                    <td>Debe reprogramarse dentro de las 24 horas posteriores a la hora de inicio programado originalmente.</td>
+                </tr>
+                <tr>
+                    <td class="preference-level">C</td>
+                    <td>Debe reprogramarse dentro de las 48 horas posteriores a la hora de inicio programado originalmente</td>
+                </tr>
+                <tr>
+                    <td class="preference-level">D</td>
+                    <td>Se realizará en la próxima visita programada.</td>
+                </tr>
+            </table>
+            
+            <div class="acknowledgement-text" style="background-color: #fff3cd; padding: 10px; margin: 15px 0;">
+                <span class="bold-text">MEMBER HAS BEEN ADVISED THAT S/HE MAY CHANGE THE MEMBER SERVICE PREFERENCE LEVEL AND ALSO HIS/HER BACK-UP PLAN, AS INDICATED BELOW, AT ANY TIME, INCLUDING AT THE TIME THE CAREGIVER IS LATE OR DOES NOT SHOW UP*</span>
+            </div>
+            
+            <div class="signature-section">
+                <div class="signature-line">
+                    <div class="sig-field">
+                        <div class="sig-label">Nombre en letra de molde y firma del Representante de la Agencia</div>
+                        <div class="sig-line"></div>
+                    </div>
+                    <div class="sig-field">
+                        <div class="sig-label">Fecha</div>
+                        <div class="sig-line"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="acknowledgement-text">
+                Si mi cuidador no se presenta para brindar los servicios según lo programado, en el caso de una emergencia que ponga en peligro la vida, me comunicaré con el 9-1-1; de lo contrario, mi plan de respaldo es el siguiente:
+            </div>
+            
+            <table class="backup-plan-table">
+                <tr>
+                    <th style="width: 15%;">PLAN DE RESPALDO</th>
+                    <th style="width: 50%;">NOMBRE</th>
+                    <th style="width: 35%;">NÚM. DE TEL.</th>
+                </tr>
+                <tr>
+                    <td class="step-label">Paso 1</td>
+                    <td class="step-content">Me comunicaré con mi agencia proveedora. Mi agencia proveedora responderá mi llamada o se comunicará conmigo en 15 minutos.</td>
+                    <td><input type="text" class="input-field" style="margin: 0;"/></td>
+                </tr>
+                <tr>
+                    <td class="step-label">Paso 2</td>
+                    <td class="step-content">Si mi agencia proveedora no responde en 15 minutos, me pondré en contacto con Sandata EVV en Atención al cliente de Sandata al 855-928-1140.</td>
+                    <td><input type="text" class="input-field" style="margin: 0;"/></td>
+                </tr>
+                <tr>
+                    <td class="step-label">Paso 3</td>
+                    <td class="step-content">Llamaré a mi cuidador no remunerado para brindar el servicio que necesito.</td>
+                    <td><input type="text" class="input-field" style="margin: 0;"/></td>
+                </tr>
+            </table>
+            
+            <div style="text-align: center; margin-top: 20px; font-size: 10px;">
+                Vea la página 2 para leer la declaración de EOE/ADA
+            </div>
+        </div>
+        
+        <!-- PAGE 2 -->
+        <div class="page">
+            <div class="header-top">
+                <span class="form-number">DDD-2099A FORSFF (9-21)</span>
+                <span class="page-number">Página 2 de 3</span>
+            </div>
+            
+            <div class="info-section" style="margin-bottom: 10px;">
+                <div class="info-field">
+                    <div class="field-label">Nombre del Miembro</div>
+                    <input type="text" class="input-field"/>
+                </div>
+                <div class="info-field">
+                    <div class="field-label">Núm. de ID de AHCCCS</div>
+                    <input type="text" class="input-field"/>
+                </div>
+                <div class="info-field">
+                    <div class="field-label">Fecha del plan</div>
+                    <input type="text" class="input-field"/>
+                </div>
+            </div>
+            
+            <div class="acknowledgement-section">
+                <div class="acknowledgement-text">
+                    <span class="checkbox">☐</span> <span class="bold-text">Sí</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="checkbox">☐</span> <span class="bold-text">No</span>
+                </div>
+                
+                <div class="acknowledgement-text">
+                    Entiendo que si no recibo mis servicios críticos a tiempo, puedo llamar a la Agencia o Sandata para informar del problema para que puedan ayudar a reemplazar a mi cuidador lo antes posible. Entiendo que también tengo derecho a presentar una queja por escrito sobre la falta de prestación de servicios según lo programado.
+                </div>
+                
+                <div class="acknowledgement-text">
+                    Entiendo que para recibir los servicios debo estar disponible y dispuesta a aceptar los servicios programados. Si elijo no aceptar los servicios, entiendo que debo informar a mi administrador de casos o proveedor. Este plan ha sido revisado conmigo y estoy de acuerdo con él. Conservaré una copia de este plan. Entiendo que hablaré con mi proveedor al menos una vez al año sobre mi plan, pero puedo cambiarlo en cualquier momento.
+                </div>
+                
+                <div class="acknowledgement-text" style="background-color: #fff3cd; padding: 10px; margin: 15px 0;">
+                    <span class="bold-text">POR FAVOR HAGA QUE EL MIEMBRO/TOMADOR DE DECISIONES DE CUIDADO MÉDICO FIRME AQUÍ AL MOMENTO DEL DESARROLLO INICIAL DEL PLAN;</span> &nbsp;
+                    <span class="checkbox">☐</span> <span class="bold-text">Sí</span> &nbsp;&nbsp;
+                    <span class="checkbox">☐</span> <span class="bold-text">No</span>
+                </div>
+            </div>
+            
+            <div class="signature-section">
+                <div class="signature-line">
+                    <div class="sig-field">
+                        <div class="sig-label">Nombre del Miembro/Tomador de decisiones Médicas</div>
+                        <div class="sig-line"></div>
+                    </div>
+                    <div class="sig-field">
+                        <div class="sig-label">Fecha</div>
+                        <div class="sig-line"></div>
+                    </div>
+                </div>
+                
+                <div class="signature-line">
+                    <div class="sig-field">
+                        <div class="sig-label">Nombre en letra de molde del Miembro/Tomador de decisiones Médicas</div>
+                        <div class="sig-line"></div>
+                    </div>
+                    <div class="sig-field">
+                        <div class="sig-label">Fecha</div>
+                        <div class="sig-line"></div>
+                    </div>
+                </div>
+                
+                <div class="signature-line">
+                    <div class="sig-field">
+                        <div class="sig-label" style="margin-bottom: 30px;">Relación con el miembro</div>
+                        <div class="sig-line"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p><span class="bold-text">Programa y Empleador con Igualdad de Oportunidades •</span> Servicios y ayudantes auxiliares para personas con discapacidades están disponibles a petición • Para obtener este documento en otro formato u obtener información adicional sobre esta política, comuníquese con el coordinador de la ADA de la División de Discapacidades del Desarrollo al 602-771-2893; Servicios de TTY/TDD: 7-1-1 • Available in English online or at the local office.</p>
+            </div>
+        </div>
+        
+        <!-- PAGE 3 -->
+        <div class="page">
+            <div class="header-top">
+                <span class="form-number">DDD-2099A FORSFF (9-21)</span>
+                <span class="page-number">Página 3 de 3</span>
+            </div>
+            
+            <div class="info-section" style="margin-bottom: 15px;">
+                <div class="info-field">
+                    <div class="field-label">Nombre del Miembro</div>
+                    <input type="text" class="input-field"/>
+                </div>
+                <div class="info-field">
+                    <div class="field-label">Núm. de ID de AHCCCS</div>
+                    <input type="text" class="input-field"/>
+                </div>
+                <div class="info-field">
+                    <div class="field-label">Fecha del plan</div>
+                    <input type="text" class="input-field"/>
+                </div>
+            </div>
+            
+            <table class="hcpcs-table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">HCPCS</th>
+                        <th style="width: 35%;">Título del servicio</th>
+                        <th style="width: 50%;">Plan de contingencia predeterminado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>G0299</td>
+                        <td>Enfermería</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>G0300</td>
+                        <td>Enfermería</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>H2014</td>
+                        <td>Capacitación y desarrollo de habilidades</td>
+                        <td>El servicio debe reprogramarse dentro de las 24 horas posteriores a la hora de inicio programada originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>S5125</td>
+                        <td>Cuidado de asistente</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>S5130</td>
+                        <td>Ama de casa</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                    <tr>
+                        <td>S5150</td>
+                        <td>Cuidado de relevo</td>
+                        <td>El servicio debe reprogramarse dentro de las 24 horas posteriores a la hora de inicio programada originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>S5151</td>
+                        <td>Cuidado de relevo</td>
+                        <td>El servicio debe reprogramarse dentro de las 24 horas posteriores a la hora de inicio programada originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>S9123</td>
+                        <td>Enfermería privada</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>S9124</td>
+                        <td>Enfermería privada</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>T1019</td>
+                        <td>Cuidado personal</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>T2017</td>
+                        <td>Habilitación</td>
+                        <td>El servicio debe reprogramarse dentro de las 24 horas posteriores a la hora de inicio programada originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>S5135</td>
+                        <td>Cuidado de acompañantes</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                    <tr>
+                        <td>T1021</td>
+                        <td>Auxiliar de salud en el hogar</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>G0151</td>
+                        <td>Terapia física</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                    <tr>
+                        <td>S9131</td>
+                        <td>Terapia física</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                    <tr>
+                        <td>G0152</td>
+                        <td>Terapia ocupacional</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                    <tr>
+                        <td>S9129</td>
+                        <td>Terapia ocupacional</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                    <tr>
+                        <td>S5181</td>
+                        <td>Terapia respiratoria</td>
+                        <td>El servicio debe reprogramarse dentro de las 2 horas posteriores a la hora de inicio programado originalmente</td>
+                    </tr>
+                    <tr>
+                        <td>G0153</td>
+                        <td>Terapia del habla</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                    <tr>
+                        <td>S9128</td>
+                        <td>Terapia del habla</td>
+                        <td>El servicio se realizará en la próxima visita programada</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </body>
+    </html>
+</apex:page>

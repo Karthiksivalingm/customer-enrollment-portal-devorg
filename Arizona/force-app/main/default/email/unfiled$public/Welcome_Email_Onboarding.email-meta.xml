@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Welcome Email - Onbaording</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Welcome Email - Onboarding</name>
+    <style>none</style>
+    <subject>Welcome To Arizona Lionhearts</subject>
+    <textOnly>Welcome to Arizona Lionhearts
+
+Hi {{Recipient.FirstName}}
+
+Welcome to Arizona Lionhearts — we&apos;re excited to have you as part of our community!
+
+Our mission is to empower individuals and families through impactful programs, health support, and meaningful community engagement.
+
+What you can do with us:
+
+Join impactful community programs
+Access health and support services
+Participate in volunteer initiatives
+
+Your journey with us starts today — and we&apos;re here every step of the way.
+
+Visit Our Website
+
+If you have any questions, feel free to reach out — we&apos;re always happy to help!
+
+Warm regards,
+Arizona Lionhearts Team
+
+Contact Us - Call at 480-253-9360 or Text at 480-253-9377
+
+Manage Preferences  |  Unsubscribe
+
+© 2025 Arizona Lionhearts. All rights reserved.
+
+This is an automated message. Please do not reply.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

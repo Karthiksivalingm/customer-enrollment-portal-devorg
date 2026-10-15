@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Subject_Description_Edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    $Profile.Name = &quot;Case Customer Community Plus user&quot;,
+
+    NOT(ISNEW()),
+
+    OR(
+        ISCHANGED(Subject),
+        ISCHANGED(Description)
+    )
+)</errorConditionFormula>
+    <errorMessage>Subject and Description cannot be modified after case submission.</errorMessage>
+</ValidationRule>

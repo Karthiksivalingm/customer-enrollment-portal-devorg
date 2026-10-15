@@ -1,0 +1,87 @@
+<template>
+    <div class="form-page">
+
+        <!-- Loading -->
+        <template if:true={isLoading}>
+            <div class="slds-spinner_container">
+                <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Fatal / link error (invalid, expired, already completed, cancelled) -->
+        <template if:true={loadError}>
+            <div class="state-card error-card">
+                <lightning-icon icon-name="utility:error" variant="error" size="medium"></lightning-icon>
+                <p class="state-message">{loadError}</p>
+            </div>
+        </template>
+
+        <!-- Success -->
+        <template if:true={showSuccess}>
+            <div class="state-card success-card">
+                <lightning-icon icon-name="utility:success" variant="success" size="medium"></lightning-icon>
+                <p class="state-message">{successMessage}</p>
+            </div>
+        </template>
+
+        <!-- The form itself -->
+        <template if:true={showForm}>
+            <div class="form-card">
+                <div class="form-header">
+                    <h1 class="form-title">{formRequest.formLabel}</h1>
+                    <p class="form-subtitle">for {formRequest.contactName}</p>
+                </div>
+
+                <template if:true={submitError}>
+                    <div class="inline-error">{submitError}</div>
+                </template>
+
+                <div class="form-body">
+                    <template for:each={fields} for:item="field">
+                        <div key={field.name} class="field-row">
+                            <template if:true={field.isCheckbox}>
+                                <lightning-input
+                                    type="checkbox"
+                                    label={field.label}
+                                    checked={field.value}
+                                    required={field.required}
+                                    data-name={field.name}
+                                    onchange={handleFieldChange}>
+                                </lightning-input>
+                            </template>
+                            <template if:false={field.isCheckbox}>
+                                <lightning-input
+                                    type="text"
+                                    label={field.label}
+                                    value={field.value}
+                                    required={field.required}
+                                    data-name={field.name}
+                                    onchange={handleFieldChange}>
+                                </lightning-input>
+                            </template>
+                        </div>
+                    </template>
+
+                    <template if:true={showNoFieldsMessage}>
+                        <p class="empty-fields-message">
+                            This form has no fields to fill in online. Please use the copy attached to your email instead.
+                        </p>
+                    </template>
+                </div>
+
+                <div class="form-footer">
+                    <lightning-button
+                        variant="brand"
+                        label="Submit"
+                        onclick={handleSubmit}
+                        disabled={isSaving}>
+                    </lightning-button>
+                    <template if:true={isSaving}>
+                        <lightning-spinner alternative-text="Saving..." size="small" class="saving-spinner"></lightning-spinner>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+    </div>
+</template>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Client_Portal</members>
+        <members>Incoming_SMS</members>
+        <members>Marketing_Landing_Pages</members>
+        <members>MemberDocuments</members>
+        <members>PandaDocWebhook</members>
+        <members>Provider_Portal_Member_Portal</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>site/Marketing_Landing_Pages1</members>
+        <name>DigitalExperienceBundle</name>
+    </types>
+    <types>
+        <members>Client_Portal1</members>
+        <members>MemberDocuments1</members>
+        <members>Provider_Portal_Member_Portal1</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>Client Portal</members>
+        <members>Marketing Landing Pages</members>
+        <members>MemberDocuments</members>
+        <members>Provider Portal %2F Member Portal</members>
+        <name>Network</name>
+    </types>
+    <version>68.0</version>
+</Package>

@@ -1,0 +1,221 @@
+/* ============================================================
+ * phaseDocumentTracker.css - EXPERIENCE PORTAL ONLY
+ * ============================================================
+ * These styles are scoped to this component only (standard LWC CSS
+ * scoping), so none of this touches the internal
+ * recordCertificateDocuments page.
+ * ============================================================ */
+
+/* ---- Section heading banners ----
+   Full-width dark navy bar with bold white text, matching the banner
+   style used on the internal Contact record page. */
+.section-heading {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #16325c;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 0.65rem 1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+/* First heading in the card shouldn't have the extra top gap. */
+.based-forms-section > .section-heading:first-child {
+    margin-top: 0;
+}
+
+/* ---- Green "Upload Files" / "Re-upload Files" button ----
+   Overrides the default SLDS brand (blue) used by lightning-button
+   variant="brand", so this matches the internal record page. */
+.upload-button {
+    --slds-c-button-brand-color-background: #2e844a;
+    --slds-c-button-brand-color-border: #2e844a;
+    --slds-c-button-brand-color-background-hover: #23693a;
+    --slds-c-button-brand-color-border-hover: #23693a;
+    --slds-c-button-brand-color-background-active: #1c5730;
+    --slds-c-button-brand-color-border-active: #1c5730;
+}
+
+/* ---- Status shown as a bordered dropdown-look box ----
+   The combobox is always disabled here (portal users can view status
+   but not change it), but a disabled control still shows the value in a
+   bordered box with a dropdown arrow, matching the internal page.
+
+   The wrapper and the combobox both fill 100% of their grid column; the
+   fixed 9rem width lives on the grid template itself, so every row's
+   status box is identically sized and starts at the same X. */
+.status-dropdown-wrap {
+    width: 100%;
+}
+
+.status-dropdown-wrap lightning-combobox {
+    display: block;
+    width: 100%;
+    --slds-c-input-color-background-disabled: #ffffff;
+    --slds-c-input-color-border-disabled: #d8dde6;
+    --slds-c-input-text-color-disabled: #16325c;
+}
+
+/* ---- Row layout ----
+   document-row is a CSS Grid with a FIXED column template
+   (label | status | action), so the status column starts at the same X
+   on every row regardless of what's in the label or action columns. */
+.based-forms-section {
+    margin-bottom: 1rem;
+}
+
+.document-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 9rem 18rem;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d8dde6;
+    border-top: none;
+    background-color: #ffffff;
+}
+
+/* Based Forms / Pay and Tax / Live-In rows now carry a status dropdown
+   too, so they use the same 3-column template as every other row. Their
+   action cell can hold three things at once - a file link, the Review
+   button and the Upload button - so it wraps rather than clipping. */
+.document-row_no-status {
+    grid-template-columns: minmax(0, 1fr) 9rem 18rem;
+}
+
+.document-action {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+}
+
+.document-row_completed {
+    background-color: #fafbfc;
+    color: #706e6b;
+}
+
+.document-name {
+    min-width: 0;
+}
+
+.document-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    min-width: 0;
+    overflow: visible;
+}
+
+.uploaded-file-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #0b5cab;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.delete-file-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.125rem;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #706e6b;
+}
+
+.delete-file-button:hover {
+    color: #ba0517;
+}
+
+/* ---- Phase progress bar: chevron/arrow "path" shape ----
+   Green (completed) / navy (active) / gray (upcoming). Each segment is
+   clipped into a 6-point arrow and pulled left with a negative margin so
+   the notch of one nests over the point of the previous one. */
+.phase-bar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.phase-segment {
+    position: relative;
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0.6rem 1.5rem 0.6rem 2rem;
+    background-color: #e5e5e5;
+    color: #444444;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%, 16px 50%);
+}
+
+.phase-segment:first-child {
+    padding-left: 1rem;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+}
+
+.phase-segment:last-child {
+    padding-right: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 16px 50%);
+}
+
+.phase-segment:not(:first-child) {
+    margin-left: -16px;
+}
+
+.phase-segment:nth-child(1) { z-index: 4; }
+.phase-segment:nth-child(2) { z-index: 3; }
+.phase-segment:nth-child(3) { z-index: 2; }
+.phase-segment:nth-child(4) { z-index: 1; }
+
+.phase-segment_active {
+    background-color: #16325c;
+    color: #ffffff;
+}
+
+.phase-segment_completed {
+    background-color: #2e844a;
+    color: #ffffff;
+}
+
+.phase-checkmark {
+    margin-left: 0.35rem;
+}
+
+.action-row {
+    padding: 1rem 0;
+}
+
+/* ---- Hide the shared native file input ----
+   One <input type="file" class="hidden-file-input"> serves every row.
+   Without this rule the browser's "Choose File / No file chosen" control
+   renders visibly at the bottom of the card on every tab. */
+.hidden-file-input {
+    display: none;
+}
+
+/* ---- Narrow screens ----
+   Three controls in one cell won't fit beside the label, so the row
+   collapses to a single column and the action cell left-aligns. */
+@media (max-width: 1024px) {
+    .document-row,
+    .document-row_no-status {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 0.5rem;
+    }
+
+    .document-action {
+        justify-content: flex-start;
+    }
+}

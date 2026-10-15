@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Reason_Custom__c</fullName>
+    <label>Case Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Manual Visit Approval Request</fullName>
+                <default>false</default>
+                <label>Manual Visit Approval Request</label>
+            </value>
+            <value>
+                <fullName>Incomplete Report Follow Up</fullName>
+                <default>false</default>
+                <label>Incomplete Report Follow Up</label>
+            </value>
+            <value>
+                <fullName>Specific Errors</fullName>
+                <default>false</default>
+                <label>Specific Errors</label>
+            </value>
+            <value>
+                <fullName>Paychex Account Maintenance</fullName>
+                <default>false</default>
+                <label>Paychex Account Maintenance</label>
+            </value>
+            <value>
+                <fullName>Payment Discrepancies</fullName>
+                <default>false</default>
+                <label>Payment Discrepancies</label>
+            </value>
+            <value>
+                <fullName>Tax Inquiry</fullName>
+                <default>false</default>
+                <label>Tax Inquiry</label>
+            </value>
+            <value>
+                <fullName>Paystub Request</fullName>
+                <default>false</default>
+                <label>Paystub Request</label>
+            </value>
+            <value>
+                <fullName>Job Reference Letter Request</fullName>
+                <default>false</default>
+                <label>Job Reference Letter Request</label>
+            </value>
+            <value>
+                <fullName>Difficulty of Care Form Request</fullName>
+                <default>false</default>
+                <label>Difficulty of Care Form Request</label>
+            </value>
+            <value>
+                <fullName>Paychex Unable to Login</fullName>
+                <default>false</default>
+                <label>Paychex Unable to Login</label>
+            </value>
+            <value>
+                <fullName>Initial PCSP</fullName>
+                <default>false</default>
+                <label>Initial PCSP</label>
+            </value>
+            <value>
+                <fullName>PCSP Update</fullName>
+                <default>false</default>
+                <label>PCSP Update</label>
+            </value>
+            <value>
+                <fullName>PCSP Request</fullName>
+                <default>false</default>
+                <label>PCSP Request</label>
+            </value>
+            <value>
+                <fullName>Supp Docs Request</fullName>
+                <default>false</default>
+                <label>Supp Docs Request</label>
+            </value>
+            <value>
+                <fullName>ATC Monitoring Meeting</fullName>
+                <default>false</default>
+                <label>ATC Monitoring Meeting</label>
+            </value>
+            <value>
+                <fullName>Unable to Login</fullName>
+                <default>false</default>
+                <label>Unable to Login</label>
+            </value>
+            <value>
+                <fullName>Unable to Schedule Services</fullName>
+                <default>false</default>
+                <label>Unable to Schedule Services</label>
+            </value>
+            <value>
+                <fullName>Missing Fingerprint</fullName>
+                <default>false</default>
+                <label>Missing Fingerprint</label>
+            </value>
+            <value>
+                <fullName>Missing Criminal History</fullName>
+                <default>false</default>
+                <label>Missing Criminal History</label>
+            </value>
+            <value>
+                <fullName>Missing Central Registry</fullName>
+                <default>false</default>
+                <label>Missing Central Registry</label>
+            </value>
+            <value>
+                <fullName>Missing Article 9</fullName>
+                <default>false</default>
+                <label>Missing Article 9</label>
+            </value>
+            <value>
+                <fullName>Missing CPR</fullName>
+                <default>false</default>
+                <label>Missing CPR</label>
+            </value>
+            <value>
+                <fullName>Missing First Aid</fullName>
+                <default>false</default>
+                <label>Missing First Aid</label>
+            </value>
+            <value>
+                <fullName>Missing Liability Insurance</fullName>
+                <default>false</default>
+                <label>Missing Liability Insurance</label>
+            </value>
+            <value>
+                <fullName>Expired Fingerprint</fullName>
+                <default>false</default>
+                <label>Expired Fingerprint</label>
+            </value>
+            <value>
+                <fullName>Expired Criminal History</fullName>
+                <default>false</default>
+                <label>Expired Criminal History</label>
+            </value>
+            <value>
+                <fullName>Expired Central Registry</fullName>
+                <default>false</default>
+                <label>Expired Central Registry</label>
+            </value>
+            <value>
+                <fullName>Expired Article 9</fullName>
+                <default>false</default>
+                <label>Expired Article 9</label>
+            </value>
+            <value>
+                <fullName>Expired CPR</fullName>
+                <default>false</default>
+                <label>Expired CPR</label>
+            </value>
+            <value>
+                <fullName>Expired First Aid</fullName>
+                <default>false</default>
+                <label>Expired First Aid</label>
+            </value>
+            <value>
+                <fullName>Expired Liability Insurance</fullName>
+                <default>false</default>
+                <label>Expired Liability Insurance</label>
+            </value>
+            <value>
+                <fullName>Invalid Fingerprint</fullName>
+                <default>false</default>
+                <label>Invalid Fingerprint</label>
+            </value>
+            <value>
+                <fullName>Expired Authorization</fullName>
+                <default>false</default>
+                <label>Expired Authorization</label>
+            </value>
+            <value>
+                <fullName>Missing Service Units</fullName>
+                <default>false</default>
+                <label>Missing Service Units</label>
+            </value>
+            <value>
+                <fullName>Update in Services</fullName>
+                <default>false</default>
+                <label>Update in Services</label>
+            </value>
+            <value>
+                <fullName>Update Weekly Limits</fullName>
+                <default>false</default>
+                <label>Update Weekly Limits</label>
+            </value>
+            <value>
+                <fullName>Provider Resignation</fullName>
+                <default>false</default>
+                <label>Provider Resignation</label>
+            </value>
+            <value>
+                <fullName>Provider Reallocation Request</fullName>
+                <default>false</default>
+                <label>Provider Reallocation Request</label>
+            </value>
+            <value>
+                <fullName>Provider Termination</fullName>
+                <default>false</default>
+                <label>Provider Termination</label>
+            </value>
+            <value>
+                <fullName>Provider Check-In</fullName>
+                <default>false</default>
+                <label>Provider Check-In</label>
+            </value>
+            <value>
+                <fullName>New Member</fullName>
+                <default>false</default>
+                <label>New Member</label>
+            </value>
+            <value>
+                <fullName>New Provider</fullName>
+                <default>false</default>
+                <label>New Provider</label>
+            </value>
+            <value>
+                <fullName>New Parent Provider</fullName>
+                <default>false</default>
+                <label>New Parent Provider</label>
+            </value>
+            <value>
+                <fullName>New Tutor</fullName>
+                <default>false</default>
+                <label>New Tutor</label>
+            </value>
+            <value>
+                <fullName>How To?/General Inquiries</fullName>
+                <default>false</default>
+                <label>How To?/General Inquiries</label>
+            </value>
+            <value>
+                <fullName>Expired Forms</fullName>
+                <default>false</default>
+                <label>Expired Forms</label>
+            </value>
+            <value>
+                <fullName>Expired Legal Documents</fullName>
+                <default>false</default>
+                <label>Expired Legal Documents</label>
+            </value>
+            <value>
+                <fullName>CEU</fullName>
+                <default>false</default>
+                <label>CEU</label>
+            </value>
+            <value>
+                <fullName>New IEP/MET Assessment</fullName>
+                <default>false</default>
+                <label>New IEP/MET Assessment</label>
+            </value>
+            <value>
+                <fullName>New IEP/MET Review</fullName>
+                <default>false</default>
+                <label>New IEP/MET Review</label>
+            </value>
+            <value>
+                <fullName>Renewed IEP Assessment</fullName>
+                <default>false</default>
+                <label>Renewed IEP Assessment</label>
+            </value>
+            <value>
+                <fullName>Renewed IEP Review</fullName>
+                <default>false</default>
+                <label>Renewed IEP Review</label>
+            </value>
+            <value>
+                <fullName>Application DDD/ALTCS FAQs</fullName>
+                <default>false</default>
+                <label>Application DDD/ALTCS FAQs</label>
+            </value>
+            <value>
+                <fullName>Applied</fullName>
+                <default>false</default>
+                <label>Applied</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Next Steps</fullName>
+                <default>false</default>
+                <label>Next Steps</label>
+            </value>
+            <value>
+                <fullName>Reapplied</fullName>
+                <default>false</default>
+                <label>Reapplied</label>
+            </value>
+            <value>
+                <fullName>Authorized</fullName>
+                <default>false</default>
+                <label>Authorized</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Authorizations</controllingFieldValue>
+            <valueName>Expired Authorization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Authorizations</controllingFieldValue>
+            <valueName>Missing Service Units</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Authorizations</controllingFieldValue>
+            <valueName>Update in Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Authorizations</controllingFieldValue>
+            <valueName>Update Weekly Limits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HR</controllingFieldValue>
+            <valueName>Provider Resignation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HR</controllingFieldValue>
+            <valueName>Provider Reallocation Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HR</controllingFieldValue>
+            <valueName>Provider Termination</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HR</controllingFieldValue>
+            <valueName>Provider Check-In</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <valueName>New Member</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <valueName>New Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <valueName>New Parent Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <valueName>New Tutor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>How To?/General Inquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paperwork</controllingFieldValue>
+            <valueName>Expired Forms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paperwork</controllingFieldValue>
+            <valueName>Expired Legal Documents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paperwork</controllingFieldValue>
+            <valueName>CEU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>New IEP/MET Assessment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>New IEP/MET Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Renewed IEP Assessment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Renewed IEP Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Application DDD/ALTCS FAQs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Applied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Rejected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Next Steps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Reapplied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advocacy</controllingFieldValue>
+            <valueName>Authorized</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Timesheets</controllingFieldValue>
+            <valueName>Manual Visit Approval Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Timesheets</controllingFieldValue>
+            <valueName>Incomplete Report Follow Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Timesheets</controllingFieldValue>
+            <valueName>Specific Errors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payroll</controllingFieldValue>
+            <valueName>Paychex Account Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payroll</controllingFieldValue>
+            <valueName>Payment Discrepancies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payroll</controllingFieldValue>
+            <valueName>Tax Inquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payroll</controllingFieldValue>
+            <valueName>Paystub Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payroll</controllingFieldValue>
+            <valueName>Job Reference Letter Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payroll</controllingFieldValue>
+            <valueName>Difficulty of Care Form Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payroll</controllingFieldValue>
+            <valueName>Paychex Unable to Login</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PCSP</controllingFieldValue>
+            <valueName>Initial PCSP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PCSP</controllingFieldValue>
+            <valueName>PCSP Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PCSP</controllingFieldValue>
+            <valueName>PCSP Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PCSP</controllingFieldValue>
+            <valueName>Supp Docs Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PCSP</controllingFieldValue>
+            <valueName>ATC Monitoring Meeting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>vTrack</controllingFieldValue>
+            <valueName>Unable to Login</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>vTrack</controllingFieldValue>
+            <valueName>Unable to Schedule Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Missing Fingerprint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Missing Criminal History</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Missing Central Registry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Missing Article 9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Missing CPR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Missing First Aid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Missing Liability Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Expired Fingerprint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Expired Criminal History</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Expired Central Registry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Expired Article 9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Expired CPR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Expired First Aid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Expired Liability Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OLCR Compliance</controllingFieldValue>
+            <valueName>Invalid Fingerprint</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

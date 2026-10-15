@@ -1,0 +1,217 @@
+<template>
+    <lightning-card icon-name="standard:document">
+        <div slot="title" class="card-title-slot">
+            <div class="progress-ring-header">
+                <div class="title-with-count">
+                <h1 class="card-main-title">{cardTitle}</h1>
+                <span class="form-count-text">{formCountLabel}</span>
+                </div>
+                <div class="progress-ring-container">
+                    <svg class="progress-ring-svg" viewBox="0 0 120 120">
+                        <circle class="progress-ring-background" cx="60" cy="60" r="54"></circle>
+                        <circle class="progress-ring-circle" cx="60" cy="60" r="54" style={progressRingStyle}></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <span class="percentage">{completionPercentage}%</span>
+                        <span class="label">Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-var-p-around_medium">
+            <!-- Error Alert -->
+            <template if:true={error}>
+
+               <lightning-alert
+                    variant="error"
+                    onclose={handleCloseError}
+                    dismissable>
+                    {error}
+                </lightning-alert>
+            </template>
+
+            <!-- Loading Spinner -->
+            <template if:true={isLoading}>
+                <div class="slds-spinner_container">
+                    <lightning-spinner
+                        alternative-text="Loading..."
+                        size="large">
+                    </lightning-spinner>
+                </div>
+            </template>
+
+            <!-- Nothing to show -->
+            <template if:true={showEmptyState}>
+                <div class="empty-state">{emptyStateMessage}</div>
+            </template>
+
+            <!-- Forms Sections -->
+            <template if:false={isLoading}>
+                <template for:each={formSections} for:item="section">
+                    <div key={section.categoryName} class="section-wrapper">
+                        <!-- Section Header -->
+                        <h2 class="section-title">{section.categoryName}</h2>
+
+                        <!-- Forms Table for this section -->
+                        <div class="forms-table">
+                            <!-- Table Header -->
+                            <div class="table-header">
+                                <div class="col-form-name">{columnFormName}</div>
+                                <div class="col-status">{columnStatus}</div>
+                                <div class="col-action">{columnAction}</div>
+                            </div>
+
+                            <!-- Table Rows -->
+                            <template for:each={section.forms} for:item="form">
+                                <div key={form.id} class="table-row">
+                                    <!-- Form Name Column -->
+                                    <div class="col-form-name">
+                                        <span class="form-name-text">{form.label}</span>
+                                        <template if:true={form.uploadedFiles.length}>
+                                            <div class="uploaded-files">
+                                                <template for:each={form.uploadedFiles} for:item="file">
+                                                    <div key={file.id} class="file-link">
+                                                        <lightning-icon
+                                                            icon-name="utility:attach"
+                                                            alternative-text="file"
+                                                            size="xx-small">
+                                                        </lightning-icon>
+                                                        <a href="javascript:void(0);"
+                                                           data-docid={file.id}
+                                                           onclick={handleFileClick}
+                                                           class="file-name">
+                                                            {file.name}
+                                                        </a>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+
+                                    <!-- Status Column -->
+                                    <div class="col-status">
+                                        <lightning-combobox
+                                            name={form.apiName}
+                                            value={form.status}
+                                            options={statusOptions}
+                                            onchange={handleStatusChange}
+                                            variant="label-hidden"
+                                            class="status-dropdown">
+                                        </lightning-combobox>
+                                    </div>
+
+                                    <!-- Action Button Column -->
+                                    <div class="col-action">
+                                        <template if:true={form.canSend}>
+                                            <button
+                                                class="review-form-btn"
+                                                onclick={handleReviewFormClick}
+                                                data-form-id={form.apiName}
+                                                data-form-label={form.label}
+                                                data-template-name={form.templateName}>
+                                                {reviewButtonLabel}
+                                            </button>
+                                        </template>
+
+                                        <template if:true={form.showUpload}>
+                                            <button
+                                                class="upload-form-btn"
+                                                onclick={handleUploadClick}
+                                                data-form-id={form.apiName}
+                                                data-form-label={form.label}
+                                                data-action={form.nextAction}>
+                                                {form.uploadLabel}
+                                            </button>
+                                        </template>
+                                         <!-- "Not Needed" status has no actionable button -
+                                             show a plain "Not required" text hint instead. -->
+                                        <template if:true={form.isNotNeeded}>
+                                            <span class="not-needed-text">{notNeededLabel}</span>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <!-- ===================================================
+                 Inline "Complete Your Form" panel.
+                 Appears for non-PandaDoc forms that are opened inline.
+                 =================================================== -->
+            <div class="section-wrapper complete-form-panel">
+                <h2 class="section-title">
+                    <lightning-icon icon-name="utility:file" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+                    {completeFormTitle}
+                </h2>
+                <div class="forms-table complete-form-body">
+
+                    <template if:true={isFillLoading}>
+                        <div class="slds-spinner_container fill-spinner">
+                            <lightning-spinner alternative-text="Loading form..." size="medium"></lightning-spinner>
+                        </div>
+                    </template>
+
+                    <template if:true={fillError}>
+                        <div class="empty-state">{fillError}</div>
+                    </template>
+
+                    <template if:true={showFillSuccess}>
+                        <div class="fill-success">
+                            <lightning-icon icon-name="utility:success" variant="success" size="small"></lightning-icon>
+                            <span class="slds-m-left_x-small">{fillSuccessMessage}</span>
+                        </div>
+                    </template>
+
+                    <template if:true={showFillForm}>
+                        <p class="active-form-label">{activeFormLabel}</p>
+
+                        <template for:each={pdfFields} for:item="field">
+                            <div key={field.name} class="pdf-field-row">
+                                <template if:true={field.isCheckbox}>
+                                    <lightning-input
+                                        type="checkbox"
+                                        label={field.label}
+                                        checked={field.value}
+                                        data-name={field.name}
+                                        onchange={handlePdfFieldChange}>
+                                    </lightning-input>
+                                </template>
+                                <template if:false={field.isCheckbox}>
+                                    <lightning-input
+                                        type="text"
+                                        label={field.label}
+                                        value={field.value}
+                                        data-name={field.name}
+                                        onchange={handlePdfFieldChange}>
+                                    </lightning-input>
+                                </template>
+                            </div>
+                        </template>
+
+                        <div class="slds-m-top_medium slds-align_absolute-center">
+                            <lightning-button
+                                variant="brand"
+                                label={saveFormLabel}
+                                onclick={handleSaveFilledForm}
+                                disabled={isSavingFill}>
+                            </lightning-button>
+                        </div>
+                    </template>
+
+                    <template if:true={showFillEmptyState}>
+                        <div class="empty-state">{fillEmptyStateMessage}</div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- Existing hidden input for the manual signed-PDF upload flow -->
+        <input type="file"
+               class="hidden-file-input"
+               onchange={handleFileSelected}
+               accept=".pdf" />
+
+    </lightning-card>
+</template>

@@ -1,0 +1,190 @@
+<template>
+    <div class="slds-box slds-m-top_medium">
+
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-align_absolute-center slds-m-top_large">
+                <lightning-spinner
+                    alternative-text="Loading related accounts..."
+                    size="large">
+                </lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error Message -->
+        <template if:true={errorMessage}>
+            <div class="slds-m-top_medium">
+                <lightning-card>
+                    <div class="slds-text-color_error slds-p-around_large">
+                        <p class="slds-text-heading_medium">
+                            <strong>{errorMessage}</strong>
+                        </p>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+
+        <!-- No Data -->
+        <template if:true={noDataMessage}>
+            <div class="slds-m-top_medium">
+                <lightning-card>
+                    <div class="slds-align_absolute-center slds-p-around_large">
+                        <p class="slds-text-heading_medium slds-text-color_weak">
+                            No related accounts found for this contact.
+                        </p>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+
+        <!-- Related Accounts -->
+        <template if:true={showContent}>
+
+            <div class="account-table-container">
+
+                <table class="atc-table">
+
+                    <!-- HEADER -->
+                    <thead>
+                        <tr>
+                            <th>Provides Service To</th>
+                            <th>ATC Monitoring Dates</th>
+                            <th>Serviced By</th>
+                            <th>Initial Service Date</th>
+                            <th>First ATC Monitoring Meeting</th>
+                            <th>First ATC Monitoring Meeting Date</th>
+                            <th>First ATC Monitoring Meeting Type</th>
+                            <th>30-Day ATC Monitoring Meeting Check</th>
+                            <th>30-Day ATC Monitoring Meeting Date</th>
+                            <th>60-Day ATC Monitoring Meeting Check</th>
+                            <th>60-Day ATC Monitoring Meeting Date</th>
+                            <th>First 90-Day ATC Monitoring Meeting</th>
+                            <th>First 90-Day ATC Monitoring Meeting Date</th>
+                            <th>Last 90-Day ATC Monitoring Meeting Date</th>
+                            <th>Next 90-Day ATC Monitoring Meeting Date</th>
+                        </tr>
+                    </thead>
+
+                    <!-- ACCOUNT ROWS -->
+                    <tbody>
+
+                        <template
+                            for:each={relatedAccountsList}
+                            for:item="account">
+
+                            <tr key={account.AccountId}>
+
+                                <!-- Account Name -->
+                                <td class="account-name-cell">
+                                    <a
+                                        href={account.AccountLink}
+                                        target="_blank"
+                                        class="account-link">
+                                        {account.AccountName}
+                                    </a>
+                                </td>
+
+                                <!-- ATC Monitoring Dates -->
+                                <td>
+                                    {account.ATCMonitoringDates}
+                                </td>
+
+                                <!-- Serviced By -->
+                                <td>
+                                    {account.ServicedBy}
+                                </td>
+
+                                <!-- Initial Service Date -->
+                                <td>
+                                    {account.InitialServiceDate}
+                                </td>
+
+                                <!-- First ATC Monitoring Meeting -->
+                                <td class="checkbox-cell">
+                                    <lightning-input
+                                        type="checkbox"
+                                        variant="label-hidden"
+                                        checked={account.FirstATCMonitoringMeeting}
+                                        disabled>
+                                    </lightning-input>
+                                </td>
+
+                                <!-- First ATC Monitoring Meeting Date -->
+                                <td>
+                                    {account.FirstATCMonitoringMeetingDate}
+                                </td>
+
+                                <!-- First ATC Monitoring Meeting Type -->
+                                <td>
+                                    {account.FirstATCMonitoringMeetingType}
+                                </td>
+
+                                <!-- 30 Day Check -->
+                                <td class="checkbox-cell">
+                                    <lightning-input
+                                        type="checkbox"
+                                        variant="label-hidden"
+                                        checked={account.Day30ATCMonitoringMeetingCheck}
+                                        disabled>
+                                    </lightning-input>
+                                </td>
+
+                                <!-- 30 Day Date -->
+                                <td>
+                                    {account.Day30ATCMonitoringMeetingDate}
+                                </td>
+
+                                <!-- 60 Day Check -->
+                                <td class="checkbox-cell">
+                                    <lightning-input
+                                        type="checkbox"
+                                        variant="label-hidden"
+                                        checked={account.Day60ATCMonitoringMeetingCheck}
+                                        disabled>
+                                    </lightning-input>
+                                </td>
+
+                                <!-- 60 Day Date -->
+                                <td>
+                                    {account.Day60ATCMonitoringMeetingDate}
+                                </td>
+
+                                <!-- First 90 Day Check -->
+                                <td class="checkbox-cell">
+                                    <lightning-input
+                                        type="checkbox"
+                                        variant="label-hidden"
+                                        checked={account.First90DayATCMonitoringMeeting}
+                                        disabled>
+                                    </lightning-input>
+                                </td>
+
+                                <!-- First 90 Day Date -->
+                                <td>
+                                    {account.First90DayATCMonitoringMeetingDate}
+                                </td>
+
+                                <!-- Last 90 Day Date -->
+                                <td>
+                                    {account.Last90DayATCMonitoringMeetingDate}
+                                </td>
+
+                                <!-- Next 90 Day Date -->
+                                <td>
+                                    {account.Next90DayATCMonitoringMeetingDate}
+                                </td>
+
+                            </tr>
+
+                        </template>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </template>
+
+    </div>
+</template>

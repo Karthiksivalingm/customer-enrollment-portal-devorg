@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Article_9_Expiration_Date_For__c</fullName>
+    <formula>IF(
+    ISBLANK(Article_9_Issuance_Date__c ),
+    NULL,
+    DATE(
+        YEAR(Article_9_Issuance_Date__c ) + 3,
+        MONTH(Article_9_Issuance_Date__c ),
+        MIN(
+            DAY(Article_9_Issuance_Date__c ),
+            CASE(
+                MONTH(Article_9_Issuance_Date__c ),
+                2,
+                    IF(
+                        MOD(YEAR(Article_9_Issuance_Date__c ) + 3, 400) = 0 ||
+                        (MOD(YEAR(Article_9_Issuance_Date__c ) + 3, 4) = 0 &amp;&amp;
+                         MOD(YEAR(Article_9_Issuance_Date__c ) + 3, 100) &lt;&gt; 0),
+                        29,
+                        28
+                    ),
+                4, 30,
+                6, 30,
+                9, 30,
+                11, 30,
+                31
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Article 9 Expiration Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

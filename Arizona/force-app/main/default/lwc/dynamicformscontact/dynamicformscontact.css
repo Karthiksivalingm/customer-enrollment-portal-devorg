@@ -1,0 +1,379 @@
+/* ===== Existing styles (unchanged) ===== */
+
+.section-wrapper {
+    margin-bottom: 32px;
+}
+
+.section-title {
+    background-color: #003366;
+    color: white;
+    padding: 12px 16px;
+    margin: 0 0 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px 4px 0 0;
+}
+
+.forms-table {
+    background-color: #fff;
+    border: 1px solid #d8dce6;
+    border-radius: 0 0 4px 4px;
+    overflow: visible;
+    margin-top: 0;
+}
+
+.table-header {
+    display: flex;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #e8e8e8;
+    font-weight: 600;
+    font-size: 13px;
+    color: #333;
+}
+
+.table-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0;
+    min-height: 60px;
+}
+
+.table-row:last-child {
+    border-bottom: 0 0 4px 4px;;
+}
+
+.table-row:hover {
+    background-color: #f9f9f9;
+}
+
+.col-form-name {
+    flex: 1;
+    padding: 12px 16px;
+    align-self: center;
+    min-width: 300px;
+    word-break: break-word;
+}
+
+.col-status {
+    flex: 0 0 200px;
+    padding: 12px 16px;
+    align-self: center;
+}
+
+.col-action {
+    flex: 0 0 280px;
+    padding: 12px 16px;
+    text-align: right;
+    align-self: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.form-name-text {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.uploaded-files {
+    margin-top: 8px;
+}
+
+.file-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    padding: 4px 0;
+    color: #666;
+}
+
+.file-name {
+    color: #0070d2;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.file-name:hover {
+    text-decoration: underline;
+}
+
+.status-dropdown {
+    width: 100%;
+}
+
+.review-form-btn {
+    background-color: #5B4A99;
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+.review-form-btn:hover {
+    background-color: #4A3A88;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.review-form-btn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.slds-spinner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+lightning-alert {
+    margin-bottom: 16px;
+}
+
+.section-wrapper:first-child .section-title {
+    margin-top: 0;
+}
+
+.empty-state {
+    padding: 24px 16px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    background-color: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+}
+
+.upload-form-btn {
+    background-color: #2e844a;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+.upload-form-btn:hover {
+    background-color: #23693a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+.upload-hint {
+    flex-basis: 100%;
+    text-align: right;
+    font-size: 11px;
+    color: #706e6b;
+}
+
+.doc-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.doc-link-text {
+    color: #0070d2;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.doc-link-text:hover {
+    text-decoration: underline;
+}
+
+ 
+.not-needed-text {
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 400;
+    color: #706e6b;
+    white-space: nowrap;
+}
+@media (max-width: 768px) {
+    .col-form-name {
+        min-width: 100%;
+    }
+
+    .col-status,
+    .col-action {
+        flex: 0 0 100%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .table-row {
+        flex-direction: column;
+        min-height: auto;
+        padding: 12px;
+    }
+
+    .review-form-btn,
+    .upload-form-btn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .upload-hint {
+        text-align: left;
+    }
+}
+
+/* ===== NEW: inline Complete Your Form panel ===== */
+
+.complete-form-panel {
+    margin-top: 8px;
+}
+
+.complete-form-body {
+    padding: 20px 16px;
+}
+
+.active-form-label {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.pdf-field-row {
+    margin-bottom: 14px;
+    max-width: 480px;
+}
+
+.fill-success {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    justify-content: center;
+    color: #2e844a;
+    font-weight: 600;
+}
+
+.fill-spinner {
+    height: 120px;
+}
+
+/* ===== NEW: completion ring next to card title ===== */
+
+.card-title-slot {
+    width: 100%;
+}
+
+.progress-ring-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+.card-main-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #16325c;
+    margin: 0;
+}
+
+.progress-ring-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+}
+
+.progress-ring-svg {
+    width: 64px;
+    height: 64px;
+    transform: rotate(-90deg);
+}
+
+.progress-ring-background {
+    fill: none;
+    stroke: #e0e5ee;
+    stroke-width: 14;
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: #2e844a;
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-dasharray: 339.29px; /* 2 * π * 54, matches JS `circumference` */
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.progress-text .percentage {
+    font-size: 16px;
+    font-weight: 700;
+    color:#16325c;
+}
+
+.progress-text .label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #16325c;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-top: 2px;
+}
+
+.title-with-count {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-count-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #706e6b;
+}

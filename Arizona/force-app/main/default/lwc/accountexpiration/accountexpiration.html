@@ -1,0 +1,112 @@
+<template>
+
+    <div class="alert-card">
+
+        <div class="alert-card-header">
+            Expiration Alerts
+        </div>
+
+        <div class="alert-card-body">
+
+            <template if:true={isLoading}>
+                <lightning-spinner
+                    alternative-text="Loading"
+                    size="small">
+                </lightning-spinner>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-p-around_small">
+                    {error}
+                </div>
+            </template>
+
+            <template if:true={hasAlerts}>
+
+                <template
+                    for:each={groupedAlerts}
+                    for:item="group">
+
+                    <div
+                        key={group.name}
+                        class="alert-group">
+
+                        <div class="group-title">
+                            {group.name}
+                        </div>
+
+                        <template
+                            for:each={group.alerts}
+                            for:item="alert">
+
+                            <div
+                                key={alert.label}
+                                class={alert.rowClass}>
+
+                                <div class="alert-content">
+
+                                    <div class="alert-message">
+                                        {alert.message}
+                                    </div>
+
+                                    <!-- Authorizations -->
+
+                                    <template if:true={alert.showAuthorization}>
+
+                                        <div class="alert-details">
+
+                                           
+
+                                            <div>
+                                                <strong>Authorization Service expires within: </strong> :
+                                                {alert.serviceWeeks} weeks
+                                            </div>
+
+                                           
+
+                                        </div>
+
+                                    </template>
+
+                                    <!-- PCSP -->
+
+                                    <template if:true={alert.showPCSP}>
+
+                                        <div class="alert-details">
+
+                                            <div>
+                                                <strong>Next Meeting</strong> :
+                                                {alert.formattedDate}
+                                            </div>
+
+                                        </div>
+
+                                    </template>
+
+                                </div>
+
+                            </div>
+
+                        </template>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+            <template if:false={hasAlerts}>
+
+                <div class="no-alerts">
+
+                    No upcoming expiration alerts.
+
+                </div>
+
+            </template>
+
+        </div>
+
+    </div>
+
+</template>

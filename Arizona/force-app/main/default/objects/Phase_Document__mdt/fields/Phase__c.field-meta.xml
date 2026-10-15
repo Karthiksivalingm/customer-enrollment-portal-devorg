@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phase__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Phase</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Based Forms</fullName>
+                <default>true</default>
+                <label>Based Forms</label>
+            </value>
+            <value>
+                <fullName>Documents and Certifications</fullName>
+                <default>false</default>
+                <label>Documents and Certifications</label>
+            </value>
+            <value>
+                <fullName>Pay and Tax Forms</fullName>
+                <default>false</default>
+                <label>Pay and Tax Forms</label>
+            </value>
+            <value>
+                <fullName>Service Forms</fullName>
+                <default>false</default>
+                <label>Service Forms</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,38 @@
+# Arizona .forceignore: files the Salesforce CLI must not push, retrieve or deploy.
+package.xml
+
+# LWC tooling
+**/jsconfig.json
+**/.eslintrc.json
+**/__tests__/**
+node_modules/
+
+# Data Cloud (Data 360) system-generated objects are out of scope (07-Technical-Documents/Metadata-Scope.md)
+**/objects/*__dll/**
+**/objects/*__dlm/**
+**/objects/*__hd/**
+**/objects/ssot__*/**
+
+# Managed-package children on standard/custom objects. Arizona source holds unmanaged metadata only.
+# One line per installed namespace (sf package installed list --target-org Arizona, 2026-10-15).
+**/objects/*/*/sf_mktg__*
+**/objects/*/*/UMsgConsentProd__*
+**/objects/*/*/tdc_tsw__*
+**/objects/*/*/pi3__*
+**/objects/*/*/sf_chttr_apps__*
+**/objects/*/*/Calendly__*
+**/objects/*/*/pi__*
+**/objects/*/*/rcsfl__*
+**/objects/*/*/OIQ__*
+**/objects/*/*/ssot__*
+**/objects/*/*/docb__*
+**/objects/*/*/cdpactvstrgptnr__*
+**/objects/*/*/echosign_dev1__*
+**/objects/*/*/cdp_crm_dk1__*
+**/objects/*/*/cdp_crm_dk2__*
+**/objects/*/*/cdp_crm_dk4__*
+**/objects/*/*/datacloudflow__*
+**/objects/*/*/UnifiedMsgEmail__*
+**/objects/*/*/sf_mktg_ae__*
+**/objects/*/*/SocialService__*
+**/objects/*/*/pandadoc__*

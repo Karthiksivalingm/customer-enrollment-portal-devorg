@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fingerprint_Card_Expiration_Date_For__c</fullName>
+    <formula>IF(
+    ISBLANK(Fingerprint_Card_Issuance_Date__c),
+    NULL,
+    DATE(
+        YEAR(Fingerprint_Card_Issuance_Date__c) + 6,
+        MONTH(Fingerprint_Card_Issuance_Date__c),
+        MIN(
+            DAY(Fingerprint_Card_Issuance_Date__c),
+            CASE(
+                MONTH(Fingerprint_Card_Issuance_Date__c),
+                2,
+                    IF(
+                        MOD(YEAR(Fingerprint_Card_Issuance_Date__c) + 6, 400) = 0 ||
+                        (
+                            MOD(YEAR(Fingerprint_Card_Issuance_Date__c) + 6, 4) = 0 &amp;&amp;
+                            MOD(YEAR(Fingerprint_Card_Issuance_Date__c) + 6, 100) &lt;&gt; 0
+                        ),
+                        29,
+                        28
+                    ),
+                4, 30,
+                6, 30,
+                9, 30,
+                11, 30,
+                31
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fingerprint Card Expiration Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

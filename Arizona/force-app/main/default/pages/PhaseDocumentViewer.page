@@ -1,0 +1,7 @@
+<apex:page controller="PhaseDocumentViewerController"
+           contentType="application/pdf#{!fileName}"
+           showHeader="false"
+           sidebar="false"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           cache="false">{!fileBody}</apex:page>

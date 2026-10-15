@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Criminal_History_Disclosure_Expiration_F__c</fullName>
+    <formula>IF(
+    ISBLANK(Criminal_History_Issuance_Date__c),
+    NULL,
+    DATE(
+        YEAR(Criminal_History_Issuance_Date__c) + 1,
+        MONTH(Criminal_History_Issuance_Date__c),
+        MIN(
+            DAY(Criminal_History_Issuance_Date__c),
+            CASE(
+                MONTH(Criminal_History_Issuance_Date__c),
+                2,
+                    IF(
+                        MOD(YEAR(Criminal_History_Issuance_Date__c) + 1, 400) = 0 ||
+                        (
+                            MOD(YEAR(Criminal_History_Issuance_Date__c) + 1, 4) = 0 &amp;&amp;
+                            MOD(YEAR(Criminal_History_Issuance_Date__c) + 1, 100) &lt;&gt; 0
+                        ),
+                        29,
+                        28
+                    ),
+                4, 30,
+                6, 30,
+                9, 30,
+                11, 30,
+                31
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Criminal History Disclosure Expiration D</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,480 @@
+<apex:page controller="EVVContingencyPlanController" renderAs="pdf"
+          showHeader="false"
+           sidebar="false"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           cache="false"
+           standardStylesheets="false">
+
+<head>
+    <style type="text/css">
+        @page {
+            size: letter portrait;
+            margin: 0.5in 0.5in 0.6in 0.5in;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9.5pt;
+            color: #000000;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            vertical-align: top;
+            padding: 3px 5px;
+        }
+        .header-table {
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .logo-cell {
+            width: 110px;
+        }
+        .logo-cell img {
+            width: 100px;
+        }
+        .title-cell {
+            text-align: center;
+            border-bottom: 2px solid #000000;
+            font-weight: bold;
+        }
+        .policy-title {
+            font-size: 11pt;
+        }
+        .attachment-title {
+            font-size: 10.5pt;
+        }
+        .id-row td {
+            border-bottom: 1px solid #000000;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            font-size: 8.5pt;
+            padding-top: 14px;
+        }
+        .services-table {
+            border: 1px solid #000000;
+            margin-top: 4px;
+        }
+        .services-table th {
+            background-color: #d9d9d9;
+            font-weight: bold;
+            border: 1px solid #000000;
+            text-align: center;
+            font-size: 8.5pt;
+        }
+        .services-table td {
+            border: 1px solid #000000;
+            font-size: 9pt;
+        }
+        .services-table .num-col {
+            width: 24px;
+            text-align: center;
+        }
+        .services-table .freq-col {
+            width: 130px;
+        }
+        .services-table .pref-col {
+            width: 130px;
+        }
+        .pref-note {
+            border: 1px solid #000000;
+            background-color: #d9d9d9;
+            font-size: 8.3pt;
+            font-style: italic;
+            padding: 5px;
+            margin-top: -1px;
+        }
+        .pref-note b {
+            font-style: normal;
+        }
+        .pref-level-table {
+            border: 1px solid #000000;
+            margin-top: -1px;
+        }
+        .pref-level-table td {
+            border: 1px solid #000000;
+            font-size: 8.8pt;
+        }
+        .pref-level-table .letter-col {
+            width: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .advised-note {
+            border: 1px solid #000000;
+            background-color: #d9d9d9;
+            font-weight: bold;
+            font-size: 8.3pt;
+            text-align: center;
+            padding: 5px;
+            margin-top: -1px;
+        }
+        .sig-table {
+            margin-top: 6px;
+        }
+        .sig-table td {
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 8.5pt;
+            border-top: 1px solid #000000;
+            padding-top: 2px;
+        }
+        .intro-text {
+            font-size: 9pt;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+        .backup-table {
+            border: 1px solid #000000;
+            margin-top: 4px;
+        }
+        .backup-table th {
+            background-color: #d9d9d9;
+            font-weight: bold;
+            border: 1px solid #000000;
+            text-align: center;
+            font-size: 8.5pt;
+        }
+        .backup-table td {
+            border: 1px solid #000000;
+            font-size: 8.8pt;
+        }
+        .backup-table .step-col {
+            width: 45px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .backup-table .name-col {
+            width: 160px;
+            text-align: center;
+        }
+        .backup-table .phone-col {
+            width: 110px;
+            text-align: center;
+        }
+        .footer-line {
+            border-top: 2px solid #000000;
+            text-align: center;
+            font-weight: bold;
+            font-size: 9pt;
+            padding-top: 3px;
+            margin-top: 16px;
+        }
+        .footer-meta {
+            font-size: 8pt;
+            margin-top: 2px;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        .blank-line {
+            display: inline-block;
+            border-bottom: 1px solid #000000;
+            width: 100%;
+            min-height: 14px;
+        }
+        .body-text {
+            font-size: 9pt;
+            line-height: 1.35;
+            margin-top: 8px;
+        }
+        .sign-block-table {
+            margin-top: 26px;
+        }
+        .sign-block-table td {
+            border-top: 1px solid #000000;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 8.5pt;
+            text-align: center;
+            padding-top: 3px;
+        }
+        .sign-gap {
+            height: 26px;
+        }
+        .data-table {
+            border: 1px solid #000000;
+            margin-top: 4px;
+        }
+        .data-table th {
+            background-color: #d9d9d9;
+            font-weight: bold;
+            border: 1px solid #000000;
+            text-align: center;
+            font-size: 8.5pt;
+        }
+        .data-table td {
+            border: 1px solid #000000;
+            font-size: 8.3pt;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============== PAGE 1 ============== -->
+    <table class="header-table">
+        <tr>
+            <td class="logo-cell">
+                <apex:image value="{!$Resource.EVVImage}" width="100" />
+            </td>
+            <td class="title-cell">
+                <div class="policy-title">AHCCCS MEDICAL POLICY MANUAL</div>
+                <div class="attachment-title">POLICY 540, ATTACHMENT D - EVV MEMBER CONTINGENCY/BACK-UP PLAN</div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="id-row">
+        <tr>
+            <td style="width:40%;">MEMBER NAME<br/>
+                <apex:outputText value="{!memberName}" rendered="{!NOT(ISBLANK(memberName))}" />
+            </td>
+            <td style="width:30%;">AHCCCSID #<br/>
+                <apex:outputText value="{!ahcccsId}" rendered="{!NOT(ISBLANK(ahcccsId))}" />
+            </td>
+            <td style="width:30%;">DATE OF PLAN<br/>
+                <apex:outputText value="{!dateOfPlan}" />
+            </td>
+        </tr>
+    </table>
+
+    <table class="services-table">
+        <tr>
+            <th class="num-col"></th>
+            <th>SERVICES PROVIDED</th>
+            <th class="freq-col">FREQUENCY</th>
+            <th class="pref-col">PREFERENCE LEVEL</th>
+        </tr>
+        <tr>
+            <td class="num-col">1.</td>
+            <td>Respite</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="num-col">2.</td>
+            <td>Habilitation</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="num-col">3.</td>
+            <td>Attendant Care</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="pref-note">
+        <b>MEMBER SERVICE PREFERENCE LEVEL</b> &#8211; Based on member's choice for how quickly a replacement caregiver will be needed if the scheduled caregiver becomes
+        unavailable. Members must be informed that they have the right to request a back-up caregiver within two hours if they choose. Place Preference Level letter (A,
+        B, C, etc.) on the corresponding service Preference Level line:
+    </div>
+
+    <table class="pref-level-table">
+        <tr>
+            <td class="letter-col">A</td>
+            <td>Must be rescheduled within two hours of originally scheduled start time.</td>
+        </tr>
+        <tr>
+            <td class="letter-col">B</td>
+            <td>Must be rescheduled within 24 hours of originally scheduled start time.</td>
+        </tr>
+        <tr>
+            <td class="letter-col">C</td>
+            <td>Must be rescheduled within 48 hours of originally scheduled start time.</td>
+        </tr>
+        <tr>
+            <td class="letter-col">D</td>
+            <td>Will be performed at the next scheduled visit.</td>
+        </tr>
+    </table>
+
+    <div class="advised-note">
+        MEMBER HAS BEEN ADVISED THAT S/HE MAY CHANGE THE MEMBER SERVICE PREFERENCE LEVEL AND ALSO HIS/HER BACK-UP PLAN, AS INDICATED BELOW, AT ANY TIME,
+        INCLUDING AT THE TIME THE CAREGIVER IS LATE OR DOES NOT SHOW UP*
+    </div>
+
+    <table class="sig-table">
+        <tr>
+            <td style="width:60%;">Agency Representative Printed Name and Signature</td>
+            <td style="width:40%;">Date</td>
+        </tr>
+    </table>
+
+    <div class="body-text">
+        If my caregiver does not show up to provide services as scheduled, in the case of a life-threatening emergency, I will contact 9-1-1; otherwise, my back-up plan is
+        as follows:
+    </div>
+
+    <table class="backup-table">
+        <tr>
+            <th class="step-col">&#160;</th>
+            <th>BACK-UP PLAN</th>
+            <th class="name-col">NAME</th>
+            <th class="phone-col">PHONE NUMBER</th>
+        </tr>
+        <tr>
+            <td class="step-col">Step 1</td>
+            <td>I will contact my provider agency. My provider agency will answer my call or get back to me in 15 minutes.</td>
+            <td class="name-col">{!backupAgencyName}</td>
+            <td class="phone-col">{!backupAgencyPhone}</td>
+        </tr>
+        <tr>
+            <td class="step-col">Step 2</td>
+            <td>If my provider agency doesn't respond in 15 minutes, I will contact Sandata EVV at Sandata Customer Care at 855-928-1140.</td>
+            <td class="name-col"></td>
+            <td class="phone-col"></td>
+        </tr>
+        <tr>
+            <td class="step-col">Step 3</td>
+            <td>I will call my non-paid caregiver to provide the service I need.</td>
+            <td class="name-col"></td>
+            <td class="phone-col"></td>
+        </tr>
+    </table>
+
+    <div class="footer-line">540, Attachment D - Page 1 of 3</div>
+    <div class="footer-meta">
+        Effective Date: 01/01/21<br/>
+        Approval Date: 11/19/20
+    </div>
+
+    <!-- ============== PAGE 2 ============== -->
+    <div class="page-break"></div>
+
+    <table class="header-table">
+        <tr>
+            <td class="logo-cell">
+                <apex:image value="{!$Resource.EVVImage}" width="100" />
+            </td>
+            <td class="title-cell">
+                <div class="policy-title">AHCCCS MEDICAL POLICY MANUAL</div>
+                <div class="attachment-title">POLICY 540, ATTACHMENT D - EVV MEMBER CONTINGENCY/BACK-UP PLAN</div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="id-row">
+        <tr>
+            <td style="width:40%;">MEMBER NAME<br/>
+                <apex:outputText value="{!memberName}" rendered="{!NOT(ISBLANK(memberName))}" />
+            </td>
+            <td style="width:30%;">AHCCCSID #<br/>
+                <apex:outputText value="{!ahcccsId}" rendered="{!NOT(ISBLANK(ahcccsId))}" />
+            </td>
+            <td style="width:30%;">DATE OF PLAN<br/>
+                <apex:outputText value="{!dateOfPlan}" />
+            </td>
+        </tr>
+    </table>
+
+    <div class="body-text">
+        I understand that if I do not receive my critical services on time I can call the Agency or Sandata to report the problem so
+        they can assist in replacing my caregiver as soon as possible. I understand I also have the right to file a written complaint
+        about the failure to provide services as scheduled.
+    </div>
+
+    <div class="body-text">
+        I understand that in order to receive services I must be available and willing to accept the scheduled services. If I choose
+        not to accept the services I understand I must tell my case manager or provider this. This plan has been reviewed with me
+        and I agree with it. I will keep a copy of this plan. I understand I will talk with my provider at least once a year about my
+        plan but I can change it at any time.
+    </div>
+
+    <div class="body-text" style="font-weight:bold;">
+        PLEASE HAVE MEMBER/HEALTH CARE DECISION MAKER SIGN HERE AT TIME OF <u>INITIAL PLAN DEVELOPMENT</u>:
+    </div>
+
+    <table class="sign-block-table">
+        <tr><td colspan="2" class="sign-gap" style="border-top:none;"></td></tr>
+        <tr>
+            <td style="width:60%;">MEMBER/HEALTH CARE DECISION MAKER SIGNATURE</td>
+            <td style="width:40%;">DATE</td>
+        </tr>
+        <tr><td colspan="2" class="sign-gap" style="border-top:none;"></td></tr>
+        <tr>
+            <td style="width:60%;">MEMBER/HEALTH CARE DECISION MAKER PRINTED NAME</td>
+            <td style="width:40%;">DATE</td>
+        </tr>
+        <tr><td colspan="2" class="sign-gap" style="border-top:none;"></td></tr>
+        <tr>
+            <td colspan="2">RELATIONSHIP TO MEMBER</td>
+        </tr>
+    </table>
+
+    <div class="footer-line">540, Attachment D - Page 2 of 3</div>
+    <div class="footer-meta">
+        Effective Date: 01/01/21<br/>
+        Approval Date: 11/19/20
+    </div>
+
+    <!-- ============== PAGE 3 ============== -->
+    <div class="page-break"></div>
+
+    <table class="header-table">
+        <tr>
+            <td class="logo-cell">
+                <apex:image value="{!$Resource.EVVImage}" width="100" />
+            </td>
+            <td class="title-cell">
+                <div class="policy-title">AHCCCS MEDICAL POLICY MANUAL</div>
+                <div class="attachment-title">POLICY 540, ATTACHMENT D - EVV MEMBER CONTINGENCY/BACK-UP PLAN</div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="id-row">
+        <tr>
+            <td style="width:40%;">MEMBER NAME<br/>
+                <apex:outputText value="{!memberName}" rendered="{!NOT(ISBLANK(memberName))}" />
+            </td>
+            <td style="width:30%;">AHCCCSID #<br/>
+                <apex:outputText value="{!ahcccsId}" rendered="{!NOT(ISBLANK(ahcccsId))}" />
+            </td>
+            <td style="width:30%;">DATE OF PLAN<br/>
+                <apex:outputText value="{!dateOfPlan}" />
+            </td>
+        </tr>
+    </table>
+
+    <table class="data-table">
+        <tr>
+            <th style="width:60px;">HCPCS</th>
+            <th style="width:140px;">Service Title</th>
+            <th>Contingency Plan Default</th>
+        </tr>
+        <tr><td>G0299</td><td>Nursing</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>G0300</td><td>Nursing</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>H2014</td><td>Skills Training and Development</td><td>Service must be rescheduled within 24 hours of originally scheduled start time</td></tr>
+        <tr><td>S5125</td><td>Attendant Care</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>S5130</td><td>Homemaker</td><td>Service will be performed at next scheduled visit</td></tr>
+        <tr><td>S5150</td><td>Respite Care</td><td>Service must be rescheduled within 24 hours of originally scheduled start time</td></tr>
+        <tr><td>S5151</td><td>Respite Care</td><td>Service must be rescheduled within 24 hours of originally scheduled start time</td></tr>
+        <tr><td>S9123</td><td>Private Duty Nursing</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>S9124</td><td>Private Duty Nursing</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>T1019</td><td>Personal Care</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>T2017</td><td>Habilitation</td><td>Service must be rescheduled within 24 hours of originally scheduled start time</td></tr>
+        <tr><td>S5135</td><td>Companion Care</td><td>Service will be performed at next scheduled visit</td></tr>
+        <tr><td>T1021</td><td>Home Health Aide</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>G0151</td><td>Physical Therapy</td><td>Service will be performed at next scheduled visit</td></tr>
+        <tr><td>S9131</td><td>Physical Therapy</td><td>Service will be performed at next scheduled visit</td></tr>
+        <tr><td>G0152</td><td>Occupational Therapy</td><td>Service will be performed at next scheduled visit</td></tr>
+        <tr><td>S9129</td><td>Occupational Therapy</td><td>Service will be performed at next scheduled visit</td></tr>
+        <tr><td>S5181</td><td>Respiratory Therapy</td><td>Service must be rescheduled within 2 hours of originally scheduled start time</td></tr>
+        <tr><td>G0153</td><td>Speech Therapy</td><td>Service will be performed at next scheduled visit</td></tr>
+        <tr><td>S9128</td><td>Speech Therapy</td><td>Service will be performed at next scheduled visit</td></tr>
+    </table>
+
+    <div class="footer-line">540, Attachment D - Page 3 of 3</div>
+    <div class="footer-meta">
+        Effective Date: 01/01/21<br/>
+        Approval Date: 11/19/20
+    </div>
+
+</body>
+</apex:page>

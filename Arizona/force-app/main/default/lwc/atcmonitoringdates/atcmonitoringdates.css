@@ -1,0 +1,134 @@
+:host {
+    display: block;
+}
+
+.slds-box {
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #d8dce6;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+/* Horizontal scrolling */
+.account-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+/* Main table */
+.atc-table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    border: 1px solid #d8dce6;
+}
+
+/* Header */
+.atc-table thead th {
+    background-color: #f3f6fb;
+    color: #1f3a93;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    white-space: normal;
+    min-width: 160px;
+    max-width: 220px;
+    padding: 10px 12px;
+    border: 1px solid #d8dce6;
+}
+
+/* Account Name Header */
+.atc-table thead th:first-child {
+    min-width: 190px;
+    text-align: left;
+}
+
+/* Table cells */
+.atc-table tbody td {
+    padding: 9px 12px;
+    border: 1px solid #d8dce6;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Account name */
+.account-name-cell {
+    min-width: 190px;
+    text-align: left !important;
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Account link */
+.account-link {
+    color: #1f3a93;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.account-link:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox */
+.checkbox-cell {
+    text-align: center !important;
+}
+
+.checkbox-cell lightning-input {
+    display: inline-block;
+
+    --slds-c-checkbox-color-background-disabled: #ffffff;
+}
+
+.checkbox-cell lightning-input .slds-checkbox_faux,
+.checkbox-cell lightning-input .slds-checkbox--faux {
+    opacity: 1;
+}
+
+/* Row hover */
+.atc-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Sticky first column */
+.atc-table thead th:first-child,
+.atc-table tbody td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+}
+
+.atc-table thead th:first-child {
+    z-index: 3;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .slds-box {
+        padding: 0.5rem;
+    }
+
+    .atc-table {
+        min-width: 1800px;
+    }
+
+    .atc-table thead th {
+        min-width: 150px;
+        font-size: 0.8rem;
+    }
+
+    .atc-table tbody td {
+        font-size: 0.8rem;
+    }
+
+    .atc-table thead th:first-child,
+    .atc-table tbody td:first-child {
+        min-width: 170px;
+    }
+}

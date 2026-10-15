@@ -1,0 +1,226 @@
+<template>
+    <div class="contact-info-root">
+
+        <template lwc:if={isLoading}>
+            <lightning-spinner
+                alternative-text="Loading..."
+                size="small">
+            </lightning-spinner>
+        </template>
+
+        <div class="profile-card">
+
+            <!-- ================= HEADER ================= -->
+            <div class="profile-header">
+                <div class="profile-avatar">{initials}</div>
+                <div class="profile-header-text">
+                    <div class="profile-name">{formattedFullName}</div>
+                </div>
+            </div>
+
+            <!-- ================= VIEW MODE ONLY ================= -->
+            <lightning-record-view-form
+                record-id={contactId}
+                object-api-name="Contact">
+
+                <div class="profile-container">
+
+                    <!-- ---- Personal Details ---- -->
+                    <div class="info-section">
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:identity" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.firstName}
+                            </div>
+                            <div class="field-value">
+                                <lightning-output-field field-name={fields.firstName} variant="label-hidden"></lightning-output-field>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:identity" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.middleName}
+                            </div>
+                            <div class="field-value">
+                                <lightning-output-field field-name={fields.middleName} variant="label-hidden"></lightning-output-field>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:identity" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.lastName}
+                            </div>
+                            <div class="field-value">
+                                <lightning-output-field field-name={fields.lastName} variant="label-hidden"></lightning-output-field>
+                            </div>
+                        </div>
+
+                        <!-- Full Name formatted per language (en: First Last / es: Last, First) -->
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:identity" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.fullName}
+                            </div>
+                            <div class="field-value">
+                                {formattedFullName}
+                            </div>
+                        </div>
+
+                        <!-- DOB formatted per language locale (en: MM/DD/YYYY / es: DD/MM/YYYY) -->
+                        <div class="field-row field-row_last">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:event" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.dob}
+                            </div>
+                            <div class="field-value">
+                                <lightning-formatted-date-time
+                                    value={birthdate}
+                                    year="numeric"
+                                    month="2-digit"
+                                    day="2-digit"
+                                    locale={dateLocale}>
+                                </lightning-formatted-date-time>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ---- Contact Details ---- -->
+                    <div class="info-section">
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:call" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.mobile}
+                            </div>
+                            <div class="field-value">
+                                <lightning-output-field field-name={fields.mobilePhone} variant="label-hidden"></lightning-output-field>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:email" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.email}
+                            </div>
+                            <div class="field-value">
+                                <lightning-output-field field-name={fields.email} variant="label-hidden"></lightning-output-field>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:chat" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.preferredContactMethod}
+                            </div>
+                            <div class="field-value">
+                                <span class="badge badge-neutral">
+                                    <lightning-output-field field-name={fields.preferredContactMethod} variant="label-hidden"></lightning-output-field>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field-row field-row_last">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:world" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.preferredLanguage}
+                            </div>
+                            <div class="field-value">
+                                <span class="badge badge-blue">
+                                    <lightning-output-field field-name={fields.preferredLanguage} variant="label-hidden"></lightning-output-field>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ---- Program Details ---- -->
+                    <div class="info-section">
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:company" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.division}
+                            </div>
+                            <div class="field-value">
+                                <span class="badge badge-navy">
+                                    <lightning-output-field field-name={fields.division} variant="label-hidden"></lightning-output-field>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:drive_time" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.drivingStatus}
+                            </div>
+                            <div class="field-value">
+                                <span class="badge badge-green">
+                                    <lightning-output-field field-name={fields.drivingStatus} variant="label-hidden"></lightning-output-field>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:contract" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.contractType}
+                            </div>
+                            <div class="field-value">
+                                <span class="badge badge-neutral">
+                                    <lightning-output-field field-name={fields.contractType} variant="label-hidden"></lightning-output-field>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:home" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.livingStatus}
+                            </div>
+                            <div class="field-value">
+                                <span class="badge badge-neutral">
+                                    <lightning-output-field field-name={fields.livingStatus} variant="label-hidden"></lightning-output-field>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field-row field-row_last">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:task" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.service}
+                            </div>
+                            <div class="field-value">
+                                <span class="badge badge-green">
+                                    <lightning-output-field field-name={fields.service} variant="label-hidden"></lightning-output-field>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ---- Address ---- -->
+                    <div class="info-section info-section_last">
+                        <div class="field-row field-row_last address-row">
+                            <div class="field-label">
+                                <lightning-icon icon-name="utility:location" size="xx-small" class="field-icon"></lightning-icon>
+                                {currentLabels.address}
+                            </div>
+                            <div class="field-value">
+                                <div><lightning-output-field field-name={fields.mailingStreet} variant="label-hidden"></lightning-output-field></div>
+                                <div>
+                                    <lightning-output-field field-name={fields.mailingCity} variant="label-hidden"></lightning-output-field>,
+                                    <lightning-output-field field-name={fields.mailingState} variant="label-hidden"></lightning-output-field>
+                                    <lightning-output-field field-name={fields.mailingPostalCode} variant="label-hidden"></lightning-output-field>
+                                </div>
+                                <div><lightning-output-field field-name={fields.mailingCountry} variant="label-hidden"></lightning-output-field></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </lightning-record-view-form>
+
+        </div>
+
+    </div>
+</template>

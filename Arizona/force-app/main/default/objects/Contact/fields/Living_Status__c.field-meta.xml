@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Living_Status__c</fullName>
+    <label>Living Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Live-In</fullName>
+                <default>false</default>
+                <label>Live-In</label>
+            </value>
+            <value>
+                <fullName>Not Live-In</fullName>
+                <default>false</default>
+                <label>Not Live-In</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Form Fill Page</masterLabel>
+    <description>Lets a customer complete and sign a generated form, and saves the completed PDF to Files on the record.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage">
+            <property
+                name="token"
+                type="String"
+                label="Form Token"
+                description="For internal testing: the Token__c value of a Form_Request__c record."/>
+            <property
+                name="showCalibration"
+                type="Boolean"
+                default="false"
+                label="Show Calibration Info"
+                description="Shows the page size on screen and outlines each coordinate in red on the output PDF. Use while positioning fields, then turn off."/>
+            <property
+                name="coverMarkers"
+                type="Boolean"
+                default="false"
+                label="Cover Placeholder Markers"
+                description="Only needed if the template still contains ###Marker### text. Leave off when the template uses blank underscore lines."/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="token"
+                type="String"
+                label="Form Token"
+                description="Leave blank to read the token from the ?token= URL parameter."/>
+            <property
+                name="showCalibration"
+                type="Boolean"
+                default="false"
+                label="Show Calibration Info"
+                description="Leave off for customers."/>
+            <property
+                name="coverMarkers"
+                type="Boolean"
+                default="false"
+                label="Cover Placeholder Markers"
+                description="Only needed if the template still contains ###Marker### text."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    
+    <!-- Allows component to be used in Contact Record Pages as a Tab -->
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    
+    <!-- Configuration properties for the component -->
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Contact</object>
+            </objects>
+            
+            <!-- Allow configuration in the Lightning App Builder -->
+            <property name="enableCaching" type="Boolean" label="Enable Caching" description="Enable caching for better performance" default="true"/>
+            <property name="componentTitle" type="String" label="Component Title" description="Title for the component" default="Related Accounts - ATC Monitoring Dates"/>
+            <property name="showAccountLink" type="Boolean" label="Show Account Links" description="Display clickable account names" default="true"/>
+        </targetConfig>
+    </targetConfigs>
+    
+    <!-- Component metadata -->
+    <masterLabel>ATC Monitoring Dates Tab</masterLabel>
+    <description>Displays ATC Monitoring Dates from all related accounts on Contact record pages in a dedicated tab. Shows monitoring meeting dates, checks, service information for each related account.</description>
+</LightningComponentBundle>

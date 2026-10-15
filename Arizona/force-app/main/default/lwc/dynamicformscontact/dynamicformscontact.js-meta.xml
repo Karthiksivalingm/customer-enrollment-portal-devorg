@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage,lightningCommunity__Default">
+            <property name="recordId" type="String" label="Record ID" description="The record ID to load forms for"/>
+            <property name="objectApiName" type="String" label="Object API Name" description="The API name of the object (typically Contact)"/>
+            <property name="languageFieldApiName" type="String" label="Language Field API Name" default="Preferred_Language__c" description="Contact field holding the preferred language. Set to English/Spanish to show corresponding forms."/>
+            <property name="divisionFieldApiName" type="String" label="Division Field API Name" default="Division__c" description="Contact field holding Division (Member, Parent Provider, Provider, Tutor). Forms will be filtered to show only the matching Division category."/>
+            <property name="hideUnmappedForms" type="Boolean" label="Hide forms without a template" description="Off by default. Check to hide forms that don't have a matching TS Documents template."/>
+            <property name="showUnmappedForms" type="Boolean" label="Show unmapped forms (no longer used)" description="Retained for backward compatibility. Safe to delete once removed from all pages."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

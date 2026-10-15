@@ -1,0 +1,44 @@
+<template>
+    <template if:true={showBanner}>
+        <div class="confirmation-banner">
+
+            <!-- Close Button -->
+            <button
+                class="close-btn"
+                title="Close"
+                onclick={closeBanner}
+            >
+                <lightning-icon
+                    icon-name="utility:close"
+                    alternative-text="Close"
+                    size="x-small"
+                    class="close-icon">
+                </lightning-icon>
+
+                <span class="slds-assistive-text">Close</span>
+            </button>
+
+            <!-- Banner Content -->
+            <div class="banner-content">
+
+                <!-- Success Icon -->
+                <div class="success-icon-container">
+                    <lightning-icon
+                        icon-name="utility:success"
+                        alternative-text="Success"
+                        size="small"
+                        class="success-icon">
+                    </lightning-icon>
+                </div>
+
+                <!-- Message -->
+                <div class="message-container">
+                    <p class="banner-message">
+                        Thank you for reaching out. Your case number is <strong class="case-number">#{caseNumber}</strong>. A representative from our support team will review your request and contact you within 24 hours.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </template>
+</template>
