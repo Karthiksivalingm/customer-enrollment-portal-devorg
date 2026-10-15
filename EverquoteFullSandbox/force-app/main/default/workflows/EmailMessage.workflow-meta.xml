@@ -17,7 +17,7 @@
             <name>Reopen_Closed_Case_on_New_Email</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>EmailMessage.Incoming</field>
             <operation>equals</operation>
@@ -28,7 +28,7 @@
             <operation>equals</operation>
             <value>True</value>
         </criteriaItems>
-        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <failedMigrationToolVersion>262.12.11</failedMigrationToolVersion>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

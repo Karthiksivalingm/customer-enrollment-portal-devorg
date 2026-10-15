@@ -1,0 +1,13 @@
+<apex:component >
+    <apex:attribute name="carrier" type="Carrier__c" required="true"
+                    description="The Carrier"/>
+    
+    <apex:pageBlock title="Relevant Promos" rendered="{!carrier != null}">
+        <table class="table text-center">
+            <tr>
+                <th class="col-sm-6 text-center">Current Promos</th>
+                <td class="col-sm-6 text-center">{!carrier.Current_Promos__c}</td>
+            </tr>
+        </table>
+    </apex:pageBlock>
+</apex:component>

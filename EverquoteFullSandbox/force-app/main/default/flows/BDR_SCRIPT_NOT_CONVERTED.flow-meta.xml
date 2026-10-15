@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>BDR SCRIPT NOT CONVERTED {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BDR SCRIPT NOT CONVERTED</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Not_Convert_Screen</name>
+        <label>Not Convert Screen</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>BDRsDisplay</name>
+            <fieldText>&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;u style=&quot;background-color: transparent; color: rgb(74, 134, 232); font-family: Arial, sans-serif; font-size: 14pt;&quot;&gt;Introduction&lt;/u&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;“Hi this is (BDR Name) with Everquote on a recorded line calling to speak with (DM)”&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;If available and calling a new customer&lt;/strong&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;“Hi (&lt;/em&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;DM&lt;/em&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;), this is (&lt;/em&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;BDR&lt;/em&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt; name) with Everquote calling to see how you’re currently generating new&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;business? We are a unique provider of high intent insurance leads and wanted to see about&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;sending some your way!”&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;If not interested or requests an email:&lt;/strong&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;em&gt;“I’m not interested in any leads.”&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;★&amp;nbsp;&amp;nbsp;“OK - I understand that but we’ve spoken to many agents that either haven&amp;amp;#39;t used leads&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;before or used other providers. Our leads are higher quality and higher intent. You have&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;nothing to lose by trying our service and seeing for yourself how we can help you&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;increase new business. “&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&lt;em&gt;“Can you just send me an email?”&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;★&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;nbsp;&amp;nbsp;“I recommend a quick 5-10 minute meeting. Because there are a lot of variable and&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;volume based promotions, without a conversation it is hard to give you the best option or&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;deal possible”&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(74, 134, 232); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&lt;u&gt;If yes &lt;/u&gt;&lt;/em&gt;&lt;em style=&quot;background-color: transparent; color: rgb(255, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&lt;u&gt;CONVERT LEAD to CONTACT&lt;/u&gt;&lt;/em&gt;&lt;em style=&quot;background-color: transparent; color: rgb(74, 134, 232); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&lt;u&gt; then open script in New Contact Call Record in order to&lt;/u&gt;&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(74, 134, 232); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&lt;u&gt;move on to Discovery:&lt;/u&gt;&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;If NOT available and you get Voicemail&lt;/strong&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;“Hey (DM), my name is (Your Name) from EverQuote, hope you are having an amazing week. I&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;sent you an email regarding some of our products and pricing. I would love to discuss this with&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;you. Give me a call back at (direct phone number). Thanks again, I look forward to speaking&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;em style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;with you!”&lt;/em&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;★&amp;nbsp;&amp;nbsp;After leaving your message always send a follow up email&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;If NOT available and you are speaking with a Gatekeeper&lt;/strong&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;“No problem! What is a better time for me to try and connect with (DM)?”&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;★&amp;nbsp;Once you know a better time to connect with the DM, make a note in your calendar and follow up at&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;that date/time.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Not_Convert_Screen</targetReference>
+        </connector>
+    </start>
+    <status>Obsolete</status>
+</Flow>

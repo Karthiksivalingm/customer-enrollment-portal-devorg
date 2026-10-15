@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PARTNER_Cannot_skip_opportunity_stages</fullName>
+    <active>true</active>
+    <description>Cannot skip opportunity stages. Applies to Partner opportunities.</description>
+    <errorConditionFormula>(CASE( StageName , 
+&quot;Introduction&quot;,1, 
+&quot;Needs Analysis&quot;,2, 
+&quot;Benefits Presentation&quot;,3, 
+&quot;Committed&quot;,4,
+&quot;Engaged&quot;,5, 
+&quot;Closed Won&quot;,6, 
+&quot;Closed Lost&quot;,6,0)-1 
+&lt;&gt; 
+CASE(PRIORVALUE(StageName) , 
+&quot;Introduction&quot;,1, 
+&quot;Needs Analysis&quot;,2, 
+&quot;Benefits Presentation&quot;,3, 
+&quot;Committed&quot;,4,
+&quot;Engaged&quot;,5, 
+&quot;Closed Won&quot;,6, 
+&quot;Closed Lost&quot;,6,0)) 
+&amp;&amp; 
+NOT(ISPICKVAL(StageName, &quot;Introduction&quot;))
+&amp;&amp;
+NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;))
+&amp;&amp;
+ RecordTypeId =&quot;0121a000000RMUC&quot;
+&amp;&amp;
+ISCHANGED(StageName)</errorConditionFormula>
+    <errorMessage>Cannot skip opportunity stages</errorMessage>
+</ValidationRule>

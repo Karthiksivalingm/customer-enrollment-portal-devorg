@@ -385,6 +385,17 @@ Push_Counter__c + 1
         <targetObject>AccountId</targetObject>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Notes_from_Sales1</fullName>
+        <field>Notes_from_Sales__c</field>
+        <formula>Notes_for_CSM__c</formula>
+        <name>Notes from Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Opp_Gap_Now_Has_Text</fullName>
         <field>Opp_Gap_is_blank__c</field>
         <literalValue>0</literalValue>
@@ -438,7 +449,7 @@ Push_Counter__c + 1
         <fullName>Stage_to_Pending</fullName>
         <description>update the stage of upsell opportunities to pending when next due date is greater than today</description>
         <field>StageName</field>
-        <literalValue>Pending</literalValue>
+        <literalValue>Discovery</literalValue>
         <name>Stage to Pending</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
@@ -526,10 +537,10 @@ Push_Counter__c + 1
     <rules>
         <fullName>Closed Won</fullName>
         <actions>
-            <name>Notes_from_Sales</name>
+            <name>Notes_from_Sales1</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
@@ -539,7 +550,7 @@ Push_Counter__c + 1
             <field>Opportunity.Notes_for_CSM__c</field>
             <operation>notEqual</operation>
         </criteriaItems>
-        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <failedMigrationToolVersion>262.12.11</failedMigrationToolVersion>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -552,7 +563,7 @@ Push_Counter__c + 1
             <name>Core_IO_Win_Date_f</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
@@ -632,7 +643,7 @@ Push_Counter__c + 1
             <name>Core_IO_Win_Date</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
@@ -652,7 +663,7 @@ Push_Counter__c + 1
             <name>Current_State_has_text_now</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>NOT ISBLANK(   CurrentState__c  )</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -662,7 +673,7 @@ Push_Counter__c + 1
             <name>Current_State_is_Blank</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>ISBLANK(   CurrentState__c  )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -672,7 +683,7 @@ Push_Counter__c + 1
             <name>Future_State_is_Blank</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>ISBLANK(   FutureState__c  )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -682,7 +693,7 @@ Push_Counter__c + 1
             <name>Future_State_now_has_text</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>NOT ISBLANK(   FutureState__c  )</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -692,7 +703,7 @@ Push_Counter__c + 1
             <name>Opp_Gap_is_Blank</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>ISBLANK(  Gap__c )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -702,7 +713,7 @@ Push_Counter__c + 1
             <name>Opp_Gap_Now_Has_Text</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>NOT ISBLANK(  Gap__c )</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -768,7 +779,7 @@ Push_Counter__c + 1
             <name>Stage_to_Pending</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.RecordTypeId</field>
             <operation>equals</operation>
@@ -776,8 +787,7 @@ Push_Counter__c + 1
         </criteriaItems>
         <criteriaItems>
             <field>Opportunity.next_due_date__c</field>
-            <operation>greaterThan</operation>
-            <value>TODAY</value>
+            <operation>notEqual</operation>
         </criteriaItems>
         <criteriaItems>
             <field>Opportunity.StageName</field>
@@ -785,7 +795,7 @@ Push_Counter__c + 1
             <value>Closed Won,Closed Lost</value>
         </criteriaItems>
         <description>update the stage of an upsell opportunity to pending when the next due date is greater than today</description>
-        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <failedMigrationToolVersion>262.12.10</failedMigrationToolVersion>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

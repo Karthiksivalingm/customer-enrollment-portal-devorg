@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Review_Call__c</fullName>
+    <label>Account Review Call</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Account_Management_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Consultation</fullName>
+                <default>false</default>
+                <label>Consultation</label>
+            </value>
+            <value>
+                <fullName>Post Webinar</fullName>
+                <default>false</default>
+                <label>Post Webinar</label>
+            </value>
+            <value>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+                <label>Follow Up</label>
+            </value>
+            <value>
+                <fullName>Account Changes</fullName>
+                <default>false</default>
+                <label>Account Changes</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Account Review Call</controllingFieldValue>
+            <valueName>Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Review Call</controllingFieldValue>
+            <valueName>Consultation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Review Call</controllingFieldValue>
+            <valueName>Post Webinar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Review Call</controllingFieldValue>
+            <valueName>Follow Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Review Call</controllingFieldValue>
+            <valueName>Account Changes</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

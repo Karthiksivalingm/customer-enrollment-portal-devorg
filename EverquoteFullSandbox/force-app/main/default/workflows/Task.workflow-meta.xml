@@ -118,14 +118,14 @@
             <name>Follow_up_with_Lead</name>
             <type>Task</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Task.Call_Outcome__c</field>
             <operation>equals</operation>
             <value>&quot;Callback scheduled, still in market&quot;</value>
         </criteriaItems>
         <description>Creates a task to follow up with the Lead when Call Outcome = Callback Scheduled</description>
-        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <failedMigrationToolVersion>262.12.11</failedMigrationToolVersion>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -148,7 +148,7 @@
             <value>Live Message</value>
         </criteriaItems>
         <description>update correct contact when call results is correct contact</description>
-        <failedMigrationToolVersion>262.12.5</failedMigrationToolVersion>
+        <failedMigrationToolVersion>262.12.10</failedMigrationToolVersion>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>

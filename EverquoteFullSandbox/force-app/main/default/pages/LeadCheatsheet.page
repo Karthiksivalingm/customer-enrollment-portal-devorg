@@ -1,0 +1,49 @@
+<apex:page controller="LeadCheatsheetController">
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />  
+    </head>
+    <body>
+        <apex:pageMessages />
+        <apex:outputPanel rendered="{!lead != null}">
+        <div class="row">
+            <div class="col-sm-12">
+                <c:LeadDetail lead="{!lead}" save="{!save}" cancel="{!cancel}"
+                              edit="{!edit}" isEditing="{!isEditing}" />
+            </div>
+
+            <div class="col-sm-3">
+                <div style="overflow: scroll">
+                    <c:LeadColleaguesInTheState colleaguesInTheState="{!colleaguesInTheState}" />
+                    <c:LeadFamiliarNames familiarNames="{!familiarNames}" distance="{!distance}" />
+                    <c:LeadCurrentPromo carrier="{!carrier}" />
+                </div>
+                <h4 class="text-warning">Custom Links</h4>
+                <ul>
+                    <li><a href="{!URLFOR($Action.Lead.Life_Survey)}">Life Survey</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-9">
+                <div style="overflow: scroll; height: 600px">
+                    <c:LeadOpenActivities lead="{!lead}" openActivities="{!openActivities}" />
+                    <c:LeadActivityHistories activityHistories="{!activityHistories}" />
+                    <c:LeadNotes noteList="{!noteList}" />
+                    <c:LeadCampaignHistories campaignHistories="{!campaignHistories}" />
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div style="overflow: scroll">
+                            <c:LeadMarketplaceStats lead="{!lead}" marketplaceStats="{!marketplaceStats}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <c:LeadCalculator vplclegs="{!vplclegs}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        </apex:outputPanel>
+    </body>
+</apex:page>

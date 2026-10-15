@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Populated by flow -Opportunity_ClosedWonWithReferringAgent_CreateCase_ReferralCredit. When a Opp with a Referral is set to Closed Won, creates a case and connects the triggering Opportunity via this lookup.
+
+S3P-1312 - Updated</description>
+    <inlineHelpText>Opportunity this referral credit originated from.</inlineHelpText>
+    <label>Referral Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Cases (Referral Credits)</relationshipLabel>
+    <relationshipName>Cases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

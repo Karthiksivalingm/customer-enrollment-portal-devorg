@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the Upsell: Notes from last opp process using Upsell opp is closed criteria.
+update notes from last opp on account when opp is closed</description>
+    <label>Upsell: Notes from last opp_1</label>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>myRule_1_A1</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>ISBLANK({!$Record.Notes_for_Next_Opp__c} ) = False
+&amp;&amp;
+OR(
+ISPICKVAL({!$Record.StageName} , &quot;Closed Won&quot;),
+ISPICKVAL({!$Record.StageName} , &quot;Closed Lost&quot;))</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>myRule_1_A1</name>
+        <label>Notes for next opp</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>Notes_for_next_opp</flowName>
+        <inputAssignments>
+            <name>Accountid</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>NotesNextopp</name>
+            <value>
+                <elementReference>$Record.Notes_for_Next_Opp__c</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

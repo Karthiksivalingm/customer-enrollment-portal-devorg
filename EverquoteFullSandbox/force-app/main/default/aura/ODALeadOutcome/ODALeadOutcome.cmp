@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+  <c:odaNewLeadOutcome
+    leadId="{!v.recordId}"
+    onleadupdated="{!c.onLeadUpdated}"
+  ></c:odaNewLeadOutcome>
+</aura:component>

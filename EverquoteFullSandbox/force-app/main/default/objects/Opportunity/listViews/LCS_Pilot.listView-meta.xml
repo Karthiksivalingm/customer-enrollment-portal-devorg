@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LCS_Pilot</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>OPPORTUNITY.RECORDTYPE</columns>
+    <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+    <columns>LCS__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>10/7/2020 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.NAME</field>
+        <operation>startsWith</operation>
+        <value>LCS Pilot</value>
+    </filters>
+    <filters>
+        <field>Account_Type__c</field>
+        <operation>notContain</operation>
+        <value>closed,locked</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <label>LCS Pilot</label>
+    <sharedTo>
+        <group>AGP</group>
+        <group>Allstate_Team</group>
+        <group>Customer_Success</group>
+        <group>Customer_Success_Managers</group>
+        <group>Farmers_Team</group>
+        <group>IA_and_Growth_Team</group>
+        <group>Sales_Strategy_and_Ops</group>
+        <group>State_Farm_Team</group>
+    </sharedTo>
+</ListView>

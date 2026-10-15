@@ -32,10 +32,19 @@ public with sharing class ODALeadOutcomeController {
   }
 
   @AuraEnabled
-  public static Lead updateLeadOutcome(Id leadId, String leadOutcome) {
-    Lead newLead = new Lead(Id = leadId, Lead_Outcome__c = leadOutcome);
+public static Lead updateLeadOutcome(Id leadId, String leadOutcome) {
+    Lead newLead = new Lead(
+        Id = leadId,
+        Lead_Outcome__c = leadOutcome
+    );
 
-    update newLead;
-    return getById(newLead.Id);
-  }
+    try {
+        update newLead;
+        return getById(newLead.Id);
+    } catch (DmlException e) {
+        throw new AuraHandledException(
+            'Unable to update the Lead outcome. Please try again.'
+        );
+    }
+}
 }

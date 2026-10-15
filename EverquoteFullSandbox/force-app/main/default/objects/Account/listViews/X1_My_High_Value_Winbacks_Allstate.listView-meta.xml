@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_My_High_Value_Winbacks_Allstate</fullName>
+    <columns>Carrier__c</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_ZIP</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>Pro_Account_Cancelled_Date__c</columns>
+    <columns>Total_Leads_Purchased__c</columns>
+    <columns>Cancellation_Reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Allstate</value>
+    </filters>
+    <filters>
+        <field>State__pc</field>
+        <operation>equals</operation>
+        <value>CA</value>
+    </filters>
+    <label>1. My Winbacks - Allstate</label>
+    <sharedTo>
+        <group>Allstate_Team</group>
+    </sharedTo>
+</ListView>

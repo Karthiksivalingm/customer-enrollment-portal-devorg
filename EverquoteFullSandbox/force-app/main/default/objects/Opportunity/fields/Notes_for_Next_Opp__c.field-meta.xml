@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notes_for_Next_Opp__c</fullName>
+    <description>notes to be included on the next opportunity.</description>
+    <inlineHelpText>notes to be included on next opportunity</inlineHelpText>
+    <label>Notes for Next Opp</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

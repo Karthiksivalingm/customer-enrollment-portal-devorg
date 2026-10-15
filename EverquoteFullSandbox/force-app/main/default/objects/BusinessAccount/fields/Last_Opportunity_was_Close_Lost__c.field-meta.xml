@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Opportunity_was_Close_Lost__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This is a field in order to find out if current account&apos;s last opportunity is closed lost or not. Is used for List Views and Cadences.</description>
+    <label>Last Opportunity was Close Lost</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LCS_Agent_Name__c</fullName>
+    <businessOwnerUser>salesforce-data-cycle-prod@everquote.com.eqfullsb</businessOwnerUser>
+    <businessStatus>Active</businessStatus>
+    <description>Used as Agent Name when communicating on behalf on Agents (Being sent to Convoso for use in LCS calls).
+Populated by Analytics when LCS is checked if not already populated.
+Read Only to all but Admins, Ops, and Managers.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Consumer friendly, non-carrier specific agency name that may be used in LCS emails and call scripts (populated by Analytics)</inlineHelpText>
+    <label>LCS Agent Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

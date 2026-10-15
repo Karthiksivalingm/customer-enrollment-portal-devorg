@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>my_Recent_Engagement</fullName>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Phone__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <columns>Carrier_A__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Campaign__c</field>
+        <operation>equals</operation>
+        <value>No Recent Engagement</value>
+    </filters>
+    <label>My No Recent Engagement Opportunities</label>
+    <sharedTo>
+        <group>BDR</group>
+    </sharedTo>
+</ListView>

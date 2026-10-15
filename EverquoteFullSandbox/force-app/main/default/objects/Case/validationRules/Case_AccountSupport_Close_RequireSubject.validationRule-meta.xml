@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_AccountSupport_Close_RequireSubject</fullName>
+    <active>true</active>
+    <description>When an Account Support case is changed to Closed Status, Subject must be populated. Exception for change of BypassCaseValidation.</description>
+    <errorConditionFormula>AND(
+    /* Applies to Account Support case record type only*/
+    RecordTypeId = &apos;0121a000000AXYM&apos;,
+    ISPICKVAL( Status , &quot;Closed&quot;),
+    ISCHANGED(Status),
+    ISBLANK(Subject),
+    /* Flow will change checkbox if it needs to bypass this rule*/
+    NOT(ISCHANGED(BypassCaseValidation__c ))
+)</errorConditionFormula>
+    <errorDisplayField>Subject</errorDisplayField>
+    <errorMessage>To close this case, there must be a Subject.</errorMessage>
+</ValidationRule>

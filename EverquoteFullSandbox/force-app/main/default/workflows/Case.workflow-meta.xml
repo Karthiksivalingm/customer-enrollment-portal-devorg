@@ -319,6 +319,15 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Test</fullName>
+        <field>Subject</field>
+        <name>Test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update_Subject</fullName>
         <field>Subject</field>
         <formula>&quot;Country Financial Account Closure&quot;</formula>
@@ -354,7 +363,7 @@
             <name>Account_Closure_Updates</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Case.Customer_Support_Type__c</field>
             <operation>equals</operation>
@@ -426,7 +435,7 @@
             <name>Record_type_to_DNC</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Case.Customer_Support_Type__c</field>
             <operation>equals</operation>
@@ -489,7 +498,7 @@
             <name>Owner_Change_to_Smart_Campaign_Queue</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Case.Remove_Smart_Campaign__c</field>
             <operation>equals</operation>
@@ -501,10 +510,10 @@
     <rules>
         <fullName>Referral Credit Update Record Type</fullName>
         <actions>
-            <name>Referral_Credit_Update_Record_Type</name>
+            <name>Test</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Case.Customer_Support_Type__c</field>
             <operation>equals</operation>

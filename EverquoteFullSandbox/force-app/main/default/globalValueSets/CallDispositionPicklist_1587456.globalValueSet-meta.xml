@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Left Voicemail</fullName>
+        <default>false</default>
+        <label>Left Voicemail</label>
+    </customValue>
+    <customValue>
+        <fullName>Bad Data</fullName>
+        <default>false</default>
+        <label>Bad Data</label>
+    </customValue>
+    <customValue>
+        <fullName>Unqualified</fullName>
+        <default>false</default>
+        <label>Unqualified</label>
+    </customValue>
+    <customValue>
+        <fullName>BDR Meeting</fullName>
+        <default>false</default>
+        <label>BDR Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Do Not Contact</fullName>
+        <default>false</default>
+        <label>Do Not Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Interested - Nurture for 60 days</fullName>
+        <default>false</default>
+        <label>Not Interested - Nurture for 60 days</label>
+    </customValue>
+    <customValue>
+        <fullName>Follow Up Scheduled</fullName>
+        <default>false</default>
+        <label>Follow Up Scheduled</label>
+    </customValue>
+    <customValue>
+        <fullName>Call Back Later</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Call Back Later</label>
+    </customValue>
+    <customValue>
+        <fullName>Connected</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Connected</label>
+    </customValue>
+    <customValue>
+        <fullName>No Connect</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>No Connect</label>
+    </customValue>
+    <customValue>
+        <fullName>No Answer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>No Answer</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Interested</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Not Interested</label>
+    </customValue>
+    <customValue>
+        <fullName>Wrong Number</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Wrong Number</label>
+    </customValue>
+    <customValue>
+        <fullName>Missed Call</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Missed Call</label>
+    </customValue>
+    <customValue>
+        <fullName>Meaningful Connect - DM</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meaningful Connect - DM</label>
+    </customValue>
+    <customValue>
+        <fullName>Meaningful Connect - Not a DM</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meaningful Connect - Not a DM</label>
+    </customValue>
+    <description>This picklist is used for the call result feature</description>
+    <masterLabel>CallDispositionPicklist_1587456</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Existing_Business__c</fullName>
+    <label>Existing Business</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Same Location - Different Hours</fullName>
+                <default>false</default>
+                <label>Same Location - Different Hours</label>
+            </value>
+            <value>
+                <fullName>Same Location - Different Lead Types</fullName>
+                <default>false</default>
+                <label>Same Location - Different Lead Types</label>
+            </value>
+            <value>
+                <fullName>Same Location - Different Employees</fullName>
+                <default>false</default>
+                <label>Same Location - Different Employees</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account for Folio</fullName>
+                <default>false</default>
+                <label>Duplicate Account for Folio</label>
+            </value>
+            <value>
+                <fullName>Upgrade - Key Account</fullName>
+                <default>false</default>
+                <label>Upgrade - Key Account</label>
+            </value>
+            <value>
+                <fullName>Different Location</fullName>
+                <default>false</default>
+                <label>Different Location</label>
+            </value>
+            <value>
+                <fullName>Home Leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Home Leads</label>
+            </value>
+            <value>
+                <fullName>Life Leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Life Leads</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Existing Business</controllingFieldValue>
+            <valueName>Same Location - Different Hours</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing Business</controllingFieldValue>
+            <valueName>Same Location - Different Lead Types</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing Business</controllingFieldValue>
+            <valueName>Same Location - Different Employees</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing Business</controllingFieldValue>
+            <valueName>Duplicate Account for Folio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing Business</controllingFieldValue>
+            <valueName>Upgrade - Key Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing Business</controllingFieldValue>
+            <valueName>Different Location</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

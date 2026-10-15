@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coverage_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(RecordTypeId = &quot;0121a000000VlZ7AAK&quot;,  NOT(ISPICKVAL( Rating_Applied_For__c , &quot;&quot;)), ISBLANK( Rated__c ))</errorConditionFormula>
+    <errorDisplayField>Rated__c</errorDisplayField>
+    <errorMessage>Please fill in the Rated field.</errorMessage>
+</ValidationRule>

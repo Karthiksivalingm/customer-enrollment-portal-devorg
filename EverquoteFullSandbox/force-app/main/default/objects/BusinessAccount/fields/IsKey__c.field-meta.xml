@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsKey__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When an account pushes from Pro to SFDC, check-off this box to send an email to the Key Account team to make the appropriate edits to the SFDC record. This is for Admins only.
+
+Workflow(s) associated:</description>
+    <label>IsKey</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

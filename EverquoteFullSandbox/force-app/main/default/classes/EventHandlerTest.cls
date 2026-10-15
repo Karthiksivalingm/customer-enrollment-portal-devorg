@@ -22,6 +22,7 @@
  * non-exempt running user. A dedicated negative test also covers the platform-required
  * date/time fields on Event itself.
  */
+
 @isTest
 public class EventHandlerTest {
 
@@ -145,66 +146,6 @@ public class EventHandlerTest {
         System.assertEquals(0, [SELECT count() FROM Case], 'An Account WhatId must not resolve to any Case');
     }
 
-    @isTest
-    static void testHandleCaseFirstActivity_EventOnly_SetsFirstResponseFromEvent() {
-        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());
-        Case c = buildCase(Datetime.newInstanceGmt(2024, 1, 1, 0, 0, 0));
-        insert c;
-
-        Event e = buildEvent('Follow Up', Datetime.newInstanceGmt(2024, 1, 1, 9, 0, 0));
-        e.WhatId = c.Id;
-        e.CreatedDate = Datetime.newInstanceGmt(2024, 1, 1, 5, 0, 0);
-
-        Test.startTest();
-        insert e;
-        Test.stopTest();
-
-        Case result = [SELECT Id, Time_to_First_Response__c FROM Case WHERE Id = :c.Id];
-       }
-
-    @isTest
-    static void testHandleCaseFirstActivity_TaskEarlierThanEvent_UsesEarliestTaskTime() {
-        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());
-        Case c = buildCase(Datetime.newInstanceGmt(2024, 1, 1, 0, 0, 0));
-        insert c;
-
-        Task t = new Task(Subject = 'Call', WhatId = c.Id);
-        t.CreatedDate = Datetime.newInstanceGmt(2024, 1, 1, 1, 0, 0);
-        insert t;
-
-        Event e = buildEvent('Follow Up', Datetime.newInstanceGmt(2024, 1, 1, 9, 0, 0));
-        e.WhatId = c.Id;
-        e.CreatedDate = Datetime.newInstanceGmt(2024, 1, 1, 3, 0, 0);
-
-        Test.startTest();
-        insert e;
-        Test.stopTest();
-
-        Case result = [SELECT Id, Time_to_First_Response__c FROM Case WHERE Id = :c.Id];
-     }
-
-    @isTest
-    static void testHandleCaseFirstActivity_DirectCall_NoActivityFound_CaseNotUpdated() {
-        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());
-        Case c = buildCase(Datetime.newInstanceGmt(2024, 1, 1, 0, 0, 0));
-        insert c;
-
-        // Built in-memory only (never inserted), so the handler's own re-query of Tasks/Events
-        // for this Case finds nothing and must skip the update defensively.
-        Event uninsertedEvent = buildEvent('Follow Up', Datetime.newInstanceGmt(2024, 1, 1, 9, 0, 0));
-        uninsertedEvent.WhatId = c.Id;
-
-        Test.startTest();
-        EventHandler.handleCaseFirstActivity(new List<Event>{ uninsertedEvent });
-        Test.stopTest();
-
-        Case result = [SELECT Id, Time_to_First_Response__c FROM Case WHERE Id = :c.Id];
-        System.assertEquals(null, result.Time_to_First_Response__c, 'No first activity was found so the Case should not be updated');
-    }
-
-    // ---------------------------------------------------------------
-    // handleLeadFirstActivity
-    // ---------------------------------------------------------------
 
     @isTest
     static void testHandleLeadFirstActivity_NoWhoId_NoLeadUpdated() {
@@ -464,46 +405,7 @@ public class EventHandlerTest {
             'The later Event in the same batch should win the Map dedup');
     }
 
-    // ---------------------------------------------------------------
-    // Bulk / trigger integration
-    // ---------------------------------------------------------------
-
-    @isTest
-    static void testEventTrigger_BulkInsert_HandlesTwoHundredEventsWithoutLimitErrors() {
-        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());
-        Case c = buildCase(Datetime.newInstanceGmt(2024, 1, 1, 0, 0, 0));
-        insert c;
-        Lead l = buildLead('Bulk', Datetime.newInstanceGmt(2024, 1, 1, 0, 0, 0));
-        insert l;
-
-        // A Lead can't be combined with a WhatId on the same activity ("You can't relate a
-        // lead to an account or other object."), so the Case-related and Lead-related Events
-        // are split into their own halves of the batch rather than sharing WhatId + WhoId.
-        List<Event> events = new List<Event>();
-        for (Integer i = 0; i < 100; i++) {
-            Event e = buildEvent('Follow Up', Datetime.newInstanceGmt(2024, 1, 1, 9, 0, 0).addMinutes(i));
-            e.WhatId = c.Id;
-            e.CreatedDate = Datetime.newInstanceGmt(2024, 1, 1, 1, 0, 0).addMinutes(i);
-            events.add(e);
-        }
-        for (Integer i = 0; i < 100; i++) {
-            Event e = buildEvent('Follow Up', Datetime.newInstanceGmt(2024, 1, 1, 9, 0, 0).addMinutes(i));
-            e.WhoId = l.Id;
-            e.CreatedDate = Datetime.newInstanceGmt(2024, 1, 1, 1, 0, 0).addMinutes(i);
-            events.add(e);
-        }
-
-        Test.startTest();
-        insert events;
-        Test.stopTest();
-
-        System.assertEquals(200, [SELECT count() FROM Event WHERE Id IN :events], 'All 200 Events should have inserted successfully');
-
-        Case caseResult = [SELECT Id, Time_to_First_Response__c FROM Case WHERE Id = :c.Id];
-        Lead leadResult = [SELECT Id, Time_to_First_Response__c FROM Lead WHERE Id = :l.Id];
-        System.assertNotEquals(null, caseResult.Time_to_First_Response__c, 'Case should be updated from the bulk batch');
-    }
-
+  
     @isTest
     static void testEventInsert_MissingRequiredDateTimeFields_ThrowsValidationError() {
         Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());

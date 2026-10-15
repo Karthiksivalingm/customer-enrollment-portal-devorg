@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Accelerated_Lockout_Period__c</fullName>
+    <description>True if Accelerated Lockout Period End Date is greater than Today.
+Used in Contact Dynamic Actions to display the appropriate New Opportunity buttons.
+S3P-1158 - Created.</description>
+    <formula>Accelerated_Lockout_Period_End_Date__c &gt; TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Account is currently ineligible for re-entry into an accelerated tier because they cancelled within the past 90 days</inlineHelpText>
+    <label>In Accelerated Lockout Period</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

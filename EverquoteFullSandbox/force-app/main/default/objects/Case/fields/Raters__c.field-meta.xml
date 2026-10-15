@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Raters__c</fullName>
+    <label>Raters</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Platform__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Applied</fullName>
+                <default>false</default>
+                <label>Applied</label>
+            </value>
+            <value>
+                <fullName>EZLynx</fullName>
+                <default>false</default>
+                <label>EZLynx</label>
+            </value>
+            <value>
+                <fullName>FSC</fullName>
+                <default>false</default>
+                <label>FSC</label>
+            </value>
+            <value>
+                <fullName>PL</fullName>
+                <default>false</default>
+                <label>PL</label>
+            </value>
+            <value>
+                <fullName>QuoteBurst</fullName>
+                <default>false</default>
+                <label>QuoteBurst</label>
+            </value>
+            <value>
+                <fullName>TurboRater</fullName>
+                <default>false</default>
+                <label>TurboRater</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Edit Raters</controllingFieldValue>
+            <controllingFieldValue>Integration Issues</controllingFieldValue>
+            <valueName>Applied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edit Raters</controllingFieldValue>
+            <controllingFieldValue>Integration Issues</controllingFieldValue>
+            <valueName>EZLynx</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edit Raters</controllingFieldValue>
+            <controllingFieldValue>Integration Issues</controllingFieldValue>
+            <valueName>FSC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edit Raters</controllingFieldValue>
+            <controllingFieldValue>Integration Issues</controllingFieldValue>
+            <valueName>PL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edit Raters</controllingFieldValue>
+            <controllingFieldValue>Integration Issues</controllingFieldValue>
+            <valueName>QuoteBurst</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edit Raters</controllingFieldValue>
+            <controllingFieldValue>Integration Issues</controllingFieldValue>
+            <valueName>TurboRater</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

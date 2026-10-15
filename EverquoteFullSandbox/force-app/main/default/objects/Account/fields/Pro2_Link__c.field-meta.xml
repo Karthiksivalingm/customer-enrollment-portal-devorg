@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pro2_Link__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>Displays the pro2 url (Pro2_Link_Hidden__c) as a user friendly hyperlink. This is the field that should be displayed on the page.</description>
+    <externalId>false</externalId>
+    <formula>/* Return blank if the Pro2 Link Hidden field is blank, otherwise display that url as a hyperlink &quot;Open in Pro2&quot;*/
+IF(
+   ISBLANK(Pro2_Link_Hidden__c), &quot;&quot;,
+   HYPERLINK( Pro2_Link_Hidden__c , &quot;Open in Pro2 ↗&quot;, &quot;_blank&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Link to Agency in Pro2. URL populated daily by Analytics. If blank, this account may be a duplicate or not exist yet in Pro2.</inlineHelpText>
+    <label>Pro2 Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

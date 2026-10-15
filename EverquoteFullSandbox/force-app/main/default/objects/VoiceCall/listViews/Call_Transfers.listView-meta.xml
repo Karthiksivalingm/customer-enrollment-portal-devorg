@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Transfers</fullName>
+    <columns>Owner</columns>
+    <columns>Name</columns>
+    <columns>CallStartDateTime</columns>
+    <columns>CallType</columns>
+    <columns>CallDurationInSeconds</columns>
+    <columns>CreatedBy</columns>
+    <columns>EndUser</columns>
+    <columns>User</columns>
+    <columns>CallQueuedDateTime</columns>
+    <columns>Caller</columns>
+    <columns>PreviousCall</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CallType</field>
+        <operation>equals</operation>
+        <value>5</value>
+    </filters>
+    <label>Call Transfers</label>
+</ListView>

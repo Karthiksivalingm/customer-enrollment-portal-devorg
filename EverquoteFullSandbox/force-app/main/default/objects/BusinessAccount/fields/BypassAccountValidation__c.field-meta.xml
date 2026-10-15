@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BypassAccountValidation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Hidden but editable by all users. When field ISCHANGED(), validation rules with that critierai will be ignored</description>
+    <label>BypassAccountValidation</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

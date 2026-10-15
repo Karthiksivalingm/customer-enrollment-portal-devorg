@@ -1,0 +1,211 @@
+<template>
+  <c-loading-spinner if:true={loading}></c-loading-spinner>
+  <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+    <div class="slds-col slds-size_1-of-3">
+      <div class="slds-col slds-size_1-of-1">
+        <lightning-combobox
+          label="Select Carrier"
+          name="selectCarrier"
+          placeholder="Choose one..."
+          onchange={onCarrierChange}
+          options={carrierOptions}
+          value={selectedCarrier}
+          autocomplete="off"
+          disabled={dropdownDisabled}
+          required
+        ></lightning-combobox>
+        <div
+          if:false={validCarrier}
+          class="slds-form-element__help slds-required"
+          id="error-message-carrier-id"
+        >
+          Carrier is required.
+        </div>
+      </div>
+
+      <div class="slds-col slds-size_1-of-1">
+        <lightning-combobox
+          autocomplete="off"
+          class="product-dropdown"
+          label="Select Product"
+          name="selectProduct"
+          value={selectedProduct}
+          placeholder="Choose one..."
+          onchange={onProductChange}
+          options={productOptions}
+          disabled={dropdownDisabled}
+          required
+        ></lightning-combobox>
+        <div
+          if:false={validProduct}
+          class="slds-form-element__help slds-required"
+          id="error-message-product-id"
+        >
+          Product is required.
+        </div>
+      </div>
+
+      <div class="slds-col slds-size_1-of-1" if:true={coverageAmountRequired}>
+        <div class="slds-form-element">
+          <label class="slds-form-element__label coverage-amount-label" for="coverage-amount">
+            Coverage Amount
+          </label>
+
+          <div class="slds-form-element__control">
+            <input
+              type="number"
+              id="coverage-amount"
+              step={coverageAmountIncreaseStep}
+              min={minCoverageAmount}
+              max={maxCoverageAmount}
+              class="slds-input coverage-amount"
+              disabled={isCoverageAmountDisabled}
+              oninput={onCoverageAmountChange}
+              value={coverageAmount}
+              required
+            />
+
+            <input
+              type="text"
+              id="coverage-amount-2"
+              class="slds-input coverage-amount-multiplier"
+              value="000"
+              disabled
+            />
+          </div>
+          <div class="slds-form-element">
+            <div class="slds-form-element__control">
+              <div class="slds-checkbox">
+                <input
+                  type="checkbox"
+                  name="options"
+                  id="checkbox-unique-id-74"
+                  value="checkbox-unique-id-74"
+                  checked={differentCoverageAmount}
+                  onchange={onDifferentCoverageAmountChange}
+                />
+                <label class="slds-checkbox__label" for="checkbox-unique-id-74">
+                  <span class="slds-checkbox_faux"></span>
+                  <span class="slds-form-element__label">Different coverage amount</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div if:false={validCoverageAmount}>
+            <template for:each={amountErrorMessages} for:item="error" for:index="index">
+              <div key={error} class="slds-form-element__help slds-required">
+                {error}
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+
+      <div if:true={isAetnaCarrierSelected} class="slds-col slds-size_1-of-1">
+        <lightning-combobox
+          autocomplete="off"
+          class="risk-class-dropdown"
+          label="Select risk class"
+          name="selectRiskClass"
+          value={selectedRiskClass}
+          placeholder="Choose one..."
+          onchange={onRiskClassChange}
+          options={aetnaRiskClassOptions}
+          required
+        ></lightning-combobox>
+        <div
+          if:false={validRiskClass}
+          class="slds-form-element__help slds-required"
+          id="error-message-risk-class"
+        >
+          Risk class is required.
+        </div>
+      </div>
+
+      <div class="slds-col slds-size_1-of-1">
+        <lightning-input
+          type="text"
+          name="policyNumber"
+          label="Policy Number"
+          value={policyNumber}
+          onchange={onPolicyNumberChange}
+          disabled={cannotGetPolicyNumber}
+        ></lightning-input>
+        <div class="slds-form-element">
+          <div class="slds-form-element__control">
+            <div class="slds-checkbox">
+              <input
+                type="checkbox"
+                name="options"
+                id="checkbox-unique-id-73"
+                value="checkbox-unique-id-73"
+                checked={cannotGetPolicyNumber}
+                onchange={onCannotGetPolicyNumberChange}
+              />
+              <label class="slds-checkbox__label" for="checkbox-unique-id-73">
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-form-element__label">I can't get the policy number</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          if:false={validPolicyNumber}
+          class="slds-form-element__help slds-required"
+          id="error-message-policy-number-id"
+        >
+          Policy number is required.
+        </div>
+      </div>
+
+      <div class="slds-col slds-size_1-of-1">
+        <fieldset class="answer-option">
+          <p class="slds-text-heading_small question">
+            Was the recording paused during payment?
+          </p>
+
+          <div
+            if:false={validRecordingPausedOption}
+            class="slds-form-element__help slds-required"
+            id="error-message-recording-paused"
+          >
+            Recording paused answer required.
+          </div>
+
+          <div class="slds-form-element__control">
+            <template for:each={recordingOptions} for:item="item">
+              <span key={item.value} class="slds-radio">
+                <input
+                  id={item.value}
+                  name={callRecordingPausedRadioBtns}
+                  type="radio"
+                  value={item.value}
+                  onchange={onRecordingOptionChange}
+                />
+                <label class="slds-radio__label" for={item.value}>
+                  <span class="slds-radio_faux"></span>
+                  <span class="slds-form-element__label radio-option">{item.label}</span>
+                </label>
+              </span>
+            </template>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="slds-col slds-size_2-of-3">
+      <div class="slds-col slds-size_1-of-1">
+        <p class="instructions-title">Instructions to find policy number:</p>
+      </div>
+
+      <div class="slds-col slds-size_1-of-1">
+        <p if:false={isCarrierSelected} class="instructions-content">
+          Select a carrier to view instructions
+        </p>
+
+        <div class="carrier-instructions-container" lwc:dom="manual"></div>
+      </div>
+    </div>
+  </div>
+</template>

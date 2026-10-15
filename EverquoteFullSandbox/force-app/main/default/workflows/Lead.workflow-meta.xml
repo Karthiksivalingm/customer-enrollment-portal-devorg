@@ -467,6 +467,24 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Test</fullName>
+        <field>LastName</field>
+        <name>Test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Test1</fullName>
+        <field>LastName</field>
+        <name>Test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>change_to_DNC_record_type</fullName>
         <field>RecordTypeId</field>
         <lookupValue>Do_Not_Call</lookupValue>
@@ -774,10 +792,10 @@ ISCHANGED( OwnerId ),
     <rules>
         <fullName>Lead%3A Duplicate Queue</fullName>
         <actions>
-            <name>Owner_Duplicate_Queue</name>
+            <name>Test1</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Lead.Status</field>
             <operation>equals</operation>
@@ -809,14 +827,10 @@ ISCHANGED( OwnerId ),
     <rules>
         <fullName>Recycle Lost Leads</fullName>
         <actions>
-            <name>Change_Owner_to_RLQ</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
             <name>Recycle_Lost_Date_Update</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Lead.Status</field>
             <operation>equals</operation>
@@ -850,7 +864,7 @@ ISCHANGED( OwnerId ),
             <name>Set_Lead_Record_Type_to_Default</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Lead.DoNotCall</field>
             <operation>equals</operation>
@@ -931,7 +945,7 @@ ISCHANGED( OwnerId ),
             <name>Owner_Commercial_Agents</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Lead.IsConverted</field>
             <operation>equals</operation>
@@ -953,10 +967,10 @@ ISCHANGED( OwnerId ),
     <rules>
         <fullName>Unqualified%3A Consumer</fullName>
         <actions>
-            <name>Owner_Cosumer</name>
+            <name>Test</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Lead.IsConverted</field>
             <operation>equals</operation>
@@ -981,7 +995,7 @@ ISCHANGED( OwnerId ),
             <name>Owner_Invalid_Contact_Info</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Lead.IsConverted</field>
             <operation>equals</operation>
@@ -1006,7 +1020,7 @@ ISCHANGED( OwnerId ),
             <name>Owner_Unqualified_Queue</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Lead.IsConverted</field>
             <operation>equals</operation>

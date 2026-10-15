@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unable_to_Bind__c</fullName>
+    <label>Unable to Bind</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Low_Quality_based_on__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cheaper Price</fullName>
+                <default>false</default>
+                <label>Cheaper Price</label>
+            </value>
+            <value>
+                <fullName>Better Coverage/product</fullName>
+                <default>false</default>
+                <label>Better Coverage/product</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Bind Rate</controllingFieldValue>
+            <valueName>Cheaper Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bind Rate</controllingFieldValue>
+            <valueName>Better Coverage/product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bind Rate</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

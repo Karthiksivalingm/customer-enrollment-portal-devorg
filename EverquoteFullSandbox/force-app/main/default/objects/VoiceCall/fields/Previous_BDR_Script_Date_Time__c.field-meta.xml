@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_BDR_Script_Date_Time__c</fullName>
+    <description>Created Date of the voice call in Previous Voice Call with BDR Script lookup.
+Admin Note: Replace this field with Dynamic Forms when Salesforce makes it available for Voice Calls. Used in VoiceCall_BDRScriptButton_CallScoreCardScriptAndQuestions screenflow to indicate when the most recent BDR Script answers are from.
+S3P-1267 - Created.</description>
+    <formula>Previous_Voice_Call_with_BDR_Script__r.CreatedDate</formula>
+    <inlineHelpText>Date/Time of the most recent voice call for this phone number that had an answer to a BDR Script question.</inlineHelpText>
+    <label>Previous BDR Script - Date/Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

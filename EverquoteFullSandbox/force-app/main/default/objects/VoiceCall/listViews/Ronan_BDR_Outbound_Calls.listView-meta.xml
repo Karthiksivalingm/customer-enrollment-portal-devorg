@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ronan_BDR_Outbound_Calls</fullName>
+    <columns>CallStartDateTime</columns>
+    <columns>CallType</columns>
+    <columns>Owner</columns>
+    <columns>Name</columns>
+    <columns>CallDurationInSeconds</columns>
+    <columns>RelatedRecord</columns>
+    <columns>CallAcceptDateTime</columns>
+    <columns>CallDisposition</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CallType</field>
+        <operation>equals</operation>
+        <value>2</value>
+    </filters>
+    <filters>
+        <field>Owner</field>
+        <operation>equals</operation>
+        <value>mrona</value>
+    </filters>
+    <label>Ronan BDR Outbound Calls</label>
+    <sharedTo>
+        <group>BDR</group>
+    </sharedTo>
+</ListView>

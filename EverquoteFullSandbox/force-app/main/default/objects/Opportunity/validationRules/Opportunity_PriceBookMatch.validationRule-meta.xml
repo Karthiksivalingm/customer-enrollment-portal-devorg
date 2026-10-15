@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_PriceBookMatch</fullName>
+    <active>true</active>
+    <description>If a user tries to save an Opportunity with the wrong pricebook for its record type, they will receive an error.</description>
+    <errorConditionFormula>AND(
+  /* Specific PriceBooks by record type was not implemented until mid April 2026, so opportunities created before this time should not receive an error*/
+  CreatedDate &gt; DATETIMEVALUE(&quot;2026-04-15 00:00:00&quot;),
+  OR(
+    /* Agency Opportunities must have the Agency Price Book */
+    AND(
+      RecordType.DeveloperName = &quot;Agency&quot;,
+      Pricebook2.Name &lt;&gt; &quot;Agency Price Book&quot;
+    ),
+    /* Accelerated Opportunities must have the Accelerated Price Book*/
+    AND(
+      RecordType.DeveloperName = &quot;Accelerated&quot;,
+      Pricebook2.Name &lt;&gt; &quot;Accelerated Price Book&quot;
+    ),
+    /* CS Upsell on an Accelerated Account must have the Accelerated Price Book */
+    AND(
+      RecordType.DeveloperName = &quot;CS_Upsell&quot;,
+      Account.RecordType.DeveloperName = &quot;Accelerated&quot;,
+      Pricebook2.Name &lt;&gt; &quot;Accelerated Price Book&quot;
+    ),
+    /* CS Upsell on an Agency Account must have an Agency Price Book*/
+    AND(
+      RecordType.DeveloperName = &quot;CS_Upsell&quot;,
+      Account.RecordType.DeveloperName = &quot;Agency&quot;,
+      Pricebook2.Name &lt;&gt; &quot;Agency Price Book&quot;
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Your change was not saved. You must use a Product Price Book that is compatible with this opportunity/account type. (e.g. Agency Opportunity must use the Agency Price Book, CS Upsell on an Agency Account must use Agency Price Book, etc.)</errorMessage>
+</ValidationRule>

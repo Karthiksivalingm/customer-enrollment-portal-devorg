@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllAccounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>Initial_Eligible_Volume__c</columns>
+    <columns>Leads_Purchased_MTD__c</columns>
+    <columns>Estimated_Leads_Purchased__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Accelerated-AGP Premier</value>
+    </filters>
+    <label>All Accounts</label>
+    <sharedTo>
+        <role>ADMIN</role>
+    </sharedTo>
+</ListView>

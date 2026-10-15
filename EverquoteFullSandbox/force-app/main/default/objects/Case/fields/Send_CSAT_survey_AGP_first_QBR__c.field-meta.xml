@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_CSAT_survey_AGP_first_QBR__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used in Zapier as trigger to send survey.   Workflow with same name updates this</description>
+    <label>Send CSAT survey AGP first QBR</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

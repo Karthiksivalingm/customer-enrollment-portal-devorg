@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Account_Name_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED(Name), NOT( OR( $Profile.Name = &quot;System Administrator&quot;, $Profile.Name = &quot;EverQuote - Ramping Sales Rep&quot;, $Profile.Name = &quot;EverQuote - Manager&quot;, $Profile.Name =&apos;Never Expire PW for Pro&apos; ) ) )</errorConditionFormula>
+    <errorMessage>You have no access to change account name</errorMessage>
+</ValidationRule>

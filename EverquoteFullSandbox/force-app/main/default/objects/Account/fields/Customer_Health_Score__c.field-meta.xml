@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Health_Score__c</fullName>
+    <businessOwnerUser>salesforce-data-cycle-prod@everquote.com.eqfullsb</businessOwnerUser>
+    <businessStatus>Active</businessStatus>
+    <description>Populated by analytics.
+https://docs.google.com/spreadsheets/d/1Tmq9WAwxRrHvpPukwBT0Ty3TdB9NJE9Z16kVgdXjH1U/edit?usp=sharing
+S3P-1330 - Created as part of Customer Health Score initiative.
+A score from 0 to 100 indicating overall account health. Calculated based on Fill Rate, Tenure, Monthly Spend (and spend change), Return Requests, Product Count, and Lead Quality. 
+Accounts opened within the last 90 days will be blank (too new to score). This field is automatically populated by Analytics.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A score from 0 to 100 indicating overall account health (Red: 0-29, Yellow: 30-69, Green: 70 - 100). Calculated based on Fill Rate, Tenure, Monthly Spend (and spend change), Return Requests, Product Count, and Lead Quality. 
+Accounts opened within the last 90 days will be blank (too new to score). This field is automatically populated by Analytics.</inlineHelpText>
+    <label>Customer Health Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

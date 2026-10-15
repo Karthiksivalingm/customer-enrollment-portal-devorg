@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role__c</fullName>
+    <label>Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inbound BDR</fullName>
+                <default>false</default>
+                <label>Inbound BDR</label>
+            </value>
+            <value>
+                <fullName>Outbound BDR</fullName>
+                <default>false</default>
+                <label>Outbound BDR</label>
+            </value>
+            <value>
+                <fullName>Inside Sales Rep</fullName>
+                <default>false</default>
+                <label>Inside Sales Rep</label>
+            </value>
+            <value>
+                <fullName>Account Executive</fullName>
+                <default>false</default>
+                <label>Account Executive</label>
+            </value>
+            <value>
+                <fullName>Core Team Lead</fullName>
+                <default>false</default>
+                <label>Core Team Lead</label>
+            </value>
+            <value>
+                <fullName>Core Sales Manager</fullName>
+                <default>false</default>
+                <label>Core Sales Manager</label>
+            </value>
+            <value>
+                <fullName>AGP Rep</fullName>
+                <default>false</default>
+                <label>AGP Rep</label>
+            </value>
+            <value>
+                <fullName>AGP Team Lead</fullName>
+                <default>false</default>
+                <label>AGP Team Lead</label>
+            </value>
+            <value>
+                <fullName>AGP Manager</fullName>
+                <default>false</default>
+                <label>AGP Manager</label>
+            </value>
+            <value>
+                <fullName>CSM 1</fullName>
+                <default>false</default>
+                <label>CSM 1</label>
+            </value>
+            <value>
+                <fullName>CSM 2</fullName>
+                <default>false</default>
+                <label>CSM 2</label>
+            </value>
+            <value>
+                <fullName>Sr. CSM</fullName>
+                <default>false</default>
+                <label>Sr. CSM</label>
+            </value>
+            <value>
+                <fullName>CSM Team Lead</fullName>
+                <default>false</default>
+                <label>CSM Team Lead</label>
+            </value>
+            <value>
+                <fullName>CSM Manager</fullName>
+                <default>false</default>
+                <label>CSM Manager</label>
+            </value>
+            <value>
+                <fullName>BC 1</fullName>
+                <default>false</default>
+                <label>BC 1</label>
+            </value>
+            <value>
+                <fullName>BC 2</fullName>
+                <default>false</default>
+                <label>BC 2</label>
+            </value>
+            <value>
+                <fullName>Sr. BC</fullName>
+                <default>false</default>
+                <label>Sr. BC</label>
+            </value>
+            <value>
+                <fullName>BC Team Lead</fullName>
+                <default>false</default>
+                <label>BC Team Lead</label>
+            </value>
+            <value>
+                <fullName>BC Manager</fullName>
+                <default>false</default>
+                <label>BC Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

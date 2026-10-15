@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Elias_to_Work</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>CAMPAIGN_MEMBER.STATUS</columns>
+    <columns>Campaign__c</columns>
+    <columns>BDR_Main_View__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BDR_Main_View__c</field>
+        <operation>equals</operation>
+        <value>Elias Reay</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN_MEMBER.STATUS</field>
+        <operation>equals</operation>
+        <value>Griff,Mickey,Nolan,Emily,Elias</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Re-visit,Unqualified,Duplicate,Do Not Call,Closed,No Longer There</value>
+    </filters>
+    <label>Elias to Work</label>
+    <sharedTo>
+        <group>Farmers_BDR</group>
+        <group>State_Farm_BDR</group>
+    </sharedTo>
+</ListView>

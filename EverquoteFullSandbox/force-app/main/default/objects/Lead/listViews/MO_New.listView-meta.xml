@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MO_New</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CarrierName__c</field>
+        <operation>equals</operation>
+        <value>allstate</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATE</field>
+        <operation>equals</operation>
+        <value>PA,OH,MI,IL,DE,VA,WV,AL,AR,MN,OR,WA,IA,ID,NC,SC,GA,WI,MD</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Duplicate,Do Not Call,No Longer There</value>
+    </filters>
+    <filters>
+        <field>Last_Activity_Date__c</field>
+        <operation>lessThan</operation>
+        <value>1/1/2023</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2021 12:00 AM</value>
+    </filters>
+    <label>Tibbs leads to flow</label>
+    <sharedTo>
+        <group>Allstate_Team</group>
+    </sharedTo>
+</ListView>

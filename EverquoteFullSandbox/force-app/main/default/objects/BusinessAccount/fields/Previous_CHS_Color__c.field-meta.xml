@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_CHS_Color__c</fullName>
+    <description>The CHS Color value prior to the current value. Stored for use when creating Customer Health Score Alert tasks via flow. Justification for field can be found in original jira.
+Hidden - this should not need to be seen by users, we have field history tracking for this field which can show historical values.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The CHS Color value prior to the current value.</inlineHelpText>
+    <label>Previous CHS Color</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

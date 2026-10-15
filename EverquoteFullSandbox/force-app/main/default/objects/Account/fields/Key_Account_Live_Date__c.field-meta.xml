@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Account_Live_Date__c</fullName>
+    <description>This field records the day and time the account went live as Key. It is updated by a workflow that will populate this said field upon switching the account type to &quot;Key&quot;.
+
+Workflow Name: Account: Key Timestamp</description>
+    <label>Key Account Live Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

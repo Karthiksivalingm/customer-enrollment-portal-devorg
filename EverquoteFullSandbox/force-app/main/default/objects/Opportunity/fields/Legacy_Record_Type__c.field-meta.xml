@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legacy_Record_Type__c</fullName>
+    <label>Legacy Record Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accelerated</fullName>
+                <default>false</default>
+                <label>Accelerated</label>
+            </value>
+            <value>
+                <fullName>Agency CS Upsell</fullName>
+                <default>false</default>
+                <label>Agency CS Upsell</label>
+            </value>
+            <value>
+                <fullName>Cross-Sell</fullName>
+                <default>false</default>
+                <label>Cross-Sell</label>
+            </value>
+            <value>
+                <fullName>Accelerated-State Farm</fullName>
+                <default>false</default>
+                <label>Accelerated-State Farm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

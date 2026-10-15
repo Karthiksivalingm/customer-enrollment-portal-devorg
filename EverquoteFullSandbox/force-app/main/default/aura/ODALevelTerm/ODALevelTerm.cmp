@@ -1,0 +1,73 @@
+<aura:component
+  implements="flexipage:availableForRecordHome,force:hasRecordId"
+  access="global"
+  controller="ODALeadController"
+>
+  <!-- attributes -->
+  <aura:attribute name="recordId" type="String" />
+  <aura:attribute name="lead" type="Lead" default="{'sobjectType': 'Lead'}" />
+  <aura:attribute name="leadLoaded" type="Boolean" default="false" />
+  <aura:attribute name="validLead" type="Boolean" default="false" />
+  <aura:attribute name="validAge" type="Boolean" default="false" />
+  <aura:attribute name="minAge" type="Integer" default="18" />
+  <aura:attribute name="maxAge" type="Integer" default="70" />
+
+  <aura:attribute name="product" type="String" default="term19" />
+  <aura:attribute name="carrier" type="String" default="lumico" />
+
+  <!-- dependency -->
+  <aura:dependency resource="markup://force:editRecord" type="EVENT" />
+
+  <!-- handlers -->
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+  <aura:if isTrue="{!v.leadLoaded}">
+    <div class="" style="padding: 10px;">
+      <aura:if isTrue="{!v.validLead == false}">
+        <c:odaValidateLeadInfo
+          lead="{!v.lead}"
+          onvalidatelead="{!c.onValidateLead}"
+          onleadupdated="{!c.onLeadUpdated}"
+        ></c:odaValidateLeadInfo>
+      </aura:if>
+
+      <aura:if isTrue="{!v.validLead}">
+        <aura:if isTrue="{!v.validAge}">
+          <!-- Lead details -->
+          <c:odaUserInfoBlock recordId="{!v.recordId}" />
+          <hr />
+
+          <!-- Begin a new app -->
+          <c:odaNewTerm
+            lead="{!v.lead}"
+            product="{!v.product}"
+            onleadupdated="{!c.onLeadUpdated}"
+          ></c:odaNewTerm>
+          <hr />
+
+          <!-- Resume a Previous App -->
+          <c:odaResumeApp
+            lead="{!v.lead}"
+            product="{!v.product}"
+            carrier="{!v.carrier}"
+          ></c:odaResumeApp>
+
+          <aura:set attribute="else">
+            <c:odaLeadDateBirth
+              maxAge="{!v.maxAge}"
+              minAge="{!v.minAge}"
+              lead="{!v.lead}"
+              dateOfBirth="{!v.lead.Date_of_Birth__c}"
+              product="{!v.product}"
+              onleadupdated="{!c.onLeadUpdated}"
+            ></c:odaLeadDateBirth>
+          </aura:set>
+        </aura:if>
+      </aura:if>
+    </div>
+    <aura:set attribute="else">
+      <c:loadingSpinner></c:loadingSpinner>
+    </aura:set>
+  </aura:if>
+</aura:component>

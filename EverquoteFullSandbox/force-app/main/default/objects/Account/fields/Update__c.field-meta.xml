@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update__c</fullName>
+    <label>Update</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AGP &gt;2000</fullName>
+                <default>false</default>
+                <label>AGP &gt;2000</label>
+            </value>
+            <value>
+                <fullName>Volume Boost</fullName>
+                <default>false</default>
+                <label>Volume Boost</label>
+            </value>
+            <value>
+                <fullName>Account Type Not Set</fullName>
+                <default>false</default>
+                <label>Account Type Not Set</label>
+            </value>
+            <value>
+                <fullName>Core IO Win</fullName>
+                <default>false</default>
+                <label>Core IO Win</label>
+            </value>
+            <value>
+                <fullName>19 AGP accounts without a monthly review</fullName>
+                <default>false</default>
+                <label>19 AGP accounts without a monthly review</label>
+            </value>
+            <value>
+                <fullName>Winback Life</fullName>
+                <default>false</default>
+                <label>Winback Life</label>
+            </value>
+            <value>
+                <fullName>Q3 Onboarding</fullName>
+                <default>false</default>
+                <label>Q3 Onboarding</label>
+            </value>
+            <value>
+                <fullName>Farmers Unfilled Cap May 2021</fullName>
+                <default>false</default>
+                <label>Farmers Unfilled Cap May 2021</label>
+            </value>
+            <value>
+                <fullName>Donovan 1-4K</fullName>
+                <default>false</default>
+                <label>Donovan 1-4K</label>
+            </value>
+            <value>
+                <fullName>Disengaged</fullName>
+                <default>false</default>
+                <label>Disengaged</label>
+            </value>
+            <value>
+                <fullName>Russell Under 3K</fullName>
+                <default>false</default>
+                <label>Russell Under 3K</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

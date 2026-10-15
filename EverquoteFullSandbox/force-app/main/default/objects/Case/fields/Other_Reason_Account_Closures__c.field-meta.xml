@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Reason_Account_Closures__c</fullName>
+    <description>other reason used to describe why an account closed due to Low Quality - &quot;Unable to Bind&quot;, &quot;Low Quote Rate&quot; or Lead Return Process Reason</description>
+    <inlineHelpText>other reason used to describe why an account closed due to Low Quality - &quot;Unable to Bind&quot;, &quot;Low Quote Rate&quot; or Lead Return Process Reason</inlineHelpText>
+    <label>Other Reason - Account Closures</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

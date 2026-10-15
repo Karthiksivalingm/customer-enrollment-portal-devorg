@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allstate_High_Fill_Rate_Prospect_9_25</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>State__c</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Contact_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Relationship__c</field>
+        <operation>notContain</operation>
+        <value>DO NOT CONTACT</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Allstate</value>
+    </filters>
+    <filters>
+        <field>Account.Not_in_Business_Anymore__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Prospect</value>
+    </filters>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Last_Activity_Date__c</field>
+        <operation>lessThan</operation>
+        <value>4/17/2026</value>
+    </filters>
+    <filters>
+        <field>Primary_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>notEqual</operation>
+        <value>No Longer There,Duplicate,Do Not contact,Bad Data,Unqualified</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>notEqual</operation>
+        <value>NY</value>
+    </filters>
+    <label>Allstate High Fill Rate Prospect 9/25</label>
+</ListView>

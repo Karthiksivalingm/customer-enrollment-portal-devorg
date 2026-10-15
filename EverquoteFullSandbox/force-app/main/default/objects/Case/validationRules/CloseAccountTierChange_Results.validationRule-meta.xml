@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CloseAccountTierChange_Results</fullName>
+    <active>true</active>
+    <description>When a Case&apos;s Project is &quot;Account Tier Change&quot; with Subject &quot;Account Tier Change - AGP to Starter&quot; and a user is trying to close it, they must fill out the Results field with notes.</description>
+    <errorConditionFormula>/*If Case Project is &apos;Account Tier Change&apos; and Status is changed to Closed, Results must not be blank*/
+
+AND(
+ISPICKVAL(Project__c , &apos;Account Tier Change&apos;),
+Subject = &apos;Account Tier Change - AGP to Starter&apos;,
+ISPICKVAL( Status , &apos;Closed&apos;),
+ISCHANGED(Status),
+ISBLANK( Results__c )
+)</errorConditionFormula>
+    <errorDisplayField>Results__c</errorDisplayField>
+    <errorMessage>Before closing this case you must enter notes about the Account&apos;s tier movement in the Results field. 
+You must also make sure you have updated the relevant account information in Pro (e.g. promos, pricing, services, classification)!</errorMessage>
+</ValidationRule>

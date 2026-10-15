@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Issues</fullName>
+    <active>true</active>
+    <description>Support value for AGP is &quot;System Issues&quot;, please enter comments in the &quot;Systems Issues Comment&quot; field.</description>
+    <errorConditionFormula>ISPICKVAL( Support__c , &quot;System Issues&quot;) &amp;&amp; ISBLANK(  System_Issues_comments__c  )</errorConditionFormula>
+    <errorMessage>Enter comments here if &quot;Support value is Systems Issues&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Partner opportunity related to this agency opportunity. This field is only filled in on agency opps and the related opportunity must be a partner opportunity.</description>
+    <inlineHelpText>Partner opportunity related to this agency opportunity. This field is only filled in on agency opps and the related opportunity must be a partner opportunity.</inlineHelpText>
+    <label>Partner Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>partnerOpportunity</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

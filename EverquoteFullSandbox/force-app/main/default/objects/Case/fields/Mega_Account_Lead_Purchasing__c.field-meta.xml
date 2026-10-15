@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mega_Account_Lead_Purchasing__c</fullName>
+    <label>Mega Account Lead Purchasing</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Strategic_Account_management_type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Poor close rate</fullName>
+                <default>false</default>
+                <label>Poor close rate</label>
+            </value>
+            <value>
+                <fullName>Poor contactability</fullName>
+                <default>false</default>
+                <label>Poor contactability</label>
+            </value>
+            <value>
+                <fullName>Sudden volume drop</fullName>
+                <default>false</default>
+                <label>Sudden volume drop</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Lead Purchasing</controllingFieldValue>
+            <valueName>Poor close rate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lead Purchasing</controllingFieldValue>
+            <valueName>Poor contactability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lead Purchasing</controllingFieldValue>
+            <valueName>Sudden volume drop</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

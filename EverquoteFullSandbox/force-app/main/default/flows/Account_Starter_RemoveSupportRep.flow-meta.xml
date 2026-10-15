@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Starter Account should have a blank Support Rep</description>
+        <name>Update_Account_Support_Rep_to_Blank</name>
+        <label>Update Account Support Rep to Blank</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Support_Rep__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>If an Agency Account&apos;s Type is Starter and the Support Rep is not blank, change the Support Rep to blank. Only applies to Top Parent Accounts. S3P-970</description>
+    <environments>Default</environments>
+    <interviewLabel>Account_Starter_RemoveSupportRep {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account_Starter_RemoveSupportRep</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Account_Support_Rep_to_Blank</targetReference>
+        </connector>
+        <filterFormula>/* When an Account&apos;s Type or Support Rep is changed, run flow if the Account Type is Starter and the Support Rep is not blank and the Account is the top parent (no parent account)*/
+AND(
+          {!$Record.RecordType.Name} = &quot;Agency&quot;,
+           ISPICKVAL({!$Record.Type}, &quot;Starter&quot;),
+           NOT(ISBLANK({!$Record.Support_Rep__c})),
+           ISBLANK({!$Record.ParentId})
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

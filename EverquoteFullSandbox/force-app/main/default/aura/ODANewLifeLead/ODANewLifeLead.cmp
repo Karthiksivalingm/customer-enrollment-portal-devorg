@@ -1,0 +1,146 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global"
+  controller="ODANewLifeLeadController">
+  <aura:attribute name="errorMessages" type="List" default="[]" />
+  <aura:attribute name="leadSaving" type="Boolean" default="false" />
+
+  <!-- Preparation of lead object with fields-->
+  <aura:attribute name="newLifeLead" type="Lead" default="{'sobjectType': 'Lead'}" />
+
+  <!-- handlers -->
+  <aura:handler name="init" value="{! this}" action="{! c.doInit}" />
+  <aura:handler event="force:refreshView" action="{! c.doInit}" />
+
+  <div class="slds">
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="OdaNewLeadSource">What is the source of the new lead? *</label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="OdaNewLeadSource" class="slds-input" change="{!c.onLeadSourceChange}"
+          value="{!v.newLifeLead.Oda_New_Lead_Source__c}" />
+      </div>
+    </div>
+
+    <br />
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="FirstName">First Name *</label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="FirstName" class="slds-input" value="{! v.newLifeLead.FirstName}" />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="LastName">Last Name *</label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="LastName" class="slds-input" value="{! v.newLifeLead.LastName}" />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="Gender__c">Gender *</label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="Gender__c" class="slds-input" value="{! v.newLifeLead.Gender__c}" />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="Date_of_Birth__c">Date of Birth *</label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="Date_of_Birth__c" class="slds-input" value="{! v.newLifeLead.Date_of_Birth__c}" />
+      </div>
+    </div>
+
+    <fieldset class="slds-form-element slds-form-element_compound slds-form-element_address">
+      <legend class="slds-form-element__legend slds-form-element__label">Address</legend>
+      <div class="slds-form-element__control">
+        <!-- street -->
+        <div class="slds-form-element__row">
+          <div class="slds-size_1-of-1">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="Street">Street *</label>
+              <div class="slds-form-element__control">
+                <force:inputField aura:id="Street" class="slds-input" value="{! v.newLifeLead.Street }" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- other parts of the address -->
+        <div class="slds-form-element__row">
+          <div class="slds-size_8-of-12">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="City">City *</label>
+              <div class="slds-form-element__control">
+                <force:inputField aura:id="City" class="slds-input" value="{! v.newLifeLead.City }" />
+              </div>
+            </div>
+          </div>
+
+          <div class="slds-size_2-of-12">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="State">State *</label>
+              <div class="slds-form-element__control">
+                <force:inputField aura:id="State" class="slds-input" value="{! v.newLifeLead.State }" />
+              </div>
+            </div>
+          </div>
+
+          <div class="slds-size_2-of-12">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="PostalCode">Postal Code *</label>
+              <div class="slds-form-element__control">
+                <force:inputField aura:id="PostalCode" class="slds-input" value="{! v.newLifeLead.PostalCode }" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="Phone">Phone *</label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="Phone" class="slds-input" value="{!v.newLifeLead.Phone}" />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="Email">Email *</label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="Email" class="slds-input" value="{!v.newLifeLead.Email}" />
+      </div>
+    </div>
+
+    <br />
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="Major_Condition_Past_Year__c">
+        Any major condition in the past year? *
+      </label>
+      <div class="slds-form-element__control">
+        <force:inputField aura:id="Major_Condition_Past_Year__c" class="slds-input"
+          value="{!v.newLifeLead.Major_Condition_Past_Year__c}" />
+      </div>
+    </div>
+
+    <br />
+
+    <!-- spinner for when the lead is saving -->
+    <aura:if isTrue="{! v.leadSaving}">
+      <div class="slds-col slds-size_1-of-1">
+        <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+      </div>
+      <aura:set attribute="else">
+        <div class="slds-form-element">
+          <div class="slds-form-element__control">
+            <ui:button label="Save" press="{! c.saveNewLead}" />
+          </div>
+        </div>
+      </aura:set>
+    </aura:if>
+  </div>
+</aura:component>

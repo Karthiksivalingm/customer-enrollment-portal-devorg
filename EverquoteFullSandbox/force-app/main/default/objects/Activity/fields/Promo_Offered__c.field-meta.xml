@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promo_Offered__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check if the available promotion was offered during this call.</description>
+    <inlineHelpText>Check if the available promotion was offered during this call.</inlineHelpText>
+    <label>Promo Offered?</label>
+    <type>Checkbox</type>
+</CustomField>

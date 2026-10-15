@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Search</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Lead Search</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://www.google.com/search?q={!Lead.FirstName} {!Lead.LastName} insurance</url>
+</WebLink>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MTD_Revenue__c</fullName>
+    <businessOwnerUser>salesforce-data-cycle-prod@everquote.com.eqfullsb</businessOwnerUser>
+    <description>Updated by Simple Loader</description>
+    <inlineHelpText>Total revenue generated from the first day of the current calendar month up through yesterday. Updated daily by Analytics.</inlineHelpText>
+    <label>Revenue: Month to Date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

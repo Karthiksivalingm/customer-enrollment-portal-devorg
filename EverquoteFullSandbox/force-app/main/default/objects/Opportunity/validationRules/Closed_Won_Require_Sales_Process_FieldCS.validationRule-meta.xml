@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_Require_Sales_Process_FieldCS</fullName>
+    <active>false</active>
+    <description>4 sales process fields need to be entered when closing an Agency CS opportunity</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ 
+    OR(
+       ISBLANK (Current_State__c),
+       ISBLANK (Future_State__c), 
+       ISBLANK (Positive_Outcomes__c),
+       ISBLANK (Negative_Consequences__c)
+       ),
+    OR(
+              RecordType.Name = &quot;Agency CS&quot;)  
+      )</errorConditionFormula>
+    <errorMessage>Please complete &quot;Current State&quot;, &quot;Future State&quot;, &quot;Positive Outcomes&quot;, &quot;Negative Consequences&quot; fields when the stage is Closed Won</errorMessage>
+</ValidationRule>

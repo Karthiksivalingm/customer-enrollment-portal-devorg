@@ -10,9 +10,12 @@ public class TestUpdateCase {
         List<Account> accs = [SELECT Id FROM Account WHERE Name = 'dummy'];
         String dummy_acc_id = accs[0].Id;
         
+        Group excludedQueue = [SELECT Id FROM Group WHERE DeveloperName = 'nyk_dawn_Opp_Case' AND Type = 'Queue' LIMIT 1];
+       
         Case the_case = new Case();
         the_case.Subject = 'dummy';
         the_case.AccountId = dummy_acc_id;
+        the_case.OwnerId = excludedQueue.Id;
         insert the_case;
         
         List<Case> cases = [SELECT Id FROM Case WHERE Subject = 'dummy'];

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delta_cap_increase_cap_reqs_made_offer</fullName>
+    <active>false</active>
+    <description>Delta to cap off hours and increase cap projects require the &quot;made offer&quot; field</description>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL(  Project__c , &quot;Delta to Cap off Hours&quot;),
+ISPICKVAL( Project__c, &quot;Increase Cap&quot;)),
+ISPICKVAL( Status , &quot;Closed&quot;),
+ISPICKVAL(  Made_Offer__c , &quot;&quot;))</errorConditionFormula>
+    <errorMessage>Made Offer Field Required for this project Case</errorMessage>
+</ValidationRule>

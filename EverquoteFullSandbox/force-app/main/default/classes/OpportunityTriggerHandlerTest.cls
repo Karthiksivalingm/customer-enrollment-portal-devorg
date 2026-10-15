@@ -17,7 +17,7 @@ public class OpportunityTriggerHandlerTest {
     insert a;
     List<Customer_Success_Rep__c> lstCSRs = new List<Customer_Success_Rep__c>();
     User ru = [SELECT Id FROM User WHERE Id = :UserInfo.getUserId()];
-    Id rid = [SELECT Id FROM UserRole WHERE Name = 'Customer Support Rep'].Id;
+    Id rid = [SELECT Id FROM UserRole WHERE Name = 'Customer Success Associate'].Id;
     System.runAs(ru) {
       User u1 = new User(
         ProfileId = UserInfo.getProfileId(),
@@ -186,7 +186,7 @@ public class OpportunityTriggerHandlerTest {
     Account a = [SELECT Id, Carrier__c FROM Account];
 
     Opportunity o1 = DataFactory.buildOpportunity('Test Opp 1', a.Id, 'Enrichment');
-    o1.of_Apps__c = 1;
+       o1.of_Apps__c = 1;
     insert o1;
 
     o1.StageName = 'Closed Won';

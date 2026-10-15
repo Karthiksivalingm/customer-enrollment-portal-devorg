@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TICA</fullName>
+    <active>false</active>
+    <description>If TICA is marked yes, fill out agent start date</description>
+    <errorConditionFormula>ISPICKVAL( TICA_agent__c , &quot;Yes&quot;) &amp;&amp;  ISNULL( Agent_Start_Date__c  )</errorConditionFormula>
+    <errorDisplayField>Agent_Start_Date__c</errorDisplayField>
+    <errorMessage>Please fill out agent start date</errorMessage>
+</ValidationRule>

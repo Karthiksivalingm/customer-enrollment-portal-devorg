@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>contacts_list_nwv</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACTION_CADENCE</columns>
+    <columns>ACTION_CADENCE_ASSIGNEE</columns>
+    <columns>SCHEDULED_RESUME_DATE_TIME</columns>
+    <columns>ACTION_CADENCE_STATE</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Last_Activity_Date__c</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>State Farm</value>
+    </filters>
+    <filters>
+        <field>UPDATEDBY_USER.ALIAS</field>
+        <operation>equals</operation>
+        <value>nwise</value>
+    </filters>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>contacts_list_nwv</label>
+    <sharedTo>
+        <role>ADMIN</role>
+    </sharedTo>
+</ListView>

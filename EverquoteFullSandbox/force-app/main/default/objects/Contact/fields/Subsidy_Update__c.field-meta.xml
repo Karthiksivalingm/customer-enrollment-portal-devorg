@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subsidy_Update__c</fullName>
+    <label>Subsidy Update</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Subsidy_GA_Winback</fullName>
+                <default>false</default>
+                <label>Subsidy GA Winback</label>
+            </value>
+            <value>
+                <fullName>Subsidy_NC_Winback</fullName>
+                <default>false</default>
+                <label>Subsidy NC Winback</label>
+            </value>
+            <value>
+                <fullName>Subsidy_TN_Winback</fullName>
+                <default>false</default>
+                <label>Subsidy TN Winback</label>
+            </value>
+            <value>
+                <fullName>Subsidy_GA_RevDrop</fullName>
+                <default>false</default>
+                <label>Subsidy GA RevDrop</label>
+            </value>
+            <value>
+                <fullName>Subsidy_NC_RevDrop</fullName>
+                <default>false</default>
+                <label>Subsidy NC RevDrop</label>
+            </value>
+            <value>
+                <fullName>Subsidy_TN_RevDrop</fullName>
+                <default>false</default>
+                <label>Subsidy TN RevDrop</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

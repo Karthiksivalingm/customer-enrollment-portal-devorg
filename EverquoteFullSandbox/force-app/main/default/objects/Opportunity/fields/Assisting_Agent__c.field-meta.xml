@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assisting_Agent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Entered by an opportunity owner if they were assisted by another everquote agent with the opportunity. Used by Analytics to split revenue credit.</description>
+    <inlineHelpText>An internal agent who assisted the opportunity owner with this deal. Enables split in commission credit.</inlineHelpText>
+    <label>Assisting Agent</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Opportunities6</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,4 +1,3 @@
-/*
 public with sharing class roundRobinLeadAssigner {
   private static final Integer HOT_LEAD_SOURCE = 950;
 
@@ -169,10 +168,10 @@ public with sharing class roundRobinLeadAssigner {
     return selectedUser;
   }
 
-  /**
-   * Generate a list of integers from 0 to 100 in a random order
-   * 67, 84, 51, 7, 99, 14, 28, 71, 5, 75, ...
-   * /
+ 
+  // * Generate a list of integers from 0 to 100 in a random order
+  // * 67, 84, 51, 7, 99, 14, 28, 71, 5, 75, ...
+    //
   public static List<Integer> generateRandomList() {
     List<Integer> randomList = new List<Integer>();
 
@@ -215,9 +214,9 @@ public with sharing class roundRobinLeadAssigner {
     );
   }
 }
-*/
 
-/**
+
+/** United Techno code
  * Invocable class that performs Round Robin (weighted-random) assignment of Leads
  * to eligible advisors within a Public Group, based on the Lead's State and each
  * advisor's licensing/weighting fields.
@@ -237,6 +236,7 @@ public with sharing class roundRobinLeadAssigner {
  * fields remain unchanged from the original implementation so existing Flow /
  * Process Builder definitions and any Apex callers continue to work unmodified.
  */
+/*
 public with sharing class roundRobinLeadAssigner {
   private static final Integer HOT_LEAD_SOURCE = 950;
 
@@ -264,10 +264,7 @@ public with sharing class roundRobinLeadAssigner {
     public String phone;
   }
 
-  /**
-   * Wraps any unexpected failure raised while assigning Leads so callers get a
-   * single, clearly-named exception type instead of a raw system exception.
-   */
+ 
   public class RoundRobinLeadAssignerException extends Exception {
   }
 
@@ -279,8 +276,8 @@ public with sharing class roundRobinLeadAssigner {
    * Preserves the original behavior: if no eligible advisor is found for a
    * given Lead's Group/State, processing of the entire batch stops (no Tasks
    * or owner updates are committed for any Lead already processed in this
-   * call), matching the original implementation.
-   */
+ //  * call), matching the original implementation.
+   
   @InvocableMethod(label='Assign Lead')
   public static void assign(List<RoundRobinLeadAssignment> rrlas) {
     if (rrlas == null || rrlas.isEmpty()) {
@@ -343,10 +340,7 @@ public with sharing class roundRobinLeadAssigner {
     }
   }
 
-  /**
-   * Updates the OwnerId of the given Leads, skipping any Lead whose current
-   * owner is already a User (an advisor) rather than a Queue/Group.
-   */
+
   public static void updateLeadsOwner(Map<Id, Id> leadOwnerMap) {
     if (leadOwnerMap == null || leadOwnerMap.isEmpty()) {
       return;
@@ -378,9 +372,7 @@ public with sharing class roundRobinLeadAssigner {
     }
   }
 
-  /**
-   * Stamps the timestamp of the last outbound-lead assignment on each given User.
-   */
+
   @Future
   public static void updateUserOdaTimestampLastObLeadAssigned(List<Id> usersId) {
     if (usersId == null || usersId.isEmpty()) {
@@ -402,11 +394,7 @@ public with sharing class roundRobinLeadAssigner {
     }
   }
 
-  /**
-   * Loads active Users belonging to the given Group whose StatesLicensedIn__c
-   * contains the given state (and is not flagged with the "state*" excluded
-   * marker), ordered by the oldest outbound-lead-assignment timestamp first.
-   */
+  
   public static List<User> loadUsersByGroupAndState(String groupName, String leadState) {
     List<GroupMember> usersByGroup = [
       SELECT Group.Name, GroupId, UserOrGroupId
@@ -436,10 +424,7 @@ public with sharing class roundRobinLeadAssigner {
     return usersByGroupAndState;
   }
 
-  /**
-   * Weighted-random selection of a User from the given list, using each User's
-   * ODA_HnF_Weight__c relative to the group's total weight as its probability.
-   */
+
   public static User randomExtractUser(List<User> users) {
     // advisors weight sum, will be used to calculate probability for each advisor
     Decimal weightSum = getUsersWeightSum(users);
@@ -477,10 +462,7 @@ public with sharing class roundRobinLeadAssigner {
     return selectedUser;
   }
 
-  /**
-   * Generates a list of integers from 0 to 99 in a random order, e.g.
-   * 67, 84, 51, 7, 99, 14, 28, 71, 5, 75, ...
-   */
+ 
   public static List<Integer> generateRandomList() {
     List<Integer> randomList = new List<Integer>();
 
@@ -523,3 +505,5 @@ public with sharing class roundRobinLeadAssigner {
     );
   }
 }
+
+*/

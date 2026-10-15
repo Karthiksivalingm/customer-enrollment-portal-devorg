@@ -40,6 +40,80 @@ public class TestLeadCheatsheet {
         c.getVplclegs();
     }
     
+    static testMethod void testMarketplaceStatsMemoization() {
+        Carrier__c carrier = new Carrier__c(Name = 'QA-Scenario5-Carrier');
+        insert carrier;
+
+        Lead lead = new Lead(LastName = 'QA-Scenario5-Lead', Company = 'QA Co', State = 'FL', Carrier__c = carrier.Id);
+        insert lead;
+
+        PageReference pageRef = Page.LeadCheatsheet;
+        Test.setCurrentPage(pageRef);
+        ApexPages.currentPage().getParameters().put('id', lead.Id);
+        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());
+
+        Test.startTest();
+        LeadCheatsheetController ctrl = new LeadCheatsheetController();
+        Integer calloutsBefore = Limits.getCallouts();
+        JsonParseMarketplaceStats first = ctrl.getMarketplaceStats();
+        JsonParseMarketplaceStats second = ctrl.getMarketplaceStats();
+        Integer calloutsUsed = Limits.getCallouts() - calloutsBefore;
+        Test.stopTest();
+
+        System.assertEquals(1, calloutsUsed, 'getMarketplaceStats() should fire exactly one callout across two calls (memoization)');
+        System.assertNotEquals(null, first, 'First call should return parsed stats');
+        System.assertEquals(38494, first.consumers.premium, 'Parsed stats should reflect the mocked response body');
+        System.assertEquals(first, second, 'Second call should return the cached instance, not re-parse a new one');
+    }
+
+    static testMethod void testMissingLeadId() {
+        Test.setCurrentPage(Page.LeadCheatsheet);
+        ApexPages.currentPage().getParameters().remove('id');
+
+        LeadCheatsheetController ctrl = new LeadCheatsheetController();
+
+        System.assertEquals(null, ctrl.lead, 'lead should be null when no id is provided.');
+        System.assert(ApexPages.hasMessages(), 'A page message should be added when no id is provided.');
+        System.assert(
+            ApexPages.getMessages()[0].getSummary().containsIgnoreCase('No Lead Id was provided'),
+            'Message should explain the missing id: ' + ApexPages.getMessages()[0].getSummary()
+        );
+
+        // Every getter should handle a null lead gracefully instead of throwing.
+        System.assertEquals(null, ctrl.getActivityHistories());
+        System.assertEquals(null, ctrl.getOpenActivities());
+        System.assertEquals(true, ctrl.getNoteList().isEmpty());
+        System.assertEquals(true, ctrl.getCampaignHistories().isEmpty());
+        System.assertEquals(null, ctrl.getCarrier());
+    }
+
+    static testMethod void testInvalidLeadId() {
+        Test.setCurrentPage(Page.LeadCheatsheet);
+        // Well-formed Lead Id that does not correspond to any real record.
+        ApexPages.currentPage().getParameters().put('id', '00Q000000000000AAA');
+
+        LeadCheatsheetController ctrl = new LeadCheatsheetController();
+
+        System.assertEquals(null, ctrl.lead, 'lead should be null when the id does not match any record.');
+        System.assert(ApexPages.hasMessages(), 'A page message should be added when the Lead cannot be loaded.');
+        System.assert(
+            ApexPages.getMessages()[0].getSummary().containsIgnoreCase('Unable to load'),
+            'Message should explain the load failure: ' + ApexPages.getMessages()[0].getSummary()
+        );
+    }
+
+    static testMethod void testCarrierNullGuard() {
+        Lead noCarrierLead = new Lead(LastName = 'QA-NoCarrier-Lead', Company = 'QA Co');
+        insert noCarrierLead;
+
+        Test.setCurrentPage(Page.LeadCheatsheet);
+        ApexPages.currentPage().getParameters().put('id', noCarrierLead.Id);
+        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());
+
+        LeadCheatsheetController ctrl = new LeadCheatsheetController();
+        System.assertEquals(null, ctrl.getCarrier(), 'getCarrier() should return null when the Lead has no Carrier__c set.');
+    }
+
     static testMethod void testJsonPareMarketplaceStats() {
         String raw_body = '{"consumers": {"premium": 38494, "standard": 17005, "preferred": 27167, "non_standard": 2927}, "share_rate": 1.36, "unsold_leads": 27048, "unsold_consumers": {"premium": 10824, "standard": 5566, "preferred": 9827, "non_standard": 825}}';
         JsonParseMarketplaceStats p = JsonParseMarketplaceStats.parse(raw_body);

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Contact_Me_not_Scheduled_on_Instant_Book_calender_of_the_BDR</name>
+        <label>Contact.Contact_Me_not_Scheduled_on_Instant_Book_calender_of_the_BDR</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>Contact.Contact_Me_not_Scheduled_on_Instant_Book_calender_of_the_BDR</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Contact.Contact_Me_not_Scheduled_on_Instant_Book_calender_of_the_BDR</nameSegment>
+    </actionCalls>
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: Contact Me No Meeting Scheduled workflow rule
+Workflow rule description: Contact filled out Contact Me form but didn&apos;t schedule on the Calender of the BDR using Instant Book&quot;</description>
+    <label>Contact Me No Meeting Scheduled</label>
+    <migratedFromWorkflowRuleName>Contact Me No Meeting Scheduled</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Contact_Me_not_Scheduled_on_Instant_Book_calender_of_the_BDR</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BDR_meeting_set_on_task__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Contact_Me_Checkbox__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AGP_Inactive_Owner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Updated from the account via Referral process builder.  Used for round robin routing by the dispatcher app in Salesforce.</description>
+    <label>AGP Inactive Owner</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

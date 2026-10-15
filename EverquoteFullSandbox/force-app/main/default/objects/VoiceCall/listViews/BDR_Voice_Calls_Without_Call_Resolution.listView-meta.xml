@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDR_Voice_Calls_Without_Call_Resolution</fullName>
+    <columns>CreatedDate</columns>
+    <columns>User</columns>
+    <columns>Owner</columns>
+    <columns>Name</columns>
+    <columns>CallType</columns>
+    <columns>CallResolution</columns>
+    <columns>CallDisposition</columns>
+    <columns>CreatedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>User</field>
+        <operation>equals</operation>
+        <value>Que Gurley,Jess Garcia,Christy Regalado,Mary Ann Orr,Agatha Ellis,Wileen Rabauliman,Jenna Howard,Damien Clay,Antonio Cardenas,Max Martinez,Jay Gutierrez,Jean Mejia</value>
+    </filters>
+    <filters>
+        <field>CallResolution</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CreatedDate</field>
+        <operation>greaterOrEqual</operation>
+        <value>4/1/2026 12:00 AM</value>
+    </filters>
+    <label>BDR Voice Calls Without Call Resolution</label>
+</ListView>

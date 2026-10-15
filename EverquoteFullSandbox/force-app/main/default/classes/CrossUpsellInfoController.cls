@@ -1,16 +1,11 @@
 public class CrossUpsellInfoController {
 	public final Opportunity opportunity {get; set;}
-    private final Map<String, Id> upsellRecordTypeIdsByName {get; set;}
+    public final Map<String, Id> upsellRecordTypeIdsByName {get; set;}
 
     public CrossUpsellInfoController(ApexPages.StandardController stdController) {
         opportunity = (Opportunity)stdController.getRecord();
         upsellRecordTypeIdsByName = new Map<String, Id>();
-        for(RecordType rt : [
-            SELECT Id, Name
-            FROM RecordType
-            WHERE SobjectType = 'Upsell__c'
-            AND Name IN ('Auto', 'Home', 'Life')
-        ]){
+        for(RecordType rt : [ SELECT Id, Name FROM RecordType WHERE SobjectType = 'Upsell__c'AND Name IN ('Auto', 'Home', 'Life') ]){
             upsellRecordTypeIdsByName.put(rt.Name, rt.Id);
         }
     }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospects_COUNTRY_FINANCIAL_2025</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>State__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>Last_Activity_Date__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account.Total_Leads_Purchased__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Last_Activity_Date__c</field>
+        <operation>lessThan</operation>
+        <value>7/1/2025</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>contains</operation>
+        <value>Country Financial</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>notEqual</operation>
+        <value>Family First Life</value>
+    </filters>
+    <filters>
+        <field>Account_Type__c</field>
+        <operation>equals</operation>
+        <value>Prospect</value>
+    </filters>
+    <label>Prospects COUNTRY FINANCIAL 2025</label>
+</ListView>

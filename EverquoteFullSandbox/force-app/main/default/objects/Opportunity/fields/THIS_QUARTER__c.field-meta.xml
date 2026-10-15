@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>THIS_QUARTER__c</fullName>
+    <formula>AND(
+CEILING( MONTH (CloseDate ) / 3 ) = CEILING( MONTH (TODAY()) / 3 ),
+OR(
+AND(
+YEAR(TODAY()) = YEAR(CloseDate),
+CloseDate &lt;= TODAY()
+),
+AND(
+YEAR(TODAY()) = YEAR(CloseDate)+1,
+CloseDate &lt;= DATE(YEAR(TODAY())-1, MONTH(TODAY()),DAY(TODAY()))
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>This Quarter</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

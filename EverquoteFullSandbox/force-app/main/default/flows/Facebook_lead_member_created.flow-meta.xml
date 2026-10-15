@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>New_Facebook_campaign_lead</name>
+        <label>CampaignMember.New_Facebook_campaign_lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>CampaignMember.New_Facebook_campaign_lead</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>CampaignMember.New_Facebook_campaign_lead</nameSegment>
+    </actionCalls>
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: Facebook lead member created workflow rule
+Workflow rule description: &quot;</description>
+    <label>Facebook lead member created</label>
+    <migratedFromWorkflowRuleName>Facebook lead member created</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>New_Facebook_campaign_lead</targetReference>
+        </connector>
+        <filterFormula>NOT(ISBLANK( {!$Record.LeadId} )) &amp;&amp;  {!$Record.CampaignId} = &quot;7011a0000007rGy&quot;</filterFormula>
+        <object>CampaignMember</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

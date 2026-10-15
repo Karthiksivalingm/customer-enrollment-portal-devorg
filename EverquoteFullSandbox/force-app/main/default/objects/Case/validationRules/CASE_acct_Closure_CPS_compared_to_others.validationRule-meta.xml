@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CASE_acct_Closure_CPS_compared_to_others</fullName>
+    <active>false</active>
+    <description>If agents knows the CPS, how this CPS compares to other leads is required.</description>
+    <errorConditionFormula>ISPICKVAL( Agent_Know_CPS_EQ_Leads__c , &quot;Yes&quot;)
+&amp;&amp;
+ISPICKVAL( CPS_compared_to_Other_Leads__c, &quot;&quot; )
+&amp;&amp;
+Datevalue(CreatedDate) &gt; DATE(2017,04,01)</errorConditionFormula>
+    <errorMessage>CPS Compared to other leads is Required.</errorMessage>
+</ValidationRule>

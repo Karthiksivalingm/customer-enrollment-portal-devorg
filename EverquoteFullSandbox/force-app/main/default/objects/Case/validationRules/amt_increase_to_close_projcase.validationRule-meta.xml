@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>amt_increase_to_close_projcase</fullName>
+    <active>false</active>
+    <description>Increased cap required to close case for project increase cap and delta to cap</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(  Project__c , &quot;Increase Cap&quot;),
+Not(ISPICKVAL( Increased_Cap__c , &quot;No&quot;)),
+ISPICKVAL( Status, &quot;Closed&quot;),
+NOT(ISPICKVAL( Completed_Conversation_Exhausted__c, &quot;Never Worked&quot;)),
+OR(
+ISBLANK( Sunday_Cap_Increase__c ),
+ISBLANK( Weekday_Cap_Increase__c ),
+ISBLANK( Saturday_Cap_Increase__c )))</errorConditionFormula>
+    <errorMessage>Amount Cap Increased fields (Saturday, Sunday, &amp; Monday) are required to close this Case.</errorMessage>
+</ValidationRule>

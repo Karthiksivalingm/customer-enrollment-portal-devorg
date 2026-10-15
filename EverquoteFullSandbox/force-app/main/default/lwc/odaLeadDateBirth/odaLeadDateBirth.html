@@ -1,0 +1,17 @@
+<template>
+  <c-loading-spinner if:true={loading}></c-loading-spinner>
+  <div class="slds-col slds-size_1-of-1">
+    <div class="slds-text-heading_large">{ageMessage}</div>
+  </div>
+
+  <p>If the date of birth is incorrect, change it before continuing with {product}.</p>
+  <lightning-input
+    type="date"
+    name="datOfBirth"
+    label="Date Of Birth"
+    required
+    value={dateOfBirth}
+    onchange={onDateOfBirthChange}
+  ></lightning-input>
+  <lightning-button variant="brand" onclick={saveDateOfBirth} label="Save">Save</lightning-button>
+</template>

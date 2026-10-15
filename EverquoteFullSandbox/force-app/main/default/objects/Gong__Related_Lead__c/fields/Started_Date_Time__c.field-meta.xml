@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Started_Date_Time__c</fullName>
+    <description>The &quot;Started&quot; field provided by the Gong managed package is only a date field, created this field so you can see the date and time the call started. Used in Lead Gong Conversation related list.
+
+S3P-1340 - Created.</description>
+    <formula>Gong__Gong_Interaction__r.Gong__Call_Start__c</formula>
+    <label>Started Date/Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Failing_Flow_Component</name>
+        <label>Assign Failing Flow Component</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FailingFlowComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Opportunity_ClosedLost_45DaysAfterCreation - Close Opportunity</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_Fault_Path_Subflow</targetReference>
+        </connector>
+    </assignments>
+    <description>Close an opportunity 45 days after it was created if it was not already closed. If an opportunity is re-opened, close again if not closed after 45 days.
+S3P-919 - Created.
+S3P-1387 - Removed Matthew Ricker as exception. Added fault path.
+S3P-1396 - Updated Next Steps formula to ensure it doesn&apos;t hit character limits.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>The current value in &quot;Next Step&quot; plus &quot;This opportunity was set to Closed Lost after being open for 45 days without closure&quot;.</description>
+        <name>Formula_NextStep</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+    SUBSTITUTE(
+        {!$Record.NextStep}, 
+        &quot;This opportunity was set to Closed Lost after being open for 45 days without closure&quot;, 
+        &quot;&quot;
+    ) 
+    &amp; &quot; &quot; &amp; TEXT(TODAY()) &amp; &quot;: This opportunity was set to Closed Lost after being open for 45 days without closure.&quot;, 
+    255
+)</expression>
+    </formulas>
+    <interviewLabel>Opportunity_Close45DaysAfterOpen {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity_ClosedLost_45DaysAfterCreation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Close the opportunity 45 days after it was opened it it has not been closed. If an opportunity is changed from closed to open, wait 45 days and close the opportunity.</description>
+        <name>Close_Opportunity</name>
+        <label>Close Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <targetReference>Assign_Failing_Flow_Component</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Lost_Reason__c</field>
+            <value>
+                <stringValue>Automatic Closure</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>NextStep</field>
+            <value>
+                <elementReference>Formula_NextStep</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>X45_Days_After_Creation</name>
+            <connector>
+                <targetReference>Close_Opportunity</targetReference>
+            </connector>
+            <label>45 Days After Creation/Reopen</label>
+            <offsetNumber>45</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Run_Fault_Path_Subflow</name>
+        <label>Run Fault Path Subflow</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>FailingFlowComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>FailingFlowComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

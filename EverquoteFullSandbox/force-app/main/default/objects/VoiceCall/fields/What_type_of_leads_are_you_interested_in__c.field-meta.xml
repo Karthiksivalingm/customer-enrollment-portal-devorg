@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_type_of_leads_are_you_interested_in__c</fullName>
+    <description>Collected by BDR on Inbound and Outbound calls via the screenflow, VoiceCall_BDRScriptButton_CallScoreCardScriptAndQuestions.
+Displays the types of leads the Agency is interested in.</description>
+    <inlineHelpText>Inbound/Outbound calls. Types of Leads the Agency is interested in.</inlineHelpText>
+    <label>Lead Type Interest</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Auto</fullName>
+                <default>false</default>
+                <label>Auto</label>
+            </value>
+            <value>
+                <fullName>Home</fullName>
+                <default>false</default>
+                <label>Home</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

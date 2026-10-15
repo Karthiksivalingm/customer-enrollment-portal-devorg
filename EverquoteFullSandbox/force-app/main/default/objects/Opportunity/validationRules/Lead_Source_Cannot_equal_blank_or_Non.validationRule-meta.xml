@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Cannot_equal_blank_or_Non</fullName>
+    <active>false</active>
+    <description>Lead source cannot equal blank value or &quot;none&quot;</description>
+    <errorConditionFormula>And( RecordTypeId = &quot;0121a000000EqqS&quot;,
+OR(
+ISPICKVAL( LeadSource, &quot;&quot; ),
+ISPICKVAL ( LeadSource, &quot;None&quot;)))</errorConditionFormula>
+    <errorMessage>Select Lead Source</errorMessage>
+</ValidationRule>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closure_Reason__c</fullName>
+    <label>Closure Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>20% Returns Pilot</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>20% Returns Pilot</label>
+            </value>
+            <value>
+                <fullName>2023 State Farm Subsidy Change</fullName>
+                <default>false</default>
+                <label>2023 State Farm Subsidy Change</label>
+            </value>
+            <value>
+                <fullName>Accel/AGP - CPA too high</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accel/AGP - CPA too high</label>
+            </value>
+            <value>
+                <fullName>Accel/AGP - Dissatisfied with service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accel/AGP - Dissatisfied with service</label>
+            </value>
+            <value>
+                <fullName>Accel/AGP - Launchpad blowup</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accel/AGP - Launchpad blowup</label>
+            </value>
+            <value>
+                <fullName>Accel/AGP - Low bind rate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accel/AGP - Low bind rate</label>
+            </value>
+            <value>
+                <fullName>Ad compliance issues</fullName>
+                <default>false</default>
+                <label>Ad compliance issues</label>
+            </value>
+            <value>
+                <fullName>Adonis Quality Pilot</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adonis Quality Pilot</label>
+            </value>
+            <value>
+                <fullName>Agency - Agent Leaving Industry</fullName>
+                <default>false</default>
+                <label>Agency - Agent Leaving Industry</label>
+            </value>
+            <value>
+                <fullName>Agency - Agent Leaving Office</fullName>
+                <default>false</default>
+                <label>Agency - Agent Leaving Office</label>
+            </value>
+            <value>
+                <fullName>Agency - Budget</fullName>
+                <default>false</default>
+                <label>Agency - Budget</label>
+            </value>
+            <value>
+                <fullName>Agency - Staffing Changes</fullName>
+                <default>false</default>
+                <label>Agency - Staffing Changes</label>
+            </value>
+            <value>
+                <fullName>Bind Rate - Agent Did Not Bind Enough to Hit ROI Target</fullName>
+                <default>false</default>
+                <label>Bind Rate - Agent Did Not Bind Enough to Hit ROI Target</label>
+            </value>
+            <value>
+                <fullName>Bind Rate - Agent Rates Are Not Competitive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bind Rate - Agent Rates Are Not Competitive</label>
+            </value>
+            <value>
+                <fullName>Calls 2.0</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Calls 2.0</label>
+            </value>
+            <value>
+                <fullName>Calls Price Increase</fullName>
+                <default>false</default>
+                <label>Calls Price Increase</label>
+            </value>
+            <value>
+                <fullName>Carrier Changes</fullName>
+                <default>false</default>
+                <label>Carrier Changes</label>
+            </value>
+            <value>
+                <fullName>Contact Rate - Consumers Did Not Answer Phone</fullName>
+                <default>false</default>
+                <label>Contact Rate - Consumers Did Not Answer Phone</label>
+            </value>
+            <value>
+                <fullName>Contact Rate - Incorrect Contact Information</fullName>
+                <default>false</default>
+                <label>Contact Rate - Incorrect Contact Information</label>
+            </value>
+            <value>
+                <fullName>Discontinuing Warm Transfers</fullName>
+                <default>false</default>
+                <label>Discontinuing Warm Transfers</label>
+            </value>
+            <value>
+                <fullName>Dynamic Pricing - Other</fullName>
+                <default>false</default>
+                <label>Dynamic Pricing - Other</label>
+            </value>
+            <value>
+                <fullName>Dynamic Pricing - Pricing</fullName>
+                <default>false</default>
+                <label>Dynamic Pricing - Pricing</label>
+            </value>
+            <value>
+                <fullName>Dynamic Pricing - Too Complex</fullName>
+                <default>false</default>
+                <label>Dynamic Pricing - Too Complex</label>
+            </value>
+            <value>
+                <fullName>Farmers Cost Share drop to 50%</fullName>
+                <default>false</default>
+                <label>Farmers Cost Share drop to 25%</label>
+            </value>
+            <value>
+                <fullName>Home Lead Price Increase</fullName>
+                <default>false</default>
+                <label>Home Lead Price Increase</label>
+            </value>
+            <value>
+                <fullName>Home or Life Warm Transfers</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Home or Life Warm Transfers</label>
+            </value>
+            <value>
+                <fullName>LCS Opt In</fullName>
+                <default>false</default>
+                <label>LCS Opt In</label>
+            </value>
+            <value>
+                <fullName>Misc - Agent Is Consolidating Multiple Accounts</fullName>
+                <default>false</default>
+                <label>Misc - Agent Is Consolidating Multiple Accounts</label>
+            </value>
+            <value>
+                <fullName>Misc - Repeated Inactivity</fullName>
+                <default>false</default>
+                <label>Misc - Repeated Inactivity</label>
+            </value>
+            <value>
+                <fullName>Misc - Unable to Discern Reason</fullName>
+                <default>false</default>
+                <label>Misc - Unable to Discern Reason</label>
+            </value>
+            <value>
+                <fullName>Agency - Marketing Strategy Change</fullName>
+                <default>false</default>
+                <label>No Longer Buying Internet Leads</label>
+            </value>
+            <value>
+                <fullName>Pricing Increase</fullName>
+                <default>false</default>
+                <label>Pricing Increase</label>
+            </value>
+            <value>
+                <fullName>Pro 2- Migration Experience</fullName>
+                <default>false</default>
+                <label>Pro 2- Migration Experience</label>
+            </value>
+            <value>
+                <fullName>Pro 2- System Issues</fullName>
+                <default>false</default>
+                <label>Pro 2- System Issues</label>
+            </value>
+            <value>
+                <fullName>Product - Auto-Billing Complaint</fullName>
+                <default>false</default>
+                <label>Product - Auto-Billing Complaint</label>
+            </value>
+            <value>
+                <fullName>Product - Automatic Unpause</fullName>
+                <default>false</default>
+                <label>Product - Automatic Unpause</label>
+            </value>
+            <value>
+                <fullName>Product - Bad Lead Quality</fullName>
+                <default>false</default>
+                <label>Product - Bad Lead Quality</label>
+            </value>
+            <value>
+                <fullName>Product - Lead Returns Process Complaint</fullName>
+                <default>false</default>
+                <label>Product - Lead Returns Process Complaint</label>
+            </value>
+            <value>
+                <fullName>Product - Leads Do Not Match Risk Filters</fullName>
+                <default>false</default>
+                <label>Product - Leads Do Not Match Risk Filters</label>
+            </value>
+            <value>
+                <fullName>Product - Lead Types Poor Fit For Agent or Carrier</fullName>
+                <default>false</default>
+                <label>Product - Lead Types Poor Fit For Agent or Carrier</label>
+            </value>
+            <value>
+                <fullName>Product - Platform Deficiency</fullName>
+                <default>false</default>
+                <label>Product - Platform Deficiency</label>
+            </value>
+            <value>
+                <fullName>Product - Volume Too Low</fullName>
+                <default>false</default>
+                <label>Product - Volume Too Low</label>
+            </value>
+            <value>
+                <fullName>Pro technical issues</fullName>
+                <default>false</default>
+                <label>Pro technical issues</label>
+            </value>
+            <value>
+                <fullName>Quote Rate - Consumers Provided Negative Feedback</fullName>
+                <default>false</default>
+                <label>Quote Rate</label>
+            </value>
+            <value>
+                <fullName>Related to COVID-19 - Temporary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Related to COVID-19 - Temporary</label>
+            </value>
+            <value>
+                <fullName>Returns Cap Change</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Returns Cap Change</label>
+            </value>
+            <value>
+                <fullName>Zombie - Inactivity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Zombie - Inactivity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

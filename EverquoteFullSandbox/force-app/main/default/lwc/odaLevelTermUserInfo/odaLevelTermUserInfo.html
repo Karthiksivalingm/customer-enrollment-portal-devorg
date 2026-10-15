@@ -1,0 +1,147 @@
+<template>
+  <c-loading-spinner if:true={loading}></c-loading-spinner>
+  <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+    <div class="slds-col slds-size_1-of-1">
+      <div class="slds-text-heading_medium">Confirm Additional Client Information</div>
+      <br />
+    </div>
+
+    <div class="slds-col slds-size_1-of-3">
+      <lightning-combobox
+        label="Coverage band"
+        name="coverageBand"
+        placeholder="Choose one..."
+        onchange={onCoverageBandChange}
+        options={coverageBandOptions}
+        class="coverage-bands-combobox"
+        required
+      ></lightning-combobox>
+      <div
+        if:false={coverageBandValid}
+        class="slds-form-element__help slds-required"
+        id="error-message-coverage-bands-id"
+      >
+        Coverage band is required.
+      </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-6">
+      <lightning-combobox
+        label="Height"
+        name="height"
+        placeholder="Choose one..."
+        onchange={onHeightChange}
+        options={heightOptions}
+        value={height}
+        class="height-combobox"
+        required
+      ></lightning-combobox>
+      <div
+        if:false={heightValid}
+        class="slds-form-element__help slds-required"
+        id="error-message-height-id"
+      >
+        Height is required.
+      </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-6">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="weight-input-id-2">
+          <abbr class="slds-required" title="required">*</abbr>
+          Weight
+        </label>
+        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+          <span
+            class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default input-span"
+          >
+            lbs
+          </span>
+          <input
+            type="number"
+            id="weight-input-id-2"
+            class="slds-input weight-field"
+            min="0"
+            oninput={onWeightChange}
+            value={weight}
+            required
+          />
+        </div>
+        <div
+          if:false={weightValid}
+          class="slds-form-element__help slds-required"
+          id="error-message-weight-id"
+        >
+          Weight is requried.
+        </div>
+      </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-3 slds-align-bottom">
+      <button class="slds-button slds-button_brand slds-button_stretch" onclick={onCalculateRates}>
+        Calculate Build Class & Rates
+      </button>
+      <div
+        if:true={anyInvalidField}
+        class="slds-form-element__help slds-required"
+        id="fill-space-to-align-button-with-input"
+      >
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+    <div class="slds-col slds-size_1-of-3">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="text-input-id-1">Calculated Build Class</label>
+        <div class="slds-form-element__control">
+          <input
+            type="text"
+            id="text-input-id-1"
+            value={buildRiskClassText}
+            disabled
+            class="slds-input"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-3">
+      <lightning-combobox
+        label="Select different risk class (if required)"
+        name="riskClass"
+        placeholder="No different risk class selected"
+        value={selectedOverrideOption}
+        onchange={onRiskClassChange}
+        options={riskClassOptions}
+        class="custom-font-size"
+      ></lightning-combobox>
+    </div>
+
+    <div class="slds-col slds-size_1-of-3 slds-align-bottom">
+      <button
+        class="slds-button slds-button_brand slds-button_stretch"
+        disabled={isCalculateNewRateDisabled}
+        onclick={onCalculateNewRates}
+      >
+        Calculate New Rates
+      </button>
+    </div>
+
+    <div class="slds-col slds-size_1-of-1">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="text-input-id-2"></label>
+        <div class="slds-form-element__control">
+          <input
+            type="text"
+            id="text-input-id-2"
+            value={riskClassQuotedText}
+            disabled
+            class="slds-input slds-text-align_center"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

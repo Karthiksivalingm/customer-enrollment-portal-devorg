@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Changes</fullName>
+    <active>true</active>
+    <description>If a lead source is blank, the ISR can fill it in. If the lead source is not blank, then they cannot edit it.</description>
+    <errorConditionFormula>AND(  
+$User.ProfileId  &lt;&gt; &apos;00e1a000000duS7&apos;,
+$User.ProfileId &lt;&gt; &apos;00e1a000000lWln&apos;,
+ NOT(ISPICKVAL( PRIORVALUE(LeadSource), &quot;&quot;)),
+ISCHANGED(LeadSource)   )</errorConditionFormula>
+    <errorMessage>You cannot update this lead source.</errorMessage>
+</ValidationRule>

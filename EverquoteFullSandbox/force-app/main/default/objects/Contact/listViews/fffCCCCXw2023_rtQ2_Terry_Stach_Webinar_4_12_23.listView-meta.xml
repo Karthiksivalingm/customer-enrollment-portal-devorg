@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fffCCCCXw2023_rtQ2_Terry_Stach_Webinar_4_12_23</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Carrier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>12/1/2023</value>
+    </filters>
+    <filters>
+        <field>Open_Opp__c</field>
+        <operation>lessThan</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Do Not Call,No Longer There,Bad Data</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>notEqual</operation>
+        <value>open</value>
+    </filters>
+    <label>2023-Q4 Aaron Smith Webinar (12/6/23)</label>
+    <sharedTo>
+        <group>BDR</group>
+    </sharedTo>
+</ListView>

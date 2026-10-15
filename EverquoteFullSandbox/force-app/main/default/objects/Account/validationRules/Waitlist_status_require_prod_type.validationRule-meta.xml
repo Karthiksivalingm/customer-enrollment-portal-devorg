@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waitlist_status_require_prod_type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+ ISBLANK(Product_Type__c),
+
+ ISPICKVAL( Relationship__c , &quot;Waitlist&quot;),
+ 
+ ISNULL ( Added_to_Waitlist_Date__c ) 
+
+)</errorConditionFormula>
+    <errorMessage>If relationship is &quot;Waitlist&quot;, product type is required and please add today&apos;s date to the &quot;Added to Waitlist Date&quot; field</errorMessage>
+</ValidationRule>

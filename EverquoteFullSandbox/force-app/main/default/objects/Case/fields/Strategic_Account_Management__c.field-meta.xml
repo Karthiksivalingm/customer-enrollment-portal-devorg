@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Strategic_Account_Management__c</fullName>
+    <label>Strategic Account Management</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Strategic_Account_management_type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initiatives</fullName>
+                <default>false</default>
+                <label>Initiatives</label>
+            </value>
+            <value>
+                <fullName>Regular Review Call</fullName>
+                <default>false</default>
+                <label>Regular Review Call</label>
+            </value>
+            <value>
+                <fullName>Paused</fullName>
+                <default>false</default>
+                <label>Paused</label>
+            </value>
+            <value>
+                <fullName>Optimizations</fullName>
+                <default>false</default>
+                <label>Optimizations</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Strategic Account Management</controllingFieldValue>
+            <valueName>Initiatives</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic Account Management</controllingFieldValue>
+            <valueName>Regular Review Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic Account Management</controllingFieldValue>
+            <valueName>Paused</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic Account Management</controllingFieldValue>
+            <valueName>Optimizations</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Home_CTC__c</fullName>
+    <label>Home CTC</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Does not participate</fullName>
+                <default>false</default>
+                <label>Does not participate</label>
+            </value>
+            <value>
+                <fullName>QIA</fullName>
+                <default>false</default>
+                <label>QIA</label>
+            </value>
+            <value>
+                <fullName>CTQ</fullName>
+                <default>false</default>
+                <label>CTQ</label>
+            </value>
+            <value>
+                <fullName>Very good prefill</fullName>
+                <default>false</default>
+                <label>Very good prefill</label>
+            </value>
+            <value>
+                <fullName>Good prefill</fullName>
+                <default>false</default>
+                <label>Good prefill</label>
+            </value>
+            <value>
+                <fullName>Limited prefill</fullName>
+                <default>false</default>
+                <label>Limited prefill</label>
+            </value>
+            <value>
+                <fullName>Bad prefill</fullName>
+                <default>false</default>
+                <label>Bad prefill</label>
+            </value>
+            <value>
+                <fullName>No prefill</fullName>
+                <default>false</default>
+                <label>No prefill</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

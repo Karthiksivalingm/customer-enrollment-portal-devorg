@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refund_Request__c</fullName>
+    <label>Refund Request</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>General_Account_Inquiry__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wasn&apos;t ready for charge</fullName>
+                <default>false</default>
+                <label>Wasn&apos;t ready for charge</label>
+            </value>
+            <value>
+                <fullName>Wasn&apos;t aware of auto payment</fullName>
+                <default>false</default>
+                <label>Wasn&apos;t aware of auto payment</label>
+            </value>
+            <value>
+                <fullName>Different card</fullName>
+                <default>false</default>
+                <label>Different card</label>
+            </value>
+            <value>
+                <fullName>Misled during sign up</fullName>
+                <default>false</default>
+                <label>Misled during sign up</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Refund Request</controllingFieldValue>
+            <valueName>Wasn&apos;t ready for charge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund Request</controllingFieldValue>
+            <valueName>Wasn&apos;t aware of auto payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund Request</controllingFieldValue>
+            <valueName>Different card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund Request</controllingFieldValue>
+            <valueName>Misled during sign up</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

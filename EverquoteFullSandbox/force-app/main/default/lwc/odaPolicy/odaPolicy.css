@@ -1,0 +1,52 @@
+.instructions-title {
+  font-size: large;
+}
+
+.carrier-instructions-container {
+  font-size: medium;
+  margin-top: 10px;
+}
+
+.radio-option {
+  font-size: 1rem !important;
+}
+
+.slds-radio__label {
+  cursor: pointer !important;
+}
+
+.question {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.coverage-amount-multiplier {
+  padding: 0;
+  width: 20%;
+}
+
+.coverage-amount {
+  text-align: right;
+  padding-right: 1px;
+  width: 80%;
+}
+
+.coverage-amount-error {
+  border-color: rgb(194, 57, 52);
+}
+
+.coverage-amount-label {
+  font-size: 1rem !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

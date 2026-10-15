@@ -1,0 +1,134 @@
+<apex:component >
+    <apex:attribute name="opportunity" type="Opportunity" required="true"
+                    description="The Opportunity"/>
+    <apex:attribute name="marketplaceStats" type="JsonParseMarketplaceStats" required="true"
+                    description="Marketplace Stats"/>
+    
+    <apex:pageBlock title="{!opportunity.Account.BillingState} Marketplace Stats (Last Month)" rendered="{!marketplaceStats != null}">
+        <table class="table text-center">
+            <tr>
+                <th class="col-sm-4 text-center">
+                    <h4>Total Leads</h4>
+                </th>
+                <th class="col-sm-4 text-center">
+                    <h4>Unsold Leads</h4>
+                </th>
+                <th class="col-sm-4 text-center">
+                    <h4>Share Rate</h4>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="text-danger">
+                        <apex:outputText value="{0, number, ###,##0}">
+                            <apex:param value="{!marketplaceStats.consumers.premium + marketplaceStats.consumers.preferred + marketplaceStats.consumers.standard + marketplaceStats.consumers.non_standard + marketplaceStats.unsold_consumers.premium + marketplaceStats.unsold_consumers.preferred + marketplaceStats.unsold_consumers.standard + marketplaceStats.unsold_consumers.non_standard}" />
+                        </apex:outputText>
+                    </h4>
+                </td>
+                <td>
+                    <h4 class="text-info">
+                        <apex:outputText value="{0, number, ###,##0}">
+                            <apex:param value="{!marketplaceStats.unsold_leads}" />
+                        </apex:outputText>
+                    </h4>
+                </td>
+                <td><h4 class="text-success">{!marketplaceStats.share_rate}</h4></td>
+            </tr>
+        </table>
+        
+        <table class="table table-hover table-striped text-center">
+            <tr>
+                <th class="col-sm-4"></th>
+                <th class="col-sm-2 text-center">Premium</th>
+                <th class="col-sm-2 text-center">Preferred</th>
+                <th class="col-sm-2 text-center">Standard</th>
+                <th class="col-sm-2 text-center">Non Standard</th>
+                <th class="col-sm-2 text-center text-warning">Total</th>
+            </tr>
+            <tr>
+                <th class="text-center">Consumers</th>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.premium}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.preferred}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.standard}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.non_standard}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.premium + marketplaceStats.consumers.preferred + marketplaceStats.consumers.standard + marketplaceStats.consumers.non_standard}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <th class="text-center">Unsold Consumers</th>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.unsold_consumers.premium}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.unsold_consumers.preferred}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.unsold_consumers.standard}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.unsold_consumers.non_standard}" />
+                    </apex:outputText>                    
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.unsold_consumers.premium + marketplaceStats.unsold_consumers.preferred + marketplaceStats.unsold_consumers.standard + marketplaceStats.unsold_consumers.non_standard}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <th class="text-center text-warning">Total</th>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.premium + marketplaceStats.unsold_consumers.premium}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.preferred + marketplaceStats.unsold_consumers.preferred}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.standard + marketplaceStats.unsold_consumers.standard}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.non_standard + marketplaceStats.unsold_consumers.non_standard}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, ###,##0}">
+                        <apex:param value="{!marketplaceStats.consumers.premium + marketplaceStats.consumers.preferred + marketplaceStats.consumers.standard + marketplaceStats.consumers.non_standard + marketplaceStats.unsold_consumers.premium + marketplaceStats.unsold_consumers.preferred + marketplaceStats.unsold_consumers.standard + marketplaceStats.unsold_consumers.non_standard}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+        </table>
+    </apex:pageBlock>
+</apex:component>

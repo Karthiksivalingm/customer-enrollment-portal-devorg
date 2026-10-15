@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounts_Selected_for_Anthony_Lawrence</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>mkto71_Lead_Score__pc</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Upload_Description__c</field>
+        <operation>equals</operation>
+        <value>AccountsForAnthony05.07</value>
+    </filters>
+    <filters>
+        <field>Relationship__c</field>
+        <operation>notEqual</operation>
+        <value>DO NOT CONTACT</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>Relationship__c</field>
+        <operation>notContain</operation>
+        <value>DO NOT CONTACT</value>
+    </filters>
+    <filters>
+        <field>PC_EMAIL_BOUNCED_DATE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>OpenOpp__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>notContain</operation>
+        <value>,DO NOT CONTACT,DNC,NOT INTERESTED,Farmers,State Farm,Allstate,Progressive,American Family,Country financial,FFL,AAA,1-800,3,701,716,864,1</value>
+    </filters>
+    <label>Accounts Selected for Anthony Lawrence</label>
+</ListView>

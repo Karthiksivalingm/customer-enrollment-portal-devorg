@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the Case: Update Case Owner to Account Support Rep process using Account has a Support Rep criteria.
+add starter cases to customer support</description>
+    <environments>Default</environments>
+    <label>Case: Update Case Owner to Account Support Rep_2</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>myRule_1_A1</name>
+        <label>Update Case Owner to Support Rep</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Account.Support_Rep__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>myRule_1_A1</targetReference>
+        </connector>
+        <filterFormula>NOT(ISBLANK({!$Record.AccountId}))&amp;&amp;
+NOT(ISNULL({!$Record.AccountId}))&amp;&amp;
+NOT(ISBLANK({!$Record.Account.New_Support_Rep__c})) &amp;&amp;
+NOT(ISNULL({!$Record.Account.New_Support_Rep__c}})) &amp;&amp;
+{!$Record.Account.Support_Rep__c.IsActive} = TRUE &amp;&amp;
+OR(ISCHANGED({!$Record.AccountId} ), ISNEW())&amp;&amp;
+NOT(CONTAINS({!$Record.OwnerId} , &apos;00G2L000001Tmdp&apos;))&amp;&amp; 
+NOT(CONTAINS({!$Record.OwnerId} , &apos;00G2L000001Tmdk&apos;))&amp;&amp;
+NOT(CONTAINS({!$Record.OwnerId} , &apos;00GVm000000aIG9MAM&apos;))&amp;&amp;
+NOT(CONTAINS({!$Record.OwnerId} , &apos;00GVm000001CG3dMAG&apos;))</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>InvalidDraft</status>
+</Flow>
