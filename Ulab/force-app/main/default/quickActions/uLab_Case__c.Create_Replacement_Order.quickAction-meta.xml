@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Company_Email__c</field>
+        <formula>uLab_Case__c.Company_Email__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Order_Status__c</field>
+        <literalValue>Pending</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Order_Type__c</field>
+        <literalValue>uLab Aligner</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>OrderDate__c</field>
+        <formula>TODAY()</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>uLab_Case__c</field>
+        <formula>uLab_Case__c.Id</formula>
+    </fieldOverrides>
+    <label>Create Replacement Order</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>uLab_Case__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Orignal_Order_ID__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Shipping_Method__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <targetObject>uLab_Order__c</targetObject>
+    <targetParentField>uLab_Case__c</targetParentField>
+    <targetRecordType>uLab_Order__c.Replacement_Order</targetRecordType>
+    <type>Create</type>
+</QuickAction>

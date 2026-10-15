@@ -1,0 +1,12 @@
+Hi, <br>
+
+uSmile order is not placed for order # {!uLab_Order__c.OrderDate__c} <br>
+<br>
+Company: {!uLab_Order__c.Company_Name__c} <br>
+uAssist Order #: {!uLab_Order__c.Name} <br>
+uAssist Status: {!uLab_Order__c.uAssist_Status__c} <br>
+Order Date: {!uLab_Order__c.OrderDate__c} <br>
+uLab Case #: {!uLab_Order__c.uLab_Case__c} <br>
+
+
+Thanks, <br>

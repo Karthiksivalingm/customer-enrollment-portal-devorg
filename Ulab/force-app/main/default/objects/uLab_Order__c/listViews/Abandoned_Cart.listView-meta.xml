@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Abandoned_Cart</fullName>
+    <columns>Company_Name__c</columns>
+    <columns>uLab_Case__c</columns>
+    <columns>NAME</columns>
+    <columns>Assigned_uAssistant__c</columns>
+    <columns>OrderDate__c</columns>
+    <columns>uDesign_Version__c</columns>
+    <columns>uAssist_Status__c</columns>
+    <columns>NetSuite_SO_Internal_ID__c</columns>
+    <columns>Billing_System_Inv_Number__c</columns>
+    <columns>orderId__c</columns>
+    <columns>Send_to_Boomi__c</columns>
+    <columns>Send_to_NetSuite__c</columns>
+    <columns>Send_to_WebApp__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Order_Type__c</field>
+        <operation>equals</operation>
+        <value>Initial uAssist,Refinement uAssist,Retainer uAssist,Bracket Removal uAssist</value>
+    </filters>
+    <filters>
+        <field>Send_to_NetSuite__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>uLab_Order__c.uAssist_Order</value>
+    </filters>
+    <label>uAssist Orders</label>
+</ListView>

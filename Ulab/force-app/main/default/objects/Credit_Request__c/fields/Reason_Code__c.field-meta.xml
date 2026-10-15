@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Code__c</fullName>
+    <description>Contains reason codes accordingly reason for request.</description>
+    <label>Reason Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason_for_request__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Too tight/Too loose</fullName>
+                <default>false</default>
+                <label>Too tight/Too loose</label>
+            </value>
+            <value>
+                <fullName>Wouldn&apos;t seat</fullName>
+                <default>false</default>
+                <label>Wouldn&apos;t seat</label>
+            </value>
+            <value>
+                <fullName>Discomfort / painful</fullName>
+                <default>false</default>
+                <label>Discomfort / painful</label>
+            </value>
+            <value>
+                <fullName>Deformity</fullName>
+                <default>false</default>
+                <label>Deformity</label>
+            </value>
+            <value>
+                <fullName>Poor clarity - Cloudy / Textured</fullName>
+                <default>false</default>
+                <label>Poor clarity - Cloudy / Textured</label>
+            </value>
+            <value>
+                <fullName>Trim Line - rough or sharp</fullName>
+                <default>false</default>
+                <label>Trim Line - rough or sharp</label>
+            </value>
+            <value>
+                <fullName>Trim Line - wrong due to uLab</fullName>
+                <default>false</default>
+                <label>Trim Line - wrong due to uLab</label>
+            </value>
+            <value>
+                <fullName>Missing aligners/retainers</fullName>
+                <default>false</default>
+                <label>Missing aligners/retainers</label>
+            </value>
+            <value>
+                <fullName>Missing attachments</fullName>
+                <default>false</default>
+                <label>Missing attachments</label>
+            </value>
+            <value>
+                <fullName>Missed delivery deadline</fullName>
+                <default>false</default>
+                <label>Missed delivery deadline</label>
+            </value>
+            <value>
+                <fullName>Chipped mold</fullName>
+                <default>false</default>
+                <label>Chipped mold</label>
+            </value>
+            <value>
+                <fullName>System Error</fullName>
+                <default>false</default>
+                <label>System Error</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Order delayed</fullName>
+                <default>false</default>
+                <label>Order delayed</label>
+            </value>
+            <value>
+                <fullName>Exception request</fullName>
+                <default>false</default>
+                <label>Exception request</label>
+            </value>
+            <value>
+                <fullName>Case Fee Ceiling</fullName>
+                <default>false</default>
+                <label>Case Fee Ceiling</label>
+            </value>
+            <value>
+                <fullName>Over charged</fullName>
+                <default>false</default>
+                <label>Over charged</label>
+            </value>
+            <value>
+                <fullName>Missing promotion</fullName>
+                <default>false</default>
+                <label>Missing promotion</label>
+            </value>
+            <value>
+                <fullName>Tax correction</fullName>
+                <default>false</default>
+                <label>Tax correction</label>
+            </value>
+            <value>
+                <fullName>uLab Employee</fullName>
+                <default>false</default>
+                <label>uLab Employee</label>
+            </value>
+            <value>
+                <fullName>Office staff of account</fullName>
+                <default>false</default>
+                <label>Office staff of account</label>
+            </value>
+            <value>
+                <fullName>Raffle or prize award</fullName>
+                <default>false</default>
+                <label>Raffle or prize award</label>
+            </value>
+            <value>
+                <fullName>Wrong scan / patient</fullName>
+                <default>false</default>
+                <label>Wrong scan / patient</label>
+            </value>
+            <value>
+                <fullName>Duplicate Order</fullName>
+                <default>false</default>
+                <label>Duplicate Order</label>
+            </value>
+            <value>
+                <fullName>Multiple retainer orders</fullName>
+                <default>false</default>
+                <label>Multiple retainer orders</label>
+            </value>
+            <value>
+                <fullName>Changes to treatment plan</fullName>
+                <default>false</default>
+                <label>Changes to treatment plan</label>
+            </value>
+            <value>
+                <fullName>Dental work</fullName>
+                <default>false</default>
+                <label>Dental work</label>
+            </value>
+            <value>
+                <fullName>Insurance declined</fullName>
+                <default>false</default>
+                <label>Insurance declined</label>
+            </value>
+            <value>
+                <fullName>Patient did not move forward</fullName>
+                <default>false</default>
+                <label>Patient did not move forward</label>
+            </value>
+            <value>
+                <fullName>Accidental Output</fullName>
+                <default>false</default>
+                <label>Accidental Output</label>
+            </value>
+            <value>
+                <fullName>Training Session</fullName>
+                <default>false</default>
+                <label>Training Session</label>
+            </value>
+            <value>
+                <fullName>Test account</fullName>
+                <default>false</default>
+                <label>Test account</label>
+            </value>
+            <value>
+                <fullName>Reva</fullName>
+                <default>false</default>
+                <label>Reva</label>
+            </value>
+            <value>
+                <fullName>Goodwill Credit</fullName>
+                <default>false</default>
+                <label>Goodwill Credit</label>
+            </value>
+            <value>
+                <fullName>Cloudy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cloudy</label>
+            </value>
+            <value>
+                <fullName>Customers first order</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customers first order</label>
+            </value>
+            <value>
+                <fullName>Decided not to go with TX Plan</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Decided not to go with TX Plan</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Large Case - required multiple boxes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Large Case - required multiple boxes</label>
+            </value>
+            <value>
+                <fullName>Made from chipped mold</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Made from chipped mold</label>
+            </value>
+            <value>
+                <fullName>Output &amp; Ordered uSmile</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Output &amp; Ordered uSmile</label>
+            </value>
+            <value>
+                <fullName>Overall Disatisfaction</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Overall Disatisfaction</label>
+            </value>
+            <value>
+                <fullName>Patient backed out (health reasons)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Patient backed out (health reasons)</label>
+            </value>
+            <value>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Promotion</label>
+            </value>
+            <value>
+                <fullName>Software error</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Software error</label>
+            </value>
+            <value>
+                <fullName>Textured</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Textured</label>
+            </value>
+            <value>
+                <fullName>Trim Line (rough)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trim Line (rough)</label>
+            </value>
+            <value>
+                <fullName>Trim Line - wrong due to customer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trim Line - wrong due to customer</label>
+            </value>
+            <value>
+                <fullName>Uploaded wrong scan</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Uploaded wrong scan</label>
+            </value>
+            <value>
+                <fullName>Wanted to make changes to TX Plan</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wanted to make changes to TX Plan</label>
+            </value>
+            <value>
+                <fullName>tax</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>tax</label>
+            </value>
+            <value>
+                <fullName>uLab Emp. Personal order</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>uLab Emp. Personal order</label>
+            </value>
+            <value>
+                <fullName>uLabs Issue - Missed deadline</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>uLabs Issue - Missed deadline</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Fit</controllingFieldValue>
+            <valueName>Too tight/Too loose</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fit</controllingFieldValue>
+            <valueName>Wouldn&apos;t seat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Discomfort / painful</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Deformity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Poor clarity - Cloudy / Textured</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Trim Line - rough or sharp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Trim Line - wrong due to uLab</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Missing aligners/retainers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Missing attachments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Missed delivery deadline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>Chipped mold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <valueName>System Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quality / Mfgr Error</controllingFieldValue>
+            <controllingFieldValue>Alpha/Beta Trial</controllingFieldValue>
+            <controllingFieldValue>General Dissatisfactions</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipping Credit</controllingFieldValue>
+            <valueName>Order delayed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipping Credit</controllingFieldValue>
+            <valueName>Exception request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing /Program</controllingFieldValue>
+            <valueName>Case Fee Ceiling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing /Program</controllingFieldValue>
+            <valueName>Over charged</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing /Program</controllingFieldValue>
+            <valueName>Missing promotion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing /Program</controllingFieldValue>
+            <valueName>Tax correction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promotional Offer</controllingFieldValue>
+            <valueName>uLab Employee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promotional Offer</controllingFieldValue>
+            <valueName>Office staff of account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promotional Offer</controllingFieldValue>
+            <valueName>Raffle or prize award</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Wrong scan / patient</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Duplicate Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Multiple retainer orders</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Changes to treatment plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Dental work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Insurance declined</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Patient did not move forward</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Office or Patient Mistake</controllingFieldValue>
+            <valueName>Accidental Output</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Training /Test</controllingFieldValue>
+            <valueName>Training Session</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Training /Test</controllingFieldValue>
+            <valueName>Test account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goodwill Credit</controllingFieldValue>
+            <valueName>Goodwill Credit</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

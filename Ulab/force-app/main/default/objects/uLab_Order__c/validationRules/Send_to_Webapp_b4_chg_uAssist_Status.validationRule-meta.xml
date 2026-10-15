@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_to_Webapp_b4_chg_uAssist_Status</fullName>
+    <active>false</active>
+    <description>uAssist Status cannot be changed if &apos;Send to Webapp&apos; is checked b/c of a previous change. Prevents anyone team from working too quickly for Boomi to pick up changes.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(uAssist_Status__c),
+    Send_to_WebApp__c,
+    NOT(
+        OR(
+            $Profile.Name = &quot;System Administrator&quot;,
+            $Profile.Name = &quot;ULab SysAdmin&quot;,
+            $Profile.Name = &quot;Test System Admin&quot;
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>uAssist_Status__c</errorDisplayField>
+    <errorMessage>Please wait for earlier changes to be pushed to our other systems before changing the uAssist Status.</errorMessage>
+</ValidationRule>

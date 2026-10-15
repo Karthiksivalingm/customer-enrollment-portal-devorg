@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uLab_Order_Name</fullName>
+    <active>true</active>
+    <description>Only Admins can change the uLab order number</description>
+    <errorConditionFormula>AND( ISCHANGED( Name ),
+NOT(CONTAINS($Profile.Name , &quot;admin&quot;)))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Only Admins can change the uLab Order name</errorMessage>
+</ValidationRule>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Type__c</fullName>
+    <label>Order Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Office STL</fullName>
+                <default>false</default>
+                <label>In Office STL</label>
+            </value>
+            <value>
+                <fullName>uLab Aligner</fullName>
+                <default>false</default>
+                <label>uLab Aligner</label>
+            </value>
+            <value>
+                <fullName>Internal Sample</fullName>
+                <default>false</default>
+                <label>Internal Sample</label>
+            </value>
+            <value>
+                <fullName>Initial uAssist</fullName>
+                <default>false</default>
+                <label>Initial uAssist</label>
+            </value>
+            <value>
+                <fullName>Refinement uAssist</fullName>
+                <default>false</default>
+                <label>Refinement uAssist</label>
+            </value>
+            <value>
+                <fullName>COPA Aligner</fullName>
+                <default>false</default>
+                <label>COPA Aligner</label>
+            </value>
+            <value>
+                <fullName>COPA Retainer</fullName>
+                <default>false</default>
+                <label>COPA Retainer</label>
+            </value>
+            <value>
+                <fullName>Replacement Order</fullName>
+                <default>false</default>
+                <label>Replacement Order</label>
+            </value>
+            <value>
+                <fullName>Retainer uAssist</fullName>
+                <default>false</default>
+                <label>Retainer uAssist</label>
+            </value>
+            <value>
+                <fullName>Bracket Removal uAssist</fullName>
+                <default>false</default>
+                <label>Bracket Removal uAssist</label>
+            </value>
+            <value>
+                <fullName>IDB</fullName>
+                <default>false</default>
+                <label>IDB</label>
+            </value>
+            <value>
+                <fullName>Direct Print Aligner</fullName>
+                <default>false</default>
+                <label>Direct Print Aligner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

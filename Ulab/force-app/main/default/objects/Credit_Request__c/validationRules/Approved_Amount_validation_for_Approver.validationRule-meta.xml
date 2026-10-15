@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Amount_validation_for_Approver</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISNULL(Approved_Amount__c),
+RecordType.Name = &apos;Submitted&apos;,
+OR(
+$Profile.Name = &apos;uLab Area Sales Directors&apos;,
+$Profile.Name = &apos;uLab Chief Financial officer&apos;,
+$Profile.Name = &apos;uLab CS Management&apos;,
+$Profile.Name = &apos;uLab Finance &amp; HR&apos;,
+$Profile.Name = &apos;uLab Ops Management&apos;,
+$Profile.Name = &apos;uLab Sales Executive&apos;,
+$Profile.Name = &apos;uLab Sales Manager&apos;
+))</errorConditionFormula>
+    <errorDisplayField>Approved_Amount__c</errorDisplayField>
+    <errorMessage>Approved Amount should be entered</errorMessage>
+</ValidationRule>

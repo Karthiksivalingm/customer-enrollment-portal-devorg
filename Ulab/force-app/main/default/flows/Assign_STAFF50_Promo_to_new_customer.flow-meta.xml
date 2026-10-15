@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates end date of MRA.</description>
+        <name>MRA_End_Date</name>
+        <dataType>Date</dataType>
+        <expression>IF(DAY(TODAY())=1, 
+ADDMONTHS(TODAY()-1,3),
+ADDMONTHS( DATE( YEAR( TODAY() ), MONTH (TODAY() ) + 1, 1 ) - 1 ,3))</expression>
+    </formulas>
+    <interviewLabel>Assign STAFF50 Promo to new customer {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Assign STAFF50 Promo to new customer</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Creates MRA</description>
+        <name>Create_MRA</name>
+        <label>Create MRA</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Company__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Effective_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <dateValue>2026-12-31</dateValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Program__c</field>
+            <value>
+                <elementReference>Get_STAFF50_Program_ID.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Max_QTY__c</field>
+            <value>
+                <numberValue>50.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0126g000000bOBZAA2</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Send_to_Boomi__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Marketing_Reward_Association__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_STAFF50_Program_ID</name>
+        <label>Get STAFF50 Program ID</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_MRA</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>STAFF50</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Marketing_Reward__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_STAFF50_Program_ID</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>AND(
+{!$Record.RecordType.Name}=&quot;Commercial&quot;,
+ISPICKVAL({!$Record.Account_Status__c},&quot;uLab Account&quot;),
+{!$Record.uLab_Acct_Number__c}&lt;&gt; 112683,
+NOT(ISBLANK({!$Record.uLab_Acct_Number__c}))
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

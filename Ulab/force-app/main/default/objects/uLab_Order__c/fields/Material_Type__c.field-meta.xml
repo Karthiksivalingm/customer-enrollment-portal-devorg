@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Type__c</fullName>
+    <description>Choosing material type</description>
+    <inlineHelpText>Choosing material type</inlineHelpText>
+    <label>Material Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>REVA</fullName>
+                <default>false</default>
+                <label>REVA</label>
+            </value>
+            <value>
+                <fullName>ZENDURA</fullName>
+                <default>false</default>
+                <label>ZENDURA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

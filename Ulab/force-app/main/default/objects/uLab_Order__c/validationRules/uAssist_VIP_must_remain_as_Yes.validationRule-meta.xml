@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uAssist_VIP_must_remain_as_Yes</fullName>
+    <active>true</active>
+    <description>uAssist VIP field cannot be changed from &apos;YES&apos; to &apos;NO&apos;. GNX-932</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL(uAssist_VIP__c,&quot;No&quot;),
+ ISPICKVAL(PRIORVALUE(uAssist_VIP__c),&quot;***YES***&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>uAssist_VIP__c</errorDisplayField>
+    <errorMessage>&quot;uAssist VIP&quot; cannot be changed from &apos;***YES***&apos; to &apos;No&apos; even if the company is no longer a uAssist VIP</errorMessage>
+</ValidationRule>

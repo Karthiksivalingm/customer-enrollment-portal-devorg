@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uLab_Feature__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>uLab Feature</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>uLab_Feature__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>uLab_Feature__c</referenceTo>
+    <relationshipLabel>New Feature Associations</relationshipLabel>
+    <relationshipName>New_Feature_Associations</relationshipName>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

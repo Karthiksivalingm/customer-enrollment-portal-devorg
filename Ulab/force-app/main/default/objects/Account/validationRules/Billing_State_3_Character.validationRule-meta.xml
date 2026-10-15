@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_State_3_Character</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(BillingCountry == &apos;AU&apos;, BillingCountry == &apos;NZ&apos;),
+NOT(OR(LEN (BillingState) == 3, LEN (BillingState) == 2))
+)</errorConditionFormula>
+    <errorDisplayField>BillingState</errorDisplayField>
+    <errorMessage>Billing State fields must be 2 or 3 characters long.</errorMessage>
+</ValidationRule>

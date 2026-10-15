@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Queue</fullName>
+    <columns>OrderDate__c</columns>
+    <columns>Order_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>uLab_Case__c</columns>
+    <columns>Company_Name__c</columns>
+    <columns>uAssist_Status__c</columns>
+    <columns>Assigned_uAssistant__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>uDesign_Version__c</columns>
+    <columns>uAssist_VIP__c</columns>
+    <columns>Patient_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uLab_Acct_Number__c</field>
+        <operation>equals</operation>
+        <value>2033</value>
+    </filters>
+    <filters>
+        <field>Order_Type__c</field>
+        <operation>equals</operation>
+        <value>Initial uAssist,Refinement uAssist,Retainer uAssist,Bracket Removal uAssist</value>
+    </filters>
+    <filters>
+        <field>OrderDate__c</field>
+        <operation>greaterThan</operation>
+        <value>7/1/2025</value>
+    </filters>
+    <label>Training Queue</label>
+</ListView>

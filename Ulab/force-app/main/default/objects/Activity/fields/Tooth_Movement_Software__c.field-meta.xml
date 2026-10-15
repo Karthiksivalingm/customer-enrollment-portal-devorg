@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tooth_Movement_Software__c</fullName>
+    <label>Tooth Movement Software</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arcad</fullName>
+                <default>false</default>
+                <label>Arcad</label>
+            </value>
+            <value>
+                <fullName>Archform</fullName>
+                <default>false</default>
+                <label>Archform</label>
+            </value>
+            <value>
+                <fullName>Blue Sky Plan</fullName>
+                <default>false</default>
+                <label>Blue Sky Plan</label>
+            </value>
+            <value>
+                <fullName>Elemetrix</fullName>
+                <default>false</default>
+                <label>Elemetrix</label>
+            </value>
+            <value>
+                <fullName>Motion View</fullName>
+                <default>false</default>
+                <label>Motion View</label>
+            </value>
+            <value>
+                <fullName>Orchestrate</fullName>
+                <default>false</default>
+                <label>Orchestrate</label>
+            </value>
+            <value>
+                <fullName>Orthoanalyzer</fullName>
+                <default>false</default>
+                <label>Orthoanalyzer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

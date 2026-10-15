@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notification_Date_Cancelled_to_Processed__c</fullName>
+    <inlineHelpText>Date that CRB/CS/Aaron/Billy were notified that this order was moved from Cancelled to Processed</inlineHelpText>
+    <label>Notification Date Cancelled to Processed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

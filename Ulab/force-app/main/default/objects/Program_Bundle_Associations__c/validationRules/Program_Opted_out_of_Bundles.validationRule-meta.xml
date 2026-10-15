@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Opted_out_of_Bundles</fullName>
+    <active>true</active>
+    <description>Program-Bundle Associations can&apos;t be created if &apos;Bundle Pricing Opt-Out&apos; is set to True on the Marketing Rewards Program</description>
+    <errorConditionFormula>Marketing_Reward__r.Bundle_Pricing_Opt_Out__c</errorConditionFormula>
+    <errorMessage>Cannot Create this Record because &apos;Bundle Pricing Opt-Out&apos; is True on this Marketing Program</errorMessage>
+</ValidationRule>

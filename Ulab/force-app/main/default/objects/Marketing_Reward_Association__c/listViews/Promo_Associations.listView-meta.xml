@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promo_Associations</fullName>
+    <columns>NAME</columns>
+    <columns>Program_Name__c</columns>
+    <columns>Company__c</columns>
+    <columns>Marketing_Program__c</columns>
+    <columns>NetSuite_Sync_Date__c</columns>
+    <columns>NS_Promo_Code__c</columns>
+    <columns>Active__c</columns>
+    <columns>Effective_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Marketing_Reward_Association__c.Promotion_Association</value>
+    </filters>
+    <filters>
+        <field>Effective_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2024</value>
+    </filters>
+    <label>Promo Associations</label>
+</ListView>

@@ -1,0 +1,100 @@
+<aura:component  controller ='Showme'  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="msg" type="List" />
+    <ltng:require scripts="{!$Resource.jquery}" afterScriptsLoaded="{!c.handleChatScriptsLoaded}" />
+    <div class="tab-pane" id="reactOut">
+        <div class="row justify-content-center msg_section h-100">
+            <div class="col-sm-12 chat">
+                <div class="card chat_card">
+                    <div class="card-header chat_header"> 
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont" style="display:flex; align-item: center; justify-content: space-between;">
+                                <span>uAssist Communication</span>
+                                <lightning:button label ="Sync" onclick="{!c.submit}" class="msg_send" />                                
+                            </div>
+                            <div class="user_info">                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body msg_card_body" style="overflow-y: auto;height:500px;overflow-x:hidden;">
+                        <aura:iteration items="{!v.msg}" var="cust" indexVar="index">
+                            <aura:renderIf isTrue="{!cust.messagecustomer}">
+                                
+                                <div class="case_manager_msg mb-4">
+                                    <span class="img_cont_msg" style="{!cust.color}">
+                                        {!cust.initials}
+                                    </span>
+                                    <span class="case_names">{!cust.firstname} {!cust.lastname}</span>  
+                                </div>
+                                <div class="case_time"><span>{!cust.createddate}</span></div>
+                                <div class="msg_cotainer_sends fade-in"  key="{!index}"> 
+                                    <aura:renderIf isTrue="{!cust.containall}">
+                                        <strong><div style="white-space: pre-wrap;">{!cust.messagesubjectcustomer}</div></strong><br></br>{!cust.planname}<br></br><div style="white-space: pre-wrap;">{!cust.messagecontentcustomer}</div>
+                                    </aura:renderIf>
+                                    <aura:renderIf isTrue="{!cust.subjectcontent}">
+                                        <strong><div style="white-space: pre-wrap;">{!cust.messagesubjectcustomer}</div></strong><br></br><div style="white-space: pre-wrap;">{!cust.messagecontentcustomer}</div>
+                                    </aura:renderIf>
+                                    <aura:renderIf isTrue="{!cust.contentplan}">
+                                        {!cust.planname}<br></br><div style="white-space: pre-wrap;">{!cust.messagecontentcustomer}</div>
+                                    </aura:renderIf>
+                                    <aura:renderIf isTrue="{!cust.subjectplan}">
+                                        <strong><div style="white-space: pre-wrap;">{!cust.messagesubjectcustomer}</div></strong><br></br>{!cust.planname}
+                                    </aura:renderIf>
+                                    <aura:renderIf isTrue="{!cust.subject}">
+                                        <strong><div style="white-space: pre-wrap;">{!cust.messagesubjectcustomer}</div></strong>
+                                    </aura:renderIf>
+                                    <aura:renderIf isTrue="{!cust.plan}">
+                                        {!cust.planname}
+                                    </aura:renderIf>
+                                    <aura:renderIf isTrue="{!cust.content}">
+                                        <div style="white-space: pre-wrap;">{!cust.messagecontentcustomer}</div>
+                                    </aura:renderIf>
+                                </div> 
+                            </aura:renderIf>
+                            <aura:renderIf isTrue="{!cust.messageuser}">
+                                <div class="client_msgss">
+                                    {!cust.firstname} {!cust.lastname}
+                                    <span class="img_cont_msg">
+                                        <img class="rounded-circle user_img_msg" src="{!$Resource.ulablogo}"/>
+                                    </span>
+                                    
+                                </div>  
+                                
+                                <div class="client_time"><span>{!cust.createddate}</span></div>
+                                <div class="client_msg">
+                                    
+                                    <div class="msg_cotainer_send fade-in"  key="{!index}">
+                                        <aura:renderIf isTrue="{!cust.containall}">
+                                            <strong> <div style="white-space: pre-wrap;">{!cust.messagesubjectuser} </div></strong><br></br>{!cust.planname}<br></br> <div style="white-space: pre-wrap;">{!cust.messagecontentuser} </div>     
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!cust.subjectcontent}">
+                                            <strong><div style="white-space: pre-wrap;">{!cust.messagesubjectuser} </div></strong><br></br><div style="white-space: pre-wrap;">{!cust.messagecontentuser} </div>
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!cust.contentplan}">
+                                            {!cust.planname}<br></br><div style="white-space: pre-wrap;">{!cust.messagecontentuser} </div>
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!cust.subjectplan}">
+                                            <strong><div style="white-space: pre-wrap;">{!cust.messagesubjectuser} </div></strong><br></br>{!cust.planname}
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!cust.subject}">
+                                            <strong><div style="white-space: pre-wrap;">{!cust.messagesubjectuser} </div></strong>
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!cust.plan}">
+                                            {!cust.planname}
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!cust.content}">
+                                            <div style="white-space: pre-wrap;">{!cust.messagecontentuser} </div>
+                                        </aura:renderIf>
+                                    </div>         
+                                </div>
+                                
+                            </aura:renderIf>
+                        </aura:iteration>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

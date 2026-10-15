@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hours_In_Idle_State__c</fullName>
+    <description>Indicates duration between an uAssist Order is Created and then gets an assigned assistant with status as In Progress.</description>
+    <externalId>false</externalId>
+    <formula>(uAssist_Started__c -  Date_entered_In_Progress_Status__c   ) * 24</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates duration between an uAssist Order is Created and then gets an assigned assistant with status as In Progress.</inlineHelpText>
+    <label>Hours In Idle State</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Amount_Requested__c</fullName>
+    <formula>(Quantity_of_Template__c * Credit_for_Template__c) + (Quantity_of_Aligner__c  * Credit_for_Aligner__c) + (Quantity_of_uAssist__c * Credit_for_uAssist__c) +   (Quantity_of_Custom_Packaging_Artwork__c * Credit_for_Custom_Packaging_Artwork__c) + (Quantity_of_Custom_Packaging__c  * Credit_for_Custom_Packaging__c) +  (Quantity_of_Retainer__c * Credit_for_Retainer__c) + (Quantity_of_Shipping__c * Credit_for_Shipping__c) +   (Quantity_of_STL__c  * Credit_for_STL__c) +  (Quantity_of_Bundle__c *  Credit_for_Bundle__c ) +  Partial_Credit__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Amount Requested</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

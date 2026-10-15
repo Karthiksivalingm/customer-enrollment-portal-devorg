@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Order Cancellation Notification</name>
+    <style>none</style>
+    <subject>Order Cancelled</subject>
+    <textOnly>uAssist Order Cancelled
+
+Status Updated to &quot;Cancel&quot;
+
+Hello,
+
+A uAssist Order has been cancelled. Please find the details below.
+
+Order Name  {!uLab_Order__c.Name}
+Order Number  {!uLab_Order__c.Order_Number__c}
+Account  {!uLab_Order__c.Account__r.Name}
+Status  Cancelled
+Disposition  Rejected
+Cancelled By  {!uLab_Order__c.Cancelled_By__r.Name}
+Cancelled Date  {!uLab_Order__c.Cancelled_Date__c}
+Reason  {!uLab_Order__c.Cancellation_Reason__c}
+
+View uAssist Order
+This is an automated notification from Salesforce. Please do not reply.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plan_2_Required_When_CRTR</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Cloud_uAssist_Order&quot;,
+    ISPICKVAL(uAssist_Status__c , &quot;Case ready to review&quot;),
+    ISPICKVAL(Number_of_Plans__c, &quot;2&quot;),
+    
+    ISBLANK(Plan_2__c)
+)</errorConditionFormula>
+    <errorDisplayField>Plan_2__c</errorDisplayField>
+    <errorMessage>Complete this field. Plan 2 is required when Number of Plans is 2 and uAssist Status is &quot;Case ready to review&quot;.</errorMessage>
+</ValidationRule>

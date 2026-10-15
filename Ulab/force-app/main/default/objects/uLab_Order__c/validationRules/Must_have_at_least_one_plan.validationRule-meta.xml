@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_have_at_least_one_plan</fullName>
+    <active>true</active>
+    <description>The field &apos;Number of Plans&apos; cannot be blank if the uAssist order is marked &apos;Case Ready to Review&apos;</description>
+    <errorConditionFormula>AND(
+RecordType.Name =&quot;uAssist Order&quot;,
+ISPICKVAL(uAssist_Status__c, &quot;Case Ready to Review&quot;),
+ISCHANGED(uAssist_Status__c),
+ISPICKVAL(Number_of_Plans__c, &quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>Number_of_Plans__c</errorDisplayField>
+    <errorMessage>You cannot save a uAssist order as &apos;Case Ready to Review&apos; without at least one plan. Please change &apos;Number of Plans&apos; to 1 and add a message to the customer in the field &quot;Plan 1&quot;</errorMessage>
+</ValidationRule>

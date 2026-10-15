@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pod_Team_Response__c</fullName>
+    <label>Pod Team Response</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Attachments have been removed and new retainer order has been placed.</fullName>
+                <default>false</default>
+                <label>Attachments have been removed and new retainer order has been placed.</label>
+            </value>
+            <value>
+                <fullName>Spoke with office and they would like the aligners cut distal of the terminal molar.</fullName>
+                <default>false</default>
+                <label>Spoke with office and they would like the aligners cut distal of the terminal molar.</label>
+            </value>
+            <value>
+                <fullName>Order has been updated, please process asap.</fullName>
+                <default>false</default>
+                <label>Order has been updated, please process asap.</label>
+            </value>
+            <value>
+                <fullName>Original order and tx plan have been confirmed with the office, please process order as originally submitted.</fullName>
+                <default>false</default>
+                <label>Original order and tx plan have been confirmed with the office, please process order as originally submitted.</label>
+            </value>
+            <value>
+                <fullName>Cancel original order, office will rescan patient and submit new order.</fullName>
+                <default>false</default>
+                <label>Cancel original order, office will rescan patient and submit new order.</label>
+            </value>
+            <value>
+                <fullName>Cancel original order and office will submit new order.</fullName>
+                <default>false</default>
+                <label>Cancel original order and office will submit new order.</label>
+            </value>
+            <value>
+                <fullName>Cancel original order, office will print in house</fullName>
+                <default>false</default>
+                <label>Cancel original order, office will print in house</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

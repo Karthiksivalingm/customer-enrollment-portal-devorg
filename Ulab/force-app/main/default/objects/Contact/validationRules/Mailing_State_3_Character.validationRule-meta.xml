@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mailing_State_3_Character</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(MailingCountry == &apos;AU&apos;, MailingCountry == &apos;NZ&apos;),
+NOT(OR(LEN (MailingState) == 3, LEN (MailingState) == 2))
+)</errorConditionFormula>
+    <errorDisplayField>MailingState</errorDisplayField>
+    <errorMessage>Mailing State fields must be 2 or 3 characters long.</errorMessage>
+</ValidationRule>

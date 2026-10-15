@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounting_System_Updated_By__c</fullName>
+    <label>Accounting System Updated By</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Monica</fullName>
+                <default>false</default>
+                <label>Monica</label>
+            </value>
+            <value>
+                <fullName>Nicola</fullName>
+                <default>false</default>
+                <label>Nicola</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Currency__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Company_Lookup__r.BillingCountry,
+&apos;US&apos; , &apos;USD&apos;,
+&apos;USA&apos; , &apos;USD&apos;,
+&apos;United States&apos; , &apos;USD&apos;,
+&apos;CA&apos; , &apos;CAD&apos;,
+&apos;Canada&apos; , &apos;CAD&apos;,
+&apos;AU&apos; , &apos;AUD&apos;,
+&apos;Australia&apos; , &apos;AUD&apos;,
+&apos;NZ&apos; , &apos;NZD&apos;,
+&apos;New Zealand&apos; , &apos;NZD&apos;,
+&apos;Unknown&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Customer Currency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

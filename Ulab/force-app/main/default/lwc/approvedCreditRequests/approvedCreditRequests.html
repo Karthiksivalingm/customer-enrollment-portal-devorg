@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Approved Credit Requests" icon-name="standard:approval">
+        <div class="slds-p-around_medium">
+            <template if:true={hasData}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={wiredRecords}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+
+            <template if:false={hasData}>
+                <div class="slds-text-align_center slds-p-around_medium">
+                    <p>No approved requests found at this time.</p>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error fetching data.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

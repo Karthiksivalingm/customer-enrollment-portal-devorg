@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percent_of_Aligner_Made_Inhouse_Required</fullName>
+    <active>true</active>
+    <description>Required field on status close</description>
+    <errorConditionFormula>AND(Text(Status__c) = &apos;Close&apos; ,    ISBLANK( Percent_of_Aligners_Made_In_House__c  ))</errorConditionFormula>
+    <errorDisplayField>Percent_of_Aligners_Made_In_House__c</errorDisplayField>
+    <errorMessage>Please fill in the required field.</errorMessage>
+</ValidationRule>

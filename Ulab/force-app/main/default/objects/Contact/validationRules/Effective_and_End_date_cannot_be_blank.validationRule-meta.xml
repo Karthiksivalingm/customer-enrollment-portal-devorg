@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_and_End_date_cannot_be_blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(OR(TEXT(Premier_Type__c) = &apos;Premier&apos;, TEXT(Premier_Type__c) = &apos;Premier +&apos;),
+OR(ISNULL( Agreement_Effective_Date__c ),
+ISNULL( Agreement_End_Date__c ),
+ISNULL( Premier_Additional_Terms__c ),
+ISBLANK( Premier_Additional_Terms__c )))</errorConditionFormula>
+    <errorDisplayField>Premier_Type__c</errorDisplayField>
+    <errorMessage>Please enter Agreement Effective Date, End Date, and Terms</errorMessage>
+</ValidationRule>

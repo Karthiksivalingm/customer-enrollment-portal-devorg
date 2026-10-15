@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2022_Marketing_Promotions</fullName>
+    <columns>Send_to_Boomi__c</columns>
+    <columns>Name__c</columns>
+    <columns>Promotion_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>NS_Promo_Code__c</columns>
+    <columns>Item_Discounted__c</columns>
+    <columns>Discount_Type__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Discounted_Price__c</columns>
+    <columns>Discount_Percentage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Marketing_Reward__c.Marketing_Promotion</value>
+    </filters>
+    <label>Marketing Promotions</label>
+</ListView>

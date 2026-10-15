@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Date_entered_Complete</fullName>
+        <field>Date_entered_Complete_Status__c</field>
+        <formula>NOW()</formula>
+        <name>Update Date entered Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Date_entered_Declined</fullName>
+        <field>Date_entered_Declined_Status__c</field>
+        <formula>NOW()</formula>
+        <name>Update Date entered Declined</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Date_entered_Delayed</fullName>
+        <field>Date_entered_Delayed_Status__c</field>
+        <formula>NOW()</formula>
+        <name>Update Date entered Delayed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Date_entered_In_Progress</fullName>
+        <field>Date_entered_In_Progress_Status__c</field>
+        <formula>NOW()</formula>
+        <name>Update Date entered In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Date_entered_In_Progress_Delayed</fullName>
+        <field>Date_entered_In_Progress_after_Delayed__c</field>
+        <formula>NOW()</formula>
+        <name>Update Date entered In Progress_Delayed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Bundle</fullName>
+        <actions>
+            <name>Update_Date_entered_Declined</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>uLab_Case__c.Bundle_Option_Sku__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Updates Bundle picklist field based on Bundle Ordered</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>uAssist - Date entered Complete status</fullName>
+        <actions>
+            <name>Update_Date_entered_Complete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>uLab_Case__c.uAssist_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>uLab_Case__c.uAssist_Status__c</field>
+            <operation>equals</operation>
+            <value>Complete with Comments</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>uAssist - Date entered Delayed status</fullName>
+        <actions>
+            <name>Update_Date_entered_Delayed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>uLab_Case__c.uAssist_Status__c</field>
+            <operation>equals</operation>
+            <value>Delayed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>uAssist - Date entered In Progress status</fullName>
+        <actions>
+            <name>Update_Date_entered_In_Progress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>uLab_Case__c.uAssist_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>uLab_Case__c.Date_entered_Delayed_Status__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>uAssist - Date entered In Progress status after Delayed</fullName>
+        <actions>
+            <name>Update_Date_entered_In_Progress_Delayed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>uLab_Case__c.uAssist_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>uLab_Case__c.Date_entered_Delayed_Status__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Reward_mapping</fullName>
+    <active>true</active>
+    <errorConditionFormula>Marketing_Reward_Record__c != Marketing_Program__r.RecordType.Name</errorConditionFormula>
+    <errorMessage>Please select relevant marketing reward.</errorMessage>
+</ValidationRule>

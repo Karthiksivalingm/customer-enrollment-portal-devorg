@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( uLab_Case__r.Account__r.VIP__c == TRUE, &apos;1&apos;,
+IF( AND( RecordType.Name = &apos;Aligner OEM&apos;, ISPICKVAL(Order_Type__c, &apos;COPA Aligner&apos;)) ,&apos;5B&apos;,
+IF( AND(RecordType.Name = &apos;Aligner OEM&apos;, ISPICKVAL(Order_Type__c, &apos;COPA Retainer&apos;), COPA_Retainer_MFG_Date__c &lt;= TODAY() ), &apos;5B&apos;,
+IF(Country_of_Origin__c == &apos;AU&apos;, &apos;2&apos;,
+IF(Country_of_Origin__c == &apos;NZ&apos;, &apos;2&apos;,
+IF(TEXT(Shipping_Method__c) == &apos;Rush&apos;, &apos;3&apos;,
+IF(TEXT(Shipping_Method__c) == &apos;Priority Express&apos;, &apos;3&apos;,
+IF(TEXT(Shipping_Method__c) == &apos;Premium&apos;, &apos;4&apos;,
+IF(TEXT(Shipping_Method__c) == &apos;Standard&apos;, &apos;5A&apos;, &apos;N/A&apos;)))))))))</formula>
+    <label>Priority</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

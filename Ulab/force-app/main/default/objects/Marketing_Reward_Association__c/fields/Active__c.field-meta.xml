@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <formula>IF(
+  RecordType.DeveloperName = &quot;Program_Association&quot;,
+  AND(
+    TODAY() &gt;= BLANKVALUE(Active_Start_Date__c, Effective_Date__c),
+    TODAY() &lt;= End_Date__c
+  ),
+  AND(
+    TODAY() &gt;= Effective_Date__c,
+    TODAY() &lt;= End_Date__c
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

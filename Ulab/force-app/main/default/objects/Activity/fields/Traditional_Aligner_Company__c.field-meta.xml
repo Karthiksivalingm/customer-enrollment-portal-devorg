@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Traditional_Aligner_Company__c</fullName>
+    <label>Traditional Aligner Company</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3M</fullName>
+                <default>false</default>
+                <label>3M</label>
+            </value>
+            <value>
+                <fullName>Clear Correct</fullName>
+                <default>false</default>
+                <label>Clear Correct</label>
+            </value>
+            <value>
+                <fullName>Elemetrix</fullName>
+                <default>false</default>
+                <label>Elemetrix</label>
+            </value>
+            <value>
+                <fullName>Henry Schein</fullName>
+                <default>false</default>
+                <label>Henry Schein</label>
+            </value>
+            <value>
+                <fullName>Invisalign</fullName>
+                <default>false</default>
+                <label>Invisalign</label>
+            </value>
+            <value>
+                <fullName>Ormco</fullName>
+                <default>false</default>
+                <label>Ormco</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

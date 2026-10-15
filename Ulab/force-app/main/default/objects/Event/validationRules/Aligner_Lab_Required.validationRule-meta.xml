@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aligner_Lab_Required</fullName>
+    <active>true</active>
+    <description>Required field on status close</description>
+    <errorConditionFormula>AND(Text(Status__c) = &apos;Close&apos; , ISPICKVAL( Aligner_Lab__c ,&quot;&quot;) )</errorConditionFormula>
+    <errorDisplayField>Aligner_Lab__c</errorDisplayField>
+    <errorMessage>Please fill in the required field.</errorMessage>
+</ValidationRule>

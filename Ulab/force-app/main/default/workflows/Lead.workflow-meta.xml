@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Lead_New_Customer_Notification</fullName>
+        <description>Lead New Customer Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>ruben@ulabsystems.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Leads_New_assignment_notification_New1</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Converted_on_Lead</fullName>
+        <field>Converted__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Converted on Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Lead Converted checkbox</fullName>
+        <actions>
+            <name>Update_Converted_on_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Converted__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Check lead converted checkbox to true if it is not.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

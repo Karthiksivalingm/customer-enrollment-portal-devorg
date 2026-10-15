@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aligner_Lab__c</fullName>
+    <label>Aligner Lab</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Carrenway</fullName>
+                <default>false</default>
+                <label>Carrenway</label>
+            </value>
+            <value>
+                <fullName>Clear Correct</fullName>
+                <default>false</default>
+                <label>Clear Correct</label>
+            </value>
+            <value>
+                <fullName>Dynaflex</fullName>
+                <default>false</default>
+                <label>Dynaflex</label>
+            </value>
+            <value>
+                <fullName>In House</fullName>
+                <default>false</default>
+                <label>In House</label>
+            </value>
+            <value>
+                <fullName>Invisalign</fullName>
+                <default>false</default>
+                <label>Invisalign</label>
+            </value>
+            <value>
+                <fullName>ODL</fullName>
+                <default>false</default>
+                <label>ODL</label>
+            </value>
+            <value>
+                <fullName>Orchestrate</fullName>
+                <default>false</default>
+                <label>Orchestrate</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Specialty</fullName>
+                <default>false</default>
+                <label>Specialty</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

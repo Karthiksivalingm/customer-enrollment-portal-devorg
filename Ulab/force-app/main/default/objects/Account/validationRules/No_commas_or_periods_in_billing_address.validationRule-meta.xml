@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_commas_or_periods_in_billing_address</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(BillingStreet)),
+$Profile.Name !=&apos;System Administrator&apos;,
+$Profile.Name != &apos;SysAdmin&apos;,
+$Profile.Name!= &apos;uLab SysAdmin&apos;,
+OR(
+CONTAINS(BillingStreet, &quot;.&quot;),
+CONTAINS(BillingStreet, &quot;,&quot;),
+CONTAINS(BillingStreet, &quot;|&quot;),
+CONTAINS(BillingStreet, &quot;/&quot;)
+
+))</errorConditionFormula>
+    <errorMessage>No commas or periods allowed in the Billing Street field.</errorMessage>
+</ValidationRule>

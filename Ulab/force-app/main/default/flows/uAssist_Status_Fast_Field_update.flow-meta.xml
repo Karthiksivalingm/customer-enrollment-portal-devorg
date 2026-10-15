@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Decision_1</name>
+        <label>Decision 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.uAssist_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.uAssist_Status__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_1</targetReference>
+            </connector>
+            <label>Check record</label>
+        </rules>
+        <rules>
+            <name>Check_for_new_record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewRecord</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.uAssist_Status__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_2</targetReference>
+            </connector>
+            <label>Check for new record</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>NewRecord</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNew()</expression>
+    </formulas>
+    <interviewLabel>uAssist Status Fast Field update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>uAssist Status Fast Field update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Records_1</name>
+        <label>Update Records 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>SendEmail__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Records_2</name>
+        <label>Update Records 2</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>SendEmail__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>uAssist_Status__c</field>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_1</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Modification Complete</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - Please review uAssist Message</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - Rx Form needs review</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - New photos needed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - New scans needed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - New X-Rays needed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - New scans, photographs and X-Rays needed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - Scans and images do not match</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold - New photos and Rx form review needed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case ready to review</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Rejected</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Cancel</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>uAssist_Status__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>uLab_Order__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

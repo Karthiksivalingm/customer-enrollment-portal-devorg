@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_request__c</fullName>
+    <description>Contains reasons for credit request.</description>
+    <label>Reason for Request</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fit</fullName>
+                <default>false</default>
+                <label>Fit</label>
+            </value>
+            <value>
+                <fullName>Quality / Mfgr Error</fullName>
+                <default>false</default>
+                <label>Quality / Mfgr Error</label>
+            </value>
+            <value>
+                <fullName>Shipping Credit</fullName>
+                <default>false</default>
+                <label>Shipping Credit</label>
+            </value>
+            <value>
+                <fullName>Pricing /Program</fullName>
+                <default>false</default>
+                <label>Pricing /Program</label>
+            </value>
+            <value>
+                <fullName>Promotional Offer</fullName>
+                <default>false</default>
+                <label>Promotional Offer</label>
+            </value>
+            <value>
+                <fullName>Office or Patient Mistake</fullName>
+                <default>false</default>
+                <label>Office or Patient Mistake</label>
+            </value>
+            <value>
+                <fullName>Training /Test</fullName>
+                <default>false</default>
+                <label>Training /Test</label>
+            </value>
+            <value>
+                <fullName>General Dissatisfactions</fullName>
+                <default>false</default>
+                <label>General Dissatisfactions</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Alpha/Beta Trial</fullName>
+                <default>false</default>
+                <label>Alpha/Beta Trial</label>
+            </value>
+            <value>
+                <fullName>Goodwill Credit</fullName>
+                <default>false</default>
+                <label>Goodwill Credit</label>
+            </value>
+            <value>
+                <fullName>Charged wrong price</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Charged wrong price</label>
+            </value>
+            <value>
+                <fullName>Fit Issue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fit Issue</label>
+            </value>
+            <value>
+                <fullName>Office Issue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Office Issue</label>
+            </value>
+            <value>
+                <fullName>Order Delayed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Order Delayed</label>
+            </value>
+            <value>
+                <fullName>Patient</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Patient</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>STL Credit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>STL Credit</label>
+            </value>
+            <value>
+                <fullName>Shipping Cost</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Shipping Cost</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

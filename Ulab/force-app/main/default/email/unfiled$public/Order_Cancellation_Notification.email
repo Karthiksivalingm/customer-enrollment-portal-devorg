@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .banner {
+            background: linear-gradient(90deg, #d9534f, #c9302c);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .banner h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+        .banner p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        .content {
+            padding: 20px;
+            color: #333333;
+        }
+        .table-container {
+            margin-top: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+        }
+        .label {
+            font-weight: bold;
+            background-color: #f4f6f9;
+            width: 40%;
+        }
+        .status-cancel {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background-color: #0070d2;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #999999;
+            padding: 15px;
+            border-top: 1px solid #eeeeee;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="email-container">
+
+    <!-- Banner -->
+    <div class="banner">
+        <h1>uAssist Order Cancelled</h1>
+        <p>Status Updated to "Cancel"</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <p>Hello,</p>
+
+        <p>
+            A <strong>uAssist Order</strong> has been cancelled. 
+            Please find the details below.
+        </p>
+
+        <!-- Table -->
+        <div class="table-container">
+            <table>
+
+                    <tr>
+                    <td class="label">Order Number</td>
+                    <td>{!uLab_Order__c.Name}</td>
+                </tr>
+
+
+                <tr>
+                    <td class="label">Status</td>
+                    <td class="status-cancel">Cancelled</td>
+                </tr>
+
+              
+                <tr>
+                    <td class="label">Cancelled By</td>
+                    <td>{!uLab_Order__c.Cancelation_Requested_By__c}</td>
+                </tr>
+
+                <tr>
+                    <td class="label">Cancelled Date</td>
+                    <td>{!uLab_Order__c.Order_Cancellation_Date__c}</td>
+                </tr>
+
+                <tr>
+                    <td class="label">Reason</td>
+                    <td>{!uLab_Order__c.Cancellation_Reason__c}</td>
+                </tr>
+
+            </table>
+        </div>
+
+       <div style="text-align: center; margin-top: 20px;">
+    <a href="https://ulab--staging.sandbox.lightning.force.com/lightning/r/uLab_Order__c/{!uLab_Order__c.Id}/view" 
+       style="display:inline-block; padding:12px 18px; background-color:#0070d2; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:bold;">
+        View Order
+    </a>
+</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        This is an automated notification from Salesforce. Please do not reply.
+    </div>
+
+</div>
+
+</body>
+</html>

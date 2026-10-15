@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uAssist_Status_VR_Rejected</fullName>
+    <active>true</active>
+    <description>Cannot change Status if set to Rejected</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_uAssist_Status_Validation),
+
+    ISPICKVAL(PRIORVALUE(uAssist_Status__c), &quot;Rejected&quot;) &amp;&amp;
+    (
+        ISPICKVAL(uAssist_Status__c, &quot;In Progress&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Model Prep Complete&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Model Prep in Progress&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Tech Review&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Modification Complete&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Modification in Progress&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Modification Requested&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Treatment Plan Review&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - Rx Form needs review&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - New photos needed&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - New scans needed&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - New X-Rays needed&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - New scans, photographs and X-Rays needed&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - Scans and images do not match&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - Please review uAssist Message&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;On Hold - New photos and Rx form review needed&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Case ready to review&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Cancel&quot;) || 
+        ISPICKVAL(uAssist_Status__c, &quot;Completed&quot;)
+    ) &amp;&amp;
+    CONTAINS($Profile.Name, &quot;uAssist User&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>uAssist_Status__c</errorDisplayField>
+    <errorMessage>Cannot change Status if set to Rejected</errorMessage>
+</ValidationRule>

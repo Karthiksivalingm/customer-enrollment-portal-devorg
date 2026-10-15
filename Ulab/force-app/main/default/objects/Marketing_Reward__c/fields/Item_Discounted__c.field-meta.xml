@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Discounted__c</fullName>
+    <label>Item Discounted</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aligner</fullName>
+                <default>false</default>
+                <label>Aligner</label>
+            </value>
+            <value>
+                <fullName>Retainer</fullName>
+                <default>false</default>
+                <label>Retainer</label>
+            </value>
+            <value>
+                <fullName>Bundle</fullName>
+                <default>false</default>
+                <label>Bundle</label>
+            </value>
+            <value>
+                <fullName>STL</fullName>
+                <default>false</default>
+                <label>STL</label>
+            </value>
+            <value>
+                <fullName>Direct Print Aligner</fullName>
+                <default>false</default>
+                <label>Direct Print Aligner</label>
+            </value>
+            <value>
+                <fullName>IDB Tray</fullName>
+                <default>false</default>
+                <label>IDB Tray</label>
+            </value>
+            <value>
+                <fullName>uAssist</fullName>
+                <default>false</default>
+                <label>uAssist</label>
+            </value>
+            <value>
+                <fullName>Custom Box</fullName>
+                <default>false</default>
+                <label>Custom Box</label>
+            </value>
+            <value>
+                <fullName>Custom Box Artwork</fullName>
+                <default>false</default>
+                <label>Custom Box Artwork</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+            <value>
+                <fullName>All (Discount entire order)</fullName>
+                <default>false</default>
+                <label>All (Discount entire order)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

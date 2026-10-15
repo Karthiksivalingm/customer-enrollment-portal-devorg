@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calculated_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*IF(CONTAINS(Program_Name__c ,&apos;uPP 1 Star&apos;),300,
+IF(CONTAINS(Program_Name__c ,&apos;uPP 2 Star&apos;),600,
+IF(CONTAINS(Program_Name__c ,&apos;uPP 3 Star&apos;),900,
+IF(CONTAINS(Program_Name__c ,&apos;uPP 4 Star&apos;),1200,*/
+IF(CONTAINS(Program_Name__c ,&apos;Premier Partner A&apos;),450000,
+IF(CONTAINS(Program_Name__c ,&apos;Premier Partner B&apos;), 250000,
+IF(CONTAINS(Program_Name__c ,&apos;Premier Partner C&apos;), 200000,
+null)))
+/*)
+)))*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Calculated Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

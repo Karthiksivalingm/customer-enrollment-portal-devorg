@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Exclusive Offer for You</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Promo Code Offer Email</name>
+    <style>none</style>
+    <subject>Exclusive Offer for You</subject>
+    <textOnly>Exclusive Offer Just for You!
+
+Dear {!Marketing_Reward_Association__c.Company__c},
+
+We have an exclusive offer just for you! Enjoy on your next uAssist order.
+
+Your Promo Code
+
+{!Marketing_Reward_Association__c.NetSuite_Promo_Code__c}
+
+⏰ Expires: {!Marketing_Reward_Association__c.End_Date__c}
+
+To redeem, simply enter the promo code above at checkout when submitting your next case through the uAssist portal.
+
+If you have any questions about this offer, please don&apos;t hesitate to reach out. We&apos;re happy to help!
+
+Thank you,
+uLab uAssist Team
+
+We’re here to help. Call +1 (866)-900-8522 or Email support@ulabsystems.com
+
+Privacy Policy | Terms of Use | ulabsystems.com
+
+
+© 2026 uLab Systems, Inc. All Rights Reserved. uLab, uLab Systems, uDesign, uAssist, uSmile and Reva are registered trademarks of uLab Systems, Inc.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

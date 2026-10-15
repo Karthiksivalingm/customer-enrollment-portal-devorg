@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancel_Archive_uAssist_Orders</fullName>
+    <columns>Company_Name__c</columns>
+    <columns>uAssist_VIP__c</columns>
+    <columns>uLab_Case__c</columns>
+    <columns>NAME</columns>
+    <columns>OrderDate__c</columns>
+    <columns>uDesign_Version__c</columns>
+    <columns>uAssist_Status__c</columns>
+    <columns>NetSuite_SO_Internal_ID__c</columns>
+    <columns>Billing_System_Inv_Number__c</columns>
+    <columns>orderId__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>uLab_Order__c.uAssist_Order</value>
+    </filters>
+    <filters>
+        <field>uAssist_Status__c</field>
+        <operation>equals</operation>
+        <value>Cancel/Archive</value>
+    </filters>
+    <label>Cancel/Archive uAssist Orders</label>
+</ListView>

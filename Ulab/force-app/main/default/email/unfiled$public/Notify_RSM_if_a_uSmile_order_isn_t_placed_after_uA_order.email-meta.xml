@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notify RSM if a uSmile order isn’t placed after uA order</name>
+    <style>none</style>
+    <subject>uSmile Order is not placed</subject>
+    <textOnly>Hi,
+uSmile order is not placed for below
+Company: {!uLab_Order__c.Company_Name__c}
+uAssist Order #: {!uLab_Order__c.Name}
+uAssist Status: {!uLab_Order__c.uAssist_Status__c}
+Order Date: {!uLab_Order__c.OrderDate__c}
+uLab Case #: {!uLab_Order__c.uLab_Case__c}
+Thanks,</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

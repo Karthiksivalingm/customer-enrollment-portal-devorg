@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DPA_Order</fullName>
+    <active>true</active>
+    <label>DPA Order</label>
+    <picklistValues>
+        <picklist>AWS_EventBridge_Status__c</picklist>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Aligner_Storage_Case__c</picklist>
+        <values>
+            <fullName>Additional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Included</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancelation_Requested_By__c</picklist>
+        <values>
+            <fullName>CRB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ortho%2FStaff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Team</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancellation_Reason__c</picklist>
+        <values>
+            <fullName>Anomalies Along Tooth Margins</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doctor Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extensive Undercutting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holes%2FCavities%2FGum missing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order %23 Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overall Quality of Scan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trimline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Services_Response__c</picklist>
+        <values>
+            <fullName>Cancel Order%2C this was a duplicate order%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order has been unlocked%2C please process asap%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order has been updated%2C please process asap%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clinical_Review_Outcome__c</picklist>
+        <values>
+            <fullName>TX Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TX Updated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_MFG__c</picklist>
+        <values>
+            <fullName>Aligner Cleaning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kitting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laser Etch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mold Printing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Package QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA Inspection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA Mold Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thermoforming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trim</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delayed_Shipment_Reason__c</picklist>
+        <values>
+            <fullName>Issue with Scan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MFG Processing Issue %28Equipment%2C etc%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28%3F%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transit %2F Courier Issue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Material_Type__c</picklist>
+        <values>
+            <fullName>REVA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZENDURA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Number_of_Plans__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preorder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipped</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Type__c</picklist>
+        <values>
+            <fullName>In Office STL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>uLab Aligner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pod_Team_Response__c</picklist>
+        <values>
+            <fullName>Attachments have been removed and new retainer order has been placed%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel original order and office will submit new order%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel original order%2C office will print in house</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel original order%2C office will rescan patient and submit new order%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order has been updated%2C please process asap%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Original order and tx plan have been confirmed with the office%2C please process order as originally submitted%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spoke with office and they would like the aligners cut distal of the terminal molar%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>Sample Aligners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Retainers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Templates</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Method__c</picklist>
+        <values>
+            <fullName>2 Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overnight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rush</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Team_Response__c</picklist>
+        <values>
+            <fullName>Bug Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Feature</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VIP_Status__c</picklist>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trained</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>uAssist_Status__c</picklist>
+        <values>
+            <fullName>Case ready to review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Model Prep Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Model Prep in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modification Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modification Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold - New photos needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>uAssist_VIP__c</picklist>
+        <values>
+            <fullName>***YES***</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>uFab_Defect_List__c</picklist>
+        <values>
+            <fullName>Attachments on Retainer Stage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case Crashing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cutaround Marker Placement %28Triangles%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gum%2FTeeth not Aligning %28Puffy Gums%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete Scan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locked by Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Quality %2F Unusable Scan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Model Generating Hole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More Than One Treatment Plan on Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Number of stages does not match the order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pontic Roots sticking out of gums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Possible Duplicate Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Root Anomalies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scan causing Trimline Collision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Segmentation Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stage Number on tooth needs to be moved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waxing tool %28too much %2F not enough%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

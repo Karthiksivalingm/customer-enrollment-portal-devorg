@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Hold_Status_validation</fullName>
+    <active>true</active>
+    <description>Can&apos;t update status to On Hold when previously on Case ready to review</description>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Cloud_uAssist_Order&quot;,
+    NOT($Permission.Bypass_uAssist_Status_Validation),
+
+    OR( 
+        TEXT(uAssist_Status__c) == &apos;On Hold - Rx Form needs review&apos;, 
+        TEXT(uAssist_Status__c) == &apos;On Hold - New photos needed&apos;, 
+        TEXT(uAssist_Status__c) == &apos;On Hold - New scans needed&apos;,
+        TEXT(uAssist_Status__c) == &apos;On Hold - New X-Rays needed&apos;, 
+        TEXT(uAssist_Status__c) == &apos;On Hold - New scans, photographs and X-Rays needed&apos;,
+        TEXT(uAssist_Status__c) == &apos;On Hold - Scans and images do not match&apos;,
+        TEXT(uAssist_Status__c) == &apos;On Hold - New photos and Rx form review needed&apos;,
+        TEXT(uAssist_Status__c) == &apos;On Hold - Please review uAssist Message&apos;,
+        TEXT(uAssist_Status__c) == &apos;Cancel&apos;,
+        TEXT(uAssist_Status__c) == &apos;Rejected&apos;, 
+        TEXT(uAssist_Status__c) == &apos;Model Prep Complete&apos;, 
+        TEXT(uAssist_Status__c) == &apos;Model Prep in Progress&apos;, 
+        TEXT(uAssist_Status__c) == &apos;Tech Review&apos;
+    ), 
+
+    ISPICKVAL(PRIORVALUE(uAssist_Status__c), &apos;Case ready to review&apos;),
+    NOT(ISNULL(Billing_System_Inv_Number__c)), 
+    NOT(ISBLANK(Billing_System_Inv_Number__c))
+)</errorConditionFormula>
+    <errorDisplayField>uAssist_Status__c</errorDisplayField>
+    <errorMessage>Can&apos;t update uAssist Status from Case ready to review - pls contact your manager.</errorMessage>
+</ValidationRule>

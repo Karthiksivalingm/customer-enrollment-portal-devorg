@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Promo_Code_Offer_Email</fullName>
+        <description>Promo Code Offer Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Company_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@ulabsystems.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>New_uDesign_Cloud_Templates/Promo_Code_Offer_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Boomi_Checkbox</fullName>
+        <field>Send_to_Boomi__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Boomi Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Checkbox</fullName>
+        <field>Send_to_Boomi__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Mrktg Reward Program Update Boomi Checkbox</fullName>
+        <actions>
+            <name>Update_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Program Association</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.Send_to_Boomi__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.NSPL_Sync__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Updates Boomi trigger when Mrtg Reward Program Association is created and NSPL sync date is blank.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Mrktg Reward Promotion Update Boomi Checkbox</fullName>
+        <actions>
+            <name>Update_Boomi_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Promotion Association</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.NetSuite_Sync_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.Send_to_Boomi__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Reward_Association__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Updates Boomi trigger when Mrtg Reward Promotion Association is created and Netsuite sync date is blank.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

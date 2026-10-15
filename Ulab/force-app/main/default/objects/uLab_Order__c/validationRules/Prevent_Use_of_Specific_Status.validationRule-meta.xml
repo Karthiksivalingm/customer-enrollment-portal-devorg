@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Use_of_Specific_Status</fullName>
+    <active>false</active>
+    <description>Prevents users from using the Modification Requested or the Completed status for uAssist Orders. Onlly admins/Boomi can use this status/</description>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL( uAssist_Status__c , &quot;Modification Requested&quot;),
+ISPICKVAL( uAssist_Status__c , &quot;Completed&quot;)
+),
+      NOT(
+        OR(
+            $Profile.Name = &quot;System Administrator&quot;,
+            $Profile.Name = &quot;uLab SysAdmin&quot; )
+)
+)</errorConditionFormula>
+    <errorDisplayField>uAssist_Status__c</errorDisplayField>
+    <errorMessage>Modification Requested and Completed can only be assigned by Integration.</errorMessage>
+</ValidationRule>

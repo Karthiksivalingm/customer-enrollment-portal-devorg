@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_State_2_Character</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(ShippingCountry == &apos;US&apos;, ShippingCountry == &apos;CA&apos;),
+LEN ( ShippingState ) != 2
+)</errorConditionFormula>
+    <errorDisplayField>ShippingState</errorDisplayField>
+    <errorMessage>Shipping State fields must be 2 characters long.</errorMessage>
+</ValidationRule>

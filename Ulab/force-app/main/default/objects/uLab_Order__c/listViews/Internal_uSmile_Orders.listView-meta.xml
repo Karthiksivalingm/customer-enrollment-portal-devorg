@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_uSmile_Orders</fullName>
+    <columns>Send_to_Boomi__c</columns>
+    <columns>NAME</columns>
+    <columns>Ship_To__c</columns>
+    <columns>Company_Name__c</columns>
+    <columns>OrderDate__c</columns>
+    <columns>Ship_Date__c</columns>
+    <columns>Order_Status__c</columns>
+    <columns>Order_No_2__c</columns>
+    <columns>uLab_Case__c</columns>
+    <columns>Custom_Box_Historical__c</columns>
+    <columns>Lower_Stage_Range__c</columns>
+    <columns>Upper_Stage_Range__c</columns>
+    <columns>Product_Type__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Shipping_Method__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Internal uSmile Orders</label>
+    <sharedTo>
+        <role>Marketing_Associate</role>
+        <role>Marketing_Manager</role>
+        <role>Senior_Director_Marketing</role>
+    </sharedTo>
+</ListView>

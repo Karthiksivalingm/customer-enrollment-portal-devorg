@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Internal notification to lead owner when new lead is assigned.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Leads: New assignment notification New1</name>
+    <style>none</style>
+    <subject>Congratulations - Someone wants to learn more about uLab, and you&apos;re the right person for the job.</subject>
+    <textOnly>New Lead Notification
+
+🚀 YOU GOT A NEW LEAD
+Lead Information
+
+Name:  {!Lead.FirstName} {!Lead.LastName}
+Company:  {!Lead.Company}
+Street Address:  {!Lead.Street}
+City / State / ZIP:   {!Lead.City}, {!Lead.State} {!Lead.PostalCode}
+Email Address:    {!Lead.Email}
+Comments:  {!Lead.Description}
+Source:  {!Lead.LeadSource}
+Lead ID:  {!Lead.Id}
+
+View Lead Details
+This is an automated notification from your CRM system.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

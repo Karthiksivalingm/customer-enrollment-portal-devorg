@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uLab_Case__c</fullName>
+    <inlineHelpText>*Case 334274 - 2 U&amp;L Aligners*
+
+*Case 495337 - 2 U&amp;L Retainer .30*
+
+*Case 495350 - 2 U&amp;L Retainer .40*
+
+*Case 495359 - 2 U&amp;L Templates*</inlineHelpText>
+    <label>uLab Case</label>
+    <referenceTo>uLab_Case__c</referenceTo>
+    <relationshipLabel>uLab Orders</relationshipLabel>
+    <relationshipName>uLab_Orders</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

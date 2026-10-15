@@ -1,0 +1,286 @@
+<template>
+    <lightning-card title="Notification Center" icon-name="utility:notification">
+        <lightning-tabset variant="scoped">
+
+            <!-- TAB 1 – USER LEVEL -->
+            <lightning-tab label="User Level">
+                <div class="tab-body">
+                    <p class="section-desc">
+                        When enabled, suppresses all email notifications sent to you regardless of other settings.
+                    </p>
+                    <lightning-input
+                        type="checkbox"
+                        label="Disable all email notifications"
+                        checked={disableAllEmails}
+                        onchange={handleUserChange}>
+                    </lightning-input>
+                </div>
+            </lightning-tab>
+
+            <!-- TAB 2 – COMPANY LEVEL -->
+            <lightning-tab label="Company Level">
+                <div class="tab-body">
+                    <p class="section-desc">
+                        Search for companies you want to suppress email notifications for, then toggle the switch.
+                    </p>
+
+                    <lightning-record-picker
+                        label="Search Company"
+                        placeholder="Type a Company name…"
+                        object-api-name="Account"
+                        display-info={accountDisplayInfo}
+                        matching-info={accountMatchingInfo}
+                        onchange={handleAccountSelect}>
+                    </lightning-record-picker>
+
+                    <template if:true={hasAccounts}>
+                        <div class="list-header">Selected Companies</div>
+                        <template for:each={selectedAccounts} for:item="acc">
+                            <div key={acc.Id} class="account-row">
+                                <lightning-icon
+                                    icon-name="standard:account"
+                                    size="x-small"
+                                    class="row-icon">
+                                </lightning-icon>
+                                <span class="account-name">{acc.Name}</span>
+                                <div class="row-actions">
+                                    <lightning-input
+                                        type="checkbox"
+                                        label="Disable emails"
+                                        variant="label-hidden"
+                                        checked={acc.disableEmail}
+                                        data-id={acc.Id}
+                                        onchange={handleAccountToggle}>
+                                    </lightning-input>
+                                    <span class="toggle-label">{acc.toggleLabel}</span>
+                                    <lightning-button-icon
+                                        icon-name="utility:close"
+                                        size="small"
+                                        variant="bare"
+                                        alternative-text="Remove"
+                                        data-id={acc.Id}
+                                        onclick={handleRemoveAccount}>
+                                    </lightning-button-icon>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:false={hasAccounts}>
+                        <div class="empty-state">No companies selected yet.</div>
+                    </template>
+                </div>
+            </lightning-tab>
+
+            <!-- TAB 3 – CONTACT LEVEL -->
+            <lightning-tab label="Contact Level">
+                <div class="tab-body">
+                    <p class="section-desc">
+                        Search for contacts. For each contact, choose which email template folders are suppressed.
+                        If no folders are chosen, <em>all</em> emails to that contact are suppressed.
+                        Contacts who have opted out of email (Email Opt Out) are always suppressed automatically.
+                    </p>
+
+                    <lightning-record-picker
+                        label="Search Contact"
+                        placeholder="Type a Contact name…"
+                        object-api-name="Contact"
+                        display-info={contactDisplayInfo}
+                        matching-info={contactMatchingInfo}
+                        onchange={handleContactSelect}>
+                    </lightning-record-picker>
+
+                    <template if:true={hasContacts}>
+                        <div class="list-header">Selected Contacts</div>
+                        <template for:each={selectedContactsWithFolders} for:item="con">
+                            <div key={con.Id} class="contact-block">
+
+                                <!-- Main contact row -->
+                                <div class="account-row">
+                                    <lightning-icon
+                                        icon-name="standard:contact"
+                                        size="x-small"
+                                        class="row-icon">
+                                    </lightning-icon>
+
+                                    <span class="account-name">{con.Name}</span>
+
+                                    <!-- Folder summary badge — click to expand -->
+                                    <span class="folder-badge" data-id={con.Id} onclick={handleToggleFolderPicker}>
+                                        <lightning-icon icon-name="utility:email" size="xx-small"></lightning-icon>
+                                        &nbsp;{con.folderSummary}&nbsp;
+                                        <lightning-icon icon-name="utility:chevrondown" size="xx-small"></lightning-icon>
+                                    </span>
+
+                                    <div class="row-actions">
+                                        <lightning-input
+                                            type="checkbox"
+                                            label="Disable emails"
+                                            variant="label-hidden"
+                                            checked={con.disableEmail}
+                                            data-id={con.Id}
+                                            onchange={handleContactToggle}>
+                                        </lightning-input>
+                                        <span class="toggle-label">{con.toggleLabel}</span>
+                                        <lightning-button-icon
+                                            icon-name="utility:close"
+                                            size="small"
+                                            variant="bare"
+                                            alternative-text="Remove"
+                                            data-id={con.Id}
+                                            onclick={handleRemoveContact}>
+                                        </lightning-button-icon>
+                                    </div>
+                                </div>
+
+                                <!-- Folder picker panel — expands below row -->
+                                <template if:true={con.showFolderPicker}>
+                                    <div class="folder-panel">
+                                        <p class="folder-panel-hint">
+                                            Select the email template folders to suppress for this contact.
+                                            Leave the right side <strong>empty</strong> to suppress
+                                            <strong>all</strong> emails to this contact.
+                                        </p>
+                                        <lightning-dual-listbox
+                                            label="Suppressed Email Template Folders"
+                                            source-label="Available Folders"
+                                            selected-label="Suppressed Folders"
+                                            options={folderOptions}
+                                            value={con.selectedFolderValues}
+                                            data-id={con.Id}
+                                            onchange={handleFolderChange}>
+                                        </lightning-dual-listbox>
+                                    </div>
+                                </template>
+
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:false={hasContacts}>
+                        <div class="empty-state">No contacts selected yet.</div>
+                    </template>
+                </div>
+            </lightning-tab>
+
+            <!-- TAB 4 – FIELD LEVEL -->
+            <lightning-tab label="Field Level">
+                <div class="tab-body">
+                    <p class="section-desc">
+                        Define rules: when a record field matches a specific value, suppress email notifications.
+                    </p>
+
+                    <div class="field-row">
+                        <div class="field-col">
+                            <lightning-combobox
+                                label="Object"
+                                placeholder="Select object…"
+                                value={selectedObject}
+                                options={objectOptions}
+                                onchange={handleObjectChange}
+                                disabled={isLoadingObjects}>
+                            </lightning-combobox>
+                            <template if:true={isLoadingObjects}>
+                                <lightning-spinner size="small" alternative-text="Loading objects"></lightning-spinner>
+                            </template>
+                        </div>
+
+                        <div class="field-col">
+                            <lightning-combobox
+                                label="Field"
+                                placeholder="Select field…"
+                                value={selectedField}
+                                options={fieldOptions}
+                                onchange={handleFieldChange}
+                                disabled={isFieldDisabled}>
+                            </lightning-combobox>
+                        </div>
+
+                        <div class="field-col">
+                            <template if:true={isPicklistField}>
+                                <lightning-combobox
+                                    label="Value"
+                                    placeholder="Select value…"
+                                    value={fieldValue}
+                                    options={valueOptions}
+                                    onchange={handleValueChange}
+                                    disabled={isValueDisabled}>
+                                </lightning-combobox>
+                            </template>
+                            <template if:false={isPicklistField}>
+                                <lightning-input
+                                    label="Value"
+                                    placeholder="Enter value…"
+                                    value={fieldValue}
+                                    onchange={handleValueChange}
+                                    disabled={isValueDisabled}>
+                                </lightning-input>
+                            </template>
+                        </div>
+                    </div>
+
+                    <div class="add-rule-row">
+                        <lightning-button
+                            label="Add Rule"
+                            icon-name="utility:add"
+                            disabled={isAddRuleDisabled}
+                            onclick={handleAddRule}>
+                        </lightning-button>
+                    </div>
+
+                    <template if:true={hasRules}>
+                        <div class="list-header">Active Rules</div>
+                        <template for:each={rules} for:item="rule">
+                            <div key={rule.id} class="rule-row">
+                                <lightning-icon icon-name="utility:filter" size="x-small" class="row-icon"></lightning-icon>
+                                <div class="rule-text">
+                                    <span class="rule-obj">{rule.objectLabel}</span>
+                                    <span class="rule-sep">›</span>
+                                    <span class="rule-field">{rule.fieldLabel}</span>
+                                    <span class="rule-sep">=</span>
+                                    <span class="rule-val">"{rule.value}"</span>
+                                </div>
+                                <lightning-button-icon
+                                    icon-name="utility:delete"
+                                    size="small"
+                                    variant="bare"
+                                    alternative-text="Delete rule"
+                                    data-id={rule.id}
+                                    onclick={handleRemoveRule}>
+                                </lightning-button-icon>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:false={hasRules}>
+                        <div class="empty-state">No rules defined yet.</div>
+                    </template>
+                </div>
+            </lightning-tab>
+
+        </lightning-tabset>
+
+        <!-- Footer -->
+        <div slot="footer" class="card-footer">
+            <template if:true={saveSuccess}>
+                <span class="save-success">
+                    <lightning-icon icon-name="utility:success" size="x-small"></lightning-icon>
+                    Settings saved
+                </span>
+            </template>
+            <template if:true={errorMessage}>
+                <span class="save-error">{errorMessage}</span>
+            </template>
+            <lightning-button
+                variant="brand"
+                label="Save Settings"
+                icon-name="utility:save"
+                disabled={isSaving}
+                onclick={handleSave}>
+            </lightning-button>
+            <template if:true={isSaving}>
+                <lightning-spinner size="small" alternative-text="Saving"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>

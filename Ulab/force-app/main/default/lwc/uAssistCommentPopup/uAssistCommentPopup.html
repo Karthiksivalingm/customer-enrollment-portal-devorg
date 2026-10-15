@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Tech Review Comments">
+        <div class="slds-p-around_medium">
+            <lightning-textarea
+                label="uAssist Comments"
+                value={comments}
+                onchange={handleChange}>
+            </lightning-textarea>
+
+            <div class="slds-m-top_medium slds-text-align_right">
+                <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                <lightning-button variant="neutral" label="Cancel" onclick={handleCancel} class="slds-m-left_small"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

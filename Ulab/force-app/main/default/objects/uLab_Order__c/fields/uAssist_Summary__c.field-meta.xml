@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uAssist_Summary__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+   OR(
+      Product_Name__c = &quot;uDesign Cloud&quot;,
+      AND(
+         Product_Name__c = &quot;uDesign&quot;,
+         VALUE(LEFT(uDesign_Version__c, FIND(&quot;.&quot;, uDesign_Version__c) - 1)) &gt;= 10
+      )
+   ),
+   HYPERLINK(
+      &quot;https://qa.udesign.cloud/org/&quot; &amp; TEXT(uLab_Case__r.Account__r.uLab_Acct_Number__c) &amp; &quot;/orders/&quot; &amp; orderId__c &amp; &quot;/uassist-summary/&quot;,
+      &quot;View UAssist Summary&quot;,
+      &quot;_blank&quot;
+   ),
+   NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>uAssist Summary</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

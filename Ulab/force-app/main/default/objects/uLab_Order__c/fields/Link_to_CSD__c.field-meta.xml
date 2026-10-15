@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_CSD__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://qa.oemaligner.com/#/clinical/patient/&quot;&amp;uLab_Case__r.Patient_ID__r.Portal_Pt_ID__c&amp;&quot;/case/&quot;&amp;uLab_Case__r.Name&amp;&quot;/reviewer&quot;, &quot;Colgate Smile Design&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Link to CSD</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

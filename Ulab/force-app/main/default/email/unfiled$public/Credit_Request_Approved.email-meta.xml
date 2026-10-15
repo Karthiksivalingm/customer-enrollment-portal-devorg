@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CompSuite__Dot_Compliance</letterhead>
+    <name>Credit Request Approved</name>
+    <style>freeForm</style>
+    <subject>Credit Request {!Credit_Request__c.Name} || Approved</subject>
+    <textOnly>Hello {!Credit_Request__c.OwnerFirstName},
+
+The credit request you submitted for {!Credit_Request__c.Company_Name__c} (uLab Acct # {!Credit_Request__c.uLab_Acct_Number__c}) has been approved.
+
+Amount Requested: {!Credit_Request__c.Credit_Request_Amount__c}
+Amount Approved: {!Credit_Request__c.Approved_Amount__c}
+
+A  link to the Credit Request can be found here:
+{!Credit_Request__c.Link}
+
+Thanks</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

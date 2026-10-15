@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2022_Marketing_Programs</fullName>
+    <columns>NAME</columns>
+    <columns>Send_to_Boomi__c</columns>
+    <columns>Name__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>NSPL_Sync__c</columns>
+    <columns>NetSuite_Price_Level__c</columns>
+    <columns>Aligner_Price__c</columns>
+    <columns>Retainer_Price__c</columns>
+    <columns>Custom_Box_Price__c</columns>
+    <columns>Custom_Box_Discount__c</columns>
+    <columns>Custom_Box_Setup_Price__c</columns>
+    <columns>Custom_Box_Setup_Discount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Marketing_Reward__c.Marketing_Program</value>
+    </filters>
+    <label>2022 Marketing Programs</label>
+</ListView>

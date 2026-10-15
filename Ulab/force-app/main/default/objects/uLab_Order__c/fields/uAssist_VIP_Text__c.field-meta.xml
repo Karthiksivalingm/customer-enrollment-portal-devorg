@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uAssist_VIP_Text__c</fullName>
+    <description>This field is used in email templates. It does not need to be displayed on any page layouts.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ ISPICKVAL(uAssist_VIP__c,&quot;***YES***&quot;),
+BR() &amp; $Label.uAssist_VIP_Text &amp; BR(),
+BR() )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>uAssist_VIP Text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

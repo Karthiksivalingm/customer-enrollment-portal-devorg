@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bundle</fullName>
+                <default>false</default>
+                <label>Bundle</label>
+            </value>
+            <value>
+                <fullName>Aligner</fullName>
+                <default>false</default>
+                <label>Aligner</label>
+            </value>
+            <value>
+                <fullName>uAssist</fullName>
+                <default>false</default>
+                <label>uAssist</label>
+            </value>
+            <value>
+                <fullName>Retainer</fullName>
+                <default>false</default>
+                <label>Retainer</label>
+            </value>
+            <value>
+                <fullName>STL</fullName>
+                <default>false</default>
+                <label>STL</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+            <value>
+                <fullName>IDB</fullName>
+                <default>false</default>
+                <label>IDB</label>
+            </value>
+            <value>
+                <fullName>DPA</fullName>
+                <default>false</default>
+                <label>DPA</label>
+            </value>
+            <value>
+                <fullName>Template</fullName>
+                <default>false</default>
+                <label>Template</label>
+            </value>
+            <value>
+                <fullName>Custom Box</fullName>
+                <default>false</default>
+                <label>Custom Box</label>
+            </value>
+            <value>
+                <fullName>Custom Box Artwork</fullName>
+                <default>false</default>
+                <label>Custom Box Artwork</label>
+            </value>
+            <value>
+                <fullName>Partial Credit</fullName>
+                <default>false</default>
+                <label>Partial Credit</label>
+            </value>
+            <value>
+                <fullName>Customer Box</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer Box</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

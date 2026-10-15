@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bundle_Pricing_Opt_Out__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>If checked, this program does not use bundles and no bundles can be associated with it.</inlineHelpText>
+    <label>Bundle Pricing Opt-Out</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

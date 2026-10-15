@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRB_COPA_Orders</fullName>
+    <columns>Company_Name__c</columns>
+    <columns>Order_Type__c</columns>
+    <columns>orderId__c</columns>
+    <columns>NAME</columns>
+    <columns>OrderDate__c</columns>
+    <columns>Order_Status__c</columns>
+    <columns>Shipping_Method__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Total_Aligner_Count__c</columns>
+    <columns>Total_Retainer_Count__c</columns>
+    <columns>Total_Template_Count__c</columns>
+    <columns>of_Billable_STLs__c</columns>
+    <columns>Total_Order_Count__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>uLab_Order__c.Aligner_Order</value>
+    </filters>
+    <filters>
+        <field>Company_Name__c</field>
+        <operation>equals</operation>
+        <value>ClearJoy</value>
+    </filters>
+    <label>ClearJoy Orders</label>
+</ListView>

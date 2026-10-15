@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Adjustment</fullName>
+    <active>true</active>
+    <label>Customer Adjustment</label>
+    <picklistValues>
+        <picklist>Accounting_System_Updated_By__c</picklist>
+        <values>
+            <fullName>Monica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nicola</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approved__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Credit_Request_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Month_That_Credit_Should_be_Applied__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>Aligner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Box</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Box Artwork</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retainer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Template</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>uAssist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_Code__c</picklist>
+        <values>
+            <fullName>Accidental Output</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case Fee Ceiling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changes to treatment plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chipped mold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deformity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discomfort %2F painful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exception request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goodwill Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missed delivery deadline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing aligners%2Fretainers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing attachments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple retainer orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office staff of account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order delayed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over charged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient did not move forward</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor clarity - Cloudy %2F Textured</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raffle or prize award</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reva</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax correction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Too tight%2FToo loose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Session</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trim Line - rough or sharp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trim Line - wrong due to uLab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wouldn%27t seat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong scan %2F patient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>uLab Employee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_for_request__c</picklist>
+        <values>
+            <fullName>Alpha%2FBeta Trial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Dissatisfactions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goodwill Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office or Patient Mistake</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing %2FProgram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotional Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quality %2F Mfgr Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training %2FTest</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requested_By__c</picklist>
+        <values>
+            <fullName>Client Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

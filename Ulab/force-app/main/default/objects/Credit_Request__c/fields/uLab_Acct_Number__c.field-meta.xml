@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uLab_Acct_Number__c</fullName>
+    <description>Stores Account number</description>
+    <externalId>false</externalId>
+    <formula>Company_Lookup__r.uLab_Acct_Number__c</formula>
+    <label>uLab Acct Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

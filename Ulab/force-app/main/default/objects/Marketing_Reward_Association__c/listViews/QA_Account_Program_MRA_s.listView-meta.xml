@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QA_Account_Program_MRA_s</fullName>
+    <columns>NAME</columns>
+    <columns>Company__c</columns>
+    <columns>Effective_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Marketing_Program__c</columns>
+    <columns>Program_Name__c</columns>
+    <columns>NSEPL_Sync__c</columns>
+    <columns>NSPL_Sync__c</columns>
+    <columns>NetSuite_Sync_Date__c</columns>
+    <columns>NetSuite_Price_Level__c</columns>
+    <columns>NS_Enhanced_Price_Level__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Marketing_Reward_Association__c.Program_Association</value>
+    </filters>
+    <filters>
+        <field>Effective_Date__c</field>
+        <operation>equals</operation>
+        <value>7/29/2023</value>
+    </filters>
+    <label>QA Account Program MRA&apos;s</label>
+</ListView>

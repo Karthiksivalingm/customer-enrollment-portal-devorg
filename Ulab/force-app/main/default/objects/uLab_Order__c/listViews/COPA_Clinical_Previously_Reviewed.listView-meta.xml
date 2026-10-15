@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COPA_Clinical_Previously_Reviewed</fullName>
+    <columns>NAME</columns>
+    <columns>Clinical_Review_Team_Member__c</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Related_User__c</columns>
+    <columns>OrderDate__c</columns>
+    <columns>Previously_Reviewed__c</columns>
+    <columns>Clinical_Review_Outcome__c</columns>
+    <columns>Total_Aligner_Count__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Order_Type__c</field>
+        <operation>equals</operation>
+        <value>COPA Aligner</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>uLab_Order__c.Aligner_OEM</value>
+    </filters>
+    <filters>
+        <field>Previously_Reviewed__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>COPA Clinical - Previously Reviewed</label>
+</ListView>

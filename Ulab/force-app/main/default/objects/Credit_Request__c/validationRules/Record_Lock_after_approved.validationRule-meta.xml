@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Lock_after_approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+/* Apply only to Customer Adjustment */
+RecordType.DeveloperName = &quot;Customer_Adjustment&quot;,
+
+OR(
+
+/* ================= Amount &lt;= 250 &amp; Approved ================= */
+AND(
+Credit_Request_Amount__c &lt;= 250,
+ISPICKVAL(Credit_Request_Status__c, &quot;Approved&quot;),
+NOT(
+OR(
+$Profile.Name = &quot;System Administrator&quot;,
+Company_Lookup__r.Area_Sales_Director__c =
+($User.FirstName &amp; &quot; &quot; &amp; $User.LastName)
+)
+)
+),
+
+/* ================= Amount &gt; 250 &amp; Submitted ================= */
+AND(
+Credit_Request_Amount__c &gt; 250,
+ISPICKVAL(Credit_Request_Status__c, &quot;Submitted&quot;),
+NOT(
+OR(
+$Profile.Name = &quot;System Administrator&quot;,
+Company_Lookup__r.Area_Sales_Director__c =
+($User.FirstName &amp; &quot; &quot; &amp; $User.LastName)
+)
+)
+),
+
+/* ================= Amount &gt; 250 &amp; Approved ================= */
+AND(
+Credit_Request_Amount__c &gt; 250,
+ISPICKVAL(Credit_Request_Status__c, &quot;Approved&quot;),
+NOT(
+OR(
+$Profile.Name = &quot;System Administrator&quot;,
+Company_Lookup__r.Area_Sales_Director__c =
+($User.FirstName &amp; &quot; &quot; &amp; $User.LastName)
+)
+)
+),
+
+/* ================= Amount &gt; 250 &amp; Denied ================= */
+AND(
+Credit_Request_Amount__c &gt; 250,
+ISPICKVAL(Credit_Request_Status__c, &quot;Denied&quot;),
+NOT(
+OR(
+$Profile.Name = &quot;System Administrator&quot;,
+Company_Lookup__r.Area_Sales_Director__c =
+($User.FirstName &amp; &quot; &quot; &amp; $User.LastName)
+)
+)
+)
+
+)
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to edit this Credit Request in its current status.</errorMessage>
+</ValidationRule>

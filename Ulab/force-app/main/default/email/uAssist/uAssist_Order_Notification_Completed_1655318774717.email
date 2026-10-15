@@ -1,0 +1,169 @@
+<html>
+ <head></head>
+ <body bgcolor="#FCFCFC" class="body" style="padding: 0px; margin: 0px; display: block; background: rgb(252, 252, 252); text-size-adjust: none; height: auto; min-height: auto;">
+  <br />
+  <br />
+  <meta content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>uLab activation email</title>
+  <style type="text/css">/*<![CDATA[*/
+@import url(http://fonts.googleapis.com/css?family=Poppins);
+        img {
+            max-width: 600px;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+        a {
+            text-decoration: none;
+            border: 0;
+            outline: none;
+            color: #0080aa;
+            font-weight: bold;
+        }
+        a img {
+            border: none;
+        }
+
+        td, h1, h2, h3 {
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 400;
+        }
+        td {
+            text-align: center;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: none;
+            width: 100%;
+            height: 100%;
+            color: #333333;
+            background: #fcfcfc;
+            font-size: 16px;
+        }
+        table {
+            border-collapse: collapse !important;
+        }
+        .headline {
+            color: #ffffff;
+            font-size: 36px;
+        }
+        .full-width {
+            width: 100% !important;
+        }
+        .width-80 {
+            width: 80% !important;
+        }
+
+/*]]>*/</style>
+  <style media="screen" type="text/css">/*<![CDATA[*/
+@media screen {
+            td, h1, h2, h3 {
+                font-family: 'Poppins', 'Helvetica', 'Arial', 'sans-serif' !important;
+            }
+        }
+
+/*]]>*/</style>
+  <style media="only screen and (max-width: 480px)" type="text/css">/*<![CDATA[*/
+@media only screen and (max-width: 480px) {
+            table[class="w320"] {
+                width: 320px !important;
+            }
+            td[class="mobile-block"] {
+                width: 100% !important;
+                display: block !important;
+            }
+        }
+
+/*]]>*/</style>
+  <table align="center" cellpadding="0" cellspacing="0" class="full-width" height="100%">
+   <tbody>
+    <tr>
+     <td align="center" bgcolor="#FCFCFC" valign="top" width="100%">
+      <center>
+       <table cellpadding="0" cellspacing="0" class="w320" style="margin: 0 auto;" width="600">
+        <tbody>
+         <tr>
+          <td align="center" valign="top"><img alt="Circle logo" src="{[devName:Circle_logo]}" style="max-width: 1356.95px; width: 99.9375px; height: 96px;" title="Circle logo" />
+           <table bgcolor="#0080aa" cellpadding="0" cellspacing="0" class="full-width" style="margin: 0 auto;">
+            <tbody>
+             <tr>
+              <td class="headline" style="padding: 15px;">uAssist Order Completed</td>
+             </tr>
+            </tbody>
+           </table>
+           <table bgcolor="#f5774e" cellpadding="0" cellspacing="0" class="full-width" style="margin: 0 auto;">
+            <tbody>
+             <tr>
+              <td style="background-color:#FFFFFF; border: 1px solid #EEEEEE;">
+               <center>
+                <table cellpadding="0" cellspacing="0" class="width-80" style="margin:0 auto;">
+                 <tbody>
+                  <tr>
+                   <td style="text-align:left; color:#333333">
+                    <br />
+                    <br />
+                    Dear {{{uLab_Order__c.Company_Name__c}}},
+                    <br />
+                    <br />
+                    Your uAssist treatment plan {{{uLab_Order__c.Name}}}&#xa0;is ready for review.&#xa0; Please access the uDesign® application to review the proposed treatment plan and proceed to ordering your uSmile™ aligners.&#xa0; You may make minor modifications prior to placing the order directly in the uDesign application.&#xa0; If you need additional assistance regarding your treatment plan, you may click the link to schedule time with a uAssist team member.&#xa0; If you have any questions, please call us at 1.866.900.8522 or email us at&#xa0;<a aria-label="Link support@ulabsystems.com" href="mailto:support@ulabsystems.com" rel="noopener noreferrer" tabindex="-1" target="_blank" title="mailto:support@ulabsystems.com">support@ulabsystems.com</a>.
+                   </td>
+                  </tr>
+                 </tbody>
+                </table>
+                <table cellpadding="0" cellspacing="0" class="width-80" style="margin: 0 auto;">
+                 <tbody>
+                  <tr>
+                   <td style="text-align:left; color:#333333;">
+                    <br />
+                    -Team uLab
+                    <br />
+                    <br />
+                    &#xa0;
+                   </td>
+                  </tr>
+                 </tbody>
+                </table>
+               </center>
+              </td>
+             </tr>
+            </tbody>
+           </table>
+           <table bgcolor="#EEEEEE" cellpadding="0" cellspacing="0" class="full-width" style="margin: 0 auto;">
+            <tbody>
+             <tr>
+              <td style="color:#777777; font-size:12px;">
+               <table bgcolor="#EEEEEE" cellpadding="0" cellspacing="0" class="width-80" style="margin: 0 auto;">
+                <tbody>
+                 <tr>
+                  <td style="text-align:left; color:#777777; font-size:12px;">
+                   <br />
+                   This message may contain confidential or privileged information. If you are not the intended recipient, please advise the sender immediately by reply email and delete this message and any attachments without retaining a copy. Reviewing, disclosing, distributing, or using the contents of this e-mail is prohibited if you are not the intended recipient. uLab Systems, Inc. prohibits users of our system from sending any e-mail containing anything defamatory, improper or discriminatory.
+                  </td>
+                 </tr>
+                 <tr>
+                  <td style="text-align:center; color:#777777; font-size:12px;">
+                   <br />
+                   © 2016-2021 ulab systems Inc. All Rights Reserved.
+                   <br />
+                   &#xa0;
+                  </td>
+                 </tr>
+                </tbody>
+               </table>
+              </td>
+             </tr>
+            </tbody>
+           </table></td>
+         </tr>
+        </tbody>
+       </table>
+      </center>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div id="" style="left: 663.781px; top: 37px;">&#xa0;</div>
+  <div id="" style="left: 663.781px; top: 37px;">&#xa0;</div>
+ </body>
+</html>

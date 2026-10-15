@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Okta_New_user_created_notification</fullName>
+        <description>Okta - New user created notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>madhuri.kamble@ulabsystems.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sandip.patel@ulabsystems.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>support@ulabsystems.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Okta_User_created_notification</template>
+    </alerts>
+</Workflow>

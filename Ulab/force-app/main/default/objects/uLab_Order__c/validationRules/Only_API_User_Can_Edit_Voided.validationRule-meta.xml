@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_API_User_Can_Edit_Voided</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Voided__c),
+    NOT($Permission.Bypass_uAssist_Status_Validation)
+)</errorConditionFormula>
+    <errorDisplayField>Voided__c</errorDisplayField>
+    <errorMessage>You are not authorized to modify the Voided . Only authorized API users can update the Voided field.</errorMessage>
+</ValidationRule>

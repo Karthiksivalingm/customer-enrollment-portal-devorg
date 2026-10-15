@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Credited_Credit_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Lookup__c</columns>
+    <columns>Order__c</columns>
+    <columns>Credit_Memo__c</columns>
+    <columns>Approved_Amount__c</columns>
+    <columns>Total_Amount_Requested__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Credit_Memo__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Netsuite Credited Credit Requests</label>
+    <sharedTo>
+        <role>Chief_Financial_Officer</role>
+        <role>Revenue_Analyst</role>
+        <role>Senior_Finance_Manager</role>
+        <role>Senior_Manager_of_Accounting</role>
+    </sharedTo>
+</ListView>

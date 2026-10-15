@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Pod__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Assigned Pod</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <filterItems>
+            <field>User.UserRole.Name</field>
+            <operation>contains</operation>
+            <value>Development</value>
+        </filterItems>
+        <filterItems>
+            <field>User.UserRole.Name</field>
+            <operation>contains</operation>
+            <value>Integration</value>
+        </filterItems>
+        <filterItems>
+            <field>User.UserRole.Name</field>
+            <operation>contains</operation>
+            <value>Clinical</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>CRB_Defect_Orders</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uFab_Defect_List__c</fullName>
+    <label>uFab Defects</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Case Crashing</fullName>
+                <default>false</default>
+                <label>Case Crashing</label>
+            </value>
+            <value>
+                <fullName>Cutaround Marker Placement (Triangles)</fullName>
+                <default>false</default>
+                <label>Cutaround Marker Placement (Triangles)</label>
+            </value>
+            <value>
+                <fullName>Gum/Teeth not Aligning (Puffy Gums)</fullName>
+                <default>false</default>
+                <label>Gum/Teeth not Aligning (Puffy Gums)</label>
+            </value>
+            <value>
+                <fullName>Model Generating Hole</fullName>
+                <default>false</default>
+                <label>Model Generating Hole</label>
+            </value>
+            <value>
+                <fullName>Pontic Roots sticking out of gums</fullName>
+                <default>false</default>
+                <label>Pontic Roots sticking out of gums</label>
+            </value>
+            <value>
+                <fullName>Root Anomalies</fullName>
+                <default>false</default>
+                <label>Root Anomalies</label>
+            </value>
+            <value>
+                <fullName>Scan causing Trimline Collision</fullName>
+                <default>false</default>
+                <label>Scan causing Trimline Collision</label>
+            </value>
+            <value>
+                <fullName>Segmentation Issues</fullName>
+                <default>false</default>
+                <label>Segmentation Issues</label>
+            </value>
+            <value>
+                <fullName>Stage Number on tooth needs to be moved</fullName>
+                <default>false</default>
+                <label>Stage Number on tooth needs to be moved</label>
+            </value>
+            <value>
+                <fullName>Waxing tool (too much / not enough)</fullName>
+                <default>false</default>
+                <label>Waxing tool (too much / not enough)</label>
+            </value>
+            <value>
+                <fullName>Locked by Dr.</fullName>
+                <default>false</default>
+                <label>Locked by Dr.</label>
+            </value>
+            <value>
+                <fullName>More Than One Treatment Plan on Order</fullName>
+                <default>false</default>
+                <label>More Than One Treatment Plan on Order</label>
+            </value>
+            <value>
+                <fullName>Possible Duplicate Order</fullName>
+                <default>false</default>
+                <label>Possible Duplicate Order</label>
+            </value>
+            <value>
+                <fullName>Attachments on Retainer Stage</fullName>
+                <default>false</default>
+                <label>Attachments on Retainer Stage</label>
+            </value>
+            <value>
+                <fullName>Attachments and/or Buttons Too Close To Trim Line</fullName>
+                <default>false</default>
+                <label>Attachments and/or Buttons Too Close To Trim Line</label>
+            </value>
+            <value>
+                <fullName>Clarification or Confirmation Needed From Doctor</fullName>
+                <default>false</default>
+                <label>Clarification or Confirmation Needed From Doctor</label>
+            </value>
+            <value>
+                <fullName>Incomplete Scan</fullName>
+                <default>false</default>
+                <label>Incomplete Scan</label>
+            </value>
+            <value>
+                <fullName>Low Quality / Unusable Scan</fullName>
+                <default>false</default>
+                <label>Low Quality / Unusable Scan</label>
+            </value>
+            <value>
+                <fullName>Number of stages does not match the order</fullName>
+                <default>false</default>
+                <label>Number of stages does not match the order</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

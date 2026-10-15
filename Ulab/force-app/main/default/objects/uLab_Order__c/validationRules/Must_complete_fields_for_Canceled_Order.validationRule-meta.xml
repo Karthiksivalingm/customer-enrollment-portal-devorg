@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_complete_fields_for_Canceled_Order</fullName>
+    <active>true</active>
+    <description>Cannot change Order Status to &apos;Canceled&apos; without completing all fields in uLab Internal Cancelation section</description>
+    <errorConditionFormula>AND( 
+ RecordType.Name =&quot;Customer Order&quot;,
+ ISPICKVAL(Order_Status__c, &quot;Cancelled&quot;),
+ ISCHANGED(Order_Status__c),
+ OR(ISBLANK( Order_Cancellation_Date__c ), 
+    ISBLANK( Order_Cancellation_Comments__c),
+    ISBLANK( Cancellation_Reason__c ),
+    ISBLANK( TEXT( Cancelation_Requested_By__c )),
+    ISBLANK( TEXT(Current_MFG__c ) )
+)   
+)</errorConditionFormula>
+    <errorDisplayField>Order_Status__c</errorDisplayField>
+    <errorMessage>You must complete all fields in the &apos;uLab Internal Cancellation&apos; section below before saving this order as &apos;Cancelled&apos;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uAssist_Order_To_Completed</fullName>
+    <active>true</active>
+    <description>Only the API user can move a uAssist order to &apos;Completed&apos;</description>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Cloud_uAssist_Order&quot;,
+    NOT($Permission.Bypass_uAssist_Status_Validation),
+    $UserRole.Name &lt;&gt; &apos;System Administrator&apos;,
+    ISPICKVAL(uAssist_Status__c, &quot;Completed&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>uAssist_Status__c</errorDisplayField>
+    <errorMessage>Only the system can move a uAssist order to &apos;Completed&apos;. You can check the &apos;Hide from WeDesign&apos; checkbox if you know the customer is not going to place a uSmile order.</errorMessage>
+</ValidationRule>

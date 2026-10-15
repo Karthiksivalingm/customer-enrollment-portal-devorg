@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>No link, reused verbiage</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>uAssist On Hold - v1</name>
+    <relatedEntityType>uLab_Order__c</relatedEntityType>
+    <style>none</style>
+    <subject>uAssist order is on hold - Please Review</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

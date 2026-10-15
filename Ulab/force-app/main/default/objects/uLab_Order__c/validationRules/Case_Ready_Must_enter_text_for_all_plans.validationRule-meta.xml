@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Ready_Must_enter_text_for_all_plans</fullName>
+    <active>false</active>
+    <description>When a uAssist order is changed to &apos;Case Ready to Review&apos;, the user must enter text for each plan</description>
+    <errorConditionFormula>AND(
+RecordType.Name =&quot;uAssist Order&quot;,
+ISPICKVAL(uAssist_Status__c, &quot;Case Ready to Review&quot;),
+ISCHANGED(uAssist_Status__c),
+OR(
+ ISBLANK( Plan_1__c), 
+ AND(
+  OR(ISPICKVAL(Number_of_Plans__c ,&quot;2&quot;),
+     ISPICKVAL(Number_of_Plans__c ,&quot;3&quot;)),
+   ISBLANK( Plan_2__c )),
+ AND(ISPICKVAL(Number_of_Plans__c ,&quot;3&quot;),
+ ISBLANK( Plan_3__c )) 
+)
+)</errorConditionFormula>
+    <errorDisplayField>Number_of_Plans__c</errorDisplayField>
+    <errorMessage>Please include a message for the customer for each plan that you have created.</errorMessage>
+</ValidationRule>

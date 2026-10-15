@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Bracket_Starts_Required</fullName>
+    <active>true</active>
+    <description>Required field on status close</description>
+    <errorConditionFormula>AND(Text(Status__c) = &apos;Close&apos; ,    ISBLANK(Annual_Bracket_Case_Starts__c ))</errorConditionFormula>
+    <errorDisplayField>Annual_Bracket_Case_Starts__c</errorDisplayField>
+    <errorMessage>Please fill in the required field.</errorMessage>
+</ValidationRule>

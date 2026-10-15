@@ -46,3 +46,9 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+
+# Credential-bearing org files (kept locally, never committed) - see 02-Knowledge-Base/Salesforce-Environment.md
+force-app/main/default/labels/
+force-app/main/default/classes/showmemockclass.cls
+force-app/main/default/classes/showmemockclass.cls-meta.xml
+force-app/main/default/connectedApps/Okta.connectedApp-meta.xml

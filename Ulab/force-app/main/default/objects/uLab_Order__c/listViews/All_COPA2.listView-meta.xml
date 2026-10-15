@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_COPA2</fullName>
+    <columns>NAME</columns>
+    <columns>OrderDate__c</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Link_to_CSD__c</columns>
+    <columns>COPA_Retainer_MFG_Date__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>uLab_Order__c.Aligner_OEM</value>
+    </filters>
+    <label>All COPA</label>
+</ListView>

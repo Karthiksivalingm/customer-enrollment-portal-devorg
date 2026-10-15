@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corresponding_Record_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( uLab_Case__r.RecordType.Name = &apos;Aligner OEM&apos;, RecordType.Name &lt;&gt; uLab_Case__r.RecordType.Name )</errorConditionFormula>
+    <errorMessage>uLab Order records must use the same record type as the parent uLab Case. Please select &apos;Cancel&apos;, return to the previous page, and choose the same record type (&quot;Commercial&quot; or &quot;Aligner OEM&quot;)</errorMessage>
+</ValidationRule>

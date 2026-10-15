@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Association</fullName>
+    <active>true</active>
+    <description>This record joins a customer with a Marketing Program (uPP, Premier, etc)</description>
+    <label>Program Association</label>
+    <picklistValues>
+        <picklist>Bundle_Type__c</picklist>
+        <values>
+            <fullName>2 Retainer Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 Retainer Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 Retainer Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comprehensive Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finishing Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mild Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moderate Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OrthoPulse Unlimited Bundle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>uAdjust 10 Bundle</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

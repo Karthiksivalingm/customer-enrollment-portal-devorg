@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Plan_2</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Number_of_Plans__c , &quot;2&quot;),
+    OR(
+        ISBLANK(Plan_1__c),
+        ISBLANK(Plan_2__c)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Number_of_Plans__c</errorDisplayField>
+    <errorMessage>Both Plan 1 and Plan 2 are required when # of Plans is 2.</errorMessage>
+</ValidationRule>
