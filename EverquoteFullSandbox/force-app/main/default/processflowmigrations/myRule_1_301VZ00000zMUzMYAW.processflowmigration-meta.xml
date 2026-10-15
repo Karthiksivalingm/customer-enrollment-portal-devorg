@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessFlowMigration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <destinationFlowDefinition>BDR_Meeting_Pre_Populate_1</destinationFlowDefinition>
+    <destinationFlowVersion>BDR_Meeting_Pre_Populate_1-1</destinationFlowVersion>
+    <developerName>myRule_1_301VZ00000zMUzMYAW</developerName>
+    <masterLabel>BDR Meeting Pre-Populate_1</masterLabel>
+    <migratedCriteriaLabel>BDR Meeting record type</migratedCriteriaLabel>
+    <migratedCriteriaName>myRule_1</migratedCriteriaName>
+    <processVersion>BDR_Meeting_Pre_Populate-1</processVersion>
+</ProcessFlowMigration>

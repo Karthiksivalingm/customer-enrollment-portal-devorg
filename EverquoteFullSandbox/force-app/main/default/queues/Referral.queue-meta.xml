@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Referral</name>
+    <queueMembers>
+        <users>
+            <user>cnashed@everquote.com</user>
+            <user>cweir@everquote.com</user>
+            <user>mdelfeld@everquote.com</user>
+            <user>ndaniels@everquote.com</user>
+            <user>svaughn@everquote.com</user>
+            <user>zachary@everquote.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

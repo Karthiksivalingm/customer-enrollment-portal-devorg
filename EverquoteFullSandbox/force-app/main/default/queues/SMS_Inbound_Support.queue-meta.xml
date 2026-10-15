@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>SMS Inbound Support</name>
+    <queueMembers>
+        <users>
+            <user>jguillaume@everquote.com</user>
+            <user>jzak@everquote.com</user>
+            <user>nlamp@everquote.com</user>
+            <user>victor.nawrocki@everquote.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>SMS</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>MessagingSession</sobjectType>
+    </queueSobject>
+</Queue>
