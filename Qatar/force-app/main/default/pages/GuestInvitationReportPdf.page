@@ -1,0 +1,220 @@
+<apex:page controller="GuestInvitationReportPdfController" renderAs="pdf" applyHtmlTag="false" showHeader="false" sidebar="false">
+<html>
+<head>
+    <style>
+        @page {
+            size: 297mm 210mm;
+            margin: 10mm 8mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Unicode MS', Arial, 'Noto Sans Arabic', 'DejaVu Sans', sans-serif;
+            font-size: 7.5pt;
+            line-height: 1.35;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .report-header {
+            border-bottom: 2px solid #000000;
+            padding-bottom: 7px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 15pt;
+            font-weight: bold;
+            margin: 0 0 3px 0;
+            color: #000000;
+            letter-spacing: 0.3px;
+        }
+
+        h2 {
+            font-size: 8.5pt;
+            font-weight: bold;
+            color: #000000;
+            margin: 0;
+            letter-spacing: 0.2px;
+        }
+        h2 + h2 {
+            margin-top: 2px;
+        }
+
+        .error-box {
+            color: #b00020;
+            border: 1px solid #b00020;
+            background-color: #fdecea;
+            padding: 8px 10px;
+            font-size: 9pt;
+        }
+
+        table.main {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            table-layout: fixed;
+            font-family: 'Arial Unicode MS', Arial, 'Noto Sans Arabic', 'DejaVu Sans', sans-serif;
+            border: 1.5px solid #000000;
+        }
+
+        table.main th,
+        table.main td {
+            border: 0.75px solid #000000;
+            padding: 4.5px 6px;
+            text-align: left;
+            vertical-align: top;
+            white-space: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            color: #000000;
+        }
+
+        table.main th {
+            background-color: #D6B300;
+            color: #000000;
+            font-weight: bold;
+            font-size: 6.9pt;
+            line-height: 1.25;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            border: 0.75px solid #000000;
+        }
+
+        table.main thead {
+            display: table-header-group;
+        }
+
+        table.main tr {
+            page-break-inside: avoid;
+        }
+
+        table.main tbody tr:nth-child(even) {
+            background-color: #FBF3D0;
+        }
+
+        table.main tbody tr:last-child td {
+            border-bottom: 1.5px solid #000000;
+        }
+
+        .col-center {
+            text-align: center;
+        }
+
+        .col-nowrap {
+            white-space: nowrap;
+        }
+
+        .photo-cell {
+            text-align: center;
+            vertical-align: middle;
+            padding: 3px;
+        }
+
+        .photo-cell img,
+        .photo-cell .guest-photo {
+            width: 30pt;
+            height: 30pt;
+            object-fit: cover;
+            border-radius: 2px;
+            border: 0.75px solid #000000;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <apex:outputPanel rendered="{!errorMessage != null}">
+        <div class="error-box">{!errorMessage}</div>
+    </apex:outputPanel>
+
+    <apex:outputPanel rendered="{!errorMessage == null}">
+        <div class="report-header">
+            <h1>{!report.eventName}</h1>
+            <h2>{!report.guestTier} &middot; {!report.registrationStatus} &middot; {!report.eventDate}</h2>
+            <h2>Total Guests: {!report.guestCount}</h2>
+        </div>
+
+        <table class="main">
+            <colgroup>
+                <col style="width:10%;"  /> <!-- Title -->
+                <col style="width:10%;"  /> <!-- Full Name -->
+                <col style="width:20%;" /> <!-- Guest Bio -->
+                <col style="width:14%;"  /> <!-- Reason of Attendance -->
+                <col style="width:10%;"  /> <!-- Guest Picture -->
+                <col style="width:14%;"  /> <!-- Guest Source -->
+                <col style="width:10%;"  /> <!-- Tier -->
+                <col style="width:14%;" /> <!-- Guest Category -->
+                <col style="width:14%;"  /> <!-- Company -->
+                <col style="width:10%;"  /> <!-- Job Title -->
+                <col style="width:10%;"  /> <!-- Inbound Date & Time -->
+                <col style="width:10%;"  /> <!-- Outbound Date & Time -->
+                <col style="width:10%;"  /> <!-- Accompanying Guest -->
+                <col style="width:10%;"  /> <!-- Relationship -->
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Full Name</th>
+                    <th>Guest Bio</th>
+                    <th>Reason of<br/>Attendance</th>
+                    <th class="col-center">Guest<br/>Picture</th>
+                    <th>Guest<br/>Source</th>
+                    <th class="col-center">Tier</th>
+                    <th>Guest<br/>Category</th>
+                    <th>Company Affiliated</th>
+                    <th>Job<br/>Title</th>
+                    <th class="col-center">Inbound<br/>Date &amp; Time</th>
+                    <th class="col-center">Outbound<br/>Date &amp; Time</th>
+                    <th>Acc.<br/>Guest</th>
+                    <th>Relation-<br/>ship</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <apex:repeat value="{!report.guests}" var="g">
+                    <tr>
+                        <td>{!g.title}</td>
+                        <td>{!g.fullName}</td>
+                        <td>{!g.bio}</td>
+                        <td>{!g.reasonForAttendance}</td>
+
+                        <td class="photo-cell">
+                            <apex:outputPanel rendered="{!NOT(ISBLANK(g.photoUrl))}">
+                                <apex:image url="{!g.photoUrl}" styleClass="guest-photo" />
+                            </apex:outputPanel>
+                        </td>
+
+                        <td>{!g.source}</td>
+                        <td class="col-center">{!g.tier}</td>
+                        <td>{!g.guestCategory}</td>
+                        <td>{!g.company}</td>
+                        <td>{!g.jobTitle}</td>
+
+                        <td class="col-center col-nowrap">
+                            {!g.inboundDate}<br/>{!g.inboundTime}
+                        </td>
+
+                        <td class="col-center col-nowrap">
+                            {!g.outboundDate}<br/>{!g.outboundTime}
+                        </td>
+
+                        <td>{!g.accompanyingGuest}</td>
+                        <td>{!g.relationshipTo}</td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </apex:outputPanel>
+
+</body>
+</html>
+</apex:page>

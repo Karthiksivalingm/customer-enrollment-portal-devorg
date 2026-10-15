@@ -1,0 +1,55 @@
+<apex:page controller="CalendarController">
+    <apex:includeScript value="{!URLFOR($Resource.Fullcalendar1, 'jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.Fullcalendar1, 'moment.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.Fullcalendar1, 'fullcalendar.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.Fullcalendar1, 'jspdf.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.Fullcalendar1, 'fullcalendar.min.css')}" />
+
+    <style>
+        .fc-event {
+            cursor: pointer;
+        }
+    </style>
+
+    <apex:form id="calendarForm">
+        <div id="calendar"></div>
+        <apex:commandButton value="Download PDF" action="{!downloadPDF}" rerender="calendarForm"/>
+    </apex:form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: [
+                    {
+                        title: 'Event 1',
+                        start: '2024-06-01',
+                        color: 'blue'
+                    },
+                    {
+                        title: 'Event 2',
+                        start: '2024-06-05',
+                        color: 'green'
+                    }
+                ],
+                editable: true,
+                eventClick: function(info) {
+                    var newColor = prompt("Enter new color for this event:", info.event.backgroundColor);
+                    if (newColor) {
+                        info.event.setProp('backgroundColor', newColor);
+                    }
+                }
+            });
+            calendar.render();
+
+            document.querySelector("input[value='Download PDF']").addEventListener("click", function() {
+                var doc = new jsPDF();
+                doc.fromHTML(document.querySelector("#calendar"), 15, 15, {
+                    'width': 170,
+                });
+                doc.save('calendar.pdf');
+            });
+        });
+    </script>
+</apex:page>

@@ -1,0 +1,161 @@
+/* ── Table Wrapper ─────────────────────────────────────────────────────────── */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 1rem 0.5rem;
+}
+
+/* ── Table ──────────────────────────────────────────────────────────────────── */
+.guest-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    min-width: 1800px; /* ensures horizontal scroll on small screens */
+}
+
+.guest-table thead tr {
+    background-color: #f3f2f2;
+    border-bottom: 2px solid #dddbda;
+}
+
+.guest-table th {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    font-weight: 700;
+    color: #3e3e3c;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.guest-table tbody tr {
+    border-bottom: 1px solid #e5e5e5;
+    transition: background-color 0.15s ease;
+}
+
+.guest-table tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
+.guest-table td {
+    padding: 0.55rem 0.75rem;
+    vertical-align: middle;
+    color: #3e3e3c;
+    max-width: 200px;
+}
+
+/* ── Clickable Links ────────────────────────────────────────────────────────── */
+.link-cell {
+    color: #0070d2;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.link-cell:hover {
+    text-decoration: underline;
+    color: #005fb2;
+}
+
+/* ── Truncate long text ─────────────────────────────────────────────────────── */
+.truncate-cell {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+}
+
+/* ── Contact Photo ──────────────────────────────────────────────────────────── */
+.contact-photo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #dddbda;
+}
+
+/* ── RSVP Badge ─────────────────────────────────────────────────────────────── */
+.rsvp-badge {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.rsvp-accepted {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.rsvp-declined {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.rsvp-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.rsvp-default {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+/* ── Note Cell ──────────────────────────────────────────────────────────────── */
+.note-display {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.note-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    color: #3e3e3c;
+}
+
+.edit-icon {
+    opacity: 0;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+}
+
+.note-display:hover .edit-icon {
+    opacity: 1;
+}
+
+.note-edit-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 180px;
+}
+
+.note-input {
+    width: 100%;
+}
+
+.note-actions {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: flex-end;
+}
+
+/* ── Record Count ───────────────────────────────────────────────────────────── */
+.record-count {
+    font-size: 0.75rem;
+    color: #706e6b;
+    text-align: right;
+    margin-top: 0.25rem;
+}

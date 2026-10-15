@@ -1,0 +1,92 @@
+<apex:page controller="MomPDFController" renderAs="pdf">
+   
+    <!-- Header with Logo -->
+    <div class="header-container">
+        <img src="https://qatarmuseums2--qatarsand--c.sandbox.vf.force.com/resource/1718783803000/QA" class="logo" style= "Position:right;" />
+
+    </div>
+
+    <apex:pageBlock title="Meeting Information">
+        <div style="font-family: Arial, sans-serif; font-size: 12px;">
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Subject</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Date</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Venue</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">{!minutes.Name}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">{!minutes.Date__c}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">ZOOM</td>
+                </tr>
+            </table>
+        </div>
+
+        
+
+       <div style="font-family: Arial, sans-serif; font-size: 12px;">
+    <div style="font-size: 16px; font-weight: bold; margin-top: 20px;">Attendees</div>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+        <tr>
+            <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Attendees</th>
+            <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">YES</th>
+            <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">NO</th>
+        </tr>
+        <apex:repeat value="{!Attendees}" var="attendee">
+            <tr>
+                <apex:outputPanel layout="none" rendered="{!NOT(ISNULL(attendee.Internal_Contacts__r.name)) || NOT(ISNULL(attendee.Name__c))}">
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">
+                        <apex:outputText value="{!IF(NOT(ISNULL(attendee.Internal_Contacts__r.name)), attendee.Internal_Contacts__r.name, attendee.Name__c)}" />
+                    </td>
+                </apex:outputPanel>
+                <td style="border: 1px solid black; padding: 8px; text-align: left;">
+                    <apex:outputText rendered="{!attendee.Responded__c = 'Yes'}">Yes</apex:outputText>
+                </td>
+                <td style="border: 1px solid black; padding: 8px; text-align: left;">
+                    <apex:outputText rendered="{!attendee.Responded__c = 'No'}">No</apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+    </table>
+</div>
+
+        <!-- Agenda Items Section -->
+        <div style="font-family: Arial, sans-serif; font-size: 12px;">
+            <div style="font-size: 16px; font-weight: bold; margin-top: 20px;">Agenda Items</div>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Agenda Items</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Attendees Update</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">HE Comments</th>
+                </tr>
+                <apex:repeat value="{!agendaItems}" var="agendaItem">
+                    <tr>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!agendaItem.Name}</td>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!agendaItem.Attendees_Update__c}</td>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!agendaItem.HE_Comments__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+        </div>
+        
+        <div style="font-family: Arial, sans-serif; font-size: 12px;">
+            <div style="font-size: 16px; font-weight: bold; margin-top: 20px;">Action Items</div>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Agenda Items</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Action </th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Owner Name</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Deadline</th>
+                </tr>
+                <apex:repeat value="{!actionitems}" var="actionitem">
+                    <tr>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!actionitem.Agenda_Item__c}</td>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!actionitem.Name}</td>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!actionitem.Owner.Name}</td>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!actionitem.Due_Date__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+        </div>
+    </apex:pageBlock>
+</apex:page>

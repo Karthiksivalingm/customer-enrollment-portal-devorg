@@ -1,0 +1,44 @@
+<apex:page id="uploadImagePage" standardController="Contact" extensions="Contactsextension" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+    <html>
+        <head>
+            <link rel="stylesheet" href="{!URLFOR($Resource.PictureUploader, '/assets/styles/salesforce-lightning-design-system.min.css')}"/>
+            <style>
+                .upload-box {
+                    border: 1px solid #ddd;
+                    padding: 1.5rem;
+                    border-radius: 0.5rem;
+                    background: #fefefe;
+                    width: 350px;
+                    margin: auto;
+                    text-align: center;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                }
+                .upload-box h3 {
+                    margin-bottom: 1rem;
+                }
+                input[type="file"] {
+                    display: block;
+                    margin: 1rem auto;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="upload-box">
+                <h3>Upload Profile Picture</h3>
+                <apex:form id="uploadForm">
+                    <apex:inputFile value="{!newAttach.Body}" 
+                                    filename="{!newAttach.Name}" 
+                                    contentType="{!newAttach.ContentType}" 
+                                    id="uploadFile"/>
+
+                    <br/>
+                    <apex:commandButton action="{!uploadAction}" 
+                                        value="Upload" 
+                                        styleClass="slds-button slds-button_brand"/>
+
+                    <apex:outputText value="{!error}" style="color:red; display:block; margin-top:10px;"/>
+                </apex:form>
+            </div>
+        </body>
+    </html>
+</apex:page>

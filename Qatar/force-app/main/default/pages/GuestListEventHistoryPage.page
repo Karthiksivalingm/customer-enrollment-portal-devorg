@@ -1,0 +1,16 @@
+<apex:page standardController="Guest_List__c" extensions="GuestListEventHistoryController">
+    <apex:sectionHeader title="Guest Event History" subtitle="{!currentGuestList.Name}" />
+    
+    <apex:pageBlock title="Event History for Guest">
+        <apex:pageBlockTable value="{!guestHistoryList}" var="guest">
+            <apex:column value="{!guest.Name}" />
+            <apex:column value="{!guest.Invitation__c}" />
+            <apex:column value="{!guest.Date__c}" />
+            <apex:column value="{!guest.Attended__c}" />
+            <apex:column value="{!guest.Type_of_Participation__c}" />
+            <apex:column value="{!guest.RSVP__c}" />
+            <apex:column value="{!guest.Invitation_Sent__c}" />
+            <apex:column value="{!guest.Save_the_date_sent__c}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,298 @@
+<template>
+
+    <lightning-button
+        label="Submit Guest Lists For Approval"
+        variant="brand"
+        icon-name="utility:people_list"
+        onclick={openModal}
+        disabled={isLoading}>
+    </lightning-button>
+
+    <template if:true={showModal}>
+
+        <section role="dialog" aria-modal="true"
+                 aria-label="Guest List Approval"
+                 tabindex="-1"
+                 class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container modal-shell">
+
+                <header class="modal-header">
+                    <div class="header-brand">
+                        <div class="header-icon-ring">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" class="header-svg-icon">
+                                <path fill="#fff" d="M26 4a10 10 0 1 1 0 20A10 10 0 0 1 26 4zm0 24c11 0 20 4.5 20 10v4H6v-4c0-5.5 9-10 20-10z"/>
+                            </svg>
+                        </div>
+                        <div class="header-text">
+                            <h2 class="header-title">Guest List Approval</h2>
+                            <p class="header-sub">Check exactly who you want to submit — main, accompanying, or both</p>
+                        </div>
+                    </div>
+                    <button class="close-btn" title="Close" onclick={closeModal} disabled={cancelDisabled}>
+                        ✕
+                    </button>
+                </header>
+
+                <template if:true={hasRecords}>
+                    <div class="stats-row">
+                        <div class="stat-pill pill-total">
+                            <span class="pill-num">{totalCount}</span>
+                            <span class="pill-lbl">Actionable</span>
+                        </div>
+                        <div class="stat-pill pill-groups">
+                            <span class="pill-num">{totalGroupCount}</span>
+                            <span class="pill-lbl">Main Guests</span>
+                        </div>
+                        <div class="stat-pill pill-selected">
+                            <span class="pill-num">{selectedCount}</span>
+                            <span class="pill-lbl">Selected</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <button class="toolbar-btn" onclick={toggleSelectPage} disabled={selectPageDisabled}>
+                            {selectPageLabel}
+                        </button>
+                        <button class="toolbar-btn toolbar-btn-accent" onclick={toggleSelectAllMatching} disabled={selectAllDisabled}>
+                            {selectAllLabel}
+                        </button>
+                        <div class="stat-divider"></div>
+
+                        <template if:true={showPagination}>
+                            <div class="top-pager">
+                                <button class="top-pager-btn" onclick={handlePrev} disabled={isPrevDisabled} title="Previous page">‹</button>
+                                <span class="page-badge">{pageInfo}</span>
+                                <button class="top-pager-btn" onclick={handleNext} disabled={isNextDisabled} title="Next page">›</button>
+                            </div>
+                        </template>
+                        <template if:false={showPagination}>
+                            <span class="page-badge">{pageInfo}</span>
+                        </template>
+                    </div>
+                </template>
+
+                <div class="modal-body">
+
+                    <template if:true={isLoading}>
+                        <div class="center-state">
+                            <div class="pulse-ring">
+                                <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                            </div>
+                            <p class="state-title">Fetching guest lists…</p>
+                            <p class="state-sub">This may take a moment for large datasets</p>
+                        </div>
+                    </template>
+
+                    <template if:true={hasNoRecords}>
+                        <div class="center-state">
+                            <div class="empty-blob">
+                                <lightning-icon icon-name="utility:people_list" size="large" alternative-text="Empty"></lightning-icon>
+                            </div>
+                            <p class="state-title">All Clear!</p>
+                            <p class="state-sub">No guest lists are pending approval for this invitation.</p>
+                            <button class="ghost-btn slds-m-top_medium" onclick={closeModal}>Close</button>
+                        </div>
+                    </template>
+
+                    <template if:true={hasRecords}>
+
+                        <div class="search-wrap">
+                            <div class="search-icon">🔍</div>
+                            <lightning-input
+                                type="search"
+                                placeholder="Search main guest, accompanying guest, invitation, title…"
+                                onchange={handleSearch}
+                                label="Search"
+                                variant="label-hidden"
+                                class="search-field">
+                            </lightning-input>
+                        </div>
+
+                        <template if:false={totalFilteredCount}>
+                            <div class="center-state">
+                                <div class="empty-blob">
+                                    <lightning-icon icon-name="utility:search" size="medium" alternative-text="No match"></lightning-icon>
+                                </div>
+                                <p class="state-title">No matches found</p>
+                                <p class="state-sub">Try a different search term</p>
+                                <button class="ghost-btn slds-m-top_medium" onclick={handleClearSearch}>Clear Search</button>
+                            </div>
+                        </template>
+
+                        <template if:true={totalFilteredCount}>
+                            <div class="cards-scroll">
+                                <template for:each={groupedPageRecords} for:item="group">
+                                    <div key={group.rowKey} class={group.cardClass}>
+
+                                        <div class="card-header">
+
+                                            <template if:true={group.hasAccompanying}>
+                                                <button class="expand-toggle" data-key={group.key} onclick={toggleGroupExpand}>
+                                                    <span class={group.chevronClass}>›</span>
+                                                </button>
+                                            </template>
+                                            <template if:false={group.hasAccompanying}>
+                                                <div class="expand-toggle-placeholder"></div>
+                                            </template>
+
+                                            <template if:true={group.mainIsActionable}>
+                                                <label class="main-check-wrap" title="Select this main guest">
+                                                    <input type="checkbox"
+                                                           checked={group.mainIsSelected}
+                                                           data-id={group.mainId}
+                                                           onclick={toggleRowSelection} />
+                                                </label>
+                                            </template>
+                                            <template if:false={group.mainIsActionable}>
+                                                <div class="main-check-wrap"></div>
+                                            </template>
+
+                                            <div class={group.avatarClass}>
+                                                {group.initials}
+                                            </div>
+
+                                            <div class="card-heading" data-key={group.key} onclick={toggleGroupExpand}>
+                                                <p class="main-guest-name">
+                                                    <span class="main-guest-name-text">{group.mainGuestName}</span>
+                                                    <span class="record-tag">{group.recordLabel}</span>
+                                                </p>
+                                                <p class="main-guest-meta">
+                                                    <span class="child-count-badge">{group.groupStatusText}</span>
+                                                    <template if:true={group.mainHasStatus}>
+                                                        <span class="status-chip">{group.mainStatusLabel}</span>
+                                                    </template>
+                                                </p>
+                                            </div>
+
+                                            <div class="card-actions">
+                                                <template if:true={group.mainIsActionable}>
+                                                    <button class="quick-submit-btn"
+                                                            data-id={group.mainId}
+                                                            onclick={quickSubmit}
+                                                            disabled={group.mainSubmitDisabled}
+                                                            title="Submit just this main guest">
+                                                        Quick Submit
+                                                    </button>
+                                                </template>
+
+                                                <template if:true={group.isCardSubmitting}>
+                                                    <div class="mini-busy">
+                                                        <lightning-spinner alternative-text="Submitting..." size="x-small"></lightning-spinner>
+                                                    </div>
+                                                </template>
+                                                <template if:false={group.isCardSubmitting}>
+                                                    <button class="group-submit-btn"
+                                                            data-key={group.key}
+                                                            onclick={submitCheckedInGroup}
+                                                            disabled={group.cardSubmitDisabled}>
+                                                        Submit Selected ({group.checkedCount})
+                                                    </button>
+                                                </template>
+                                            </div>
+                                        </div>
+
+                                        <template if:true={group.isExpanded}>
+                                            <div class="card-body">
+                                                <template for:each={group.children} for:item="child">
+                                                    <div key={child.id} class={child.rowClass}>
+
+                                                        <template if:true={child.isActionable}>
+                                                            <label class="child-check-wrap">
+                                                                <input type="checkbox"
+                                                                       checked={child.isSelected}
+                                                                       data-id={child.id}
+                                                                       onclick={toggleRowSelection} />
+                                                            </label>
+                                                        </template>
+                                                        <template if:false={child.isActionable}>
+                                                            <div class="child-check-placeholder"></div>
+                                                        </template>
+
+                                                        <div class="child-info">
+                                                            <p class="child-contact">{child.displayContactName}</p>
+                                                            <p class="child-sub">
+                                                                <span class="child-tag">{child.invitationName}</span>
+                                                                    <template if:true={child.hasStatus}>
+                                                                    <span class="child-tag child-tag-status">{child.statusLabel}</span>
+                                                                </template>
+                                                            </p>
+                                                            <template if:true={child.reasonC}>
+                                                                <p class="child-reason">{child.reasonC}</p>
+                                                            </template>
+                                                        </div>
+
+                                                        <template if:true={child.isActionable}>
+                                                            <button class="child-submit-btn"
+                                                                    data-id={child.id}
+                                                                    onclick={quickSubmit}
+                                                                    disabled={child.rowDisabled}>
+                                                                Submit
+                                                            </button>
+                                                        </template>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+
+                        <template if:true={showPagination}>
+                            <div class="pager">
+                                <button class="pager-btn" onclick={handlePrev} disabled={isPrevDisabled}>
+                                    ← Prev
+                                </button>
+                                <span class="pager-info">{pageInfo}</span>
+                                <button class="pager-btn" onclick={handleNext} disabled={isNextDisabled}>
+                                    Next →
+                                </button>
+                            </div>
+                        </template>
+
+                    </template>
+                </div>
+
+                <footer class="modal-footer">
+
+                    <div class="footer-left">
+                        <template if:true={hasSelection}>
+                            <div class="selected-pill">
+                                <span class="selected-dot"></span>
+                                {selectionSummary}
+                            </div>
+                        </template>
+                        <template if:false={hasSelection}>
+                            <span class="hint-text">Check the guests you want, then submit — per card or all at once</span>
+                        </template>
+                    </div>
+
+                    <div class="footer-right">
+                        <button class="cancel-btn" onclick={closeModal} disabled={cancelDisabled}>Cancel</button>
+
+                        <template if:true={isSubmitting}>
+                            <div class="submit-busy">
+                                <lightning-spinner alternative-text="Submitting..." size="small"></lightning-spinner>
+                                <span>Submitting…</span>
+                            </div>
+                        </template>
+
+                        <template if:false={isSubmitting}>
+                            <template if:true={hasRecords}>
+                                <button class="submit-btn" onclick={submitSelected} disabled={submitDisabled}>
+                                    Submit {selectedCount} for Approval
+                                </button>
+                            </template>
+                        </template>
+                    </div>
+
+                </footer>
+
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open" onclick={handleBackdropClick}></div>
+
+    </template>
+
+</template>

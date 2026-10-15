@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Meeting Request">
+        <div class="slds-m-around_medium">
+            <lightning-input label="List of Attendees" type="number" value={numberOfAttendees} onchange={handleAttendeeNumberChange}></lightning-input>
+            <template if:true={attendees}>
+                <template for:each={attendees} for:item="attendee">
+                    <lightning-input key={attendee.id} label={attendee.label} data-id={attendee.id}></lightning-input>
+                </template>
+            </template>
+            <lightning-button label="Save" onclick={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

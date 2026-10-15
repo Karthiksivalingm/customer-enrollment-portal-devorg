@@ -1,0 +1,87 @@
+<apex:page controller="MeetingRequestPDFController" renderAs="pdf">
+   
+    <!-- Header with Logo -->
+    <div class="header-container">
+        <img src="https://qatarmuseums2--qatarsand--c.sandbox.vf.force.com/resource/1718783803000/QA" class="logo" style= "Position:right;" />
+
+    </div>
+
+    <apex:pageBlock title="Meeting Information">
+        <div style="font-family: Arial, sans-serif; font-size: 12px;">
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Subject</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Date</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Venue</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">{!meetingRequest.Name}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">{!meetingRequest.CreatedDate}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">ZOOM</td>
+                </tr>
+            </table>
+        </div>
+
+        
+
+        <!-- Attendees Section -->
+<div style="font-family: Arial, sans-serif; font-size: 12px;">
+    <div style="font-size: 16px; font-weight: bold; margin-top: 20px;">Attendees</div>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+        <tr>
+            <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Attendees</th>
+            <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">YES</th>
+            <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">NO</th>
+        </tr>
+        <apex:repeat value="{!Attendees}" var="attendee">
+            <tr>
+                <apex:outputPanel layout="none" rendered="{!NOT(ISNULL(attendee.Internal_Contacts__r.name)) || NOT(ISNULL(attendee.Name__c))}">
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">
+                        <apex:outputText value="{!IF(NOT(ISNULL(attendee.Internal_Contacts__r.name)), attendee.Internal_Contacts__r.name, attendee.Name__c)}" />
+                    </td>
+                </apex:outputPanel>
+                <td style="border: 1px solid black; padding: 8px; text-align: left;">
+                    <apex:outputText rendered="{!attendee.Responded__c = 'Yes'}">Yes</apex:outputText>
+                </td>
+                <td style="border: 1px solid black; padding: 8px; text-align: left;">
+                    <apex:outputText rendered="{!attendee.Responded__c = 'No'}">No</apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+    </table>
+</div>
+
+         
+        <!-- Agenda Items Section -->
+        <div style="font-family: Arial, sans-serif; font-size: 12px;">
+            <div style="font-size: 16px; font-weight: bold; margin-top: 20px;">Agenda Items</div>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Agenda Items</th>
+                      <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Time Alloted</th>
+                    <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;">Owner</th>
+                </tr>
+                <apex:repeat value="{!agendaItems}" var="agendaItem">
+                    <tr>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!agendaItem.Name}</td>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!agendaItem.Time_Alloted__c}</td>
+                        <td style="border: 1px solid black; padding: 8px; text-align: left;">{!agendaItem.Owner.Name}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+        </div>
+    </apex:pageBlock>
+     <!-- Footer with two-color line using table -->
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-family: 'Aptos', sans-serif; font-size: 12px; color: #666;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="width: 50%; height: 4px; background-color: #0d0707;"></td>
+                <td style="width: 50%; height: 4px; background-color: #8a8a60;"></td>
+            </tr>
+        </table>
+        <div style="margin-top: 10px;">
+            <p>Office of Her Excellency</p>
+            <p>Sheikha Al Mayassa bint Hamad bin Khalifa Al-Thani</p>
+        </div>
+    </div>
+</apex:page>

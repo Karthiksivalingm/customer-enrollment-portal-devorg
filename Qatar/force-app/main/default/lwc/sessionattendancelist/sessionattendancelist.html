@@ -1,0 +1,158 @@
+<template>
+    <div class="sa-container">
+
+        <!-- ── Header ──────────────────────────────────────────────── -->
+        <div class="sa-header">
+            <div class="sa-header-left">
+                <lightning-icon icon-name="standard:event" size="small" class="sa-header-icon"></lightning-icon>
+                <span class="sa-title">Sub Event Attendance</span>
+                <span class="sa-count-badge">{totalCount}</span>
+            </div>
+            <div class="sa-header-right">
+                <div class="sa-search-wrap">
+                    <lightning-icon icon-name="utility:search" size="xx-small" class="sa-search-icon"></lightning-icon>
+                    <input type="text" class="sa-search-input"
+                           placeholder="Search guest name, event..."
+                           value={searchTerm} oninput={handleSearch} />
+                    <template lwc:if={searchTerm}>
+                        <button class="sa-search-clear" onclick={clearSearch}>✕</button>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Loading ─────────────────────────────────────────────── -->
+        <template lwc:if={isLoading}>
+            <div class="sa-state-center">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                <p class="sa-state-text">Loading attendance records...</p>
+            </div>
+        </template>
+
+        <!-- ── Error ───────────────────────────────────────────────── -->
+        <template lwc:elseif={error}>
+            <div class="sa-state-center">
+                <lightning-icon icon-name="utility:error" variant="error" size="large"></lightning-icon>
+                <p class="sa-state-text">Failed to load records. Please refresh.</p>
+            </div>
+        </template>
+
+        <!-- ── Empty ───────────────────────────────────────────────── -->
+        <template lwc:elseif={isEmpty}>
+            <div class="sa-state-center">
+                <lightning-icon icon-name="standard:event" size="large"></lightning-icon>
+                <p class="sa-state-text">No attendance records found for this sub event.</p>
+            </div>
+        </template>
+
+        <!-- ── Table ───────────────────────────────────────────────── -->
+        <template lwc:elseif={hasRecords}>
+            <div class="sa-table-wrap" onscroll={handleScroll}>
+                <table class="sa-table">
+                    <thead>
+                        <tr>
+                            <th class="col-num">#</th>
+                            <th class="col-guest-name">Guest Name</th>
+                            <th class="col-contact-id">Contact ID</th>
+                            <th class="col-registered">Registered</th>
+                            <th class="col-attended">Attended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={filteredRecords} for:item="rec">
+                            <tr key={rec.id} class={rec.rowClass}>
+
+                                <!-- Row number -->
+                                <td class="col-num">
+                                    <span class="sa-row-num">{rec.rowNum}</span>
+                                </td>
+
+                                <!-- Guest Name → Contact -->
+                                <td class="col-guest-name">
+                                    <template lwc:if={rec.contactId}>
+                                        <a href="javascript:void(0);"
+                                           data-id={rec.contactId}
+                                           onclick={handleNavigation}
+                                           class="sa-link sa-link-name">
+                                            {rec.guestName}
+                                        </a>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="sa-cell-text">{rec.guestName}</span>
+                                    </template>
+                                </td>
+
+                                <!-- Contact ID → Guest List record -->
+                                <td class="col-contact-id">
+                                    <template lwc:if={rec.guestListId}>
+                                        <a href="javascript:void(0);"
+                                           data-id={rec.guestListId}
+                                           onclick={handleNavigation}
+                                           class="sa-link">
+                                            {rec.contactExtId}
+                                        </a>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="sa-no-val">—</span>
+                                    </template>
+                                </td>
+
+                                <!-- Registered -->
+                                <td class="col-registered">
+                                    <template lwc:if={rec.registered}>
+                                        <span class="sa-badge sa-badge-yes">
+                                            <span class="sa-badge-dot"></span>Yes
+                                        </span>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="sa-badge sa-badge-no">
+                                            <span class="sa-badge-dot"></span>No
+                                        </span>
+                                    </template>
+                                </td>
+
+                                <!-- Attended -->
+                                <td class="col-attended">
+                                    <template lwc:if={rec.attended}>
+                                        <span class="sa-badge sa-badge-yes">
+                                            <span class="sa-badge-dot"></span>Yes
+                                        </span>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="sa-badge sa-badge-no">
+                                            <span class="sa-badge-dot"></span>No
+                                        </span>
+                                    </template>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- No search results -->
+            <template lwc:if={noSearchResults}>
+                <div class="sa-state-center">
+                    <lightning-icon icon-name="utility:search" size="medium"></lightning-icon>
+                    <p class="sa-state-text">No records match "<strong>{searchTerm}</strong>"</p>
+                    <button class="sa-btn-clear" onclick={clearSearch}>Clear Search</button>
+                </div>
+            </template>
+
+            <!-- Footer -->
+            <template lwc:if={isLoadingMore}>
+                <div class="sa-load-more">
+                    <lightning-spinner alternative-text="Loading more" size="small"></lightning-spinner>
+                    <span>Loading more records...</span>
+                </div>
+            </template>
+            <div class="sa-footer">
+                Showing <strong>{loadedCount}</strong> of <strong>{totalCount}</strong> records
+                &nbsp;|&nbsp; Attended: <strong>{attendedCount}</strong>
+                &nbsp;|&nbsp; Registered: <strong>{registeredCount}</strong>
+                <template lwc:if={hasMore}>&nbsp;&mdash; scroll down to load more</template>
+            </div>
+        </template>
+
+    </div>
+</template>

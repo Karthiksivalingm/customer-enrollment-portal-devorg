@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Event List Reports" icon-name="standard:report">
+        <div class="slds-p-around_small">
+            <lightning-combobox
+                name="reportSelect"
+                label="Select Report"
+                placeholder="Choose a report"
+                options={reportOptions}
+                value={selectedReportId}
+                onchange={handleReportChange}
+            ></lightning-combobox>
+            <div class="slds-p-top_small">
+                <lightning-button
+                    label="Generate"
+                    variant="brand"
+                    disabled={isGenerateDisabled}
+                    onclick={handleGenerateClick}
+                ></lightning-button>
+                <lightning-button
+                    class="slds-m-left_x-small"
+                    label="Generate All"
+                    variant="neutral"
+                    onclick={handleGenerateAllClick}
+                ></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

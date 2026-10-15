@@ -1,0 +1,47 @@
+<apex:page controller="ContactBio" contenttype="application/msword">
+   
+    <apex:pageBlock >
+        <!-- Header with logo -->
+        <div style="text-align: right; margin-bottom: 20px;">
+            <apex:image value="{!$Resource.Logo}" style="width: 150px; height: 150px;" />
+        </div>
+
+        <!-- Section for Name and Job Title -->
+        <div style="background-color:#8a8a60; padding: 10px; color: white; font-family: 'Aptos', sans-serif; font-size: 23px;">
+            <div style="text-align: left; font-weight: bold;">
+                <apex:outputText value="{!Con.Name}"/>
+            </div>
+            <div style="text-align: left;">
+                <apex:outputText value="{!Con.Title}"/>
+            </div>
+        </div>
+
+        <!-- Professional and Personal Background Section -->
+        <apex:pageBlockSection columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+                    <div style="padding: 5px; font-family: 'Aptos', sans-serif; font-size: 18px; margin-top: 10px; margin-right: 20px;">
+                        <apex:outputText value="{!Con.Professional_Personal_background__c}" escape="false" style="font-weight: normal;" />
+                    </div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:image id="theImage" value="{!'/servlet/servlet.FileDownload?file='+Attach.id}" style="width: auto; height: auto; margin-bottom: 20px; margin-left: 20px;" />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <!-- Footer with two-color line using table -->
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-family: 'Aptos', sans-serif; font-size: 12px; color: #666;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="width: 50%; height: 4px; background-color: #0d0707;"></td>
+                <td style="width: 50%; height: 4px; background-color: #8a8a60;"></td>
+            </tr>
+        </table>
+        <div style="margin-top: 10px;">
+            <p>Office of Her Excellency</p>
+            <p>Sheikha Al Mayassa bint Hamad bin Khalifa Al-Thani</p>
+        </div>
+    </div>
+</apex:page>

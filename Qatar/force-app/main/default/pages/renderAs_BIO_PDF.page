@@ -1,0 +1,106 @@
+<apex:page id="showImagePage" standardController="Contact" extensions="ShowPicture" renderAs="pdf" standardStylesheets="false" showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        
+        <head>
+            <link rel="stylesheet" href="{!URLFOR($Resource.PictureUploader, '/assets/styles/salesforce-lightning-design-system.min.css')}" />  
+            
+            <style type="text/css">
+                .container {
+                    display: table;
+                    width: 100%;
+                }
+                .wrapper { 
+                    margin: 0 auto; 
+                    text-align: right;
+                    position: absolute;
+                    right: 0px;
+                    width: 30%;
+                }
+                .wrapperFields{
+                    margin: 0 auto; 
+                    text-align: left;
+                    position: absolute;
+                    width: 50%;
+                    left:0%;
+                    overflow-wrap: break-word;
+                }
+                .wrapperLongTxt{
+                    margin: 0 auto; 
+                    text-align: left;
+                    position: absolute;
+                    left: 0px;
+                    width: 100%;
+                }
+                .makeBold{
+                    font-weight: bold !important;
+                }
+                .slds-media__figure { margin-right: 0; }
+                
+                .contact-img { 
+                        background-repeat: no-repeat !important; 
+                        background-position: center center !important;
+                        background-size: contain !important;
+                        position: absolute !important;
+                        width: 100%;
+                        overflow: hidden;
+                }
+            </style>
+        </head>
+        
+        <body>
+            <p align="left" class="makeBold">BIO</p><br/>
+            <div class="slds">
+                <section class="container">
+                    <div class="wrapper">
+                        <div class="slds-media__figure">
+                            <apex:outputpanel id="image" layout="block">
+                                <span class="slds-avatar">
+                                    <apex:image value="{!URLFOR($Resource.PictureUploader, '/default-avatar.png')}" rendered="{!NOT( hasPicture )}" styleClass="contact-img" />
+                                    <apex:image value="/servlet/servlet.FileDownload?file={!file.Id}" rendered="{!hasPicture}" styleClass="contact-img" />
+                                </span>
+                            </apex:outputpanel>
+                        </div>    
+                    </div>
+                    
+                    <div class="wrapperFields">
+                        <apex:outputLabel value="Name: " for="theName" styleClass="makeBold"/>
+                        <apex:outputText value="{!Contact.Name}" id="theName"/> <br/>
+                        <apex:outputLabel value="Job Title: " for="theJob" styleClass="makeBold"/>
+                        <apex:outputText value="{!Contact.Title}" id="theJob"/> <br/>
+                        <apex:outputLabel value="Company Affiliated: " for="theComp" styleClass="makeBold"/>
+                        <apex:outputText value="{!Contact.Company__c}" id="theComp"/><br/>
+                        <br/>
+                        <apex:outputLabel value="Special Interests:" for="theSI" styleClass="makeBold"/><br/>
+                        <apex:outputText value="{!Contact.Special_Interests__c}" id="theSI"/><br/>
+                        <apex:outputLabel value="About Individual:" for="theAI" styleClass="makeBold"/><br/>
+                        <apex:outputText value="{!Contact.About_Individual__c}" id="theAI"/><br/>
+                        <apex:outputLabel value="Notes:" for="theNotes" styleClass="makeBold"/><br/>
+                        <apex:outputText value="{!Contact.NotesBio__c}" id="theNotes"/><br/>
+                    </div>
+                </section>
+                 <!--div class="wrapperLongTxt">
+                     <apex:outputLabel value="Special Interests:" for="theSI" styleClass="makeBold"/><br/>
+                     <apex:outputText value="{!Contact.Special_Interests__c}" id="theSI"/><br/>
+                     <apex:outputLabel value="About Individual:" for="theAI" styleClass="makeBold"/><br/>
+                     <apex:outputText value="{!Contact.About_Individual__c}" id="theAI"/><br/>
+                     <apex:outputLabel value="Notes:" for="theNotes" styleClass="makeBold"/><br/>
+                     <apex:outputText value="{!Contact.NotesBio__c}" id="theNotes"/><br/>
+                </div-->
+            </div>
+            
+        </body>
+        
+    </html>
+    
+
+<!--table>
+    </table>
+    <table cellspacing="5" cellpadding="5" width="20px">
+        <tr><th>Special Interests:</th></tr><tr>
+        <td><apex:outputText value="{!Contact.Special_Interests__c}"/></td></tr>
+        <tr><th>About Individual:</th></tr><tr>
+        <td><apex:outputText value="{!Contact.About_Individual__c}"/></td></tr>
+         <tr><th>Notes:</th></tr><tr>
+        <td><apex:outputText value="{!Contact.NotesBio__c}"/></td></tr>
+    </table-->
+</apex:page>

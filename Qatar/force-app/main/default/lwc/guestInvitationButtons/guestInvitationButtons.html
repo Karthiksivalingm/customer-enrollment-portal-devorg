@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Guest Invitation Report">
+        <div class="slds-p-around_medium">
+            <template if:true={hasError}>
+                <div class="slds-text-color_error slds-m-bottom_small">{error}</div>
+            </template>
+
+            <lightning-input
+                type="checkbox"
+                label="Generate All"
+                checked={generateAll}
+                onchange={handleGenerateAllToggle}
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <lightning-combobox
+                label="Guest Tier"
+                placeholder="Select a tier"
+                options={tierOptions}
+                onchange={handleTierChange}
+                disabled={generateAll}
+                class="slds-m-bottom_small"
+            ></lightning-combobox>
+
+            <lightning-combobox
+                label="Invitation Status"
+                placeholder="Select a status"
+                options={statusOptions}
+                onchange={handleStatusChange}
+                disabled={generateAll}
+                class="slds-m-bottom_small"
+            ></lightning-combobox>
+
+            <lightning-button
+                variant="brand"
+                label="Generate Report"
+                onclick={handleGenerate}
+                disabled={isGenerateDisabled}
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

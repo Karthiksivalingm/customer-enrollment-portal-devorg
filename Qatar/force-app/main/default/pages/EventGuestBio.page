@@ -1,0 +1,308 @@
+<apex:page renderAs="pdf"
+           controller="EventGuestBioController"
+           showHeader="false"
+           sidebar="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           docType="html-5.0">
+<html>
+<head>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 11pt;
+        color: #000;
+        background: #fff;
+        margin: 0;
+        padding: 0 0 70px 0;   /* Reserve footer space */
+    }
+
+    .page-number:before { content: counter(page); }
+
+    .page-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 10pt;
+        color: #555;
+    }
+    .footer-bar-black  { float: left;  width: 50%; height: 3px; background-color: #111; }
+    .footer-bar-yellow { float: right; width: 50%; height: 3px; background-color: #d6d602; }
+    .footer-clear      { clear: both; }
+
+    .footer-body {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 5px;
+    }
+    .footer-left {
+        text-align: center;
+        vertical-align: top;
+        width: 60%;
+        padding: 0 4px;
+    }
+    .footer-right {
+        text-align: right;
+        vertical-align: top;
+        width: 40%;
+        padding: 0 4px;
+    }
+    .footer-office-name {
+        font-weight: bold;
+        font-size: 10pt;
+        color: #000;
+        line-height: 1.5;
+        display: block;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .footer-sheikha-name,
+    .footer-page-num,
+    .footer-event-title {
+        font-size: 9pt;
+        color: #333;
+        line-height: 1.5;
+        display: block;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .cover-wrap {
+        position: relative;
+        page-break-after: always;
+        width: 100%;
+        text-align: center;
+        padding-top: 120mm;
+    }
+    .cover-content {
+        text-align: center;
+        width: 100%;
+    }
+    .cover-logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 160px;
+        height: 150px;
+    }
+    .cover-heading {
+        font-size: 22pt;
+        font-weight: bold;
+        margin-bottom: 14px;
+    }
+    .cover-subtitle {
+        font-size: 18pt;
+        font-weight: bold;
+        margin-bottom: 14px;
+    }
+    .cover-date {
+        font-size: 16pt;
+        font-weight: bold;
+    }
+
+    /* Each guest starts on its own page. Spacing after the box is handled
+       by padding INSIDE the wrapper (below the table), not by margin on
+       an element that sits directly against a forced page break — a
+       trailing margin on a pre-break element gets collapsed or shoved
+       onto the following page by the PDF engine, which is what was
+       causing the title box to land in a different vertical spot from
+       guest to guest. Padding inside a wrapper that itself doesn't
+       break is not subject to that collapse. */
+    .new-page-guest {
+        page-break-before: always;
+        page-break-inside: avoid;
+    }
+
+    /* Kept only for continuation chunks of the SAME guest (long bios
+       spilling onto extra pages) — no page-break-inside:avoid here,
+       since forcing atomicity on a chunk that is, by definition, an
+       overflow fragment is what caused unpredictable splitting before. */
+    .new-page-chunk {
+        page-break-before: always;
+    }
+
+    /* CONTINUATION BOX — wraps overflow text so a bio that spills onto
+       a 2nd/3rd page still reads as "the same box" as page 1, instead
+       of dropping to bare unbordered paragraphs. Same border, width,
+       and padding as .bio-table's text cell; deliberately no title row
+       and no photo column, since those already appeared on page 1. */
+    .bio-continuation-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #4d4d4d;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12pt;
+        text-align: left;
+    }
+    .bio-continuation-table td {
+        border: 1px solid #4d4d4d;
+        padding: 8px;
+        vertical-align: top;
+        width: 75%;
+        font-size: 12pt;
+        line-height: 1.6;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: justify;
+        text-align-last: left;
+    }
+
+    .page-content-wrap {
+        display: block;
+    }
+
+    .bio-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #4d4d4d;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12pt;
+        text-align: left;
+        margin-bottom: 0; /* spacing now comes from wrapper padding, see above */
+        /* page-break-inside intentionally NOT set to avoid: chunks are
+           already sized (via CHUNK_LIMIT in the controller) to fit one
+           page, and forcing avoid on a chunk that turns out to be
+           slightly larger than estimated causes the renderer to give
+           up mid-box - producing a blank bordered box with the real
+           text pushed onto the next page instead. Letting the box flow
+           naturally means a rare oversized chunk just continues onto
+           the next page (readable, if momentarily borderless) instead
+           of vanishing. */
+    }
+    /* Title row is a plain table row/cell, not a table-head row/header
+       cell pair - a table-head row gets treated as a repeating running
+       header by the PDF render engine whenever a table is forced to
+       break across pages, which can detach the title bar from the
+       body row. A normal row keeps the whole guest box atomic. */
+    .bio-title-row td {
+        background-color: #D7C30D;
+        color: #ffffff;
+        font-family: Aptos, Helvetica, Arial, sans-serif;
+        font-size: 12pt;
+        border: 1px solid #4d4d4d;
+        padding: 10px;
+    }
+    .bio-table td {
+        border: 1px solid #4d4d4d;
+        padding: 8px;
+        vertical-align: top;
+    }
+    .td-text {
+        width: 75%;
+        font-size: 12pt;
+        line-height: 1.6;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: justify;
+        /* Ensures the final line of the block is left-aligned instead
+           of being stretched to fill the full width - needed since a
+           justified block's very last line would otherwise get
+           over-spread. */
+        text-align-last: left;
+    }
+    .td-photo {
+        width: 25%;
+        text-align: center;
+        vertical-align: top;
+        padding: 8px;
+    }
+    .td-photo img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+    .photo-na {
+        font-size: 11pt;
+        color: #666;
+        padding-top: 40px;
+        text-align: center;
+    }
+    .no-guests {
+        text-align: center;
+        padding-top: 200px;
+        font-size: 14pt;
+        color: #666;
+    }
+    .th-name {
+        display: block;
+        color: #ffffff;
+        font-family: Aptos, Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 12pt;
+        line-height: 1.2;
+    }
+    .th-title {
+        display: block;
+        color: #ffffff;
+        font-family: Aptos, Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 12pt;
+        line-height: 1.2;
+    }
+</style>
+</head>
+<body>
+
+    <!-- FIXED FOOTER -->
+    <div class="page-footer">
+        <div class="footer-bar-black"></div>
+        <div class="footer-bar-yellow"></div>
+        <div class="footer-clear"></div>
+        <table class="footer-body">
+            <tr>
+                <td class="footer-left">
+                    <span class="footer-office-name">Office of Her Excellency</span>
+                    <span class="footer-sheikha-name">Sheikha Al Mayassa bint Hamad bin Khalifa Al-Thani</span>
+                </td>
+                <td class="footer-right">
+                    <span class="footer-page-num">Page No: <span class="page-number"></span></span>
+                    <span class="footer-event-title"><apex:outputText value="{!eventTitle}" /></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- NO GUESTS -->
+    <apex:outputPanel rendered="{!hasGuests == false}">
+        <div class="no-guests">No guest contacts were found for this event.</div>
+    </apex:outputPanel>
+
+    <!-- CONTENT -->
+    <apex:outputPanel rendered="{!hasGuests}">
+
+        <!-- COVER PAGE -->
+        <div class="cover-wrap">
+            <apex:image value="{!$Resource.Logo}" styleClass="cover-logo" />
+            <div class="cover-content">
+                <div class="cover-heading">Guest Biographies</div>
+                <apex:outputPanel rendered="{!LEN(eventDateStr) > 0}">
+                    <div class="cover-date">
+                        <apex:outputText value="{!eventDateStr}" />
+                    </div>
+                </apex:outputPanel>
+            </div>
+        </div>
+
+        <!-- ALL GUEST BIO PAGES — pre-rendered into a single HTML string
+             in Apex (EventGuestBioController.guestBioHtml) and emitted
+             with one apex:outputText, instead of apex:repeat over the
+             guest list (and a nested apex:repeat over each guest's
+             paragraph chunks). apex:repeat and other iteration
+             components are hard-limited to 1,000 items per collection
+             in Visualforce - with 1,115+ guests that limit is what
+             throws "Collection size exceeds maximum size of 1,000".
+             A single outputText has no such item-count limit; only the
+             underlying string/view-state size limits apply, which a
+             guest list in the thousands stays well within. -->
+        <apex:outputText value="{!guestBioHtml}" escape="false" />
+
+    </apex:outputPanel>
+
+</body>
+</html>
+</apex:page>

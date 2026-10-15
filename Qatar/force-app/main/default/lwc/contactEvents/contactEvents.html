@@ -1,0 +1,243 @@
+<template>
+    <lightning-card title="Events & Notes" icon-name="standard:event">
+
+        <!-- Search & Filter Bar -->
+        <div slot="actions">
+            <lightning-input
+                type="search"
+                placeholder="Search events..."
+                onchange={handleSearch}
+                class="search-input">
+            </lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+
+            <!-- Loading Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner
+                    alternative-text="Loading"
+                    size="medium">
+                </lightning-spinner>
+            </template>
+
+            <!-- Error -->
+            <template if:true={error}>
+                <div class="slds-notify slds-notify_alert slds-alert_error">
+                    <p>Error loading events: {error}</p>
+                </div>
+            </template>
+
+            <!-- No Events -->
+            <template if:true={noEvents}>
+                <div class="slds-illustration slds-illustration_small slds-p-around_medium">
+                    <p class="slds-text-color_weak slds-text-align_center">
+                        No events found for this contact.
+                    </p>
+                </div>
+            </template>
+
+            <!-- Events Table -->
+            <template if:true={hasEvents}>
+                <div class="table-container">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="slds-text-title_caps header-col" onclick={sortBySubject}>
+                                    <div class="slds-truncate">
+                                        Subject
+                                        <template if:true={sortedBySubject}>
+                                            <lightning-icon
+                                                icon-name={sortIcon}
+                                                size="xx-small"
+                                                class="slds-m-left_xx-small">
+                                            </lightning-icon>
+                                        </template>
+                                    </div>
+                                </th>
+                                <th class="slds-text-title_caps header-col" onclick={sortByDate}>
+                                    <div class="slds-truncate">
+                                        Start Date
+                                        <template if:true={sortedByDate}>
+                                            <lightning-icon
+                                                icon-name={sortIcon}
+                                                size="xx-small"
+                                                class="slds-m-left_xx-small">
+                                            </lightning-icon>
+                                        </template>
+                                    </div>
+                                </th>
+                                <th class="slds-text-title_caps header-col">
+                                    <div class="slds-truncate">End Date</div>
+                                </th>
+                                <th class="slds-text-title_caps header-col">
+                                    <div class="slds-truncate">Description</div>
+                                </th>
+                                <th class="slds-text-title_caps header-col">
+                                    <div class="slds-truncate">CRM Notes</div>
+                                </th>
+                                <th class="slds-text-title_caps header-col">
+                                    <div class="slds-truncate">PA Notes</div>
+                                </th>
+                                <th class="slds-text-title_caps header-col">
+                                    <div class="slds-truncate">Actions</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={filteredEvents} for:item="event">
+                                <tr key={event.Id} class="slds-hint-parent">
+                                    <td>
+                                        <div class="slds-truncate">
+                                            <a onclick={handleEventClick}
+                                               data-id={event.Id}
+                                               class="event-link">
+                                                {event.Subject}
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">
+                                            <lightning-formatted-date-time
+                                                value={event.StartDateTime}
+                                                year="numeric"
+                                                month="short"
+                                                day="2-digit"
+                                                hour="2-digit"
+                                                minute="2-digit">
+                                            </lightning-formatted-date-time>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">
+                                            <lightning-formatted-date-time
+                                                value={event.EndDateTime}
+                                                year="numeric"
+                                                month="short"
+                                                day="2-digit"
+                                                hour="2-digit"
+                                                minute="2-digit">
+                                            </lightning-formatted-date-time>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate cell-truncate" title={event.Description}>
+                                            {event.Description}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate cell-truncate" title={event.CRM_Notes__c}>
+                                            {event.CRM_Notes__c}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate cell-truncate" title={event.PA_Notes__c}>
+                                            {event.PA_Notes__c}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <lightning-button-icon
+                                            icon-name="utility:preview"
+                                            variant="border-filled"
+                                            alternative-text="View"
+                                            title="View Details"
+                                            data-id={event.Id}
+                                            onclick={handleViewDetails}>
+                                        </lightning-button-icon>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Record Count -->
+                <div class="slds-m-top_small slds-text-color_weak slds-text-body_small">
+                    Showing {filteredEvents.length} of {totalEvents} events
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <!-- Detail Modal -->
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header modal-header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
+                    </button>
+                    <h2 class="slds-modal__title">{selectedEvent.Subject}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div class="slds-grid slds-gutters slds-wrap">
+
+                        <!-- Start Date -->
+                        <div class="slds-col slds-size_1-of-2 slds-m-bottom_medium">
+                            <p class="field-label">Start Date & Time</p>
+                            <lightning-formatted-date-time
+                                value={selectedEvent.StartDateTime}
+                                year="numeric"
+                                month="long"
+                                day="2-digit"
+                                hour="2-digit"
+                                minute="2-digit">
+                            </lightning-formatted-date-time>
+                        </div>
+
+                        <!-- End Date -->
+                        <div class="slds-col slds-size_1-of-2 slds-m-bottom_medium">
+                            <p class="field-label">End Date & Time</p>
+                            <lightning-formatted-date-time
+                                value={selectedEvent.EndDateTime}
+                                year="numeric"
+                                month="long"
+                                day="2-digit"
+                                hour="2-digit"
+                                minute="2-digit">
+                            </lightning-formatted-date-time>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                            <p class="field-label">Description</p>
+                            <p class="field-value">{selectedEvent.Description}</p>
+                        </div>
+
+                        <!-- CRM Notes -->
+                        <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                            <p class="field-label">CRM Notes</p>
+                            <div class="notes-box">
+                                <p class="field-value">{selectedEvent.CRM_Notes__c}</p>
+                            </div>
+                        </div>
+
+                        <!-- PA Notes -->
+                        <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                            <p class="field-label">PA Notes</p>
+                            <div class="notes-box">
+                                <p class="field-value">{selectedEvent.PA_Notes__c}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Close"
+                        onclick={closeModal}>
+                    </lightning-button>
+                    <lightning-button
+                        label="Open Event"
+                        variant="brand"
+                        data-id={selectedEvent.Id}
+                        onclick={handleEventClick}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+</template>

@@ -1,0 +1,17 @@
+<apex:page controller="ContactBioPDFController" renderAs="pdf" showHeader="false">
+    <h1 style="text-align:center;">Bio for {!contact.Name}</h1>
+
+    <table border="1" width="100%" cellpadding="5" style="border-collapse: collapse;">
+        <tr><th>Title</th><td>{!contact.Title}</td></tr>
+        <tr><th>Email</th><td>{!contact.Email}</td></tr>
+        <tr><th>Phone</th><td>{!contact.Phone}</td></tr>
+        <tr><th>Company</th><td>{!contact.Company__c}</td></tr>
+        <tr><th>Birthdate</th><td>{!contact.Birthdate}</td></tr>
+        <tr><th>Mobile</th><td>{!contact.MobilePhone}</td></tr>
+        <tr><th>Description</th><td>{!contact.Description}</td></tr>
+        <tr><th>Admin Contact</th><td>{!contact.Admin_Contact__c}</td></tr>
+        <tr><th>Instagram</th><td>{!contact.Instagram_Handle__c}</td></tr>
+        <tr><th>LinkedIn</th><td>{!contact.LinkedIn__c}</td></tr>
+        <tr><th>Website</th><td>{!contact.Website1__c}</td></tr>
+    </table>
+</apex:page>

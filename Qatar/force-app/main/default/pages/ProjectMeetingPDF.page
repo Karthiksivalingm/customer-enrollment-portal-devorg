@@ -1,0 +1,130 @@
+<apex:page controller="ProjectMeetingPDFController" renderAs="pdf">
+<!-- Header with Logo -->
+<div class="header-container" style="display: flex; align-items: center; justify-content: space-between;">
+    <img src="https://qatarmuseums2--qatarsand--c.sandbox.vf.force.com/resource/1718783803000/QA" class="logo" style="max-height: 50px;"/>
+    
+    <!-- Centered Section Header -->
+    <div style="flex-grow: 1; text-align: center;">
+        <h1 style="margin: 0;">Project Details</h1>
+    </div>
+</div>
+
+
+ 
+    <!-- Project Meeting Details Table -->
+    <apex:pageBlock title="Project Meeting Information">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Project Title</th>
+                <th style="border: 1px solid black; padding: 8px;">Category</th>
+                <th style="border: 1px solid black; padding: 8px;">Priority</th>
+                <th style="border: 1px solid black; padding: 8px;">Type</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{!projectMeeting.Project_Title__c}</td>
+                <td style="border: 1px solid black; padding: 8px;">{!projectMeeting.Category__c}</td>
+                <td style="border: 1px solid black; padding: 8px;">{!projectMeeting.Priority__c}</td>
+                <td style="border: 1px solid black; padding: 8px;">{!projectMeeting.Type__c}</td>
+            </tr>
+        </table>
+
+        <!-- Other Fields (CP Feedback, Dates) -->
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">CP Feedback</th>
+                <th style="border: 1px solid black; padding: 8px;">Start Date</th>
+                <th style="border: 1px solid black; padding: 8px;">End Date</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{!projectMeeting.CP_Feedback__c}</td>
+                <td style="border: 1px solid black; padding: 8px;">{!projectMeeting.Start_date__c}</td>
+                <td style="border: 1px solid black; padding: 8px;">{!projectMeeting.End_date__c}</td>
+            </tr>
+        </table>
+    </apex:pageBlock>
+
+    <!-- Action Items Section -->
+    <apex:pageBlock title="Action Items">
+        <apex:repeat value="{!actionItems}" var="actionItem">
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
+                 <tr>
+                <th style="border: 1px solid black; padding: 8px;">Action Item</th>
+                         <th style="border: 1px solid black; padding: 8px;">Action Item Name</th>
+                <th style="border: 1px solid black; padding: 8px;">Status</th>
+                <th style="border: 1px solid black; padding: 8px;">Due Date</th>
+                <th style="border: 1px solid black; padding: 8px;">Owner</th>
+            </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">{!actionItem.Name}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!actionItem.Action__c}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!actionItem.Status__c}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!actionItem.Due_Date__c}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!actionItem.Owner.Name}</td>
+                </tr>
+            </table>
+        </apex:repeat>
+    </apex:pageBlock>
+
+     
+
+
+    <!-- Meeting Requests Section -->
+    <apex:pageBlock title="Meeting Requests">
+        <apex:repeat value="{!meetingRequests}" var="meetingRequest">
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
+                 <tr>
+                <th style="border: 1px solid black; padding: 8px;">Name</th>
+                <th style="border: 1px solid black; padding: 8px;">Subject</th>
+                <th style="border: 1px solid black; padding: 8px;">Status</th>
+                      <th style="border: 1px solid black; padding: 8px;">Meeting Type</th>
+            </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">{!meetingRequest.Name}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!meetingRequest.Subject__c}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!meetingRequest.Status__c}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!meetingRequest.Meeting_Type__c}</td>
+                </tr>
+            </table>
+        </apex:repeat>
+    </apex:pageBlock>
+
+<!-- MOM Section -->
+<apex:pageBlock title="Minutes of Meetings">
+    <apex:repeat value="{!projectMinutes}" var="minute">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Name</th>
+                <th style="border: 1px solid black; padding: 8px;">Owner</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{!minute.Minutes_Of_Meeting__r.Name}</td>
+                <td style="border: 1px solid black; padding: 8px;">{!minute.Owner.Name}</td>
+            </tr>
+        </table>
+    </apex:repeat>
+</apex:pageBlock>
+
+    
+    <!-- Attachments Section -->
+    <apex:pageBlock title="Notes and Attachments">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">File Name</th>
+                <th style="border: 1px solid black; padding: 8px;">Created Date</th>
+                <th style="border: 1px solid black; padding: 8px;">Download Link</th>
+            </tr>
+            <apex:repeat value="{!attachments}" var="attachment">
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">{!attachment.ContentDocument.Title}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{!attachment.ContentDocument.CreatedDate}</td>
+                    <td style="border: 1px solid black; padding: 8px;">
+                      <!--  <a href="https://qatarmuseums2--qatarsand.sandbox.my.salesforce.com/sfc/p/Ae000001ReAT/a/Ae0000006K5h/9qRQCgQKx.fS8o5aLzWnLYtWhKE_8KeTipc_BCXxplQ" target="_blank">Download File</a>  -->
+              <a href="https://qatarmuseums2--qatarsand.sandbox.lightning.force.com/lightning/r/{!attachment.ContentDocument.id}/view" target="_blank">Download File  </a> 
+
+                    </td>
+                </tr>
+
+            </apex:repeat>
+        </table>
+    </apex:pageBlock>
+</apex:page>

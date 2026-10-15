@@ -1,0 +1,9 @@
+<apex:page standardController="Contact" extensions="ContactDetailController">
+    <apex:pageBlock title="Contact Details">
+        <apex:pageBlockSection >
+            <apex:outputField value="{!Contact.FirstName}" rendered="{!showFirstName}"/>
+            <apex:outputField value="{!Contact.LastName}" rendered="{!showLastName}"/>
+            <!-- Add other fields to display -->
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

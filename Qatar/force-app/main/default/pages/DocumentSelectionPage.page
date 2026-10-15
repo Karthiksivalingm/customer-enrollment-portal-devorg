@@ -1,0 +1,9 @@
+<apex:page controller="DocumentController">
+    <apex:form >
+        <apex:selectList value="{!selectedFormat}" size="1">
+            <apex:selectOption itemLabel="PDF" itemValue="PDF"/>
+            <apex:selectOption itemLabel="Word" itemValue="Word"/>
+        </apex:selectList>
+        <apex:commandButton value="Generate Document" action="{!generateDocument}"/>
+    </apex:form>
+</apex:page>

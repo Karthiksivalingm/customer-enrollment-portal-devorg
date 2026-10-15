@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Guest Category Reports">
+        <div class="slds-p-around_medium">
+            <template if:true={hasError}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+            <template for:each={categories} for:item="cat">
+                <lightning-button
+                    key={cat}
+                    label={cat}
+                    data-category={cat}
+                    onclick={handleClick}
+                    class="slds-m-right_x-small slds-m-bottom_x-small"
+                ></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,130 @@
+<apex:page renderAs="pdf" controller="InvitationDownloadController"
+           contentType="application/pdf#Invitation_{!invitation.Name}.pdf"
+           showHeader="false" sidebar="false">
+
+    <apex:variable var="pageIndex" value="{!0}" />
+
+    <apex:repeat value="{!guestDetails}" var="guest">
+
+        <apex:outputPanel rendered="{!NOT(ISBLANK(guest.contact.Professional_Personal_Backgrounds__c))}">
+            <div style="{!IF(pageIndex == 0, '', 'page-break-before: always;')}">
+
+                <!-- First Page: Logo + Event Name -->
+                <apex:outputPanel rendered="{!pageIndex == 0}">
+                    <div style="text-align: right; margin-bottom: 20px;">
+                        <apex:image value="{!$Resource.Logo}" style="width: 160px; height: 150px;" />
+                    </div>
+                    <div style="text-align: left;
+                                font-family: 'Helvetica', Arial, sans-serif;
+                                font-size: 18pt;
+                                font-weight: bold;
+                                margin-bottom: 15px;">
+                        {!invitation.Name}
+                    </div>
+                </apex:outputPanel>
+
+                <!-- Guest Table -->
+                <table width="100%" cellspacing="0" cellpadding="10"
+                       style="border-collapse: collapse;
+                              border: 1px solid #4d4d4d;
+                              font-family: 'Helvetica', 'Arial', sans-serif;
+                              font-size: 11pt;
+                              margin-bottom: 40px;
+                              text-align: left;">
+
+                    <!-- Header Row -->
+                    <thead>
+                        <tr>
+                            <th colspan="2"
+                                style="font-size: 12pt;
+                                       border: 1px solid #4d4d4d;
+                                       background-color: #f0e902;
+                                       color: black;
+                                       text-align: left;
+                                       padding: 10px;">
+                                <div style="font-weight: bold;">
+                                    {!guest.contact.Name}
+                                </div>
+                                <apex:outputPanel rendered="{!NOT(ISBLANK(guest.contact.Title))}">
+                                    <div style="font-weight: normal;">
+                                        {!guest.contact.Title}
+                                    </div>
+                                </apex:outputPanel>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <!-- Bio + Image Row -->
+                    <tbody>
+                        <tr valign="top">
+                            <!-- Left: Bio -->
+                            <td style="padding: 6px 8px;
+                                       font-family: 'Helvetica', 'Arial', sans-serif;
+                                       font-size: 11pt;
+                                       line-height: 1.6;
+                                       text-align: justify;
+                                       white-space: pre-line;
+                                       word-wrap: break-word;
+                                       border: 1px solid #4d4d4d;
+                                       box-sizing: border-box;">
+                                {!guest.contact.Professional_Personal_Backgrounds__c}
+                            </td>
+
+                            <!-- Right: Image + Instagram -->
+                            <td width="25%" valign="top" align="center"
+                                style="border: 1px solid #4d4d4d; padding: 10px;">
+
+                                <!-- Image -->
+                                <apex:outputPanel rendered="{!NOT(ISNULL(guest.attachment))}">
+                                    <div style="width: 100%; text-align: center;">
+                                        <img src="{!'/servlet/servlet.FileDownload?file=' + guest.attachment.Id}"
+                                             style="width: 100%;
+                                                    max-width: 180px;
+                                                    max-height: 220px;
+                                                    object-fit: contain;" />
+                                    </div>
+                                </apex:outputPanel>
+
+                                <!-- Instagram -->
+                                <apex:outputPanel rendered="{!NOT(ISBLANK(guest.contact.Instagram_Handle__c))}">
+                                    <div style="margin-top: 10px;
+                                                font-size: 10pt;
+                                                font-family: 'Helvetica', Arial, sans-serif;
+                                                color: #444;">
+                                        <strong>Instagram:</strong> {!guest.contact.Instagram_Handle__c}
+                                    </div>
+                                </apex:outputPanel>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Increment page index -->
+            <apex:variable var="pageIndex" value="{!pageIndex + 1}" />
+        </apex:outputPanel>
+
+    </apex:repeat>
+
+    <!-- Footer -->
+    <div style="position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 60px;
+                text-align: center;
+                font-family: 'Helvetica', Arial, sans-serif;
+                font-size: 11pt;
+                color: #666;">
+        <div style="width: 100%; height: 3px;">
+            <div style="width: 50%; float: left; height: 3px; background-color: #0d0707;"></div>
+            <div style="width: 50%; float: right; height: 3px; background-color: #d6d602;"></div>
+        </div>
+        <div style="clear: both; margin-top: 3px;">
+            <p style="margin: 2px;">Office of Her Excellency</p>
+            <p style="margin: 0;">Sheikha Al Mayassa bint Hamad bin Khalifa Al-Thani</p>
+        </div>
+    </div>
+
+</apex:page>

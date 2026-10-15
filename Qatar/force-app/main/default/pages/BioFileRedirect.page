@@ -1,0 +1,76 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" contentType="text/html" controller="ContactBio">
+<html>
+<head>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; }
+    body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f4f4f4; font-family: Arial, sans-serif; }
+
+    .toast-center {
+        display: none;
+        background: #fff;
+        border-radius: 8px;
+        padding: 5px 10px;
+        max-width: 385px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        animation: popIn 0.3s ease;
+        margin: 0 auto;
+        position: relative;
+    }
+    .x-btn {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: #999;
+        cursor: pointer;
+    }
+    .x-btn:hover { color: #333; }
+    .toast-icon { font-size: 18px; margin-bottom: 5px; }
+    .toast-title { font-size: 20px; font-weight: bold; color: #c0392b; margin-bottom: 10px; }
+    .toast-msg { font-size: 14px; color: #666; line-height: 1.6; }
+
+    @keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+    @keyframes popOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.8); } }
+</style>
+</head>
+<body>
+
+    <div class="toast-center" id="bioToast" style="display: {!IF(isBioEmpty, 'block', 'none')};">
+        <button class="x-btn" onclick="goBack()">&#10005;</button>
+        <div class="toast-icon">⚠️</div>
+        <div class="toast-title">Bio Information is Mandatory</div>
+        <div class="toast-msg">Please enter your bio.</div>
+    </div>
+
+<script>
+    var cId = '{!$CurrentPage.parameters.id}';
+    var url = '/apex/ContactBio?id=' + cId;
+    var isBioEmpty = {!isBioEmpty};
+
+    function goBack() {
+        var toast = document.getElementById('bioToast');
+        toast.style.animation = 'popOut 0.3s ease forwards';
+        setTimeout(function() {
+            window.history.back();
+        }, 300);
+    }
+
+    if (!isBioEmpty) {
+        var t = window.open(url, '_blank');
+        if (t) {
+            t.focus();
+            window.history.back();
+        } else {
+            window.location.href = url;
+        }
+    }
+</script>
+
+</body>
+</html>
+</apex:page>

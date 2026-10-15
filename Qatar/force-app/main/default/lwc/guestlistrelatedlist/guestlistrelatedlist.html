@@ -1,0 +1,214 @@
+<template>
+    <lightning-card title="Guest List" icon-name="standard:contact">
+
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-align_absolute-center slds-p-around_large">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error State -->
+        <template if:true={error}>
+            <div class="slds-p-around_medium">
+                <lightning-icon icon-name="utility:error" variant="error" size="small"></lightning-icon>
+                <span class="slds-m-left_x-small slds-text-color_error">Failed to load guest list.</span>
+            </div>
+        </template>
+
+        <!-- Empty State -->
+        <template if:true={isEmpty}>
+            <div class="slds-align_absolute-center slds-p-around_large slds-text-color_weak">
+                No guests found for this invitation.
+            </div>
+        </template>
+
+        <!-- Table -->
+        <template if:true={hasRecords}>
+            <div class="table-wrapper slds-scrollable_x">
+                <table class="guest-table">
+                    <thead>
+                        <tr>
+                            <th>Contact ID</th>
+                            <th>Title</th>
+                            <th>Name</th>
+                            <th>Biography</th>
+                            <th>Reason of Attendance</th>
+                            <th>Picture</th>
+                            <th>Source</th>
+                            <th>Protocol Tier</th>
+                            <th>Guest Category</th>
+                            <th>Guest Sector</th>
+                            <th>Company Affiliated</th>
+                            <th>Job Title</th>
+                            <th>Background Check</th>
+                            <th>RSVP Status</th>
+                            <th>Inbound Date &amp; Time</th>
+                            <th>Outbound Date &amp; Time</th>
+                            <th>Hotel Name</th>
+                            <th>Invited Guest</th>
+                            <th>Relationship To</th>
+                            <th>Escort</th>
+                            <th>HE Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={guestList} for:item="guest">
+                            <tr key={guest.Id}>
+
+                                <!-- Contact ID → navigate to Guest List record -->
+                                <td>
+                                    <a href="javascript:void(0);"
+                                       data-id={guest.Id}
+                                       data-type="guest"
+                                       onclick={handleNavigation}
+                                       class="link-cell">
+                                        {guest.Contact__r.Contact_External_Id__c}
+                                    </a>
+                                </td>
+
+                                <td>{guest.Title__c}</td>
+
+                                <!-- Name → navigate to Contact record -->
+                                <td>
+                                    <a href="javascript:void(0);"
+                                       data-id={guest.Contact__c}
+                                       data-type="contact"
+                                       onclick={handleNavigation}
+                                       class="link-cell">
+                                        {guest.Contact__r.Name}
+                                    </a>
+                                </td>
+
+                                <td>
+                                    <div class="truncate-cell" title={guest.Contact__r.Description}>
+                                        {guest.Contact__r.Description}
+                                    </div>
+                                </td>
+
+                                <td>{guest.Reason_for_Inviting__c}</td>
+
+                                <!-- Picture -->
+                                <td>
+                                    <template if:true={guest.contactPhotoUrl}>
+                                        <img src={guest.contactPhotoUrl} alt="Contact Photo" class="contact-photo" />
+                                    </template>
+                                    <template if:false={guest.contactPhotoUrl}>
+                                        <lightning-icon icon-name="standard:contact" size="small"></lightning-icon>
+                                    </template>
+                                </td>
+
+                                <td>{guest.Source__c}</td>
+                                <td>{guest.Protocol_Tier__c}</td>
+                                <td>{guest.Guest_Category__c}</td>
+                                <td>{guest.Guest_Sector__c}</td>
+                                <td>{guest.Company__c}</td>
+                                <td>{guest.Title__c}</td>
+
+                                <!-- Background Check -->
+                                <td>
+                                    <template if:true={guest.Background_Check__c}>
+                                        <lightning-icon icon-name="utility:check" variant="success" size="x-small"></lightning-icon>
+                                    </template>
+                                    <template if:false={guest.Background_Check__c}>
+                                        <lightning-icon icon-name="utility:close" variant="error" size="x-small"></lightning-icon>
+                                    </template>
+                                </td>
+
+                                <!-- RSVP Status -->
+                                <td>
+                                    <span class={guest.rsvpBadgeClass}>{guest.RSVP__c}</span>
+                                </td>
+
+                                <!-- Inbound Date & Time -->
+                                <td>
+                                    <template if:true={guest.Inbound_Date_Time__c}>
+                                        <lightning-formatted-date-time
+                                            value={guest.Inbound_Date_Time__c}
+                                            year="numeric" month="short" day="2-digit"
+                                            hour="2-digit" minute="2-digit">
+                                        </lightning-formatted-date-time>
+                                    </template>
+                                </td>
+
+                                <!-- Outbound Date & Time -->
+                                <td>
+                                    <template if:true={guest.Outbound_Date_Time__c}>
+                                        <lightning-formatted-date-time
+                                            value={guest.Outbound_Date_Time__c}
+                                            year="numeric" month="short" day="2-digit"
+                                            hour="2-digit" minute="2-digit">
+                                        </lightning-formatted-date-time>
+                                    </template>
+                                </td>
+
+                                <td>{guest.Hotel_Name__c}</td>
+                                <td>{guest.X1_of_invited_guest__c}</td>
+                                <td>{guest.Relationship_to__c}</td>
+                                <td>{guest.Escorted_By__c}</td>
+
+                                <!-- HE Notes — creates/updates HE_Request__c on save -->
+                                <td>
+                                    <template if:true={guest.isSavingNote}>
+                                        <lightning-spinner alternative-text="Saving" size="x-small"></lightning-spinner>
+                                    </template>
+
+                                    <template if:false={guest.isSavingNote}>
+
+                                        <!-- Edit mode -->
+                                        <template if:true={guest.isEditingNote}>
+                                            <div class="note-edit-wrapper">
+                                                <lightning-textarea
+                                                    value={guest.heNote}
+                                                    data-id={guest.Id}
+                                                    onchange={handleNoteChange}
+                                                    placeholder="Enter HE request note..."
+                                                    max-length="1000">
+                                                </lightning-textarea>
+                                                <div class="note-actions">
+                                                    <lightning-button-icon
+                                                        icon-name="utility:check"
+                                                        variant="success"
+                                                        data-id={guest.Id}
+                                                        onclick={handleNoteSave}
+                                                        title="Save HE Request">
+                                                    </lightning-button-icon>
+                                                    <lightning-button-icon
+                                                        icon-name="utility:close"
+                                                        variant="error"
+                                                        data-id={guest.Id}
+                                                        onclick={handleNoteCancel}
+                                                        title="Cancel">
+                                                    </lightning-button-icon>
+                                                </div>
+                                            </div>
+                                        </template>
+
+                                        <!-- View mode -->
+                                        <template if:false={guest.isEditingNote}>
+                                            <div class="note-display" onclick={handleNoteEdit} data-id={guest.Id}>
+                                                <span class="note-text">{guest.heNote}</span>
+                                                <lightning-icon
+                                                    icon-name="utility:edit"
+                                                    size="xx-small"
+                                                    class="edit-icon">
+                                                </lightning-icon>
+                                            </div>
+                                        </template>
+
+                                    </template>
+                                </td>
+
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="slds-p-horizontal_medium slds-p-bottom_small record-count">
+                Showing {guestList.length} guest(s)
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

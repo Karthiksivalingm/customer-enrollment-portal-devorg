@@ -1,0 +1,174 @@
+<apex:page standardController="Meeting_Request__c" renderAs="pdf">
+    <!-- Header -->
+    <div style="text-align: right; margin-bottom: 20px;">
+            <apex:image value="{!$Resource.Logo}" style="width: 150px; height: 150px;" />
+        </div>
+
+    <!-- Section 1: Meeting Details -->
+    <h2 style="margin-top: 20px; margin-bottom: 10px;">Meeting Details</h2>
+    <table style="width:100%; border: 1px solid #000; border-collapse: collapse; margin-bottom: 20px;">
+        <tr>
+            <td style="width:25%; padding:5px; border: 1px solid #000;">Subject:</td>
+            <td style="width:25%; padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Name}"/></td>
+            <td style="width:25%; padding:5px; border: 1px solid #000;">Requested By:</td>
+            <td style="width:25%; padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Requested_By__c}"/></td>
+        </tr>
+        <tr>
+            <td style="padding:5px; border: 1px solid #000;">Meeting Virtual:</td>
+            <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.MeetingVirtual__c}"/></td>
+            <td style="padding:5px; border: 1px solid #000;">Meeting in person:</td>
+            <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Meeting__c}"/></td>
+        </tr>
+    </table>
+
+    <!-- Section 2: Logistics -->
+    <h2 style="margin-top: 20px; margin-bottom: 10px;">Please check on the logistics required</h2>
+    <table style="width:100%; border: 1px solid #000; border-collapse: collapse; margin-bottom: 20px;">
+        <tr>
+            <td style="width:50%; padding:5px; border: 1px solid #000;">Material, models, gifts will be presented:</td>
+            <td style="width:50%; padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Material_models_gift_will_be_presented__c}"/></td>
+        </tr>
+    </table>
+
+   
+  <!-- Section 4: Communication -->
+        <h2 style="margin-top: 20px; margin-bottom: 10px;">For communication purposes</h2>
+        <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+            <tr>
+                <td style="width:50%; padding:5px; border: 1px solid #000;">Approval for Video/Photo to take place during the meeting:</td>
+                <td style="width:50%; padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Approval_for_Video_Photo__c}"/></td>
+            </tr>
+            <tr>
+                <td style="padding:5px; border: 1px solid #000;">Request to bring own Photographer:</td>
+                <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Request_to_bring_own_Photographer__c}"/></td>
+            </tr>
+            <tr>
+                <td style="padding:5px; border: 1px solid #000;">Do you intend to share any photos on social media:</td>
+                <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Do_you_intend_to_share_any_photo__c}"/></td>
+            </tr>
+            <tr>
+                <td style="padding:5px; border: 1px solid #000;">If yes, please share the email address to receive approved images:</td>
+                <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Share_the_email_address__c}"/></td>
+            </tr>
+            <tr>
+                <td style="padding:5px; border: 1px solid #000;">Facebook:</td>
+                <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Facebook__c}"/></td>
+            </tr>
+            <tr>
+                <td style="padding:5px; border: 1px solid #000;">Instagram:</td>
+                <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Instagram__c}"/></td>
+            </tr>
+            <tr>
+                <td style="padding:5px; border: 1px solid #000;">Twitter:</td>
+                <td style="padding:5px; border: 1px solid #000;"><apex:outputField value="{!Meeting_Request__c.Twitter__c}"/></td>
+            </tr>
+        </table>
+<!-- Section 3: Parking Information -->
+<h2 style="margin-top: 20px; margin-bottom: 10px;">Parking Information</h2>
+<apex:outputPanel layout="block" style="margin-bottom: 20px;">
+    <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+        <tr>
+            <!-- Car Plate Number Headers -->
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_1__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 1</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_2__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 2</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_3__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 3</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_4__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 4</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_5__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 5</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_6__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 6</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_7__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 7</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_8__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 8</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_9__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 9</th>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_10__c))}">
+                <th style="padding:5px; border: 1px solid #000;">Car Plate 10</th>
+            </apex:outputPanel>
+        </tr>
+        <tr>
+            <!-- Car Plate Number Values -->
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_1__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_1__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_2__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_2__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_3__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_3__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_4__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_4__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_5__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_5__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_6__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_6__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_7__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_7__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_8__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_8__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_9__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_9__c}"/>
+                </td>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Meeting_Request__c.Car_Plate_Number_10__c))}">
+                <td style="padding:5px; border: 1px solid #000;">
+                    <apex:outputField value="{!Meeting_Request__c.Car_Plate_Number_10__c}"/>
+                </td>
+            </apex:outputPanel>
+        </tr>
+    </table>
+</apex:outputPanel>
+
+ <!-- Footer with two-color line using table -->
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-family: 'Aptos', sans-serif; font-size: 12px; color: #666;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="width: 50%; height: 4px; background-color: #0d0707;"></td>
+                <td style="width: 50%; height: 4px; background-color: #8a8a60;"></td>
+            </tr>
+        </table>
+        <div style="margin-top: 10px;">
+            <p>Office of Her Excellency</p>
+            <p>Sheikha Al Mayassa bint Hamad bin Khalifa Al-Thani</p>
+        </div>
+    </div>
+
+
+</apex:page>

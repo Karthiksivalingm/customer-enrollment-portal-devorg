@@ -1,0 +1,118 @@
+<apex:page showHeader="false"
+           sidebar="false"
+           renderAs="pdf"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           controller="NotePDFController"
+           contentType="application/pdf">
+<html>
+<head>
+    <style>
+        @page {
+            margin: 50px 40px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            font-size: 13px;
+        }
+        .header-bar {
+            background-color: #1a3a5c;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .header-bar h1 {
+            color: #ffffff;
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        .meta {
+            background-color: #f4f6f9;
+            border-left: 4px solid #1a3a5c;
+            padding: 10px 16px;
+            margin-bottom: 24px;
+            font-size: 12px;
+            color: #555;
+        }
+        .meta table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .meta td {
+            padding: 3px 8px;
+        }
+        .meta .label {
+            font-weight: bold;
+            color: #1a3a5c;
+            width: 120px;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .content {
+            line-height: 1.8;
+            font-size: 13px;
+            color: #333;
+        }
+        .content p {
+            margin-bottom: 10px;
+        }
+        .content ul, .content ol {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .content strong, .content b {
+            color: #111;
+        }
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            font-size: 10px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Bar -->
+    <div class="header-bar">
+        <h1><apex:outputText value="{!title}" escape="true"/></h1>
+    </div>
+
+    <!-- Meta Info -->
+    <div class="meta">
+        <table>
+            <tr>
+                <td class="label">Date:</td>
+                <td><apex:outputText value="{!noteDate}" escape="true"/></td>
+            </tr>
+            <tr>
+                <td class="label">Created By:</td>
+                <td><apex:outputText value="{!createdBy}" escape="true"/></td>
+            </tr>
+        </table>
+    </div>
+
+    <hr class="divider"/>
+
+    <!-- Note Content -->
+    <div class="content">
+        <apex:outputText value="{!content}" escape="false"/>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Generated automatically from Salesforce Notes &nbsp;|&nbsp; Qatar Museums
+    </div>
+
+</body>
+</html>
+</apex:page>

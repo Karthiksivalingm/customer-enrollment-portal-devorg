@@ -1,0 +1,94 @@
+<template>
+    <div class="cg-container">
+
+        <!-- ── Header ──────────────────────────────────────────────── -->
+        <div class="cg-header">
+            <div class="cg-header-left">
+                <lightning-icon icon-name="standard:contact" size="small" class="cg-header-icon"></lightning-icon>
+                <span class="cg-title">Accompanying Guests</span>
+                <span class="cg-count-badge">{guestCount}</span>
+            </div>
+            <button class="cg-btn-new" onclick={handleNew}>+ New</button>
+        </div>
+
+        <!-- ── Loading ─────────────────────────────────────────────── -->
+        <template lwc:if={isLoading}>
+            <div class="cg-state-center">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                <p class="cg-state-text">Loading guests...</p>
+            </div>
+        </template>
+
+        <!-- ── Error ───────────────────────────────────────────────── -->
+        <template lwc:elseif={error}>
+            <div class="cg-state-center">
+                <lightning-icon icon-name="utility:error" variant="error" size="large"></lightning-icon>
+                <p class="cg-state-text">Failed to load accompanying guests. Please refresh.</p>
+            </div>
+        </template>
+
+        <!-- ── Empty ───────────────────────────────────────────────── -->
+        <template lwc:elseif={isEmpty}>
+            <div class="cg-state-center">
+                <lightning-icon icon-name="utility:groups" size="large" class="cg-empty-icon"></lightning-icon>
+                <p class="cg-state-text">No accompanying guests yet.</p>
+                <button class="cg-btn-new" onclick={handleNew}>+ Add Guest</button>
+            </div>
+        </template>
+
+        <!-- ── List ────────────────────────────────────────────────── -->
+        <template lwc:elseif={hasGuests}>
+            <ul class="cg-list">
+                <template for:each={guests} for:item="g">
+                    <li key={g.id} class="cg-row" data-id={g.id} onclick={handleNavigation}>
+                        <div class="cg-avatar" style={g.avatarStyle}>{g.initial}</div>
+                        <div class="cg-row-main">
+                            <p class="cg-row-name">{g.contactName}</p>
+                            <template lwc:if={g.contactEmail}>
+                                <p class="cg-row-sub">{g.contactEmail}</p>
+                            </template>
+                        </div>
+                        <template lwc:if={g.guestTier}>
+                            <span class="cg-chip">{g.guestTier}</span>
+                        </template>
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </div>
+
+    <!-- ── New Guest Modal (Contact__c only; Main_Guest__c auto-filled) ── -->
+    <template lwc:if={isNewGuestModalOpen}>
+        <div class="cg-overlay" onclick={closeNewGuestModal}></div>
+        <div class="cg-modal" role="dialog" aria-modal="true">
+            <div class="cg-modal-header">
+                <div class="cg-panel-title-wrap">
+                    <lightning-icon icon-name="standard:contact" size="small" class="cg-panel-icon"></lightning-icon>
+                    <p class="cg-panel-label">New Accompanying Guest</p>
+                </div>
+                <button class="cg-panel-close" onclick={closeNewGuestModal}>✕</button>
+            </div>
+            <div class="cg-modal-body">
+                <lightning-record-edit-form class="cg-new-guest-form"
+                        object-api-name={guestListObjectApiName}
+                        onsubmit={handleNewGuestSubmit}
+                        onsuccess={handleNewGuestSuccess}
+                        onerror={handleNewGuestError}>
+                    <lightning-messages></lightning-messages>
+                    <lightning-input-field field-name="Contact__c"></lightning-input-field>
+                    <div class="cg-modal-footer">
+                        <button type="button" class="cg-panel-btn-cancel" onclick={closeNewGuestModal}>Cancel</button>
+                        <button type="submit" class="cg-panel-btn-save" disabled={isSavingNewGuest}>
+                            <template lwc:if={isSavingNewGuest}>
+                                <lightning-spinner alternative-text="Saving" size="x-small"></lightning-spinner>
+                            </template>
+                            <template lwc:else>
+                                Save
+                            </template>
+                        </button>
+                    </div>
+                </lightning-record-edit-form>
+            </div>
+        </div>
+    </template>
+</template>

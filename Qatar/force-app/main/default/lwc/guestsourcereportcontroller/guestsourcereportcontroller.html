@@ -1,0 +1,152 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+
+            <template if:false={isLoaded}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <template if:true={hasError}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+
+            <template if:true={showTables}>
+                <!-- Header -->
+                <div class="slds-grid slds-grid_align-spread slds-m-bottom_medium">
+                    <div class="slds-text-heading_medium">{eventName}</div>
+                    <div class="slds-text-align_right">
+                        <div>{reportType}</div>
+                        <div class="slds-text-body_small slds-text-color_weak">{reportDate}</div>
+                    </div>
+                </div>
+
+                <!-- Source table (Invitation Status) -->
+                <div class="slds-text-heading_small slds-m-bottom_x-small">Guest Source by Invitation Status</div>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-m-bottom_large">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col">Guest Source</th>
+                            <template for:each={statusColumns} for:item="col">
+                                <th key={col} scope="col">{col}</th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={sourceRows} for:item="row">
+                            <tr key={row.label}>
+                                <th scope="row">{row.label}</th>
+                                <template for:each={row.cells} for:item="cell">
+                                    <td key={cell.key}>{cell.value}</td>
+                                </template>
+                            </tr>
+                        </template>
+                        <tr class="slds-text-title_bold">
+                            <th scope="row">{sourceTotalRow.label}</th>
+                            <template for:each={sourceTotalRow.cells} for:item="cell">
+                                <td key={cell.key}>{cell.value}</td>
+                            </template>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Tier / Location table (Invitation Status) -->
+                <div class="slds-text-heading_small slds-m-bottom_x-small">Guest Tier by Invitation Status</div>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-m-bottom_large">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col">Location</th>
+                            <template for:each={locationStatusColumns} for:item="col">
+                                <th key={col} scope="col">{col}</th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={tierRows} for:item="row">
+                            <tr key={row.label}>
+                                <th scope="row">{row.label}</th>
+                                <template for:each={row.cells} for:item="cell">
+                                    <td key={cell.key}>{cell.value}</td>
+                                </template>
+                            </tr>
+                        </template>
+                        <tr class="slds-text-title_bold">
+                            <th scope="row">{tierTotalRow.label}</th>
+                            <template for:each={tierTotalRow.cells} for:item="cell">
+                                <td key={cell.key}>{cell.value}</td>
+                            </template>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Source table (Registrant Status) -->
+                <div class="slds-text-heading_small slds-m-bottom_x-small">Guest Source by Registrant Status</div>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-m-bottom_large">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col">Guest Source</th>
+                            <template for:each={rsvpStatusColumns} for:item="col">
+                                <th key={col} scope="col">{col}</th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={sourceRsvpRows} for:item="row">
+                            <tr key={row.label}>
+                                <th scope="row">{row.label}</th>
+                                <template for:each={row.cells} for:item="cell">
+                                    <td key={cell.key}>{cell.value}</td>
+                                </template>
+                            </tr>
+                        </template>
+                        <tr class="slds-text-title_bold">
+                            <th scope="row">{sourceRsvpTotalRow.label}</th>
+                            <template for:each={sourceRsvpTotalRow.cells} for:item="cell">
+                                <td key={cell.key}>{cell.value}</td>
+                            </template>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Guest Tier table (Registrant Status) -->
+                <div class="slds-text-heading_small slds-m-bottom_x-small">Guest Tier by Registrant Status</div>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-m-bottom_large">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col">Guest Tier</th>
+                            <template for:each={rsvpStatusColumns} for:item="col">
+                                <th key={col} scope="col">{col}</th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={tierRsvpRows} for:item="row">
+                            <tr key={row.label}>
+                                <th scope="row">{row.label}</th>
+                                <template for:each={row.cells} for:item="cell">
+                                    <td key={cell.key}>{cell.value}</td>
+                                </template>
+                            </tr>
+                        </template>
+                        <tr class="slds-text-title_bold">
+                            <th scope="row">{tierRsvpTotalRow.label}</th>
+                            <template for:each={tierRsvpTotalRow.cells} for:item="cell">
+                                <td key={cell.key}>{cell.value}</td>
+                            </template>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Glossary -->
+                <div class="slds-text-heading_small slds-m-bottom_x-small">Definitions</div>
+                <ul class="slds-list_vertical-space">
+                    <template for:each={glossary} for:item="g">
+                        <li key={g.term}>
+                            <strong>{g.term}</strong> — {g.def}
+                        </li>
+                    </template>
+                </ul>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

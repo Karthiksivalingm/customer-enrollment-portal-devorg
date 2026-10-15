@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Guest Approval">
+
+        <div class="grid">
+            <template for:each={contacts} for:item="con">
+                <div key={con.Id} class="card">
+
+                    <img src={con.PhotoUrl} class="avatar"/>
+
+                    <div class="name">{con.Name}</div>
+                    <div class="email">{con.Email}</div>
+
+                    <div class="actions">
+                        <lightning-button 
+                            label="Approve"
+                            variant="brand"
+                            data-id={con.Id}
+                            onclick={handleApprove}>
+                        </lightning-button>
+
+                        <lightning-button 
+                            label="Reject"
+                            variant="destructive"
+                            data-id={con.Id}
+                            onclick={handleReject}>
+                        </lightning-button>
+                    </div>
+
+                </div>
+            </template>
+        </div>
+
+        <div class="footer">
+            <lightning-button 
+                label="Submit All"
+                variant="success"
+                onclick={handleSubmit}>
+            </lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,407 @@
+<template>
+    <div class="gl-container">
+
+        <!-- ── Header ──────────────────────────────────────────────── -->
+        <div class="gl-header">
+            <div class="gl-header-left">
+                <lightning-icon icon-name="standard:contact" size="small" class="gl-header-icon"></lightning-icon>
+                <span class="gl-title">Guest List</span>
+                <span class="gl-count-badge">{totalCount}</span>
+            </div>
+            <div class="gl-header-right">
+                <div class="gl-search-wrap">
+                    <lightning-icon icon-name="utility:search" size="xx-small" class="gl-search-icon"></lightning-icon>
+                    <input type="text" class="gl-search-input"
+                           placeholder="Search by name, ID, category..."
+                           value={searchTerm} oninput={handleSearch} />
+                    <template lwc:if={searchTerm}>
+                        <button class="gl-search-clear" onclick={clearSearch}>✕</button>
+                    </template>
+                </div>
+
+                <div class="gl-filter-wrap">
+                    <button class={filterButtonClass} onclick={toggleFilterPanel} title="Filter">
+                        <lightning-icon icon-name="utility:filterList" size="xx-small" class="gl-filter-icon"></lightning-icon>
+                        <span>Filter</span>
+                        <template lwc:if={hasActiveFilters}>
+                            <span class="gl-filter-count">{activeFilterCount}</span>
+                        </template>
+                    </button>
+
+                    <!-- ── Filter Builder Panel ── -->
+                    <template lwc:if={isFilterPanelOpen}>
+                        <div class="gl-filter-panel">
+                            <div class="gl-filter-panel-header">
+                                <span>Filters</span>
+                                <button class="gl-filter-panel-close" onclick={closeFilterPanel}>✕</button>
+                            </div>
+
+                            <div class="gl-filter-rows">
+                                <template lwc:if={displayFilters.length}>
+                                    <template for:each={displayFilters} for:item="f">
+                                        <div key={f.id} class="gl-filter-row">
+
+                                            <select class="gl-filter-select gl-filter-select-column"
+                                                    data-id={f.id}
+                                                    onchange={handleFilterFieldChange}>
+                                                <option value="">Column…</option>
+                                                <template for:each={f.columnOptionsForSelect} for:item="col">
+                                                    <option key={col.value} value={col.value} selected={col.selected}>{col.label}</option>
+                                                </template>
+                                            </select>
+
+                                            <select class="gl-filter-select gl-filter-select-operator"
+                                                    data-id={f.id}
+                                                    onchange={handleFilterOperatorChange}
+                                                    disabled={f.operatorDisabled}>
+                                                <option value="">Operator…</option>
+                                                <template for:each={f.operatorOptionsForSelect} for:item="op">
+                                                    <option key={op.value} value={op.value} selected={op.selected}>{op.label}</option>
+                                                </template>
+                                            </select>
+
+                                            <div class="gl-filter-value-wrap">
+                                                <template lwc:if={f.showValueInput}>
+                                                    <input type="text" class="gl-filter-value-input"
+                                                           placeholder="Value"
+                                                           value={f.value}
+                                                           data-id={f.id}
+                                                           oninput={handleFilterValueChange} />
+                                                </template>
+
+                                                <template lwc:if={f.showDateInput}>
+                                                    <input type="datetime-local" class="gl-filter-value-input"
+                                                           value={f.value}
+                                                           data-id={f.id}
+                                                           oninput={handleFilterValueChange} />
+                                                </template>
+
+                                                <template lwc:if={f.showDateRangeInputs}>
+                                                    <input type="datetime-local" class="gl-filter-value-input gl-filter-value-range"
+                                                           value={f.value}
+                                                           data-id={f.id}
+                                                           oninput={handleFilterValueChange} />
+                                                    <span class="gl-filter-range-sep">to</span>
+                                                    <input type="datetime-local" class="gl-filter-value-input gl-filter-value-range"
+                                                           value={f.value2}
+                                                           data-id={f.id}
+                                                           oninput={handleFilterValue2Change} />
+                                                </template>
+
+                                                <template lwc:if={f.showNoValueHint}>
+                                                    <span class="gl-filter-no-value">No value needed</span>
+                                                </template>
+                                            </div>
+
+                                            <button class="gl-filter-remove" data-id={f.id} onclick={removeFilterRow} title="Remove filter">
+                                                ✕
+                                            </button>
+                                        </div>
+                                    </template>
+                                </template>
+                                <template lwc:else>
+                                    <p class="gl-filter-empty">No filters yet — add one below.</p>
+                                </template>
+                            </div>
+
+                            <div class="gl-filter-panel-footer">
+                                <button class="gl-filter-add-btn" onclick={addFilterRow}>+ Add Filter</button>
+                                <button class="gl-filter-clear-btn" onclick={clearAllFilters} disabled={hasNoFilterRows}>Clear All</button>
+                                <button class="gl-filter-done-btn" onclick={closeFilterPanel}>Done</button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <button class="gl-btn-new" onclick={handleNew}>
+                    + New Guest
+                </button>
+            </div>
+        </div>
+
+        <!-- ── Loading ─────────────────────────────────────────────── -->
+        <template lwc:if={isLoading}>
+            <div class="gl-state-center">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                <p class="gl-state-text">Loading guests...</p>
+            </div>
+        </template>
+
+        <!-- ── Error ───────────────────────────────────────────────── -->
+        <template lwc:elseif={error}>
+            <div class="gl-state-center">
+                <lightning-icon icon-name="utility:error" variant="error" size="large"></lightning-icon>
+                <p class="gl-state-text">Failed to load guest list. Please refresh.</p>
+            </div>
+        </template>
+
+        <!-- ── Empty ───────────────────────────────────────────────── -->
+        <template lwc:elseif={isEmpty}>
+            <div class="gl-state-center">
+                <lightning-icon icon-name="standard:contact" size="large"></lightning-icon>
+                <p class="gl-state-text">No guests found for this invitation.</p>
+            </div>
+        </template>
+
+        <!-- ── Table ───────────────────────────────────────────────── -->
+        <template lwc:elseif={hasRecords}>
+            <div class="gl-table-wrap" onscroll={handleScroll}>
+                <table class="gl-table">
+                    <thead>
+                        <tr>
+                            <th class="col-expand"></th>
+                            <th class="col-num">#</th>
+                            <th class="col-contact-id">Contact ID</th>
+                            <th class="col-title">Title</th>
+                            <th class="col-name">Name</th>
+                            <th class="col-guest-type">Guest Type</th>
+                            <th class="col-bio">Biography</th>
+                            <th class="col-reason">Reason of Attendance</th>
+                            <th class="col-picture">Picture</th>
+                            <th class="col-source">Source</th>
+                            <th class="col-protocol">Protocol Tier</th>
+                            <th class="col-category">Guest Category</th>
+                            <th class="col-sector">Guest Sector</th>
+                            <th class="col-company">Company Affiliated</th>
+                            <th class="col-jobtitle">Job Title</th>
+                            <th class="col-bgcheck">Background Check</th>
+                            <th class="col-rsvp">RSVP Status</th>
+                            <th class="col-inbound">Inbound Date &amp; Time</th>
+                            <th class="col-outbound">Outbound Date &amp; Time</th>
+                            <th class="col-hotel">Hotel Name</th>
+                            <th class="col-plusone">Accompanying Guest</th>
+                            <th class="col-relationship">Relationship To</th>
+                            <th class="col-escort">Escort</th>
+                            <th class="col-he">HE Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={groupedRows} for:item="guest">
+                            <tr key={guest.id} class={guest.rowClass}>
+
+                                <td class="col-expand">
+                                    <template lwc:if={guest.hasChildren}>
+                                        <button class="gl-expand-toggle" data-id={guest.id} onclick={toggleMainExpand} title="Show accompanying guest">
+                                            <span class={guest.chevronClass}>›</span>
+                                        </button>
+                                    </template>
+                                </td>
+
+                                <td class="col-num"><span class="gl-row-num">{guest.rowNum}</span></td>
+
+                                <td class="col-contact-id">
+                                    <a href="javascript:void(0);" data-id={guest.id}
+                                       onclick={handleNavigation} class="gl-link">
+                                        {guest.contactExternalId}
+                                    </a>
+                                </td>
+
+                                <td class="col-title"><span class="gl-cell-text">{guest.title}</span></td>
+
+                                <td class="col-name">
+                                    <template lwc:if={guest.isMain}>
+                                        <a href="javascript:void(0);" data-id={guest.contactId}
+                                           onclick={handleNavigation} class="gl-link gl-link-name">
+                                            {guest.contactName}
+                                        </a>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="gl-child-name-wrap">
+                                            <span class="gl-child-arrow">↳</span>
+                                            <a href="javascript:void(0);" data-id={guest.contactId}
+                                               onclick={handleNavigation} class="gl-link gl-link-name gl-link-child">
+                                                {guest.contactName}
+                                            </a>
+                                        </span>
+                                    </template>
+                                </td>
+
+                                <td class="col-guest-type">
+                                    <span class={guest.guestTypeClass}>{guest.guestTypeLabel}</span>
+                                </td>
+
+                                <td class="col-bio">
+                                    <span class="gl-cell-text gl-ellipsis" title={guest.biography}>{guest.biography}</span>
+                                </td>
+
+                                <td class="col-reason">
+                                    <span class="gl-cell-text gl-ellipsis" title={guest.reasonForAttendance}>{guest.reasonForAttendance}</span>
+                                </td>
+
+                                <!-- Picture: photo or colored initial -->
+                                <td class="col-picture">
+                                    <template lwc:if={guest.hasPhoto}>
+                                        <img src={guest.photoUrl} alt={guest.contactName} class="gl-avatar gl-avatar-photo" />
+                                    </template>
+                                    <template lwc:else>
+                                        <div class="gl-avatar gl-avatar-initials" style={guest.avatarStyle}>
+                                            {guest.contactInitial}
+                                        </div>
+                                    </template>
+                                </td>
+
+                                <td class="col-source"><span class="gl-cell-text">{guest.source}</span></td>
+                                <td class="col-protocol"><span class="gl-cell-text">{guest.protocolTier}</span></td>
+
+                                <td class="col-category">
+                                    <template lwc:if={guest.guestCategory}>
+                                        <span class="gl-chip">{guest.guestCategory}</span>
+                                    </template>
+                                </td>
+
+                                <td class="col-sector"><span class="gl-cell-text">{guest.guestSector}</span></td>
+                                <td class="col-company"><span class="gl-cell-text">{guest.company}</span></td>
+                                <td class="col-jobtitle"><span class="gl-cell-text">{guest.jobTitle}</span></td>
+
+                                <td class="col-bgcheck">
+                                    <span class="gl-cell-text gl-ellipsis" title={guest.backgroundCheck}>{guest.backgroundCheck}</span>
+                                </td>
+
+                                <td class="col-rsvp">
+                                    <span class={guest.rsvpClass}>{guest.rsvp}</span>
+                                </td>
+
+                                <td class="col-inbound">
+                                    <template lwc:if={guest.inboundDateTime}>
+                                        <lightning-formatted-date-time value={guest.inboundDateTime}
+                                            year="numeric" month="short" day="2-digit"
+                                            hour="2-digit" minute="2-digit">
+                                        </lightning-formatted-date-time>
+                                    </template>
+                                    <template lwc:else><span class="gl-no-val">—</span></template>
+                                </td>
+
+                                <td class="col-outbound">
+                                    <template lwc:if={guest.outboundDateTime}>
+                                        <lightning-formatted-date-time value={guest.outboundDateTime}
+                                            year="numeric" month="short" day="2-digit"
+                                            hour="2-digit" minute="2-digit">
+                                        </lightning-formatted-date-time>
+                                    </template>
+                                    <template lwc:else><span class="gl-no-val">—</span></template>
+                                </td>
+
+                                <td class="col-hotel"><span class="gl-cell-text">{guest.hotelName}</span></td>
+                                <td class="col-plusone"><span class="gl-cell-text">{guest.invitedGuest}</span></td>
+                                <td class="col-relationship"><span class="gl-cell-text">{guest.relationshipTo}</span></td>
+                                <td class="col-escort"><span class="gl-cell-text">{guest.escortedBy}</span></td>
+
+                                <!-- HE Notes -->
+                                <td class="col-he">
+                                    <button class="gl-note-btn"
+                                            data-id={guest.id}
+                                            data-name={guest.contactName}
+                                            data-note={guest.heNote}
+                                            onclick={openNotePanel}>
+                                        <template lwc:if={guest.heNote}>
+                                            <span class="gl-note-preview">{guest.heNote}</span>
+                                            <span class="gl-note-tag">Edit</span>
+                                        </template>
+                                        <template lwc:else>
+                                            <span class="gl-note-add">+ Add Note</span>
+                                        </template>
+                                    </button>
+                                </td>
+
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- No search/filter results -->
+            <template lwc:if={noSearchResults}>
+                <div class="gl-state-center">
+                    <p class="gl-state-text">No guests match the current search / filters</p>
+                    <button class="gl-btn-clear-search" onclick={clearSearch}>Clear Search</button>
+                </div>
+            </template>
+
+            <template lwc:if={isLoadingMore}>
+                <div class="gl-load-more">
+                    <lightning-spinner alternative-text="Loading more" size="small"></lightning-spinner>
+                    <span>Loading more guests...</span>
+                </div>
+            </template>
+            <div class="gl-footer">
+                Showing <strong>{loadedCount}</strong> of <strong>{totalCount}</strong> guests
+                <template lwc:if={hasMore}>
+                    &nbsp;&mdash; scroll down to load more
+                </template>
+            </div>
+        </template>
+
+    </div>
+
+    <!-- ── HE Note Side Panel ──────────────────────────────────────── -->
+    <template lwc:if={isPanelOpen}>
+        <div class="gl-overlay" onclick={closeNotePanel}></div>
+        <div class="gl-panel">
+            <div class="gl-panel-header">
+                <div class="gl-panel-title-wrap">
+                    <lightning-icon icon-name="utility:note" size="small" class="gl-panel-icon"></lightning-icon>
+                    <div>
+                        <p class="gl-panel-label">HE Request Note</p>
+                        <p class="gl-panel-name">{activePanelGuestName}</p>
+                    </div>
+                </div>
+                <button class="gl-panel-close" onclick={closeNotePanel}>✕</button>
+            </div>
+            <div class="gl-panel-body">
+                <label class="gl-panel-field-label">Feedback / Note</label>
+                <textarea class="gl-panel-textarea"
+                          placeholder="Enter HE request note here..."
+                          oninput={handlePanelNoteChange}
+                          maxlength="1000">{activePanelNote}</textarea>
+                <p class="gl-panel-char-count">{charCount} / 1000</p>
+            </div>
+            <div class="gl-panel-footer">
+                <button class="gl-panel-btn-cancel" onclick={closeNotePanel}>Cancel</button>
+                <button class="gl-panel-btn-save" onclick={handlePanelSave} disabled={isSavingNote}>
+                    <template lwc:if={isSavingNote}>
+                        <lightning-spinner alternative-text="Saving" size="x-small"></lightning-spinner>
+                    </template>
+                    <template lwc:else>
+                        Save HE Request
+                    </template>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <!-- ── New Guest Modal ─────────────────────────────────────────── -->
+    <template lwc:if={isNewGuestModalOpen}>
+        <div class="gl-overlay" onclick={closeNewGuestModal}></div>
+        <div class="gl-modal" role="dialog" aria-modal="true">
+            <div class="gl-modal-header">
+                <div class="gl-panel-title-wrap">
+                    <lightning-icon icon-name="standard:contact" size="small" class="gl-panel-icon"></lightning-icon>
+                    <p class="gl-panel-label">New Guest</p>
+                </div>
+                <button class="gl-panel-close" onclick={closeNewGuestModal}>✕</button>
+            </div>
+            <div class="gl-modal-body">
+                <lightning-record-edit-form class="gl-new-guest-form"
+                        object-api-name={guestListObjectApiName}
+                        onsubmit={handleNewGuestSubmit}
+                        onsuccess={handleNewGuestSuccess}
+                        onerror={handleNewGuestError}>
+                    <lightning-messages></lightning-messages>
+                    <lightning-input-field field-name="Contact__c"></lightning-input-field>
+                    <lightning-input-field field-name="Guest_Tier_Recommendations__c"></lightning-input-field>
+                    <div class="gl-modal-footer">
+                        <button type="button" class="gl-panel-btn-cancel" onclick={closeNewGuestModal}>Cancel</button>
+                        <button type="submit" class="gl-panel-btn-save" disabled={isSavingNewGuest}>
+                            <template lwc:if={isSavingNewGuest}>
+                                <lightning-spinner alternative-text="Saving" size="x-small"></lightning-spinner>
+                            </template>
+                            <template lwc:else>
+                                Save
+                            </template>
+                        </button>
+                    </div>
+                </lightning-record-edit-form>
+            </div>
+        </div>
+    </template>
+</template>

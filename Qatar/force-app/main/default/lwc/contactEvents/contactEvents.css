@@ -1,0 +1,62 @@
+.table-container {
+    overflow-x: auto;
+}
+
+.header-col {
+    cursor: pointer;
+    background-color: #f3f3f3;
+    white-space: nowrap;
+}
+
+.header-col:hover {
+    background-color: #e8e8e8;
+}
+
+.cell-truncate {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-link {
+    color: #0070d2;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+}
+
+.modal-header {
+    background-color: #1a3a5c;
+}
+
+.field-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #3e3e3c;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field-value {
+    font-size: 13px;
+    color: #333;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.notes-box {
+    background-color: #f9f9f9;
+    border-left: 3px solid #1a3a5c;
+    padding: 10px 14px;
+    border-radius: 4px;
+    min-height: 60px;
+}
+
+.search-input {
+    min-width: 200px;
+}

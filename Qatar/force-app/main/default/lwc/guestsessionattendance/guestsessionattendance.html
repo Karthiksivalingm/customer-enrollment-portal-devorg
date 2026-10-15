@@ -1,0 +1,116 @@
+<template>
+    <div class="gsa-container">
+
+        <div class="gsa-header">
+            <div class="gsa-header-left">
+                <lightning-icon icon-name="standard:event" size="small" class="gsa-header-icon"></lightning-icon>
+                <span class="gsa-title">Sub Event Attendance</span>
+                <span class="gsa-count-badge">{totalCount}</span>
+            </div>
+            <div class="gsa-header-right">
+                <div class="gsa-search-wrap">
+                    <lightning-icon icon-name="utility:search" size="xx-small" class="gsa-search-icon"></lightning-icon>
+                    <input type="text" class="gsa-search-input"
+                           placeholder="Search sub event, event..."
+                           value={searchTerm} oninput={handleSearch} />
+                    <template lwc:if={searchTerm}>
+                        <button class="gsa-search-clear" onclick={clearSearch}>&#x2715;</button>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <template lwc:if={isLoading}>
+            <div class="gsa-state-center">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:elseif={error}>
+            <div class="gsa-state-center">
+                <p class="gsa-state-text">Failed to load records. Please refresh.</p>
+            </div>
+        </template>
+
+        <template lwc:elseif={isEmpty}>
+            <div class="gsa-state-center">
+                <p class="gsa-state-text">No subevent attendance records found.</p>
+            </div>
+        </template>
+
+        <template lwc:elseif={hasRecords}>
+            <div class="gsa-table-wrap" onscroll={handleScroll}>
+                <table class="gsa-table">
+                    <thead>
+                        <tr>
+                            <th class="col-num">#</th>
+                            <th class="col-subevent">Sub Event Name</th>
+                            <th class="col-registered">Registered</th>
+                            <th class="col-attended">Attended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={filteredRecords} for:item="rec">
+                            <tr key={rec.id} class={rec.rowClass}>
+
+                                <td class="col-num"><span class="gsa-row-num">{rec.rowNum}</span></td>
+
+                                <td class="col-subevent">
+                                    <template lwc:if={rec.subEventId}>
+                                        <a href="javascript:void(0);"
+                                           data-id={rec.subEventId}
+                                           onclick={handleNavigation}
+                                           class="gsa-link gsa-link-primary">{rec.subEventName}</a>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="gsa-cell-text">{rec.subEventName}</span>
+                                    </template>
+                                </td>
+
+                                <td class="col-registered">
+                                    <template lwc:if={rec.registered}>
+                                        <span class="gsa-badge gsa-badge-yes"><span class="gsa-dot"></span>Yes</span>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="gsa-badge gsa-badge-no"><span class="gsa-dot"></span>No</span>
+                                    </template>
+                                </td>
+
+                                <td class="col-attended">
+                                    <template lwc:if={rec.attended}>
+                                        <span class="gsa-badge gsa-badge-yes"><span class="gsa-dot"></span>Yes</span>
+                                    </template>
+                                    <template lwc:else>
+                                        <span class="gsa-badge gsa-badge-no"><span class="gsa-dot"></span>No</span>
+                                    </template>
+                                </td>
+
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <template lwc:if={noSearchResults}>
+                <div class="gsa-state-center">
+                    <p class="gsa-state-text">No records match your search.</p>
+                    <button class="gsa-btn-clear" onclick={clearSearch}>Clear Search</button>
+                </div>
+            </template>
+
+            <template lwc:if={isLoadingMore}>
+                <div class="gsa-load-more">
+                    <lightning-spinner alternative-text="Loading more" size="small"></lightning-spinner>
+                    <span>Loading more records...</span>
+                </div>
+            </template>
+            <div class="gsa-footer">
+                Showing <strong>{loadedCount}</strong> of <strong>{totalCount}</strong> records
+                &nbsp;|&nbsp; Attended: <strong>{attendedCount}</strong>
+                &nbsp;|&nbsp; Registered: <strong>{registeredCount}</strong>
+                <template lwc:if={hasMore}>&nbsp;&mdash; scroll down to load more</template>
+            </div>
+        </template>
+
+    </div>
+</template>

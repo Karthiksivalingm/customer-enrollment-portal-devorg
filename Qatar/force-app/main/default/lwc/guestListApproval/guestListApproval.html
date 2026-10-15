@@ -1,0 +1,58 @@
+<template>
+
+    <!-- Submit Button -->
+    <lightning-button
+        label="Submit Guest Lists For Approval"
+        variant="brand"
+        onclick={openModal}
+        disabled={isLoading}>
+    </lightning-button>
+
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading..."></lightning-spinner>
+    </template>
+
+    <!-- Submit Modal -->
+    <template if:true={showModal}>
+
+        <section role="dialog"
+                 tabindex="-1"
+                 class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container">
+
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Select Guest Lists</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-datatable
+                        key-field="Id"
+                        data={guestLists}
+                        columns={columns}
+                        onrowselection={handleSelection}>
+                    </lightning-datatable>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Cancel"
+                        onclick={closeModal}
+                        disabled={isLoading}>
+                    </lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Submit"
+                        onclick={submitSelected}
+                        disabled={isLoading}>
+                    </lightning-button>
+                </footer>
+
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+    </template>
+
+</template>

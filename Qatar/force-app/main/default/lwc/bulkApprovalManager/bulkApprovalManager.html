@@ -1,0 +1,808 @@
+<template>
+    <div class="bam-root">
+
+        <!-- HEADER -->
+        <div class="bam-header">
+            <div class="bam-header-left">
+                <div class="bam-header-icon">
+                    <lightning-icon icon-name="utility:approval" size="small" alternative-text="Approvals"></lightning-icon>
+                </div>
+                <div>
+                    <h1 class="bam-title">Pending Approvals</h1>
+                    <p class="bam-subtitle">
+                        <template if:true={hasRecords}>{filteredCount} of {totalCount} requests</template>
+                        <template if:false={hasRecords}>No pending approvals</template>
+                    </p>
+                </div>
+            </div>
+            <div class="bam-header-right">
+                <div class="bam-search-wrap">
+                    <lightning-icon icon-name="utility:search" size="x-small" class="bam-search-icon" alternative-text="Search"></lightning-icon>
+                    <input type="text" class="bam-search" placeholder="Search guest list, contact, event…"
+                        value={searchTerm} onkeyup={handleSearch} />
+                </div>
+                <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh"
+                    variant="border-filled" class="bam-refresh-btn" onclick={loadApprovals}>
+                </lightning-button-icon>
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <template if:true={hasRecords}>
+            <div class="bam-stats">
+                <div class="bam-stat-chip bam-stat-total">
+                    <span class="bam-stat-num">{totalCount}</span>
+                    <span class="bam-stat-label">Total</span>
+                </div>
+                <div class="bam-stat-chip bam-stat-selected">
+                    <span class="bam-stat-num">{selectedCount}</span>
+                    <span class="bam-stat-label">Selected</span>
+                </div>
+            </div>
+        </template>
+
+        <!-- LOADING -->
+        <template if:true={isLoading}>
+            <div class="bam-loading-wrap">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+                <p class="bam-loading-text">Fetching your approval queue…</p>
+            </div>
+        </template>
+
+        <!-- ERROR -->
+        <template if:true={hasError}>
+            <div class="bam-empty-state">
+                <lightning-icon icon-name="utility:error" size="large" variant="error" alternative-text="Error"></lightning-icon>
+                <h3 class="bam-empty-title">Something went wrong</h3>
+                <p class="bam-empty-sub">{errorMessage}</p>
+                <lightning-button label="Try Again" variant="brand" onclick={loadApprovals}></lightning-button>
+            </div>
+        </template>
+
+        <!-- EMPTY -->
+        <template if:true={showEmpty}>
+            <div class="bam-empty-state">
+                <div class="bam-empty-icon-wrap">
+                    <lightning-icon icon-name="utility:check" size="large" variant="success" alternative-text="All done"></lightning-icon>
+                </div>
+                <h3 class="bam-empty-title">You're all caught up!</h3>
+                <p class="bam-empty-sub">No pending approval requests assigned to you.</p>
+            </div>
+        </template>
+
+        <!-- TABLE -->
+        <template if:true={showTable}>
+            <div class="bam-table-container">
+                <div class="bam-table-controls">
+                    <div class="bam-select-info">
+                        <input type="checkbox" class="bam-master-checkbox" checked={allSelected}
+                            onchange={handleSelectAll} id="masterCheck" />
+                        <label for="masterCheck" class="bam-select-label">
+                            <template if:true={selectedCount}>{selectedCount} selected</template>
+                            <template if:false={selectedCount}>Select all</template>
+                        </label>
+                        <template if:true={selectedCount}>
+                            <button class="bam-clear-btn" onclick={clearSelection}>Clear</button>
+                        </template>
+                    </div>
+                    <template if:true={showVirtualInfo}>
+                        <span class="bam-virtual-info">Showing {visibleRangeText} — scroll to load more</span>
+                    </template>
+                    <div class="bam-sort-wrap">
+                        <span class="bam-sort-label">Sort:</span>
+                        <button class={sortDateClass} onclick={sortByDate}>
+                            Date
+                            <template if:true={sortedByDate}>
+                                <lightning-icon icon-name={sortIconDate} size="x-small" alternative-text="sort"></lightning-icon>
+                            </template>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bam-table-scroll" onscroll={handleScroll}>
+
+                    <!-- ═══════════ STAGE 1 TABLE ═══════════ -->
+                    <template if:true={hasStage1Records}>
+                        <div class="bam-stage-section-label">
+                            <span class="bam-stage-badge bam-stage-1">Stage 1</span>
+                            <span class="bam-stage-count">{stage1Count} request(s)</span>
+                        </div>
+                        <table class="bam-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-check"></th>
+                                    <th class="col-contact-id">Contact ID</th>
+                                    <th class="col-event">Event</th>
+                                    <th class="col-title">Title</th>
+                                    <th class="col-fullname">Name</th>
+                                    <th class="col-mainguest">Main Guest</th>
+                                    <th class="col-guesttier">Guest Tier Recommendation</th>
+                                    <th class="col-bio">Biography</th>
+                                    <th class="col-reason">Reason of Attendance</th>
+                                    <th class="col-picture">Picture</th>
+                                    <th class="col-source">Source</th>
+                                    <th class="col-protocol">Protocol Tier</th>
+                                    <th class="col-category">Guest Category</th>
+                                    <th class="col-sector">Guest Sector</th>
+                                    <th class="col-company">Company Affiliated</th>
+                                    <th class="col-jobtitle">Job Title</th>
+                                    <th class="col-bgcheck">Background Check</th>
+                                    <th class="col-date">Submitted</th>
+                                    <th class="col-action">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={visibleStage1Records} for:item="row">
+                                    <tr key={row.workItemId} class={row.rowClass}>
+                                        <td class="col-check">
+                                            <input type="checkbox" class="bam-row-checkbox"
+                                                checked={row.isSelected} data-id={row.workItemId}
+                                                onchange={handleRowSelect} />
+                                        </td>
+                                        <template if:true={row.detail}>
+                                            <td class="col-contact-id">
+                                                <button class="bam-record-link" data-id={row.workItemId} onclick={handleOpenDetail}>
+                                                    {row.detail.contactId}
+                                                </button>
+                                            </td>
+                                            <td class="col-event">
+                                                <template if:true={row.eventName}><span class="bam-event-name">{row.eventName}</span></template>
+                                                <template if:false={row.eventName}><span class="bam-no-value">—</span></template>
+                                            </td>
+                                            <td class="col-title"><span class="bam-cell-text">{row.detail.titleField}</span></td>
+                                            <td class="col-fullname"><span class="bam-cell-text">{row.detail.fullName}</span></td>
+                                            <td class="col-mainguest">
+                                                <template if:true={row.detail.mainGuestName}>
+                                                    <button class="bam-record-link" data-id={row.detail.mainGuestId} onclick={handleMainGuestClick}>
+                                                        {row.detail.mainGuestName}
+                                                    </button>
+                                                </template>
+                                                <template if:false={row.detail.mainGuestName}><span class="bam-no-value">—</span></template>
+                                            </td>
+                                            <td class="col-guesttier"><span class="bam-cell-text">{row.detail.guestTierRecommendation}</span></td>
+                                            <td class="col-bio"><span class="bam-cell-text bam-cell-clamp">{row.detail.bio}</span></td>
+                                            <td class="col-reason"><span class="bam-cell-text bam-cell-clamp">{row.detail.reason}</span></td>
+                                            <td class="col-picture">
+                                                <template if:true={row.submittedByPhotoUrl}>
+                                                    <img src={row.submittedByPhotoUrl} alt={row.contactName} class="bam-avatar bam-avatar-photo" />
+                                                </template>
+                                                <template if:false={row.submittedByPhotoUrl}>
+                                                    <div class="bam-avatar bam-avatar-initials" style={row.avatarStyle}>{row.contactInitial}</div>
+                                                </template>
+                                            </td>
+                                            <td class="col-source"><span class="bam-cell-text">{row.detail.source}</span></td>
+                                            <td class="col-protocol"><span class="bam-cell-text">{row.detail.protocolTier}</span></td>
+                                            <td class="col-category"><span class="bam-cell-text">{row.detail.guestCategory}</span></td>
+                                            <td class="col-sector"><span class="bam-cell-text">{row.detail.guestSector}</span></td>
+                                            <td class="col-company"><span class="bam-cell-text">{row.detail.company}</span></td>
+                                            <td class="col-jobtitle"><span class="bam-cell-text">{row.detail.position}</span></td>
+                                            <td class="col-bgcheck"><span class="bam-cell-text">{row.detail.backgroundCheck}</span></td>
+                                            <td class="col-date">
+                                                <lightning-formatted-date-time value={row.createdDate} year="numeric" month="short" day="2-digit"></lightning-formatted-date-time>
+                                            </td>
+                                            <td class="col-action">
+                                                <div class="bam-row-actions">
+                                                    <button class="bam-action-btn bam-approve-quick"
+                                                        data-id={row.workItemId} onclick={handleQuickApprove} title="Review">
+                                                        <lightning-icon icon-name="utility:check" size="x-small" alternative-text="Review"></lightning-icon>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </template>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </template>
+
+                    <!-- ═══════════ STAGE 2 TABLE ═══════════ -->
+                    <template if:true={hasStage2Records}>
+                        <div class="bam-stage-section-label bam-stage-section-label-2">
+                            <span class="bam-stage-badge bam-stage-2">Stage 2</span>
+                            <span class="bam-stage-count">{stage2Count} request(s)</span>
+                        </div>
+                        <table class="bam-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-check"></th>
+                                    <th class="col-contact-id">Contact ID</th>
+                                    <th class="col-event">Event</th>
+                                    <th class="col-title">Title</th>
+                                    <th class="col-fullname">Full Name</th>
+                                    <th class="col-mainguest">Main Guest</th>
+                                    <th class="col-guesttier">Guest Tier Recommendation</th>
+                                    <th class="col-bio">Biography</th>
+                                    <th class="col-reason">Reason of Attendance</th>
+                                    <th class="col-picture">Picture</th>
+                                    <th class="col-source">Source</th>
+                                    <th class="col-protocol">Protocol Tier</th>
+                                    <th class="col-category">Guest Category</th>
+                                    <th class="col-sector">Guest Sector</th>
+                                    <th class="col-company">Company Affiliated</th>
+                                    <th class="col-jobtitle">Job Title</th>
+                                    <th class="col-bgcheck">Background Check</th>
+                                    <th class="col-rsvp">RSVP Status</th>
+                                    <th class="col-inbound">Inbound Date &amp; Time</th>
+                                    <th class="col-outbound">Outbound Date &amp; Time</th>
+                                    <th class="col-hotel">Hotel Name</th>
+                                    <th class="col-plusone">Accompanying Guest</th>
+                                    <th class="col-relationship">Relationship To</th>
+                                    <th class="col-escort">Escort</th>
+                                    <th class="col-he">HE Requests</th>
+                                    <th class="col-date">Submitted</th>
+                                    <th class="col-comment">Reviewer Comment</th>
+                                    <th class="col-action">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={visibleStage2Records} for:item="row">
+                                    <tr key={row.workItemId} class={row.rowClass}>
+                                        <td class="col-check">
+                                            <input type="checkbox" class="bam-row-checkbox"
+                                                checked={row.isSelected} data-id={row.workItemId}
+                                                onchange={handleRowSelect} />
+                                        </td>
+                                        <template if:true={row.detail}>
+                                            <td class="col-contact-id">
+                                                <button class="bam-record-link" data-id={row.workItemId} onclick={handleOpenDetail}>
+                                                    {row.detail.contactId}
+                                                </button>
+                                            </td>
+                                            <td class="col-event">
+                                                <template if:true={row.eventName}><span class="bam-event-name">{row.eventName}</span></template>
+                                                <template if:false={row.eventName}><span class="bam-no-value">—</span></template>
+                                            </td>
+                                            <td class="col-title"><span class="bam-cell-text">{row.detail.titleField}</span></td>
+                                            <td class="col-fullname"><span class="bam-cell-text">{row.detail.fullName}</span></td>
+                                            <td class="col-mainguest">
+                                                <template if:true={row.detail.mainGuestName}>
+                                                    <button class="bam-record-link" data-id={row.detail.mainGuestId} onclick={handleMainGuestClick}>
+                                                        {row.detail.mainGuestName}
+                                                    </button>
+                                                </template>
+                                                <template if:false={row.detail.mainGuestName}><span class="bam-no-value">—</span></template>
+                                            </td>
+                                            <td class="col-guesttier">
+                                                <lightning-combobox
+                                                    class="bam-guesttier-input"
+                                                    data-id={row.workItemId}
+                                                    value={row.detail.guestTierRecommendation}
+                                                    options={guestTierOptions}
+                                                    placeholder="— Select —"
+                                                    variant="label-hidden"
+                                                    onchange={handleGuestTierChange}>
+                                                </lightning-combobox>
+                                            </td>
+                                            <td class="col-bio"><span class="bam-cell-text bam-cell-clamp">{row.detail.bio}</span></td>
+                                            <td class="col-reason"><span class="bam-cell-text bam-cell-clamp">{row.detail.reason}</span></td>
+                                            <td class="col-picture">
+                                                <template if:true={row.submittedByPhotoUrl}>
+                                                    <img src={row.submittedByPhotoUrl} alt={row.contactName} class="bam-avatar bam-avatar-photo" />
+                                                </template>
+                                                <template if:false={row.submittedByPhotoUrl}>
+                                                    <div class="bam-avatar bam-avatar-initials" style={row.avatarStyle}>{row.contactInitial}</div>
+                                                </template>
+                                            </td>
+                                            <td class="col-source"><span class="bam-cell-text">{row.detail.source}</span></td>
+                                            <td class="col-protocol"><span class="bam-cell-text">{row.detail.protocolTier}</span></td>
+                                            <td class="col-category"><span class="bam-cell-text">{row.detail.guestCategory}</span></td>
+                                            <td class="col-sector"><span class="bam-cell-text">{row.detail.guestSector}</span></td>
+                                            <td class="col-company"><span class="bam-cell-text">{row.detail.company}</span></td>
+                                            <td class="col-jobtitle"><span class="bam-cell-text">{row.detail.position}</span></td>
+                                            <td class="col-bgcheck"><span class="bam-cell-text">{row.detail.backgroundCheck}</span></td>
+                                            <td class="col-rsvp"><span class="bam-cell-text">{row.detail.rsvpStatus}</span></td>
+                                            <td class="col-inbound">
+                                                <template if:true={row.detail.inboundDateTime}>
+                                                    <span class="bam-cell-text">{row.detail.inboundDateTime}</span>
+                                                </template>
+                                                <template if:false={row.detail.inboundDateTime}><span class="bam-no-value">—</span></template>
+                                            </td>
+                                            <td class="col-outbound">
+                                                <template if:true={row.detail.outboundDateTime}>
+                                                    <span class="bam-cell-text">{row.detail.outboundDateTime}</span>
+                                                </template>
+                                                <template if:false={row.detail.outboundDateTime}><span class="bam-no-value">—</span></template>
+                                            </td>
+                                            <td class="col-hotel"><span class="bam-cell-text">{row.detail.hotelName}</span></td>
+                                            <td class="col-plusone"><span class="bam-cell-text">{row.detail.plusOne}</span></td>
+                                            <td class="col-relationship"><span class="bam-cell-text">{row.detail.relationshipTo}</span></td>
+                                            <td class="col-escort"><span class="bam-cell-text">{row.detail.escortedBy}</span></td>
+                                            <td class="col-he">
+                                                <template if:true={row.heRequestsDisplay}>
+                                                    <span class="bam-cell-text">{row.heRequestsDisplay}</span>
+                                                </template>
+                                                <template if:false={row.heRequestsDisplay}><span class="bam-no-value">—</span></template>
+                                            </td>
+                                            <td class="col-date">
+                                                <lightning-formatted-date-time value={row.createdDate} year="numeric" month="short" day="2-digit"></lightning-formatted-date-time>
+                                            </td>
+                                            <td class="col-comment">
+                                                <template if:true={row.detail.notes}>
+                                                    <span class="bam-cell-text bam-cell-clamp bam-reviewer-comment">{row.detail.notes}</span>
+                                                </template>
+                                                <template if:false={row.detail.notes}>
+                                                    <span class="bam-no-value">—</span>
+                                                </template>
+                                            </td>
+                                            <td class="col-action">
+                                                <div class="bam-row-actions">
+                                                    <button class="bam-action-btn bam-approve-quick"
+                                                        data-id={row.workItemId} onclick={handleQuickApprove} title="Approve">
+                                                        <lightning-icon icon-name="utility:check" size="x-small" alternative-text="Approve"></lightning-icon>
+                                                    </button>
+                                                    <button class="bam-action-btn bam-reject-quick"
+                                                        data-id={row.workItemId} onclick={handleQuickReject} title="Reject">
+                                                        <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Reject"></lightning-icon>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </template>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </template>
+
+                </div>
+
+                <template if:true={hasMoreRecords}>
+                    <div class="bam-load-more">
+                        <button class="bam-load-more-btn" onclick={loadMoreRecords}>
+                            Load more ({remainingCount} remaining)
+                        </button>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <!-- STICKY ACTION BAR -->
+        <template if:true={showActionBar}>
+            <div class="bam-action-bar">
+                <div class="bam-action-bar-inner">
+
+                    <!-- Left: selection badge -->
+                    <div class="bam-action-info">
+                        <div class="bam-action-badge">
+                            <span class="bam-action-badge-count">{selectedCount}</span>
+                        </div>
+                        <div class="bam-action-info-text">
+                            <span class="bam-action-info-label">{selectedRecordLabel} selected</span>
+                            <span class="bam-action-info-hint">Choose an action to apply</span>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="bam-action-divider"></div>
+
+                    <!-- Right: action buttons -->
+                    <div class="bam-action-buttons">
+                        <template if:true={showBulkReject}>
+                            <button class="bam-bar-btn bam-bar-btn-reject" onclick={handleBulkReject} disabled={isProcessing}>
+                                <span class="bam-bar-btn-icon">
+                                    <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Reject"></lightning-icon>
+                                </span>
+                                <span class="bam-bar-btn-text">
+                                    <span class="bam-bar-btn-label">Reject All</span>
+                                    <span class="bam-bar-btn-sub">Decline requests</span>
+                                </span>
+                            </button>
+                        </template>
+                        <button class="bam-bar-btn bam-bar-btn-approve" onclick={handleBulkApprove} disabled={isProcessing}>
+                            <span class="bam-bar-btn-icon">
+                                <template if:true={isProcessing}>
+                                    <lightning-spinner size="x-small" variant="inverse" alternative-text="Processing"></lightning-spinner>
+                                </template>
+                                <template if:false={isProcessing}>
+                                    <lightning-icon icon-name="utility:check" size="x-small" alternative-text="Approve"></lightning-icon>
+                                </template>
+                            </span>
+                            <span class="bam-bar-btn-text">
+                                <span class="bam-bar-btn-label">{approveAllLabel}</span>
+                                <span class="bam-bar-btn-sub">
+                                    <template if:true={isProcessing}>Processing…</template>
+                                    <template if:false={isProcessing}>Confirm selection</template>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+        <!-- ═══════════ DETAIL MODAL ═══════════ -->
+        <template if:true={showDetailModal}>
+            <div class="bam-modal-backdrop" onclick={closeDetailModal}>
+                <div class="bam-detail-modal" onclick={stopPropagation}>
+
+                    <!-- Header -->
+                    <div class="bam-detail-header">
+                        <div class="bam-detail-photo-wrap">
+                            <template if:true={detailRecord.detail.photoUrl}>
+                                <img src={detailRecord.detail.photoUrl} alt="Contact"
+                                    class="bam-detail-photo" />
+                            </template>
+                            <template if:false={detailRecord.detail.photoUrl}>
+                                <div class="bam-detail-photo-initials" style={detailRecord.avatarStyle}>
+                                    {detailRecord.contactInitial}
+                                </div>
+                            </template>
+                        </div>
+                        <div class="bam-detail-header-info">
+                            <div class="bam-detail-name">{detailRecord.detail.fullName}</div>
+                            <div class="bam-detail-sub">{detailRecord.detail.contactTitle}</div>
+                            <div class="bam-detail-sub">{detailRecord.detail.company}</div>
+                            <span class={detailRecord.stageBadgeClass}>Stage {detailRecord.approvalStage} Review</span>
+                        </div>
+                        <button class="bam-detail-close" onclick={closeDetailModal}>
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Close"></lightning-icon>
+                        </button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="bam-detail-body">
+                        <template if:true={detailHasData}>
+                        <!-- ── STAGE 1 FIELDS ── -->
+                        <template if:true={isStage1}>
+                            <div class="bam-detail-section">
+                                <h3 class="bam-detail-section-title">Guest Information</h3>
+                                <div class="bam-detail-grid">
+                                    <!-- 1. Contact ID -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Contact ID</span>
+                                        <span class="bam-field-value">{detailRecord.detail.contactId}</span>
+                                    </div>
+                                    <!-- 2. Title -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Title</span>
+                                        <span class="bam-field-value">{detailRecord.detail.titleField}</span>
+                                    </div>
+                                    <!-- 3. Full Name -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Full Name</span>
+                                        <span class="bam-field-value">{detailRecord.detail.fullName}</span>
+                                    </div>
+                                    <!-- 3b. Main Guest -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Main Guest</span>
+                                        <template if:true={detailRecord.detail.mainGuestName}>
+                                            <button class="bam-record-link" data-id={detailRecord.detail.mainGuestId} onclick={handleMainGuestClick}>
+                                                {detailRecord.detail.mainGuestName}
+                                            </button>
+                                        </template>
+                                        <template if:false={detailRecord.detail.mainGuestName}>
+                                            <span class="bam-field-value">—</span>
+                                        </template>
+                                    </div>
+                                    <!-- 5. Biography -->
+                                    <div class="bam-detail-field bam-field-full">
+                                        <span class="bam-field-label">Biography</span>
+                                        <span class="bam-field-value">{detailRecord.detail.bio}</span>
+                                    </div>
+                                    <!-- 6. Reason of Attendance -->
+                                    <div class="bam-detail-field bam-field-full">
+                                        <span class="bam-field-label">Reason of Attendance</span>
+                                        <span class="bam-field-value">{detailRecord.detail.reason}</span>
+                                    </div>
+                                    <!-- 7. Picture -->
+                                    <div class="bam-detail-field bam-field-full bam-field-picture">
+                                        <span class="bam-field-label">Picture</span>
+                                        <div class="bam-field-value">
+                                            <template if:true={detailRecord.detail.photoUrl}>
+                                                <img src={detailRecord.detail.photoUrl} alt="Contact Photo" class="bam-detail-inline-photo" />
+                                            </template>
+                                            <template if:false={detailRecord.detail.photoUrl}>
+                                                <div class="bam-detail-photo-initials bam-detail-inline-photo" style={detailRecord.avatarStyle}>
+                                                    {detailRecord.contactInitial}
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <!-- 8. Source -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Source</span>
+                                        <span class="bam-field-value">{detailRecord.detail.source}</span>
+                                    </div>
+                                    <!-- 9. Protocol Tier -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Protocol Tier</span>
+                                        <span class="bam-field-value">{detailRecord.detail.protocolTier}</span>
+                                    </div>
+                                    <!-- 10. Guest Category -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Guest Category</span>
+                                        <span class="bam-field-value">{detailRecord.detail.guestCategory}</span>
+                                    </div>
+                                    <!-- 11. Guest Sector -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Guest Sector</span>
+                                        <span class="bam-field-value">{detailRecord.detail.guestSector}</span>
+                                    </div>
+                                    <!-- 12. Company Affiliated -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Company Affiliated</span>
+                                        <span class="bam-field-value">{detailRecord.detail.company}</span>
+                                    </div>
+                                    <!-- 13. Job Title -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Job Title</span>
+                                        <span class="bam-field-value">{detailRecord.detail.position}</span>
+                                    </div>
+                                    <!-- 14. Background Check -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Background Check</span>
+                                        <span class="bam-field-value">{detailRecord.detail.backgroundCheck}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+
+                        <!-- ── STAGE 2 FIELDS ── -->
+                        <template if:true={isStage2}>
+
+                            <!-- Stage 1 reviewer note -->
+                            <template if:true={detailRecord.detail.notes}>
+                                <div class="bam-detail-section bam-stage1-note-section">
+                                    <h3 class="bam-detail-section-title">
+                                        <lightning-icon icon-name="utility:note" size="x-small" alternative-text="note"></lightning-icon>
+                                        Reviewer Note
+                                    </h3>
+                                    <p class="bam-stage1-note-text">{detailRecord.detail.notes}</p>
+                                </div>
+                            </template>
+
+                            <div class="bam-detail-section">
+                                <h3 class="bam-detail-section-title">Guest Information</h3>
+                                <div class="bam-detail-grid">
+                                    <!-- 1. Contact ID -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Contact ID</span>
+                                        <span class="bam-field-value">{detailRecord.detail.contactId}</span>
+                                    </div>
+                                    <!-- 2. Title -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Title</span>
+                                        <span class="bam-field-value">{detailRecord.detail.titleField}</span>
+                                    </div>
+                                    <!-- 3. Full Name -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Full Name</span>
+                                        <span class="bam-field-value">{detailRecord.detail.fullName}</span>
+                                    </div>
+                                    <!-- 3b. Main Guest -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Main Guest</span>
+                                        <template if:true={detailRecord.detail.mainGuestName}>
+                                            <button class="bam-record-link" data-id={detailRecord.detail.mainGuestId} onclick={handleMainGuestClick}>
+                                                {detailRecord.detail.mainGuestName}
+                                            </button>
+                                        </template>
+                                        <template if:false={detailRecord.detail.mainGuestName}>
+                                            <span class="bam-field-value">—</span>
+                                        </template>
+                                    </div>
+                                    <!-- 5. Biography -->
+                                    <div class="bam-detail-field bam-field-full">
+                                        <span class="bam-field-label">Biography</span>
+                                        <span class="bam-field-value">{detailRecord.detail.bio}</span>
+                                    </div>
+                                    <!-- 6. Reason of Attendance -->
+                                    <div class="bam-detail-field bam-field-full">
+                                        <span class="bam-field-label">Reason of Attendance</span>
+                                        <span class="bam-field-value">{detailRecord.detail.reason}</span>
+                                    </div>
+                                    <!-- 7. Picture -->
+                                    <div class="bam-detail-field bam-field-full bam-field-picture">
+                                        <span class="bam-field-label">Picture</span>
+                                        <div class="bam-field-value">
+                                            <template if:true={detailRecord.detail.photoUrl}>
+                                                <img src={detailRecord.detail.photoUrl} alt="Contact Photo" class="bam-detail-inline-photo" />
+                                            </template>
+                                            <template if:false={detailRecord.detail.photoUrl}>
+                                                <div class="bam-detail-photo-initials bam-detail-inline-photo" style={detailRecord.avatarStyle}>
+                                                    {detailRecord.contactInitial}
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <!-- 8. Source -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Source</span>
+                                        <span class="bam-field-value">{detailRecord.detail.source}</span>
+                                    </div>
+                                    <!-- 9. Protocol Tier -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Protocol Tier</span>
+                                        <span class="bam-field-value">{detailRecord.detail.protocolTier}</span>
+                                    </div>
+                                    <!-- 10. Guest Category -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Guest Category</span>
+                                        <span class="bam-field-value">{detailRecord.detail.guestCategory}</span>
+                                    </div>
+                                    <!-- 11. Guest Sector -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Guest Sector</span>
+                                        <span class="bam-field-value">{detailRecord.detail.guestSector}</span>
+                                    </div>
+                                    <!-- 12. Company Affiliated -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Company Affiliated</span>
+                                        <span class="bam-field-value">{detailRecord.detail.company}</span>
+                                    </div>
+                                    <!-- 13. Job Title -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Job Title</span>
+                                        <span class="bam-field-value">{detailRecord.detail.position}</span>
+                                    </div>
+                                    <!-- 14. RSVP Status -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">RSVP Status</span>
+                                        <span class="bam-field-value">{detailRecord.detail.rsvpStatus}</span>
+                                    </div>
+                                    <!-- 15. Inbound Date & Time -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Inbound Date &amp; Time</span>
+                                        <span class="bam-field-value">
+                                            <template if:true={detailRecord.detail.inboundDateTime}>
+                                                <span class="bam-field-value">{detailRecord.detail.inboundDateTime}</span>
+                                            </template>
+                                            <template if:false={detailRecord.detail.inboundDateTime}>—</template>
+                                        </span>
+                                    </div>
+                                    <!-- 16. Outbound Date & Time -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Outbound Date &amp; Time</span>
+                                        <span class="bam-field-value">
+                                            <template if:true={detailRecord.detail.outboundDateTime}>
+                                                <span class="bam-field-value">{detailRecord.detail.outboundDateTime}</span>
+                                            </template>
+                                            <template if:false={detailRecord.detail.outboundDateTime}>—</template>
+                                        </span>
+                                    </div>
+                                    <!-- 19. Hotel Name -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Hotel Name</span>
+                                        <span class="bam-field-value">{detailRecord.detail.hotelName}</span>
+                                    </div>
+                                    <!-- 20. +1 of Invited Guest -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Accompanying Guest</span>
+                                        <span class="bam-field-value">{detailRecord.detail.plusOne}</span>
+                                    </div>
+                                    <!-- 21. Relationship To -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Relationship To</span>
+                                        <span class="bam-field-value">{detailRecord.detail.relationshipTo}</span>
+                                    </div>
+                                    <!-- 22. Escort -->
+                                    <div class="bam-detail-field">
+                                        <span class="bam-field-label">Escort</span>
+                                        <span class="bam-field-value">{detailRecord.detail.escortedBy}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 23. HE Requests -->
+                            <template if:true={detailHasHeRequests}>
+                                <div class="bam-detail-section">
+                                    <h3 class="bam-detail-section-title">HE Requests</h3>
+                                    <div class="bam-he-list">
+                                        <template for:each={detailRecord.detail.heRequests} for:item="he">
+                                            <div key={he} class="bam-he-item">
+                                                <lightning-icon icon-name="utility:record" size="x-small" alternative-text="HE Request"></lightning-icon>
+                                                <span>{he}</span>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+
+                        </template>
+                        <template if:false={detailHasData}>
+                            <div class="bam-detail-no-data">
+                                <lightning-icon icon-name="utility:info" size="small" alternative-text="info"></lightning-icon>
+                                <p>Guest list details could not be loaded. Check field API names in BulkApprovalController.</p>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="bam-detail-footer">
+                        <button class="bam-btn bam-btn-ghost" onclick={closeDetailModal}>Close</button>
+                        <template if:true={isStage2}>
+                            <button class="bam-btn bam-btn-reject" onclick={handleDetailReject}>
+                                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Reject"></lightning-icon>
+                                Reject
+                            </button>
+                        </template>
+                        <button class="bam-btn bam-btn-approve" onclick={handleDetailApprove}>
+                            <lightning-icon icon-name="utility:check" size="x-small" alternative-text="Approve"></lightning-icon>
+                            {detailApproveLabel}
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+        <!-- CONFIRM MODAL -->
+        <template if:true={showConfirmModal}>
+            <div class="bam-modal-backdrop" onclick={handleBackdropClick}>
+                <div class="bam-modal" onclick={stopPropagation}>
+                    <div class="bam-modal-header" style={modalHeaderStyle}>
+                        <div class="bam-modal-header-icon">
+                            <lightning-icon icon-name={modalIcon} size="medium" alternative-text="action" variant="inverse"></lightning-icon>
+                        </div>
+                        <div>
+                            <h2 class="bam-modal-title">{modalTitle}</h2>
+                            <p class="bam-modal-subtitle">{modalSubtitle}</p>
+                        </div>
+                    </div>
+                    <div class="bam-modal-body">
+                        <p class="bam-modal-desc">{modalDescription}</p>
+                        <div class="bam-modal-preview">
+                            <p class="bam-modal-preview-label">Guest Lists to {pendingAction}:</p>
+                            <div class="bam-modal-preview-list">
+                                <template for:each={selectedPreviewRecords} for:item="rec">
+                                    <div key={rec.workItemId} class="bam-modal-preview-row">
+                                        <template if:true={rec.submittedByPhotoUrl}>
+                                            <img src={rec.submittedByPhotoUrl} alt={rec.contactName} class="bam-modal-avatar" />
+                                        </template>
+                                        <template if:false={rec.submittedByPhotoUrl}>
+                                            <div class="bam-modal-avatar bam-avatar-initials" style={rec.avatarStyle}>{rec.contactInitial}</div>
+                                        </template>
+                                        <div class="bam-modal-rec-info">
+                                            <span class="bam-modal-rec-name">{rec.targetObjectName}</span>
+                                            <span class="bam-modal-rec-sub">{rec.contactName}</span>
+                                        </div>
+                                    </div>
+                                </template>
+                                <template if:true={hasMoreSelectedRecords}>
+                                    <p class="bam-modal-more">+ {moreSelectedCount} more</p>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Note section -->
+                        <div class="bam-modal-comment">
+                            <label class="bam-modal-comment-label">Note</label>
+                            <textarea class="bam-modal-textarea"
+                                placeholder="Add a note…"
+                                value={bulkComment} onchange={handleCommentChange} rows="3">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="bam-modal-footer">
+                        <button class="bam-btn bam-btn-ghost" onclick={closeModal} disabled={isProcessing}>Cancel</button>
+                        <button class="bam-btn" style={modalConfirmStyle} onclick={confirmAction} disabled={isProcessing}>
+                            <template if:true={isProcessing}>
+                                <lightning-spinner size="x-small" variant="inverse" alternative-text="Processing"></lightning-spinner>
+                                Processing…
+                            </template>
+                            <template if:false={isProcessing}>
+                                {modalConfirmLabel}
+                            </template>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- TOAST -->
+        <template if:true={showToast}>
+            <div class="bam-toast" style={toastStyle}>
+                <lightning-icon icon-name={toastIcon} size="small" alternative-text="notification" variant={toastVariant}></lightning-icon>
+                <div class="bam-toast-content">
+                    <p class="bam-toast-title">{toastTitle}</p>
+                    <p class="bam-toast-msg">{toastMessage}</p>
+                </div>
+                <button class="bam-toast-close" onclick={closeToast}>
+                    <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Close"></lightning-icon>
+                </button>
+            </div>
+        </template>
+
+    </div>
+</template>

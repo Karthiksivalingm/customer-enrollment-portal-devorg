@@ -1,0 +1,78 @@
+<apex:page renderAs="{!pageRenderAs}" controller="ContactBio">
+
+    <apex:outputPanel rendered="{!isBiographyEmpty}">
+        <!-- ... unchanged toast block ... -->
+    </apex:outputPanel>
+
+    <apex:outputPanel rendered="{!NOT(isBiographyEmpty)}">
+
+        <apex:variable var="chunkIndex" value="{!0}" />
+        <apex:variable var="totalChunks" value="{!ParagraphChunks.size}" />
+
+        <apex:repeat value="{!ParagraphChunks}" var="chunk">
+            <div style="{!IF(chunkIndex == 0, '', 'page-break-before: always;')}">
+                <div style="text-align: right; margin-bottom: 20px;">
+                    <apex:image value="{!$Resource.Logo}" style="width: 160px; height: 150px;" />
+                </div>
+                <table width="100%" cellspacing="0" cellpadding="10" style="border-collapse: collapse; border: 1px solid #4d4d4d; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 11pt; margin-bottom: 20px; text-align: left;">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="font-size: 12pt; border: 1px solid #4d4d4d; background-color: #D7C30D; color: White; font-weight: bold; text-align: left; padding: 10px;">
+                                <div style="font-weight: bold;">
+                                    <apex:outputText value="{!Con.Name}" />
+                                </div>
+                                <apex:outputPanel rendered="{!NOT(ISBLANK(Con.Title))}">
+                                    <div style="font-weight: normal;">
+                                        <apex:outputText value="{!Con.Title}" />
+                                    </div>
+                                </apex:outputPanel>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- ✅ updated justification styling -->
+                            <td valign="top" style="padding: 8px; font-family: 'Helvetica', 'Arial', sans-serif; border: 1px solid #4d4d4d; font-size: 12pt;
+                                white-space: normal;
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                                vertical-align: top;
+                                text-align: justify;
+                                text-justify: inter-word;
+                                text-align-last: left;">
+                                <apex:outputText value="{!chunk}" escape="false" />
+                                <apex:outputPanel rendered="{!chunkIndex == (totalChunks - 1) && NOT(ISBLANK(Con.Instagram_Handle__c))}">
+                                    <div style="margin-top:10px; font-family: 'Helvetica', Arial, sans-serif; font-size: 12pt; color: black; white-space: nowrap; text-align: left;">
+                                        Instagram:
+                                        <a href="https://www.instagram.com/{!Con.Instagram_Handle__c}" target="_blank" style="color:#444; text-decoration:none;">
+                                            {!SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Con.Instagram_Handle__c,'https://www.instagram.com/',''),'http://www.instagram.com/',''),'https://instagram.com/',''),'http://instagram.com/',''),'/','') }
+                                        </a>
+                                    </div>
+                                </apex:outputPanel>
+                            </td>
+                            <td width="25%" valign="top" align="center" style="border: 1px solid #4d4d4d; padding: 10px;">
+                                <apex:outputPanel rendered="{!chunkIndex == 0 && NOT(ISNULL(Attach))}">
+                                    <img src="{!'/servlet/servlet.FileDownload?file=' + attach.Id}" style="width: 100%; height: auto; display: block;" />
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <apex:variable var="chunkIndex" value="{!chunkIndex + 1}" />
+        </apex:repeat>
+
+        <!-- Fixed Footer -->
+        <div style="position: fixed;  bottom: 0; left: 0; right: 0; height: 60px; text-align: center; font-family: 'Helvetica', Arial, sans-serif; font-size: 11pt; color: #666;">
+            <div style="width: 100%; height: 3px;">
+                <div style="width: 50%; float: left; height: 3px; background-color: #0d0707;"></div>
+                <div style="width: 50%; float: right; height: 3px; background-color: #D7C30D;"></div>
+            </div>
+            <div style="clear: both; margin-top: 3px;">
+                <p style="margin: 2px;">Office of Her Excellency</p>
+                <p style="margin: 0;">Sheikha Al Mayassa bint Hamad bin Khalifa Al-Thani</p>
+            </div>
+        </div>
+    </apex:outputPanel>
+
+</apex:page>

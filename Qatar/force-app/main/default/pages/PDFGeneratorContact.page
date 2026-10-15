@@ -1,0 +1,686 @@
+<apex:page controller="ContactProfilePDFController" renderAs="pdf">
+<html>
+<head>
+<style>
+    @page {
+        size: A4;
+        margin: 1cm;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+        margin: 0;
+        padding: 0;
+    }
+    table {
+        page-break-inside: auto;
+    }
+    tr {
+        page-break-inside: avoid;
+    }
+    .section {
+        page-break-inside: avoid;
+        margin-bottom: 12px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Page Header -->
+<table style="width:auto; border-collapse:collapse; margin-bottom:12px;">
+    <tr>
+        <td style="vertical-align:middle; padding-right:10px;">
+            <apex:image value="{!$Resource.contactlogo}" width="40" height="40" />
+        </td>
+        <td style="vertical-align:middle;">
+            <h1 style="margin:0; padding:0; color:#464706; font-size:20pt; line-height:1;">
+                Guest Profile
+            </h1>
+        </td>
+    </tr>
+</table>
+
+<!-- Profile Picture -->
+<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(profilePictureUrl))}">
+<table style="width:100%; border-collapse:collapse; margin-bottom:12px;">
+    <tr>
+        <td style="text-align:right; vertical-align:top; width:130px;">
+            <img src="{!profilePictureUrl}" alt="Profile Picture"
+                 style="width:120px; height:120px; object-fit:cover; border:1px solid #ccc;" />
+        </td>
+    </tr>
+</table>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     1. IDENTIFICATION SECTION
+     ═══════════════════════════════════════════════════ -->
+<div class="section">
+    <table style="width:100%; border-collapse:collapse; background:#FFFFFF; border:1px solid #000; color:Black;">
+        <tr><th colspan="2" style="border:1px solid #000; width:50%; padding:6px; background:#80815E; color:White;">Identification</th></tr>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Name))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; width:50%;">Name</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Name}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Title))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Job Title</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Title}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(companyAffiliatedName))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Company</td>
+            <td style="border:1px solid #000; padding:6px;">{!companyAffiliatedName}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Alias__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Alias</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Alias__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(TEXT(Contact.Birthdate)))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Birthdate</td>
+            <td style="border:1px solid #000; padding:6px;">{!TEXT(Contact.Birthdate)}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!Contact.Escort__c}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Escort Required</td>
+            <td style="border:1px solid #000; padding:6px;">{!IF(Contact.Escort__c, 'Yes', 'No')}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Nationality__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Nationality</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Nationality__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Contact_Type__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Contact Type</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Contact_Type__c}</td>
+        </tr>
+        </apex:outputPanel>
+    </table>
+</div>
+
+    
+    
+<!-- ═══════════════════════════════════════════════════
+     2. HE REQUEST SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none" rendered="{!hasherequest}">
+<div class="section">
+    <p style="font-weight:bold; font-size:14px; margin:0 0 4px 0; color:Black;">
+        HE Request ({!herequests.size})
+    </p>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; background:#FFFFFF; color:Black;">
+        <tr>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">HE Request</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">HE Request Status</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Feedback</th>
+        </tr>
+        <apex:repeat value="{!HERequestRows}" var="hereq">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!hereq.name}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!hereq.status}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!hereq.feedback}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</div>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     3. BIOGRAPHY SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(contact.Professional_Personal_Backgrounds__c))}">
+<div class="section">
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
+        <tr>
+            <th style="border:1px solid #000; background:#80815E; color:White; padding:8px; text-align:left;">Biography</th>
+        </tr>
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">{!contact.Professional_Personal_Backgrounds__c}</td>
+        </tr>
+    </table>
+</div>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     4. AREA OF INTEREST SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(contact.Area_O_I__c))}">
+<div class="section">
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
+        <tr><th colspan="2" style="border:1px solid #000; background:#80815E; color:White; padding:8px; text-align:left;">Area of Interest</th></tr>
+        <tr>
+            <td style="border:1px solid #000; padding:6px; width:50%;">Area Of Interests</td>
+            <td style="border:1px solid #000; padding:6px;">{!contact.Area_O_I__c}</td>
+        </tr>
+    </table>
+</div>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     5. SOCIAL MEDIA AND WEBSITES SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!SocialMediaRows.size > 0}" layout="block" style="page-break-inside:avoid; margin-bottom:12px;">
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+        <tr>
+            <th colspan="2" style="background:#80815E; color:White; text-align:left; padding:8px; border:1px solid black;">
+                Social Media and Websites
+            </th>
+        </tr>
+        <apex:repeat value="{!SocialMediaRows}" var="row">
+        <tr>
+            <td style="width:35%; border:1px solid black; padding:6px;width:50%;">{!row.label}</td>
+            <td style="border:1px solid black; padding:6px;">{!row.value}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     6. MARITAL INFORMATION SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none"
+    rendered="{!NOT(ISBLANK(contact.Marital_Status__c)) ||
+               NOT(ISBLANK(contact.Spouse_Name__c))}">
+<div class="section">
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
+        <tr><th colspan="2" style="border:1px solid #000; background:#80815E; color:White; padding:8px; text-align:left;">Marital Information</th></tr>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(contact.Marital_Status__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; width:50%;">Marital Status</td>
+            <td style="border:1px solid #000; padding:6px;">{!contact.Marital_Status__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(spouseName))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Spouse Name</td>
+            <td style="border:1px solid #000; padding:6px;">{!spouseName}</td>
+        </tr>
+        </apex:outputPanel>
+    </table>
+</div>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     7. CHILDREN SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none" rendered="{!hasChildren}">
+<div class="section">
+    <p style="font-weight:bold; font-size:14px; margin:0 0 4px 0; color:Black;">
+        Children ({!children.size})
+    </p>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; background:#FFFFFF; color:Black;">
+        <tr>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Children Name</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Age</th>
+        </tr>
+        <apex:repeat value="{!Children}" var="Child">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!Child.Name}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!Child.Age__c}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</div>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     8. CONNECTIONS SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!ConnectionRows.size > 0}" layout="block" style="page-break-inside:avoid; margin-bottom:12px;">
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid; margin:0;">
+        <tr>
+            <th colspan="2" style="background:#80815E; color:White; text-align:left; padding:8px; border:1px solid black;">Connections</th>
+        </tr>
+        <apex:repeat value="{!ConnectionRows}" var="row">
+        <tr>
+            <td style="width:35%; border:1px solid black; padding:6px;width:50%;">{!row.label}</td>
+            <td style="border:1px solid black; padding:6px;">{!row.value}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     9. GIFTS AND DONATIONS SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none" rendered="{!hasGifts}">
+<div class="section">
+    <p style="font-weight:bold; font-size:14px; margin:0 0 4px 0; color:Black;">
+        Gifts and Donations ({!gifts.size})
+    </p>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; background:#FFFFFF; color:Black;">
+        <tr>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Gift and Donations Name</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Date</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Record Type</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Gift Description</th>
+        </tr>
+        <apex:repeat value="{!GiftRows}" var="gift">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!gift.name}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!gift.dateOfExchange}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!gift.recordTypeName}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!gift.giftDescription}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</div>
+</apex:outputPanel>
+
+    
+    <!-- ═══════════════════════════════════════════════════
+     20. SESSION ATTENDANCE SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!hasSessionAttendance}"
+                  layout="block"
+                  style="page-break-inside:avoid; margin-bottom:12px;">
+
+    <!-- Section Title -->
+    <div style="font-size:18px; font-weight:bold; margin-bottom:4px;">
+        Event &amp; Sub Event History ({!sessionAttendances.size})
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+
+        <tr>
+            <th style="background:#80815E; color:#fff; text-align:left; padding:8px; border:1px solid black;">
+                Event Name
+            </th>
+            <th style="background:#80815E; color:#fff; text-align:left; padding:8px; border:1px solid black;">
+                Sub Event Name
+            </th>
+            <th style="background:#80815E; color:#fff; text-align:left; padding:8px; border:1px solid black;">
+                Registered
+            </th>
+            <th style="background:#80815E; color:#fff; text-align:left; padding:8px; border:1px solid black;">
+                Attended
+            </th>
+            
+        </tr>
+
+        <apex:repeat value="{!SessionAttendanceRows}" var="row">
+            <tr>
+                <td style="border:1px solid black; padding:6px;">{!row.eventName}</td>
+                <td style="border:1px solid black; padding:6px;">{!row.subEventName}</td>
+                <td style="border:1px solid black; padding:6px;">{!row.registered}</td>
+                <td style="border:1px solid black; padding:6px;">{!row.attended}</td>
+                
+            </tr>
+        </apex:repeat>
+
+    </table>
+
+</apex:outputPanel>
+<!-- ═══════════════════════════════════════════════════
+     10. CONTACTS SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!ContactInfoRows.size > 0}"
+                  layout="block"
+                  style="page-break-inside:avoid; margin-bottom:12px;">
+
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+
+        <tr>
+            <th colspan="2"
+                style="background:#80815E; color:white; text-align:left; padding:8px; border:1px solid black;">
+                Contacts
+            </th>
+        </tr>
+
+        <apex:repeat value="{!ContactInfoRows}" var="row">
+            <tr>
+                <td style="width:35%; border:1px solid black; padding:6px;width:50%;">
+                    {!row.label}
+                </td>
+                <td style="border:1px solid black; padding:6px;">
+                    {!row.value}
+                </td>
+            </tr>
+        </apex:repeat>
+
+    </table>
+
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     ADMIN CONTACTS SECTION (kept with Contacts - not in
+     requested list; remove or relocate if not needed)
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!AdminContactRows.size > 0}"
+                  layout="block"
+                  style="page-break-inside:avoid; margin-bottom:12px;">
+
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+        <tr>
+            <th colspan="2"
+                style="background:#80815E; color:white; text-align:left; padding:8px; border:1px solid black;">
+                Admin Contacts
+            </th>
+        </tr>
+
+        <apex:repeat value="{!AdminContactRows}" var="row">
+            <tr>
+                <td style="width:35%; border:1px solid black; padding:6px;width:50%;">
+                    {!row.label}
+                </td>
+                <td style="border:1px solid black; padding:6px;">
+                    {!row.value}
+                </td>
+            </tr>
+        </apex:repeat>
+
+    </table>
+
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     11. ADDITIONAL CONTACT INFORMATION SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!AdditionalContactRows.size > 0}" layout="block" style="page-break-inside:avoid; margin-bottom:12px;">
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+        <tr>
+            <th colspan="2" style="background:#80815E; color:White; text-align:left; padding:8px; border:1px solid black;">
+                Additional Contact Information
+            </th>
+        </tr>
+        <apex:repeat value="{!AdditionalContactRows}" var="row">
+        <tr>
+            <td style="width:35%; border:1px solid black; padding:6px;width:50%;">{!row.label}</td>
+            <td style="border:1px solid black; padding:6px;">{!row.value}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     12. CURRENT ADDRESS SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!CurrentAddressRows.size > 0}" layout="block" style="page-break-inside:avoid; margin-bottom:12px;">
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+        <tr>
+            <th colspan="2" style="background:#80815E; color:White; text-align:left; padding:8px; border:1px solid black;">
+                Current Address
+            </th>
+        </tr>
+        <apex:repeat value="{!CurrentAddressRows}" var="row">
+        <tr>
+            <td style="width:35%; border:1px solid black; padding:6px;width:50%;">{!row.label}</td>
+            <td style="border:1px solid black; padding:6px;">{!row.value}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     13. PERMANENT ADDRESS SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!PermanentAddressRows.size > 0}" layout="block" style="page-break-inside:avoid; margin-bottom:12px;">
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+        <tr><th colspan="2" style="background:#80815E; color:White; text-align:left;padding:8px; border:1px solid black;">Permanent Address</th></tr>
+
+        <apex:repeat value="{!PermanentAddressRows}" var="row">
+
+            <tr>
+                <td style="width:35%;
+                           border:1px solid black;
+                           padding:6px;width:50%;">
+                    {!row.label}
+                </td>
+
+                <td style="border:1px solid black;
+                           padding:6px;">
+                    {!row.value}
+                </td>
+            </tr>
+
+        </apex:repeat>
+
+    </table>
+
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     14. OFFICE ADDRESS SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!OfficeAddressRows.size > 0}"
+                  layout="block"
+                  style="page-break-inside:avoid; margin-bottom:12px;">
+
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+
+        <tr>
+            <th colspan="2"
+                style="background:#80815E; color:White; text-align:left; padding:8px; border:1px solid black;">
+                Office Address
+            </th>
+        </tr>
+
+        <apex:repeat value="{!OfficeAddressRows}" var="row">
+            <tr>
+                <td style="width:50%; border:1px solid black; padding:6px;width:50%;">
+                    {!row.label}
+                </td>
+                <td style="border:1px solid black; padding:6px;">
+                    {!row.value}
+                </td>
+            </tr>
+        </apex:repeat>
+
+    </table>
+
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     15. ADDITIONAL INFORMATION SECTION
+     ═══════════════════════════════════════════════════ -->
+<div class="section">
+    <table style="width:100%; border-collapse:collapse; background:#FFFFFF; border:1px solid #000; color:Black;">
+        <tr><th colspan="2" style="border:1px solid #000; width:50%; padding:6px; background:#80815E; color:White;">Additional Information</th></tr>
+        <apex:outputPanel layout="none" rendered="{!Contact.Deceased__c}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; width:50%;">Deceased</td>
+            <td style="border:1px solid #000; padding:6px;">{!IF(contact.Deceased__c, 'Yes', 'No')}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(deceasedDateFormatted))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Deceased Date</td>
+            <td style="border:1px solid #000; padding:6px;">{!deceasedDateFormatted}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!Contact.Sympathy_Message_Sent__c}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Sympathy Message Sent</td>
+            <td style="border:1px solid #000; padding:6px;">{!IF(contact.Sympathy_Message_Sent__c, 'Yes', 'No')}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Protocol_tier__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Protocol Tier</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Protocol_tier__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Category__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Category</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Category__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Sector__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Sector</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Sector__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.Region__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Region</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.Region__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(recordTypeName))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">Contact Record Type</td>
+            <td style="border:1px solid #000; padding:6px;">{!recordTypeName}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.MUSEUMS__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">MUSEUMS AND CULTURAL</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.MUSEUMS__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.BUSINESS__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">BUSINESS</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.BUSINESS__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.EDUCATION__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">EDUCATION</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.EDUCATION__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.POLITICS__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">POLITICS</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.POLITICS__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.PRIVATE_FAMILY__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">PRIVATE FAMILY</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.PRIVATE_FAMILY__c}</td>
+        </tr>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(Contact.MEDIA_MARKETING__c))}">
+        <tr>
+            <td style="border:1px solid #000; padding:6px;">MARKETING, MEDIA AND GIFTING</td>
+            <td style="border:1px solid #000; padding:6px;">{!Contact.MEDIA_MARKETING__c}</td>
+        </tr>
+        </apex:outputPanel>
+    </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     16. GUEST MANAGEMENT SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!GuestManagementRows.size > 0}" layout="block" style="page-break-inside:avoid; margin-bottom:12px;">
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+        <tr>
+            <th colspan="2" style="background:#80815E; color:White; text-align:left; padding:8px; border:1px solid black;">
+                Guest Management
+            </th>
+        </tr>
+        <apex:repeat value="{!GuestManagementRows}" var="row">
+        <tr>
+            <td style="width:35%; border:1px solid black; padding:6px;width:50%;">{!row.label}</td>
+            <td style="border:1px solid black; padding:6px;">{!row.value}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     17. NOTES SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel rendered="{!NotesRows.size > 0}"
+                  layout="block"
+                  style="page-break-inside:avoid; margin-bottom:12px;">
+
+    <table style="width:100%; border-collapse:collapse; border:1px solid black; page-break-inside:avoid;">
+
+        <tr>
+            <th colspan="2"
+                style="background:#80815E; color:white; text-align:left; padding:8px; border:1px solid black;">
+                Notes
+            </th>
+        </tr>
+
+        <apex:repeat value="{!NotesRows}" var="row">
+            <tr>
+                <td style="width:35%; border:1px solid black; padding:6px;width:50%;">
+                    {!row.label}
+                </td>
+                <td style="border:1px solid black; padding:6px;">
+                    {!row.value}
+                </td>
+            </tr>
+        </apex:repeat>
+
+    </table>
+
+</apex:outputPanel>
+<!-- ═══════════════════════════════════════════════════
+     18. VISITS TO DOHA SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none" rendered="{!hasVisits}">
+<div class="section">
+    <p style="font-weight:bold; font-size:14px; margin:0 0 4px 0; color:Black;">
+        Visit Info ({!visitsToDoha.size})
+    </p>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; background:#FFFFFF; color:Black;">
+        <tr>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Visit to Doha Name</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Start Date</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">End Date</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Purpose of Visit</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Accompanied By</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">HE Notes</th>
+        </tr>
+        <apex:repeat value="{!VisitToDohaRows}" var="visit">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!visit.name}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!visit.startDate}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!visit.endDate}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!visit.purposeOfVisit}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!visit.accompaniedBy}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!visit.heNotes}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</div>
+</apex:outputPanel>
+
+<!-- ═══════════════════════════════════════════════════
+     19. MEETING AND NOTES SECTION
+     ═══════════════════════════════════════════════════ -->
+<apex:outputPanel layout="none" rendered="{!hasmeeting}">
+<div class="section">
+    <p style="font-weight:bold; font-size:14px; margin:0 0 4px 0; color:Black;">
+        Meeting and Notes ({!Meetingandnotes.size})
+    </p>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; background:#FFFFFF; color:Black;">
+        <tr>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Meeting Name</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Title</th>
+            <th style="border:1px solid #000; padding:6px; background:#80815E; color:White;">Date</th>
+        </tr>
+        <apex:repeat value="{!Meetingandnotes}" var="meetingandnotess">
+        <tr>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!meetingandnotess.Name}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!meetingandnotess.Title__c}</td>
+            <td style="border:1px solid #000; padding:6px; background:#FFFFFF; color:Black;">{!meetingandnotess.Date__c}</td>
+        </tr>
+        </apex:repeat>
+    </table>
+</div>
+</apex:outputPanel>
+
+
+
+</body>
+</html>
+</apex:page>

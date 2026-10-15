@@ -1,0 +1,88 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+
+            <template if:true={hasError}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+
+            <template if:false={isLoaded}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <template if:true={showTable}>
+                <!-- Header -->
+                <div class="slds-grid slds-grid_align-spread slds-m-bottom_medium">
+                    <div>
+                        <div class="slds-text-heading_medium">{eventName}</div>
+                        <div class="slds-text-heading_small slds-text-color_weak">{guestTier} &middot; {registrationStatus}</div>
+                        <div class="slds-text-body_small slds-text-color_weak">Report generated: {reportGeneratedDate}</div>
+                    </div>
+                    <div class="slds-align-bottom slds-grid slds-grid_vertical-align-center">
+                        <template if:true={isGeneratingPdf}>
+                            <lightning-spinner alternative-text="Generating PDF" size="small" class="slds-m-right_small"></lightning-spinner>
+                        </template>
+                        <lightning-button
+                            variant="brand"
+                            label="Download PDF"
+                            icon-name="utility:download"
+                            onclick={handleDownloadPdf}
+                            disabled={isGeneratingPdf}
+                        ></lightning-button>
+                    </div>
+                </div>
+
+                <p class="slds-m-bottom_small slds-text-body_small">
+                    Showing {guests.length} of {guestCount} guest(s)
+                </p>
+
+                <template if:true={hasPdfError}>
+                    <div class="slds-text-color_error slds-m-bottom_small">{pdfError}</div>
+                </template>
+
+                <div class="slds-scrollable table-scroll-container" onscroll={handleTableScroll}>
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <template for:each={columns} for:item="col">
+                                    <th key={col.key} scope="col">{col.label}</th>
+                                </template>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={guests} for:item="g">
+                                <tr key={g.key}>
+                                    <template for:each={g.cells} for:item="cell">
+                                        <td key={cell.key} class={cell.cssClass}>
+                                            <template if:true={cell.isPhoto}>
+                                                <template if:true={cell.value}>
+                                                    <img src={cell.value} alt="Guest Photo" class="guest-photo" />
+                                                </template>
+                                                <template if:false={cell.value}>
+                                                    <lightning-icon icon-name="standard:contact" size="small"></lightning-icon>
+                                                </template>
+                                            </template>
+                                            <template if:false={cell.isPhoto}>
+                                                {cell.value}
+                                            </template>
+                                        </td>
+                                    </template>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <template if:true={hasMore}>
+                    <div class="slds-align_absolute-center slds-m-top_small">
+                        <lightning-button
+                            label="Load More"
+                            onclick={handleLoadMore}
+                        ></lightning-button>
+                    </div>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,107 @@
+<apex:page standardController="Contact" extensions="contactmultiplerelatedlistpage" action="{!queryContentDocuments}">
+    <apex:messages />
+
+    <!-- Bios Section -->
+    <apex:pageBlock title="Bios" id="bios">
+        <apex:form id="uploadFormBios" enctype="multipart/form-data">
+            <apex:inputHidden value="{!fileType}" id="fileTypeBios"/>
+            <apex:inputFile value="{!fileBody}" filename="{!fileName}" id="fileInputBios"/>
+            <apex:commandButton value="Upload" action="{!uploadBio}" onclick="setFileType('Bios', 'fileTypeBios'); return true;" />
+        </apex:form>
+        <apex:pageBlockTable value="{!bioContentDocumentLinks}" var="contentDocumentLink" id="biosTable">
+            <apex:column headerValue="File Name">
+                <apex:outputLink value="/lightning/r/ContentDocument/{!contentDocumentLink.ContentDocumentId}/view" target="_blank">
+                    {!contentDocumentLink.ContentDocument.Title}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Uploaded Date">
+                <apex:outputText value="{0, date, MMMM d',' yyyy hh:mm a}">
+                    <apex:param value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedDate}" />
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Uploaded By">
+                <apex:outputText value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedBy.Name}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <!-- Itineraries Section -->
+    <apex:pageBlock title="Itineraries" id="itineraries">
+        <apex:form id="uploadFormItineraries" enctype="multipart/form-data">
+            <apex:inputHidden value="{!fileType}" id="fileTypeItineraries"/>
+            <apex:inputFile value="{!fileBody}" filename="{!fileName}" id="fileInputItineraries"/>
+            <apex:commandButton value="Upload" action="{!uploadItineraries}" onclick="setFileType('Itineraries', 'fileTypeItineraries'); return true;" />
+        </apex:form>
+        <apex:pageBlockTable value="{!itineraryContentDocumentLinks}" var="contentDocumentLink" id="itinerariesTable">
+            <apex:column headerValue="File Name">
+                <apex:outputLink value="/lightning/r/ContentDocument/{!contentDocumentLink.ContentDocumentId}/view" target="_blank">
+                    {!contentDocumentLink.ContentDocument.Title}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Uploaded Date">
+                <apex:outputText value="{0, date, MMMM d',' yyyy hh:mm a}">
+                    <apex:param value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedDate}" />
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Uploaded By">
+                <apex:outputText value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedBy.Name}"/>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <!-- Gifts Section -->
+    <apex:pageBlock title="Gifts" id="gifts">
+        <apex:form id="uploadFormGifts" enctype="multipart/form-data">
+            <apex:inputHidden value="{!fileType}" id="fileTypeGifts"/>
+            <apex:inputFile value="{!fileBody}" filename="{!fileName}" id="fileInputGifts"/>
+            <apex:commandButton value="Upload" action="{!uploadGift}" onclick="setFileType('Gifts', 'fileTypeGifts'); return true;" />
+        </apex:form>
+        <apex:pageBlockTable value="{!giftContentDocumentLinks}" var="contentDocumentLink" id="giftsTable">
+            <apex:column headerValue="File Name">
+                <apex:outputLink value="/lightning/r/ContentDocument/{!contentDocumentLink.ContentDocumentId}/view" target="_blank">
+                    {!contentDocumentLink.ContentDocument.Title}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Uploaded Date">
+                <apex:outputText value="{0, date, MMMM d',' yyyy hh:mm a}">
+                    <apex:param value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedDate}" />
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Uploaded By">
+                <apex:outputText value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedBy.Name}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <!-- Meeting Minutes Section -->
+    <apex:pageBlock title="Meeting Minutes" id="meetingMinutes">
+        <apex:form id="uploadFormMeetingMinutes" enctype="multipart/form-data">
+            <apex:inputHidden value="{!fileType}" id="fileTypeMeetingMinutes"/>
+            <apex:inputFile value="{!fileBody}" filename="{!fileName}" id="fileInputMeetingMinutes"/>
+            <apex:commandButton value="Upload" action="{!uploadMeetingminutes}" onclick="setFileType('Meeting Minutes', 'fileTypeMeetingMinutes'); return true;" />
+        </apex:form>
+        <apex:pageBlockTable value="{!meetingMinutesContentDocumentLinks}" var="contentDocumentLink" id="meetingMinutesTable">
+            <apex:column headerValue="File Name">
+                <apex:outputLink value="/lightning/r/ContentDocument/{!contentDocumentLink.ContentDocumentId}/view" target="_blank">
+                    {!contentDocumentLink.ContentDocument.Title}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Uploaded Date">
+                <apex:outputText value="{0, date, MMMM d',' yyyy hh:mm a}">
+                    <apex:param value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedDate}" />
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Uploaded By">
+                <apex:outputText value="{!contentDocumentLink.ContentDocument.LatestPublishedVersion.CreatedBy.Name}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <!-- JavaScript to set fileType -->
+    <script>
+        function setFileType(fileType, hiddenFieldId) {
+            document.getElementById(hiddenFieldId).value = fileType;
+        }
+    </script>
+</apex:page>

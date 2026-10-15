@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Upcoming Events" icon-name="standard:event">
+        <div class="slds-p-around_medium">
+
+            <!-- Filter -->
+            <lightning-combobox
+                label="Show Events"
+                value={filter}
+                options={filterOptions}
+                onchange={handleFilterChange}>
+            </lightning-combobox>
+
+            <!-- Loader -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..."></lightning-spinner>
+            </template>
+
+            <!-- Table -->
+            <template if:false={isLoading}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_medium">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Start Date & Time</th>
+                            <th>End Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={events} for:item="evt">
+                            <tr key={evt.Id}>
+                                <td>
+                                    <a data-id={evt.Id} onclick={handleSubjectClick}>
+                                        {evt.Subject}
+                                    </a>
+                                </td>
+                                <td>{evt.StartFormatted}</td>
+                                <td>{evt.EndFormatted}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+
+                <!-- No records -->
+                <template if:true={isNoEvents}>
+                    <p class="slds-text-color_weak slds-m-top_small">
+                        No upcoming events found.
+                    </p>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
