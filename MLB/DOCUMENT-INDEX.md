@@ -1,6 +1,6 @@
 # MLB Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-16 (KB-006 added).
+Every project document, by folder and serial number. **Last updated:** 2026-10-16 (QA folder added).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-005_Signed-Agreement-Email-With-PDF.md`.
@@ -14,6 +14,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-016 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-001 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-009 |
+| `QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario, after "all good" | ATR-001 |
+| `QA/02-Manual-Testing` | `MTC-` | Manual test case document (Word) with steps, screenshots and expected results, after "all good" | MTC-001 |
 
 **Rules:**
 - Numbers are never reused. A cancelled item keeps its number and is marked as such.
@@ -118,3 +120,9 @@ No deployment documents yet. Nothing has been deployed so far.
 | TECH-006 | [Ticketing Engagement design (on hold)](07-Technical/TECH-006_Ticketing-Engagement-Design-On-Hold.md) |
 | TECH-007 | [Sales Manager access model](07-Technical/TECH-007_Sales-Manager-Access-Model.md) |
 | TECH-008 | [Agreement Flow: Suite Lease choices](07-Technical/TECH-008_Agreement-Flow-Suite-Lease-Choices.md) |
+
+## QA
+See [QA/README.md](QA/README.md). No test reports yet.
+
+| ID | Automated test report | Manual test cases |
+|---|---|---|
