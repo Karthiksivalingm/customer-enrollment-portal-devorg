@@ -1239,6 +1239,7 @@ updatedCase.Start_Date__c = firstDayOfMonth.addDays(-daysToSubtract);*/
                     }
                 }
             }
+            setManualInsertAssignedStatus(objCase, metaConfig);
             continue; // skip non-hybrid logic
         }
         /* =========================
@@ -1368,9 +1369,30 @@ updatedCase.Start_Date__c = firstDayOfMonth.addDays(-daysToSubtract);*/
                     }
                 }
             }
+            setManualInsertAssignedStatus(objCase, metaConfig);
         }
     }
 }
+
+
+    // NEW: Only during Before Insert, after successful Manual routing.
+    // Does not affect Auto routing or existing Case updates.
+    private static void setManualInsertAssignedStatus(Case objCase, Case_Routing_Config__mdt config) {
+        if (
+            objCase.Id == null &&
+            config != null && config.Case_Entry__c == 'Manual' &&
+            (objCase.Foundation_Record__c == true ||
+             objCase.Case_Category__c == FND_CATEGORY_NEW_DIGITAL_SUPPORT) &&
+            objCase.Future_Case__c != true &&
+            (objCase.Digital_Execution_Start_Date__c == null ||
+             objCase.Digital_Execution_Start_Date__c <= Date.today()) &&
+            (objCase.Status_Filtered__c == null || objCase.Status_Filtered__c == 'New') &&
+            objCase.Case_Assign_To__c != null &&
+            objCase.OwnerId == objCase.Case_Assign_To__c
+        ) {
+            objCase.Status_Filtered__c = 'Assigned';
+        }
+    }
 
      public Static void dummy(){
         Integer i= 0;
@@ -1850,6 +1872,7 @@ public static void assignBeforeUpdateCasesWithTVMLogic(
                     }
                 }
             }
+            setManualInsertAssignedStatus(objCase, metaConfig);
             continue; // skip non-hybrid logic
 		*/
         }

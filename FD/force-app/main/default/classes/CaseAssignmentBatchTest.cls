@@ -1,7 +1,6 @@
 @IsTest
 public class CaseAssignmentBatchTest {
 
-    // Inner mock class to handle any HTTP callouts triggered by triggers/flows/etc
     private class DummyHttpCalloutMock implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             HttpResponse res = new HttpResponse();
@@ -36,7 +35,7 @@ public class CaseAssignmentBatchTest {
             Subject = subject,
             SLA_Time__c = 9,
             Close_Date__c = System.today(),
-            Case_Assignment_Queue__c = metaData.Queue__c, // must match the metadata queue name
+            Case_Assignment_Queue__c = metaData.Queue__c,
             Case_Category__c = 'New Digital Support'
         );
     }
@@ -46,20 +45,15 @@ public class CaseAssignmentBatchTest {
                 FROM Case WHERE Id IN :caseIds];
     }
 
-    // Calls start/execute/finish directly so the assignment logic is covered no matter
-    // what the start() query returns in the test org.
     @IsTest
     static void testCaseAssignment() {
 
         Profile profile = [SELECT Id FROM Profile WHERE Name = 'System Administrator' LIMIT 1];
 
-        // queueUser  -> member of the queue, receives the assignments
-        // creatorUser -> NOT in the queue, creates the Cases (so they start owned by a non-member)
         User queueUser = buildUser(profile.Id, 'quser');
         User creatorUser = buildUser(profile.Id, 'cuser');
         insert new List<User>{ queueUser, creatorUser };
 
-        // Metadata that drives the batch (custom metadata is visible in tests without seeAllData)
         List<Case_Routing_Config__mdt> metaDataList = [
             SELECT Id, Request_Type__c, Queue__c, Case_Entry__c, Initial_Assignment__c, Field_Name__c
             FROM Case_Routing_Config__mdt
@@ -72,10 +66,9 @@ public class CaseAssignmentBatchTest {
             LIMIT 1
         ];
         System.assert(!metaDataList.isEmpty(),
-            'Test requires at least one active Case_Routing_Config__mdt with Auto / Non Hybrid / Queue');
+            'Test requires active Auto / Non Hybrid / Queue metadata');
         Case_Routing_Config__mdt metaData = metaDataList[0];
 
-        // The batch looks the queue up by Name = Queue__c, so use the real queue from the metadata
         List<Group> queues = [SELECT Id FROM Group WHERE Name = :metaData.Queue__c AND Type = 'Queue' LIMIT 1];
         System.assert(!queues.isEmpty(), 'No Queue found with Name = ' + metaData.Queue__c);
         insert new GroupMember(GroupId = queues[0].Id, UserOrGroupId = queueUser.Id);
@@ -85,14 +78,11 @@ public class CaseAssignmentBatchTest {
             queueMemberIds.add(gm.UserOrGroupId);
         }
 
-        // runAs avoids MIXED_DML_OPERATION (User/GroupMember are setup objects, Case/Account are not)
         System.runAs(creatorUser) {
 
+            // MODIFIED: Removed three user lookup fields
             Account a = new Account(
                 Name = 'Demo Account',
-                Regional_Performance_Manager__c = creatorUser.Id,
-                Account_Technician__c = creatorUser.Id,
-                Secondary_Account_Technician__c = creatorUser.Id,
                 FNDN_Billed_Through_TVM__c = false
             );
             insert a;
@@ -111,10 +101,8 @@ public class CaseAssignmentBatchTest {
                 CaseAssignmentBatch batch = new CaseAssignmentBatch();
                 batch.start(null);
 
-                // Run 1: no previous cases owned by queue members -> "no last assigned user" branch
                 batch.execute(null, queryCases(new Map<Id, Case>(firstCases).keySet()));
 
-                // Run 2: Cases 1 and 2 are now owned by queue members -> "rotate from last assigned user" branch
                 insert laterCase;
                 batch.execute(null, queryCases(new Set<Id>{ laterCase.Id }));
 
@@ -136,7 +124,6 @@ public class CaseAssignmentBatchTest {
         }
     }
 
-    // Runs the batch through Database.executeBatch so the start() query itself is executed
     @IsTest
     static void testBatchRuns() {
         Test.setMock(HttpCalloutMock.class, new DummyHttpCalloutMock());

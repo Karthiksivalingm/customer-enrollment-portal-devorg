@@ -42,14 +42,14 @@ public class CaseAssignmentHybridBatchTest {
         );
     }
 
-    // Queries the Cases and clears OwnerId IN MEMORY only, to simulate "not yet assigned".
-    // A saved Case always has an OwnerId, so the batch's "OwnerId = null" filter and its
-    // "if (c.OwnerId != null) continue;" check would otherwise skip every Case.
+    // Clears Case_Assign_To__c IN MEMORY only, to simulate "not yet assigned".
+    // OwnerId is left alone: the batch only checks Case_Assign_To__c, and a null OwnerId
+    // makes the batch's update fail with "owner cannot be blank".
     private static List<Case> unassignedScope(Set<Id> caseIds) {
         List<Case> scope = [SELECT Id, OwnerId, Case_Assign_To__c, Case_Assignment_Queue__c, Case_Request__c, Status_Filtered__c, AccountId
                             FROM Case WHERE Id IN :caseIds];
         for (Case c : scope) {
-            c.OwnerId = null;
+            c.Case_Assign_To__c = null;
         }
         return scope;
     }
