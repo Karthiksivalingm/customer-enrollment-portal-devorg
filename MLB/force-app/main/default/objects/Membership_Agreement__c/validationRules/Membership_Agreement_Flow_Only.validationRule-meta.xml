@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership_Agreement_Flow_Only</fullName>
+    <active>true</active>
+    <description>Blocks manual edits to existing Membership Agreement rows for all users, including System Administrators, unless the Edit Agreement flow ticks the hidden Flow_Update__c box in the same save. Creating rows is not affected.</description>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    NOT(Flow_Update__c),
+    OR(
+        ISCHANGED(Number_of_Rows_Tickets__c),
+        ISCHANGED(Plan_Type__c),
+        ISCHANGED(Location_Seat__c),
+        ISCHANGED(Location_Section__c),
+        ISCHANGED(Location_Row__c),
+        ISCHANGED(Qty_Seats__c),
+        ISCHANGED(Price_Seats__c),
+        ISCHANGED(Parking__c),
+        ISCHANGED(Number_of_Rows_Parking__c),
+        ISCHANGED(Plan_Type_Parking__c),
+        ISCHANGED(Location_Parking__c),
+        ISCHANGED(Qty_Parking__c),
+        ISCHANGED(Price_Parking__c),
+        ISCHANGED(Term_Length__c),
+        ISCHANGED(Order_ID__c),
+        ISCHANGED(Starting_Season__c),
+        ISCHANGED(Seasons_Years__c),
+        ISCHANGED(Escalator_old__c),
+        ISCHANGED(Payment_Plan__c),
+        ISCHANGED(Prorated_Payments__c),
+        ISCHANGED(Paid_to_Date__c),
+        ISCHANGED(Escalator__c),
+        ISCHANGED(Season_Year__c),
+        ISCHANGED(Total_Price__c),
+        ISCHANGED(Seasons_End_Year__c),
+        ISCHANGED(Seasons_Start_Year__c),
+        ISCHANGED(First_year_of_auto_renewal__c),
+        ISCHANGED(Opportunity_SL__c),
+        ISCHANGED(Current_Season__c),
+        ISCHANGED(Season_Start_year__c),
+        ISCHANGED(Season_End_year__c),
+        ISCHANGED(Payment_Type__c),
+        ISCHANGED(Order_ID_Parking__c),
+        ISCHANGED(Number_of_Games_Seat__c),
+        ISCHANGED(Number_of_Games_Parking__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Membership Agreement records can't be edited manually. Please make changes through the Agreement Flow on the Opportunity.</errorMessage>
+</ValidationRule>

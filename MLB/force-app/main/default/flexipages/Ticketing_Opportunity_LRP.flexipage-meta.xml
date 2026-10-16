@@ -33,6 +33,32 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>Opportunity.Edit_Agreement</value>
+                            <visibilityRule>
+                                <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.Agreement_Type__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Membership</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Agreement_Type__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Multi-Product</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Agreement_Type__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Flex</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Agreement_Type__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Suite Lease</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.Opportunity.Send_Suite_Agreement</value>
                             <visibilityRule>
                                 <criteria>
@@ -337,12 +363,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Total_Tickets_in_Suite_in_Words__c</fieldItem>
-                <identifier>RecordTotal_Tickets_in_Suite_in_Words__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Ticket_Office_Comments__c</fieldItem>
                 <identifier>RecordTicket_Office_Comments__cField</identifier>
             </fieldInstance>
@@ -620,16 +644,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Total_of_Games__c</fieldItem>
                 <identifier>RecordTotal_of_Games__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.This_Season_Total_Amount_in_Words__c</fieldItem>
-                <identifier>RecordThis_Season_Total_Amount_in_Words__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-31f552b0-9d9e-4a49-bc14-2980693420a9</name>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agreement_Sections_Flow_Only</fullName>
+    <active>true</active>
+    <description>Blocks manual edits to the Suite Lease, Membership, Multi Product and Flex agreement fields for all users, including System Administrators. Only Create Agreement and Edit Agreement (which flip Agreement_Flow_Update__c) can change them.</description>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    NOT(ISCHANGED(Agreement_Flow_Update__c)),
+    OR(
+        ISCHANGED(Suite_Level__c),
+        ISCHANGED(Suite_Location__c),
+        ISCHANGED(Suite_Number__c),
+        ISCHANGED(This_Season_Total_Amount__c),
+        ISCHANGED(Total_Tickets_in_Suite__c),
+        ISCHANGED(Parking_Passes__c),
+        ISCHANGED(Total_of_Games__c),
+        ISCHANGED(Total_Years_of_Contract__c),
+        ISCHANGED(Year_1_License_Fee__c),
+        ISCHANGED(Year_2_License_Fee__c),
+        ISCHANGED(Year_3_License_Fee__c),
+        ISCHANGED(Year_4_License_Fee__c),
+        ISCHANGED(Year_5_License_Fee__c),
+        ISCHANGED(Due_Date__c),
+        ISCHANGED(Starting_Season_Membership__c),
+        ISCHANGED(Beginning_Season_Membership__c),
+        ISCHANGED(Number_of_Rows_Seats__c),
+        ISCHANGED(Number_of_Rows_Parkings__c),
+        ISCHANGED(Total_Paid_to_Date__c),
+        ISCHANGED(Card_in_Payment__c),
+        ISCHANGED(Payment_Type__c),
+        ISCHANGED(Season_Year__c),
+        ISCHANGED(Term_Length__c),
+        ISCHANGED(Escalator__c),
+        ISCHANGED(Amount_allocated_to_Flex__c),
+        ISCHANGED(Amount_allocated_to_Suites__c),
+        ISCHANGED(Amount_allocated_to_Groups__c),
+        ISCHANGED(Total_Multi_Product__c),
+        ISCHANGED(Starting_Season_Multi_Product__c),
+        ISCHANGED(Multi_Product_Season_Year__c),
+        ISCHANGED(Total_Flex_Membership__c),
+        ISCHANGED(Payment_Plan__c),
+        ISCHANGED(Total_Due_Today__c),
+        ISCHANGED(Beginning_Season_Flex__c),
+        ISCHANGED(Starting_Season_Flex__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Agreement details can't be edited manually. Please use the Edit Agreement button on the Opportunity.</errorMessage>
+</ValidationRule>

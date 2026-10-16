@@ -202,6 +202,13 @@
                 <elementReference>Ticket_Office_Comments_Flex</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_opportunity.Agreement_Flow_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmToggleAgreementFlowUpdate</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Flex_Opportunity</targetReference>
         </connector>
@@ -303,6 +310,13 @@
                 <elementReference>Ticket_Office_Comments_Membership</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_opportunity.Agreement_Flow_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmToggleAgreementFlowUpdate</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Membership_Opportunity</targetReference>
         </connector>
@@ -373,6 +387,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Ticket_Office_Comments_MultiProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_opportunity.Agreement_Flow_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmToggleAgreementFlowUpdate</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -530,6 +551,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Ticket_Office_Comments_SuiteLease</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_opportunity.Agreement_Flow_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmToggleAgreementFlowUpdate</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -2442,6 +2470,12 @@ IF(
         <expression>BLANKVALUE({!TotalflexMembership}, 0)</expression>
         <scale>2</scale>
     </formulas>
+    <formulas>
+        <description>Opposite of the stored Agreement_Flow_Update__c. Flipping it in the same save lets the agreement fields pass the Agreement_Sections_Flow_Only validation rule.</description>
+        <name>frmToggleAgreementFlowUpdate</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!Get_opportunity.Agreement_Flow_Update__c})</expression>
+    </formulas>
     <interviewLabel>Agreement Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Agreement Flow</label>
     <loops>
@@ -2602,6 +2636,7 @@ IF(
         </faultConnector>
         <inputReference>Get_opportunity</inputReference>
     </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
     <screens>
         <description>Standard &amp; Premium Membership Agreement 
 Multi Product Agreement

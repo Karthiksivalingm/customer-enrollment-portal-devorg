@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Opens the Edit Agreement flow: the saved agreement with every field prefilled, using the same screens and calculations as Create Agreement.</description>
+    <flowDefinition>Edit_Agreement_Flow</flowDefinition>
+    <label>Edit Agreement</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

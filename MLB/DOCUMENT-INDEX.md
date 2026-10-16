@@ -1,6 +1,6 @@
 # MLB Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-13 (REQ-013 added).
+Every project document, by folder and serial number. **Last updated:** 2026-10-16 (KB-006 added).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-005_Signed-Agreement-Email-With-PDF.md`.
@@ -8,7 +8,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | Folder | Prefix | What goes in it | Next free number |
 |---|---|---|---|
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
-| `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, users | KB-006 |
+| `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, users | KB-007 |
 | `03-Requirements` | `REQ-` | One per requirement: need, scope, behaviour, acceptance criteria, assumptions, open questions | REQ-014 |
 | `04-Change-Records` | `CR-` | One per change made to an org: what, when, deploy ID, verification, rollback | CR-027 |
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-016 |
@@ -35,6 +35,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | KB-003 | [Integrations](02-Knowledge-Base/Integrations.md) |
 | KB-004 | [Salesforce Environment and Tooling](02-Knowledge-Base/KB-004_Salesforce-Environment.md) |
 | KB-005 | [Sandbox User Status](02-Knowledge-Base/KB-005_Sandbox-User-Status.md) |
+| KB-006 | Agreement Testing Guide: [Word](02-Knowledge-Base/KB-006_Agreement-Testing-Guide.docx) · [HTML](02-Knowledge-Base/KB-006_Agreement-Testing-Guide.html). Sandbox user guide for Create Agreement, Edit Agreement, locked agreement fields and Suite Lease sending, with screenshots |
 | — | [Technical Architecture](02-Knowledge-Base/Technical-Architecture.md) (existing, unchanged) |
 
 ## 03 — Requirements
