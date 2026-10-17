@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Fields_Required_before_Final_Check_In</fullName>
-    <active>false</active>
-    <errorConditionFormula>AND((ISPICKVAL(Onboarding_Stage__c, &quot;2nd Check-In Complete&quot;)), 
-OR(ISPICKVAL(Customer_Mode_at_2nd_Check_In__c , &quot;&quot;), 
-ISPICKVAL( Primary_Concern_at_2nd_Check_In__c , &quot;&quot;)))</errorConditionFormula>
-    <errorMessage>Before moving the Stage to 2nd Check-In Complete, please fill out the Customer Mode at 2nd Check In and Primary Concern at 2nd Check In.</errorMessage>
-</ValidationRule>

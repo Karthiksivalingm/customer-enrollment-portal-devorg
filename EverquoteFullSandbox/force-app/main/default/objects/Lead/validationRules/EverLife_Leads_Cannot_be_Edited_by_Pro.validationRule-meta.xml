@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>EverLife_Leads_Cannot_be_Edited_by_Pro</fullName>
-    <active>true</active>
-    <errorConditionFormula>RecordType.Name = &quot;Life Leads&quot; &amp;&amp; 
-$User.Username = &quot;salesforce_prose@everquote.com&quot;</errorConditionFormula>
-    <errorMessage>Pro. Developer Cannot edit Everlife Leads</errorMessage>
-</ValidationRule>

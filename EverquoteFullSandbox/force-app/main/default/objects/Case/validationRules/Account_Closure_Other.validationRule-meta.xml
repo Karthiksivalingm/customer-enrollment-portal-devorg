@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Account_Closure_Other</fullName>
-    <active>false</active>
-    <description>Account Closure value for AGP is &quot;Other&quot;, please enter comments in the &quot;Other Comments field in the account closure section</description>
-    <errorConditionFormula>ISPICKVAL(  Account_ClosureAGP__c  , &quot;Other&quot;) &amp;&amp; ISBLANK(  Other_comments__c  )</errorConditionFormula>
-    <errorMessage>Enter comments here if &quot;Other&quot; is the value for Account Closure</errorMessage>
-</ValidationRule>

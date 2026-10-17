@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>IO_Not_Attached_AGP</fullName>
-    <active>true</active>
-    <errorConditionFormula>TEXT(StageName) = &quot;Closed Won&quot; &amp;&amp; RecordType.Name = &apos;Accelerated-AGP&apos; &amp;&amp; Insertion_Order_Attached__c  = FALSE</errorConditionFormula>
-    <errorMessage>Please attach insertion order when close winning an AGP opportunity</errorMessage>
-</ValidationRule>

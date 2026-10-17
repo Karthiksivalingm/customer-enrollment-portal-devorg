@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Family_Member</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND( RecordTypeId = &quot;0121a000000VlZ7AAK&quot;,  ISPICKVAL( Family_Member_before_age_70__c , &quot;Yes&quot;), ISBlank( Family_Member_Details__c ))</errorConditionFormula>
-    <errorDisplayField>Family_Member_Details__c</errorDisplayField>
-    <errorMessage>Please indicated the the family member details.</errorMessage>
-</ValidationRule>

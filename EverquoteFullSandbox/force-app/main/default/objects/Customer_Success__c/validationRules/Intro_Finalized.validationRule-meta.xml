@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Intro_Finalized</fullName>
-    <active>true</active>
-    <errorConditionFormula>Intro_Call_Finalized__c =  TRUE
-&amp;&amp;
-ISBLANK (TEXT ( Customer_Mode_at_Handoffpicklist__c )   )</errorConditionFormula>
-    <errorMessage>Please enter a value for the field &quot;Customer Mode at Hand-off&quot;</errorMessage>
-</ValidationRule>

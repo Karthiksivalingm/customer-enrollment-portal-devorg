@@ -1,3 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
-  <c:odaCallRecordingRedaction leadId="{!v.recordId}"></c:odaCallRecordingRedaction>
-</aura:component>

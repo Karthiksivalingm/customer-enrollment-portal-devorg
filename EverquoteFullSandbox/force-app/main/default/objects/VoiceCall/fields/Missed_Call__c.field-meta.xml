@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Missed_Call__c</fullName>
-    <defaultValue>false</defaultValue>
-    <description>Auto-checked by the system if the call is registered as a missed call</description>
-    <label>Missed Call</label>
-    <trackHistory>false</trackHistory>
-    <type>Checkbox</type>
-</CustomField>

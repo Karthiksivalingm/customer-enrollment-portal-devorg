@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Qualified_Heavyweight__c</fullName>
-    <formula>IF( AND( Heavyweight_Qualifying_Spend__c &lt; X31_60_Day_Spend__c,  Qualified_Enrollment__c = TRUE) , TRUE, FALSE)</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Qualified Heavyweight</label>
-    <trackHistory>false</trackHistory>
-    <type>Checkbox</type>
-</CustomField>

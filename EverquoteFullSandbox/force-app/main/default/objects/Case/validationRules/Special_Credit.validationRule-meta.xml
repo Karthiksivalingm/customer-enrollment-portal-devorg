@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Special_Credit</fullName>
-    <active>true</active>
-    <description>Credit Request is &quot;Special Credit&quot;, please enter comments in the &quot;Special Credits Comment&quot; field</description>
-    <errorConditionFormula>ISPICKVAL( Credit_Requests__c , &quot;Special Credit&quot;) &amp;&amp; ISBLANK(  Special_Credit_Comments__c  )</errorConditionFormula>
-    <errorMessage>Enter comments here if Calls Returned Reason is &quot;Other&quot;</errorMessage>
-</ValidationRule>

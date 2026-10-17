@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>IO_Not_Attached_but_field_check_true</fullName>
-    <active>false</active>
-    <errorConditionFormula>TEXT(StageName) = &quot;Closed Won&quot; &amp;&amp; RecordType.Name = &apos;Accelerated-AGP&apos; &amp;&amp; Insertion_Order_Attached__c  = TRUE</errorConditionFormula>
-    <errorMessage>Please attach insertion order BEFORE checking this box</errorMessage>
-</ValidationRule>

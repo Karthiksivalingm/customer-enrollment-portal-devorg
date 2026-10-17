@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Account_Closure_Dissatisfied_with_Servic</fullName>
-    <active>true</active>
-    <description>Account Closure value for AGP is &quot;Dissatisfied with service&quot;, please enter comments in the &quot;Dissatisfied with Service Comments&quot; field in the account closure section</description>
-    <errorConditionFormula>ISPICKVAL(  Account_ClosureAGP__c  , &quot;Dissatisfied with Service&quot;) &amp;&amp; ISBLANK(   Dissatisfied_with_Service_Comments__c   )</errorConditionFormula>
-    <errorMessage>Enter comments here if &quot;Support value is Systems Issues&quot;</errorMessage>
-</ValidationRule>

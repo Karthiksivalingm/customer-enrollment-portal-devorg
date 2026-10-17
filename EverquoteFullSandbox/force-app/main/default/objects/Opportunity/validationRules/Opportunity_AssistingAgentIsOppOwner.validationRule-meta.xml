@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Opportunity_AssistingAgentIsOppOwner</fullName>
-    <active>true</active>
-    <description>If the Assisting Agent is the same as the Opportunity Owner, give the user an error message.</description>
-    <errorConditionFormula>Assisting_Agent__c = OwnerId</errorConditionFormula>
-    <errorDisplayField>Assisting_Agent__c</errorDisplayField>
-    <errorMessage>The Assisting Agent cannot be the same as the Opportunity Owner</errorMessage>
-</ValidationRule>
