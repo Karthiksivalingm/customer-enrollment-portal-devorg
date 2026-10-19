@@ -1,6 +1,6 @@
 # MLB Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-16 (08-QA folder added).
+Every project document, by folder and serial number. **Last updated:** 2026-10-19 (Project Rules written).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-005_Signed-Agreement-Email-With-PDF.md`.
@@ -27,7 +27,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 |---|---|
 | [AI-Workflow.md](01-Instructions/AI-Workflow.md) | Workflows A, B and C; required document structures |
 | [Coding-Standards.md](01-Instructions/Coding-Standards.md) | Rules every change must meet |
-| [Project-Rules.md](01-Instructions/Project-Rules.md) | (empty) |
+| [Project-Rules.md](01-Instructions/Project-Rules.md) | Environments, folders, document control, QA, test data, approvals, version control, reporting |
 
 ## 02 — Knowledge Base
 | ID | Document |
