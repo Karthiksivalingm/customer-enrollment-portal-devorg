@@ -9,10 +9,9 @@
 
 ## 01-Instructions
 
-- [Arizona Working Instructions](01-Instructions/Arizona-Working-Instructions.md)
-- [Documentation Rules](01-Instructions/Documentation-Rules.md)
-- [Git Rules](01-Instructions/Git-Rules.md)
-- [Salesforce Safety Rules](01-Instructions/Salesforce-Safety-Rules.md)
+- [AI Workflow](01-Instructions/AI-Workflow.md)
+- [Coding Standards](01-Instructions/Coding-Standards.md)
+- [Project Rules](01-Instructions/Project-Rules.md)
 
 ## 02-Knowledge-Base
 

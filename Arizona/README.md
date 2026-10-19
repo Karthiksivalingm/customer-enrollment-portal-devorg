@@ -3,12 +3,12 @@
 Independent Arizona project in the shared `sfdcut/SFDC` repository. `force-app/` mirrors the in-scope unmanaged metadata of the
 Arizona sandbox (alias `Arizona`, org name Azlionhearts, Org ID `00DWH000005wW9V2AU`).
 
-**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions/Arizona-Working-Instructions.md](01-Instructions/Arizona-Working-Instructions.md).
+**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions](01-Instructions/): [AI-Workflow](01-Instructions/AI-Workflow.md), [Coding-Standards](01-Instructions/Coding-Standards.md), [Project-Rules](01-Instructions/Project-Rules.md).
 Project overview: [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md). Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
 
 | Folder | Contents |
 |---|---|
-| [01-Instructions](01-Instructions/) | Permanent rules: working instructions, Salesforce safety, documentation, Git |
+| [01-Instructions](01-Instructions/) | How work is done: AI Workflow, Coding Standards, Project Rules (same as every project in the repository) |
 | [02-Knowledge-Base](02-Knowledge-Base/) | Evidence-based overview: org context, business processes, data model, automation, integrations, security, open questions |
 | [03-Requirements](03-Requirements/) | Dated REQ records |
 | [04-Change-Records](04-Change-Records/) | Dated CR records of actual, authorized record/data changes with verified before/after values |

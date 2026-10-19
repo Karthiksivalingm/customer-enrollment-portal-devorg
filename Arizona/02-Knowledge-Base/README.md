@@ -2,7 +2,7 @@
 
 Evidence-based overview of the Arizona implementation, built only from retrieved Arizona sandbox metadata, read-only org queries and
 authorized requirements. Statements are labelled **VERIFIED**, **INFERRED** or **OPEN QUESTION**
-([Documentation-Rules.md](../01-Instructions/Documentation-Rules.md) §5). Update a page's History table whenever confirmed information changes.
+(see [Project-Rules.md](../01-Instructions/Project-Rules.md)). Update a page's History table whenever confirmed information changes.
 
 | Page | Contents |
 |---|---|
