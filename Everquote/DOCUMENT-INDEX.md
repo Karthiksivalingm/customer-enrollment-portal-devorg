@@ -1,6 +1,6 @@
 # EverQuote Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-19 (aligned with the MLB folder structure).
+Every project document, by folder and serial number. **Last updated:** 2026-10-19 (production details removed, REQ-001 / CR-001).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-001_Lead-Assignment-Change.md`.
@@ -9,8 +9,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 |---|---|---|---|
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, users | KB-001 |
-| `03-Requirements` | `REQ-` | One per requirement: need, scope, behaviour, acceptance criteria | REQ-001 |
-| `04-Change-Records` | `CR-` | One per change made to an org: what, when, deploy ID, verification, rollback | CR-001 |
+| `03-Requirements` | `REQ-` | One per requirement: need, scope, behaviour, acceptance criteria | REQ-002 |
+| `04-Change-Records` | `CR-` | One per change made to an org: what, when, deploy ID, verification, rollback | CR-002 |
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-001 |
 | `06-Deployment` | `DEP-` | Deployment documents; the folder is created only when something is actually deployed | DEP-001 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-001 |
@@ -28,3 +28,13 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | [AI-Workflow.md](01-Instructions/AI-Workflow.md) | Workflows A, B and C; required document structures |
 | [Coding-Standards.md](01-Instructions/Coding-Standards.md) | Rules every change must meet |
 | [Project-Rules.md](01-Instructions/Project-Rules.md) | Environments, folders, document control, QA, test data, approvals, version control, reporting |
+
+## 03 — Requirements
+| ID | Document | Status |
+|---|---|---|
+| REQ-001 | [Align Everquote with the MLB folder standard](03-Requirements/REQ-001_Align-Everquote-With-MLB-Standard.md) | ✅ Done |
+
+## 04 — Change Records
+| ID | Document | Requirement |
+|---|---|---|
+| CR-001 | [Align with the house folder standard](04-Change-Records/CR-001_Align-With-House-Standard.md) | REQ-001 |

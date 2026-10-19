@@ -8,5 +8,5 @@
     <masterLabel>Cheat Sheet</masterLabel>
     <openType>replace</openType>
     <protected>false</protected>
-    <url>https://c.na24.visual.force.com/apex/LeadCheatsheet?id={!Lead.Id}</url>
+    <url>/apex/LeadCheatsheet?id={!Lead.Id}</url>
 </WebLink>

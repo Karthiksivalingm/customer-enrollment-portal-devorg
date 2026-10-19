@@ -17,5 +17,5 @@
     <protected>false</protected>
     <showsLocation>false</showsLocation>
     <showsStatus>false</showsStatus>
-    <url>https://c.na24.visual.force.com/apex/OpportunityCheatsheet?id={!Opportunity.Id}</url>
+    <url>/apex/OpportunityCheatsheet?id={!Opportunity.Id}</url>
 </WebLink>

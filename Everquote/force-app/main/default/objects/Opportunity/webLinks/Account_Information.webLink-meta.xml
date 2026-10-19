@@ -16,6 +16,6 @@
     <protected>false</protected>
     <showsLocation>false</showsLocation>
     <showsStatus>false</showsStatus>
-    <url>https://c.na24.visual.force.com/apex/AccountInformation?id={!Opportunity.AccountId}</url>
+    <url>/apex/AccountInformation?id={!Opportunity.AccountId}</url>
     <width>300</width>
 </WebLink>

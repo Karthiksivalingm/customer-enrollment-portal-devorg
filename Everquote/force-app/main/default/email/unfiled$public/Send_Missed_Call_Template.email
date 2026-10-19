@@ -1,5 +1,5 @@
 You recently missed a phone call from {!VoiceCall.Account__c} at {!VoiceCall.Contact_Phone__c}.
 
 Go to your To Do List in Salesforce for missed call history. Also please check your OMNI status as you may have been logged out after you missed this call.<br><br>
-Account : <a href="https://yoursage.lightning.force.com/{!VoiceCall.AccountId__c}" target="_blank">Click to open Account</a><br>
-Contact : <a href="https://yoursage.lightning.force.com/{!VoiceCall.ContactId__c}" target="_blank">Click to open Contact</a>
+Account : <a href="https://yoursage--unitedtech.sandbox.lightning.force.com/{!VoiceCall.AccountId__c}" target="_blank">Click to open Account</a><br>
+Contact : <a href="https://yoursage--unitedtech.sandbox.lightning.force.com/{!VoiceCall.ContactId__c}" target="_blank">Click to open Contact</a>

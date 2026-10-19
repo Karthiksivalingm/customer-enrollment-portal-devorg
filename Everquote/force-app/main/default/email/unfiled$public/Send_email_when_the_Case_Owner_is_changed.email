@@ -2,6 +2,6 @@ A Pro2 Issue has been escalated to Senior CSA.
 Issue Type: {!Case.Issue_Type__c}
 Carrier: {!Case.Pro2_Issue_Carrier__c}
 Issue Description: {!Case.Issue_Description__c}
-Account Link: https://yoursage.lightning.force.com/{!Case.AccountId}
-Contact Link: https://yoursage.lightning.force.com/{!Case.ContactId}
-Case Link: https://yoursage.lightning.force.com/{!Case.Id}
+Account Link: https://yoursage--unitedtech.sandbox.lightning.force.com/{!Case.AccountId}
+Contact Link: https://yoursage--unitedtech.sandbox.lightning.force.com/{!Case.ContactId}
+Case Link: https://yoursage--unitedtech.sandbox.lightning.force.com/{!Case.Id}

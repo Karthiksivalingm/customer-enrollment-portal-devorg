@@ -1,6 +1,6 @@
 Dear {!Case.OwnerFirstName},<br><br>
 
-The current fill rate for the account <a href="https://yoursage.lightning.force.com/{!Case.AccountId}" target="_blank">{!Case.Account}</a> has fallen below 75%.  
+The current fill rate for the account <a href="https://yoursage--unitedtech.sandbox.lightning.force.com/{!Case.AccountId}" target="_blank">{!Case.Account}</a> has fallen below 75%.  
 Please follow up with the account to address this issue.<br><br>
 
 <strong>Account Details:</strong><br>

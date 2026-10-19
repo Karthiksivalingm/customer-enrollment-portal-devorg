@@ -47,11 +47,11 @@
         </div>
         <div class="email-body">
             <p>
-                The current fill rate for the account <a href="https://yoursage.lightning.force.com/{!Account.Id}" target="_blank">{!Account.Name}</a> has fallen below 75% 14 days ago. 
+                The current fill rate for the account <a href="https://yoursage--unitedtech.sandbox.lightning.force.com/{!Account.Id}" target="_blank">{!Account.Name}</a> has fallen below 75% 14 days ago. 
                 Please follow up with the account. Below is the task link:
             </p>
             <p>
-                <a href="https://yoursage.lightning.force.com/{!Task.Id}" target="_blank">{!Task.Id}</a>
+                <a href="https://yoursage--unitedtech.sandbox.lightning.force.com/{!Task.Id}" target="_blank">{!Task.Id}</a>
             </p>
         </div>
         <div class="email-footer">
