@@ -2015,7 +2015,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Assign_Membership_To_Opportunity</targetReference>
+            <targetReference>Agreement_Summary</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -2925,7 +2925,7 @@ IF(
             <targetReference>Count_Extra</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Has_New_Rows</targetReference>
+            <targetReference>Assign_Membership_To_Opportunity</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
@@ -2996,7 +2996,7 @@ IF(
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Assign_Membership_To_Opportunity</targetReference>
+            <targetReference>Agreement_Summary</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -3098,7 +3098,7 @@ IF(
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Agreement_Summary</targetReference>
+            <targetReference>Has_New_Rows</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>

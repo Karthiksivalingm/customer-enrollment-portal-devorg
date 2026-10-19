@@ -44,5 +44,5 @@
         ISCHANGED(Number_of_Games_Parking__c)
     )
 )</errorConditionFormula>
-    <errorMessage>Membership Agreement records can't be edited manually. Please make changes through the Agreement Flow on the Opportunity.</errorMessage>
+    <errorMessage>Membership Agreement records can&apos;t be edited manually. Please use the Edit Agreement button on the Opportunity.</errorMessage>
 </ValidationRule>

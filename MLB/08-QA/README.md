@@ -4,8 +4,8 @@ Test evidence for every requirement, created after the requirement is confirmed 
 
 | Folder | What goes in it | File naming | Next free number |
 |---|---|---|---|
-| [01-Automated-Testing](01-Automated-Testing/) | Backend test runs: every scenario executed against the sandbox (Apex tests, API saves, data checks), with inputs, expected result, actual result and evidence | `ATR-###_<Requirement>.md` (Automated Test Report) | ATR-001 |
-| [02-Manual-Testing](02-Manual-Testing/) | Test case documents for the manual QA tester: front-end steps with screenshots, backend checks and the expected result for each scenario | `MTC-###_<Requirement>.docx` (Manual Test Cases) | MTC-001 |
+| [01-Automated-Testing](01-Automated-Testing/) | Backend test runs: every scenario executed against the sandbox (Apex tests, API saves, data checks), with inputs, expected result, actual result and evidence | `ATR-###_<Requirement>.md` (Automated Test Report) | ATR-002 |
+| [02-Manual-Testing](02-Manual-Testing/) | Test case documents for the manual QA tester: front-end steps with screenshots, backend checks and the expected result for each scenario | `MTC-###_<Requirement>.docx` (Manual Test Cases) | MTC-002 |
 
 ## How the two link up
 - Each test scenario has one ID, for example `TC-014-03` (requirement REQ-014, scenario 3). The same ID is used in the automated report and in the manual test case document.
