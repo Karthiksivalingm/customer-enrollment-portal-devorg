@@ -19,7 +19,7 @@
 | 12:34 | `0Afdx00000GAijJCAT` (`GAfwkCAD`) | 116 `Account_Cluster_Team` records + `Account_Cluster_Team__mdt.Sales_Channel__c` (value added) | 117/117 |
 | 12:38 | `0Afdx00000GAizRCAT` (`GAio9CAD`) | `ShopifyAssociationRetryBatch`: removed `AND Sales_Channel__c NOT IN ('Key Accounts')` (all channels now sync, matching the trigger handlers). Sandbox-only class | 1/1 |
 
-Before versions: git history of `force-app/` ([CR-025](CR-025_Align-With-House-Standard-And-Remove-Production-Details.md)).
+Before versions: git history of `force-app/` ([CR-025](CR-025_Align-With-House-Standard.md)).
 
 ## Rollback
 Redeploy the previous versions of these files from git history.

@@ -17,7 +17,7 @@ No org change. NetSuite credential custom metadata had been committed in the fir
 - added `.gitattributes` so the hook keeps LF line endings;
 - **purged the history** (user approved): the 2 files were removed from every commit with `git filter-branch` and pushed with `--force-with-lease`. Every commit ID changed: `88fb123→c2b6b3e`, `246a9f2→d591374`, `7ced5d5→b7561dd`, `e3ab771→7dae7eb`. Checked: none of the 6 secret values appears in any commit. A backup bundle of the old history was kept locally (not in the repo).
 
-The templates and the hook were later removed to match the house folder standard ([CR-025](CR-025_Align-With-House-Standard-And-Remove-Production-Details.md)).
+The templates and the hook were later removed to match the house folder standard ([CR-025](CR-025_Align-With-House-Standard.md)).
 
 **Still open:**
 - Rotate the NetSuite sandbox keys (NetSuite admin).

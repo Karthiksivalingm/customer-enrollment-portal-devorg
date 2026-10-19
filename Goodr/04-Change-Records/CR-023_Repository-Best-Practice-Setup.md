@@ -19,7 +19,7 @@ No org change.
 - **Hook:** now also runs the project's lint-staged step when Node is installed.
 - **Tag:** `sandbox-baseline-2026-10-13` marks the cleaned history, fully synced with GDRSAND.
 
-Most of these files were removed on 2026-10-19 to match the house standard ([CR-025](CR-025_Align-With-House-Standard-And-Remove-Production-Details.md)).
+Most of these files were removed on 2026-10-19 to match the house standard ([CR-025](CR-025_Align-With-House-Standard.md)).
 
 ## Rollback
 git revert.

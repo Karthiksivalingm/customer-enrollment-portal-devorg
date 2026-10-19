@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-19 (aligned with the house standard; production details removed, CR-025).
+Every project document, by folder and serial number. **Last updated:** 2026-10-19 (aligned with the house standard; non-sandbox details removed, CR-025).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -64,7 +64,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | REQ-030 | [Document Shopify R12 and At-Risk Process](03-Requirements/REQ-030_Document-Shopify-R12-And-At-Risk-Process.md) | ✅ Done |
 | REQ-032 | [Shopify Test Class Coverage](03-Requirements/REQ-032_Shopify-Test-Class-Coverage.md) | ✅ Done (deploy `0Afdx00000GDn9lCAD`, 105/105) |
 | REQ-033 | [Move Goodr Into sfdcut SFDC Repository](03-Requirements/REQ-033_Move-Goodr-Into-Sfdcut-SFDC-Repository.md) | ✅ Done (pull request) |
-| REQ-034 | [Align Goodr with the MLB folder structure and remove production details](03-Requirements/REQ-034_Align-Goodr-With-MLB-And-Remove-Production-Details.md) | ✅ Done |
+| REQ-034 | [Align Goodr with the MLB folder standard (sandbox-only content)](03-Requirements/REQ-034_Align-Goodr-With-MLB-Standard.md) | ✅ Done |
 
 ## 04 — Change Records
 | ID | Document | Date |
@@ -89,7 +89,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | CR-022 | [Credential hardening in the repository](04-Change-Records/CR-022_Credential-Hardening-In-The-Repository.md) | 2026-10-13 |
 | CR-023 | [Repository best-practice setup](04-Change-Records/CR-023_Repository-Best-Practice-Setup.md) | 2026-10-13 |
 | CR-024 | [Move into the sfdcut/SFDC repository](04-Change-Records/CR-024_Move-Into-Sfdcut-SFDC-Repository.md) | 2026-10-14 |
-| CR-025 | [Align with the house folder standard and remove production details](04-Change-Records/CR-025_Align-With-House-Standard-And-Remove-Production-Details.md) | 2026-10-19 |
+| CR-025 | [Align with the house folder standard (sandbox-only content)](04-Change-Records/CR-025_Align-With-House-Standard.md) | 2026-10-19 |
 
 ## 05 — Conflicts
 | ID | Document | Status |

@@ -1,10 +1,10 @@
-# CR-025 — Align with the house folder standard and remove production details
+# CR-025 — Align with the house folder standard (sandbox-only content)
 
 | | |
 |---|---|
 | **Change ID** | CR-025 |
 | **Date** | 2026-10-19 |
-| **Requirement** | [REQ-034](../03-Requirements/REQ-034_Align-Goodr-With-MLB-And-Remove-Production-Details.md) |
+| **Requirement** | [REQ-034](../03-Requirements/REQ-034_Align-Goodr-With-MLB-Standard.md) |
 | **Org** | Repository only (no org change) |
 | **Deploy ID** | n/a |
 | **By** | Assistant |
@@ -27,10 +27,10 @@
 | 2 impact-analysis workbooks | `07-Technical/TECH-008`, `TECH-009` |
 | NetSuite placeholder templates | Folded into [TECH-007](../07-Technical/TECH-007_Secure-Configuration.md) |
 
-**Production details removed:**
-- The whole `06-Deployment` folder: production packages and rollbacks, deployment documents, DEP-001 and DEP-002, checklists, and the change-set list.
-- The production org's deploy and Setup Audit Trail exports.
-- Documents that existed only because of production:
+**Non-sandbox details removed:**
+- The whole `06-Deployment` folder: deployment packages and rollbacks, deployment documents, DEP-001 and DEP-002, checklists, and the change-set list.
+- The deploy and Setup Audit Trail exports of the other org.
+- Documents that existed only for another org:
 
   | Type | Removed |
   |---|---|
@@ -39,7 +39,7 @@
   | Conflicts | CON-001, 002, 004, 005, 006, 015, 021, 022 |
 
   Their numbers are not reused.
-- Production org alias, username and URL, and every production sentence, removed from the remaining documents and workbooks. One workbook sheet built from production reports was deleted.
+- Aliases, usernames and URLs of other orgs, and every sentence about them, removed from the remaining documents and workbooks. One workbook sheet built from another org was deleted.
 
 **Removed as not part of the standard:**
 - Before-snapshots and data-load files (these are also in git history).
@@ -49,7 +49,7 @@
 - Internal tool names in documents, which now say "Assistant".
 
 ## Verification
-- A search of `Goodr/` (documents and workbooks) finds no production alias, URL, username or production references.
+- A search of `Goodr/` (documents and workbooks) finds no aliases, URLs or usernames of other orgs.
 - All relative links resolve.
 
 ## Rollback
