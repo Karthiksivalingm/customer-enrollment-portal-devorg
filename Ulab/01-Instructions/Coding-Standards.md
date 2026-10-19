@@ -1,6 +1,6 @@
 # Coding Standards
 
-The rules every change on MLB must meet, whether you wrote the code or an AI tool did. The step-by-step process these rules come from is in [AI-Workflow.md](AI-Workflow.md).
+The rules every change on must meet, whether you wrote the code or an AI tool did. The step-by-step process these rules come from is in [AI-Workflow.md](AI-Workflow.md).
 
 In short: **one agreed change, bulk-safe, secure, tested with real assertions, verified against the org, and reviewed by a second developer.**
 
