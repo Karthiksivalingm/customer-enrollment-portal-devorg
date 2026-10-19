@@ -15,7 +15,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-001 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-009 |
 | `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario, after "all good" | ATR-002 |
-| `08-QA/02-Manual-Testing` | `MTC-` | Manual test case document (Word) with steps, screenshots and expected results, after "all good" | MTC-002 |
+| `08-QA/02-Manual-Testing` | `MTC-` | Manual test case document with steps, screenshots and expected results, after "all good" | MTC-002 |
 
 **Rules:**
 - Numbers are never reused. A cancelled item keeps its number and is marked as such.
@@ -126,4 +126,4 @@ See [08-QA/README.md](08-QA/README.md).
 
 | ID | Automated test report | Manual test cases |
 |---|---|---|
-| 001 (REQ-014 Edit Agreement and locked agreement fields) | [ATR-001](08-QA/01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 of 22 passed, DEF-001 found and fixed · [test class](08-QA/01-Automated-Testing/ATR-001_EditAgreementQaTest.cls) | [MTC-001](08-QA/02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 test cases with screenshots · [Word](08-QA/02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.docx) |
+| 001 (REQ-014 Edit Agreement and locked agreement fields) | [ATR-001](08-QA/01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 of 22 passed, DEF-001 found and fixed · [test class](08-QA/01-Automated-Testing/ATR-001_EditAgreementQaTest.cls) | [MTC-001](08-QA/02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 test cases with screenshots |

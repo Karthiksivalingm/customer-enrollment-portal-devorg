@@ -4,7 +4,7 @@
 |---|---|
 | **Report ID** | ATR-001 |
 | **Requirement** | REQ-014 Edit Agreement and locked agreement fields (requirement document to follow) |
-| **Manual test cases** | [MTC-001](../02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.docx) |
+| **Manual test cases** | [MTC-001](../02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md) |
 | **Org** | Sandbox (UTDEV) |
 | **Run date** | 2026-10-19 |
 | **Run as** | System Administrator (Billy Marlin); Sales Manager profile (Marlins Sales Leadership) in backend tests |

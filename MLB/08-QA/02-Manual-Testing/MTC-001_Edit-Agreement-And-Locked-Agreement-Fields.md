@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Document** | MTC-001 (Word version for the tester: [MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.docx](MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.docx)) |
+| **Document** | MTC-001 |
 | **Requirement** | REQ-014 Edit Agreement and locked agreement fields |
 | **Automated test report** | [ATR-001](../01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 of 22 scenarios passed on 2026-10-19; one defect found and fixed (DEF-001) |
 | **Environment** | Sandbox (UTDEV), Marlins Sales app, Ticketing Opportunities |

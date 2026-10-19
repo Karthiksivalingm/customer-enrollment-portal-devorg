@@ -1,6 +1,6 @@
 # 02 — Manual Testing
 
-One document per requirement, written for the manual QA tester: `MTC-###_<Requirement>.md` (readable in VS Code and GitHub) and the same content as Word, `MTC-###_<Requirement>.docx`. Screenshots are stored in `MTC-###_screenshots/`.
+One document per requirement, written for the manual QA tester: `MTC-###_<Requirement>.md` (readable in VS Code and GitHub). Screenshots are stored in `MTC-###_screenshots/`.
 
 ## Test case columns
 | Column | Content |
