@@ -3,11 +3,11 @@
 | | |
 |---|---|
 | **Change ID** | CR-021 |
-| **Date** | 2026-10-12 → 2026-10-13 (12 → 13 Oct, Session A) |
+| **Date** | 2026-10-12 → 2026-10-13 (12 → 13 Oct) |
 | **Requirement** | [REQ-016](../03-Requirements/REQ-016_Private-GitHub-Repository.md) [REQ-017](../03-Requirements/REQ-017_Organise-Repository-Into-Seven-Sections.md) [REQ-023](../03-Requirements/REQ-023_Record-Every-Org-Change-In-GitHub.md) |
 | **Org** | Git |
 | **Deploy ID** | n/a |
-| **By** | Session A |
+| **By** | Assistant |
 | **Status** | Done |
 
 ## What changed

@@ -3,11 +3,11 @@
 | | |
 |---|---|
 | **Change ID** | CR-008 |
-| **Date** | 2026-10-06 (6 Oct, Session A) |
+| **Date** | 2026-10-06 (6 Oct) |
 | **Requirement** | [REQ-003](../03-Requirements/REQ-003_Rename-Key-Accounts-To-Key-Account.md) |
 | **Org** | GDRSAND |
 | **Deploy ID** | `0Afdx00000GAgZSCA1`, `0Afdx00000GAi4zCAD`, `0Afdx00000GAiL7CAL`, `0Afdx00000GAijJCAT`, `0Afdx00000GAizRCAT` |
-| **By** | Session A |
+| **By** | Assistant |
 | **Status** | Done |
 
 ## What changed
@@ -19,8 +19,7 @@
 | 12:34 | `0Afdx00000GAijJCAT` (`GAfwkCAD`) | 116 `Account_Cluster_Team` records + `Account_Cluster_Team__mdt.Sales_Channel__c` (value added) | 117/117 |
 | 12:38 | `0Afdx00000GAizRCAT` (`GAio9CAD`) | `ShopifyAssociationRetryBatch`: removed `AND Sales_Channel__c NOT IN ('Key Accounts')` (all channels now sync, matching the trigger handlers). Sandbox-only class | 1/1 |
 
-Before snapshot: `Before-Snapshots/2026-10-06_KeyAccount_Sector/`. Production package: `06-Deployment/Packages/KeyAccount_Rename_PROD`.
-
+Before versions: git history of `force-app/` ([CR-025](CR-025_Align-With-House-Standard-And-Remove-Production-Details.md)).
 
 ## Rollback
-Redeploy the files in `Before-Snapshots/2026-10-06_KeyAccount_Sector/`.
+Redeploy the previous versions of these files from git history.

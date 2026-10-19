@@ -3,11 +3,11 @@
 | | |
 |---|---|
 | **Change ID** | CR-023 |
-| **Date** | 2026-10-13 (13 Oct, Session A) |
+| **Date** | 2026-10-13 (13 Oct) |
 | **Requirement** | [REQ-023](../03-Requirements/REQ-023_Record-Every-Org-Change-In-GitHub.md) |
 | **Org** | Git (no org change) |
 | **Deploy ID** | n/a |
-| **By** | Session A |
+| **By** | Assistant |
 | **Status** | Done |
 
 ## What changed
@@ -19,6 +19,7 @@ No org change.
 - **Hook:** now also runs the project's lint-staged step when Node is installed.
 - **Tag:** `sandbox-baseline-2026-10-13` marks the cleaned history, fully synced with GDRSAND.
 
+Most of these files were removed on 2026-10-19 to match the house standard ([CR-025](CR-025_Align-With-House-Standard-And-Remove-Production-Details.md)).
 
 ## Rollback
 git revert.

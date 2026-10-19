@@ -1,6 +1,6 @@
 # AI Workflow
 
-How we use AI tools on MLB work. There are three workflows, one for each kind of work:
+How we use AI tools on work. There are three workflows, one for each kind of work:
 
 | Workflow | Use it for | Target |
 |---|---|---|

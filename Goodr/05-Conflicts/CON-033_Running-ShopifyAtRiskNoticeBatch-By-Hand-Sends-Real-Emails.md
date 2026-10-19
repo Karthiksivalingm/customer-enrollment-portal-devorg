@@ -5,7 +5,7 @@
 | **ID** | CON-033 |
 | **Status** | ⚠ Open risk |
 | **Found** | 2026-10-13 |
-| **Where** | Sandbox / production |
+| **Where** | Sandbox |
 
 ## Risk
 Running `ShopifyAtRiskNoticeBatch` by hand sends real emails

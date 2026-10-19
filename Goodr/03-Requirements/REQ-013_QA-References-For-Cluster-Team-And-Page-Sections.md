@@ -5,7 +5,7 @@
 | **ID** | REQ-013 |
 | **Status** | ✅ Done |
 | **Requested** | 2026-10-09 |
-| **Related** | [DEP-001](../06-Deployment/DEP-001_Sales-Channel-Sector-Production-Deployment.md) |
+| **Related** |  |
 
 ## Business need
 QA references: cluster/team mapping; page sections per Sales Channel / Sector
@@ -17,7 +17,7 @@ QA references: cluster/team mapping; page sections per Sales Channel / Sector
 1. Two Excel references for QA
 
 ## Output
-`06-Deployment/QA-Testing/`
+[MTC-002](../08-QA/02-Manual-Testing/MTC-002_Cluster-and-Team-Assignment.xlsx) and [MTC-003](../08-QA/02-Manual-Testing/MTC-003_Record-Page-Sections-by-Sales-Channel-Sector.xlsx)
 
 ## Open questions
 None.

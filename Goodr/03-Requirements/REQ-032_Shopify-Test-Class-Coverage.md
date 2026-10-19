@@ -5,7 +5,7 @@
 | **ID** | REQ-032 |
 | **Status** | ✅ Done (deploy `0Afdx00000GDn9lCAD`, 105/105) |
 | **Requested** | 2026-10-08 |
-| **Related** | [CR-012](../04-Change-Records/CR-012_Shopify-Test-Classes.md) · [DEP-002](../06-Deployment/DEP-002_Shopify-At-Risk-Offboarding-Production-Deployment.md) |
+| **Related** | [CR-012](../04-Change-Records/CR-012_Shopify-Test-Classes.md) |
 
 ## Business need
 Check the Shopify test classes give more than 80% coverage with no errors; fix or create them

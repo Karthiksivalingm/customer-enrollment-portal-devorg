@@ -3,11 +3,11 @@
 | | |
 |---|---|
 | **Change ID** | CR-015 |
-| **Date** | 2026-10-09 (9 Oct 09:49, Session A) |
+| **Date** | 2026-10-09 (9 Oct 09:49) |
 | **Requirement** | [REQ-010](../03-Requirements/REQ-010_V1-Backup-Fields.md) |
 | **Org** | GDRSAND |
 | **Deploy ID** | `0Afdx00000GEjosCAD` |
-| **By** | Session A |
+| **By** | Assistant |
 | **Status** | Done |
 
 ## What changed

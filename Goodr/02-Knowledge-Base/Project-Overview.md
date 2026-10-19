@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Document ID** | KB-001 |
-| **Last updated** | 2026-10-14 |
+| **Last updated** | 2026-10-19 |
 
 ## Business context
 Goodr sells to retailers through these **Sales Channels**: Key Account, Specialty, Partnerships and Global.
@@ -17,8 +17,7 @@ Each account also has a **Sector** within its channel. Together, Sales Channel a
 ## Orgs
 | Alias | Type | Notes |
 |---|---|---|
-| `GDRSAND` | Sandbox | Development and testing. This repository mirrors this org. It also contains work that isn't approved for production yet (R12, Fulfillment, YTD/inactivity and Tiers fields on pages). |
-| `GDRPROD` | Production | Changed only through approved packages in `06-Deployment/Packages/`. |
+| `GDRSAND` | Sandbox (partial copy) | All development and testing. `force-app/` mirrors this org. It also holds other work in progress (R12, Fulfillment, YTD/inactivity and Tiers fields on pages). See [KB-004](KB-004_Salesforce-Environment.md). |
 
 ## Objects in scope
 | Object | Key record types / notes |
@@ -56,13 +55,13 @@ More detail: [07-Technical/TECH-001_Cluster-and-Team-Engine.md](../07-Technical/
 
 ## Integrations
 Shopify (accounts, contacts, addresses, orders, sales, at-risk offboarding), NetSuite (products and pricebooks),
-Typeform (retailer forms → Lead, files) and Zendesk (webhook → Case). See [02-Knowledge-Base/Integrations.md](../02-Knowledge-Base/Integrations.md).
+Typeform (retailer forms → Lead, files) and Zendesk (webhook → Case). See [Integrations](Integrations.md).
 
 ## Client decisions (data migration)
 | Question | Decision |
 |---|---|
 | Which records? | All records on Account, Contact, Lead and Opportunity |
-| Backup | Full DWH download first; old values copied to the V1 fields |
+| Backup | Old values copied to the V1 fields first |
 | Old picklist values | Remove after the copy exists |
 | Key Account + Mid-Market | Strategic (default) |
 | Converted Leads | Update them too |
@@ -77,4 +76,3 @@ Typeform (retailer forms → Lead, files) and Zendesk (webhook → Case). See [0
 | V1 fields | Backup text fields holding the pre-2026 Sales Channel / Sector |
 | CMDT | Custom metadata type |
 | Check-only / validate | A deploy that runs everything but saves nothing (`--dry-run`) |
-| DWH | Data warehouse export taken before data changes |

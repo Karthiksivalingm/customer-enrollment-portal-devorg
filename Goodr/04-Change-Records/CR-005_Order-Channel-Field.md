@@ -11,8 +11,7 @@
 | **Status** | Done |
 
 ## What changed
-`Account.Order_Channel__c` (picklist) created. It's sandbox-only work that hasn't been approved for production.
-
+`Account.Order_Channel__c` (picklist) created. It is separate sandbox work, not part of the Sales Channel / Sector change.
 
 ## Rollback
 Delete the field in Setup (only if no data or components use it).

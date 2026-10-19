@@ -65,4 +65,4 @@ The full rule list is in [TECH-005_Fields-and-Custom-Metadata.md](TECH-005_Field
 (includes `testHandle_SalesChannelAndSectorChanged_SectorCascadedToOpp`), `ClusterTeamEngineTest`, `ClusterTriggerTest`,
 `ContactClusterTriggerTest`, `LeadConversionHandlerTest`, `LeadConversionHandlerTest1`.
 
-Live verification scripts (they insert records, check them, then roll back): `scripts/apex/verification/`.
+Verification results: [ATR-001](../08-QA/01-Automated-Testing/ATR-001_Cluster-And-Team-Old-And-New-Mapping.md).

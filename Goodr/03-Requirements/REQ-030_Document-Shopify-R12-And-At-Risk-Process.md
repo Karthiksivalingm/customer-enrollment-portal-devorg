@@ -5,10 +5,10 @@
 | **ID** | REQ-030 |
 | **Status** | ✅ Done |
 | **Requested** | 2026-09-29 |
-| **Related** | [KB-002](../02-Knowledge-Base/KB-002_Shopify-At-Risk-Offboarding.md) · [CR-001](../04-Change-Records/CR-001_Shopify-At-Risk-Warm-Off-Offboarding-Sandbox-Build.md) |
+| **Related** | [CR-001](../04-Change-Records/CR-001_Shopify-At-Risk-Warm-Off-Offboarding-Sandbox-Build.md) |
 
 ## Business need
-Document how R12 sales, at-risk notices, the batch schedule, emails and tasks work (Session B)
+Document how R12 sales, at-risk notices, the batch schedule, emails and tasks work
 
 ## Scope
 - **In:** R12 calculation, notice creation, batch schedule, emails, tasks and assignment
@@ -18,7 +18,7 @@ Document how R12 sales, at-risk notices, the batch schedule, emails and tasks wo
 1. Process documented for technical and business readers
 
 ## Output
-`02-Knowledge-Base/KB-002_Shopify-At-Risk-Offboarding.md`
+`02-Knowledge-Base/Business-Process.md`
 
 ## Open questions
 None.

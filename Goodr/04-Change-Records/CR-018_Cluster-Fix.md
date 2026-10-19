@@ -3,11 +3,11 @@
 | | |
 |---|---|
 | **Change ID** | CR-018 |
-| **Date** | 2026-10-09 (9 Oct 10:34, Session A) |
+| **Date** | 2026-10-09 (9 Oct 10:34) |
 | **Requirement** | [REQ-012](../03-Requirements/REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md) |
 | **Org** | GDRSAND |
 | **Deploy ID** | `0Afdx00000GEpsfCAD` |
-| **By** | Session A |
+| **By** | Assistant |
 | **Status** | Done |
 
 ## What changed
@@ -20,8 +20,7 @@ Deploy `0Afdx00000GEpsfCAD` (dry run `GEpUTCA1`, 119/119 tests; coverage Cluster
 - `AccountCascadeHandler` and `LeadConversionHandler` copy Sector to open Opportunities.
 - Tests: `ClusterRuleEngineTest` and `AccountCascadeHandlerTest` each gained one test.
 
-Re-check, rolled back afterwards: 32 cluster/team checks, 0 mismatches. Before snapshot: `Before-Snapshots/2026-10-09_ClusterFix/`.
-
+Re-check, rolled back afterwards: 32 cluster/team checks, 0 mismatches. Test report: [ATR-001](../08-QA/01-Automated-Testing/ATR-001_Cluster-And-Team-Old-And-New-Mapping.md).
 
 ## Rollback
-Redeploy the classes from `Before-Snapshots/2026-10-09_ClusterFix/`.
+Redeploy the previous class versions from git history.

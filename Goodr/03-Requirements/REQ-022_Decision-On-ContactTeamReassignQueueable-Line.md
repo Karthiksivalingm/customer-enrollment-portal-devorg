@@ -5,7 +5,7 @@
 | **ID** | REQ-022 |
 | **Status** | ⚠ Open - waiting on: Client / team decision |
 | **Requested** | 2026-10-13 |
-| **Related** | [CON-007](../05-Conflicts/CON-007_Sandbox-Vs-Production-AccountCascadeHandler-In-The-Sandbox-Has.md) |
+| **Related** | [CON-007](../05-Conflicts/CON-007_AccountCascadeHandler-Has-An-Unrelated-Queueable-Call.md) |
 
 ## Business need
 Decide on the extra `ContactTeamReassignQueueable` line in `AccountCascadeHandler` (sandbox only)

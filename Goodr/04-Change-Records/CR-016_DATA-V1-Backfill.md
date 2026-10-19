@@ -11,9 +11,8 @@
 | **Status** | Done |
 
 ## What changed
-**8,387 Accounts** have `Sales_Channel_V1__c` filled (verified 2026-10-13). The load was done by the user outside the Claude sessions.
-3 accounts had no V1 at 11:35. `Data-Changes/.../1_V1_Backfill_DataLoader.csv` was prepared for them.
-
+**8,387 Accounts** have `Sales_Channel_V1__c` filled (verified 2026-10-13). The load was done by the user outside the assistant sessions.
+3 accounts had no V1 at 11:35. A backfill file was prepared for them (git history).
 
 ## Rollback
 Clear the V1 fields with Data Loader. Not recommended: they are the backup of the old values.

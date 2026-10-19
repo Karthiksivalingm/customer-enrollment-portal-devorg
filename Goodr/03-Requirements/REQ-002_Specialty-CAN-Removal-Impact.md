@@ -5,7 +5,7 @@
 | **ID** | REQ-002 |
 | **Status** | ✅ Done |
 | **Requested** | 2026-10-05 |
-| **Related** | [CR-003](../04-Change-Records/CR-003_Impact-Analysis.md) · TECH-008 |
+| **Related** | [CR-003](../04-Change-Records/CR-003_Impact-Analysis.md) · [TECH-008](../07-Technical/TECH-008_Sales-Channel-Sector-Impact-Analysis.xlsx) |
 
 ## Business need
 Impact of removing Specialty CAN; new Sector mapping
@@ -19,7 +19,7 @@ Impact of removing Specialty CAN; new Sector mapping
 2. Flow behaviour explained
 
 ## Output
-Same workbook, Specialty CAN sheet
+[TECH-008](../07-Technical/TECH-008_Sales-Channel-Sector-Impact-Analysis.xlsx), Specialty CAN sheet
 
 ## Open questions
 None.

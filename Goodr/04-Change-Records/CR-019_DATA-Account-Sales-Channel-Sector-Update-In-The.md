@@ -11,7 +11,7 @@
 | **Status** | Done (see note) |
 
 ## What changed
-Verified 2026-10-13 against `Data-Changes/DataMigration_Account_Sandbox/2_Account_Update_DataLoader.csv`:
+Verified 2026-10-13 against the Data Loader update file (161 rows; kept in git history):
 - **159 of 161 rows** in the org match the new values. 163 Accounts now hold new Sector values: Self Service 131, Planned 11, Enterprise 10, Distributor 7, Strategic 4.
 - 2 rows differ because those records were changed to other values afterwards: **Missoula Scheels** (file Key Account/Enterprise, org Partnerships/Partnerships) and **Test TVK** (file Key Account/Strategic, org Global/Distributor).
 - 3 test accounts not in the file (R12 Test Company Sandbox, Test Team, R12 WOT T6 Late) also hold new values.
@@ -19,6 +19,5 @@ Verified 2026-10-13 against `Data-Changes/DataMigration_Account_Sandbox/2_Accoun
 - Contact, Opportunity: no records on the new Sector values yet. Lead: 1 (Distributor).
 - Rollback file: `3_Account_Rollback_DataLoader.csv`.
 
-
 ## Rollback
-Load `Data-Changes/DataMigration_Account_Sandbox/3_Account_Rollback_DataLoader.csv` (restores the V1 values).
+Load the rollback file from git history (restores the V1 values).

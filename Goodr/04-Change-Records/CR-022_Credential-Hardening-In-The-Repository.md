@@ -3,11 +3,11 @@
 | | |
 |---|---|
 | **Change ID** | CR-022 |
-| **Date** | 2026-10-13 (13 Oct, Session A) |
+| **Date** | 2026-10-13 (13 Oct) |
 | **Requirement** | [REQ-023](../03-Requirements/REQ-023_Record-Every-Org-Change-In-GitHub.md) |
 | **Org** | Git (no org change) |
 | **Deploy ID** | n/a |
-| **By** | Session A |
+| **By** | Assistant |
 | **Status** | Done |
 
 ## What changed
@@ -17,10 +17,11 @@ No org change. NetSuite credential custom metadata had been committed in the fir
 - added `.gitattributes` so the hook keeps LF line endings;
 - **purged the history** (user approved): the 2 files were removed from every commit with `git filter-branch` and pushed with `--force-with-lease`. Every commit ID changed: `88fb123→c2b6b3e`, `246a9f2→d591374`, `7ced5d5→b7561dd`, `e3ab771→7dae7eb`. Checked: none of the 6 secret values appears in any commit. A backup bundle of the old history was kept locally (not in the repo).
 
+The templates and the hook were later removed to match the house folder standard ([CR-025](CR-025_Align-With-House-Standard-And-Remove-Production-Details.md)).
+
 **Still open:**
 - Rotate the NetSuite sandbox keys (NetSuite admin).
 - GitHub still serves the old commits to anyone with their exact ID until its clean-up runs. GitHub Support can remove them immediately. The repo is private.
-
 
 ## Rollback
 Not reversible by design (the purge removes secrets from history).

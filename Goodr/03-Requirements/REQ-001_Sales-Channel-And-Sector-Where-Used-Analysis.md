@@ -5,7 +5,7 @@
 | **ID** | REQ-001 |
 | **Status** | ✅ Done |
 | **Requested** | 2026-10-05 |
-| **Related** | [CR-003](../04-Change-Records/CR-003_Impact-Analysis.md) · TECH-008 |
+| **Related** | [CR-003](../04-Change-Records/CR-003_Impact-Analysis.md) · [TECH-009](../07-Technical/TECH-009_Sector-Where-Used-Analysis.xlsx) |
 
 ## Business need
 Find where the Sector and Sales Channel values are used (classes, flows, pages, reports, dashboards) and what changing them affects
@@ -19,7 +19,7 @@ Find where the Sector and Sales Channel values are used (classes, flows, pages, 
 2. Delivered as Excel
 
 ## Output
-`07-Technical/Impact-Analysis/Sector_Where_Used_Analysis.xlsx`
+[TECH-009](../07-Technical/TECH-009_Sector-Where-Used-Analysis.xlsx)
 
 ## Open questions
 None.

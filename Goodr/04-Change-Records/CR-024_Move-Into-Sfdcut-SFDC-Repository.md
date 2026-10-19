@@ -7,7 +7,7 @@
 | **Requirement** | [REQ-033](../03-Requirements/REQ-033_Move-Goodr-Into-Sfdcut-SFDC-Repository.md) |
 | **Org** | Git (no org change) |
 | **Deploy ID** | n/a |
-| **By** | Session A |
+| **By** | Assistant |
 | **Status** | Done (merged through a pull request) |
 
 ## What changed

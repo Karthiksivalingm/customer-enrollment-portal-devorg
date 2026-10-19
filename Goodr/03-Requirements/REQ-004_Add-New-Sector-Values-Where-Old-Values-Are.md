@@ -5,7 +5,7 @@
 | **ID** | REQ-004 |
 | **Status** | ✅ Done |
 | **Requested** | 2026-10-06 |
-| **Related** | [CR-002](../04-Change-Records/CR-002_New-Sector-Values.md) · [CR-009](../04-Change-Records/CR-009_New-Sector-Values-In-Logic.md) · [DEP-001](../06-Deployment/DEP-001_Sales-Channel-Sector-Production-Deployment.md) |
+| **Related** | [CR-002](../04-Change-Records/CR-002_New-Sector-Values.md) · [CR-009](../04-Change-Records/CR-009_New-Sector-Values-In-Logic.md) |
 
 ## Business need
 Add the new Sector values where the old values are used (cluster rules, page filters) without breaking existing logic

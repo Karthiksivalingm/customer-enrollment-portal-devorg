@@ -19,7 +19,7 @@ Verify that metadata works for both the new and old mappings
 2. All test records rolled back
 
 ## Output
-`06-Deployment/Post-Deployment-Verification/`
+[ATR-001](../08-QA/01-Automated-Testing/ATR-001_Cluster-And-Team-Old-And-New-Mapping.md)
 
 ## Open questions
 None.

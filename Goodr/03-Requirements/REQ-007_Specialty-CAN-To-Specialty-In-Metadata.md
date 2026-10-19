@@ -5,7 +5,7 @@
 | **ID** | REQ-007 |
 | **Status** | ✅ Done |
 | **Requested** | 2026-10-08 |
-| **Related** | [CR-011](../04-Change-Records/CR-011_Specialty-CAN-To-Specialty.md) · [CR-014](../04-Change-Records/CR-014_Old-Values-Deactivated.md) · [DEP-001](../06-Deployment/DEP-001_Sales-Channel-Sector-Production-Deployment.md) |
+| **Related** | [CR-011](../04-Change-Records/CR-011_Specialty-CAN-To-Specialty.md) · [CR-014](../04-Change-Records/CR-014_Old-Values-Deactivated.md) |
 
 ## Business need
 Specialty CAN → Specialty in metadata (flow, tests, reports), no data change

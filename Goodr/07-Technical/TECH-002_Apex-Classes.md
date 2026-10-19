@@ -1,6 +1,6 @@
 # TECH-002 — Apex Classes
 
-_Generated 2026-10-14 from `force-app/main/default/classes` by `scripts/doc-builders/build_technical_docs.ps1`._
+_Generated 2026-10-14 from `force-app/main/default/classes`._
 
 103 classes + 82 test classes. **Kind**, **Objects** (SOQL `FROM`) and **Callouts** are read from the code.
 
