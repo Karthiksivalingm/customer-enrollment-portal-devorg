@@ -1,0 +1,32 @@
+<apex:component >
+    <apex:attribute name="upsell" type="Upsell__c" required="true"
+                    description="upsell"/>
+    <apex:attribute name="vertical" type="String" required="true"
+                    description="vertical"/>
+    
+    <apex:pageBlockSection title="Volume Cap">
+        <table class="infoTable">
+                  
+            <tr>
+                <th>Day</th>
+                <th>Cap Filled Rate</th>
+                <th>Daily Cap Lift</th>
+            </tr>
+            <tr>
+                <th>Weekday</th>
+                <td>{!upsell.Weekday_Cap_Filled_Rate__c}</td>
+                <td>{!upsell.Weekday_Cap_Expansion_Lift__c}</td>
+            </tr>
+            <tr>
+                <th>Saturday</th>
+                <td>{!upsell.Cap_Filled_Rate_Sat__c}</td>
+                <td>{!upsell.Sat_Cap_Expansion_Lift__c}</td>
+            </tr>
+            <tr>
+                <th>Sunday</th>
+                <td>{!upsell.Cap_Filled_Rate_Sun__c}</td>
+                <td>{!upsell.Sun_Cap_Expansion_Lift__c}</td>
+            </tr>
+        </table>
+    </apex:pageBlockSection>
+</apex:component>

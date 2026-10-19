@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>NPS State Farm</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NPS State Farm 2</name>
+    <style>none</style>
+    <subject>How is EverQuote doing??</subject>
+    <textOnly>Hi {!Lead.FirstName},
+Have you ever wanted to know how to handle those insurance sales objections your team has the most trouble overcoming? Join us Wednesday, April 15, 2020 @ 2:00 PM Eastern to find out how in this webinar &quot;Insurance Lead Objections: Controlling the Conversation&quot; featuring successful agent, speaker and author, Kirk Fuqua (and hosted by Chandler Hahn). Learn how to prepare yourself (and your producers) to deal with a range of objections that you’ll hear when working insurance leads.
+
+Kirk opened his first insurance agency in 2008 as a captive agent and grew it to be one of the largest in the country (later transitioning to independent). In addition to running a highly successful agency, Kirk is also a nationally recognized speaker and author and has helped thousands of agents with their businesses.
+You can sign-up for the free webinar directly through our link here! https://zoom.us/webinar/register/WN_E9IrZDVtS_GhI0bMqroyMQ
+
+Best,
+
+Dennis
+
+Dennis Miller
+Marketing Manager
+marketing@everquote.com
+
+© 2020 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2020 www.everquote.com
+Don&apos;t want our emails? Email- SUBJECT: Unsubscribe to compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

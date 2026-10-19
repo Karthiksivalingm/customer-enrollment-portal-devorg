@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Account.LCS__c</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>CDF1</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.LCS__c</field>
+    </columns>
+    <columns>
+        <field>Account.LCS_Agent_Name__c</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>IF(ISBLANK(Account.LCS_Agent_Name__c), &quot;Is Blank&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;CENTURY&quot;), &quot;May include carrier name, 21st Century&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;AAA&quot;), &quot;May include carrier name, AAA&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;ALFA&quot;), &quot;May include carrier name, Alfa Insurace&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;ALLSTATE&quot;), &quot;May include carrier name, Allstate&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;ALL STATE&quot;), &quot;May include carrier name, Allstate&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;AMERICAN&quot;), &quot;May include carrier name, American (Family/National)&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;BALTIMORE&quot;), &quot;May include carrier name, Baltimore&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;BLUENSURE&quot;), &quot;May include carrier name, BlueNsure&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;COUNTRY&quot;), &quot;May include carrier name, Country Financial&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;FAMILY FIRST&quot;), &quot;May include carrier name, Family First Life&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;FFL&quot;), &quot;May include carrier name, Family First Life&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;FARM BUREAU&quot;), &quot;May include carrier name, Farm Bureau&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;FARMER&quot;), &quot;May include carrier name, Farmers&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;INDEPENDENT&quot;), &quot;May include carrier name, Independent Agent&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;IA &quot;), &quot;May include carrier name, Independent Agent&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot; IA&quot;), &quot;May include carrier name, Independent Agent&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;LIBERTY MUTUAL&quot;), &quot;May include carrier name, Liberty Mutual&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;METLIFE&quot;), &quot;May include carrier name, MetLife&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;OMAHA&quot;), &quot;May include carrier name, Mutual of Omaha&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;NATIONWIDE&quot;), &quot;May include carrier name, Nationwide&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;NEW YORK&quot;), &quot;May include carrier name, New York Life&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;SHELTER&quot;), &quot;May include carrier name, Shelter Insurance&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;STATE FARM&quot;), &quot;May include carrier name, State Farm&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;STATEFARM&quot;), &quot;May include carrier name, State Farm&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot;SYMMETRY&quot;), &quot;May include carrier name, Symmetry Financial Group&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot; LLC&quot;), &quot;May include LLC&quot;,
+IF(CONTAINS(UPPER(Account.LCS_Agent_Name__c), &quot; INC&quot;), &quot;May include Inc&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;MOA&quot;), &quot;May include MOA&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;0&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;1&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;2&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;3&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;4&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;5&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;6&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;7&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;8&quot;), &quot;Includes a number&quot;,
+IF(CONTAINS(Account.LCS_Agent_Name__c, &quot;9&quot;), &quot;Includes a number&quot;,
+IF(RIGHT(Account.LCS_Agent_Name__c,1) = &quot;,&quot;, &quot;End in punctuation&quot;,
+IF(LEFT(Account.LCS_Agent_Name__c,1) = &quot;,&quot;, &quot;Starts with punctuation&quot;,
+IF(RIGHT(Account.LCS_Agent_Name__c,1) = &quot;.&quot;, &quot;End in punctuation&quot;,
+IF(LEFT(Account.LCS_Agent_Name__c,1) = &quot;.&quot;, &quot;Starts with punctuation&quot;,
+IF(RIGHT(Account.LCS_Agent_Name__c,1) = &quot;-&quot;, &quot;End in punctuation&quot;,
+IF(LEFT(Account.LCS_Agent_Name__c,1) = &quot;-&quot;, &quot;Starts with punctuation&quot;,
+IF(Account.LCS_Agent_Name__c = UPPER(Account.LCS_Agent_Name__c), &quot;All CAPS&quot;,
+IF(Account.LCS_Agent_Name__c = LOWER(Account.LCS_Agent_Name__c), &quot;All lower case&quot;,
+&quot;No issue&quot;)))))))))))))))))))))))))))))))))))))))))))))))</calculatedFormula>
+        <dataType>Text</dataType>
+        <developerName>CDF1</developerName>
+        <label>LCS Agent Name Potential Issue</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <description>List of Accounts where LCS Agent Name should be reviewed for friendliness. Subscribed to by members of Ops for occasional checks</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.LCS__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CDF1</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No issue</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.LCS_Agent_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Triple 888 Insurance,SFG,Miguel Alfaro Agency,Greg Leffler Agency,Insured LLC,Dafflyn Gaye Agency,24 Hour Insurance,4ward Connect Insurance,Demo_LCS Subscription Test Tier 2,82NH</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CDF1</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Review LCS Agent Name</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uncapped_Fill_Rate__c</fullName>
+    <description>Populated by simpleloader. Part of Customer Health Score metrics.
+S3P-1293 - Updated label, help text, and decimals.</description>
+    <inlineHelpText>Percent of agent&apos;s lead demand over the last 7 days that EverQuote was able to fill. Updated daily by Analytics.</inlineHelpText>
+    <label>Fill Rate (Last 7 Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,7 @@
+New referral request from {!Lead.OwnerFullName}
+
+Referring Agent: {!Lead.Referring_Agent__c}
+Referral: {!Lead.Account1__c}
+Lead Name: {!Lead.FirstName} {!Lead.LastName}
+Carrier: {!Lead.Carrier__c}
+Referral Credit: {!Lead.Credit__c}

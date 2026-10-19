@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>"EverquotePro"</title>
+<style type="text/css">
+img {max-width: 100%;}
+body {-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6;}
+body {background-color: #f6f6f6;}
+@media only screen and (max-width: 640px) {
+  h1 {font-weight: 600 !important; margin: 20px 0 5px !important;}
+  h2 {font-weight: 600 !important; margin: 20px 0 5px !important;}
+  h3 {font-weight: 600 !important; margin: 20px 0 5px !important;}
+  h4 {font-weight: 600 !important; margin: 20px 0 5px !important;}
+  h1 {font-size: 22px !important;}
+  h2 {font-size: 18px !important;}
+  h3 {font-size: 16px !important;}
+  .container {width: 100% !important;}
+  .content {padding: 10px !important;}
+  .content-wrap {padding: 10px !important;}
+  .invoice {width: 100% !important;}
+}
+</style>
+</head>
+
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6; background: #f6f6f6; margin: 0;">
+
+<table class="body-wrap" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; background: #f6f6f6; margin: 0;">
+	<tr style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+		<td style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0;" valign="top"></td>
+		<td class="container" width="600" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto;" valign="top">
+			<div class="content" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; max-width: 600px; display: block; margin: 0 auto; padding: 15px;">
+			<table cellspacing="0" cellpadding="10" width="100%" style="background:#f6f6f6 !important;">
+          <tr>
+            <td align="left">
+              <table align="left" style="background:#f6f6f6 !important; margin:0 auto;">
+                <tr>
+                  <td>
+                  <a href="${pro_link}" border="0" style="border: none;"><img width="150" src="http://cdn.inclimg.com/choice/everquote-pro-logo.png"/></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td class="mobiletext" align="right" style="color:#444; line-height:1.4; font-size:1em !important;">
+              <a href="${pro_link}" style="text-decoration:none; color:#444;"></a>
+              <br>Call Us: <a style="text-decoration:none; color:#444;" href="${sales_phone_link}">(844) 904-7480</a>
+            </td>
+          </tr>
+        </table>
+				<table class="main" width="100%" cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; border-radius: 3px; background: #fff; margin: 0; border: 1px solid #e9e9e9;">
+					<tr style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+						<td class="content-wrap" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 20px;" valign="top">
+							<meta itemprop="name" content="Confirm Email" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;" />
+							<table width="100%" cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+								<tr style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+									<td class="content-block" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+										Hi {!Lead.FirstName},
+									</td>
+								</tr>
+								<tr style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+									<td class="content-block" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+										EverQuote is not only the largest online insurance marketplace but we also <b>partner extensively with Independent agents across many different carriers.</b> We know your market is competitive and with customer defection being a constant issue keeping a steady influx of new clients is crucial – let us help you hit your targets!<br>
+									<br>
+										We just launched a <b>dedicated Independent team</b> – we are exclusively focused on making Independent agents successful through individualized account management and customer support.
+									</td>
+								</tr>
+                                <tr>
+									<td>
+										Why EverQuote, you ask?
+                                        <ul>
+											<li><b>Highest quality leads in the industry</b> – we source 100% of our leads organically - all our prospects come directly to EverQuote via advertising without incentives or rewards</li>
+											<li><b>We send you qualified prospects delivered in REAL TIME </b></li>
+											<li><b>You control everything</b> – set your hours, risk filters / consumer profile, # of leads, zip codes and even pause online in seconds</li>
+											<li><b>Receive unlimited phone support</b> – your dedicated Account Manager customer and our Customer Success team is here to help you bind more policies</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+									<td class="content-block" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+                                        {!Lead.FirstName}, let's schedule a quick 10 minute call so I can show you how it works. When would be best for you?
+									</td>
+								</tr>
+								<tr style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+									<td class="content-block" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+                                        Chat Soon,
+                                        <br>
+                    					{!User.FirstName}
+                    					<br>
+										<br>
+										{!User.Name}
+										<br>
+                    					Independent Agent Account Specialist
+										<br>
+										{!User.Phone}
+										<br>
+										{!User.Email}
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+                </table>
+							<table width="100%" align="center" cellpadding="0" cellspacing="0" bgcolor="#e1e1e1" style="width:100%; margin:0 auto;">
+							  <tr>
+								<td>
+								  <table class="mobile2" width="100%" cellpadding="0" cellspacing="0" align="center" style="text-align:center; margin:0;">
+									<tr>
+                                      <td width="50%">
+										<img class="badge" height="40%" src="https://s3.amazonaws.com/choice-marketing/Email+Images/inc_5000.png"/>
+									  </td>
+									  <td width="25%">
+										<img class="badge" height="40%" src="https://s3.amazonaws.com/choice-marketing/Email+Images/Insurance_BestThirdPartyLeadGen_2016_GOLD_EverQuote_transparent.png"/>
+									  </td>
+									  <td class="mobile2" width="25%">
+										<img class="badge" height="40%" src="https://s3.amazonaws.com/choice-marketing/Email+Images/Insurance_MostInnovativeCompany_2016_GOLD_EverQuote_transparent.png"/>
+									  </td>
+									</tr>
+								  </table>
+								</td>
+							  </tr>
+							</table>
+				</table>
+			<div class="footer" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; clear: both; color: #999; margin: 0; padding: 20px;">
+				<table width="90%" cellpadding="5" cellspacing="0" style="color:#7a84a7; text-align:center; font-size:.8em; line-height:1.5em; margin:0 auto;">
+                  <tr>
+                    <td height="10">
+                    </td>
+                  </tr>
+                  <tr style="color:#7a84a7;">
+                    <td style="color:#7a84a7; text-align:center;">
+                      &copy; 2018 EverQuote Pro
+                    </td>
+                  </tr>
+                  <tr style="color:#7a84a7;">
+                    <td style="color:#7a84a7; text-align:center;">
+                      Questions? Please contact us at <a href="mailto:info@everquote.com" target="_top">info@everquote.com</a>
+                      <br>210 Broadway Cambridge, MA 02139
+                      <br>&copy; 2018 <a href="https://www.everquote.com/">www.everquote.com</a>
+                    </td>
+                  </tr>
+                  <tr style="color:#7a84a7;">
+                    <td style="color:#7a84a7; text-align:center;">
+                      Don't want our emails? <a href="mailto:compliance@everquote.com?Subject=Unsubscribe" style="color:#7a84a7;">Unsubscribe</a> with one click.
+                    </td>
+                  </tr>
+                </table>
+			</div>
+            </div>
+
+		</td>
+		<td style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0;" valign="top">
+		</td>
+	</tr>
+</table>
+
+</body>
+    <img style="display:block" src="${open_pixel}" alt="">
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_to_Competitor_Reason_1__c</fullName>
+    <label>Lost to Competitor - Reason 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Volume</fullName>
+                <default>false</default>
+                <label>Volume</label>
+            </value>
+            <value>
+                <fullName>Return policy</fullName>
+                <default>false</default>
+                <label>Return policy</label>
+            </value>
+            <value>
+                <fullName>Integrations</fullName>
+                <default>false</default>
+                <label>Integrations</label>
+            </value>
+            <value>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <label>Service</label>
+            </value>
+            <value>
+                <fullName>Lead Quality</fullName>
+                <default>false</default>
+                <label>Lead Quality</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

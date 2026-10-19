@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Support_Rep__c</field>
+    </columns>
+    <columns>
+        <field>Account$Type</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Owner</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Cases$Subject</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Follow-Up Required: Low Fill Rate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Core</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Low Fill Rate Cases</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_cases_NEW__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Cases$Case_Open_Date__c</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

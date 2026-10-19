@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}},</span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">This is {{{Sender.FirstName}}} with EverQuote. I wanted to follow up on the email I sent a few days back. We still have excess high-quality lead volume in your area and would love to connect on how we can help you hit your growth goals this year!</span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I’ll plan on giving you a quick call later today to review what agents in your area are doing to maximize results using features like Enhanced Targeting.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">If you’d prefer to schedule a time that works best for you, </span></span></span></span></span></span><strong><a href="{{{Sender.Salesforce_Meeting_Link__c}}}">Grab a Spot Here</a> </strong></p>
+
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best,</span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}</span></span></span></span></span></span></p>
+<br />
+&nbsp;</body>
+</html>

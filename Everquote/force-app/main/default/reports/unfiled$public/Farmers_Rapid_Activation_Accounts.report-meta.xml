@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$MTD_Revenue__c</field>
+    </columns>
+    <columns>
+        <field>Account$Last_Purchase_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Opportunities$Campaign</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>2021-Q2 Farmers Mass Activation Form Submissions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Type</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Farmers Rapid Activation Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accts_with_Opps_with_Prim_Camp_Type__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

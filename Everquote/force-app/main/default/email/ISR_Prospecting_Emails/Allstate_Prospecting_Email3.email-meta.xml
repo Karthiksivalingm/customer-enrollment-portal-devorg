@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Allstate Cold Prospecting Email #3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Allstate_Prospecting_Email3</name>
+    <style>none</style>
+    <subject>low IS score prospects</subject>
+    <textOnly>Hello {!Lead.FirstName},
+
+I know you are getting called on by a lot of lead providers and because of the importance of IS score in Allstate’s pricing, the low quality of most internet leads means they’re probably not going to be the best use of your time.
+
+EverQuote however is not your standard lead vendor. We’re able to filter for leads that meet Allstate’s underwriting requirements so we ultimately connect you with a much higher quality prospect.
+
+I would love to show you how EverQuote can help you bind more policies. We now have a dedicated Allstate team and already have had a ton of success helping Allstate agents crush their targets.
+
+How soon can we jump on a call?
+
+Chat Soon,
+{!User.FirstName}
+
+{!User.Name}
+Allstate Account Specialist
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe at &quot;compliance@everquote.com&quot;</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

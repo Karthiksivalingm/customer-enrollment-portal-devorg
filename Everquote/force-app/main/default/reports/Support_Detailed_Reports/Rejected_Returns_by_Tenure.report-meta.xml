@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_41205048</developerName>
+        <masterLabel>Tenure</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Account.Tenure__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>7</to>
+            </sourceValues>
+            <value>7 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>7</from>
+                <to>14</to>
+            </sourceValues>
+            <value>14 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>14</from>
+                <to>21</to>
+            </sourceValues>
+            <value>21 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>21</from>
+                <to>28</to>
+            </sourceValues>
+            <value>28 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>28</from>
+                <to>35</to>
+            </sourceValues>
+            <value>35 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>35</from>
+                <to>42</to>
+            </sourceValues>
+            <value>42 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>42</from>
+                <to>49</to>
+            </sourceValues>
+            <value>49 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>49</from>
+                <to>56</to>
+            </sourceValues>
+            <value>56 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>56</from>
+                <to>63</to>
+            </sourceValues>
+            <value>63 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>63</from>
+            </sourceValues>
+            <value>63+ days</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumnGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>CREATED_DATEONLY</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>BucketField_41205048</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Large</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Rejected Returns Cases by First Payment</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>OPEN</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case.General_Account_Inquiry__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Rejected Returns</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.First_Payment_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>5/1/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.First_Payment_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>10/31/2016 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>CREATED_DATEONLY</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_41205048</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Rejected Returns by Tenure</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <endDate>2016-10-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-10-02</startDate>
+    </timeFrameFilter>
+</Report>

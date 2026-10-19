@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.3800000000000001; background-color:#ffffff; margin-top:13px; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}},</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I am not sure if you have received my prior emails but I wanted to reach out one last time to see if there is any need from your agency to look into your options with Everquote. At Everquote our number one priority is to help agents such as yourself reach their goals to grow their agency. We partner with agents to not only find the right product that best fits their needs, but also offer services and hands on support to make sure those goals are met.&nbsp;</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I would love to find some time to learn about your agency to see how we can help you grow your business.&nbsp;</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">If you are not interested at this time please at least take advantage of our free resource page where you can find helpful tips from agents for agents. You can find this page </span></span></span></span></span></span><a href="https://learn.everquote.com">HERE</a></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">If you would like to chat feel free to schedule some time with me </span></span></span></span></span></span><a href="{{{Sender.Salesforce_Meeting_Link__c}}}">here</a> <span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">.I am looking forward to chatting soon!</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; margin-bottom:13px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best Regards,</span></span></span></span></span></span></p>
+{{{Sender.Name}}}<br />
+&nbsp;</body>
+</html>

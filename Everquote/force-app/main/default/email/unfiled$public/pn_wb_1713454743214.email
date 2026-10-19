@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Dear {{{Recipient.FirstName}}},</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">At EverQuote we’re serious about investing in lead quality.&nbsp;</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:italic"><span style="text-decoration:none">That’s why carrier testing consistently shows +20% higher average conversion rates with EverQuote vs. traditional lead vendors.</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Our team of engineers continuously use data and analytics to improve lead performance and further our mission to deliver insurance agents the highest converting leads in the industry.</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Let’s connect to discuss how we can help you meet your growth goals. Book a time here- {{{Sender.Salesforce_Meeting_Link__c}}}.</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best regards,</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}<br />
+{{{Sender.Phone}}}</span></span></span></span></span></span><br />
+<a href="https://resources.everquote.com/"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">EverQuote Agent Resources</span></span></span></span></span></span></a></p>
+
+<p>&nbsp;</p>
+</body>
+</html>

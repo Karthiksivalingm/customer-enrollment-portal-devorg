@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_31399900</developerName>
+        <masterLabel>Core Sales Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>FULL_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Daniel Mitchell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mark LeDuc</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Stephen Hannigan</sourceValue>
+            </sourceValues>
+            <value>Allstate</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Michelle Fuca</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mikayla Demanche</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Fitzgerald</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rasheed Parham</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Winrow</sourceValue>
+            </sourceValues>
+            <value>State Farm</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>James Kelley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tim Sharpe</sourceValue>
+            </sourceValues>
+            <value>Farmers</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Anthony Lawrence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Hargrave</sourceValue>
+            </sourceValues>
+            <value>IA</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.Carrier__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Revenue_Last_Computation__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Opportunity.Green_Market_Revenue_so_far__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Opportunity.Projected_56_day_green_market_revenue__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Days_Since_Closed_Won__c</field>
+    </columns>
+    <columns>
+        <field>Account.Paused_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Unpaused_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Account_in_Dunning__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Incremental_Bundle__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business,Winback</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>CLOSE_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.AGP_Pass_up_Flag__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_31399900</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Core MoM Revenue</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURRENTQ</interval>
+    </timeFrameFilter>
+</Report>

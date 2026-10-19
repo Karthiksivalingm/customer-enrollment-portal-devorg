@@ -1,0 +1,22 @@
+<apex:component >
+    <apex:attribute name="campaignHistories" type="CampaignMember[]" required="true"
+                    description="Campaign Histories"/>
+    
+    <apex:pageBlock title="Campaign Histories">
+        <apex:outputText rendered="{!campaignHistories.size = 0}">
+            No records to display
+        </apex:outputText>
+        <apex:pageblocktable rendered="{!campaignHistories.size > 0}"
+                             value="{!campaignHistories}" var="a">
+            <apex:column headerValue="Campaign Name">
+                <apex:outputLink value="/{!a.CampaignId}" target="_top">
+                    {!a.Campaign.Name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column value="{!a.Campaign.Type}"/>
+            <apex:column value="{!a.Status}"/>
+            <apex:column headerValue="Member First Associated" value="{!a.CreatedDate}"/>
+            <apex:column headerValue="Member Status Updated" value="{!a.LastModifiedDate}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+</apex:component>

@@ -1,0 +1,9 @@
+<messaging:emailTemplate subject="Dispatcher Notification - Opportunity record has been assigned to you" recipientType="User" relatedToType="dispatcherapp__Dispatcher_Log__c">
+<messaging:plainTextEmailBody >
+The following Opportunity has been assigned to you through Dispatcher. 
+
+Opportunity Name:  {!relatedTo.Opportunity__r.Name}
+Opportunity Link:  https://login.salesforce.com/{!relatedTo.Opportunity__r.Id}
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

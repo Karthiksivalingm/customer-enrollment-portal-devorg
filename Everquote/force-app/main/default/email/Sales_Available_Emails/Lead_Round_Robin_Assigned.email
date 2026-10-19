@@ -1,0 +1,11 @@
+The following lead has been round robin assigned to you:
+
+Name: {!Lead.FirstName} {!Lead.LastName}
+Company: {!Lead.Company}
+Campaign: {!Lead.Campaign__c}
+Producer Count: {!Lead.How_many_prdrs_agents_including_yourself__c}
+Link to record: {!Lead.Link}
+
+The name of the webinar is in the campaign field as well as in campaign history.
+
+NOTE: This lead either registered or attended this webinar so do not assume they actually attended the webinar.

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Me_Checkbox__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to trigger the Ringlead salesforce trigger on the go.everquote.com/contact landing page for round robin routing of these leads that are already contacts</description>
+    <label>Contact Me Checkbox</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

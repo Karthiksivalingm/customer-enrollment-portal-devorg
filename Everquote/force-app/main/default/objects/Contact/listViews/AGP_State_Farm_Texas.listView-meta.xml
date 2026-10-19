@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AGP_State_Farm_Texas</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Account.Support_Rep__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Carrier__c</field>
+        <operation>equals</operation>
+        <value>state farm</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>equals</operation>
+        <value>tx,texas</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>notEqual</operation>
+        <value>locked,closed</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Accelerated-AGP,Accelerated</value>
+    </filters>
+    <filters>
+        <field>Primary_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>equals</operation>
+    </filters>
+    <label>AGP State Farm Texas</label>
+</ListView>

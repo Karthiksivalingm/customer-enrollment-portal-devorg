@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sorry I missed you email.  No contact with DM.  Email following a voice mail being left.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1. Prospecting: No Contact w/ DM left Voicemail</name>
+    <style>none</style>
+    <subject>{!Lead.FirstName}, Sorry I missed you.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

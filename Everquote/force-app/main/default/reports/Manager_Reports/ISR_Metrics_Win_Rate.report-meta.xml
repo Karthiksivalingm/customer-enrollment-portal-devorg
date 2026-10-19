@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>WON:SUM/RowCount</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>win rate from initial Meeting</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Win Rate</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_OWNER</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CONVERTED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>WON</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CLOSED</field>
+    </columns>
+    <description>win rate from initial Meeting</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Winback-Summer16</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER_ROLE_DISPLAY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>sales rep,sales rep 2,sales rep 3</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OPP_OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ISR Metrics: Win Rate</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityLead</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>OPP_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

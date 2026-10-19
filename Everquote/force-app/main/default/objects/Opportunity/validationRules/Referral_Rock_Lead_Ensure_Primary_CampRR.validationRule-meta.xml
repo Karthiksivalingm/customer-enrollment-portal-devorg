@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Rock_Lead_Ensure_Primary_CampRR</fullName>
+    <active>false</active>
+    <errorConditionFormula>Referral_Rock__c = TRUE &amp;&amp;
+  Campaign.Name &lt;&gt; &quot;Referrals&quot; &amp;&amp;
+ISPICKVAL(StageName, &quot;Closed Won&quot;)</errorConditionFormula>
+    <errorMessage>This is a referral rock opportunity and the primary campaign source is not &quot;Referrals&quot;.  To move this to closed won, please change the primary campaign to &quot;Referrals&quot;</errorMessage>
+</ValidationRule>

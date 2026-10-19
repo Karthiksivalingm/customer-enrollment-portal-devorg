@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Send an in-app notification to the call recipient that links to the voice call</description>
+        <name>Send_Custom_Notification_To_Call_Recipient</name>
+        <label>Send Custom Notification To Call Recipient</label>
+        <locationX>50</locationX>
+        <locationY>1055</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>Send_Email_Notification_to_Call_Recipient</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Send_Email_Notification_to_Call_Recipient</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Custom_Notification_Type.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>Collection_CustomNotification_RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>Text_CustomNotification_Title</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>Text_CustomNotification_Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Notification_to_Call_Recipient</name>
+        <label>Send Email Notification to Call Recipient</label>
+        <locationX>50</locationX>
+        <locationY>1163</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Assign_Missed_Call_Alert_Sent</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_Missed_Call_Alert_Sent_to_Failed_to_Send</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>Get_Call_Recipient_User.Email</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>no-reply@everquote.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Text_SendEmail_EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>&lt;p&gt;{!Text_SendEmail_EmailBody}&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign the Call Recipient as the recipient for the custom notification</description>
+        <name>Assign_Custom_Notification_Recipient</name>
+        <label>Assign Custom Notification Recipient</label>
+        <locationX>446</locationX>
+        <locationY>731</locationY>
+        <assignmentItems>
+            <assignToReference>Collection_CustomNotification_RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Call_Recipient_User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Call_Recipient_User_found</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Flow_Component</name>
+        <label>Assign Failing Flow Component</label>
+        <locationX>314</locationX>
+        <locationY>1379</locationY>
+        <assignmentItems>
+            <assignToReference>FailingFlowComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>VoiceCall_MissedCallorVoicemail_SendEmailAndInAAppNotification - Send Email Notification to Call Recipient</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Update_Triggering_Voice_Call</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Flow_Component_Update_Triggering_Voice_Call</name>
+        <label>Assign Failing Flow Component - Update Triggering Voice Call</label>
+        <locationX>1106</locationX>
+        <locationY>1769</locationY>
+        <assignmentItems>
+            <assignToReference>FailingFlowComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>VoiceCall_MissedCallorVoicemail_SendEmailAndInAppNotification - Update Triggering Voice Call</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Missed_Call_Alert_Sent</name>
+        <label>Assign Missed Call Alert Sent</label>
+        <locationX>50</locationX>
+        <locationY>1271</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Missed_Call_Alert_Sent__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_MissedCallAlertSent_UserAndTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Triggering_Voice_Call</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Missed_Call_Alert_Sent_Call_Recipient_Not_Found</name>
+        <label>Assign Missed Call Alert Sent - Call Recipient Not Found</label>
+        <locationX>842</locationX>
+        <locationY>947</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Missed_Call_Alert_Sent__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Call Recipient Not Found</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Triggering_Voice_Call</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Missed_Call_Alert_Sent_to_Failed_to_Send</name>
+        <label>Assign Missed Call Alert Sent to &quot;Failed to Send&quot;</label>
+        <locationX>314</locationX>
+        <locationY>1271</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Missed_Call_Alert_Sent__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Error: Email Failed to Send</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Failing_Flow_Component</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_the_Missed_Call_checkbox_on_triggering_Voice_Call</name>
+        <label>Assign the Missed Call checkbox on triggering Voice Call</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Missed_Call__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Call_Recipient_User</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Calls with the origin &quot;Voicemail&quot; can actually be accepted by a user in certain scenarios (call back, &quot;press to leave a voicemail&quot;, voicemail recording process at the exact millisecond the agent clicked &quot;Accept.&quot;). If a call with Origin Voicemail was accepted, we don&apos;t want to mark it as a missed call.</description>
+        <name>Is_Call_Accepted</name>
+        <label>Is Call Accepted?</label>
+        <locationX>446</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_Call_Recipient_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_Accepted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CallAcceptDateTime</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_the_Missed_Call_checkbox_on_triggering_Voice_Call</targetReference>
+            </connector>
+            <label>Not Accepted</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Call_Recipient_User_found</name>
+        <label>Was Call Recipient User found?</label>
+        <locationX>446</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Missed_Call_Alert_Sent_Call_Recipient_Not_Found</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Call_Recipient_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Call_Recipient_User</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Custom_Notification_Type</targetReference>
+            </connector>
+            <label>Call Recipient Found</label>
+        </rules>
+    </decisions>
+    <description>When a Voice Call is set to status &quot;completed&quot; and Accepted is null, or if the call&apos;s origin is &quot;Voicemail&quot;, get the user the call was to and send them and in-app notification and email notifying them that they missed a call.  If the call wasn&apos;t accepted, check &quot;Missed Call&quot;.
+
+S3P-1134 - Created. Replaced missed_call_alert and Voicemail_alerts flows.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>areaCodeFromNumber</name>
+        <dataType>String</dataType>
+        <expression>MID({!$Record.FromPhoneNumber}, 3, 3)</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_CallerCompany</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.Contact__c})), {!$Record.Account__r.Name},
+IF(NOT(ISBLANK({!$Record.Lead__c})), {!$Record.Lead__r.Company},
+&apos;Unknown&apos;
+))</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_CallerName</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.Contact__c})), {!$Record.Contact__r.FirstName} &amp; &apos; &apos; &amp;  {!$Record.Contact__r.LastName},
+IF(NOT(ISBLANK({!$Record.Lead__c})), {!$Record.Lead__r.FirstName} &amp; &apos; &apos; &amp;  {!$Record.Lead__r.LastName},
+{!$Record.FromPhoneNumber}
+))</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Link_Caller</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.Contact__c})),{!Formula_SalesforceDomain} &amp; {!$Record.Contact__c},
+IF(NOT(ISBLANK({!$Record.Lead__c})),{!Formula_SalesforceDomain} &amp; {!$Record.Lead__c},
+null))</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Link_CallerCompany</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.Contact__c})),{!Formula_SalesforceDomain} &amp; {!$Record.Account__c},
+IF(NOT(ISBLANK({!$Record.Lead__c})),{!Formula_SalesforceDomain} &amp; {!$Record.Lead__c},
+null))</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Link_VoiceCall</name>
+        <dataType>String</dataType>
+        <expression>{!Formula_SalesforceDomain} &amp; {!$Record.Id}</expression>
+    </formulas>
+    <formulas>
+        <description>Saves the name of the user the notification is being sent to and the time the flow ran.</description>
+        <name>Formula_MissedCallAlertSent_UserAndTime</name>
+        <dataType>String</dataType>
+        <expression>&apos;Sent to: &apos; &amp; {!Get_Call_Recipient_User.Name} &amp; &apos; Date: &apos; &amp; TEXT({!$Flow.CurrentDate})</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_SalesforceDomain</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_630}, FIND(&quot;/services&quot;, {!$Api.Partner_Server_URL_630}))</expression>
+    </formulas>
+    <interviewLabel>VoiceCall_MissedCallorVoicemail_SendEmailAndInAppNotification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VoiceCall_MissedCallorVoicemail_SendEmailAndInAppNotification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>An active user that either matches the Voice Call Owner or the Caller Recipient Info. Exclude the Automated Process User.</description>
+        <name>Get_Call_Recipient_User</name>
+        <label>Get Call Recipient User</label>
+        <locationX>446</locationX>
+        <locationY>623</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Custom_Notification_Recipient</targetReference>
+        </connector>
+        <filterLogic>(1 OR 3) AND 2 AND 4</filterLogic>
+        <filters>
+            <field>Normalized_Phone__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ToPhoneNumber</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Owner:User.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>0051a000000nRXtAAM</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Custom_Notification_Type</name>
+        <label>Get Custom Notification Type</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_Custom_Notification_To_Call_Recipient</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Missed_Call</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Triggering_Voice_Call</name>
+        <label>Update Triggering Voice Call</label>
+        <locationX>446</locationX>
+        <locationY>1661</locationY>
+        <faultConnector>
+            <targetReference>Assign_Failing_Flow_Component_Update_Triggering_Voice_Call</targetReference>
+        </faultConnector>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Call_Accepted</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>1 AND 3 AND (2 OR 4)</filterLogic>
+        <filters>
+            <field>CallDisposition</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CallAcceptDateTime</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CallType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Inbound</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CallOrigin</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Voicemail</stringValue>
+            </value>
+        </filters>
+        <object>VoiceCall</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>Text_CustomNotification_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>You missed a call from {!Formula_CallerName} at {!$Record.CreatedDate}. Click this notification to view the missed voice call. Please also check you Omni-Channel Status as you may have been logged out after missing a call.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Text_CustomNotification_Title</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>📞 Missed Voice Call: {!$Record.FromPhoneNumber}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Text_SendEmail_EmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;Hi {!Get_Call_Recipient_User.FirstName},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;You missed an incoming call (or received a call with origin &quot;Voicemail&quot;). Please review the details below and follow up with the caller as soon as possible. &lt;/span&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Please also check you Omni-Channel Status as you may have been logged out after missing a call.&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;Call Details&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;strong style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;Caller:&lt;/strong&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;{!Formula_Link_Caller}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;{!Formula_CallerName}&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;Company:&lt;/strong&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;{!Formula_Link_CallerCompany}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;{!Formula_CallerCompany}&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;Time of Call:&lt;/strong&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt; {!$Record.CreatedDate}&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;Ring Duration:&lt;/strong&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt; {!$Record.CallDurationInSeconds} seconds&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;To view the full Voice Call record, listen to and acknowledge any voicemail left, and call back: &lt;/span&gt;&lt;a href=&quot;{!Formula_Link_VoiceCall}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: sans-serif; font-size: 13px;&quot;&gt;⚡ View Voice Call in Salesforce&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Text_SendEmail_EmailSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Follow-up: Missed call from {!Formula_CallerName}</text>
+    </textTemplates>
+    <variables>
+        <name>Collection_CustomNotification_RecipientIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FailingFlowComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Record.Name</elementReference>
+        </value>
+    </variables>
+</Flow>

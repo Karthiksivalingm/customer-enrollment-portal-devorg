@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi {{{Recipient.FirstName}}},<br />
+<br />
+I am pleased to announce EverQuote is once again offering call products to our valued agents!<br />
+<br />
+If you’re looking for a reliable way to grow your book, our Consumer Initiated Calls provide some of the best opportunities to bind new business. Consumer Initiated Calls give you all the benefits of traditional warm transfer calls, but with the added advantage of connecting you with some of our highest intent prospects – <em>insurance shoppers who have dialed in to request a quote</em>.<br />
+<br />
+Since these calls convert much higher than data leads, we are reaching out to open EverQuote accounts before demand goes up and it gets more competitive with volume and pricing.<br />
+<br />
+To schedule a free consultation and learn how you can make the most of Consumer Initiated Calls in your marketing mix,&nbsp;give me a call at {{{Sender.Phone}}} or feel free to book directly using the link below:<br />
+<br />
+{{{Sender.Salesforce_Meeting_Link__c}}}<br />
+<br />
+<br />
+Warm regards,&nbsp;<br />
+<br />
+{{{Sender.Signature}}}<br />
+&nbsp;</body>
+</html>

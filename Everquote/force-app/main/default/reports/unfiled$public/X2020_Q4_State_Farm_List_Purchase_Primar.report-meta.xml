@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities$Amount</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>CreatedDate</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>lessThan</operator>
+            <value>12/1/2020 12:00 AM</value>
+        </criteriaItems>
+        <operation>without</operation>
+        <primaryTableColumn>Account$Id</primaryTableColumn>
+        <relatedTable>Opportunity</relatedTable>
+        <relatedTableJoinColumn>Account</relatedTableJoinColumn>
+    </crossFilters>
+    <filter>
+        <criteriaItems>
+            <column>Account.Opportunities$Campaign</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>2020-Q4 State Farm List Purchase</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>2020-Q4 State Farm List Purchase Primary</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_with_or_with_Opportunities_with_activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

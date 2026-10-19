@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>email_template_1</letterhead>
+    <name>call pricing email- non sf</name>
+    <style>freeForm</style>
+    <subject>EverQuote Calls Price Change on 3/1 [Important]</subject>
+    <textOnly>Hello,
+
+You are receiving this email today as our last email regarding it has bounced back as undeliverable. Due to the importance of this update to our calls product we’re reaching out again today to notify you of the changes.
+
+Beginning March 1, 2022 we increased our warm transfer call pricing to help address agent pain points around lack of call inventory and predictability.
+
+ 
+
+In fact, with these changes we anticipate auto call volume to increase by 60% (on average) in the near term with a vision to double volume in the next 12 months!
+
+ 
+
+EverQuote calls convert at nearly 8X the rate of data leads across all agent affiliations. Implementing these changes will allow us to generate more calls, increase call delivery rates and help improve business outcomes for our agents.
+
+ 
+
+If you have any questions or concerns, or if you would like to learn about the range of available EverQuote products that can help fuel your agency growth, please contact your EverQuote Customer Success Representative directly or our Support team at (844) 707-8800.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

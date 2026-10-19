@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ethos_accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>MTD_Revenue__c</columns>
+    <columns>First_Payment_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Affiliation__c</field>
+        <operation>equals</operation>
+        <value>Ethos</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>open</value>
+    </filters>
+    <label>Ethos accounts</label>
+    <sharedTo>
+        <role>ADMIN</role>
+        <role>Allstate_Farmers_IA_Manager</role>
+        <role>Allstate_Farmers_Rep</role>
+        <role>Allstate_ISR</role>
+        <role>CEO</role>
+        <role>CRO</role>
+        <role>Core_CSM</role>
+        <role>Core_Outbound_Business_Development_Rep</role>
+        <role>Customer_Success_Mgr</role>
+        <role>Departed</role>
+        <role>Departed_ISR</role>
+        <role>Enterprise</role>
+        <role>Farmers_ISR</role>
+        <role>Finance</role>
+        <role>Senior_Sales_Manager</role>
+        <role>Starter_Customer_Support</role>
+        <role>State_Farm_ISR</role>
+        <role>State_Farm_ISR_Manager</role>
+        <role>State_Farm_Rep</role>
+        <role>VP_of_Sales</role>
+    </sharedTo>
+</ListView>

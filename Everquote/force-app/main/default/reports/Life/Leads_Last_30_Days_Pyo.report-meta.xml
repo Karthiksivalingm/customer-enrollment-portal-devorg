@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Status</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead.Activities$CallDurationInSeconds</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Call_Disposition__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Lead$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Lead.Life_Leads</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Leads Last 30 Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_or_without_activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

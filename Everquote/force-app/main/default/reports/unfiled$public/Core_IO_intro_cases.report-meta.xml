@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Cases$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Subject</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Case_Open_Date__c</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Topic__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>New Account Intro</value>
+        </criteriaItems>
+        <operation>without</operation>
+        <primaryTableColumn>Account$Id</primaryTableColumn>
+        <relatedTable>Case</relatedTable>
+        <relatedTableJoinColumn>Account</relatedTableJoinColumn>
+    </crossFilters>
+    <filter>
+        <criteriaItems>
+            <column>Account$Update__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Core IO Win</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Core IO intro cases</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_or_without_cases__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

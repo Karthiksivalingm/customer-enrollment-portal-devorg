@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OPPORTUNITY.NAME</field>
+    </columns>
+    <columns>
+        <field>OWNER_FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Carrier__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Farmers</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER_FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>mcl,Hargrave,Barr,Mawn,Terren,Crane,Winrow,Garvey,Vaswani,Bianchini,Sandberg,Weir,Killion,Fabello,Maher,Ernest,Terranova,Santos,Comeau,Purdy,Rogers,Gattuso,Bushwack,Dockray,Caron,Greenwood,Badolato,Kelly,Krebsbach,Nashed,El Saieh,Kaper</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Closed Lost Farmers</name>
+    <params>
+        <name>include</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityContact</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>OWNER_FULL_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

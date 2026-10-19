@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Life Sales Sprint #1, Email #4 of 6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Life_sales_sprint1_email4</name>
+    <style>none</style>
+    <subject>internet leads are worthless</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+It’s no mystery why internet leads have a bad reputation. Most Agents don’t want to throw money away on prospects that they can’t reach, that’ve been called 10 times, or that filled out a form six months ago just to win a $20 gift card.
+
+Everquote is fixing that. 
+Here’s how we’re doing it:
+
+- We source all our own Leads - all our prospects come directly to EverQuote via advertising without incentives or rewards
+
+- You choose the specific consumer profiles you want
+
+- Prospects are connected to advisors in REAL TIME - they expect to be contacted
+
+- You can pause or cancel anytime - we don’t lock you into anything
+
+The benefit to you? Intentful consumers. High quality prospects. More conversations with actual buyers. More quotes. More bound policies. More revenue.
+
+If you’d had awful experiences with leads in the past we should talk. Are you available Wednesday afternoon or Thursday morning? Or if you want to talk sooner you can reach me directly at {!User.Phone}.
+
+Cheers,
+{!User.FirstName}
+
+
+{!User.Name}
+Inside Sales Representative
+{!User.Phone}
+{!User.Email}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

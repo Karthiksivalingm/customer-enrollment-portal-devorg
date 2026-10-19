@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>Core_Outbound_Business_Development_Rep</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>State_Farm_ISR</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <name>Mikayla Demanche State Farm reports</name>
+</ReportFolder>

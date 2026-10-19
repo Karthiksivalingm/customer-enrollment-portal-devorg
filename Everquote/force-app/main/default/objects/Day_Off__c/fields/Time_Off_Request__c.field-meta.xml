@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Off_Request__c</fullName>
+    <description>Related Time off Request</description>
+    <label>Time Off Request</label>
+    <referenceTo>Time_Off_Request__c</referenceTo>
+    <relationshipLabel>Days Off</relationshipLabel>
+    <relationshipName>Days_Off</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

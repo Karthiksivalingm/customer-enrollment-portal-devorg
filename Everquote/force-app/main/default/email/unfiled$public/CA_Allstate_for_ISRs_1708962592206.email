@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Hi&nbsp;{{{Recipient.FirstName}}},<br />
+<br />
+My name is {{{Sender.Name}}}, I'm an Account Executive working exclusively with Allstate agents over here at EverQuote. I've recently heard from a few of my Allstate partners that writing restrictions on auto have opened up in California again - wanted to touch base to see if you have a strategy nailed down to tackle that new business potential.</p>
+
+<p>What time works best for you to connect this week?<br />
+<br />
+I've attached a link to my calendar <a href="{{{Sender.Calendar_Link__c}}}">here</a> and look forward to hearing from you. In the meantime, please feel free to also check out our agent <a href="https://resources.everquote.com/">resource page </a> that&nbsp;shares best practices, testimonials and other materials to maximize agency success.</p>
+
+<p>All the best,</p>
+
+<p>{{{Sender.Name}}}&nbsp;</p>
+</body>
+</html>

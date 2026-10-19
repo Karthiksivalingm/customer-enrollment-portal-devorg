@@ -1,0 +1,13 @@
+The case below has been closed with with the Save Tactic "None - Agent Leaving Industry or Office" without the correct Closure Reason.
+
+{!Case.Link}
+Owner: {!Case.OwnerFullName}
+
+Closure Reason: {!Case.Closure_Reason__c}
+Save Tactic: {!Case.Save_Tactic_Used__c}
+
+Other Notes: 
+{!Case.Other_Notes__c}
+
+Description: 
+{!Case.Description}

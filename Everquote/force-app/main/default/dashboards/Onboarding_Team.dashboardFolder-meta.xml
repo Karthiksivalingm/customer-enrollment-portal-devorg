@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>andrew.nelson@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>kmest@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>mdelfeld@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>nprickett@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>nicholas.berkiel@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>tariale@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>ADMIN</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <name>Onboarding Team</name>
+</DashboardFolder>

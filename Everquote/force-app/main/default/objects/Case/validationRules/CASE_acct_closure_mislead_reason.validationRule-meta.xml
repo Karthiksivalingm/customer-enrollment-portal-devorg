@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CASE_acct_closure_mislead_reason</fullName>
+    <active>false</active>
+    <description>account closure case reason mislead during sign up process requires mislead reason</description>
+    <errorConditionFormula>ISBLANK( Misled_Reason__c )
+&amp;&amp;
+ ISPICKVAL(Account_Closure__c ,&quot;Misled During Sign up Process&quot;)
+&amp;&amp;
+Datevalue(CreatedDate) &gt; DATE(2017,04,01)</errorConditionFormula>
+    <errorMessage>Mislead Reason Required.</errorMessage>
+</ValidationRule>

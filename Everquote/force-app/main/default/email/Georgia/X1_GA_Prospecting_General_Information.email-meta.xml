@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <attachedDocuments>Marketing_Collateral/The_EverQuote_Difference.pdf</attachedDocuments>
+    <available>true</available>
+    <description>Following a conversation with request for more information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1. GA Prospecting: General Information</name>
+    <style>none</style>
+    <subject>{!Lead.FirstName}, Thank you for your time today.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

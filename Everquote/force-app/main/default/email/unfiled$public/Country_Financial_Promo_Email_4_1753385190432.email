@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.2"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}}</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I know this is a busy time, but I didn’t want you to miss out—many Country agents are ramping up now while the $4 lead discount and 50% co-op subsidy are still available.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">If Q4 is a key time for you to increase quotes and bind policies, EverQuote can help drive that with qualified Auto and Home prospects in your area.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Would it be helpful if I showed you how other Country agents are making this work for them?</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Here’s a link to grab a quick time:</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}, or give me a call at {{{Sender.Phone}}}. </span></span></span></span></span></span><br />
+&nbsp;</p>
+&nbsp;
+
+<p style="line-height:1.2"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Looking forward to connecting,&nbsp;</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}</span></span></span></span></span></span></p>
+<br />
+&nbsp;</body>
+</html>

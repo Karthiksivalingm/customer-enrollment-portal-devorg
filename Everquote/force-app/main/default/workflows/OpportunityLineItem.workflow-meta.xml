@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Opportunity_Product_Update</fullName>
+        <field>Product__c</field>
+        <formula>Product2.Name</formula>
+        <name>Opportunity Product Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Update_Date</fullName>
+        <description>update date on product to match close date on opportunity</description>
+        <field>ServiceDate</field>
+        <formula>Opportunity.CloseDate</formula>
+        <name>Product: Update Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Opportunity Product Update</fullName>
+        <actions>
+            <name>Opportunity_Product_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>OpportunityLineItem.LCS__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A update date</fullName>
+        <actions>
+            <name>Product_Update_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update date field on product to match close date on opportunity</description>
+        <formula>ServiceDate &lt;&gt;  Opportunity.CloseDate</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

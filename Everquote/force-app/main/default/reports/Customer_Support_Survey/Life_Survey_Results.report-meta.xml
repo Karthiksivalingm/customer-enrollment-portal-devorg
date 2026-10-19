@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Case_Owner_ID__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Account__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Lead__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Buys_Life_Leads_Today__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Interested_in_Purchasing_Life_Leads__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Life_Leads_Purchased_Daily__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Life_Leads_Interested_in_Daily__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Survey_Response_Customer_Support_Survey__c$Survey_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Life Survey</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Life Survey Results</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Survey_Response_Customer_Support_Survey__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Survey_Response_Customer_Support_Survey__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

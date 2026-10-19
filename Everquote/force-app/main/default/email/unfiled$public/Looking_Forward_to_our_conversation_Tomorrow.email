@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p class="p1"><span class="s1">Dear&nbsp;</span>{!Lead.FirstName}<span class="s1">,&nbsp;</span></p>
+
+<p class="p1">I really enjoyed our conversation and I look forward to catching up tomorrow.</p>
+
+<p class="p1"><span class="s1">As you know, EverQuote is an approved Corporate Partner positioned as the <i>number one provider </i>within the Lead Aggregator Marketplace.&nbsp; We are currently working with more than 3,500 State Farm agents and helping them to grow their book of business.&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+
+<p class="p1"><span class="s1">At EverQuote we are committed to delivering high quality, validated consumers to qualified agents in real time.&nbsp; We match consumer profiles to your preferred book of business and we&nbsp;<b>source them through our own consumer website&nbsp;</b><a href="http://www.everquote.com/"><span class="s2">EverQuote.com</span></a></span></p>
+
+<p class="p1"><span class="s1">In addition we have our own agent facing platform called EverQuote Pro that is integrated with ProspectorPlus.&nbsp; Click here to take a look:&nbsp;<a href="http://pro.everquote.com/"><span class="s2">Pro.EverQuote.com</span></a></span></p>
+
+<p class="p1"><span class="s1">To learn more prior to our meeting please feel free to speak to State Farm Corporate and/or take a look at our recent TV advertisement by clicking the link below:</span></p>
+
+<p class="p2"><span class="s3"><a href="http://t.sidekickopen23.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XX45vMHzFVd7g1W3Mybq2W1p1hXH56dW17f6P3kbs02?t=http%3A%2F%2Fwww.ispot.tv%2Fad%2FALHq%2Feverquote-eq&amp;si=4965304626577408&amp;pi=c949109b-8030-4a68-dce6-6449531b6036">EverQuote Television Ad</a></span></p>
+
+<p class="p1"><span class="s1">I look forward to working with your agency.&nbsp; I&rsquo;m certain this will be a great fit for you.</span></p>
+
+<p class="p1"><span class="s1">Please reach out if this is no longer the best time to meet.</span></p>
+
+<p class="p1"><span class="s1">Best regards,</span></p>
+
+<p class="p1"><span class="s1">&nbsp;</span></p>
+
+<p class="p1">{!Lead.OwnerFullName}</p>
+
+<p class="p1">{!Lead.OwnerEmail}</p>
+
+<p class="p1">{!Lead.OwnerPhone}</p>
+</body>
+</html>

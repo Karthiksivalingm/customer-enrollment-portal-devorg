@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>Lead.Carrier__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>schille,Jared thomas,mitchell,urban</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONVERTED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Lost,Unqualified,Duplicate,Do Not Call</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Initial Meetings - Winback team</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

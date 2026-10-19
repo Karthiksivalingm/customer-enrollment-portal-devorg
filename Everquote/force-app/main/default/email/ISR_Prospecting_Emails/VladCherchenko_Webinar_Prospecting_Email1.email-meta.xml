@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Vlad Cherchenko Webinar (7/22/20) Email #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>VladCherchenko_Webinar_Prospecting_Email1</name>
+    <style>none</style>
+    <subject>Register Now [Free Webinar]: &quot;How To Recruit &amp; Hire Team Members That Can Write 100 Policies A Month For Your Insurance Agency&quot; with Vlad Cherchenko (hosted by Chandler Hahn)</subject>
+    <textOnly>Hi {!Lead.FirstName},
+Join Insurance Sales Lab founder Vlad Cherchenko on Wednesday, July 22, 2020 @ 2:00 PM Eastern (11:00 AM Pacific) for a joint webinar with EverQuote hosted by Chandler Hahn – &quot;How To Recruit &amp; Hire Team Members That Can Write 100 Policies A Month For Your Insurance Agency.&quot;
+
+Vlad began his insurance career back in 2014 and within 9 months developed a sales process that helped him consistently write over 150 P&amp;C policies a month as one producer. Over the last four years, Vlad has been working with some of the biggest captive agents and independent brokers, helping them hire &quot;A-Players&quot; and implement his sales process in their agencies so their team members could write 100+ policies a month.
+
+During this training, Vlad will walk you through his process for finding, assessing, and hiring top-performing talent to help take your insurance agency to the next level. Register for the training today!
+You can sign-up for the free webinar directly through our link here!
+
+Best,
+
+Dennis
+
+Dennis Miller
+Marketing Manager
+marketing@everquote.com
+
+© 2020 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2020 www.everquote.com
+Don&apos;t want our emails? Email marketing@everquote.com to unsubscribe</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

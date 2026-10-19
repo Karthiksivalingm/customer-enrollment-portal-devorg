@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_39735920</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>OWNER</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Alex Terrenzi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrew Killion</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Peifer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Maher</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Keene</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Schuyler Shaughnessy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Seth Politi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Stephen Gravallese</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Thomas Fabello</sourceValue>
+            </sourceValues>
+            <value>Team Sky</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Dan Crane</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grace Cleveland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jake Downey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nicholas Bianchini</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Sandberg</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tyler Fadrigon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Zach Vaswani</sourceValue>
+            </sourceValues>
+            <value>Team Chris</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Chris Weir</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dwayne Ernest</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dan Sullivan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dylan Krebsbach</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jessica Willette</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Cossette</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Terranova</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Anderson</sourceValue>
+            </sourceValues>
+            <value>Team Casey</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Lead.Leads_Purchased_MTD__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_39735920</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>Lead.Account1__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Converted_At__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead.Leads_Purchased_MTD__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>tuite</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_39735920</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Leads Purchased - Managers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Lead.Leads_Purchased_MTD__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Lead.Converted_At__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

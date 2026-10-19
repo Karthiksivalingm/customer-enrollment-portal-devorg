@@ -1,0 +1,24 @@
+<html>
+            <body style="font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td style="padding: 20px;">
+                            <p>Hi {!Contact.FirstName},</p>
+
+                            <p>I hope this message finds you well! I wanted to reach out because it’s been a while since we last connected, and I’d love to check in on how things are going with your account at EQ.</p>
+
+                            <p>We’ve been making some exciting advancements, and I believe there are some great opportunities for you to enhance your experience. I’m particularly eager to share our new product, <strong>Consumer Initiated Calls</strong>, which allows consumers to connect directly with agents—something I think could really benefit your team!</p>
+
+                            <p>Let’s find some time to discuss your current performance, share insights, and explore how our latest offerings can support your goals. You can easily book a slot that works for you using my scheduling link here: <a href="{!User.Salesforce_Meeting_Link__c}" style="color: #2E86C1; text-decoration: none;">Schedule a Meeting</a>.</p>
+
+                            <p>Looking forward to catching up!</p>
+
+                            <p>Best regards,</p>
+                            <p>{!User.FirstName} {!User.LastName}<br/>
+                            {!User.Title}<br/>
+                            {!User.Phone}</p>
+                        </td>
+                    </tr>
+                </table>
+            </body>
+        </html>

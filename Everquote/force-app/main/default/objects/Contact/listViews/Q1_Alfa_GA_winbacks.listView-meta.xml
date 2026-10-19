@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q1_Alfa_GA_winbacks</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 and 6</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>State__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>Last_Activity_Date__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account.Total_Leads_Purchased__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Last_Activity_Date__c</field>
+        <operation>lessThan</operation>
+        <value>3/1/2024</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>Cancellation_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>1/1/2024</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>alfa insurance</value>
+    </filters>
+    <filters>
+        <field>Account.OpenOpp__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>ga</value>
+    </filters>
+    <label>Q1 Alfa GA winbacks</label>
+</ListView>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount/Lead.No__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>Lead$Owner</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Activity Average per Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Lead$Owner</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Owner Activity Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_80610272</developerName>
+        <masterLabel>Campaign Types</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead$Campaign__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>HubSpot Home Page Contact Form</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Contact Me</sourceValue>
+            </sourceValues>
+            <value>Contact Me</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2022-Q2 Alex Shattuck Webinar (6/1/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Allstate April Class List</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Chelsea Flores Webinar (6/22/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Colton Brazier Webinar (4/13/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Dean Mannix Webinar (5/4/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Parker Adams Webinar (6/3/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Randy Thompson Webinar (4/27/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Sara Labraaten Webinar (6/15/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Scott Grates Webinar (5/25/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Thomas Ntuk Webinar (5/11/22)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q2 Vlad Cherchenko Webinar (5/18/22)</sourceValue>
+            </sourceValues>
+            <value>Webinar</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Pro Lead Source - Contact Me</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abandoned Wizard</sourceValue>
+            </sourceValues>
+            <value>Pro Lead Source</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Lead$Lead_No__c</column>
+        </chartSummaries>
+        <chartType>HorizontalBarGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Lead$Owner</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>BucketField_80610272</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead$Lead_No__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Owner.IsActive</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Owner.UserRole</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Core Outbound</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Activities$CreatedBy.UserRole</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Core Outbound</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Unqualified,Duplicate,Do Not Call,Waitlist,No Longer There</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_80610272</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Lead - Worked by BDR&apos;s</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead.Activities$ActivityDate</dateColumn>
+        <interval>INTERVAL_LAST90</interval>
+    </timeFrameFilter>
+</Report>

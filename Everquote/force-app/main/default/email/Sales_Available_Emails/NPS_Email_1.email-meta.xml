@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>NPS Email #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NPS Email #1</name>
+    <style>none</style>
+    <subject>EverQuote NPS Survey</subject>
+    <textOnly>How likely are you to recommend EverQuote to a friend?
+
+10 – Very likely
+
+9
+
+8
+
+7
+
+6
+
+5
+
+4
+
+3
+
+2
+
+1
+
+0 – Not likely
+
+Not likely  Very likely
+
+Unsubscribe  Powered by Delighted</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

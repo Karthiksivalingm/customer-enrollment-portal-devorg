@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Allstate survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AS CLONE</name>
+    <style>none</style>
+    <subject>Register Now [Free Webinar]: “SPEED Training: Leveraging Technology and Systems to Run a More Efficient Insurance Agency” with Sean Morton (hosted by Chandler Hahn)</subject>
+    <textOnly>&quot;EverquotePro&quot;
+
+
+Call Us: (844) 707-8800
+
+Hi {!Lead.FirstName},
+We are conducting a survey to understand the correlation between agency size and an agency&apos;s ability to execute new lead generation strategies.
+
+It&apos;s literally a one question survey so we are hoping you can help out.
+
+You can complete it here: Survey
+
+Thanks so much,
+
+The Everquote Marketing Department
+
+© 2020 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2020 www.everquote.com
+Don&apos;t want our emails? Unsubscribe with one click.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

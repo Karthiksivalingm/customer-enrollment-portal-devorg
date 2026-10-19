@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_54211695</developerName>
+        <masterLabel>Forecast Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>ForecastingItem$Owner</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Alex Terrenzi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brianna Damato</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeff Kelly</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Meisenbacher</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Ricker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pat Urban</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Stephen Hannigan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sean Hurley</sourceValue>
+            </sourceValues>
+            <value>AGP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Anthony Lawrence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Anwar Khanaizir</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>James Kelley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeff Russell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Van Cleef</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Logan Recor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mikayla Demanche</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Moneil Pierre</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Fitzgerald</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Phou Dongsavanh</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rasheed Parham</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Hargrave</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Winrow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tim Sharpe</sourceValue>
+            </sourceValues>
+            <value>Core</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Daniel Mitchell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jael Pepinos</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeffrey Ehalt</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jonathan Batista</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mark LeDuc</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nick Stamboulis</sourceValue>
+            </sourceValues>
+            <value>Allstate</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ForecastingItem$AmountWithoutAdjustments</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$AmountWithoutManagerAdjustment</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$EndDate</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$ForecastingItemCategory</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$Id</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$ForecastingType</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$ForecastQuantity</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$HasAdjustment</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$HasOwnerAdjustment</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$IsQuantity</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$OwnerOnlyAmount</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$OwnerOnlyQuantity</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$ProductFamily</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$QuantityWithoutAdjustments</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$QuantityWithoutManagerAdjustment</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$StartDate</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$ForecastCategoryName</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$IsAmount</field>
+    </columns>
+    <columns>
+        <field>ForecastingItem$ForecastAmount</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ForecastingItem$ForecastCategoryName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_54211695</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Other</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ForecastingItem$IsQuantity</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_54211695</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ForecastingItem$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Forecast Accuracy Baseline</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Forecasting_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ForecastingItem$EndDate</dateColumn>
+        <endDate>2020-04-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2020-02-01</startDate>
+    </timeFrameFilter>
+</Report>

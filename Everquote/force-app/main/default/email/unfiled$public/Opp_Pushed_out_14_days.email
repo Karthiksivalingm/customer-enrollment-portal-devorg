@@ -1,0 +1,5 @@
+Owner: {!Opportunity.OwnerFirstName} {!Opportunity.OwnerLastName}
+Account: {!Opportunity.Account}
+Close Date: {!Opportunity.CloseDate}
+Opportunity: {!Opportunity.Name}
+Link: {!Opportunity.Link}

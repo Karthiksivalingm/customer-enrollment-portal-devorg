@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_State_Farm_Automated_Processing</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>7/1/2023</value>
+    </filters>
+    <filters>
+        <field>LEAD.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>LEAD.EMAIL_OPT_OUT</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.DO_NOT_CALL</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>MK State Farm Automated Processing</label>
+    <sharedTo>
+        <group>State_Farm_Team</group>
+    </sharedTo>
+</ListView>

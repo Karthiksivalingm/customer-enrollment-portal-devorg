@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_2903014</developerName>
+        <masterLabel>Teams</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ROLLUP_DESCRIPTION</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep</sourceValue>
+            </sourceValues>
+            <value>Casey&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 2</sourceValue>
+            </sourceValues>
+            <value>Sky&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 3</sourceValue>
+            </sourceValues>
+            <value>Marc&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 4</sourceValue>
+            </sourceValues>
+            <value>Caleb&apos;s Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumnGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_2903014</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>FULL_NAME</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Affiliation__c</field>
+    </columns>
+    <columns>
+        <field>User.Quota__c</field>
+    </columns>
+    <columns>
+        <field>User.Goal_pacer__c</field>
+    </columns>
+    <columns>
+        <field>User.day__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Existing Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ROLLUP_DESCRIPTION</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Business Development Manager</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_2903014</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Asc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>BDM Enrollments this Month</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

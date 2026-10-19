@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to send after leaving a voicemail for a DM.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1. GA Prospecting: Email following  message 1st email</name>
+    <style>none</style>
+    <subject>{!Lead.FirstName}, Sorry I missed you.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

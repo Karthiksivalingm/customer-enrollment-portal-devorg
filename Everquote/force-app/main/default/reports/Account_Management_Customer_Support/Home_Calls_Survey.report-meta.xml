@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_57483568</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Survey_Response_Customer_Support_Survey__c$Case_Owner_ID__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Heather Berman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>James Sorenson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Anderson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Hargrave</sourceValue>
+            </sourceValues>
+            <value>Sales</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Randi Alvarado</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Parmely</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Cogan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Julia Pallotta</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joseph Barisano</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Peracchi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Graylan Stone</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Eric Matulsky</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Elias Ammerman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Eli Nunes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christian Hidirsah</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ben Pritchard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Anna DeFazio</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alexis Rushton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryo Kagawa</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Taylor Benjamin</sourceValue>
+            </sourceValues>
+            <value>Customer Success</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Case__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Id</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Case__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Contact__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Case_Owner_ID__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Account__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_57483568</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Account__c.Carrier__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Account__c.BillingState</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Survey_Response_Customer_Support_Survey__c$Currently_Buys_Home__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Survey_Response_Customer_Support_Survey__c$Currently_Buys_Calls__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Interested_in_EQ_Calls__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Interested_in_EQ_Home__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Potential_Home_Leads_Pu__c</field>
+    </columns>
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$How_many_calls_could_you_take__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Survey_Response_Customer_Support_Survey__c$Survey_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Calls Survey,Home Survey,Home &amp; Calls</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Home &amp; Calls Survey</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Survey_Response_Customer_Support_Survey__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Survey_Response_Customer_Support_Survey__c$Case_Owner_ID__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Survey_Response_Customer_Support_Survey__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

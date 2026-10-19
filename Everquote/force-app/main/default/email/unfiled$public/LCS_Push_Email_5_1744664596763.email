@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.2"><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}}</span></span></span></span></span><br />
+<br />
+<span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Time is running out to take advantage of our limited time offer for a free month of Lead Connection Service. </span></span></span></span></span><br />
+<br />
+<span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Let’s set up some time to discuss how EverQuote’s Lead Connection Service can help you grow your agency. Grab some time on my calendar {{{Sender.Salesforce_Meeting_Link__c}}} or give me a call at {{{Sender.Phone}}}. </span></span></span></span></span><br />
+<br />
+<span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best,</span></span></span></span></span><br />
+<span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}</span></span></span></span></span><br />
+{{{Sender.Phone}}}<br />
+<a href="https://resources.everquote.com/">​​​​​​​EverQuote Agent Resources</a></span></span></p>
+<br />
+&nbsp;</body>
+</html>

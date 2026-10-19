@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SF email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Looking Forward to our conversation Tomorrow</name>
+    <style>none</style>
+    <subject>Looking forward to our conversation tomorrow</subject>
+    <textOnly>Dear {!Lead.FirstName},
+
+I really enjoyed our conversation and I look forward to catching up tomorrow.
+
+As you know, EverQuote is an approved Corporate Partner positioned as the number one provider within the Lead Aggregator Marketplace and we are currently assisting more than 3,500 State Farm agents grow their book of business.
+
+At EverQuote we are committed to delivering high quality, validated consumers to qualified agents in real time.  We match consumer profiles to your preferred book of business and we source them through our own consumer website EverQuote.com
+
+In addition we have our own agent facing platform called EverQuote Pro that is integrated with ProspectorPlus.  Click here to take a look: Pro.EverQuote.com
+
+To learn more prior to our meeting please feel free to speak to State Farm Corporate and/or take a look at our recent TV advertisement by clicking the link below:
+
+EverQuote Television Ad
+
+I look forward to working with your agency.  I’m certain this will be a great fit for you.
+
+Please reach out if this is no longer the best time to meet.
+
+Best regards,
+
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerEmail}
+
+{!Lead.OwnerPhone}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

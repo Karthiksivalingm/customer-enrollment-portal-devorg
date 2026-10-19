@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Agency</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$StageName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.OpportunityContactRoles$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BDD: Agent Enrollments</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Contact_Role_and_Opp_Teams__c</reportType>
+    <scope>salesteam</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>State Farm specific No Contact with DM left a voicemail</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1. Prospecting: No Contact w/ State Farm DM. Left a Voicemail</name>
+    <style>none</style>
+    <subject>{!Lead.FirstName}, Sorry I missed you.  Let me tell you about EverQuote.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wil_8_24</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>state farm</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>WA,KY,FL,GA,SC,MI</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Prospect</value>
+    </filters>
+    <label>Wil 8/24</label>
+</ListView>

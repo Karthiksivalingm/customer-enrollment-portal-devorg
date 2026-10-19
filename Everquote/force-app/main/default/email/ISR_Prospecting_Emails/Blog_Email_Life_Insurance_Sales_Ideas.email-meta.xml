@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Blog Article Email &quot;Life Insurance Sales Ideas, Tips, &amp; Techniques&quot;</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Blog_Email_Life_Insurance_Sales_Ideas</name>
+    <style>none</style>
+    <subject>Life Insurance Sales Ideas, Tips, &amp; Techniques</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Agents, we have a problem: Individual life insurance ownership in the U.S. has reached a 50-year low. It’s not due to a lack of need in the marketplace—consumers are unaware of the need for coverage, and the array of options can be confusing.
+That’s why the role of the agent as an advisor is more important than ever. With that in mind, I wanted to share with you some proven life insurance sales ideas and techniques that separate the top producers from the rest of the industry:
+
+Life Insurance Sales Ideas, Tips, &amp; Techniques (https://learn.everquote.com/life-insurance-sales-ideas)
+
+Let me know what you think of the article. Or if you have some unique sales tips that you’d like to share, don’t hesitate to reach out.
+
+Cheers,
+{!User.FirstName}
+
+
+{!User.Name}
+Inside Sales Representative
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe at compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

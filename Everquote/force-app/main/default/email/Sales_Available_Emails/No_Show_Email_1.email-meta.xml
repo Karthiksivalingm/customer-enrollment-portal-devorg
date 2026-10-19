@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>1st email to send to a lead following a no show to meeting.  Theme is not enough hours in a day.  Lets reschedule.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1. Prospecting: No Show to Initial Meeting</name>
+    <style>none</style>
+    <subject>Not enough hours in the day!</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>MEMBER_ID</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.Lead_Status__c</field>
+    </columns>
+    <columns>
+        <field>LC_OWNER</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <format>Tabular</format>
+    <name>2020-Q2 Allstate All Agents</name>
+    <params>
+        <name>scopeid</name>
+        <value>7012L000001MWHD</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignWithCampaignMembers</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

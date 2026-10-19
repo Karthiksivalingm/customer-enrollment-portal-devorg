@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_AppliedQ__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Displayed on Referral Credit case record type. Manually set by user when they apply the credit in pro.
+
+S3P-1312 - updated.</description>
+    <inlineHelpText>Check if the credit is successfully applied in Pro.</inlineHelpText>
+    <label>Credit Applied?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

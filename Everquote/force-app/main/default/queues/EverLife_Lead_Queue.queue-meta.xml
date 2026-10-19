@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>dummyemail@everquote.com.invalid</email>
+    <name>EverLife Lead Queue</name>
+    <queueMembers>
+        <users>
+            <user>bharrison@everquote.com</user>
+            <user>cfloeckher@everquote.com</user>
+            <user>dabrams@everquote.com</user>
+            <user>ekoran@everquote.com</user>
+            <user>everquote@opfocus.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

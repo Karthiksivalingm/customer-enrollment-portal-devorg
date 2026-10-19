@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <format>Tabular</format>
+    <name>David&apos;s CORE SF Report</name>
+    <params>
+        <name>scopeid</name>
+        <value>7014z000001To3g</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

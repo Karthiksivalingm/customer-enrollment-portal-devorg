@@ -1,0 +1,21 @@
+Hello!
+<br>
+<p>This is a notification that a committed AGP Sales opportunity has just been assigned a Business Consultant. 
+<br>
+<p>The Opportunity might not yet be Closed Won, so please confirm the current phase of the customer's journey before taking action.
+<br>
+<p>Please work with the other EverQuoters named below to help this customer kick off a successful AGP experience!
+<br>
+<p><b>Account:</b> <a href="https://na90.salesforce.com/{!Account.Id}">{!Account.Name}</a>
+<br><b>Opportunity:</b> <a href="https://na90.salesforce.com/{!Opportunity.Id}">{!Opportunity.Name}</a>
+<br>
+<p><b>Sales Owner: </b>{!Opportunity.OwnerFullName}
+<br><b>Business Consultant:</b> {!Opportunity.Business_Consultant__c}
+<br><b>Current CSM (if applicable):</b> {!Account.Support_Rep__c}
+<br>
+<p>
+Best,
+<br>
+Your Friendly Neighborhood SalesForce Admin
+<p>
+P.s. If you think you are receiving this in error, please contact your SDFC admin to report the bug. Thanks!

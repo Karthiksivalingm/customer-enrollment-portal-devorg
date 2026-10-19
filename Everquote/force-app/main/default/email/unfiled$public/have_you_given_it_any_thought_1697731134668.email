@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Hey&nbsp;{{{Recipient.FirstName}}}<br />
+<br />
+Circling back to see if you gave it any thought.<br />
+<br />
+Our agent customers aren’t just leveraging our real-time leads, they're using our <a href="https://resources.everquote.com/">Insurance Agent Resources</a> page to grow their business with proven best practices for working leads.</p>
+
+<p dir="ltr">Are you free in the morning at some point this week to go more in detail on the program and how it works?&nbsp; &nbsp; &nbsp;Or you can schedule time on my calendar here -&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}<br />
+<br />
+Best,<br />
+{{{Sender.Name}}}</p>
+</body>
+</html>

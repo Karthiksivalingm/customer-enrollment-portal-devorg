@@ -1,0 +1,7 @@
+New Referral from {!Lead.Referral_Sourced_By__c}
+
+{!Lead.Name}
+{!Lead.Email}
+{!Lead.Phone}
+{!Lead.Referring_Agent__c}
+{!Lead.Link}

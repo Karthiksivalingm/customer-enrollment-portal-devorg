@@ -1,0 +1,12 @@
+{!Lead.OwnerFirstName},
+
+One of your leads was just on the platform.
+
+{!Lead.FirstName}  {!Lead.LastName}
+Phone: {!Lead.Phone}
+Email:  {!Lead.Email}
+
+Filled out LP Form? {!Lead.Filled_out_LP_form__c}
+Abandon Sign up? {!Lead.Abandon_Sign_Up__c}
+
+Lead link: {!Lead.Link}

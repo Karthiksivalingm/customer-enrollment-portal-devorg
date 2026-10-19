@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alt_Phone_2__c</fullName>
+    <description>Alternate phone 2 pulled from converted leads field &quot;Alt_Phone_2&quot;</description>
+    <label>Alt. Phone 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Phone</type>
+</CustomField>

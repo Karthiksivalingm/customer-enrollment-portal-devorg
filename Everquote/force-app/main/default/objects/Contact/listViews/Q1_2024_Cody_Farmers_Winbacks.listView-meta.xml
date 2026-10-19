@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q1_2024_Cody_Farmers_Winbacks</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Farmers</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>notEqual</operation>
+        <value>open</value>
+    </filters>
+    <filters>
+        <field>CONTACT.LAST_ACTIVITY</field>
+        <operation>lessOrEqual</operation>
+        <value>6/21/2024</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>Pro_Account_Canceled_Date__c</field>
+        <operation>lessThan</operation>
+        <value>11/1/2023</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL_BOUNCED_DATE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Account.UniqueEntry__Account_Dupes_Ignored__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>FULL_NAME</field>
+        <operation>notContain</operation>
+        <value>Duplicate,Not Interested,DNC,Do Not Call,Sold,Inactive</value>
+    </filters>
+    <label>2024 Joe Farmers Winbacks</label>
+</ListView>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ActivityRelation_Activity.No__c:SUM/Contact.No__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Contact$Owner</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Activity Average per Contact</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>Contact$Owner</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Owner Activity Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_45643923</developerName>
+        <masterLabel>Campaign Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Contact$Campaign__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>2022-Q4 Agents 11.09-11.11  Training Seminar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q4 Agents Convention</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q4 Agents Training Seminar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q4 BIND 2022 Fall Forum (MQLs)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q4 Farmers Ohio Agent Roadshow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q4 Farmers Ohio Event</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2022-Q4 Growth Conference</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Farmers Arkansas 10/5 Town Hal</sourceValue>
+            </sourceValues>
+            <value>Event</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartType>HorizontalBarGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Contact$Owner</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>Contact$Campaign__c</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contact$No__c</field>
+    </columns>
+    <columns>
+        <field>Contact.ActivityRelations$CreatedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact$Owner.UserRole.Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Core Outbound</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Owner.IsActive</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.ActivityRelations$CreatedBy.UserRole.Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Core Outbound</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Campaign__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>2022-Q4 AGENT</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$Campaign__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$Owner</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Agents Training Contact Activity</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contact.ActivityRelations$ActivityDate</dateColumn>
+        <endDate>2022-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-11-14</startDate>
+    </timeFrameFilter>
+</Report>

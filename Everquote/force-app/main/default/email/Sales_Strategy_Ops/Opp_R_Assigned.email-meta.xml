@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Generated when BDR gets a meeting on a stale deal</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Opp Resuscitated Assigned</name>
+    <style>none</style>
+    <subject>An opportunity has been assigned to you - {!Opportunity.Name}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

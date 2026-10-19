@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>CALLDURATION:SUM/60</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Talk Time</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_76320666</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>ASSIGNED</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Daniel Mitchell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jared Thomas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pat Urban</sourceValue>
+            </sourceValues>
+            <value>Allstate</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Alex Terrenzi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Terranova</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeff Kelly</sourceValue>
+            </sourceValues>
+            <value>State Farm</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Anthony Iannicelli</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Charles Floeckher</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Colin Garvey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Jankovic</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Fitzgerald</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Winrow</sourceValue>
+            </sourceValues>
+            <value>Life</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Anthony Lawrence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Meisenbacher</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rooby Eloi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Schille</sourceValue>
+            </sourceValues>
+            <value>IA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>James Kelley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tim Sharpe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rasheed Parham</sourceValue>
+            </sourceValues>
+            <value>Farmers</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_BY</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>PRIORITY</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>TASK</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT</field>
+    </columns>
+    <columns>
+        <field>CONTACT</field>
+    </columns>
+    <columns>
+        <field>LEAD</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>CALLDURATION</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>BDR</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_76320666</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ASSIGNED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BDR Meetings by Team</name>
+    <params>
+        <name>closed</name>
+        <value>closed</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>t</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <roleHierarchyFilter>CRO</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

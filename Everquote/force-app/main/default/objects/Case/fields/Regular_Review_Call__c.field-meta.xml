@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regular_Review_Call__c</fullName>
+    <label>Regular Review Call</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Strategic_Account_Management__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Check-in</fullName>
+                <default>false</default>
+                <label>Check-in</label>
+            </value>
+            <value>
+                <fullName>Dispo Analysis</fullName>
+                <default>false</default>
+                <label>Dispo Analysis</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Regular Review Call</controllingFieldValue>
+            <valueName>Check-in</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Review Call</controllingFieldValue>
+            <valueName>Dispo Analysis</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

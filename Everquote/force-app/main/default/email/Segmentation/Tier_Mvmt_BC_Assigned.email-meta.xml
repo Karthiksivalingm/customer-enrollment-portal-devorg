@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify BC, Sales Rep, and Support Rep that a BC has been assigned to an AGP Opportunity</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tier Mvmt: BC Assigned</name>
+    <style>none</style>
+    <subject>New AGP Commit: {!Account.Name}</subject>
+    <textOnly>This is a notification that a committed AGP Sales opportunity has just been assigned a Business Consultant.
+
+The Opportunity might not yet be Closed Won, so please confirm the current phase of the customer&apos;s journey before taking action.
+
+Please work with the other EverQuoters named below to help this customer kick off a successful AGP experience!
+
+Account: {!Account.Name}, https://na90.salesforce.com/{!Account.Id}
+Opportunity: {!Opportunity.Name}, https://na90.salesforce.com/{!Opportunity.Id}
+
+Sales Owner: {!Opportunity.OwnerFullName}
+Business Consultant: {!Opportunity.Business_Consultant__c}
+Current CSM (if applicable): {!Account.Support_Rep__c}
+
+Best, 
+Your Friendly Neighborhood SalesForce Admin
+
+P.s. If you think you are receiving this in error, please contact your SDFC admin to report the bug. Thanks!</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

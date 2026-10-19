@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_64823765</developerName>
+        <masterLabel>Carrier</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>FK_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>State Farm</sourceValue>
+            </sourceValues>
+            <value>State Farm</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Allstate</sourceValue>
+            </sourceValues>
+            <value>Allstate</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Farmers</sourceValue>
+            </sourceValues>
+            <value>Farmers</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>AAA</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alfa Insurance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>American Family</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>American National</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Arrowstar Insurance Center</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Country Financial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dairyland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Direct General</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Farm Bureau</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Geico</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Horace Mann</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pronto</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Prudential</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SelectQuote</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shelter Insurance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shelter Mutual Insurance</sourceValue>
+            </sourceValues>
+            <value>Other Captives</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Independent Agent</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bristol West</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hartford</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Iroquois</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kemper</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Liberty Mutual</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MAPFRE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mercury</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MetLife</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>National General</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nationwide</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PlymouthRock</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Progressive</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SafeCo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>The General</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trans America</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Travelers</sourceValue>
+            </sourceValues>
+            <value>Independent Agents</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>OWNER_ROLE_DISPLAY</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <crossFilters>
+        <operation>without</operation>
+        <primaryTableColumn>LEAD_ID</primaryTableColumn>
+        <relatedTable>Activity</relatedTable>
+        <relatedTableJoinColumn>Who</relatedTableJoinColumn>
+    </crossFilters>
+    <filter>
+        <criteriaItems>
+            <column>CONVERTED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>No Contact,Contacted,Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Gene Suzuki</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_64823765</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Leads by Status w/o Act.</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList@Lead.Carrier__c</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

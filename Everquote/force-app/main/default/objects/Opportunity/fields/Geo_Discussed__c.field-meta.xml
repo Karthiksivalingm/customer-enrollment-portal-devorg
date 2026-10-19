@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Geo_Discussed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>check box true if geo (zip code additions) was discussed as an upsell opportunity</description>
+    <inlineHelpText>check box true if geo (zip code additions) was discussed as an upsell opportunity</inlineHelpText>
+    <label>Geo Discussed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

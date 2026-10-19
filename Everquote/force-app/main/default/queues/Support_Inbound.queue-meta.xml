@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Support Inbound</name>
+    <queueMembers>
+        <users>
+            <user>nlamp@everquote.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Support_voice_inbound</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

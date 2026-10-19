@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Auto_Folio__c</field>
+    </columns>
+    <columns>
+        <field>Account.Auto_Folio_Opt_in_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Home_Folio__c</field>
+    </columns>
+    <columns>
+        <field>Account.Home_Folio_Opt_In_Date__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <column>Account.Auto_Folio__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Home_Folio__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>folio opt in date</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

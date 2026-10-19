@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q1_2024_nadia_SF_winbacks</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Account.Total_Leads_Purchased__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>state farm</value>
+    </filters>
+    <filters>
+        <field>Pro_Account_Canceled_Date__c</field>
+        <operation>lessThan</operation>
+        <value>10/1/2023</value>
+    </filters>
+    <filters>
+        <field>TOTAL_ACTIVITY_7DAYS</field>
+        <operation>lessThan</operation>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>contains</operation>
+        <value>@statefarm</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL_OPT_OUT</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Primary_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Account.OpenOpp__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Q1 2024 nadia SF winbacks</label>
+</ListView>

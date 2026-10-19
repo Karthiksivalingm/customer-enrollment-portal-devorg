@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Did_not_Accept_Offer__c</fullName>
+    <label>Offer not accepted reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Happy with current volume</fullName>
+                <default>false</default>
+                <label>Happy with current volume</label>
+            </value>
+            <value>
+                <fullName>Unable to write in recommended the zip code area - D2C</fullName>
+                <default>false</default>
+                <label>Unable to write in recommended the zip code area - D2C</label>
+            </value>
+            <value>
+                <fullName>Too far away from office - D2C</fullName>
+                <default>false</default>
+                <label>Too far away from office - D2C</label>
+            </value>
+            <value>
+                <fullName>Poor success in areas recommended - D2C</fullName>
+                <default>false</default>
+                <label>Poor success in areas recommended - D2C</label>
+            </value>
+            <value>
+                <fullName>No Budget</fullName>
+                <default>false</default>
+                <label>No Budget</label>
+            </value>
+            <value>
+                <fullName>Not willing to work off Hours</fullName>
+                <default>false</default>
+                <label>Not willing to work off Hours</label>
+            </value>
+            <value>
+                <fullName>Does not need more leads</fullName>
+                <default>false</default>
+                <label>Does not need more leads</label>
+            </value>
+            <value>
+                <fullName>Hours not flexible</fullName>
+                <default>false</default>
+                <label>Hours not flexible</label>
+            </value>
+            <value>
+                <fullName>Discount not enticing</fullName>
+                <default>false</default>
+                <label>Discount not enticing</label>
+            </value>
+            <value>
+                <fullName>Canceling Account</fullName>
+                <default>false</default>
+                <label>Canceling Account</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Did not use QW / AWL previously</fullName>
+                <default>false</default>
+                <label>Did not use QW / AWL previously</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

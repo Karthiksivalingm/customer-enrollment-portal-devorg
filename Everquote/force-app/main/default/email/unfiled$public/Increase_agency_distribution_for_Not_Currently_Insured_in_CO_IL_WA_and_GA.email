@@ -1,0 +1,24 @@
+<html>
+            <body style="font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td style="padding: 20px;">
+                            <p>Hi {!Contact.FirstName},</p>
+
+                            <p>I hope this message finds you well! As one of our valued customers, I’m excited to offer you an exclusive discount on calls from uninsured insurance shoppers in Colorado, Illinois, Washington, and Georgia.</p>
+
+                            <p>This is a great opportunity to connect with potential clients who are actively seeking insurance solutions. With this special discount, you can enhance your outreach efforts while maximizing your return on investment.</p>
+
+                            <p>If you’re interested, let’s schedule a quick call to discuss the details and how we can get started. You can use my scheduling link here: <a href="{!User.Salesforce_Meeting_Link__c}" style="color: #2E86C1; text-decoration: none;">Schedule a Meeting</a> to find a time that works best for you.</p>
+
+                            <p>Don’t miss out on this limited-time offer!</p>
+
+                            <p>Best regards,</p>
+                            <p>{!User.FirstName} {!User.LastName}<br/>
+                            {!User.Title}<br/>
+                            {!User.Phone}</p>
+                        </td>
+                    </tr>
+                </table>
+            </body>
+        </html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2018_Q4_SF_Off_Hours_Promo</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>Details__c</columns>
+    <columns>Total_Leads_Purchased__c</columns>
+    <columns>Pro_Account_Cancelled_Date__c</columns>
+    <columns>Cancellation_Reason__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Campaign__c</field>
+        <operation>equals</operation>
+        <value>2018-Q4 State Farm Off Hours</value>
+    </filters>
+    <label>2018-Q4 SF Off Hours Promo</label>
+    <sharedTo>
+        <group>State_Farm_Team</group>
+    </sharedTo>
+</ListView>

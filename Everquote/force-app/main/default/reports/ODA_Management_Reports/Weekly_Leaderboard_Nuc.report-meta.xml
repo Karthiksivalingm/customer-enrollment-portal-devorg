@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Lead.Lead_Outcome__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>App. Complete - SALE,App. Complete - Referred,App. Complete - Declined</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Alesandra Cavenago,April Ross,Cheri Foster,Chloe Amos,Christian Free,Doneshia Leonard,Dorthy Fitzpatrick,Erandeny Ocampo,Erika Jones,Gertie Rhodes,Glenda Crocker,Isaac Nam,Jaquisha Grier,Jasmine Knighton,Keandriah Ollison,Lanese Simmons,Lisa Johnson,Lonnesha Wheeler,Meagan Mckay,Megan McGugin,Muraisha Hill,Olean Brock,Orian Henderson,Rita Bryant,Robert Trimble,Tia Lewis,Tiffany Turvin,Trent Rosser,Tygar Jones,Ursula Townsend,Neysha Alston,Karen Burgis,Sakeenah Williams,Erica Gwinn,Michael Silber,Eric McCarthy,Joe DiPesa</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.Lead_Outcome__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <field>LAST_UPDATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Weekly Leaderboard</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead.Voice_Auth_Played_At__c</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

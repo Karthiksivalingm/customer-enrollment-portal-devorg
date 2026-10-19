@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}},</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px">I know things get busy, but I didn’t want you to miss this opportunity. EverQuote’s Lead Connection Service is helping State Farm offices increase contact rates, strengthen their pipeline, and convert more shoppers into quotes.</p>
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Give me a call at {{{Sender.Phone}}} or let’s schedule some time to connect to see if this program is right for your agency!&nbsp; {{{Sender.Salesforce_Meeting_Link__c}}}&nbsp;</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best,</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}</span></span></span></span></span></span></p>
+<br />
+&nbsp;</body>
+</html>

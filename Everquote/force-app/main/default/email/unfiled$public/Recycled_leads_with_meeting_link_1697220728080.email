@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Hey {{{Recipient.FirstName}}},</p>
+
+<p>&nbsp;</p>
+
+<p>Hoping to keep EverQuote’s insurance marketplace on your radar.</p>
+
+<p>&nbsp;</p>
+
+<p>With conventional lead vendors you buy leads and then “spray and pray.” But prospecting low intent, low converting leads is a time consuming grind.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>With EverQuote’s insurance marketplace, we connect you with real insurance shoppers who are looking for quotes in real time. That’s why carrier testing shows a 34% higher conversion rate with EverQuote vs. traditional lead vendors.</p>
+
+<p>&nbsp;</p>
+
+<p>Take a look at how partnering with EverQuote helped one of our clients substantially increase his bind rate and&nbsp;<a href="https://vimeo.com/458297316">see some transformational results</a>.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Want to learn more - schedule some time on my calendar here -&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}</p>
+
+<p><br />
+Best regards,</p>
+
+<p>{{{Sender.FirstName}}}</p>
+
+<p>{{{Sender.Phone}}}<br />
+<br />
+&nbsp;</p>
+</body>
+</html>

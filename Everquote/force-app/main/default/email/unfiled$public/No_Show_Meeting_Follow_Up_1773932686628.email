@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi {{{Recipient.FirstName}}} - I tried calling your office but wasn't able to speak with you directly.<br />
+&nbsp;<br />
+I know we had time set up previously to connect regarding products and programs, and I simply wanted to see if you're still interested.<br />
+&nbsp;<br />
+Feel free to reach out to me at {{{Sender.Phone}}} or schedule some time on my calendar here: {{{Sender.Salesforce_Meeting_Link__c}}}<br />
+<br />
+Best,<br />
+{{{Sender.FirstName}}}<br />
+&nbsp;</body>
+</html>

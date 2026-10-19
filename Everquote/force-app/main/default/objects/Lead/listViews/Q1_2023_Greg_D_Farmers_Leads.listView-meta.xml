@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q1_2023_Greg_D_Farmers_Leads</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 and 6 and 7 and 8 and 9</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>farmers</value>
+    </filters>
+    <filters>
+        <field>LEAD.LAST_ACTIVITY</field>
+        <operation>lessOrEqual</operation>
+        <value>3/14/2024</value>
+    </filters>
+    <filters>
+        <field>LEAD.EMAIL</field>
+        <operation>contains</operation>
+        <value>@farmersagent</value>
+    </filters>
+    <filters>
+        <field>LEAD.EMAIL_OPT_OUT</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.DO_NOT_CALL</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Duplicate,No Longer There</value>
+    </filters>
+    <filters>
+        <field>LEAD.COMPANY</field>
+        <operation>notEqual</operation>
+        <value>[not provided]</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATE</field>
+        <operation>equals</operation>
+        <value>nm,az,nv,tn,nh,ga,in,OH,NH,VA,wv,CO,MO,IL</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>notEqual</operation>
+        <value>State Farm DNC,recycled leads,Recycled Leads Queue</value>
+    </filters>
+    <label>Q$ 2023 Jamari Farmers Leads</label>
+    <sharedTo>
+        <group>BDR</group>
+        <group>Farmers_BDR</group>
+    </sharedTo>
+</ListView>

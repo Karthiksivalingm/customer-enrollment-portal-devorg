@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Farmers_Contacts_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Cadence_Filter_Bulk__c</field>
+        <operation>equals</operation>
+        <value>Farmers_Contacts_Leads</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>CONTACT.PHONE1</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Primary_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>NC,MA,LA,SC,KY,WV,DE,MS,HI,NH,RI,AK,VT,GA,NY,NJ,NV,MD,AL,CT,NE,ID,DC,ME,MT,WY,PA,WA,ND,IL,TX,CA,TN,AZ,NM,UT,VA</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Bad Data,Closed/Resting,Do Not contact,Duplicate,No Longer There,Unqualified</value>
+    </filters>
+    <label>Farmers_Contacts_Leads</label>
+</ListView>

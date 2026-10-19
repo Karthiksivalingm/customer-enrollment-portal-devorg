@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Winrow email asking clients for referrals</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Winrow Referrals Code Email</name>
+    <style>none</style>
+    <subject>best practices and secrets of the top 1% advisor</subject>
+    <textOnly>Hi {!Lead.FirstName},
+EverQuote is not only the largest online insurance marketplace but we also partner extensively with Allstate agents. We know your underwriting guidelines can be strict and the ECP means you have to grow – let us help you hit your targets!
+
+We just launched a dedicated Allstate team – we are exclusively focused on making Allstate agents successful through individualized account management and customer support.
+
+Why EverQuote, you ask?
+
+- Highest quality leads in the industry – we source 100% of our leads organically - all our prospects come directly to EverQuote via advertising without incentives or rewards
+- We send you qualified prospects delivered in REAL TIME
+- You control everything – set your hours, risk filters / consumer profile, # of leads, zip codes and even pause online in seconds
+- Receive unlimited phone support – your dedicated Account Manager customer and our Customer Success team is here to help you bind more policies
+
+{!Lead.FirstName}, let&apos;s schedule a quick 10 minute call so I can show you how it works. When would be best for you?
+
+Chat Soon,
+{!User.FirstName}
+
+{!User.Name}
+Allstate Account Specialist
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe at compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

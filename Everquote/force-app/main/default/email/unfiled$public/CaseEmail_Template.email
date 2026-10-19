@@ -1,0 +1,10 @@
+Dear {!Case.OwnerFirstName},<br><br>
+
+The current fill rate for the account <a href="https://yoursage.lightning.force.com/{!Case.AccountId}" target="_blank">{!Case.Account}</a> has fallen below 75%.  
+Please follow up with the account to address this issue.<br><br>
+
+<strong>Account Details:</strong><br>
+Account Name: {!Case.Account}<br>
+Current Fill Rate: {!Case.Account_Uncapped_Fill_Rate__c}%<br><br>
+
+Best regards,

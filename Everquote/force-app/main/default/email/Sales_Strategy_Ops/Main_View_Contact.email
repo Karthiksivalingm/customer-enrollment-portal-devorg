@@ -1,0 +1,6 @@
+A sales rep has assigned a contact to your Main View.   High priority leads have a status of Sales Qualified.
+
+Name: {!Contact.Name} 
+Company: {!Account.Name}
+Link to Record: {!Contact.Link}
+Status: {!Contact.Contact_Status__c}

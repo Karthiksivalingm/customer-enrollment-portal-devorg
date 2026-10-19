@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cody_C_Farmers_Growth_States</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Carrier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>AZ,IL,MI,OK,AL,NE,OH,OR,VA,WI,ID,SD,UT,NM,WY,AR,VT,KS,CO,NH,MN</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Starter</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Farmers</value>
+    </filters>
+    <filters>
+        <field>activity_in_last_30_days__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Alex R - Farmers Growth States</label>
+</ListView>

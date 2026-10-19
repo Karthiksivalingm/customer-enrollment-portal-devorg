@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Life Sales Sprint #1, Email #6 of 6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Life_sales_sprint1_email6</name>
+    <style>none</style>
+    <subject>Should I stay or should I go?</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+I get it - you’re busy - it seems like this just isn’t the right time for us to connect.
+
+If anything changes you can call me directly @ {!User.Phone}. I have a few suggestions on ways to generate more new business which I’ve seen produce results for many other advisors I work with.
+
+Cheers, 
+
+{!User.FirstName} 
+
+{!User.Name} 
+Inside Sales Representative 
+{!User.Phone} 
+{!User.Email}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

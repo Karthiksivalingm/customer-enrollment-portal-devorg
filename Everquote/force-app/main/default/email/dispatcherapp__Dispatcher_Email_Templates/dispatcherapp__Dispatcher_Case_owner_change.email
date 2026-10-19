@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="Dispatcher Notification - Case record has been assigned to you" recipientType="User" relatedToType="dispatcherapp__Dispatcher_Log__c">
+<messaging:plainTextEmailBody >
+The following Case has been assigned to you through Dispatcher. 
+
+Case Number:  {!relatedTo.Case__r.CaseNumber}
+Case Subject:  {!relatedTo.Case__r.Subject}
+Case Link:  https://login.salesforce.com/{!relatedTo.Case__r.Id}
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

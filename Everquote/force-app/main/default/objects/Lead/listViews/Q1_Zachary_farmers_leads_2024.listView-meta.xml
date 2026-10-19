@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q1_Zachary_farmers_leads_2024</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD_SCORE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Farmers</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Follow-up,Working,Sales Accepted,Unqualified,Duplicate,Do Not Call,Waitlist,Won,Closed,Assigned,No Longer There</value>
+    </filters>
+    <filters>
+        <field>LEAD_SCORE</field>
+        <operation>greaterThan</operation>
+        <value>90</value>
+    </filters>
+    <label>Q1 Zachary farmers leads 2024</label>
+</ListView>

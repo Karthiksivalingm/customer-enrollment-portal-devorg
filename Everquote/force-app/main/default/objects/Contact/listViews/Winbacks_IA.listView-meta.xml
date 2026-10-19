@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Winbacks_IA</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CONTACT.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>CONTACT.CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_N_YEARS:5</value>
+    </filters>
+    <filters>
+        <field>Primary_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Independent Agent</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Do Not Call,Bad Data</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL_OPT_OUT</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CONTACT.DO_NOT_CALL</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CONTACT.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>LAST_N_DAYS:14</value>
+    </filters>
+    <label>Winbacks IA for Breanna</label>
+</ListView>

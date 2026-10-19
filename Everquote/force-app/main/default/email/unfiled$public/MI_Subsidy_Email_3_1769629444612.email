@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.2"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}}</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">With Preferred Auto subsidies now active in Michigan, timing plays a big role in availability.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">If you’d like to explore whether this makes sense for your agency, I’m happy to help.</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.2"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Give me a call at {{{Sender.Phone}}} or book some time with me so you we can discuss how Marketing Services can help you grow your agency: {{{Sender.Salesforce_Meeting_Link__c}}}.</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.2"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Looking forward to connecting,&nbsp;</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}</span></span></span></span></span></span></p>
+<br />
+&nbsp;</body>
+</html>

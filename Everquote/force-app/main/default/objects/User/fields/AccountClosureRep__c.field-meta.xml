@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountClosureRep__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>check true if this rep should be included in the account closure round robin assignment</description>
+    <inlineHelpText>check true if this rep should be included in the account closure round robin assignment</inlineHelpText>
+    <label>AccountClosureRep</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Fields_Required_for_Lost_AGP_SF</fullName>
+    <active>false</active>
+    <description>Select at least one competitor before moving this deal to Closed Lost.  Also select at least one reason on why we lost to that competitor</description>
+    <errorConditionFormula>RecordType.Name= &quot;Accelerated-State Farm&quot;&amp;&amp; 
+ISPICKVAL(StageName, &quot;Closed Lost&quot;)&amp;&amp;
+OR(
+ISPICKVAL(  Competitor_1__c  ,&quot;&quot; ), 
+ISPICKVAL(   Loss_to_Competitor_Reason_1__c  , &quot;&quot;))</errorConditionFormula>
+    <errorMessage>Select at least one competitor before moving this deal to Closed Lost.  Also select at least one reason on why we lost to that competitor</errorMessage>
+</ValidationRule>

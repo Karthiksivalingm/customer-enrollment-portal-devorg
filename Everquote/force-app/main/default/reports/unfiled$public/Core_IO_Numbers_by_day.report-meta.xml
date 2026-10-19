@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Case_Open_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Cases$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Case.Core_Business_Review,Case.Account_Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Cases$Topic__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Core Account Introduction</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Cases$Subject</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IO Core Introduction Call</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Prospect,Starter</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Core IO Numbers by day</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_cases_NEW__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Cases$Case_Open_Date__c</dateColumn>
+        <endDate>2021-05-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2021-03-01</startDate>
+    </timeFrameFilter>
+</Report>

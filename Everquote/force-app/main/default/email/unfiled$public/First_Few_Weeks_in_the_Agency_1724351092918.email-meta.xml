@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>First Few Weeks in the Agency (week 6)</name>
+    <relatedEntityType>Lead</relatedEntityType>
+    <style>none</style>
+    <subject>First Couple Weeks in the Agency</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

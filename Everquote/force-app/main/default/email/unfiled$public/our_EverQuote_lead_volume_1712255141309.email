@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi&nbsp;{{{Recipient.Name}}}<br />
+<br />
+I’d love to get some time on your calendar to review your account performance and make sure<br />
+that we’ve got the right lead cap set for your staff for you to hit your goals. What time this week<br />
+is best for you to chat? You can also book directly here if you prefer:&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}<br />
+<br />
+Talk soon,<br />
+{{{Sender.Name}}}</body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Blog Article Email &quot;Property &amp; Casualty Insurance Industry Trends 2018-2020&quot;</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Blog_Email_Insurance_Industry_Trends</name>
+    <style>none</style>
+    <subject>Property &amp; Casualty Insurance Industry Trends 2018-2020</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+As an insurance professional having your finger on the pulse of what’s going on in the industry can give you a crucial advantage when it comes to preparing to capitalize on trends and minimizing exposure to risk.
+That’s why EverQuote has put together this short, blog post length overview of some of the trends experts are anticipating through 2020:
+
+Property &amp; Casualty Insurance Industry Trends 2018-2020 (https://learn.everquote.com/property-and-casualty-insurance-industry-trends-2018)
+
+Drop me a line at {!User.Email} if you have any questions or any trends you think we missed.
+
+Cheers,
+{!User.FirstName}
+
+
+{!User.Name}
+Inside Sales Representative
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe at compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

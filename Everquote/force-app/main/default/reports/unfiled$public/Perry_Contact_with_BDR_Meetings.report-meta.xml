@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.ActivityRelations$Subject</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.ActivityRelations$ActivityDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.ContactCampaignMembers.ActivityRelations$Subject</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BDR Meeting</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Perry Contact with BDR Meetings</name>
+    <params>
+        <name>scopeid</name>
+        <value>7012L000001MV8e</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CCA__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Campaign.ContactCampaignMembers.ActivityRelations$ActivityDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2020-01-01</startDate>
+    </timeFrameFilter>
+</Report>

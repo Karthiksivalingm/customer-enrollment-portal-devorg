@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Life Sales Sprint #1, Email #3 of 6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Life_sales_sprint1_email3</name>
+    <style>none</style>
+    <subject>happy Friday...</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Hope you’re having a great Friday! You’ve probably noticed I’ve sent over a few emails and tried to reach you by phone. I really believe that EverQuote can help you drive more business in 2018 and I’d love to get a few minutes to show you how we can do this. 
+
+Or you can just take it from one of our over 7,000 satisfied clients:
+
+“EverQuote has given me the fast start I needed, and currently my agency has exceeded all company set goals and expectations.  Regardless of how many people call in or walk through my door, the quote rate with EverQuote is a vital part of my agency growth. With EverQuote we have over a 90% quote rate, and the risk filters run in line with my company’s underwriting guidelines. When I look at what I have invested in EverQuote’s product vs. gross revenue… It’s a no brainer!”
+- Ladson Mills (Allstate Agent)
+
+Do you have availability early next week to get 10 minutes on the calendar? 
+
+What do you think?
+{!User.FirstName}
+
+
+{!User.Name}
+Inside Sales Representative
+{!User.Phone}
+{!User.Email}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hello {{{Recipient.FirstName}}},<br />
+<br />
+I’m reaching out because you qualify to receive a 30% off your EverQuote leads along with our free telemarketing service.&nbsp; &nbsp;Please let me know if you have a couple of minutes to discuss the details of this opportunity that will allow you to keep your discounted price next quarter.&nbsp;<br />
+<br />
+We want to help you finish the year strong and start 2024 ahead of the competition!&nbsp; Feel free to schedule time here:&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}<br />
+<br />
+Have a good day,<br />
+{{{Sender.FirstName}}}<br />
+<br />
+&nbsp;</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_CoreIO_ClosedWon_RequireIntroCall</fullName>
+    <active>true</active>
+    <description>If Core IO is checked on an Agency opportunity, Intro Call Scheduled Date/Time must be populated.
+Excludes System Admins.</description>
+    <errorConditionFormula>RecordType.Name= &quot;Agency&quot;&amp;&amp;  
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;&amp;&amp;
+Core_IO__c = TRUE &amp;&amp;
+ISPICKVAL(StageName, &quot;Closed Won&quot;)&amp;&amp; 
+ISCHANGED(StageName) &amp;&amp;
+ISBLANK(  Intro_Call_Scheduled_Date_Time__c  )</errorConditionFormula>
+    <errorDisplayField>Intro_Call_Scheduled_Date_Time__c</errorDisplayField>
+    <errorMessage>Before closing this opportunity, please enter a value in the Intro Call Schedule Date/Time field</errorMessage>
+</ValidationRule>

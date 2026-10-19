@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hello {{{Recipient.FirstName}}}!<br />
+<br />
+<span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><em><strong><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="text-decoration: none;">W<i>ith the return of subsidies for EverQuote lead and calls, our focus is on helping our State Farm agent partners hit their growth goals by providing a reliable source for profitable new business.</i></span></span></span></span></strong></em><br />
+<br />
+<span style="font-family: Arial, sans-serif; font-size: 11pt;">Give me a call directly at </span></span>{{{Sender.Phone}}} or book a meeting with me at&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}<span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family: Arial, sans-serif; font-size: 11pt;"> and see how EverQuote can help your agency grow in 2024! With the return of subsidy, demand for leads is high, so if you’re considering partnering with EverQuote, make sure to lock in your target geographies today to help ensure you get the lead volume you’ll need to hit your goals.&nbsp;</span></span><br />
+<br />
+Sincerely,<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Phone}}}</body>
+</html>

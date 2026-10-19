@@ -1,0 +1,5 @@
+This is to notify you that '{!Opportunity.Name}' has been marked as closed won and a new onboarding record has been created for {!Opportunity.Account}. 
+
+Please use the link below to open the record in Salesforce and begin working through the onboarding process. 
+
+{!Opportunity.Link}

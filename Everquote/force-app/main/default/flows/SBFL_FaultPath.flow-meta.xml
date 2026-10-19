@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Sends error email to Molly, copies Mallory</description>
+        <name>Send_Error_Email</name>
+        <label>Send Error Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>molly.nagel@everquote.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <stringValue>mallory.smith@everquote.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>DefaultWorkflowUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Corrected error in Molly&apos;s email address. Changed sending user from default (current user) to Default Workflow User</description>
+    <environments>Default</environments>
+    <interviewLabel>SBFL_FaultPath {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SBFL_FaultPath</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Error_Email</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Body of email sent to Admins</description>
+        <name>EmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Failing Flow Component: {!FailingFlowComponent}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Flow Fault Message: {!FaultMessage}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Triggering Record: {!TriggeringRecord}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Running User: {!$User.Username}&lt;/p&gt;&lt;p&gt;Running User Role: {!$UserRole.Name}&lt;/p&gt;&lt;p&gt;Running User Profile: {!$Profile.Name}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailSubject</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Flow Failure: {!FailingFlowComponent}&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Stores the name of the Flow component from the parent flow that triggered this fault path subflow</description>
+        <name>FailingFlowComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Receives Fault Message from parent flow</description>
+        <name>FaultMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the ID of the record that triggered the fault path subflow</description>
+        <name>TriggeringRecord</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

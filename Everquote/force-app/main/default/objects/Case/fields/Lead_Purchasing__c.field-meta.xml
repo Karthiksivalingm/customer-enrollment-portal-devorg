@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Purchasing__c</fullName>
+    <label>Lead Purchasing</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adjust Hours</fullName>
+                <default>false</default>
+                <label>Adjust Hours</label>
+            </value>
+            <value>
+                <fullName>Adjust Lead Types</fullName>
+                <default>false</default>
+                <label>Adjust Lead Types</label>
+            </value>
+            <value>
+                <fullName>Adjust Volume Cap</fullName>
+                <default>false</default>
+                <label>Adjust Volume Cap</label>
+            </value>
+            <value>
+                <fullName>Adjust Zip Codes</fullName>
+                <default>false</default>
+                <label>Adjust Zip Codes</label>
+            </value>
+            <value>
+                <fullName>Lead Volume</fullName>
+                <default>false</default>
+                <label>Lead Volume</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}},</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I wanted to follow up again regarding your request to connect with EverQuote. I know things get busy, and I want to make sure you have the opportunity to review the details with a rep at a time that works for you.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Our team can walk you through the available options and help you determine the best approach for your business.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">If you’re available, you can </span></span></span></span></span></span><strong><a href="{{{Sender.Salesforce_Meeting_Link__c}}}">Book a Quick Conversation Here</a></strong> <span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">or feel free to call me directly at </span></span></span><span style="font-weight:700"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.Phone}}}.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Looking forward to hearing from you!</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best regards,</span></span></span></span></span></span></p>
+
+<p style="line-height:1.2; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}</span></span></span></span></span></span></p>
+<br />
+&nbsp;</body>
+</html>

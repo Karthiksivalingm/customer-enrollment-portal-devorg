@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Life Sales Sprint #1, Email #5 of 6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Life_sales_sprint1_email5</name>
+    <style>none</style>
+    <subject>Do you want $2,000 of free customer referrals?</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+I&apos;ll keep this short and sweet to make the 21 seconds it takes to read it worth your time (yes, I actually timed it.) 
+
+We’re running a special deposit match for advisors in NY and NJ who are interested in giving our new life insurance referrals a try.
+
+Enroll before March 9th, 2018 and we will match your initial deposit up to $2,000. So, if you set-up an EverQuote Pro account and put down any amount between $250 and $2,000 we’ll match and double it.
+
+And we won’t lock you into any minimum term commitment - clients stay on with EverQuote because they see ROI. 
+
+Can we set-up a quick conversation this week? Or you can reach me directly via email or @ {!User.Phone} ?
+
+Cheers,
+{!User.FirstName} 
+
+{!User.Name} 
+Inside Sales Representative 
+{!User.Phone} 
+{!User.Email}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

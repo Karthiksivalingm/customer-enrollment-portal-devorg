@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unassigned_Onboarding</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Initial_Onboarding_Date__c</columns>
+    <columns>Intro_Meeting_Date__c</columns>
+    <columns>Intro_Call_Finalized__c</columns>
+    <columns>Intro_Call_Finalized_Date__c</columns>
+    <columns>Training_Date__c</columns>
+    <columns>Training_Finalized__c</columns>
+    <columns>First_Check_in_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Onboarding_Specialist__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>8/1/2020 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Intro_Meeting_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Unassigned Onboarding</label>
+    <sharedTo>
+        <group>Customer_Success</group>
+        <group>Customer_Success_Managers</group>
+    </sharedTo>
+</ListView>

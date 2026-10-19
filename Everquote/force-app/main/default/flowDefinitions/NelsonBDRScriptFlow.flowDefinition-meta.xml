@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Screen flow used by BDRs while making voice calls. Stores answers to questions on the Voice Call record and on the Lead record.
+Related flow, Update VC Related Account, saves the values from the Voice Call to the Account.</description>
+    <masterLabel>SCR_VoiceCall_BDRScript</masterLabel>
+</FlowDefinition>

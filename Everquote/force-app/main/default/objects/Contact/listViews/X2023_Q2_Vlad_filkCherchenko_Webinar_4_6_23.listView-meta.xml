@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023_Q2_Vlad_filkCherchenko_Webinar_4_6_23</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Carrier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>activity_in_last_30_days__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Account.OpenOpp__c</field>
+        <operation>lessThan</operation>
+        <value>1</value>
+    </filters>
+    <label>2023-Q2 Andrew Filar Webinar (6/21/23)</label>
+    <sharedTo>
+        <group>BDR</group>
+    </sharedTo>
+</ListView>

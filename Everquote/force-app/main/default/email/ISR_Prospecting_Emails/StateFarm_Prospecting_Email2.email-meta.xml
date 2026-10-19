@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>State Farm Cold Prospecting Email #2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>StateFarm_Prospecting_Email2</name>
+    <style>none</style>
+    <subject>internet leads are garbage</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Most State Farm agents don’t want to throw money away on low quality leads that you can’t reach, that’ve been called 10+ times or where they filled out a form months ago just to get a free gift card.
+
+EverQuote was created in response to the sort of lead companies that have given internet leads a bad name. This is why in little over 2 years we’ve had well over 7,000 agents switch to EverQuote  – making us the largest lead provider in the US.
+
+Here’s why EverQuote is different:-
+
+- We source all our own leads – all of our consumers come directly to EverQuote via advertising (we spend $8 million + each month) - no rewards, gift cards, etc.
+- Consumers must completely fill out a 42 question form – are they a homeowner? do they have multiple vehicles? credit rating? etc.
+- 71% average connect rate
+- Quote seekers are connected to Agents in REAL TIME and expect to be contacted
+- 10% average close rate
+- You choose the consumer profile you want (guaranteed homeowners down to SR-22 drivers) and you cap how many Leads you want delivered each day
+- We don’t lock you into a contract and you can pause anytime
+
+{!Lead.FirstName}, could we chat for 5 minutes tomorrow (or in the next week)? I have a few ideas so if you’re interested you can give us a try with virtually no risk.
+
+Chat Soon,
+{!User.FirstName}
+
+{!User.Name}
+State Farm Account Specialist
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe with one click.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

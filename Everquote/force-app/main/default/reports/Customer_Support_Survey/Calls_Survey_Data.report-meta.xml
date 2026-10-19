@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Survey_Response_Customer_Support_Survey__c$Account__c.Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Survey_Response_Customer_Support_Survey__c$Receives_Data__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Survey_Response_Customer_Support_Survey__c$Pay_per_Transfer__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Survey_Response_Customer_Support_Survey__c$Interested_in_EQ_Calls__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Survey_Response_Customer_Support_Survey__c$How_many_calls_could_you_take__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Survey_Response_Customer_Support_Survey__c$Survey_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Calls Survey</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Survey_Response_Customer_Support_Survey__c$Buys_Calls_Today__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Calls Survey Data</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Survey_Response_Customer_Support_Survey__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Survey_Response_Customer_Support_Survey__c$Pay_per_Transfer__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Survey_Response_Customer_Support_Survey__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

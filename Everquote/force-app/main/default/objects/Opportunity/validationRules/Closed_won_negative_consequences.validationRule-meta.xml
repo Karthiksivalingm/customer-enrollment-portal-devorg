@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_won_negative_consequences</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(
+    AND(
+        TEXT(StageName) = &quot;Closed Won&quot;,
+ $Profile.Id = &apos;00e1a000000i01k&apos;, 
+        ISBLANK(Negative_Consequences__c)), True, False
+ )</errorConditionFormula>
+    <errorDisplayField>Negative_Consequences__c</errorDisplayField>
+    <errorMessage>If stage changed to Closed Won, please complete the negative consequences field</errorMessage>
+</ValidationRule>

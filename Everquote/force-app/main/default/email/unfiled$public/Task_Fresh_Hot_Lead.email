@@ -1,0 +1,16 @@
+<html>
+
+<style>
+
+body{
+  font-size: 18px;
+
+}
+
+</style>
+
+<body>
+Please contact the customer ASAP. The customer is {!Lead.Name}. Click here to access their lead detail: {!Lead.Link}.
+</body>
+
+</html>

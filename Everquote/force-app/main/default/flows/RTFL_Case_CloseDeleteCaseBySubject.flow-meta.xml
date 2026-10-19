@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>S3P-916: Added BypassCaseValidation checkbox so that it can Close any case with these subjects without hitting validation rules.
+S3P-923: Removed Subject &quot;NPS Detractor follow-up&quot; because those cases won&apos;t be created anymore</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Checks the current value of the checkbox and returns the opposite value, so we can ensure ISCHANGED(BypassCaseValidation) which will prevent flow from hitting validation rules.</description>
+        <name>BypassCaseValidationFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>IF({!$Record.BypassCaseValidation__c} = TRUE, FALSE, TRUE)</expression>
+    </formulas>
+    <interviewLabel>RTFL_Case_DeleteCaseBySubject {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTFL_Case_Close&amp;DeleteCaseBySubject</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <description>We have to wait to delete the case until all email-to-case transactions are processed, otherwise the Case Workflow User will get email-to-case error emails for the deleted cases.</description>
+        <name>Delete_Case</name>
+        <label>Delete Case</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>$Record</inputReference>
+    </recordDeletes>
+    <recordUpdates>
+        <description>Close cases created by Email-to-Case that have the subjects listed (includes voicemails forwarded from front desk).</description>
+        <name>Close_Case</name>
+        <label>Close Case</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>BypassCaseValidation__c</field>
+            <value>
+                <elementReference>BypassCaseValidationFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Left_VM__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Results__c</field>
+            <value>
+                <stringValue>Closed automatically due to case subject. Will be deleted after couple minutes wait period.</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Close_Case</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Subject</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Choice Lead Delivery Failed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subject</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Front Desk (Ext. 965)</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Wait_2_Minutes</name>
+            <connector>
+                <targetReference>Delete_Case</targetReference>
+            </connector>
+            <label>Wait 2 Minutes</label>
+            <maxBatchSize>50</maxBatchSize>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>Case_Open_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

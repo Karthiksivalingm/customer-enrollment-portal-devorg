@@ -1,0 +1,7 @@
+New DNC enrollment:
+<br/><br/>
+Account: {!Account.Name}<br/>
+Enrolled by: {!Opportunity.OwnerFullName}<br/>
+Lead Source: {!Opportunity.LeadSource}<br/>
+Enrolled Date:{!Opportunity.CloseDate} <br/><br/>
+Link to Opportunity: {!Opportunity.Link}

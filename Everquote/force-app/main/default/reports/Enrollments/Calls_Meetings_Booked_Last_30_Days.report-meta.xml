@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount-TASK:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA6</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Meetings Booked</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_95686588</developerName>
+        <masterLabel>Meetings Held/ Missing Meeting Results</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Activity.Meeting_Result__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Held - Correct Contact</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Held - Contact</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Unwilling to Meet</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cancelled</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>No Show</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>ISR Missed Appointment</sourceValue>
+            </sourceValues>
+            <value>Meetings Held</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA6</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>ASSIGNED</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CALLDISPOSITION</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT</field>
+    </columns>
+    <columns>
+        <field>LEAD</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Initial Meeting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ASSIGNED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>sorenson,sharpe,Schille,Jared Thomas,Urban,Mitchell</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>ASSIGNED</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Asc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_95686588</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Calls Meetings Booked Last 30 Days</name>
+    <params>
+        <name>closed</name>
+        <value>closed</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <roleHierarchyFilter>ADMIN</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>START_DATE_TIME</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

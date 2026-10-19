@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>New Account Welcome - Captive Non-State Farm</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>New Account Welcome - Captive Non-State Farm</name>
+    <style>none</style>
+    <subject>Welcome to EverQuote!</subject>
+    <textOnly>Hi {!Contact.FirstName}, 
+
+Welcome to EverQuote! Thank you for choosing to grow your business with us.
+
+My name is {!Case.OwnerFirstName}. I’m excited to be your personal account manager and business consultant. My job is to help you get the most out of your EverQuote account and offer any support you need, such as: 
+
+•	General account questions
+•	Optimizing your campaigns
+•	Reviewing the status of returned leads
+•	Billing questions or changes
+
+I’ve made my career helping agents and producers connect with online consumers to grow their businesses. Every day, I work with some of the biggest and best {!Account.Carrier__c} agents in the country, and I’d love to share with you how they drive success with EverQuote. You can also find a wealth of useful information and advice from agents like you on our agency blog, at Learn.EverQuote.com.
+
+{!Case.OwnerFullName}
+{!Case.OwnerTitle}
+EverQuote
+{!Case.OwnerPhone}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

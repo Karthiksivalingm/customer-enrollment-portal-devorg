@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Joe_s_Tsunami</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Farmers</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>LAST_ACTIVITY_DATETIME</field>
+        <operation>lessThan</operation>
+        <value>6/1/2024 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>OpenOpp__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE</field>
+        <operation>equals</operation>
+        <value>,TN,GA,PA,SC,NC,AL,TX,NM,WA,OR,IL,OK,OH,VA,WV</value>
+    </filters>
+    <filters>
+        <field>Pro_Account_Cancelled_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>6/1/2022</value>
+    </filters>
+    <filters>
+        <field>Pro_Account_Cancelled_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>12/1/2023</value>
+    </filters>
+    <filters>
+        <field>Relationship__c</field>
+        <operation>notEqual</operation>
+        <value>DO NOT CONTACT</value>
+    </filters>
+    <filters>
+        <field>PC_EMAIL_BOUNCED_DATE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>notContain</operation>
+        <value>duplicate,DNC,do not call,DYI,no longer,not an agent,sold,wrong number</value>
+    </filters>
+    <label>Copy of Joe&apos;s Tsunami</label>
+</ListView>

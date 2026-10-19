@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi {{{Recipient.Name}}}<br />
+&nbsp;
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Thanks for joining our onboarding call today! We now have everything we need to get you set up in our system so our Marketing team can start building your ad campaigns. Here is a quick timeline of some next steps and what to expect as your campaigns get started.&nbsp;</span></span></span></span></span></span></p>
+
+<ul>
+	<li aria-level="1" style="list-style-type:disc"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">It will take 2 weeks for your ads to go live. Your Customer Success representative will send you an update when your campaign is live. We will also send you your TapClicks dashboard login when your ads go live so you can track your budget and ad spend.</span></span></span></span></span></span></li>
+	<li aria-level="1" style="list-style-type:disc">{{{Account.Support_Rep_Name__c}}}<span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none"> will be connecting with you for your first check-in. I've CCd them on this email and they will be available to answer any questions about your account. Your first check-in will be 2 weeks after your ads go live. I went ahead and scheduled that check-in for {Check-in date and time}.</span></span></span></span></span></span></li>
+</ul>
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Please don't hesitate to reach out if you have any questions!&nbsp;</span></span></span></span></span></span></p>
+&nbsp;
+
+<p style="line-height:1.38"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Have a great day,</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38">{{{Sender.Name}}}</p>
+<br />
+&nbsp;</body>
+</html>

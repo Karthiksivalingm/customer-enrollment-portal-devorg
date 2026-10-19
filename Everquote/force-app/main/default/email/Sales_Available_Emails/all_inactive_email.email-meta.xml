@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email announcing Calls to all inactive agents on Pro</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>all_inactive_email</name>
+    <style>none</style>
+    <subject>We missed you. So we built a new product to show how much we care. Really. We did.</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+It’s been awhile since we’ve seen you! I know we haven’t been the best at staying in touch, and we wanted to let you know that we truly value your business. To show our gratitude we want to give you a first look at EverQuote’s new Auto Lead warm transfers product.
+
+We’re giving a select group of existing clients (including your Agency) a first look at our new warm transfer Auto Leads. You can reach out to your EverQuote Account Manager directly, or just give our Customer Success team a call at: (844) 707-8800
+
+Best Wishes,
+{!User.FirstName}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

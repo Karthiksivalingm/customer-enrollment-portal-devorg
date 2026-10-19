@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>jamie.johnson@brokersalliance.com</contactEmail>
+    <label>EverLife Quoting</label>
+    <oauthConfig>
+        <callbackUrl>https://localhost/callback.php</callbackUrl>
+        <consumerKey>3MVG9mLJCAqQmppnDmF1R.PUVNlObRhdlXY9CmnU5PK8eRHkt4qOo8WI1KKgREFtNGvvRvLqNqFInd8c3vLUE</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>false</isPkceRequired>
+        <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <isSecretRequiredForTokenExchange>false</isSecretRequiredForTokenExchange>
+        <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
+        <scopes>Full</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <isTokenExchangeFlowEnabled>false</isTokenExchangeFlowEnabled>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>State Farm Cold Prospecting Email #3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>StateFarm_Prospecting_Email3</name>
+    <style>none</style>
+    <subject>more multi-line policies?</subject>
+    <textOnly>Hello {!Lead.FirstName},
+
+I know you are probably getting called on by a lot of lead providers but because of the importance of multi-lining to many State Farm agent&apos;s success, the low quality of most internet leads usually means not just low bind rates, but dismal multi-line rates.
+
+EverQuote however is not your standard lead vendor. We’re able to filter for leads that align with State Farm&apos;s underwriting requirements so we ultimately connect you with a much higher quality prospect.
+
+I would love to show you how EverQuote can help you bind more policies. We now have a dedicated State Farm team and already have had a ton of success helping State Farm agents crush their targets.
+
+How soon can we jump on a call?
+
+Chat Soon,
+{!User.FirstName}
+
+{!User.Name}
+State Farm Account Specialist
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe with one click.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

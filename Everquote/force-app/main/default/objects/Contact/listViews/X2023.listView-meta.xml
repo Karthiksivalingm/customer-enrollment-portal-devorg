@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>Pro_Account_Canceled_Date__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Do Not Call,No Longer There</value>
+    </filters>
+    <label>2023-Q4 Closed SF 12/21 thru 12/22</label>
+    <sharedTo>
+        <group>State_Farm_BDR</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Traffic_Pipeline_shared</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Expected_Cost_per_Action__c</columns>
+    <columns>Sizing_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>0121a000000AXXt</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.FORECAST_CATEGORY</field>
+        <operation>notEqual</operation>
+        <value>Omitted,Closed</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>notEqual</operation>
+        <value>Inbound Calls</value>
+    </filters>
+    <label>Traffic Pipeline (shared)</label>
+    <sharedTo>
+        <group>Enterprise</group>
+    </sharedTo>
+</ListView>

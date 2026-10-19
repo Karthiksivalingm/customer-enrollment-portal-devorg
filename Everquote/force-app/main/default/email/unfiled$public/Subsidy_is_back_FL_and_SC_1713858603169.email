@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.656; background-color:#ffffff"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi&nbsp;</span></span></span></span></span></span>{{{Recipient.FirstName}}},</p>
+
+<p style="line-height:1.656; background-color:#ffffff"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I hope this email finds you well. </span></span></span></span></span></span>I just gave your office a call to chat about subsidy returning in your state.&nbsp;<span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">As we dive into Q2, we understand the importance of planning ahead. With subsidies for EverQuote leads returning on May 1st in your state, our focus is on supporting our State Farm agent partners in achieving their growth objectives for the year by offering a dependable source for profitable new business.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; background-color:#ffffff"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I understand your time is valuable, so I won't take up too much of it. However, I'd love the opportunity to discuss these updates with you in more detail at your earliest convenience. Please let me know a time that works best for you, or feel free to book directly </span></span></span></span></span></span><a href="{{{Sender.Salesforce_Meeting_Link__c}}}">here</a> <span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none"> </span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; background-color:#ffffff"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Looking forward to hearing from you!</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; background-color:#ffffff"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Warm regards,</span></span></span></span></span></span></p>
+{{{Sender.Name}}} | Business Development Representative<br />
+{{{Sender.Phone}}}<br />
+EverQuote</body>
+</html>

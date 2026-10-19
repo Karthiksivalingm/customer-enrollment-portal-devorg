@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Reason__c</fullName>
+    <label>Credit Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Match Promo Credit</fullName>
+                <default>false</default>
+                <label>Match Promo Credit</label>
+            </value>
+            <value>
+                <fullName>Pro-rate Subsidy Credit</fullName>
+                <default>false</default>
+                <label>Pro-rate Subsidy Credit</label>
+            </value>
+            <value>
+                <fullName>Referral Credit</fullName>
+                <default>false</default>
+                <label>Referral Credit</label>
+            </value>
+            <value>
+                <fullName>Save Credit</fullName>
+                <default>false</default>
+                <label>Save Credit</label>
+            </value>
+            <value>
+                <fullName>Unintended Leads Credit</fullName>
+                <default>false</default>
+                <label>Unintended Leads Credit</label>
+            </value>
+            <value>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+                <label>Promotion</label>
+            </value>
+            <value>
+                <fullName>Billing Issue</fullName>
+                <default>false</default>
+                <label>Billing Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

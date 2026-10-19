@@ -1,0 +1,164 @@
+<apex:component >    
+    <apex:attribute name="lead" type="Lead" required="true"
+                    description="The Lead"/>
+    <apex:attribute name="save" type="ApexPages.Action" required="true"
+                    description="Save Method"/>
+    <apex:attribute name="isEditing" type="boolean" required="true"
+                    description="Currently editing"/>
+    <apex:attribute name="edit" type="ApexPages.Action" required="true"
+                    description="Edit Method"/>
+    <apex:attribute name="cancel" type="ApexPages.Action" required="true"
+                    description="Cancel Method"/>
+    
+    <style type="text/css">
+        #detailTable th {
+            width: 10%;
+            text-align: right;
+            vertical-align: top;
+            padding-right: 10px;
+        }
+        #detailTable td {
+            width: 10%;
+            text-align: left;
+            vertical-align: top;
+            padding-left: 10px;
+        }
+    </style>
+    <apex:includeScript value="/support/console/24.0/integration.js"/>
+    <apex:form >
+        <apex:pageBlock title="Lead Detail" mode="inlineEdit">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!edit}" id="editButton" value="Edit"
+                                    rendered="{!!isEditing}" immediate="true"/>
+                <apex:commandButton action="{!save}" id="saveButton" value="Save"
+                                    style="{!IF(!isEditing, 'display: none;', '')}" />
+                <apex:commandButton id="cancelInlineButton" value="Cancel" onclick="resetInlineEdit()" 
+                                    style="display: none;" immediate="true"/>
+                <apex:commandButton action="{!cancel}" id="cancelButton" value="Cancel"
+                                    rendered="{!isEditing}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+            <apex:outputPanel rendered="{!isEditing}">
+            <table id="detailTable" width="100%">
+                <tr>
+                    <th><apex:outputLabel value="Lead Owner"/></th>
+                    <td><apex:inputField value="{!lead.OwnerId}" /></td>
+                    <th><apex:outputLabel value="Street"/></th>
+                    <td><apex:inputField value="{!lead.Street}" /></td>
+                    <th><apex:outputLabel value="Phone"/></th>
+                    <td><apex:inputField value="{!lead.Phone}" /></td>
+                    <th><apex:outputLabel value="Secretary's Name"/></th>
+                    <td><apex:inputField value="{!lead.Secretary_s_Name__c}" /></td>
+                    <th><apex:outputLabel value="Lead Status"/></th>
+                    <td><apex:inputField value="{!lead.Status}" /></td>
+                </tr>
+                <tr>
+                    <th><apex:outputLabel value="Contact Name"/></th>
+                    <td><apex:outputLink value="/{!lead.Id}">{!lead.Name}</apex:outputLink></td>
+                    <th><apex:outputLabel value="City"/></th>
+                    <td><apex:inputField value="{!lead.City}" /></td>
+                    <th><apex:outputLabel value="Mobile"/></th>
+                    <td><apex:inputField value="{!lead.MobilePhone}" /></td>
+                    <th><apex:outputLabel value="Nickname"/></th>
+                    <td><apex:inputField value="{!lead.Nickname__c}" /></td>
+                    <th><apex:outputLabel value="Lost Reason"/></th>
+                    <td><apex:inputField value="{!lead.Lost_Reason__c}" /></td>
+                </tr>
+                <tr>
+                    <th><apex:outputLabel value="Agency Name"/></th>
+                    <td><apex:inputField value="{!lead.Company}" /></td>
+                    <th><apex:outputLabel value="State"/></th>
+                    <td><apex:inputField value="{!lead.State}" /></td>
+                    <th><apex:outputLabel value="Alt Phone 2"/></th>
+                    <td><apex:inputField value="{!lead.Alt_Phone_2__c}" /></td>
+                    <th><apex:outputLabel value="Additional DM"/></th>
+                    <td><apex:inputField value="{!lead.Additional_DM__c}" /></td>
+                    <th><apex:outputLabel value="Unqualified Reason"/></th>
+                    <td><apex:inputField value="{!lead.Unqualified_Reason__c}" /></td>
+                </tr>
+                <tr>
+                    <th><apex:outputLabel value="Carrier"/></th>
+                    <td><apex:inputField value="{!lead.Carrier__c}" /></td>
+                    <th><apex:outputLabel value="Postal Code"/></th>
+                    <td><apex:inputField value="{!lead.PostalCode}" /></td>
+                    <th><apex:outputLabel value="Email"/></th>
+                    <td><apex:inputField value="{!lead.Email}" /></td>
+                    <th><apex:outputLabel value="Additional DM Email"/></th>
+                    <td><apex:inputField value="{!lead.Additional_DM_Email__c}" /></td>
+                </tr>
+            </table>
+            </apex:outputPanel>
+            
+            <apex:outputPanel rendered="{!!isEditing}">
+            <table id="detailTable" width="100%">
+                <tr>
+                    <th><apex:outputLabel value="Lead Owner"/></th>
+                    <td><apex:outputField value="{!lead.OwnerId}" /></td>
+                    <th><apex:outputLabel value="Street"/></th>
+                    <td><apex:outputField value="{!lead.Street}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelInlineButton"
+                                                hideOnEdit="editButton, cancelButton"
+                                                event="ondblclick"
+                                                resetFunction="resetInlineEdit"/>
+                        </apex:outputField></td>
+                    <th><apex:outputLabel value="Phone"/></th>
+                    <td><apex:outputText >
+                        <support:clickToDial number="{!lead.Phone}" entityId="{!lead.Id}" />
+                        </apex:outputText></td>
+                    
+                    <th><apex:outputLabel value="Secretary's Name"/></th>
+                    <td><apex:outputField value="{!lead.Secretary_s_Name__c}" /></td>
+                    <th><apex:outputLabel value="Lead Status"/></th>
+                    <td><apex:outputField value="{!lead.Status}" /></td>
+                </tr>
+                <tr>
+                    <th><apex:outputLabel value="Contact Name"/></th>
+                    <td><apex:outputLink value="/{!lead.Id}">{!lead.Name}</apex:outputLink></td>
+                    <th><apex:outputLabel value="City"/></th>
+                    <td><apex:outputField value="{!lead.City}" /></td>
+                    
+                    <th><apex:outputLabel value="Mobile"/></th>
+                    <td><apex:outputText >
+                    	<support:clickToDial number="{!lead.MobilePhone}" entityId="{!lead.Id}" />
+                    	</apex:outputText>
+                    </td>
+                    
+                    <th><apex:outputLabel value="Nickname"/></th>
+                    <td><apex:outputField value="{!lead.Nickname__c}" /></td>
+                    <th><apex:outputLabel value="Lost Reason"/></th>
+                    <td><apex:outputField value="{!lead.Lost_Reason__c}" /></td>
+                </tr>
+                <tr>
+                    <th><apex:outputLabel value="Agency Name"/></th>
+                    <td><apex:outputField value="{!lead.Company}" /></td>
+                    <th><apex:outputLabel value="State"/></th>
+                    <td><apex:outputField value="{!lead.State}" /></td>
+                    
+                    <th><apex:outputLabel value="Alt Phone 2"/></th>
+                    <td><apex:outputText >
+                    	<support:clickToDial number="{!lead.Alt_Phone_2__c}" entityId="{!lead.Id}" />
+                    	</apex:outputText>
+                    </td>
+                    
+                    
+                    <th><apex:outputLabel value="Additional DM"/></th>
+                    <td><apex:outputField value="{!lead.Additional_DM__c}" /></td>
+                    <th><apex:outputLabel value="Unqualified Reason"/></th>
+                    <td><apex:outputField value="{!lead.Unqualified_Reason__c}" /></td>
+                </tr>
+                <tr>
+                    <th><apex:outputLabel value="Carrier"/></th>
+                    <td><apex:outputField value="{!lead.Carrier__c}" /></td>
+                    <th><apex:outputLabel value="Postal Code"/></th>
+                    <td><apex:outputField value="{!lead.PostalCode}" /></td>
+                    <th><apex:outputLabel value="Email"/></th>
+                    <td><apex:outputField value="{!lead.Email}" /></td>
+                    <th><apex:outputLabel value="Additional DM Email"/></th>
+                    <td><apex:outputField value="{!lead.Additional_DM_Email__c}" /></td>
+                </tr>
+            </table>
+            </apex:outputPanel>
+            <apex:commandButton action="{!URLFOR($Action.Lead.Home_Calls_Survey , lead.Id)}" value="Home & Calls Survey"/>
+        </apex:pageBlock>    
+    </apex:form>
+</apex:component>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<HTML>
+   <HEAD>
+      <BASE href="https://yoursage--oda.my.salesforce.com">
+      <STYLE>
+         .summary { font-family: Verdana, Arial, Helvetica; font-weight: bold; font-size: 18px; color: #0066cc; }
+         .main { font-family: Verdana, Arial, Helvetica; font-weight: normal; font-size: 12px; line-height: 18px; color: black; }
+      </STYLE>
+   </HEAD>
+   <body>
+      <TABLE cellSpacing=0 cellPadding=0 bgcolor=#FFFFFF border=0  WIDTH="100%">
+         <TR>
+            <TD WIDTH="100%">
+               <TABLE cellSpacing=0 cellPadding=10 border=0  WIDTH="100%">
+                  <TR>
+                     <TD BGCOLOR="#FFFFFF">
+                        <TABLE cellSpacing=0 cellPadding=0 border=0>
+                           <TD class="summary">Task</TD>
+                           </TR>
+                        </TABLE>
+                  </TR>
+                  </TD>
+               </TABLE>
+            </TD>
+         </TR>
+         <TR>
+            <TD height="5"></TD>
+         </TR>
+         <TR>
+            <TD STYLE="padding:0 10 0 10px;">
+               <P CLASS="main">
+                  To: {!Task.Owner__c}<br><br>
+{!User.Name} has assigned you the following task:<br><br>
+Subject: {!Task.Subject}<br>
+Lead: {!Lead.Name}<br>
+Due Date: {!Task.ActivityDate}<br>
+Priority: {!Task.Priority} <br><br>
+
+For more details, click the following link:<br><br>
+
+<A HREF="{!Task.Link}" TARGET="_blank">{!Task.Link}</A>
+               </P>
+            </TD>
+         </TR>
+      </TABLE>
+   </body>
+</HTML>

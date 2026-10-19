@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Marketing</name>
+    <relatedEntityType>Contact</relatedEntityType>
+    <style>none</style>
+    <subject>Marking Down Marketing By 50%</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Picklist__c</fullName>
+    <label>Update Picklist</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>Blank</fullName>
+                <default>false</default>
+                <label>Blank Out Assigned</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>3</label>
+            </value>
+            <value>
+                <fullName>4</fullName>
+                <default>false</default>
+                <label>4</label>
+            </value>
+            <value>
+                <fullName>5</fullName>
+                <default>false</default>
+                <label>5</label>
+            </value>
+            <value>
+                <fullName>6</fullName>
+                <default>false</default>
+                <label>6</label>
+            </value>
+            <value>
+                <fullName>7</fullName>
+                <default>false</default>
+                <label>7</label>
+            </value>
+            <value>
+                <fullName>8</fullName>
+                <default>false</default>
+                <label>8</label>
+            </value>
+            <value>
+                <fullName>9</fullName>
+                <default>false</default>
+                <label>9</label>
+            </value>
+            <value>
+                <fullName>10</fullName>
+                <default>false</default>
+                <label>10</label>
+            </value>
+            <value>
+                <fullName>SF Cross-sell</fullName>
+                <default>false</default>
+                <label>SF Cross-sell</label>
+            </value>
+            <value>
+                <fullName>Home Life WT Cross-sell</fullName>
+                <default>false</default>
+                <label>Home Life WT Cross-sell</label>
+            </value>
+            <value>
+                <fullName>Feb 25</fullName>
+                <default>false</default>
+                <label>Feb 25</label>
+            </value>
+            <value>
+                <fullName>Contact me</fullName>
+                <default>false</default>
+                <label>Contact me</label>
+            </value>
+            <value>
+                <fullName>Ryan to Jerome</fullName>
+                <default>false</default>
+                <label>Ryan to Jerome</label>
+            </value>
+            <value>
+                <fullName>Set up in Partnerstack</fullName>
+                <default>false</default>
+                <label>Set up in Partnerstack</label>
+            </value>
+            <value>
+                <fullName>Farrmers Potential Call Buyers</fullName>
+                <default>false</default>
+                <label>Farrmers Potential Call Buyers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

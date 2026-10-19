@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Life Sales Sprint #1, Email #2 of 6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>A_Life_sales_sprint_1_email_2</name>
+    <style>none</style>
+    <subject>Everything you wanted to know about Life Leads but were afraid to ask...</subject>
+    <textOnly>Hey {!Lead.FirstName},
+
+Working with hundreds of advisors I’ve noticed many want to grow their books but rely on referrals from existing clients to do so. This often works great at first, but for so many advisors there comes a point where you have to go beyond your ‘natural market’ of family, friends, and acquaintances.
+
+The good news is that this is an area where EverQuote can really help.
+Why do advisors looking to grow work with us?
+More qualified contacts: we only connect you with the type of consumers you’re looking for
+More referrals / grow your network: we get you in the door with a family so you can help write that entire family
+Bottom line - we help you make more money: grow your business in a much more steady and predictable way
+
+If any of the challenges I mentioned sound familiar we should set-up some time to talk about how I can help. I’m available this Thursday at [TIME] or Friday at [TIME] - would either of those time slots work to schedule 10-15 minutes?
+
+Cheers,
+{!User.FirstName}
+
+
+{!User.Name}
+Inside Sales Representative
+(P): {!User.Phone}
+{!User.Email}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

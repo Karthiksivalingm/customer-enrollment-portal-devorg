@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Fields_Required</fullName>
+    <active>false</active>
+    <description>Requires that fields on the account be populated before moving an agency opportunity to the New Business Meeting stage.</description>
+    <errorConditionFormula>RecordType.Name = &quot;Accelerated-AGP&quot;&amp;&amp;  
+ISPICKVAL(StageName, &quot;Closed Won&quot;)&amp;&amp; 
+ISBLANK(TEXT(Account.LMS_Vendor__c))</errorConditionFormula>
+    <errorMessage>Please enter LMS on the account before marking this closed won</errorMessage>
+</ValidationRule>

@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi {{{Recipient.FirstName}}},&nbsp;<br />
+<br />
+I hope this email finds you well. I called your office but didn't reach reach you.&nbsp;<br />
+<br />
+I understand that schedules can be hectic, so I wanted to offer you the opportunity to reschedule our call at your convenience.&nbsp;&nbsp;<br />
+<br />
+Please let me know what works best for you, or feel free to book directly using the link below:<br />
+{{{Sender.Salesforce_Meeting_Link__c}}}<br />
+<br />
+I look forward to the opportunity to speak with you.&nbsp;<br />
+<br />
+Thank you for your time, and I hope to hear from you soon.<br />
+<br />
+Warm regards,<br />
+<br />
+{{{Sender.Signature}}}</body>
+</html>

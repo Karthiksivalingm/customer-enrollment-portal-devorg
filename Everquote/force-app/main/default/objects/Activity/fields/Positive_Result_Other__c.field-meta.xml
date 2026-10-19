@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Positive_Result_Other__c</fullName>
+    <formula>INCLUDES( Positive_Results__c , &quot;other&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Positive Result: Other</label>
+    <type>Checkbox</type>
+</CustomField>

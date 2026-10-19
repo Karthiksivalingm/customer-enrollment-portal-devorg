@@ -1,0 +1,13 @@
+{!Lead.OwnerFirstName},
+
+You have a new lead!  Please contact them ASAP!
+
+{!Lead.Name}
+{!Lead.Email}
+{!Lead.Phone}
+{!Lead.LeadSource}
+{!Lead.Campaign__c}
+
+LP Form? {!Lead.Filled_out_LP_form__c}
+Abandoned Sign up? {!Lead.Abandon_Sign_Up__c}
+{!Lead.Link}

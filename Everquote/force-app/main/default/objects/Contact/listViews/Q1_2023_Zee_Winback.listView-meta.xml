@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q1_2023_Zee_Winback</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>8/15/2023</value>
+    </filters>
+    <label>Q3 2023 Zee Winback</label>
+    <sharedTo>
+        <group>Farmers_BDR</group>
+        <group>Farmers_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,16 @@
+Account: {!Case.Account}
+Leads Last Month: {!Case.Leads_Purchased_Last_Month__c}
+Total Leads Purchased: {!Case.Total_Leads_Purchased__c}
+
+Case: {!Case.Link}
+Case Owner: {!Case.OwnerFullName}
+Save Tactic Used: {!Case.Save_Tactic_Used__c}
+Related to Poor Expectations: {!Case.Related_to_poor_expectations__c}
+Who worked the leads: {!Case.Who_worked_the_leads__c}
+Agency sales process meets best practices: {!Case.Did_agency_sales_process_meet_EQ_best_pr__c}
+
+Other Notes:
+{!Case.Other_Notes__c}
+
+Description:
+{!Case.Description}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Partially editable generic template for batch assignments</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Generic</name>
+    <style>none</style>
+    <subject>New records assigned in Salesforce</subject>
+    <textOnly>{!datetime}: You have a new lead in Salesforce! Sent by SuperRoundRobin.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

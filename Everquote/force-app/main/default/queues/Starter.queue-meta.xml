@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to assign Evergreen Account Management cases that are related to Starter accounts. CSAs should be monitoring the queue.</description>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Starter Evergreen</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>Customer_Support</publicGroup>
+        </publicGroups>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

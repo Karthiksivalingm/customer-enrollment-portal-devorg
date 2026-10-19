@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Contact Pro Lead Source or Abandoned Wizard</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Pro Lead Contact</name>
+    <style>none</style>
+    <subject>Pro Lead Source request - A contact has been round robin assigned to you</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

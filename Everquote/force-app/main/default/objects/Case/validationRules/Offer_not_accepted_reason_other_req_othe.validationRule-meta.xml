@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offer_not_accepted_reason_other_req_othe</fullName>
+    <active>true</active>
+    <description>If offer not accepted reason equals other then an &quot;Other&quot; reason is required</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(  Did_not_Accept_Offer__c , &quot;Other&quot;),
+ISBLANK(  Other__c ))</errorConditionFormula>
+    <errorMessage>If Offer not Accepted reason is Other, other reason is required.</errorMessage>
+</ValidationRule>

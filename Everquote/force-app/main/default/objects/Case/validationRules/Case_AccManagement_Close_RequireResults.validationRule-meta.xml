@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_AccManagement_Close_RequireResults</fullName>
+    <active>true</active>
+    <description>When an Account Management case is Closed, Results must be populated</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Status, &quot;Closed&quot;),
+ISCHANGED(Status),
+ISBLANK( Results__c ),
+RecordTypeId= &quot;0121a000000EoXk&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Results__c</errorDisplayField>
+    <errorMessage>Enter notes in Results before closing the case.</errorMessage>
+</ValidationRule>

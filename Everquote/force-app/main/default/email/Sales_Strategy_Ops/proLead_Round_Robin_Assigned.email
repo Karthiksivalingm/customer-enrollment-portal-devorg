@@ -1,0 +1,7 @@
+The following lead has been round robin assigned to you.  It could be an Abandoned Wizard or a Contact Me request.  Please call them immediately.
+
+Name: {!Lead.FirstName} {!Lead.LastName}
+Company: {!Lead.Company}
+Campaign: {!Lead.Campaign__c}
+Producer Count: {!Lead.How_many_prdrs_agents_including_yourself__c}
+Link to record: {!Lead.Link}

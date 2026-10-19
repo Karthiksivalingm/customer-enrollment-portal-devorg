@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milestone__c</fullName>
+    <label>Milestone</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Intro Call</fullName>
+                <default>false</default>
+                <label>Intro Call</label>
+            </value>
+            <value>
+                <fullName>Day 11 Check</fullName>
+                <default>false</default>
+                <label>Day 11 Check</label>
+            </value>
+            <value>
+                <fullName>Monthly Review</fullName>
+                <default>false</default>
+                <label>Monthly Review</label>
+            </value>
+            <value>
+                <fullName>QBR</fullName>
+                <default>false</default>
+                <label>QBR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

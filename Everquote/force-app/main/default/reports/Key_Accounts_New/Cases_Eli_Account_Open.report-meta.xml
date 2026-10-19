@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <filter>
+        <booleanFilter>((1 AND 2 AND (3 OR (4 AND 5))) AND 6) AND 7</booleanFilter>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Key</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Choice Lead Delivery Failed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Choice Lead Delivery Failed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Lead_Delivery_Failure_Count__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>10</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Eli Nunes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Eli Nunes</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Cases - Eli Account Open</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>OWNER</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

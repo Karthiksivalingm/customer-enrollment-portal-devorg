@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <description>Accounts with Account Status = Open as of 11/7/23</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>2023-Q4 Open Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2023-11-07</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

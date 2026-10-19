@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>911 Should I Stay or  Should I Go. Last email to lead that is not responding to repeated attempts to contact over an extended period of time.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2. Pipeline Status: Pre-Closed Lost</name>
+    <style>none</style>
+    <subject>{!Lead.FirstName}, Should I Stay or Should I Go?</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

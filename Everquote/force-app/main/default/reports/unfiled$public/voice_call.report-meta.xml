@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>VoiceCall$Name</field>
+    </columns>
+    <columns>
+        <field>VoiceCall$CallType</field>
+    </columns>
+    <columns>
+        <field>VoiceCall$CallOrigin</field>
+    </columns>
+    <columns>
+        <field>VoiceCall$CallDisposition</field>
+    </columns>
+    <columns>
+        <field>VoiceCall$CallStartDateTime</field>
+    </columns>
+    <columns>
+        <field>VoiceCall$RelatedRecord</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>VoiceCall$CallResolution</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Meaningful Connect,Not Interested,Unqualified</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>voice call</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Voice_call__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>VoiceCall$CallAcceptDateTime</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

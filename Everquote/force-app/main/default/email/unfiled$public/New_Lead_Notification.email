@@ -1,0 +1,11 @@
+{!Lead.OwnerFirstName},
+
+You have a new hot lead! They were just on the Pro website, please contact them ASAP!
+
+{!Lead.Name}
+{!Lead.Email}
+{!Lead.Phone}
+
+LP Form? {!Lead.Filled_out_LP_form__c}
+Abandoned Sign up? {!Lead.Abandon_Sign_Up__c}
+{!Lead.Link}

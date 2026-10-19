@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Closed_Won</fullName>
+        <field>Stage__c</field>
+        <literalValue>Closed Won</literalValue>
+        <name>Closed Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Core_Monthly_review_completed</fullName>
+        <field>Stage__c</field>
+        <literalValue>Quarterly Review</literalValue>
+        <name>Core Monthly review completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Core_TrainingCompleted</fullName>
+        <field>Stage__c</field>
+        <literalValue>30 Day Check-In</literalValue>
+        <name>Core TrainingCompleted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>First_Monthly_Review_Stage</fullName>
+        <field>Stage__c</field>
+        <literalValue>1st Monthly Review</literalValue>
+        <name>First Monthly Review Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Intro_Call_Finalized_Date</fullName>
+        <field>Intro_Call_Finalized_Date__c</field>
+        <formula>TODAY ()</formula>
+        <name>Intro Call Finalized Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Onboarding_Complete_Date</fullName>
+        <field>Onboarding_Complete_Date__c</field>
+        <formula>TODAY ()</formula>
+        <name>Onboarding Complete Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SecondMonth</fullName>
+        <field>Stage__c</field>
+        <literalValue>2nd Monthly Review</literalValue>
+        <name>SecondMonth</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Stage_to_Training</fullName>
+        <field>Stage__c</field>
+        <literalValue>Agency Training</literalValue>
+        <name>Update Stage to Training</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>qbr</fullName>
+        <field>Stage__c</field>
+        <literalValue>3rd Monthly Review</literalValue>
+        <name>qbr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Core First Monthly Completed</fullName>
+        <actions>
+            <name>Core_Monthly_review_completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Success__c.First_Monthly_Call_Finalized__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Success__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Core Onboarding</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>First Monthly Completed</fullName>
+        <actions>
+            <name>SecondMonth</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Success__c.First_Monthly_Call_Finalized__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Success__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>AGP Onboarding</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Intro Completed</fullName>
+        <actions>
+            <name>Intro_Call_Finalized_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stage_to_Training</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Customer_Success__c.Intro_Call_Finalized__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Onboarding Complete Date</fullName>
+        <actions>
+            <name>Onboarding_Complete_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Success__c.Onboarding_complete__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Second Monthly Completed</fullName>
+        <actions>
+            <name>qbr</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Success__c.Second_Monthly_Call_Finalized__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Success__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>AGP Onboarding</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Third Monthly Completed</fullName>
+        <actions>
+            <name>Closed_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Success__c.Onboarding_complete__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Training Completed</fullName>
+        <actions>
+            <name>First_Monthly_Review_Stage</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Success__c.Training_Finalized__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Success__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>AGP Onboarding</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Training Completed Core</fullName>
+        <actions>
+            <name>Core_TrainingCompleted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Success__c.Training_Finalized__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Success__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Core Onboarding</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allstate_Scratch_Agent_Pilot</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Allstate Scratch Agent Pilot</label>
+    <sharedTo>
+        <group>Sales_Strategy_and_Ops</group>
+        <role>Allstate_ISR</role>
+        <role>Senior_Sales_Manager</role>
+    </sharedTo>
+</ListView>

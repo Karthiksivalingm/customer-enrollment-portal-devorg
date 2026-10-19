@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_ClosureAGP__c</fullName>
+    <label>Account Closure Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Consolidation</fullName>
+                <default>false</default>
+                <label>Account Consolidation</label>
+            </value>
+            <value>
+                <fullName>Agency Closing</fullName>
+                <default>false</default>
+                <label>Agency Closing</label>
+            </value>
+            <value>
+                <fullName>AGP Disqualified</fullName>
+                <default>false</default>
+                <label>AGP Disqualified</label>
+            </value>
+            <value>
+                <fullName>Calls pricing increase</fullName>
+                <default>false</default>
+                <label>Calls pricing increase</label>
+            </value>
+            <value>
+                <fullName>CPA too high/Low ROI</fullName>
+                <default>false</default>
+                <label>CPA too high/Low ROI</label>
+            </value>
+            <value>
+                <fullName>Dissatisfied with Service</fullName>
+                <default>false</default>
+                <label>Dissatisfied with Service</label>
+            </value>
+            <value>
+                <fullName>Launchpad Blowup</fullName>
+                <default>false</default>
+                <label>Launchpad Blowup</label>
+            </value>
+            <value>
+                <fullName>Low Bind Rate</fullName>
+                <default>false</default>
+                <label>Low Bind Rate</label>
+            </value>
+            <value>
+                <fullName>Low Contact/Quote Rate</fullName>
+                <default>false</default>
+                <label>Low Contact/Quote Rate</label>
+            </value>
+            <value>
+                <fullName>Low fulfillment/volume</fullName>
+                <default>false</default>
+                <label>Low fulfillment/volume</label>
+            </value>
+            <value>
+                <fullName>No additional deposit match</fullName>
+                <default>false</default>
+                <label>No additional deposit match</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Staffing issues</fullName>
+                <default>false</default>
+                <label>Staffing issues</label>
+            </value>
+            <value>
+                <fullName>Unpause reactive credits</fullName>
+                <default>false</default>
+                <label>Unpause reactive credits</label>
+            </value>
+            <value>
+                <fullName>2023 State Farm Subsidy Change</fullName>
+                <default>false</default>
+                <label>2023 State Farm Subsidy Change</label>
+            </value>
+            <value>
+                <fullName>20% Returns Pilot</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>20% Returns Pilot</label>
+            </value>
+            <value>
+                <fullName>Discontinuing Warm Transfers</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Discontinuing Warm Transfers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

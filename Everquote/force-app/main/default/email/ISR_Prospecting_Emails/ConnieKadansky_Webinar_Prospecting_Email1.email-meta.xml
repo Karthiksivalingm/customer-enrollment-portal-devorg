@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Connie Kadansky Webinar (7/16/20) Email #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ConnieKadansky_Webinar_Prospecting_Email1</name>
+    <style>none</style>
+    <subject>Register Now [Free Webinar]: &quot;Inner Game of Prospecting: How to Overcome Sales Call Reluctance&quot; with Connie Kadansky (hosted by EverQuote)</subject>
+    <textOnly>Hi {!Lead.FirstName},
+Sales call reluctance can be devastating to insurance producers. Join sales trainer and sales call reluctance expert Connie Kadansky on Thursday, July 16, 2020 @ 2:00 PM Eastern (11:00 AM Pacific) for a webinar presentation: &quot;Inner Game of Prospecting: How to Overcome Sales Call Reluctance.&quot; Connie will cover ways you can identify and work to eliminate Sales Call Reluctance, one of the most critical challenges for salespeople in the insurance industry.
+
+Sales trainer Connie Kadansky has had articles published in The Advisor Today, was a speaker at MDRT, and the NAIFA national conference. She has been interviewed by the Wall Street Journal, Bloomberg Business, Inc., Forbes and Investor’s Business Daily.
+You can sign-up for the free webinar directly through our link here!
+
+Best,
+
+Dennis
+
+Dennis Miller
+Marketing Manager
+marketing@everquote.com
+
+© 2020 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2020 www.everquote.com
+Don&apos;t want our emails? Email marketing@everquote.com to unsubscribe</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

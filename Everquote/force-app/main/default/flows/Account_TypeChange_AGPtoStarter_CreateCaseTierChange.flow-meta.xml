@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign the Primary Contact as the Contact on the new case</description>
+        <name>Assign_Case_Contact</name>
+        <label>Assign Case Contact</label>
+        <locationX>182</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>NewCase.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_Primary_Contact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Does_Prior_Support_Rep_Exist</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the case subject, project, record type, description, status and Account</description>
+        <name>Assign_Case_Details</name>
+        <label>Assign Case Details</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>NewCase.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewCase.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account Tier Change - AGP to Starter</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewCase.Project__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account Tier Change</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewCase.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_Case_Record_Type.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewCase.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewCase.Topic__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account Tiering</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewCase.Origin</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Internal</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>get_Primary_Contact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Case_Owner_as_Current_Support_Rep</name>
+        <label>Assign Case Owner as Current Support Rep</label>
+        <locationX>314</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>NewCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Support_Rep__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_New_Case_Account_Tier_Change</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Case_Owner_as_Prior_Support_Rep</name>
+        <label>Assign Case Owner as Prior Support Rep</label>
+        <locationX>50</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>NewCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Support_Rep__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_New_Case_Account_Tier_Change</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the name of the flow and failing component so that they can be passed to the fault path subflow</description>
+        <name>Assign_Failing_Component_Name</name>
+        <label>Assign Failing Component Name</label>
+        <locationX>754</locationX>
+        <locationY>1355</locationY>
+        <assignmentItems>
+            <assignToReference>FailingComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>RTFL_Account_TierChange_CreateCase - Create New Case -Account Tier Change</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_Fault_Path_Subflow</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check if the Account has a primary contact, if yes, assign Contact to Case.</description>
+        <name>Does_Primary_Contact_Exist</name>
+        <label>Does Primary Contact Exist?</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Does_Prior_Support_Rep_Exist</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Primary_Contact_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_Primary_Contact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Case_Contact</targetReference>
+            </connector>
+            <label>Primary Contact Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the Account had a Support Rep prior to the triggering edit, if not, check if there was a Support Rep added during the triggering edit, assign these as the new Case&apos;s owner.</description>
+        <name>Does_Prior_Support_Rep_Exist</name>
+        <label>Does Prior Support Rep Exist</label>
+        <locationX>314</locationX>
+        <locationY>947</locationY>
+        <defaultConnector>
+            <targetReference>Create_New_Case_Account_Tier_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Prior_Support_Rep_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Support_Rep__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Case_Owner_as_Prior_Support_Rep</targetReference>
+            </connector>
+            <label>Prior Support Rep Found</label>
+        </rules>
+        <rules>
+            <name>Current_Support_Rep_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Support_Rep__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Case_Owner_as_Current_Support_Rep</targetReference>
+            </connector>
+            <label>Current Support Rep Found</label>
+        </rules>
+    </decisions>
+    <description>Activate temporarily when Accounts are updated via Dataloader for the quarterly Account Tiering Process.
+When an Account record type is change from Accelerated to Agency, create a case assigned to the prior Support Rep (Support Rep is changed in the Dataloader update), to follow up with the customer and complete actions in Pro. Exclude Accounts that aren&apos;t in open status.
+
+S3P-821 - Created
+S3P-947 - Added Topic &quot;Account Tiering&quot;
+S3P-1024 - Added Case Origin &quot;Internal&quot;
+S3P-1145 - Saved as new flow. Updated Subject to &quot;Account Tier Change - AGP to Starter&quot;. Update start criteria to look for Account Type instead of Account Record Type change. Updated Case Description to mention the Do Not Send Automated Email field.</description>
+    <environments>Default</environments>
+    <interviewLabel>Account_TypeChange_AGPtoStarter_CreateCaseTierChange {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account_TypeChange_AGPtoStarter_CreateCaseTierChange</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create the new case for Account Tier Change that we have previously assigned all of the field values to</description>
+        <name>Create_New_Case_Account_Tier_Change</name>
+        <label>Create New Case - Account Tier Change</label>
+        <locationX>314</locationX>
+        <locationY>1247</locationY>
+        <faultConnector>
+            <targetReference>Assign_Failing_Component_Name</targetReference>
+        </faultConnector>
+        <inputReference>NewCase</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>get_Case_Record_Type</name>
+        <label>get Case Record Type</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Case_Details</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account_Management</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>get_Primary_Contact</name>
+        <label>get Primary Contact</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Primary_Contact_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Primary_Contact__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_Case_Record_Type</targetReference>
+        </connector>
+        <filterFormula>/*Runs when an Account is not Closed, and it is changed from the Accelerated to the Agency record type*/
+AND(
+        {!$Record.Account_Status__c}=&quot;open&quot;,
+        ISPICKVAL({!$Record__Prior.Type}, &quot;Accelerated-AGP&quot;),
+        ISPICKVAL({!$Record.Type}, &quot;Starter&quot;)
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Run_Fault_Path_Subflow</name>
+        <label>Run Fault Path Subflow</label>
+        <locationX>754</locationX>
+        <locationY>1463</locationY>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>FailingComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <description>Used to fill out the Description field on the new Account Tier Change case being created</description>
+        <name>CaseDescription</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>This case was created because the agent has been removed from AGP tier.
+
+When you close this case, an email will be sent to the Primary Contact on this Account to notify them of the change. If, for some reason, an email should not be sent upon closure, please check the &quot;Do not send automated email&quot; field before closing. 
+
+Before closing this case, PLEASE ADD DETAILS ABOUT THE TIER MOVEMENT in the Results field and make sure you COMPLETE THESE ADMINISTRATIVE ACTIONS IN PRO:
+- Remove Promos
+- Move Account Classification
+- Change Prices
+- Remove Services</text>
+    </textTemplates>
+    <variables>
+        <name>FailingComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

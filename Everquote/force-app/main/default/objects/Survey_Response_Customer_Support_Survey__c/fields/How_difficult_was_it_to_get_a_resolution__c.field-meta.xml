@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_difficult_was_it_to_get_a_resolution__c</fullName>
+    <label>How difficult was it to get a resolution</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Much easier than expected</fullName>
+                <default>false</default>
+                <label>Much easier than expected</label>
+            </value>
+            <value>
+                <fullName>Somewhat easier than expected</fullName>
+                <default>false</default>
+                <label>Somewhat easier than expected</label>
+            </value>
+            <value>
+                <fullName>As easy as expected</fullName>
+                <default>false</default>
+                <label>As easy as expected</label>
+            </value>
+            <value>
+                <fullName>Somewhat harder than expected</fullName>
+                <default>false</default>
+                <label>Somewhat harder than expected</label>
+            </value>
+            <value>
+                <fullName>Much harder than expected</fullName>
+                <default>false</default>
+                <label>Much harder than expected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

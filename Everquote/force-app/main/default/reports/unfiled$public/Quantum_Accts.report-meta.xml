@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Status__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.Support_Rep__c</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Treece Quantum Agency,Tom Cassidy Agency,Southeastern Insurance Group,Shoppers Insurance Agency,Raj Sekhawat,Quik Insurance Agency,Quatum Assurance,QUANTUM LEAP AGENCY,Platinum Elite Insurance,Mingnon Pender Quantum,Michael Massey Enterprises,Marco Gonzalez Quantum,Jenesis Insurance,Horizon Insurance Agency,Christina Bennett Agency,Chad Wall Quantum,Buna Mandell Agency (LCS),Brian Polakowski,Adam Dickson Agency</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Quantum Accts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Account_Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

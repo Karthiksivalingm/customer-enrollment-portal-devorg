@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To send to BDR&apos;s when an ISR adds a contact to their campaign</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Main View Contact</name>
+    <style>none</style>
+    <subject>A new contact has been added to your Main View by {!Contact.OwnerFullName}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

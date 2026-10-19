@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Activity$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Activity$TaskSubtype</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity$Owner.Department</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Success</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Activity$Owner</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Asc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>CSM Emails This Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activities_Assigned_Department_of_Owner__c</reportType>
+    <roleHierarchyFilter>ADMIN</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Activity$CompletedDateTime</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

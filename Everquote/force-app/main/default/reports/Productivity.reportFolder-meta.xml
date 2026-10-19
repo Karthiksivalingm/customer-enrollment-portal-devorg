@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>AllInternalUsers</sharedTo>
+        <sharedToType>Organization</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>chidirsah@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>dmiller@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>ADMIN</sharedTo>
+        <sharedToType>RoleAndSubordinatesInternal</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>Core_CSM</sharedTo>
+        <sharedToType>RoleAndSubordinatesInternal</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>VP_of_Sales</sharedTo>
+        <sharedToType>RoleAndSubordinatesInternal</sharedToType>
+    </folderShares>
+    <name>Productivity</name>
+</ReportFolder>

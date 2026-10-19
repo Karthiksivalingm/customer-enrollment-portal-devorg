@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Cases$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Topic__c</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Subject</field>
+    </columns>
+    <description>All Adonis pilot accounts with cases from 9/23 on</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$Choice_UUID__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>7453a66b-cb64-486d-a87e-517c93380155,90cb65af-61e9-4f7a-80c0-928187e2a821,fe29e06a-4a4f-4148-b0a1-c5c5c33cfdf9,197c34b7-ecda-4aa0-982c-9eef70473e27,2c2e885d-a696-4364-968c-7236f1b8e588,9c47f1ae-54c5-4cd5-abe0-77adf95fb5d2,0ccabf34-7585-4478-8c6c-bea37acbc2d2,62f40505-a10c-4e60-8e97-d3ce9face0b4,1ed7bad4-13e4-4637-ac03-4fff974e5b21,4a5496f1-bee7-4b5d-8e33-947c33a77f08,f4f70908-66cf-480d-89d1-eb20261793c5,9ec3fc7c-6142-4be4-92bd-1f86a8dfa3aa,f81c300d-0059-4aef-94d5-5c8dc4357f88,947b1cc6-5d85-4fe6-b7d6-158bcd498b5a,030e460c-f605-459d-8c89-b1d432a5bfda,cbdd1e24-4bba-4369-9dd3-cf35f915188d,e416ba67-26a9-44c3-9c2c-0913b5e92a38,36e5d4e6-e658-47fa-b240-27fe4db24b8e,d6066069-9275-4998-b771-7dc13f50a454,25d09ab5-9d4a-4ac0-85d8-5eb71a51fd1d,790b505a-e533-4d93-80f2-4c26e2e0bea6,9222db54-cdc7-4075-a9d7-1a04a06463c6,d93f8e6f-44f5-4a2d-9b6c-050b60af53ba,f2c55a48-8f35-471d-b07b-00e8ce39eb74,263d614e-4d3b-4536-a253-328576d1b210,3b655e56-e5f2-4cd9-bced-5</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Cases$Case_Open_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>9/23/2019</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Support_Rep__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Adonis Accounts with Cases</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_cases_NEW__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

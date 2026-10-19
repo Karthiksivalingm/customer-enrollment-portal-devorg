@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Life sales prospecting email #2 in cadence #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>life_prospecting_email_2</name>
+    <style>none</style>
+    <subject>email buried?</subject>
+    <textOnly>Hello {!Lead.FirstName},
+
+A few days ago, I reached out about how I help advisors find more life insurance clients. But, did you know EverQuote also helps advisors like you:
+
+Connect with referrals who are actually shopping for life insurance
+Spend your time talking only to qualified life prospects who match your risk filters
+Grow your referral network and your book faster and much more predictably
+
+If you&apos;re interested to learn more, ping me if you’re available at any of these times (EST):
+
+Wednesday 10 am or 1 pm
+Thursday 11 am or 3 pm
+Friday 10:30 am
+
+Regards,
+{!User.FirstName}
+
+{!User.Name}
+Account Executive
+(855) 543-3607
+EverQuote, Inc. | 210 Broadway | Cambridge, MA 02139
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+Don&apos;t want our emails? Unsubscribe at compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

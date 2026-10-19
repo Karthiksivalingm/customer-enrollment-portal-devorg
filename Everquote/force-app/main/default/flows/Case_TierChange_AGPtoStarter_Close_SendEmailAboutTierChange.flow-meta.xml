@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Send an email explaining that their Tier has changed from AGP.</description>
+        <name>Send_Email_Tier_Change</name>
+        <label>Send Email - Tier Change</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Contact.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>support@everquote.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Important Information Regarding Your EverQuote Account</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Dear {!$Record.Contact.FirstName},&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Thank you for being a valued EverQuote customer.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;This email is to inform you that your account volume and spend have not met the requirements of our Accelerated Growth Program (AGP) for the quarter. Your account will be transitioned out of the AGP program, and into our standard offering. As a result, you may notice an adjustment in your pricing, as the discounted rates previously received within the AGP program will no longer apply.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Your dedicated EverQuote Support Representative will be reaching out to you shortly to discuss these changes and address any questions you may have.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;We are always pleased to welcome clients back to the AGP program when their spending aligns with the program&apos;s requirements. If you wish to remain in AGP or would like to better understand the criteria for program participation, please contact &lt;span style=&quot;color: rgb(17, 85, 204);&quot;&gt;agp-sales@everquote.com&lt;/span&gt; for a consultation to optimize your account.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;For future support for your account, &lt;a href=&quot;mailto:support@everquote.com&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(17, 85, 204);&quot;&gt;support@everquote.com&lt;/a&gt; can help! We appreciate your business and look forward to continuing our partnership.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Sincerely,&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;The EverQuote Customer Success Team&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>addThreadingTokenToBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign the name of the flow component that caused the fault</description>
+        <name>Assign_Failing_Component</name>
+        <label>Assign Failing Component</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FaultComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>RTFL_Case_TierChange_OnCloseSendEmailAboutTierChange - Update Contact as Primary Contact</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SBFL_FaultPath_Flow_1</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check if the Contact on the Account is the Primary Contact, if it isn&apos;t then update the Contact record so that it is a Primary Contact</description>
+        <name>Check_if_Contact_is_Primary</name>
+        <label>Check if Contact is Primary</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Primary_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Primary</defaultConnectorLabel>
+        <rules>
+            <name>Primary_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contact.Primary_Contact__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_Contact_Have_Non_Bounced_Email</targetReference>
+            </connector>
+            <label>Primary Contact</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Were we able to find a Primary Contact in the related Contact&apos;s Account. If not, set this Contact as the Primary Contact.</description>
+        <name>Does_Account_have_Primary_Contact</name>
+        <label>Does Account have Primary Contact?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Contact_as_Primary_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Primary Contact</defaultConnectorLabel>
+        <rules>
+            <name>Primary_Contact_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Primary_Contact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_Contact_Have_Non_Bounced_Email</targetReference>
+            </connector>
+            <label>Primary Contact Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks if the Contact has an email address that has no bounce reason, sends email if it does.</description>
+        <name>Does_Contact_Have_Non_Bounced_Email</name>
+        <label>Does Contact Have Non Bounced Email?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No Email Address or Bounced</defaultConnectorLabel>
+        <rules>
+            <name>Contact_Has_Non_Bounced_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contact.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contact.EmailBouncedReason</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Tier_Change</targetReference>
+            </connector>
+            <label>Contact Has Non Bounced Email</label>
+        </rules>
+    </decisions>
+    <description>Used for the quarterly Account Tiering Process.
+When Case with the Project &quot;Account Tier Change&quot; and Subject &quot;Account Tier Change - AGP to Starter&quot; is changed to Closed, send an email to the Contact on the Case, notifying them that they have been removed from AGP Tier (except when &quot;Do not send send automated email&quot; is checked).
+
+S3P-821 - Created.
+S3P-1022 - Run only when a record is updated to meet the condition requirements.
+S3P-1095 - Fixed entry criteria that was checking that Contact is not null
+S3P-1143 - Saved as new flow. Updated entry criteria so that Subject must be &quot;Account Tier Change - AGP to Starter&quot;
+S3P-1146 - Added to start criteria, &quot;Do Not Send Automated Email&quot; is unchecked. Do not send email if Email Bound Reason is populated. Check if Account already has a Primary Contact before marking this Contact as the Primary.
+S3P-1178 - Added Log Email on Send.</description>
+    <environments>Default</environments>
+    <interviewLabel>Case_TierChange_AGPtoStarter_ {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case_TierChange_AGPtoStarter_Close_SendEmailAboutTierChange</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Get the Primary Contact for the Related Account</description>
+        <name>Get_Primary_Contact</name>
+        <label>Get Primary Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Account_have_Primary_Contact</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Contact.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Primary_Contact__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>The Contact related to the Case will be marked as Primary Contact</description>
+        <name>Update_Contact_as_Primary_Contact</name>
+        <label>Update Contact as Primary Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_Contact_Have_Non_Bounced_Email</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_Failing_Component</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Primary_Contact__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_if_Contact_is_Primary</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account Tier Change</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ContactId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Do_Not_Send_Automated_Email__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subject</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account Tier Change - AGP to Starter</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>SBFL_FaultPath_Flow_1</name>
+        <label>SBFL_FaultPath Flow 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>FaultComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>FaultComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

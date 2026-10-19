@@ -1,0 +1,21 @@
+<apex:component >
+    <apex:attribute name="noteList" type="Note[]" required="true"
+                    description="Note List"/>
+    
+    <apex:pageBlock title="Notes">
+        <apex:outputText rendered="{!noteList.size = 0}">
+            No records to display
+        </apex:outputText>
+        <apex:pageblocktable rendered="{!noteList.size > 0}"
+                             value="{!noteList}" var="a">
+            <apex:column value="{!a.CreatedDate}"/>
+            <apex:column headerValue="Title">
+                <apex:outputLink value="/{!a.Id}" target="_top">
+                    {!a.Title}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column value="{!a.OwnerId}"/>
+            <apex:column value="{!a.Body}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+</apex:component>

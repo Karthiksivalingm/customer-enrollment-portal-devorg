@@ -1,0 +1,19 @@
+<apex:component >
+    <apex:attribute name="familiarNames" type="WrapperContactTenure[]" required="true"
+                    description="Familiar Names"/>
+    <apex:attribute name="distance" type="Integer" required="true"
+                    description="Distance"/>
+    
+    <apex:pageBlock title="Familiar Names ({!distance} Radius)">
+        <apex:pageblocktable value="{!familiarNames}" var="a">
+            <apex:column headerValue="Account">
+                <apex:outputLink value="/{!a.Account.Id}" target="_top">
+                    {!a.Account.Name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column value="{!a.Account.Carrier__c}"/>
+            <apex:column headerValue="City" value="{!a.Account.BillingCity}"/>
+            <apex:column headerValue="Tenure" value="{!a.tenure}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+</apex:component>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>Opportunity$CloseDate</acrossGroupingContext>
+        <calculatedFormula>Opportunity.Amount:SUM - PREVGROUPVAL(Opportunity.Amount:SUM, Opportunity.CloseDate)</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>Opportunity$Campaign.Type</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Variance Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>Opportunity$CloseDate</acrossGroupingContext>
+        <calculatedFormula>IF (PREVGROUPVAL(Opportunity.Amount:SUM, Opportunity.CloseDate) &lt;&gt; 0,
+(Opportunity.Amount:SUM - PREVGROUPVAL(Opportunity.Amount:SUM, Opportunity.CloseDate)) / PREVGROUPVAL(Opportunity.Amount:SUM, Opportunity.CloseDate), Null)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Opportunity$Campaign.Type</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Variance %</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Amount</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Accelerated,Opportunity.Agency,Opportunity.Accelerated_AGP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Campaign.Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Seminar / Conference,Partners,Referral Program,Field Event,Organic eBook,Organic Webinar,Inbound</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Year</dateGranularity>
+        <field>Opportunity$CloseDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Close_Date_Qtr__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Campaign.Type</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>timing tied to create date</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Opps_with_Primary_Campaign_Type__c</reportType>
+    <roleHierarchyFilter>ADMIN</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2021-01-01</startDate>
+    </timeFrameFilter>
+</Report>

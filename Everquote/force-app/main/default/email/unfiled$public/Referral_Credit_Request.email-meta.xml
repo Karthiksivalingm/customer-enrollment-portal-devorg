@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>processed when someone requests a referral credit</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Referral Credit Request</name>
+    <style>none</style>
+    <subject>New Referral Credit Request from {!Lead.OwnerFirstName}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

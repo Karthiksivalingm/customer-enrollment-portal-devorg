@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conversation_Outcome__c</fullName>
+    <label>Conversation Outcome</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Interested</fullName>
+                <default>false</default>
+                <label>Interested</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>No Show</fullName>
+                <default>false</default>
+                <label>No Show</label>
+            </value>
+            <value>
+                <fullName>No Connect</fullName>
+                <default>false</default>
+                <label>No Connect</label>
+            </value>
+            <value>
+                <fullName>Meeting scheduled</fullName>
+                <default>false</default>
+                <label>Meeting scheduled</label>
+            </value>
+            <value>
+                <fullName>Issue resolved</fullName>
+                <default>false</default>
+                <label>Issue resolved</label>
+            </value>
+            <value>
+                <fullName>Spoke to DM - Follow up needed</fullName>
+                <default>false</default>
+                <label>Spoke to DM - Follow up needed</label>
+            </value>
+            <value>
+                <fullName>Optimized acccount</fullName>
+                <default>false</default>
+                <label>Optimized acccount</label>
+            </value>
+            <value>
+                <fullName>BDR Warm Transfer</fullName>
+                <default>false</default>
+                <label>BDR Warm Transfer</label>
+            </value>
+            <value>
+                <fullName>Re-visit</fullName>
+                <default>false</default>
+                <label>Re-visit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

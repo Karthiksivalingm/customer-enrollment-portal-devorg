@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Email to send after a live message is left with a State Farm gatekeeper.  Ensure Gatekeeper&apos;s name is entered under secretary&apos;s name.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1. Prospecting: Left Live Message with State Farm Gatekeeper</name>
+    <style>none</style>
+    <subject>I spoke with {!Lead.Secretary_s_Name__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

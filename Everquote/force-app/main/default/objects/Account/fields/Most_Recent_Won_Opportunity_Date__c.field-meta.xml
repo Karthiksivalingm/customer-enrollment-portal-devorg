@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent_Won_Opportunity_Date__c</fullName>
+    <description>The date of the account&apos;s most recent Closed Won opportunity (excluding upsells). 
+
+Used in formula field, Most Recent Win Date which displays this date but only if Pro Account Cancelled Date isn&apos;t more recent.</description>
+    <label>Most Recent Won Opportunity Date</label>
+    <summarizedField>Opportunity.CloseDate</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Type</field>
+        <operation>notEqual</operation>
+        <value>Upsell</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.RecordTypeId</field>
+        <operation>notEqual</operation>
+        <value>CS Upsell</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Closed Won</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

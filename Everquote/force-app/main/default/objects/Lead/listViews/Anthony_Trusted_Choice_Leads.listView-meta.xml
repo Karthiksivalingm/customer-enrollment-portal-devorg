@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Anthony_Trusted_Choice_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD_SCORE</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Affiliation__c</field>
+        <operation>equals</operation>
+        <value>Trusted Choice</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER.ALIAS</field>
+        <operation>equals</operation>
+        <value>njone</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>alawr</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Lost,Unqualified,Do Not Call,Closed,No Longer There,Bad Data,Not Interested</value>
+    </filters>
+    <label>Anthony -  Trusted Choice Leads</label>
+</ListView>

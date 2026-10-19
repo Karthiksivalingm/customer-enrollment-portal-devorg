@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_lead_source_on_closed_opp</fullName>
+    <active>true</active>
+    <description>cannot change the lead source of a closed opportunity</description>
+    <errorConditionFormula>RecordTypeId = &quot;0121a000000EqqS&quot;
+&amp;&amp;
+IsClosed = TRUE
+&amp;&amp;
+ischanged( LeadSource )
+&amp;&amp;
+ $User.ProfileId &lt;&gt; &quot;00e1a000000lWln&quot;</errorConditionFormula>
+    <errorMessage>Cannot change the lead source of a closed opportunity. Please contact system administrator.</errorMessage>
+</ValidationRule>

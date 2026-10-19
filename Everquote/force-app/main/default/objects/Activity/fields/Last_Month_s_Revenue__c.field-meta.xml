@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Month_s_Revenue__c</fullName>
+    <description>Snapped value for historical purposes.   Create when a CS record type activity is created</description>
+    <label>Last Month&apos;s Revenue</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Currency</type>
+</CustomField>

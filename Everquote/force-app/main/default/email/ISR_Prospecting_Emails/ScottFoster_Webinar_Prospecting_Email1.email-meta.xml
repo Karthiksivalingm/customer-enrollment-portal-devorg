@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Scott Foster Webinar (3/31/20) Email #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ScottFoster_Webinar_Prospecting_Email1</name>
+    <style>none</style>
+    <subject>Register Now [Free Webinar]: &quot;Making Working Remotely REALLY Work&quot; with Ann M. Cohan of The Marvis Center (hosted by Chandler Hahn)</subject>
+    <textOnly>Hi {!Lead.FirstName},
+Join insurance Sales Coach, President and Founder of The Marvis Center Ann M. Cohan on Monday, March 30, 2020 @ 1:00 PM Eastern for a webinar on &quot;Making Working Remotely REALLY Work.&quot; Ann’s coaching has helped countless agents be more successful (she has worked exclusively with the insurance industry since 2008). Her presentation will cover:
+
+- How to keep your “game face on” and stay focused
+- How to keep connected to others in the office so you don’t lose the dynamics of TEAM
+- How Agents can “inspect what’s expected” without smothering the team members
+- How to stay motivated and committed day in and day out
+- How to keep production consistent, and so much more...
+
+Ann’s presentation will also feature a team member who she’s been coaching for a number of years who has been successfully working remotely from home as a sales producer since she started with her Agent.
+
+This is a “can’t miss” presentation specifically geared towards helping your agencies make working remotely really work! You can sign-up for the free webinar directly through our link here!
+
+Best,
+
+Chris
+
+Chris Nashed
+Director, Inside Sales
+sales@everquote.com
+
+© 2020 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2020 www.everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

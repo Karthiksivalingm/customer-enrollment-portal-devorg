@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enterprise_Open_Opportunities</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <columns>Incremental_Monthly_Budget__c</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>0121a000000Eqg3</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.PROBABILITY</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.PROBABILITY</field>
+        <operation>notEqual</operation>
+        <value>100</value>
+    </filters>
+    <label>Enterprise Open Opportunities</label>
+    <sharedTo>
+        <group>Enterprise</group>
+    </sharedTo>
+</ListView>

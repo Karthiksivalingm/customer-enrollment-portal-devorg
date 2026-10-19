@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>RECORDTYPE</acrossGroupingContext>
+        <calculatedFormula>RowCount/PARENTGROUPVAL(RowCount, OWNER, COLUMN_GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>OWNER</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% of column</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <filter>
+        <criteriaItems>
+            <column>OWNER_ROLE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>customer support rep</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>RECORDTYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Case Type Distribution</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Case.Initial_Solve_Date__c</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

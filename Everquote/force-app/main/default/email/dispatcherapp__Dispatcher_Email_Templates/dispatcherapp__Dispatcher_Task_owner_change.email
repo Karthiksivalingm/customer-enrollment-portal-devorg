@@ -1,0 +1,8 @@
+<messaging:emailTemplate subject="Dispatcher Notification - Task record has been assigned to you" recipientType="User" relatedToType="dispatcherapp__Dispatcher_Log__c">
+<messaging:plainTextEmailBody >
+The following Task has been assigned to you through Dispatcher. 
+
+Task Link:  https://login.salesforce.com/{!relatedTo.dispatcherapp__Task__c}
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

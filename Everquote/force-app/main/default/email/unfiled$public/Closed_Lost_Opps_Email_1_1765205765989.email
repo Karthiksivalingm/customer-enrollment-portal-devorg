@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Hi {{{Recipient.FirstName}}},</p>
+
+<p>I’m reaching out because you spoke with our team previously, and I wanted to see if now might be a good time to pick that conversation back up.</p>
+
+<p>A lot of agents are reviewing their plans for 2026 and looking to start the year strong.</p>
+
+<p>If you’re considering updated lead options or focused on growth this year, I’d be happy to help reconnect you with the right person on our team.</p>
+
+<p>Just let me know what works best for you. Even a quick reply to this email is perfect.</p>
+
+<p>Thank you,<br />
+&nbsp;</p>
+
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.FirstName}}}</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.Phone}}}</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Sender.Salesforce_Meeting_Link__c}}}</span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; margin-top:16px; margin-bottom:16px">&nbsp;</p>
+</body>
+</html>

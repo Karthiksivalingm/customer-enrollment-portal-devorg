@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023_Q3_State_Farm_Prim_Licensed_State</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>Licensed_States__c</columns>
+    <columns>Primary_State__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <label>2023-Q3 State Farm Prim &amp; Licensed State</label>
+    <sharedTo>
+        <group>Sales_Strategy_and_Ops</group>
+        <group>State_Farm_BDR</group>
+        <group>State_Farm_Team</group>
+    </sharedTo>
+</ListView>

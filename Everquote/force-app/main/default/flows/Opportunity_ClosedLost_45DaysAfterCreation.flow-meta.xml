@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Do not close the opportunity if the owner is Matthew Meisenbacher</description>
+        <name>Is_Owner_Matthew_Ricker</name>
+        <label>Is Owner Matthew Ricker</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Close_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Owner_is_Matthew_Ricker</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner.FirstName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Matthew</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.LastName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ricker</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Owner is Matthew Ricker</label>
+        </rules>
+    </decisions>
+    <description>Close an opportunity 45 days after it was created if it was not already closed. If an opportunity is re-opened, close again if not closed after 45 days. Exclude opportunities owned by Matthew Ricker.
+S3P-919</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>The current value in &quot;Next Step&quot; plus &quot;This opportunity was set to Closed Lost after being open for 45 days without closure&quot;.</description>
+        <name>NextStep</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Record.NextStep} + BR() + TEXT(Today()) + &quot;: This opportunity was set to Closed Lost after being open for 45 days without closure&quot;,255)</expression>
+    </formulas>
+    <interviewLabel>Opportunity_Close45DaysAfterOpen {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity_ClosedLost_45DaysAfterCreation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Close the opportunity 45 days after it was opened it it has not been closed. If an opportunity is changed from closed to open, wait 45 days and close the opportunity.</description>
+        <name>Close_Opportunity</name>
+        <label>Close Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Lost_Reason__c</field>
+            <value>
+                <stringValue>Automatic Closure</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>NextStep</field>
+            <value>
+                <elementReference>NextStep</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>X45_Days_After_Creation</name>
+            <connector>
+                <targetReference>Is_Owner_Matthew_Ricker</targetReference>
+            </connector>
+            <label>45 Days After Creation/Reopen</label>
+            <offsetNumber>45</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

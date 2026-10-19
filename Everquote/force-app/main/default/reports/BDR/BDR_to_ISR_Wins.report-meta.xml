@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>CALLDURATION:SUM/60</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Talk Time</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_76320666</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>ASSIGNED</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Daniel Mitchell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mark LeDuc</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Stephen Hannigan</sourceValue>
+            </sourceValues>
+            <value>Allstate</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Steve Winrow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Fitzgerald</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rasheed Parham</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mikayla Demanche</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michelle Fuca</sourceValue>
+            </sourceValues>
+            <value>State Farm</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Anthony Lawrence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Hargrave</sourceValue>
+            </sourceValues>
+            <value>IA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>James Kelley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tim Sharpe</sourceValue>
+            </sourceValues>
+            <value>Farmers</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Pat Urban</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alex Terrenzi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeff Kelly</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Meisenbacher</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brianna Damato</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kashyap Kondapalli</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Ricker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sean Hurley</sourceValue>
+            </sourceValues>
+            <value>AGP</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_BY</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>PRIORITY</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>TASK</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT</field>
+    </columns>
+    <columns>
+        <field>CONTACT</field>
+    </columns>
+    <columns>
+        <field>LEAD</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>CALLDURATION</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>BDR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_BY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Delfeld</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_76320666</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ASSIGNED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BDR to ISR Wins</name>
+    <params>
+        <name>closed</name>
+        <value>closed</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>t</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <roleHierarchyFilter>CRO</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

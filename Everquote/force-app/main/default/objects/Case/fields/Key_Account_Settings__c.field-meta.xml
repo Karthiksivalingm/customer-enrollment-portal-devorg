@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Account_Settings__c</fullName>
+    <label>Key Account Settings</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Key_Account_Support__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adjust Hours</fullName>
+                <default>false</default>
+                <label>Adjust Hours</label>
+            </value>
+            <value>
+                <fullName>Adjust lead Types</fullName>
+                <default>false</default>
+                <label>Adjust lead Types</label>
+            </value>
+            <value>
+                <fullName>Adjust Cap</fullName>
+                <default>false</default>
+                <label>Adjust Cap</label>
+            </value>
+            <value>
+                <fullName>Adjust Zips</fullName>
+                <default>false</default>
+                <label>Adjust Zips</label>
+            </value>
+            <value>
+                <fullName>Lead Volume</fullName>
+                <default>false</default>
+                <label>Lead Volume</label>
+            </value>
+            <value>
+                <fullName>Throttle</fullName>
+                <default>false</default>
+                <label>Throttle</label>
+            </value>
+            <value>
+                <fullName>Adjust Users</fullName>
+                <default>false</default>
+                <label>Adjust Users</label>
+            </value>
+            <value>
+                <fullName>Start</fullName>
+                <default>false</default>
+                <label>Start</label>
+            </value>
+            <value>
+                <fullName>Pause</fullName>
+                <default>false</default>
+                <label>Pause</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Adjust Hours</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Adjust lead Types</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Adjust Cap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Adjust Zips</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Lead Volume</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Throttle</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

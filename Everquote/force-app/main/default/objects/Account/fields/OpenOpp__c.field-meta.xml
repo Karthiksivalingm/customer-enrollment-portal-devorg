@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OpenOpp__c</fullName>
+    <description>number of open agency opportunities</description>
+    <label>OpenOpp</label>
+    <summaryFilterItems>
+        <field>Opportunity.IsClosed</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Agency,Accelerated-AGP</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

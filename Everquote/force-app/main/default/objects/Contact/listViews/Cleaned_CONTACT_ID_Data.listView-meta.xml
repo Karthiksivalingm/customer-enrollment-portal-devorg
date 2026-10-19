@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cleaned_CONTACT_ID_Data</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Cadence_Filter_Bulk__c</field>
+        <operation>equals</operation>
+        <value>071725 S3P-687</value>
+    </filters>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>GA,NY,PA,WA,IL,TX,CA,TN,UT,VA,OR,IN,OH,KS,MO,NC,MA,LA,SC,KY,WV,DE,MS,HI,NH,RI,AK,VT</value>
+    </filters>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CONTACT.PHONE1</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Last_Activity_Date__c</field>
+        <operation>lessThan</operation>
+        <value>7/1/2025</value>
+    </filters>
+    <filters>
+        <field>Primary_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>S3P-687</label>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_Category_Read_Only__c</fullName>
+    <description>Duplicates the value of &quot;Forecast Category&quot; in a read only format, so that the field can be displayed on the opportunity page without being edited.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(ForecastCategoryName)</formula>
+    <label>Forecast Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Customer_Success</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>Customer Success</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Customer_Success_Mgr</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Account,Agency,Accelerated,Partner,Advertiser</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Enterprise</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>Enterprise</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Enterprise</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Account,Agency,Accelerated,Partner,Advertiser</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sales</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>Sales</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>VP_of_Sales</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Account,Agency,Accelerated,Partner,Advertiser</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Finance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>Finance</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Finance</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

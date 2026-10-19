@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Time_off_Request_Denied</fullName>
+        <description>Time off Request Denied</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Time_Off_Denied</template>
+    </alerts>
+    <alerts>
+        <fullName>Time_off_Request_approved</fullName>
+        <description>Time off Request approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Time_Off_Approved</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <field>Rejected__c</field>
+        <literalValue>1</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Time_Off_Approved</fullName>
+        <field>Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Time Off Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

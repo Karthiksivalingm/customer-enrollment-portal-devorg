@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Life sales prospecting email #1 in cadence #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>life_prospecting_email_1</name>
+    <style>none</style>
+    <subject>finding new clients isn’t easy...</subject>
+    <textOnly>Hello {!Lead.FirstName},
+
+I’m with EverQuote, and I’m reaching out because many advisors face some (if not all) of these challenges:
+
+Finding new qualified life insurance clients is difficult
+You’re not growing your book as quickly as you wanted
+You’re not bringing in new business as consistently as you wanted
+But you don’t have the time to cold call 100 prospects everyday
+You’re spending money on marketing and not seeing a return
+
+Do any of those challenges sound familiar? If so, I’d love to talk with you about how I can help. I’ll give you a call tomorrow afternoon or, if you’re interested, we can schedule a quick 15-minute call to further discuss your unique business needs.
+
+Sincerely,
+{!User.FirstName}
+
+
+{!User.Name}
+Account Executive
+(855) 543-3607
+EverQuote, Inc. | 210 Broadway | Cambridge, MA 02139
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe at compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

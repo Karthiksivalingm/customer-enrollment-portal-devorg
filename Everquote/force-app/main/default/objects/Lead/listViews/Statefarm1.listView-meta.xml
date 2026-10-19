@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Statefarm1</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>Campaign__c</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>Call_Count__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>LEAD.EMAIL</field>
+        <operation>contains</operation>
+        <value>statefarm</value>
+    </filters>
+    <filters>
+        <field>LEAD.LAST_ACTIVITY</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Statefarm Inbounds</label>
+    <queue>Inbound_Queue</queue>
+    <sharedTo>
+        <group>Allstate_Team</group>
+        <group>IA_and_Growth_Team</group>
+    </sharedTo>
+</ListView>

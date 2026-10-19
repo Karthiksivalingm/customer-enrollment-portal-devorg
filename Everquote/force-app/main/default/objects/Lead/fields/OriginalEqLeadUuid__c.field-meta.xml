@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OriginalEqLeadUuid__c</fullName>
+    <description>The original eq_lead_uuid of the lead.  Only present for referrals.</description>
+    <externalId>true</externalId>
+    <label>OriginalEqLeadUuid</label>
+    <length>36</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

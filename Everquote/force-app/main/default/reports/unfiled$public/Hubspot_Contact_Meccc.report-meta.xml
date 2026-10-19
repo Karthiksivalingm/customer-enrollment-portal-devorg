@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$Owner.UserRole.Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$CompletedDateTime</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$CreatedBy.UserRole.Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$Subject</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 3 AND 2</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$Campaign</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>HubSpot Home Page Contact Form,HubSpot Contact Me Form MQLs</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityContactRoles.ActivityRelations$ActivityDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>12/9/2021 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityContactRoles.ActivityRelations$Owner.UserRole.Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sales,Dev,BDR,ISR,Rep</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Hubspot Contact Me Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>opps_with_contact_roles_with_or_without_activities__c</reportType>
+    <roleHierarchyFilter>ADMIN</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CURRENTQ</interval>
+    </timeFrameFilter>
+</Report>

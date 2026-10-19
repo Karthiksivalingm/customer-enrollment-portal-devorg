@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Engagement</label>
+    <permissionSets>Sales_Engagement_User_EverQuote</permissionSets>
+    <permissionSets>force__AutomatedActionsUser</permissionSets>
+    <permissionSets>force__CallCoachingIncluded</permissionSets>
+    <permissionSets>force__EinsteinActivityCaptureIncluded</permissionSets>
+    <permissionSets>force__EinsteinGPTSalesEmails</permissionSets>
+    <permissionSets>force__HighVelocitySalesUserIncluded</permissionSets>
+    <permissionSets>force__SalesCloudEinsteinIncluded</permissionSets>
+    <permissionSets>force__SalesCloudUnlimitedIncluded</permissionSets>
+    <permissionSets>force__SalesEngagementBasicUser</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

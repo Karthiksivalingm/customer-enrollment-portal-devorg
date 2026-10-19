@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Najiah_to_Work1</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.LAST_ACTIVITY</field>
+        <operation>lessOrEqual</operation>
+        <value>8/13/2023</value>
+    </filters>
+    <label>Najiah to Work</label>
+    <sharedTo>
+        <group>Allstate_Team</group>
+    </sharedTo>
+</ListView>

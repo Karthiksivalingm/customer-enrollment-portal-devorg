@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_67788907</developerName>
+        <masterLabel>Teams</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ROLLUP_DESCRIPTION</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Business Development Manager</sourceValue>
+            </sourceValues>
+            <value>Jon&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 2</sourceValue>
+            </sourceValues>
+            <value>Chris&apos; Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 3</sourceValue>
+            </sourceValues>
+            <value>Zach&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 5</sourceValue>
+            </sourceValues>
+            <value>Dennis&apos; Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Customer Support Rep</sourceValue>
+            </sourceValues>
+            <value>Customer Support</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 4</sourceValue>
+            </sourceValues>
+            <value>Caleb&apos;s Team</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Agency</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Office_Location__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Woburn,Cambridge</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ROLLUP_DESCRIPTION</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>sales,business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>PRODUCT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>EQ Pro - Auto Leads</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_67788907</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ROLLUP_DESCRIPTION</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Enrollments by Team - Today (A)</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>CONTACT_OWNER</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CONTACT_OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Stephen Hannigan,Sean Hurley,Erika Carleton,Mark LeDuc</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Campaign__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>2018-Q3 Lone Star Sprint #5 BDR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Contact_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Sales Available</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Carrier__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Independent Agent</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Lone Star Sales Sprint #5 - Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

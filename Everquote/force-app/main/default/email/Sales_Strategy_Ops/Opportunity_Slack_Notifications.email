@@ -1,0 +1,25 @@
+Carrier: {!Opportunity.AccountCarrier__c}
+Billing State: {!Opportunity.Account_Billing_State__c}
+Opportunity: {!Opportunity.Link}
+
+Sales Process
+Current State: {!Opportunity.Current_State__c}
+
+Negative Consequences: {!Opportunity.Negative_Consequences__c}
+
+Future State: {!Opportunity.Future_State__c}
+
+Positive Outcomes: {!Opportunity.Positive_Outcomes__c}
+
+
+Agency Info
+LMS: {!Opportunity.LMS__c}
+Rater: {!Opportunity.Rater__c}
+Years as an Agent: {!Opportunity.Years_as_an_Agent__c}
+Track Metrics: {!Opportunity.Track_Metrics__c}
+# Selling Producers: {!Opportunity.Selling_Producers__c}
+Business Strategy: {!Opportunity.Business_Strategy__c}
+Has Defined Sales Process: {!Opportunity.Has_Defined_Sales_Process__c}
+Buys Weekend Leads: {!Opportunity.Buys_weekend_leads__c}
+Target Monthly Policies: {!Opportunity.Target_Monthly_Policies__c}
+Total Leads Purchased Monthly: {!Opportunity.Total_leads_purchased_monthly__c}

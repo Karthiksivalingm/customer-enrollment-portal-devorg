@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>VoiceCall$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>VoiceCall$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Farrell,Prickett,Wright,Berkiel,Hooker,House,Kent,Newton,Sami,Vizza,Badolato,Collins,DeFrain,Hidirsah,Olsen,Pucciarelli,Sharp,Singley,Woolf,Zak,Ariale,Mertes,Ramsay,Skerry</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>VoiceCall$CallResolution</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>VoiceCall$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Phone Call Disposition Success/Fail Rate</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Voice_call__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>VoiceCall$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

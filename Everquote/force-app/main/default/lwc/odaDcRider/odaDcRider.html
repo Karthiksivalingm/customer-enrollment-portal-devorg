@@ -1,0 +1,68 @@
+<template>
+  <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+    <div class="slds-col slds-size_1-of-1">
+      <div class="slds-text-heading_small"><b>Dependent Children</b></div>
+      <br />
+    </div>
+
+    <div class="slds-col slds-size_1-of-4">
+      <lightning-combobox
+        label="Number of Children"
+        name="numberOfChildren"
+        placeholder="Choose one..."
+        onchange={onNumberOfChildrenChange}
+        options={numberOfChildrenOptions}
+        value={noOfChildren}
+        required
+        disabled={isDropdownDisabled}
+      ></lightning-combobox>
+    </div>
+
+    <div class="slds-col slds-size_1-of-4">
+      <lightning-combobox
+        label="Choose Benefit Amount"
+        name="benefitAmount"
+        placeholder="Choose one..."
+        onchange={onBenefitAmountChange}
+        options={benefitAmountOptions}
+        value={benefitAmount}
+        required
+        disabled={isDropdownDisabled}
+      ></lightning-combobox>
+    </div>
+
+    <div class="slds-col slds-size_1-of-6 slds-align-bottom">
+      <button
+        class="slds-button slds-button_brand slds-button_stretch"
+        disabled={isCalculateDisabled}
+        onclick={onCalculateRates}
+      >
+        Calculate
+      </button>
+    </div>
+
+    <div class="slds-col slds-size_1-of-5">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="additional-premium">Additional Premium</label>
+        <div class="slds-form-element__control">
+          <input
+            type="text"
+            id="additional-premium"
+            value={additionalPremiumText}
+            disabled
+            class="slds-input"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-10">
+      <c-oda-toggle
+        label={addPolicyToggleLabel}
+        checked={checked}
+        is-disabled={addToPolicyDisabled}
+        ontogglechange={handlePolicySelected}
+      ></c-oda-toggle>
+    </div>
+  </div>
+</template>

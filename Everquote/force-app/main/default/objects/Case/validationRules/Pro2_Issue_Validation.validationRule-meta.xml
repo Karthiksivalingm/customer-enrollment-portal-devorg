@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pro2_Issue_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+    AND(
+         RecordType.DeveloperName = &apos;Pro2_Issue&apos;,
+        ISPICKVAL( Status , &quot;Closed&quot;),
+        OR(
+            ISPICKVAL(Case_Results__c, &quot;&quot;),
+            ISPICKVAL(Issue_Type__c, &quot;&quot;),
+            ISBLANK(Issue_Description__c),
+            ISPICKVAL(Able_to_Replicate_Issue__c, &quot;&quot;),
+            ISPICKVAL(Pro2_Issue_Carrier__c, &quot;&quot;)
+        )
+    ),
+    true,
+    false
+)</errorConditionFormula>
+    <errorMessage>Required field are missing. (case results,
+Issue Type,
+Able to Replicate Issue?,
+Issue Description
+,Carrier)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_status_is_contacted_carrier_required</fullName>
+    <active>true</active>
+    <description>If the lead is contacted then the carrier information is required.</description>
+    <errorConditionFormula>AND(
+    IsConverted = true
+    ,
+    ISBLANK(Carrier__c)
+)</errorConditionFormula>
+    <errorMessage>Carrier and affiliation information is required.</errorMessage>
+</ValidationRule>

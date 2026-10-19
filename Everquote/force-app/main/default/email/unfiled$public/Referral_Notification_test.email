@@ -1,0 +1,7 @@
+A new referral has been created - please review and assign:
+
+Referring Agent: {!Lead.Referring_Agent_Name__c}
+Name: {!Lead.FirstName} {!Lead.LastName}
+Company: {!Lead.Company}
+Email: {!Lead.Email}
+Link: {!Lead.Link}

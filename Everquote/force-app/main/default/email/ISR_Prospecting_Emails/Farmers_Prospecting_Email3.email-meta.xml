@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Farmers Cold Prospecting Email #3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Farmers_Prospecting_Email3</name>
+    <style>none</style>
+    <subject>more multi-line policies?</subject>
+    <textOnly>Hello {!Lead.FirstName},
+
+I know you are getting called on by a lot of lead providers and because of the importance of multi-lining to many Farmer’s agents success, the low quality of most internet leads means not just low bind rates, but dismal multi-line rates.
+
+EverQuote however is not your standard lead vendor. We’re able to filter for leads that meet Farmers’s underwriting requirements so we ultimately connect you with a much higher quality prospect.
+
+I would love to show you how EverQuote can help you bind more policies. We now have a dedicated Farmers team and already have had a ton of success helping Farmers agents crush their targets.
+
+How soon can we jump on a call?
+
+Chat Soon,
+{!User.FirstName}
+
+{!User.Name}
+Farmers Account Specialist
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe at compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

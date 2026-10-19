@@ -1,0 +1,19 @@
+Hi,
+
+{!Account.Name} has just pushed from pro. If this account belongs to you, please make the following edits to this record: https://na24.salesforce.com/{!Account.Id}
+
+1. Change the Account Owner to yourself.
+2. Make sure the Type is Key IF the account is a true Key account.
+3. If applicable, fill in the Support Rep.
+4. If applicable, change the "Parent Account" on the edit page to a Master account.
+   a. Then send an email to salesops@everquote.com with the master id add-ons 
+        or changes.
+5. Create an Opportunity for the account.
+   a. Instructions for opportunities can be found here: 
+   https://myquote.atlassian.net/wiki/spaces/KA/pages/130351160/SalesForce.com
+
+Thank you for keeping Salesforce up-to-date!
+
+Sincerely,
+
+Salesops

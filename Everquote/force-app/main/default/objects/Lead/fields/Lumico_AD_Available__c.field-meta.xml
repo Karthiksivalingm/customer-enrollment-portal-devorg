@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lumico_AD_Available__c</fullName>
+    <description>Check if Lumico AD is available for current lead</description>
+    <formula>NOT(CONTAINS(&quot;CA,CO,DC,ME,MD,MA,MN,NJ,NY,NC,MS&quot;, State_Upper__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lumico AD Available</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

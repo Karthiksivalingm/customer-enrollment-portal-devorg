@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RegCallCadence__c</fullName>
+    <formula>IF( NOT(ISBLANK( Next_Due_Date__c )), Next_Due_Date__c ,(CASE( Call_Count__c, 1, (Last_Call_Time__c +1), 2, (Last_Call_Time__c +2), 3, (Last_Call_Time__c +1), 4, (Last_Call_Time__c +4), 5, (Last_Call_Time__c +2), 
+6, (Last_Call_Time__c +3), 
+7, (Last_Call_Time__c +4),
+8, (Last_Call_Time__c +2),
+9, (Last_Call_Time__c +3),
+10, (Last_Call_Time__c +4),
+11, (Last_Call_Time__c +2),
+12, (Last_Call_Time__c +3),
+13, (Last_Call_Time__c +4),
+14, (Last_Call_Time__c +2),
+15, (Last_Call_Time__c +3),
+16, (Last_Call_Time__c +4),
+17, (Last_Call_Time__c +2), 
+18, (Last_Call_Time__c +3), 
+19, (Last_Call_Time__c +1), 
+null)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RegCallCadence</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>test</name>
+    <style>none</style>
+    <subject>test</subject>
+    <textOnly>Hi John,
+
+
+
+To follow up on our conversation earlier, below is the set of best practices that we’ve seen for our leads.
+
+This particular study is considering calls only, but it is incredibly important to utilize all methods of communication (phone, text message, email) to reach customers.
+
+
+
+Internet Lead Best Practices - Speed to call
+
+Speed-to-call is the single largest driver of lead conversion.
+
+Responding within the first 2 minutes after the lead has been received is critical.
+
+Responding to leads within 1-minute results in a 391% improvement over average close rates.
+
+Calling within the first 30 minutes increases conversion rates by an average of 62%.
+
+Calling within 1 hour improves conversion by an average of 36%.
+
+
+
+Response Cadence
+
+Contacting inquiries too slowly, too frequently, or not frequently enough, all result in poor lead conversion rates
+
+Calling 3 times during the first day, once on day 3, again on day 4, and a 6th and final time on day 11 or 12, is the optimal call attempt strategy.
+
+
+
+Contact Attempt Cadence
+
+Day 1:
+
+0-5min - 1st Attempt (if no answer hang up and call back immediately after)
+
+1hr-2hrs - 2nd Attempt 
+
+2hrs-4hrs - 3rd Attempt 
+
+
+
+Day 3:
+
+24 hr period - 4th Attempt
+
+
+
+Day 4:
+
+24 hr period - 5th Attempt 
+
+
+
+Day 11 or 12:
+
+48 hr period - 6th Attempt (93% contact rate)
+
+
+
+Suggested talk track (email, text, phone):
+
+
+
+&apos;Hello, (customer&apos;s name) I have a quote ready for your (make, model, year) I just need to verify your date of birth to ensure I give you the most accurate quote.&apos;
+
+ 
+
+Most common objections: 
+
+
+
+&apos;I did not request a quote&apos; 
+
+
+
+&apos;Not a problem at all, I already have a quote ready for you. Just to verify is your date of birth ______?&apos;
+
+
+
+&apos;I&apos;ve been called too many times&apos;
+
+
+
+&apos;I completely understand your frustration! I definitely don&apos;t want to take too much of your time, I can make this as quick as possible because I already have all of your information. I just need to verify your DOB/license number just so I can ensure the quote I am sending you is accurate. 
+
+
+
+&apos;Stop calling me, I wanted to do this online&apos;
+
+
+
+&apos;Not a problem at all we can definitely communicate online! While I have you on the phone I just need to verify your date of birth to ensure that I send you the most accurate quote possible.&apos; (build rapport, ideally, we want to keep them on the line to quote)
+
+
+
+&apos;I&apos;m not free to talk at this moment&apos; 
+
+
+
+&apos;Not a problem. Would it be more convenient if I sent you a text message?&apos; (if yes, verify the date of birth before they hang up. If no, ask to quickly verify their birthdate so you can ensure you are sending them the most accurate quote.)
+
+
+
+Should you have any additional questions please feel free to reach out via email or at 844-707-8800 and dial 1 for support.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynamic_Pricing__c</fullName>
+    <businessOwnerUser>salesforce-data-cycle-prod@everquote.com.unitedtech</businessOwnerUser>
+    <businessStatus>Active</businessStatus>
+    <defaultValue>false</defaultValue>
+    <description>Updated Daily by Analytics Simple Loader based on Pro settings.
+Dynamic Pricing is adjusting the cost of a lead based on a shopper&apos;s predicted intent to buy. Dynamic Pricing was first introduced on 5/5/2026 as a Pilot only available to State Farm and Farmers agents in the States of MN or AZ. With intent to extend to all Agents in the future.
+
+S3P-1282 - Created.</description>
+    <inlineHelpText>Agency has opted-in to Dynamic Pricing (Populated daily by Analytics based on Pro settings).</inlineHelpText>
+    <label>Dynamic Pricing</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

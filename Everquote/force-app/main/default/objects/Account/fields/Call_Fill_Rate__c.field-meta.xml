@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Fill_Rate__c</fullName>
+    <description>Percent of Agent&apos;s call demand that Everquote was able to meet over last 2 weeks
+Imported by SimpleLoader (Analytics Tool) daily.
+Should only be edited by Salesforce Data Cycle user (Admin Profile)
+S3P-834</description>
+    <inlineHelpText>Percent of agent&apos;s call demand that EverQuote was able to fill over the last 2 weeks. Updated daily by Analytics.</inlineHelpText>
+    <label>Call Fill Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

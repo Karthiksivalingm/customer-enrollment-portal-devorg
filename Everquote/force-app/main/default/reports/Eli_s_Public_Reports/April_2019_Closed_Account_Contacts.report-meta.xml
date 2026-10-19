@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>April 2019 Closed Account Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Pro_Account_Cancelled_Date__c</dateColumn>
+        <endDate>2019-04-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-04-01</startDate>
+    </timeFrameFilter>
+</Report>

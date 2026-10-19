@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer_Success__c.Core_Onboarding</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Customer_Success__c.Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Customer_Success__c.Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Account.Support_Rep__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Customer_Success__c.Onboarding_Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Closed Won Lost Core Onboardings</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Customer_Success__c@Customer_Success__c.Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Customer_Success__c.X2nd_Check_in_date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

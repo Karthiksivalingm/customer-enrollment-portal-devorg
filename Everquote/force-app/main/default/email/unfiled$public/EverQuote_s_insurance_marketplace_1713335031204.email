@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.3800000000000001; background-color:#ffffff; margin-top:13px; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}},</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Just wanted to reach out to see if you were able to look over my previous email. Everquote offers options for agents looking to grow their book of business in the auto, home, and life verticals. We offer options such as internet leads, live transfers, and even telemarketing services.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">I would love to find some time to chat to look over your options with Everquote and see if we would be the right fit to help your agency grow in 2024.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Please feel free to reach out or schedule time on my </span></span></span></span></span></span><a href="{{{Sender.Salesforce_Meeting_Link__c}}}">calendar</a> <span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">. In the meantime please take a look at our resource page </span></span></span></span></span></span><a href="https://learn.everquote.com/">HERE</a> <span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none"> as well for helpful tips and success stories from real agents who partner with us. Looking forward to talking soon!</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; margin-bottom:13px"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best Regards,</span></span></span></span></span></span><br />
+{{{Sender.Name}}}</p>
+</body>
+</html>

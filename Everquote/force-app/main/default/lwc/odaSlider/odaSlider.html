@@ -1,0 +1,22 @@
+<template>
+  <div class="slds-form-element">
+    <div class="slds-form-element__control">
+      <div class="slds-slider custom-range-slider">
+        <span class="slds-slider__value" aria-hidden="true">{minValueText}</span>
+        <input
+          type="range"
+          id="slider-id-01"
+          class="slds-slider__range"
+          min={minValue}
+          max={maxValue}
+          step={step}
+          name="custom-range-slider"
+          value={value}
+          disabled={isDisabled}
+          oninput={onValueChange}
+        />
+        <span class="slds-slider__value" aria-hidden="true">{maxValueText}</span>
+      </div>
+    </div>
+  </div>
+</template>

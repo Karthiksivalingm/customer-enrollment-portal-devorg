@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi {{{Recipient.FirstName}}}&nbsp;<br />
+&nbsp;<br />
+We have some new programs and promotions, and I simply wanted to see if you'd be interested.<br />
+&nbsp;<br />
+Feel free to reach out to me at {{{Sender.Phone}}} or schedule some time on my calendar here: {{{Sender.Salesforce_Meeting_Link__c}}}<br />
+<br />
+Best,<br />
+{{{Sender.FirstName}}}</body>
+</html>

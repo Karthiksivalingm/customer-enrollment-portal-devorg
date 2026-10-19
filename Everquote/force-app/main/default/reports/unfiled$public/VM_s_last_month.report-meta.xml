@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>OPEN</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 8)</booleanFilter>
+        <criteriaItems>
+            <column>CREATED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Gene Suzuki,Ned Prickett</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_UPDATE_BY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Ned,Karina,Kari,Thomas Ariale,Customer Support,Tofani,Melinda,Giulio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0121a000000RNWZ,Case.NPS_Detractor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>SQL check alert for Pro lead deliver failed daily report</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Accelerated-AGP,Accelerated,Core,Core IO</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Raena,Jabari,Amy,Brian,Mike,Alex,Alexander,Leah,Joanna,Randi,Christian,Greg,Emily,Brianna,Megan,Decker,O&apos;Connell,Shane,Jeremy,Ali,Arielle,Henry,Todd,Gattuso,Marie,Eric,Morgan,Elias,Katelynn,Saba</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>New Voicemail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DESCRIPTION</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Call Type :</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>VM&apos;s last month</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

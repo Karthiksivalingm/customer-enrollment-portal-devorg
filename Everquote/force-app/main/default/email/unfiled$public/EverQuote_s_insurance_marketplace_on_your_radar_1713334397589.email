@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.3800000000000001; background-color:#ffffff; margin-top:13px; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Recipient.FirstName}}},</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hoping to keep EverQuote’s insurance marketplace on your radar.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">With conventional lead vendors you buy leads and then “spray and pray.” But prospecting low intent, low converting leads is a time consuming grind.&nbsp;</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">With EverQuote’s insurance marketplace, we connect you with real insurance shoppers who are looking for quotes in real time. That’s why carrier testing shows a 34% higher conversion rate with EverQuote vs. traditional lead vendors.</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Take a look at how partnering with EverQuote helped one of our clients substantially increase his bind rate and </span></span></span></span></span></span><a href="https://vimeo.com/458297316">see some transformational results.</a> <span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">.&nbsp;</span></span></span></span></span></span></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt"><span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Quick chat? Schedule a call with me&nbsp; </span></span></span></span></span></span><a href="{{{Sender.Salesforce_Meeting_Link__c}}} ">here</a></p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; padding:0pt 0pt 10pt 0pt">&nbsp;</p>
+
+<p style="line-height:1.3800000000000001; background-color:#ffffff; margin-bottom:13px"><br />
+<span style="font-size:11pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial,sans-serif"><span style="color:#222222"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Best regards,</span></span></span></span></span></span></p>
+{{{Sender.Name}}}<br />
+&nbsp;</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email 2 Closed/Lost Opps</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Closed/Lost Opps Email 2</name>
+    <style>none</style>
+    <subject>Resources and a quick reconnect</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>dfsle__EnvelopeStatus__c.dfsle__Status__c</field>
+    </columns>
+    <columns>
+        <field>dfsle__EnvelopeStatus__c.dfsle__DocuSignId__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>FK_$Opportunity.Insertion_Order_Attached__c</field>
+    </columns>
+    <columns>
+        <field>dfsle__EnvelopeStatus__c.dfsle__Sent__c</field>
+    </columns>
+    <columns>
+        <field>dfsle__EnvelopeStatus__c.dfsle__Completed__c</field>
+    </columns>
+    <description>IOs completed yesterday or today that may not have been writtenback to the Salesforce opportunity or been checked with Insertion Order Attached. Need to be manually uploaded. Subscribed daily at 9am, so completions from day prior can be manually uploaded.</description>
+    <filter>
+        <criteriaItems>
+            <column>dfsle__EnvelopeStatus__c.dfsle__Sent__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>9/25/2025 4:30 PM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>dfsle__EnvelopeStatus__c.dfsle__Completed__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>YESTERDAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Opportunity.Insertion_Order_Attached__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>IO Issues</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$dfsle__EnvelopeStatus__c@dfsle__EnvelopeStatus__c.dfsle__Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>dfsle__EnvelopeStatus__c.dfsle__Completed__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CaseEmail_Template_Alert</fullName>
+        <description>CaseEmail Template Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Support_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CaseEmail_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>New_IO_Ready_for_CSM</fullName>
+        <description>New IO Ready for CSM Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>madamo@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Onboarding_Emails/New_IO_Ready_for_CSM</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>AGP_to_Yes</fullName>
+        <field>AGP__c</field>
+        <literalValue>1</literalValue>
+        <name>AGP to Yes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Record_Type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Partner</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Account Record Type to partner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Type_Partner</fullName>
+        <description>update account type to partner</description>
+        <field>Type</field>
+        <literalValue>Partner</literalValue>
+        <name>Account Type - Partner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Type_to_Locked</fullName>
+        <description>update account type to locked.</description>
+        <field>Type</field>
+        <literalValue>Locked Account</literalValue>
+        <name>Change Type to Locked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Type_to_Starter</fullName>
+        <description>Change Account Type to &quot;Starter&quot;</description>
+        <field>Type</field>
+        <literalValue>Starter</literalValue>
+        <name>Change Type to Starter</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Is_Customer_Field_Update</fullName>
+        <field>Is_Customer__c</field>
+        <literalValue>1</literalValue>
+        <name>Is Customer Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Last_Monthly_Review</fullName>
+        <field>Next_To_Last_Monthly_Review__c</field>
+        <formula>PRIORVALUE( Last_Monthly_Review__c )</formula>
+        <name>Last Monthly Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lifecycle_Onboard</fullName>
+        <field>LifeCycle_Stage__c</field>
+        <literalValue>Onboard</literalValue>
+        <name>Lifecycle Onboard</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>MasterID_Update</fullName>
+        <field>Master__c</field>
+        <formula>Parent.Name</formula>
+        <name>MasterID Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>NumProducersUpdateTime</fullName>
+        <field>ProducersUpdateTime__c</field>
+        <formula>NOW()</formula>
+        <name>NumProducersUpdateTime</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OfficesUpdateTIme</fullName>
+        <field>OfficesUpdateTime__c</field>
+        <formula>NOW()</formula>
+        <name>OfficesUpdateTIme</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prior_to_Last_Monthly_Review_Date</fullName>
+        <field>Prior_to_Last_Monthly_Review_Date__c</field>
+        <formula>TEXT( PRIORVALUE(  Last_Monthly_Review_Completed_Date_del__c  ) )</formula>
+        <name>Prior to Last Monthly Review Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Saturday_Cap_Change</fullName>
+        <field>Saturday_Cap_Changed__c</field>
+        <formula>NOW()</formula>
+        <name>Saturday Cap Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sunday_Cap_Changed</fullName>
+        <field>Sunday_Cap_Changed__c</field>
+        <formula>NOW()</formula>
+        <name>Sunday Cap Changed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Type_update_Prospect</fullName>
+        <field>Type</field>
+        <literalValue>Prospect</literalValue>
+        <name>Type update - Prospect</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_FPD</fullName>
+        <description>If the first payment date is blank, update the first payment date with the folio opt-in date on the account record.</description>
+        <field>First_Payment_Date__c</field>
+        <formula>Auto_Folio_Opt_in_Date__c</formula>
+        <name>Update FPD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Weekday_Cap_Changed</fullName>
+        <field>Weekday_Cap_changed__c</field>
+        <formula>NOW()</formula>
+        <name>Weekday Cap Changed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Years_IN_business_update</fullName>
+        <field>YearsinBusinessUpdateTime__c</field>
+        <formula>NOW()</formula>
+        <name>Years IN business update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account_BillingCity_Field_Changed</fullName>
+        <active>true</active>
+        <description>Purge the MapAnything Lat/Long fields on the Account if this field changes; created by the Metadata API</description>
+        <formula>ISCHANGED(BillingCity)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account_BillingCountry_Field_Changed</fullName>
+        <active>true</active>
+        <description>Purge the MapAnything Lat/Long fields on the Account if this field changes; created by the Metadata API</description>
+        <formula>ISCHANGED(BillingCountry)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account_BillingPostalCode_Field_Changed</fullName>
+        <active>true</active>
+        <description>Purge the MapAnything Lat/Long fields on the Account if this field changes; created by the Metadata API</description>
+        <formula>ISCHANGED(BillingPostalCode)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account_BillingState_Field_Changed</fullName>
+        <active>true</active>
+        <description>Purge the MapAnything Lat/Long fields on the Account if this field changes; created by the Metadata API</description>
+        <formula>ISCHANGED(BillingState)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account_BillingStreet_Field_Changed</fullName>
+        <active>true</active>
+        <description>Purge the MapAnything Lat/Long fields on the Account if this field changes; created by the Metadata API</description>
+        <formula>ISCHANGED(BillingStreet)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FPD Folio Update</fullName>
+        <actions>
+            <name>Update_FPD</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISBLANK(First_Payment_Date__c) &amp;&amp;  NOT(ISBLANK(Auto_Folio_Opt_in_Date__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Update-Num Producers Update</fullName>
+        <actions>
+            <name>NumProducersUpdateTime</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED (  producer_count__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Update-Offices Update Time</fullName>
+        <actions>
+            <name>OfficesUpdateTIme</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED (    office_count__c   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Update-YRs in business</fullName>
+        <actions>
+            <name>Years_IN_business_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED (     Years_in_Business__c    )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Flip Acct Record Type to partner</fullName>
+        <actions>
+            <name>Account_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.RecordType_Conversion__c</field>
+            <operation>equals</operation>
+            <value>0121a000000RLk9</value>
+        </criteriaItems>
+        <description>change account record type to partner if lead record type is partner</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fraudulent Account</fullName>
+        <active>true</active>
+        <description>email alert when lacount agency updates, known to be a fraudulent account</description>
+        <formula>OR(
+Phone = &quot;(202) 288-2807&quot;,
+Phone = &quot;(301) 445-8990&quot;,
+Phone = &quot;(301) 434-2807&quot;,
+Phone = &quot;(301) 285-8552&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>IsCustomer field update</fullName>
+        <actions>
+            <name>Is_Customer_Field_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Choice_UUID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Last Monthly Review Date Changes</fullName>
+        <actions>
+            <name>Prior_to_Last_Monthly_Review_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(  Last_Monthly_Review_Completed_Date_del__c  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Last Monthly Review update</fullName>
+        <actions>
+            <name>Last_Monthly_Review</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>AGP reporting</description>
+        <formula>ISCHANGED(Last_Monthly_Review__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>MasterID Update</fullName>
+        <actions>
+            <name>MasterID_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update master id when master parent is added to agency account</description>
+        <formula>NOT(ISBLANK( ParentId )) 
+&amp;&amp;
+  Parent.RecordTypeId  = &quot;0121a000000RM9w&quot;
+&amp;&amp;
+ RecordTypeId = &quot;0121a000000EqqQ&quot;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Open Customer%2C Change Account Type %28New%29</fullName>
+        <actions>
+            <name>Change_Type_to_Starter</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Account_Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Prospect,Closed Account</value>
+        </criteriaItems>
+        <description>When status changes to open, update customer to Starter account.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Saturday Cap Changed</fullName>
+        <actions>
+            <name>Saturday_Cap_Change</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(   saturday_cap__c   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sunday Cap Changed</fullName>
+        <actions>
+            <name>Sunday_Cap_Changed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Sunday_Cap__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Type update - Locked Account</fullName>
+        <actions>
+            <name>Change_Type_to_Locked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Account_Status__c</field>
+            <operation>equals</operation>
+            <value>Locked</value>
+        </criteriaItems>
+        <description>Update Account type to locked account when status changes to Locked</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Type update - Partner</fullName>
+        <actions>
+            <name>Account_Type_Partner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </criteriaItems>
+        <description>Update the account type to partner when the account record type is partner</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Type update to prospect</fullName>
+        <actions>
+            <name>Type_update_Prospect</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Choice_UUID__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Weekday Cap Changed</fullName>
+        <actions>
+            <name>Weekday_Cap_Changed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(   weekday_cap__c    )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

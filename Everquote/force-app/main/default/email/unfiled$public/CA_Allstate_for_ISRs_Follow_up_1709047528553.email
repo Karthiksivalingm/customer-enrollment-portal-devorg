@@ -1,0 +1,11 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi&nbsp;{{{Recipient.FirstName}}},<br />
+<br />
+I just wanted to follow up with you after my last email. As auto has opened back up in California EverQuote is offering discounted pricing that we will lock in through the end of 2024 for the first 100 against to sign up. I would be happy to discuss your options for both our leads and live transfers when you have the time. Feel free to book some time on my calendar <a href="{{{Sender.Calendar_Link__c}}}">here</a> or reach out with a time that would work best to chat. Looking forward to hearing from you.<br />
+<br />
+Best,<br />
+{{{Sender.Name}}}&nbsp;</body>
+</html>

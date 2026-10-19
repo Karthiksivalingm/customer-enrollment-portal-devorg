@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+    <p>Hi {!Contact.FirstName},</p>
+    
+    <p>I’m reaching out because we recently moved your EverQuote account to our new upgraded Pro 2.0 platform, and we noticed you have not yet completed your account setup.</p>
+
+    <p>If you do not complete your account set up within a week of your migration date, your
+invite will expire and you will need to contact our support team to gain access to your
+account.</p>
+
+    <p>I’ve added directions below. I am happy to walk you through this process, and you can reach me at {!User.Email} or {!User.Phone}. You can also call our support team at (844) 707-8800 Opt. 1 for immediate assistance.</p>
+
+    <h3>Directions to set up your account:</h3>
+<div style="border: 2px solid black; background-color:#86b9cf;">
+    <p>Setting up your new account is easy - here’s what you need to do:</p>
+    <ul>
+        <li>Check your Inbox for an email with the subject - “Connect your EverQuote Account to Okta [Action Required]” (check your SPAM folder if it’s not in your Inbox).</li>
+        <li>In the email, click the "Activate Okta account" button and you will be prompted to set up a password.</li>
+</div>
+    </ul>
+
+    <p>We’ve put together some helpful resources that cover how to create your new account login and FAQ on the Pro 2.0 upgrade. You can view them here:</p>
+
+    <ul>
+        <li><a href="https://2287971.fs1.hubspotusercontent-na1.net/hubfs/2287971/Pro%202.0%20FAQs%20for%20Agents.pdf" target="_blank" style="color: #0073e6;">FAQ LINK</a></li>
+        <li><a href="https://vimeo.com/1002930918/db36cd2a32" target="_blank" style="color: #0073e6;">HOW TO LOGIN VIDEO</a></li>
+    </ul>
+
+    <p>Thank you!</p>
+</body>
+</html>

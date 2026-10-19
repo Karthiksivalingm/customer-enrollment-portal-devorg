@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>email_template_1</letterhead>
+    <name>LCS Farmers Cohort Activation</name>
+    <style>freeForm</style>
+    <subject>Lead Connection Service (LCS) - your account is now LIVE!</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Effective immediately, your EverQuote Pro account is now activated for the Lead Connection Service!
+
+I’m happy to officially welcome you to the EverQuote Lead Connection Service (LCS). From this point forward, newly purchased leads will be sent simultaneously to your Pro account (and any other destinations specified in your Pro account - e.g., an LMS) and to our experienced Call Centers. We will work your leads for the first 7 days after you purchase them and will transfer them directly to your agency when we get a consumer on the phone.
+
+
+As a reminder:
+* To avoid duplication of outreach efforts, please refrain from making any contact attempts on new leads for the first 7 days
+* You will see zip code adjustments in your campaign to include the full state (with the exception of exclusion zips); no changes will be made to your daily cap and pricing
+* The LCS pilot will run for at least 60 days; we will be in touch at a later date with more information about the official end date for the pilot
+* For a refresher on details about LCS, please reference the:
+  - Lead Connection Service application form: go.everquote.com/lcspilot
+  - Pre-signup webinar presentation recording: https://vimeo.com/420839428/ea5d23afe9?utm_campaign=LCS%20Pilot&amp;utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-8TNssx4aSmjSk7IxXRcR88Twko0DC55ZWnMdj1gDxnR1apjdxBxt97Qm1KOFupaDV5TvVT
+
+If you have any questions or concerns, please contact our Support team at support@everquote.com or 844-707-8800 (option 1).
+
+Thank you for being a great partner of EverQuote. We appreciate your business.
+
+
+Best,
+
+Billy Hubbard
+VP of Strategic Accounts</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>jessica.martinez@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>molsen@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>nprickett@everquote.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>Jessie Martinez Dashboard</name>
+</DashboardFolder>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>When an Opportunity is changed to Closed Won, block closure and show user an error message if the Opportunity&apos;s related Account has no Primary Contact.</description>
+    <masterLabel>Validate Primary Contact Before Close</masterLabel>
+</FlowDefinition>

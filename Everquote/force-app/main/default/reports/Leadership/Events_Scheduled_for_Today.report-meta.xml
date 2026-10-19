@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_STATUS</field>
+    </columns>
+    <columns>
+        <field>START_DATE_TIME</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <description>Events scheduled for today and their status by ISR</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LEAD_OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Events Scheduled for Today</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>e</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadActivity</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

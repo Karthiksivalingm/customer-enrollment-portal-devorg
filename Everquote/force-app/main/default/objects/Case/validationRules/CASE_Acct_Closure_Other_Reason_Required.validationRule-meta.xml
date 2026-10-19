@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CASE_Acct_Closure_Other_Reason_Required</fullName>
+    <active>false</active>
+    <description>other reason used to describe why an account closed due to Low Quality - &quot;Unable to Bind&quot;, &quot;Low Quote Rate&quot; or Lead Return Process Reason</description>
+    <errorConditionFormula>ISBLANK(  Other_Reason_Account_Closures__c )
+&amp;&amp;
+OR(
+ISPICKVAL( Client_Feedback__c , &quot;Other&quot;) ,
+ISPICKVAL( Unable_to_Bind__c , &quot;Other&quot;),
+ISPICKVAL(  Unable_to_Quote__c , &quot;Other&quot;),
+ISPICKVAL( Issue_with_Return_Process__c , &quot;Other&quot;)
+)
+&amp;&amp;
+Datevalue(CreatedDate) &gt; DATE(2017,04,01)</errorConditionFormula>
+    <errorMessage>Other Reason Required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Dear&nbsp;{{{Recipient.FirstName}}},<br />
+<br />
+We hope this email finds you well. We wanted to reach out to you because we noticed that you haven't purchased any leads from EverQuote recently.&nbsp;</p>
+
+<p>At <a href="https://resources.everquote.com/">EverQuote </a> we understand that finding new business can be challenging, which is why we offer a variety of high-quality lead types to help you grow your insurance business.&nbsp; We are continuously working to improve our lead generation and delivery process, which includes regular quality checks, to ensure that our leads meet the highest standards.<br />
+<br />
+We understand that there may be many options available to you in the market,&nbsp;but we want you to know that carrier testing shows a <em>34% higher conversion rate</em> with EverQuote vs. traditional lead vendors.</p>
+
+<p>We appreciate your past business with EverQuote and hope to have the opportunity to work with you again.&nbsp; Feel free to schedule a meeting to learn more -&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}.<br />
+<br />
+Best regards,<br />
+{{{Sender.FirstName}}}</p>
+</body>
+</html>

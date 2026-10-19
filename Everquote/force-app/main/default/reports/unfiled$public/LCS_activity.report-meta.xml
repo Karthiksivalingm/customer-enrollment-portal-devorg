@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$Owner</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$Subject</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>LCS Pilot Application Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityContactRoles.ActivityRelations$Subject</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>lead connection,lcs</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityContactRoles.ActivityRelations$Description</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>lead connection,lcs</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>LCS activity</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>opps_with_contact_roles_and_activities__c</reportType>
+    <roleHierarchyFilter>ADMIN</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Opportunity.OpportunityContactRoles.ActivityRelations$ActivityDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.OpportunityContactRoles.ActivityRelations$ActivityDate</dateColumn>
+        <endDate>2020-03-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2020-02-26</startDate>
+    </timeFrameFilter>
+</Report>

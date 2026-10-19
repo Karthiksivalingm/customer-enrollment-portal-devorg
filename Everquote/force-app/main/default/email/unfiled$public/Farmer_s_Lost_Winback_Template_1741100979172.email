@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Dear&nbsp;{{{Recipient.FirstName}}},</p>
+
+<p>At <a href="https://resources.everquote.com/">EverQuote </a> we are continuously working to streamline our lead generation and delivery process, which previously included a price increase due to expected 1:1 Consent Laws.<br />
+<br />
+Now that 1:1 will not be a requirement, we are able to get our valued agents back to previous pricing for leads and calls.</p>
+
+<p>We appreciate your past business with EverQuote and hope to have the opportunity to work with you again.&nbsp; Feel free to schedule a meeting to learn more -&nbsp;{{{Sender.Salesforce_Meeting_Link__c}}}.<br />
+<br />
+Best regards,<br />
+{{{Sender.FirstName}}}</p>
+</body>
+</html>

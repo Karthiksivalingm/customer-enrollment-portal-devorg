@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>If Opportunity Support Rep is set or changed, update Account Support Rep to match.
+If Account is in hierarchy update Account Support Rep for entire hierarchy. (S3P-1067)</description>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity_SupportRep_UpdateAccountSupportRep {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity_SupportRep_UpdateAccountSupportRep</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Update the top account in the account hierarchy&apos;s Support Rep to match the Opportunity&apos;s Support Rep. (The rest of the Accounts in the tree will be updated by another flow).</description>
+        <name>Change_Account_Support_Rep_on_Top_Account</name>
+        <label>Change Account Support Rep on Top Account</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account.Top_Parent_Account_Id__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Support_Rep__c</field>
+            <value>
+                <elementReference>$Record.Support_Rep__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Change_Account_Support_Rep_on_Top_Account</targetReference>
+        </connector>
+        <filterFormula>/* If the Opportunity has a related Account and the Opportunity Support Rep is not blank, and the Opportunity is new, the Support Rep is changed or the related Account is changed, run flow...*/
+
+AND(
+    NOT(ISBLANK({!$Record.AccountId})),
+    NOT(ISBLANK({!$Record.Support_Rep__c})),
+    OR(
+        ISNEW(),
+        ISCHANGED({!$Record.Support_Rep__c}),
+        ISCHANGED({!$Record.AccountId})
+    )
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

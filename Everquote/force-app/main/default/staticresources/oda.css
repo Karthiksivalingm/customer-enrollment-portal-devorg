@@ -1,0 +1,102 @@
+lightning-combobox > label {
+  font-size: 0.85rem !important;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
+}
+
+.animate-flicker {
+  -webkit-animation: flickerAnimation 1s infinite !important;
+  -moz-animation: flickerAnimation 1s infinite !important;
+  -o-animation: flickerAnimation 1s infinite !important;
+  animation: flickerAnimation 1s infinite !important;
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

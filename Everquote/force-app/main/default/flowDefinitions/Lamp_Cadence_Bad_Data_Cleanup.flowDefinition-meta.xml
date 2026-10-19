@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>9</activeVersionNumber>
+    <description>Runs daily at 12:50pm.
+If a Candence Tracker has a Target and the Disposition is &quot;Bad Data&quot;, delete the target (Lead or Contact) and remove the target from related Cases.</description>
+    <masterLabel>Data Cleanup - Cadence Bad Data Dispositions</masterLabel>
+</FlowDefinition>

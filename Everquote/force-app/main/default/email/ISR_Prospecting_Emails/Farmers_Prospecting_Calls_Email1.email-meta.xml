@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Farmers Cold Prospecting Email for Calls #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Farmers_Prospecting_Calls_Email1</name>
+    <style>none</style>
+    <subject>warm transfers + high bind rate</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Convert 20-40% and see your items per bind increase with inbound calls...call us today to learn more.
+
+Here’s how it works:
+
+- Customers complete a 42-question form on our website - all the information you need to quote a policy
+- We call them within 60 seconds of completing the form
+- Our call concierge qualifies the customer interest and transfers the call only if the customer confirms they want to speak with you
+- Only pay for customers who spend over two minutes on the phone with you
+- You’ll receive qualified customers who are seeking new insurance right now
+- We’ll also post all the data into your lead management system, so you can skip the preliminary questions and focus on selling the right policy.
+
+With EverQuote Live Transfers, you’ll get the same quality EverQuote leads:
+
+- 100% Direct Sourced Customers. Never recycled, never aggregated
+- Real Time ONLY – we never sell aged leads
+- No contracts, no minimum spend
+- Only get the customers you want, when you want them. Set your hours, zip codes and risk profile
+
+Are you available for a quick call in the next few days?
+
+Chat Soon,
+{!User.FirstName}
+
+{!User.Name}
+Farmers Account Specialist
+{!User.Phone}
+{!User.Email}
+
+© 2018 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2018 www.everquote.com
+Don&apos;t want our emails? Unsubscribe at compliance@everquote.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notes_from_Last_Opp__c</fullName>
+    <description>Notes from the last opportunity</description>
+    <inlineHelpText>Notes from the last opportunity</inlineHelpText>
+    <label>Notes from Last Opp</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

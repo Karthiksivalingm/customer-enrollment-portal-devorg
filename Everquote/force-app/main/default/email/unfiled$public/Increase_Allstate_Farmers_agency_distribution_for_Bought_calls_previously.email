@@ -1,0 +1,24 @@
+<html>
+            <body style="font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td style="padding: 20px;">
+                            <p>Hi {!Contact.FirstName},</p>
+
+                            <p>I hope you’re doing well! I wanted to reach out because we’ve recently made some fantastic updates to our calls product that I think you’ll be excited about.</p>
+
+                            <p>Given your previous experience with it, I believe these enhancements could significantly improve your results and overall satisfaction. I’d love to discuss how these updates can better meet your needs and support your goals.</p>
+
+                            <p>Can we schedule a time to chat? You can easily pick a time that works for you using my scheduling link here: <a href="{!User.Salesforce_Meeting_Link__c}" style="color: #2E86C1; text-decoration: none;">Schedule a Meeting</a>.</p>
+
+                            <p>Looking forward to reconnecting!</p>
+
+                            <p>Best regards,</p>
+                            <p>{!User.FirstName} {!User.LastName}<br/>
+                            {!User.Title}<br/>
+                            {!User.Phone}</p>
+                        </td>
+                    </tr>
+                </table>
+            </body>
+        </html>

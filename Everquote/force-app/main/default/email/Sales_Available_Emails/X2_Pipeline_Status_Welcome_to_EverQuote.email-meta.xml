@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Purpose:  Personal Touch, Welcome to EQ, Handoff to Account Management, Set Expectations Timing:  Sent after the call wraps (Think of writing this when your song is playing on Hoopla)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2. Pipeline Status: Welcome to EverQuote</name>
+    <style>none</style>
+    <subject>{!Lead.FirstName}, Welcome to EverQuote!</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead.ProLeadSourceEvents__r$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Lead.ProLeadSourceEvents__r$Name</field>
+    </columns>
+    <columns>
+        <field>Lead.ProLeadSourceEvents__r$EventType__c</field>
+    </columns>
+    <columns>
+        <field>Lead.ProLeadSourceEvents__r$Old_Email__c</field>
+    </columns>
+    <columns>
+        <field>Lead.ProLeadSourceEvents__r$New_Email__c</field>
+    </columns>
+    <columns>
+        <field>Lead.ProLeadSourceEvents__r$Old_Phone__c</field>
+    </columns>
+    <columns>
+        <field>Lead.ProLeadSourceEvents__r$New_Phone__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Update_Picklist__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pro Overwrite</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pro Overwrite</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ProLeadSourceEvents_with_Lead_and_Converted_Lead__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead$Assigned_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leads_with_scores_w_farmers</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Carrier__c</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>Last_Activity_Date__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD_SCORE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Working,Duplicate,Do Not Call,Won,Closed,Assigned</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>farmers</value>
+    </filters>
+    <filters>
+        <field>ACTION_CADENCE</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>LEAD.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>1/1/2024</value>
+    </filters>
+    <filters>
+        <field>LEAD_SCORE</field>
+        <operation>greaterThan</operation>
+        <value>80</value>
+    </filters>
+    <filters>
+        <field>LEAD.CONVERTED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Leads with scores w/ farmers</label>
+</ListView>

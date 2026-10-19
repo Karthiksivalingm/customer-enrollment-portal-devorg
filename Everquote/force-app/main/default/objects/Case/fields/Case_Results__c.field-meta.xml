@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Results__c</fullName>
+    <label>Case Results</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Save</fullName>
+                <default>false</default>
+                <label>Save</label>
+            </value>
+            <value>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <label>Lost</label>
+            </value>
+            <value>
+                <fullName>Won</fullName>
+                <default>false</default>
+                <label>Won</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Completed Review</fullName>
+                <default>false</default>
+                <label>Completed Review</label>
+            </value>
+            <value>
+                <fullName>CSM Rescheduled</fullName>
+                <default>false</default>
+                <label>CSM Rescheduled</label>
+            </value>
+            <value>
+                <fullName>Agent/Producer Rescheduled</fullName>
+                <default>false</default>
+                <label>Agent/Producer Rescheduled</label>
+            </value>
+            <value>
+                <fullName>Agent Producer No Show</fullName>
+                <default>false</default>
+                <label>Agent Producer No Show</label>
+            </value>
+            <value>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+                <label>Escalated</label>
+            </value>
+            <value>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+                <label>Resolved</label>
+            </value>
+            <value>
+                <fullName>Non-Pro2 Issue</fullName>
+                <default>false</default>
+                <label>Non-Pro2 Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

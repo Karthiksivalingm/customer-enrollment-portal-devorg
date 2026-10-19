@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_Farm_ISR_owned_not_worked</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>BDR_Main_View__c</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Working__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Duplicate,Do Not Call,Waitlist,No Longer There</value>
+    </filters>
+    <filters>
+        <field>LEAD.EMAIL_OPT_OUT</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>activity_in_last_30_days__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>BDR_Main_View__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.Default</value>
+    </filters>
+    <label>State Farm ISR owned not worked</label>
+    <sharedTo>
+        <group>State_Farm_BDR</group>
+    </sharedTo>
+</ListView>

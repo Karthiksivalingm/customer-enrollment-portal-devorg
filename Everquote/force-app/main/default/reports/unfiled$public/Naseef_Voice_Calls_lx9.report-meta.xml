@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User.VoiceCalls$Name</field>
+    </columns>
+    <columns>
+        <field>User.VoiceCalls$FromPhoneNumber</field>
+    </columns>
+    <columns>
+        <field>User.VoiceCalls$ToPhoneNumber</field>
+    </columns>
+    <columns>
+        <field>User.VoiceCalls$CallEndDateTime</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Naseef Sami</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.VoiceCalls$CallEndDateTime</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>3/17/2025 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Naseef Voice Calls</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Voice_Calls_with_or_without_Coaching_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>User.VoiceCalls.FeedItems$LastModifiedDate</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

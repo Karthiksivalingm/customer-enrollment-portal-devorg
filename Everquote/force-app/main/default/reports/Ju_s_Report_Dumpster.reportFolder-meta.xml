@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>ADMIN</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>AGP_BC</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>Core_CSM</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <name>Ju&apos;s Report Dumpster</name>
+</ReportFolder>

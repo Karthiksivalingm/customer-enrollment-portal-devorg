@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Last_Month_s_Revenue__c</field>
+    </columns>
+    <columns>
+        <field>Account.Revenue_2_Months_Ago__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Support_Rep__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sarmiento,Olsen,Carlin,Alvarado,Connell,Darby,Sicard,Decker,Selby,Davis-Allan,DeFrain,Victoria Arias,ramsay,skerry</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Core,Core IO</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Support_Rep__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Carrier__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Book Sizes for Assignments</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

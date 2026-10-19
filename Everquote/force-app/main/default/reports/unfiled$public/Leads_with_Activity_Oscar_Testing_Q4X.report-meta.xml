@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Not Interested</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$CreatedDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>1/1/2023 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Leads with Activity Oscar Testing</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_or_without_activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead$LastModifiedDate</dateColumn>
+        <endDate>2023-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-01-01</startDate>
+    </timeFrameFilter>
+</Report>

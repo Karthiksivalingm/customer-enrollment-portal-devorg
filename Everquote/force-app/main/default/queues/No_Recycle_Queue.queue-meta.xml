@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>No Recycle Queue</name>
+    <queueMembers>
+        <users>
+            <user>cpalombo@everquote.com</user>
+            <user>salesops@everquote.com</user>
+            <user>gene@everquote.com</user>
+            <user>hli@everquote.com</user>
+            <user>victoria@adharmonics.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

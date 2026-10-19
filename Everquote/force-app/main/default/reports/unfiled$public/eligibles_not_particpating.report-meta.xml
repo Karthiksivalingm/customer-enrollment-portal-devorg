@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.Choice_UUID__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Starter</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Becker,Braxdyn,Wenping JIn,sobe,David Turner,Brevard,Jorge Sanchez,Rogers Insurance,Lockrem,Annamaria,Lisa McKeown Insurance Agency Inc,Sherye Sims,Leach,Tim Gibbs,My Simple,Reuel,Eldred,Elizabeth Fiona Darcy,Arce,Scott Shipley,Chad Fulton,Connor Harris,Quirk,Riskbu,Gardea,William Adrean,Joe Fisher,Robin Fowler,Schmitz,Ken Wolf Farmers,Todd Harvey Insurance Agency,Wes Taylor,Ruhmann,Tang,Kellen,Messamer,Ford Insurance Agency,Nees,Nighat,leone,zepeda,Reynoso,Greg Wright,Finneran,Maurice,STEPHANIE SAETERN,Loy,Italin Financail,Jewel,Jessica Morales,Nicholas Terry,Angie,Bravo,Mosakowski,Johns,Jon Teams,DE LEMOS</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>bind comp eligibles not particpating</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Days_From_Closed_Won__c</dateColumn>
+        <endDate>2023-06-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2023-05-01</startDate>
+    </timeFrameFilter>
+</Report>

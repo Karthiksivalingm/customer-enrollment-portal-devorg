@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Support_Type__c</fullName>
+    <label>Customer Support Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Closure</fullName>
+                <default>false</default>
+                <label>Account Closure</label>
+            </value>
+            <value>
+                <fullName>Platform</fullName>
+                <default>false</default>
+                <label>Platform</label>
+            </value>
+            <value>
+                <fullName>Lead Purchasing</fullName>
+                <default>false</default>
+                <label>Lead Purchasing</label>
+            </value>
+            <value>
+                <fullName>General Account Inquiry</fullName>
+                <default>false</default>
+                <label>General Account Inquiry</label>
+            </value>
+            <value>
+                <fullName>Rejected Returns</fullName>
+                <default>false</default>
+                <label>Rejected Returns</label>
+            </value>
+            <value>
+                <fullName>Sales Requests</fullName>
+                <default>false</default>
+                <label>Sales Requests</label>
+            </value>
+            <value>
+                <fullName>Referral Credit</fullName>
+                <default>false</default>
+                <label>Referral Credit</label>
+            </value>
+            <value>
+                <fullName>DNC Request</fullName>
+                <default>false</default>
+                <label>DNC Request</label>
+            </value>
+            <value>
+                <fullName>Subsidy Issue</fullName>
+                <default>false</default>
+                <label>Subsidy Issue</label>
+            </value>
+            <value>
+                <fullName>Dunning</fullName>
+                <default>false</default>
+                <label>Dunning</label>
+            </value>
+            <value>
+                <fullName>Lead Delivery Failure</fullName>
+                <default>false</default>
+                <label>Lead Delivery Failure</label>
+            </value>
+            <value>
+                <fullName>Disputed Charge</fullName>
+                <default>false</default>
+                <label>Disputed Charge</label>
+            </value>
+            <value>
+                <fullName>Calls - Support</fullName>
+                <default>false</default>
+                <label>Calls - Support</label>
+            </value>
+            <value>
+                <fullName>Introduction</fullName>
+                <default>false</default>
+                <label>Introduction</label>
+            </value>
+            <value>
+                <fullName>Optimization/Account Settings Change</fullName>
+                <default>false</default>
+                <label>Optimization/Account Settings Change</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Check Ins/Account Reviews</fullName>
+                <default>false</default>
+                <label>Check Ins/Account Reviews</label>
+            </value>
+            <value>
+                <fullName>Account Closure Reason</fullName>
+                <default>false</default>
+                <label>Account Closure Reason</label>
+            </value>
+            <value>
+                <fullName>Credit Requests</fullName>
+                <default>false</default>
+                <label>Credit Requests</label>
+            </value>
+            <value>
+                <fullName>Reporting/Research Help</fullName>
+                <default>false</default>
+                <label>Reporting/Research Help</label>
+            </value>
+            <value>
+                <fullName>Logging Bind Data</fullName>
+                <default>false</default>
+                <label>Logging Bind Data</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Introduction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Optimization/Account Settings Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Check Ins/Account Reviews</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Account Closure Reason</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Credit Requests</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Reporting/Research Help</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mega Account Customer Service</controllingFieldValue>
+            <valueName>Logging Bind Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Account Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Platform</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Lead Purchasing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>General Account Inquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Rejected Returns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Sales Requests</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Referral Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>DNC Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Subsidy Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Dunning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Lead Delivery Failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Disputed Charge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Support</controllingFieldValue>
+            <controllingFieldValue>Calls - Support</controllingFieldValue>
+            <valueName>Calls - Support</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

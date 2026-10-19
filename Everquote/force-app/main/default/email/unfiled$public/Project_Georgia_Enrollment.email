@@ -1,0 +1,8 @@
+Project Georgia Enrollment<br>
+
+Account: {!Account.Name}<br> 
+
+{!Account.Link}<br>
+<br>
+
+Strategic Account Details: {!Opportunity.Strategic_Account__c}

@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="Dispatcher Notification - Lead record has been assigned to you" recipientType="User" relatedToType="dispatcherapp__Dispatcher_Log__c">
+<messaging:plainTextEmailBody >
+The following Lead has been assigned to you through Dispatcher. 
+
+Lead Name:  {!relatedTo.Lead__r.Name}
+Lead Link:  https://login.salesforce.com/{!relatedTo.Lead__r.Id}
+Company:    {!relatedTo.Lead__r.Company}
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

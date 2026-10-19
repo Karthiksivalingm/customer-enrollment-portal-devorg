@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers$IsConverted</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers.Activities$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Task.BDR_Meeting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>BIND 2022</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BIND 2022 Leads with BDR meeting</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_with_Lead_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Campaign.LeadCampaignMembers.Activities$ActivityDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-02-10</startDate>
+    </timeFrameFilter>
+</Report>

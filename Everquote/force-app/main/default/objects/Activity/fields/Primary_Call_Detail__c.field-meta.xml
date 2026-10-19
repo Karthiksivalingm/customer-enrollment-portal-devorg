@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Call_Detail__c</fullName>
+    <label>Primary Call Detail</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Requires supervisor attention</fullName>
+                <default>false</default>
+                <label>Requires supervisor attention</label>
+            </value>
+            <value>
+                <fullName>Quote provided, consumer needs more time</fullName>
+                <default>false</default>
+                <label>Quote provided, consumer needs more time</label>
+            </value>
+            <value>
+                <fullName>Quote provided, too expensive</fullName>
+                <default>false</default>
+                <label>Quote provided, too expensive</label>
+            </value>
+            <value>
+                <fullName>Application started, not completed</fullName>
+                <default>false</default>
+                <label>Application started, not completed</label>
+            </value>
+            <value>
+                <fullName>Unable to quote or complete application due to knockouts</fullName>
+                <default>false</default>
+                <label>Unable to quote or complete application due to knockouts</label>
+            </value>
+            <value>
+                <fullName>No quote provided, need further assessment</fullName>
+                <default>false</default>
+                <label>No quote provided, need further assessment</label>
+            </value>
+            <value>
+                <fullName>Call ended due to poor connection</fullName>
+                <default>false</default>
+                <label>Call ended due to poor connection</label>
+            </value>
+            <value>
+                <fullName>Poor warm transfer introduction</fullName>
+                <default>false</default>
+                <label>Poor warm transfer introduction</label>
+            </value>
+            <value>
+                <fullName>Other (please specify)</fullName>
+                <default>false</default>
+                <label>Other (please specify)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Support_Rep__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <description>Nov 2018</description>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT_ID</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0011a00000olCZh,0011a00000WDwKL,0011a00000cNaNC,0011a00000F8WBS,0011a00000JWcDf,0011a00000YpPv5,0011a00000nI3Gj,0011a00000CdQUY,0011a00000bUJqy,0011a00000mK9MG,0011a00000EIrkl,0011a00000eCx8M,0011a00000CdPjM,0011a00000CdQaw,0011a00000CdR7P,0011a00000CdQOJ,0011a00000IFCBR,0011a00000CdPyM,0011a00000hNncg,0011a00000CdSXB,0011a00000b3USf,0011a00000XQZq1,0011a00000orQk9,0011a00000Gwe91,0011a00000CdQ02,0011a00000cLdXi,0011a00000pxMGl,0011a00000CdQno,0011a00000b4WXF,0011a00000gWuEg,0011a00000jwAa4,0011a00000F6w4X,0011a00000bSgIf,0011a00000CdSHR,0011a00000CdPy8,0011a00000fkplD,0011a00000CdSV3,0011a00000CdQ2O,0011a00000XgCin</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>SF Off Hour Green Zone</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

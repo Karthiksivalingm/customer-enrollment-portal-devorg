@@ -1,0 +1,54 @@
+<template>
+  <c-loading-spinner if:true={loading}></c-loading-spinner>
+  <div class="slds-grid slds-gutters slds-wrap mb">
+    <!-- HEADER -->
+    <div class="slds-col slds-size_1-of-1">
+      <div class="slds-text-heading_large">{resumeMessage}</div>
+    </div>
+
+    <!-- RESUME BUTTON -->
+    <div class="slds-col slds-size_1-of-1 margin-top-25" id="load-previous-application">
+      <c-stretched-button
+        label="Load Previous Application"
+        variant="brand"
+        onselection={fetchPreviousApplication}
+        icon-name="utility:record_update"
+      ></c-stretched-button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="slds-col slds-size_1-of-1 margin-top-25" id="quote-table">
+      <lightning-datatable
+        columns={columns}
+        data={existingApps}
+        key-field="app_id"
+        max-row-selection="1"
+        onrowselection={onRowSelection}
+      ></lightning-datatable>
+
+      <template if:true={shouldDisplayTableMessage}>
+        <div class="slds-m-top_medium">
+          <div class="slds-align_absolute-center">
+            <lightning-icon
+              icon-name="utility:recurring_exception"
+              alternative-text="No Data"
+            ></lightning-icon>
+          </div>
+          <div class="slds-text-heading_small slds-align_absolute-center">
+            {tableMessage}
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <!-- RESUME APP BUTTON -->
+    <div class="slds-col slds-size_1-of-1 margin-top-25">
+      <c-stretched-button
+        label="Open Previous Application"
+        onselection={onResumePreviousApp}
+        variant="success"
+        is-disabled={isResumePreviousAppDisabled}
+      ></c-stretched-button>
+    </div>
+  </div>
+</template>

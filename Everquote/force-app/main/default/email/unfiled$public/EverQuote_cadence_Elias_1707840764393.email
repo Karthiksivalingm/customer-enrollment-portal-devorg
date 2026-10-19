@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi {{{Recipient.FirstName}}},<br />
+&nbsp;<br />
+Hope you are doing well. I am an Account Executive on the State Farm team at EverQuote. Just wanted to see if you were interested in hearing about our current Promotions and Pricing?&nbsp;&nbsp;<br />
+<br />
+Feel free to email me back, give me a call (412-435-4246), or schedule time on my calendar to learn more and get pricing.<br />
+<br />
+&nbsp;<a href="{{{Sender.Salesforce_Meeting_Link__c}}}">Book a Meeting</a><br />
+<br />
+Thanks,<br />
+Elias</body>
+</html>

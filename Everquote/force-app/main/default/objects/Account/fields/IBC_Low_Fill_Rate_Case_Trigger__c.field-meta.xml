@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IBC_Low_Fill_Rate_Case_Trigger__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked by Analytics when a Account using the inbound calls product has low fill rate or low mrate. When field is checked, it triggers case creation &quot;Inbound Calls - Issue Outreach&quot; via the flow Account_IBCLowFillRate_CreateCase_LowFillRate.
+Field is unchecked by this same flow x days after it was triggered.</description>
+    <inlineHelpText>Checked by Analytics when an Account has low fill rate or monetization rate for Inbound Calls. Triggers case creation for Support Rep.</inlineHelpText>
+    <label>IBC Low Fill Rate Case Trigger</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

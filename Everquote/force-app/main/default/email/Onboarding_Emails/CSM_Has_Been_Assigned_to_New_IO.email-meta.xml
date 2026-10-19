@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CSM Has Been Assigned to New IO</name>
+    <style>none</style>
+    <subject>{!Account.Support_RepFirstText__c} {!Account.Support_Rep_Last_Name__c} Has Been Assigned to {!Account.Name}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

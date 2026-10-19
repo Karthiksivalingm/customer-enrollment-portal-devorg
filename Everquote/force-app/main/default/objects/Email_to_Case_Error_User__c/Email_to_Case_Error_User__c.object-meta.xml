@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used to house who should receive email alert when there is a zendesk id parsed from the email service subject line that cant be matched to an existing case</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Email to Case Error User</label>
+    <visibility>Public</visibility>
+</CustomObject>

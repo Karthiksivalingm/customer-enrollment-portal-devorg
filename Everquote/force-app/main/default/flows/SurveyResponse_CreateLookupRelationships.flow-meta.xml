@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Create the lookup relationship to Contact and assign the Feedback Survey Response Name to be the Form Name plus Today&apos;s date plus CaseNumber/Customer Success name</description>
+        <name>Assign_Contact_and_Name</name>
+        <label>Assign Contact and Name</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FeedbackSurveyResponseNameForUpdate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Contact_Id__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Triggering_Survey_Response</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Component_1</name>
+        <label>Assign Failing Component 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FailingComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>FeedbackSurveyResponse_CreateLookupRelationships - Update Case with Feedback Survey Lookup</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_fault_path_subflow_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Component_2</name>
+        <label>Assign Failing Component 2</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FailingComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>FeedbackSurveyResponse_CreateLookupRelationships - Update Customer Success with Feedback Survey Lookup</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_Fault_Path_subflow_2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Failing_Component_3</name>
+        <label>Assign Failing Component 3</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FailingComponent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>FeedbackSurveyResponse_CreateLookupRelationships - Update Triggering Feedback Survey Response</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Run_Fault_Path_Subflow_3</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Get the Case Owner from the related Case and assign them as the Support Rep on the triggering Feedback Survey Response object</description>
+        <name>Assign_Support_Rep_as_Case_Owner</name>
+        <label>Assign Support Rep as Case Owner</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Support_Rep__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Related_Case.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Contact_and_Name</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Get the Customer Success Owner from the related Customer Success and assign them as the Support Rep on the triggering Feedback Survey Response object</description>
+        <name>Assign_Support_Rep_as_Customer_Success_Owner</name>
+        <label>Assign Support Rep as Customer Success Owner</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Support_Rep__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Related_Customer_Success.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Contact_and_Name</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Confirm that the Get Record is not null before trying to update the record.</description>
+        <name>Does_Case_Exist</name>
+        <label>Does Case Exist?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Contact_and_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Related_Case</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_with_Survey_Response_Lookup</targetReference>
+            </connector>
+            <label>Case Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if Contact is null before trying to use it.</description>
+        <name>Does_Contact_Exist</name>
+        <label>Does Contact Exist?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Contact_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Related_Contact</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Related_Case_or_Customer_Success_Record</targetReference>
+            </connector>
+            <label>Contact Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Confirm that the Get Record is not null before trying to update the record.</description>
+        <name>Does_Customer_Success_Exist</name>
+        <label>Does Customer Success Exist?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Contact_and_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Success_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Related_Customer_Success</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Customer_Success_with_Survey_Response_Lookup</targetReference>
+            </connector>
+            <label>Customer Success Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check with object the survey is related to by checking if Typeform has populated the Case Id or the Customer Success Id.</description>
+        <name>Related_Case_or_Customer_Success_Record</name>
+        <label>Related Case or Customer Success Record?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Contact_and_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Related_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Case_Id__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Related_Case</targetReference>
+            </connector>
+            <label>Related Case</label>
+        </rules>
+        <rules>
+            <name>Related_Customer_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Customer_Success_Id__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Related_Customer_Success</targetReference>
+            </connector>
+            <label>Related Customer Success</label>
+        </rules>
+    </decisions>
+    <description>When a Survey Response record is created by Typeform Integration, used the Contact Id, Case Id, and Customer Success Id values to create Lookup relationships with the correct records and assign the Support Rep. Also update the Survey Response Name.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>The value we want to update Feedback Survey Response Name to &quot;Survey Name - Date - Case Number/Customer Success Name&quot;</description>
+        <name>FeedbackSurveyResponseNameForUpdate</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+IF(NOT(ISBLANK({!$Record.Case_Id__c})),
+{!$Record.Survey_Name__c} + &quot; - &quot; + TEXT(TODAY()) +  &quot; - Case: &quot; + {!Get_Related_Case.CaseNumber},
+IF(NOT(ISBLANK({!$Record.Customer_Success_Id__c})),
+{!$Record.Survey_Name__c} + &quot; - &quot; + TEXT(TODAY()) +  &quot; - CS: &quot; + {!Get_Related_Customer_Success.Name} ,
+{!$Record.Survey_Name__c} + &quot; - &quot; + TEXT(TODAY())
+))
+,80)</expression>
+    </formulas>
+    <interviewLabel>FeedbackSurveyResponse_CreateLookupRelationships {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SurveyResponse_CreateLookupRelationships</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Retrieve the related Case record so that we can reference the Case number when assigned the Survey Response Name</description>
+        <name>Get_Related_Case</name>
+        <label>Get Related Case</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Case_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case_Id__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Related_Contact</name>
+        <label>Get Related Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Contact_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Contact_Id__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Retrieve the related Customer Success record so that we can reference the Name when assigned the Feedback Survey Response Name</description>
+        <name>Get_Related_Customer_Success</name>
+        <label>Get Related Customer Success</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Customer_Success_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Customer_Success_Id__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Customer_Success__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Relate the Survey Response to the Case via the lookup in the Case record.</description>
+        <name>Update_Case_with_Survey_Response_Lookup</name>
+        <label>Update Case with Survey Response Lookup</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Support_Rep_as_Case_Owner</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_Failing_Component_1</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case_Id__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Survey_Response__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Relate the Survey Response to the Customer Success via the lookup in the Customer Success record.</description>
+        <name>Update_Customer_Success_with_Survey_Response_Lookup</name>
+        <label>Update Customer Success with Survey Response Lookup</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Support_Rep_as_Customer_Success_Owner</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_Failing_Component_2</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Customer_Success_Id__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Survey_Response__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Customer_Success__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the triggering record with Contact, Name, and Support Reps that have been assigned in previous steps</description>
+        <name>Update_Triggering_Survey_Response</name>
+        <label>Update Triggering Survey Response</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <targetReference>Assign_Failing_Component_3</targetReference>
+        </faultConnector>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Related_Contact</targetReference>
+        </connector>
+        <object>Survey_Response__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Complete the actions in the fault path subflow for handling errors</description>
+        <name>Run_fault_path_subflow_1</name>
+        <label>Run fault path subflow 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_Support_Rep_as_Case_Owner</targetReference>
+        </connector>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>FailingComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Run_Fault_Path_subflow_2</name>
+        <label>Run Fault Path subflow 2</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_Support_Rep_as_Customer_Success_Owner</targetReference>
+        </connector>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>FailingComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Run_Fault_Path_Subflow_3</name>
+        <label>Run Fault Path Subflow 3</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>SBFL_FaultPath</flowName>
+        <inputAssignments>
+            <name>FailingFlowComponent</name>
+            <value>
+                <elementReference>FailingComponent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>FaultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TriggeringRecord</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>FailingComponent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

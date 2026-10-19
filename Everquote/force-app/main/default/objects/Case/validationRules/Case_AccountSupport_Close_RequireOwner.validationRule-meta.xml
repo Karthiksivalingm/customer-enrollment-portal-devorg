@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_AccountSupport_Close_RequireOwner</fullName>
+    <active>true</active>
+    <description>A real user must be assigned as Owner before an Account Support case can be Closed. Exception for change of BypassCaseValidation.</description>
+    <errorConditionFormula>AND(
+   /* Applies to Account Support case record type only*/
+   RecordTypeId = &apos;0121a000000AXYM&apos;,
+   ISPICKVAL( Status , &quot;Closed&quot;),
+   ISCHANGED(Status),
+   OR(
+      /* Id of &apos;Core User&apos; */ 
+      OwnerId = &apos;0054z000009jrjj&apos;,
+      /* Id of &apos;Core Support&apos; user*/
+      OwnerId = &apos;0054z00000CXHhQ&apos;,
+      /* Id of &apos;AGP User&apos; user*/
+      OwnerId = &apos;0054z000009jrBh&apos;,
+      /* Id of &apos;Salesforce Data Cycle&apos; user*/
+      OwnerId = &apos;0051a000002i3pE&apos;,
+      /* User Ids always start with &apos;005&apos;, queues start with &apos;00G&apos; */
+      NOT(BEGINS(OwnerId, &apos;005&apos;))
+    ),
+    /* Flow will change checkbox if it needs to bypass this rule*/
+    NOT(ISCHANGED(BypassCaseValidation__c ))
+)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>To close the case, the Case Owner must be a user. It cannot be a Queue or a placeholder user (e.g. AGP User, Core User, Core Support, Salesforce Data Cycle)</errorMessage>
+</ValidationRule>

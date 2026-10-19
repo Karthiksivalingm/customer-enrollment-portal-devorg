@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>STATE</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Lead.Carrier__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Call_Count__c</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Todd Badolato</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Sales Available</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Time_Zone__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Eastern</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Todd Eastern Leads</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CREATED_DATE</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

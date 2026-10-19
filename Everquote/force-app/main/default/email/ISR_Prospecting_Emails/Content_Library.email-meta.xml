@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email that features a collection of our top content for agents</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Content_Library</name>
+    <style>none</style>
+    <subject>EverQuote Resource Library for Insurance Agents!</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Hope all is well and you&apos;re gearing up for a huge rest of 2020! I wanted to share with you some of the amazing videos, webinars, eBooks and articles that EverQuote has published in our on-going efforts to become your &quot;go-to&quot; source for insurance agent-focused content.
+
+Videos:
+Visit EverQuote’s Vimeo page (https://vimeo.com/everquotepro) for new video content including best practice videos, testimonials and webinar recordings. Here are a few examples of what’s available:
+- EverQuote Best Practices: Overcoming Objections (https://vimeo.com/386289088): join EverQuote Senior Customer Success Manager Randi Alvarado as she walks you through how to overcome common objections that arise when working insurance leads
+- Ted Todd Insurance – EverQuote Testimonial (https://vimeo.com/351046153)
+- EverQuote Pro Platform: Tips &amp; Best Practice Guide (https://vimeo.com/386291524): EverQuote Business Consultant Todd Badolato walks you through the EverQuote Pro platform, sharing tips and best practices to help set you up for success.
+- Webinar: “Developing Team Members into Rock Stars” with Heather Powell (https://vimeo.com/393784983): Top agent Heather Powell describes her process for recruiting (and retaining) top talent and some of the major lessons she’s learned along the way.
+
+eBooks:
+You can find a range of valuable content on our Resources page (https://resources.everquote.com/), where we regularly publish new eBooks, white papers and guides.
+- EverQuote Sales Best Practices (https://go.everquote.com/sales-best-practices) – use this guide to help align your sales processes with what the data shows are the most effective ways to work inbound insurance leads and warm transfer calls
+- 10 Things Every Agent Should Be Doing (But That Most Aren&apos;t) (https://go.everquote.com/10-things-every-agent-should-be-doing) – use this guide to help align your sales and agency management processes with what top insurance agents are already doing
+- 4 Example Scripts To Help You Handle Consumer Objections (https://go.everquote.com/4-example-scripts-to-help-you-handle-consumer-objections) – use this guide to help you address four common objections agents face on insurance sales calls
+- The Ultimate Social Media Playbook For Insurance Agents (https://go.everquote.com/social-media-playbook-for-insurance-agents) – Learn how to implement a proven, effective social media marketing strategy for your agency in this free playbook.
+
+Blog:
+Visit the EverQuote blog (https://learn.everquote.com/) for regularly updated, agent-focused content, including articles like:
+- “I never asked for a quote!” How to Turn Around Negative Sales Conversations &amp; Insurance Lead Objections (https://learn.everquote.com/insurance-lead-objections)
+- How To Sell Insurance When Your Carrier&apos;s Rates Are High (https://learn.everquote.com/insurance-sales-tips)
+- Six Insurance Agents Share Their Worst Mistakes (https://learn.everquote.com/insurance-agent-mistakes)
+- 12 Customer Retention Strategies In The Insurance Industry (https://learn.everquote.com/customer-retention-in-insurance-industry)
+
+Please don’t hesitate to reach out directly if you have any questions – (844) 707-8800.
+Best,
+
+Chris
+
+Chris Nashed
+Director, Inside Sales
+sales@everquote.com
+
+© 2020 EverQuote Pro
+Questions? Please contact us at info@everquote.com
+210 Broadway Cambridge, MA 02139
+© 2020 www.everquote.com
+Don&apos;t want our emails? Unsubscribe with one click.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

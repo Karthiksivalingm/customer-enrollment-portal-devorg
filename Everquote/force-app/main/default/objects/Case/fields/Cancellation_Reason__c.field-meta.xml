@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Reason__c</fullName>
+    <label>Cancellation Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Calls_Inquiry__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>120s not enough</fullName>
+                <default>false</default>
+                <label>120s not enough</label>
+            </value>
+            <value>
+                <fullName>Call center transfer process</fullName>
+                <default>false</default>
+                <label>Call center transfer process</label>
+            </value>
+            <value>
+                <fullName>Call types did not meet my needs</fullName>
+                <default>false</default>
+                <label>Call types did not meet my needs</label>
+            </value>
+            <value>
+                <fullName>Charge unanswered call</fullName>
+                <default>false</default>
+                <label>Charge unanswered call</label>
+            </value>
+            <value>
+                <fullName>Concurrency cap not working</fullName>
+                <default>false</default>
+                <label>Concurrency cap not working</label>
+            </value>
+            <value>
+                <fullName>Lead info delayed from call transfer</fullName>
+                <default>false</default>
+                <label>Lead info delayed from call transfer</label>
+            </value>
+            <value>
+                <fullName>Low bind rates</fullName>
+                <default>false</default>
+                <label>Low bind rates</label>
+            </value>
+            <value>
+                <fullName>No call recordings</fullName>
+                <default>false</default>
+                <label>No call recordings</label>
+            </value>
+            <value>
+                <fullName>No qualifying question from partner</fullName>
+                <default>false</default>
+                <label>No qualifying question from partner</label>
+            </value>
+            <value>
+                <fullName>No return</fullName>
+                <default>false</default>
+                <label>No return</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pacing of calls during the day</fullName>
+                <default>false</default>
+                <label>Pacing of calls during the day</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Quality of leads</fullName>
+                <default>false</default>
+                <label>Quality of leads</label>
+            </value>
+            <value>
+                <fullName>Volume boost</fullName>
+                <default>false</default>
+                <label>Volume boost</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>120s not enough</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Call center transfer process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Call types did not meet my needs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Charge unanswered call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Concurrency cap not working</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Lead info delayed from call transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Low bind rates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>No call recordings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>No qualifying question from partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>No return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Pacing of calls during the day</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Request</controllingFieldValue>
+            <valueName>Quality of leads</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

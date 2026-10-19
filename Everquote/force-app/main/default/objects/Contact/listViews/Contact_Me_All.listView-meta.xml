@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Me_All</fullName>
+    <booleanFilter>1 and 2 AND 3</booleanFilter>
+    <columns>Agent_Submitted_Carrier__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Account.Account_Status__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Campaign__c</field>
+        <operation>startsWith</operation>
+        <value>Hubspot Contact,Hubspot Home</value>
+    </filters>
+    <filters>
+        <field>Last_Time_Added_to_Campaign__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5/1/2022</value>
+    </filters>
+    <filters>
+        <field>Agent_Submitted_Carrier__c</field>
+        <operation>equals</operation>
+        <value>State Farm,Farmers,Allstate</value>
+    </filters>
+    <label>Home Page Contact Me All</label>
+    <sharedTo>
+        <group>Sales_Strategy_and_Ops</group>
+    </sharedTo>
+</ListView>

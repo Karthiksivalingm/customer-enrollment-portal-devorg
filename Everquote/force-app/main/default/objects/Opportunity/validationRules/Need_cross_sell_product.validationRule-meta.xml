@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_cross_sell_product</fullName>
+    <active>false</active>
+    <description>Need to check which product you have added to the account.</description>
+    <errorConditionFormula>AND(
+ RecordTypeId = &apos;0121a000000Vl9I&apos;,
+ Owner.ProfileId = &apos;00e1a000000i0iR&apos;,
+ISPICKVAL(  StageName , &quot;Closed Won&quot;),
+Added_Home__c = FALSE,
+Added_Life__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>Please select which product you added.</errorMessage>
+</ValidationRule>

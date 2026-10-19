@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Positive_Results__c</fullName>
+    <label>Positive Results</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Raise Cap</fullName>
+                <default>false</default>
+                <label>Raise Cap</label>
+            </value>
+            <value>
+                <fullName>Raise Area</fullName>
+                <default>false</default>
+                <label>Raise Area</label>
+            </value>
+            <value>
+                <fullName>Added Products</fullName>
+                <default>false</default>
+                <label>Added Products</label>
+            </value>
+            <value>
+                <fullName>Gave Referral(s)</fullName>
+                <default>false</default>
+                <label>Gave Referral(s)</label>
+            </value>
+            <value>
+                <fullName>Save from Cancellation</fullName>
+                <default>false</default>
+                <label>Save from Cancellation</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

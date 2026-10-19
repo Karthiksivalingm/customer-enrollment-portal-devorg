@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>Subflow called by Fault Paths in all flows, sends an email with flow information to Admins for troubleshooting.</description>
+    <masterLabel>SBFL_FaultPath</masterLabel>
+</FlowDefinition>

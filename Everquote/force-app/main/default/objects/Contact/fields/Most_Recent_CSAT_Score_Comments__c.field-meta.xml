@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent_CSAT_Score_Comments__c</fullName>
+    <description>Populated by flow (SurveyResponse_Contact_UpdateMostRecentCSATScoreAndComments), when a Feedback Survey Response&apos;s CSAT Score Comments are created or updated, the CSAT Score Comments are stored in this field.
+Read Only to all but Admins (via profile) and Typeform Integration User (via permission set)</description>
+    <inlineHelpText>Comments related to Contact&apos;s most recent CSAT Score</inlineHelpText>
+    <label>Most Recent CSAT Score Comments</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

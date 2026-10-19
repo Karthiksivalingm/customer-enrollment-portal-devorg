@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Hey&nbsp;{{{Recipient.FirstName}}} --&nbsp;{{{Sender.FirstName}}} here at EverQuote.</p>
+
+<p>We value your business and want to make sure you are reaching your goals with minimum cost to you.&nbsp;With an increase in consumers looking for auto insurance; we are able to reduce the price of the leads for you. Currently you are in our Core program. &nbsp;The Core program is based on lesser volume and so we don't provide the same level of service and we don't discount leads. The Accelerated Growth Program is designed for agents who want price breaks, cost per acquisition reviews, staff training and tighter support. Agent's using the AGP program typically are looking to grow sooner than later and if tied into the Lead Connection Service it now has greater bandwidth, providing more quoting opportunities to the agent.</p>
+
+<p><br />
+Quick chat? Schedule a call with me here: {{{Sender.Salesforce_Meeting_Link__c}}}</p>
+
+<p>&nbsp;</p>
+
+<p>Cheers,</p>
+
+<p>{{{Sender.FirstName}}}</p>
+
+<p>{{{Sender.Phone}}}</p>
+</body>
+</html>

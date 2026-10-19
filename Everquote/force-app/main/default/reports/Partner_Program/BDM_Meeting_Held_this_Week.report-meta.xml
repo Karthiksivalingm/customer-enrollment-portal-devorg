@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_59582489</developerName>
+        <masterLabel>Teams</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>OWNER_ROLE</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep</sourceValue>
+            </sourceValues>
+            <value>Casey&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 2</sourceValue>
+            </sourceValues>
+            <value>Sky&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 3</sourceValue>
+            </sourceValues>
+            <value>Marc&apos;s Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Rep 4</sourceValue>
+            </sourceValues>
+            <value>Caleb&apos;s Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_59582489</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Huge</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Activity.Meeting_Result__c</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>PRIORITY</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>TASK</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT</field>
+    </columns>
+    <columns>
+        <field>CONTACT</field>
+    </columns>
+    <columns>
+        <field>LEAD</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Initial Meeting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity.Meeting_Result__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Held - Correct Contact,Held - Contact</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER_ROLE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Business Development Manager</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_59582489</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BDM Meeting Held this Week</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>e</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <roleHierarchyFilter>VP_of_Sales</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>START_DATE_TIME</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

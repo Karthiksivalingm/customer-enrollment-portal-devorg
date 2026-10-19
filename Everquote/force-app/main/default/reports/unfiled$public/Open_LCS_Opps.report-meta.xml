@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OPPORTUNITY.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Choice_UUID__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.LCS__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed,locked</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPPORTUNITY.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>LCS Pilot</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Open LCS Opps</name>
+    <params>
+        <name>include</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityContact</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>ACCOUNT.NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

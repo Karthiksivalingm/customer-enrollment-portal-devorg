@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>Account.Choice_UUID__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Choice_UUID__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>b9307185-27f0-4abf-8cbe-8f201464bfb5,06c082d1-abcb-4943-95ba-0051f9e0a087,49154507-edfd-44dd-9735-9955891898b3,5deaf8ed-25ba-4b22-9d9f-6b0eef492fd9,6fe9bf28-51d7-4623-929d-8f1dddebee0d,875fe43d-f929-42d6-9cd3-b151ca85f519,c74c46f7-4d08-400d-8bec-66bda2f9be9b,863c2651-fc40-45e7-8bee-caffa863de0c,1d820bc3-97af-4d58-92a2-5a230086ffee,02ecd28a-6818-4165-ac1c-b8d4439ee78c,0c9d598f-8a05-433a-b6e7-b121b8527206,1d093711-1cf8-4241-8de1-1768a16628d6,111910de-835c-4cf1-873d-92a4b59c7023,10b4529a-d548-4a96-9652-6652fc05c9fc,a9230e54-a01a-4dfe-9425-ef9507313fc8,022740d0-895c-40e2-8098-1fd7fa7f5547,0a592c81-d37d-494a-af1e-70e16741d5f6,201045c8-ae79-486e-b6ca-c9ce56118230,275fdc30-a4dd-4160-b260-a7429dbb5c91,3f4bc680-7c54-4270-a3fc-92ccdd880ae3,6a86ba5a-d055-40df-8027-b787192fe1a0,1d58f540-509a-4d01-ae28-27dacd62d743,8572afd2-eaf3-470d-b5f7-d1e3235b1ec4,b01f5b7b-adff-4544-98b8-dffd3a3ef289,e2c43007-2e3c-46e9-bd92-4ccfc243be4c,1f7cfeb5-a6cb-4321-9c9d-23cb24b3e413,7268cb73-493</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Support</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Week</dateGranularity>
+        <field>CREATED_DATEONLY</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>RECORDTYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Return Adjusted Cap Cases for BI</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-04-12</startDate>
+    </timeFrameFilter>
+</Report>

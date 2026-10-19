@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>My unconverted leads with activity before 2017</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Need some Assistance</name>
+    <style>none</style>
+    <subject>Need some Assistance?</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

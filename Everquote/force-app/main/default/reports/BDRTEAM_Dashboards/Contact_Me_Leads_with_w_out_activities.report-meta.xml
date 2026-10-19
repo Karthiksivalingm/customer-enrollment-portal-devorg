@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$CallType</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$RecordType</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Lead$Status</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.Activities$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Contact Me Leads with w/out activities</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_or_without_activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead$Contact_Me_Checkbox_date__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

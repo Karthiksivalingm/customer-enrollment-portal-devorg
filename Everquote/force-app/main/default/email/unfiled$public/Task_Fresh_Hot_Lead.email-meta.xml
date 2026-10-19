@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template used to notify users when they have new fresh/hot task assigned</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Task Fresh/Hot  Lead</name>
+    <style>none</style>
+    <subject>{!Task.Subject}</subject>
+    <textOnly>Please contact the customer ASAP. The customer is {!Lead.Name}. Click here to access their lead detail: {!Lead.Link}.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

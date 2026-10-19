@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CallCenter xmlns="http://soap.sforce.com/2006/04/metadata">
+    <adapterUrl>https://agents-cti-prod.adh8.com/evqendpoint/</adapterUrl>
+    <customSettings>{&quot;reqSoftphoneHeight&quot;:&quot;400&quot;,&quot;reqUseApi&quot;:&quot;true&quot;,&quot;reqSoftphoneWidth&quot;:&quot;200&quot;}</customSettings>
+    <displayName>EQ Agents CTI</displayName>
+    <displayNameLabel>Display Name</displayNameLabel>
+    <internalNameLabel>InternalName</internalNameLabel>
+    <sections>
+        <items>
+            <label>CTI Adapter URL</label>
+            <name>reqAdapterUrl</name>
+            <value>https://agents-cti-prod.adh8.com/evqendpoint/</value>
+        </items>
+        <items>
+            <label>Use CTI API</label>
+            <name>reqUseApi</name>
+            <value>true</value>
+        </items>
+        <items>
+            <label>Softphone Height</label>
+            <name>reqSoftphoneHeight</name>
+            <value>400</value>
+        </items>
+        <items>
+            <label>Softphone Width</label>
+            <name>reqSoftphoneWidth</name>
+            <value>200</value>
+        </items>
+        <label>General Information</label>
+        <name>reqGeneralInfo</name>
+    </sections>
+    <sections>
+        <items>
+            <label>Outside Prefix</label>
+            <name>reqOutsidePrefix</name>
+            <value>9</value>
+        </items>
+        <items>
+            <label>Long Distance Prefix</label>
+            <name>reqLongDistPrefix</name>
+            <value>1</value>
+        </items>
+        <items>
+            <label>International Prefix</label>
+            <name>reqInternationalPrefix</name>
+            <value>01</value>
+        </items>
+        <label>Dialing Options</label>
+        <name>reqDialingOptions</name>
+    </sections>
+    <sections>
+        <items>
+            <label>Record Types to Include (CSV)</label>
+            <name>SearchTypes</name>
+            <value>contract,opportunity,activity,case</value>
+        </items>
+        <items>
+            <label>Opportunity Types to Include (CSV)</label>
+            <name>OpportunityStatusTypes</name>
+            <value>MasterLabel,Prospecting,Qualification,Proposal/Price Quote,Value Proposition,Closed Lost,Closed Won,Id. Decision Makers,Needs Analysis,Negotiation/Review,Perception Analysis</value>
+        </items>
+        <items>
+            <label>Case Types to Include (CSV)</label>
+            <name>CaseStatusTypes</name>
+            <value>New,Escalated</value>
+        </items>
+        <items>
+            <label>Contract Types to Include (CSV)</label>
+            <name>ContractStatusTypes</name>
+            <value>Draft,In Approval Process,Activated</value>
+        </items>
+        <items>
+            <label>Call Result Options (CSV)</label>
+            <name>CallResultOptions</name>
+            <value>Complete, No Answer, Left Voicemail, Follow-up Required, Transferred, Left Message with Secretary</value>
+        </items>
+        <items>
+            <label>Tenant Id</label>
+            <name>TenantId</name>
+            <value>everquote</value>
+        </items>
+        <label>Settings</label>
+        <name>tpSettings</name>
+    </sections>
+</CallCenter>

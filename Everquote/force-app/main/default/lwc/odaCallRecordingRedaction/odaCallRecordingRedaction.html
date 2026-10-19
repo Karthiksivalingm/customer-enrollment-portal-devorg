@@ -1,0 +1,54 @@
+<template>
+  <c-loading-spinner if:true={loading}></c-loading-spinner>
+  <div class="slds-card-wrapper">
+    <div class="slds-grid slds-grid_align-center">
+      <div class="slds-col">
+        <button class="slds-button slds-button_success my-brand" onclick={pauseRecording}>
+          Pause recording
+        </button>
+      </div>
+    </div>
+  </div>
+  <template if:true={isModalOpen}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      class="slds-modal slds-fade-in-open slds-modal_small"
+      aria-labelledby="modal-heading-01"
+      aria-modal="true"
+      aria-describedby="modal-content-id-1"
+    >
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+            Call recording is paused
+          </h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+          The call recording is paused. Please navigate back to the carrier e-application. You can
+          safely take credit card information and social security numbers over the phone. Once
+          personal information is taken, restart the recording by pressing &nbsp;
+          <b>RESUME RECORDING</b>
+          .
+        </div>
+        <footer class="slds-modal__footer">
+          <button
+            class="slds-button slds-button_success"
+            onclick={resumeRecording}
+            title="Resume Recording"
+          >
+            <b>RESUME RECORDING</b>
+          </button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+
+  <c-modal-window
+    is-open={isConfirmationModalOpen}
+    title="Resume Call Recording"
+    content='Confirm you are ready to restart call recording by hitting the "OK" button'
+    onmodalclosed={handleConfirmationModalClose}
+  ></c-modal-window>
+</template>

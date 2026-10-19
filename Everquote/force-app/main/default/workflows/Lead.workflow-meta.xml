@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>BDR_Main_View_Alert_Lead</fullName>
+        <description>BDR Main View Lead</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>BDR_Main_View__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Strategy_Ops/Lead_Main_View</template>
+    </alerts>
+    <alerts>
+        <fullName>BDR_Main_View_Lead2</fullName>
+        <description>BDR Main View Lead 2</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>BDR_Main_View__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Strategy_Ops/Lead_Main_View</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_ROck</fullName>
+        <description>Referral ROck</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>alawrence@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>aterrenzi@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>cweir@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dmitchell@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>madamo@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rsaade@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Referral_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_ROckt</fullName>
+        <description>Test Referral ROck</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>alawrence@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>aterrenzi@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>cweir@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dmitchell@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rsaade@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Referral_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_from_BDR_or_CSM_Chris_Nash</fullName>
+        <description>Referral from BDR or CSM- Chris Nashed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cnashed@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Referral_from_AM</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_from_BDR_or_CSM_Jon_Girolamo</fullName>
+        <description>Referral from BDR or CSM- Jon Girolamo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jgirolamo@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Referral_from_AM</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_from_BDR_or_CSM_Zach_Vaswani</fullName>
+        <description>Referral from BDR or CSM- Zach Vaswani</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>zachary@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Referral_from_AM</template>
+    </alerts>
+    <alerts>
+        <fullName>Round_Robin_Assigned_Alert</fullName>
+        <description>Round Robin Assigned Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Available_Emails/Lead_Round_Robin_Assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>email_test</fullName>
+        <description>email test</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dmitchell@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mdelfeld@everquote.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Strategy_Ops/proLead_Round_Robin_Assigned</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Carrier_Update</fullName>
+        <description>Updates Carrier name to first, last carrier</description>
+        <field>Company</field>
+        <formula>FirstName &amp;&quot; &quot;&amp;  LastName &amp;&quot; &quot;&amp;  Carrier__r.Name</formula>
+        <name>Carrier Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Owner_to_RLQ</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Recycled_Leads_Queue</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Change Owner to RLQ</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Me_Checkbox_date</fullName>
+        <description>to update the same on the lead</description>
+        <field>Contact_Me_Checkbox_date__c</field>
+        <formula>TODAy()</formula>
+        <name>Contact Me Checkbox date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_Added_to_Waitlist</fullName>
+        <field>Added_to_Waitlist_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Added to Waitlist</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Delete_Company</fullName>
+        <field>Company</field>
+        <name>Delete Company</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Home_Page_Contact_Me_Date</fullName>
+        <field>Home_Page_Contact_Me_Date__c</field>
+        <formula>TODAY ()</formula>
+        <name>Home Page Contact Me Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Agency_Update</fullName>
+        <field>Company</field>
+        <formula>FirstName&amp;&quot; &quot;&amp; LastName&amp;&quot; &quot;&amp;&quot;Agency&quot;</formula>
+        <name>Lead Agency Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Lost_Date_Time</fullName>
+        <field>Lead_Lost__c</field>
+        <formula>Now()</formula>
+        <name>Lead Lost Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_Email</fullName>
+        <field>LeadSource</field>
+        <literalValue>Email</literalValue>
+        <name>Lead Source Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_List_Import</fullName>
+        <field>LeadSource</field>
+        <literalValue>List Import</literalValue>
+        <name>Lead Source List Import</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_Live_Event</fullName>
+        <field>LeadSource</field>
+        <literalValue>Live Event</literalValue>
+        <name>Lead Source Live Event</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_Outbound_Call</fullName>
+        <field>LeadSource</field>
+        <literalValue>Outbound Call</literalValue>
+        <name>Lead Source Outbound Call</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_Referral</fullName>
+        <field>LeadSource</field>
+        <literalValue>Referral</literalValue>
+        <name>Lead Source Referral</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_Search</fullName>
+        <field>LeadSource</field>
+        <literalValue>Search</literalValue>
+        <name>Lead Source Search</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_Webinar</fullName>
+        <field>LeadSource</field>
+        <literalValue>Webinar</literalValue>
+        <name>Lead Source Webinar</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Source_ZoomInfo</fullName>
+        <field>LeadSource</field>
+        <literalValue>Zoominfo</literalValue>
+        <name>Lead Source ZoomInfo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lost_Reason_to_Blank</fullName>
+        <field>Lost_Reason__c</field>
+        <name>Lost Reason to Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lost_to_Sales_Available</fullName>
+        <field>Status</field>
+        <literalValue>Sales Available</literalValue>
+        <name>Lost to Sales Available</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ODA_Set_Lead_to_Follow_up</fullName>
+        <field>Status</field>
+        <literalValue>Follow-up</literalValue>
+        <name>ODA Set Lead to Follow-up</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ODA_Set_Lead_to_Nurture</fullName>
+        <field>Status</field>
+        <literalValue>Nurture</literalValue>
+        <name>ODA Set Lead to Nurture</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Commercial_Agents</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Commercial_Agents</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Owner: Commercial Agents</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Cosumer</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Consumer</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Owner: Cosumer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Duplicate_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Duplicates</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Owner: Duplicate Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Invalid_Contact_Info</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Invalid_Contact_Info</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Owner: Invalid Contact Info</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Unqualified_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Unqualified</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Owner: Unqualified Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recycle_Lost_Date_Update</fullName>
+        <field>Recycled_Date__c</field>
+        <formula>Now ()</formula>
+        <name>Recycle Lost Date Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Call_Count</fullName>
+        <field>Call_Count__c</field>
+        <formula>0</formula>
+        <name>Reset Call Count</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Lead_Record_Type_to_Default</fullName>
+        <description>Set Lead Record Type to Default</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Default</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Set Lead Record Type to Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Lead_Status_Won</fullName>
+        <field>Status</field>
+        <literalValue>Won</literalValue>
+        <name>Set Lead Status Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Lead_Status_to_Closed</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Set Lead Status to Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>change_to_DNC_record_type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Do_Not_Call</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>change to DNC record type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contact Me Checkbox date</fullName>
+        <actions>
+            <name>Contact_Me_Checkbox_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Contact_Me_checkbox__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>to update the same field when a Hubspot contact me lead comes in through Ringlead</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Date Added to Waitlist</fullName>
+        <actions>
+            <name>Date_Added_to_Waitlist</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Waitlist</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Delete Company from Life Leads</fullName>
+        <actions>
+            <name>Delete_Company</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Life Leads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email test</fullName>
+        <actions>
+            <name>email_test</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Campaign__c</field>
+            <operation>equals</operation>
+            <value>test</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Home Page Contact Me Date</fullName>
+        <actions>
+            <name>Home_Page_Contact_Me_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Home_Page_Checkbox__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Updated from workflow for Ringlead Route Instant Book reporting and integration</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Agency Update</fullName>
+        <actions>
+            <name>Lead_Agency_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( Company = &quot;agency&quot;, Company =&quot;agency-&quot;, Company =&quot;Agency&quot;, Company =&quot;Agency-&quot;, Company =&quot;Unknown-&quot;, Company =&quot;Unknown&quot;, Company =&quot;unknown-&quot;, Company =&quot;unknown&quot;, Company =Account1__r.Carrier__r.Name )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Assigned Send Round Robin webinar</fullName>
+        <actions>
+            <name>Round_Robin_Assigned_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Assigned</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Update_Picklist__c</field>
+            <operation>equals</operation>
+            <value>Dummy</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Carrier Update</fullName>
+        <actions>
+            <name>Carrier_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(Company = Carrier__r.Name, Company = &quot;SF&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Lost Date%2FTime</fullName>
+        <actions>
+            <name>Lead_Lost_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Lost</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source Email</fullName>
+        <actions>
+            <name>Lead_Source_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>Email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source List Import</fullName>
+        <actions>
+            <name>Lead_Source_List_Import</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>List Import</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source Live Event</fullName>
+        <actions>
+            <name>Lead_Source_Live_Event</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>Live Event</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source Outbound Call</fullName>
+        <actions>
+            <name>Lead_Source_Outbound_Call</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>Outbound Call</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source Referral</fullName>
+        <actions>
+            <name>Lead_Source_Referral</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>Referral</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source Search</fullName>
+        <actions>
+            <name>Lead_Source_Search</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>Search</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source Webinar</fullName>
+        <actions>
+            <name>Lead_Source_Webinar</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>Webinar</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Source ZoomInfo</fullName>
+        <actions>
+            <name>Lead_Source_ZoomInfo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Update__c</field>
+            <operation>equals</operation>
+            <value>ZoomInfo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Status to Sales Available</fullName>
+        <actions>
+            <name>Lost_Reason_to_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lost_to_Sales_Available</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Reset_Call_Count</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+ISCHANGED( OwnerId ),
+ LEFT( OwnerId, 3) = &apos;005&apos;,
+ ISPICKVAL(Status, &apos;Lost&apos;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Duplicate Queue</fullName>
+        <actions>
+            <name>Owner_Duplicate_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Duplicate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.IsConverted</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>No Show Lead to True</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_owner_changed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Recycle Lost Leads</fullName>
+        <actions>
+            <name>Change_Owner_to_RLQ</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Recycle_Lost_Date_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Life Leads</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Rock Email Notification</fullName>
+        <actions>
+            <name>Referral_ROckt</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Referral_Rock_Lead__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Revert Back Do Not Call Leads</fullName>
+        <actions>
+            <name>Set_Lead_Record_Type_to_Default</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.DoNotCall</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Do Not Call</value>
+        </criteriaItems>
+        <description>If a Lead needs to come off the Do Not Call list this will revert it back to the Default record type</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Lead Status Closed</fullName>
+        <actions>
+            <name>Set_Lead_Status_to_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Outcome__c</field>
+            <operation>equals</operation>
+            <value>Outbound Call - Bad Data,Knock Out - US Citizen,Do Not Call,Call Dropped,Lead Not Qualified</value>
+        </criteriaItems>
+        <description>Sets the Lead Status to Closed based on agent selected Lead Outcome</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Lead Status Follow-up</fullName>
+        <actions>
+            <name>ODA_Set_Lead_to_Follow_up</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Outcome__c</field>
+            <operation>equals</operation>
+            <value>App. Complete - Referred,App. Complete - Payment Issue</value>
+        </criteriaItems>
+        <description>Sets the Lead Status to Follow-up based on agent selected Lead Outcome</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Lead Status Nurture</fullName>
+        <actions>
+            <name>ODA_Set_Lead_to_Nurture</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Outcome__c</field>
+            <operation>equals</operation>
+            <value>Not In Market - High Face Amount,Not In Market - Term Insurance,Not In Market - Other,Knock Out - Replacement,Knock Out - Health,Quote Given - Not Interested,App. Complete - Declined,App. Complete - Other Non-Sale,No Sale - Ineligible,Lead Not Qualified</value>
+        </criteriaItems>
+        <description>Sets the Lead Status to Nurture based on agent selected Lead Outcome</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Lead Status Won</fullName>
+        <actions>
+            <name>Set_Lead_Status_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Lead_Outcome__c</field>
+            <operation>equals</operation>
+            <value>App. Complete - SALE</value>
+        </criteriaItems>
+        <description>Sets the Lead Status to Won based on agent selected Lead Outcome</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unqualified%3A Commercial Agents</fullName>
+        <actions>
+            <name>Owner_Commercial_Agents</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.IsConverted</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Unqualified</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Unqualified_Reason__c</field>
+            <operation>equals</operation>
+            <value>Commercial Agent</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unqualified%3A Consumer</fullName>
+        <actions>
+            <name>Owner_Cosumer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.IsConverted</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Unqualified</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Unqualified_Reason__c</field>
+            <operation>equals</operation>
+            <value>Consumer</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unqualified%3A Invalid Contact Info</fullName>
+        <actions>
+            <name>Owner_Invalid_Contact_Info</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.IsConverted</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Unqualified</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Unqualified_Reason__c</field>
+            <operation>equals</operation>
+            <value>Invalid Contact Info</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unqualified%3A Unqualified</fullName>
+        <actions>
+            <name>Owner_Unqualified_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.IsConverted</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Unqualified</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Unqualified_Reason__c</field>
+            <operation>equals</operation>
+            <value>Language Barrier,Business Closed,Non-PNC,Retiring</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Lead_On_Pro_Please_Contact</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Lead On Pro. Please Contact!</subject>
+    </tasks>
+</Workflow>

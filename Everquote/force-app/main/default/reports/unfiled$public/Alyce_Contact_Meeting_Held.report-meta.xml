@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>Contact.Campaign__c</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>Activity.MeetingHeld__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Meeting_Held__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>meeting held</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Campaign__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>2019-Q4 Alyce</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LAST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Alyce Contact Meeting Held</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactActivity</reportType>
+    <roleHierarchyFilter>ADMIN</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-10-31</startDate>
+    </timeFrameFilter>
+</Report>
