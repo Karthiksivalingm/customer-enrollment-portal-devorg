@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Document ID** | KB-002 |
-| **Last updated** | 2026-10-19 |
+| **Last updated** | 2026-10-21 (Exclude from Auto-Offboarding, REQ-035) |
 
 This describes the sandbox build as of 13 Oct 2026. It was established by reading the code and querying the org (29 Sep → 8 Oct). Change records: [CR-001](../04-Change-Records/CR-001_Shopify-At-Risk-Warm-Off-Offboarding-Sandbox-Build.md) (build) and [CR-012](../04-Change-Records/CR-012_Shopify-Test-Classes.md) (test classes).
 
@@ -59,6 +59,14 @@ If a store orders again, its open notices are closed as Recovered.
 The template is chosen by Stage: `Template_Stage_1..5__c` → Warm Off 1–5, or `Email_Template_Name__c` for legacy notices that have no Stage.
 The email goes to the Contact from the org-wide address, with the notice as WhatId so merge fields fill in, and the activity is logged.
 Apex is used because the flow's own Send Email action didn't fill merge fields from the notice (tested 28 Sep). Failed sends aren't retried.
+
+## Exclude from Auto-Offboarding (account manager exception, from 21 Oct 2026)
+The checkbox `Exclude_From_Auto_Offboarding__c` (optional reason `Auto_Offboarding_Exclusion_Reason__c`) sits on the Company and Store Location pages. When it is ticked on a store or on its Company:
+- the notice batch does not select the store, so it gets no warm-off emails, no Email 3 task and no 18-month deactivation;
+- the flow "Create At Risk Task for Account Owner" creates no task.
+
+R12, the at-risk flag, order sync and manual offboarding keep working. Unticking the box resumes the series from the last order date.
+See [REQ-035](../03-Requirements/REQ-035_Auto-Offboarding-Exclusion.md), [CR-026](../04-Change-Records/CR-026_Auto-Offboarding-Exclusion-Fields-Access-And-Pages.md), [CR-027](../04-Change-Records/CR-027_Auto-Offboarding-Exclusion-Batch-And-Flow.md) and the open decisions in [CON-034](../05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md).
 
 ## Config: `Shopify_At_Risk_Config__mdt.Default`
 Active, At Risk Mode (Every Stage), Auto Offboard (on), Deactivation Months (18), Reminder Days (15; the code hard-codes 15), Org Wide Email,

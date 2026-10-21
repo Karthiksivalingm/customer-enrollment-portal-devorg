@@ -5,6 +5,7 @@
  * Each email = one Shopify_At_Risk_Notice__c per contact; the insert fires the
  * "Send Shopify At Risk Notice" flow, which sends it through SendWarmOffEmail.
  * Settings: Shopify_At_Risk_Config__mdt, record 'Default'.
+ * Stores with Exclude_From_Auto_Offboarding__c ticked (on the store or its Company) are skipped.
  * Schedule: daily 5:00 AM (cron 0 0 5 * * ?), after the night order sync.
  */
 public class ShopifyAtRiskNoticeBatch
@@ -105,7 +106,10 @@ public class ShopifyAtRiskNoticeBatch
             'AND Active__c = true ' +
             'AND Shopify_Company_Id__c != null ' +
             'AND Last_Shopify_Order_Date__c != null ' +
-            'AND Last_Shopify_Order_Date__c <= :cutoff';
+            'AND Last_Shopify_Order_Date__c <= :cutoff ' +
+            // Account manager exception: store or its Company excluded from auto-offboarding
+            'AND Exclude_From_Auto_Offboarding__c = false ' +
+            'AND Parent.Exclude_From_Auto_Offboarding__c = false';
 
         // Sandbox only: limits the run to test stores (blank in production)
         if (String.isNotBlank(cfg.Test_Store_Name_Filter__c)) {
@@ -129,6 +133,8 @@ public class ShopifyAtRiskNoticeBatch
             'AND Account.RecordType.DeveloperName = \'Store_Location\' ' +
             'AND Account.ParentId != null ' +
             'AND Account.At_Risk_Since__c != null ' +
+            'AND Account.Exclude_From_Auto_Offboarding__c = false ' +
+            'AND Account.Parent.Exclude_From_Auto_Offboarding__c = false ' +
             'AND IsActive = true ' +
             'AND Contact.Email != null' +
             consentFilter();

@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-19 (aligned with the house standard; non-sandbox details removed, CR-025).
+Every project document, by folder and serial number. **Last updated:** 2026-10-21 (Exclude from Auto-Offboarding: REQ-035, CR-026, CR-027, CON-034, CON-035).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -9,9 +9,9 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 |---|---|---|---|
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, onboarding | KB-007 |
-| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-035 |
-| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-026 |
-| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-034 |
+| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-036 |
+| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-028 |
+| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-036 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-010 |
 | `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario | ATR-002 |
@@ -65,6 +65,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | REQ-032 | [Shopify Test Class Coverage](03-Requirements/REQ-032_Shopify-Test-Class-Coverage.md) | ✅ Done (deploy `0Afdx00000GDn9lCAD`, 105/105) |
 | REQ-033 | [Move Goodr Into sfdcut SFDC Repository](03-Requirements/REQ-033_Move-Goodr-Into-Sfdcut-SFDC-Repository.md) | ✅ Done (pull request) |
 | REQ-034 | [Align Goodr with the MLB folder standard (sandbox-only content)](03-Requirements/REQ-034_Align-Goodr-With-MLB-Standard.md) | ✅ Done |
+| REQ-035 | [Exclude an Account from the Automated Offboarding](03-Requirements/REQ-035_Auto-Offboarding-Exclusion.md) | 🔧 Built in the sandbox 2026-10-21; waiting on client testing (CON-034) |
 
 ## 04 — Change Records
 | ID | Document | Date |
@@ -90,6 +91,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | CR-023 | [Repository best-practice setup](04-Change-Records/CR-023_Repository-Best-Practice-Setup.md) | 2026-10-13 |
 | CR-024 | [Move into the sfdcut/SFDC repository](04-Change-Records/CR-024_Move-Into-Sfdcut-SFDC-Repository.md) | 2026-10-14 |
 | CR-025 | [Align with the house folder standard (sandbox-only content)](04-Change-Records/CR-025_Align-With-House-Standard.md) | 2026-10-19 |
+| CR-026 | [Auto-Offboarding Exclusion: fields, field access and pages](04-Change-Records/CR-026_Auto-Offboarding-Exclusion-Fields-Access-And-Pages.md) | 2026-10-21 |
+| CR-027 | [Auto-Offboarding Exclusion: warm-off batch and at-risk task flow](04-Change-Records/CR-027_Auto-Offboarding-Exclusion-Batch-And-Flow.md) | 2026-10-21 |
 
 ## 05 — Conflicts
 | ID | Document | Status |
@@ -118,6 +121,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | CON-030 | [Report filters lose renamed values silently](05-Conflicts/CON-030_Report-Filters-Lose-Renamed-Values-Silently.md) | ⚠ Open risk |
 | CON-031 | [Shopify company rollup is calculated per 200-record batch chunk](05-Conflicts/CON-031_Shopify-Company-Rollup-Is-Calculated-Per-200-Record.md) | ⚠ Open risk |
 | CON-032 | [With At Risk Mode = Every Stage, a store can lose the at-risk flag in](05-Conflicts/CON-032_With-At-Risk-Mode-Every-Stage-A-Store.md) | ⚠ Open risk |
+| CON-034 | [Auto-Offboarding Exclusion: open decisions](05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md) | ⚠ Open (client decision) |
+| CON-035 | [Offboarding behaviour vs the client's answers](05-Conflicts/CON-035_Offboarding-Behaviour-Vs-Client-Answers.md) | ⚠ Open (parked) |
 | CON-033 | [Running ShopifyAtRiskNoticeBatch by hand sends real emails](05-Conflicts/CON-033_Running-ShopifyAtRiskNoticeBatch-By-Hand-Sends-Real-Emails.md) | ⚠ Open risk |
 
 ## 06 — Deployment

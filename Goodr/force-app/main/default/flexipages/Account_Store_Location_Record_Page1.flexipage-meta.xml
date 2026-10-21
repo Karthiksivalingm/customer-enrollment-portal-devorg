@@ -337,6 +337,33 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Exclude_From_Auto_Offboarding__c</fieldItem>
+                <identifier>RecordExclude_From_Auto_Offboarding_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Auto_Offboarding_Exclusion_Reason__c</fieldItem>
+                <identifier>RecordAuto_Offboarding_Exclusion_Reason_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Exclude_From_Auto_Offboarding__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Offboarding_Reason__c</fieldItem>
                 <identifier>RecordOffboarding_Reason_cField</identifier>
                 <visibilityRule>

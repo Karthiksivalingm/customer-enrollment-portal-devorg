@@ -7,7 +7,9 @@ _Generated 2026-10-14._ This project only tracks the objects and fields that wer
 | Field | Label | Type | Length | Help text / description |
 |---|---|---|---|---|
 | `Active__c` | Shopify Ordering Enabled | Checkbox |  | The Account should be marked Inactive when the shop is closed. |
+| `Auto_Offboarding_Exclusion_Reason__c` | Auto-Offboarding Exclusion Reason | Text | 255 | Optional: why this account is excluded from the automated offboarding. Added 2026-10-21 (CR-026). |
 | `Cluster__c` | Cluster | Picklist |  |  |
+| `Exclude_From_Auto_Offboarding__c` | Exclude from Auto-Offboarding | Checkbox |  | Skips the at-risk task, warm-off emails and 18-month deactivation for the store, or for all stores of a Company. History tracked. Added 2026-10-21 (CR-026). |
 | `Current_Rolling_12_Month_Sales__c` | Rolling 12 Month Sales | Currency |  | Total Shopify orders over the last 365 days. If today is 11 Sep 2026, this covers 11 Sep 2025 to 11 Sep 2026. Used for account sizing only â€” it does not decide the At Risk flag. / Sales team can see on the account page how much the customer spent THIS year without running a report |
 | `Inactivity_Stage__c` | Inactivity Stage | Text |  |  |
 | `Last_Shopify_Order_Date__c` | Last Shopify Order Date | Date |  |  |

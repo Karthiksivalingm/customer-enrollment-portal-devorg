@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_From_Auto_Offboarding__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When ticked, this account is skipped by the automated at-risk / warm-off offboarding (at-risk task, warm-off emails and 18-month deactivation). On a Company it covers all of its Store Locations. Manual offboarding is not affected.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Tick to keep this account out of the automated at-risk / warm-off offboarding. Manual offboarding still works.</inlineHelpText>
+    <label>Exclude from Auto-Offboarding</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

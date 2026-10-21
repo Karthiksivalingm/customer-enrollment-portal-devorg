@@ -281,6 +281,71 @@ private class ShopifyAtRiskNoticeBatchTest {
                                 WHERE Store_Account__c = :s.Id AND Stage__c = null]);
     }
 
+    // ── Exclude from Auto-Offboarding (account manager exception) ─
+
+    @IsTest static void excludedStore_month18_notOffboarded() {
+        Account s = makeStore(Date.today().addMonths(-18).addDays(-1), false);
+        seedSent(s, ShopifyAtRiskNoticeBatch.STAGE_3, Date.today().addMonths(-1));
+        seedSent(s, ShopifyAtRiskNoticeBatch.STAGE_4, Date.today().addDays(-15));
+        update new Account(Id = s.Id, Exclude_From_Auto_Offboarding__c = true);
+        run(config('Every Stage', true));
+        System.assertEquals(true, isActive(s.Id));
+        System.assertEquals(0, noticesFor(s.Id, ShopifyAtRiskNoticeBatch.STAGE_5).size());
+    }
+
+    @IsTest static void excludedStore_month17_noEmailNoTask() {
+        Account s = makeStore(Date.today().addMonths(-17).addDays(-3), true);
+        update new Account(Id = s.Id, Exclude_From_Auto_Offboarding__c = true);
+        run(config('Every Stage', true));
+        System.assertEquals(0, [SELECT COUNT() FROM Shopify_At_Risk_Notice__c WHERE Store_Account__c = :s.Id]);
+        System.assertEquals(0, [SELECT COUNT() FROM Task WHERE WhatId = :s.Id AND Subject LIKE 'Retailer inactivity%']);
+    }
+
+    @IsTest static void excludedCompany_coversItsStores() {
+        Account s = makeStore(Date.today().addMonths(-12).addDays(-3), true);
+        update new Account(Id = s.ParentId, Exclude_From_Auto_Offboarding__c = true);
+        run(config('Every Stage', true));
+        System.assertEquals(0, [SELECT COUNT() FROM Shopify_At_Risk_Notice__c WHERE Store_Account__c = :s.Id]);
+    }
+
+    @IsTest static void notExcluded_stillProcessed() {
+        Account s = makeStore(Date.today().addMonths(-12).addDays(-3), true);
+        update new Account(Id = s.Id, Exclude_From_Auto_Offboarding__c = false);
+        run(config('Every Stage', true));
+        System.assertEquals(1, noticesFor(s.Id, ShopifyAtRiskNoticeBatch.STAGE_1).size());
+    }
+
+    @IsTest static void excludedStore_legacyRun_noNotice() {
+        Account s = makeStore(Date.today().addDays(-10), true);
+        update new Account(Id = s.Id, At_Risk_Since__c = Date.today(), Exclude_From_Auto_Offboarding__c = true);
+        Test.startTest();
+        Database.executeBatch(new ShopifyAtRiskNoticeBatch(config('Every Stage', false), true), 200);
+        Test.stopTest();
+        System.assertEquals(0, [SELECT COUNT() FROM Shopify_At_Risk_Notice__c WHERE Store_Account__c = :s.Id]);
+    }
+
+    // Flow "Create At Risk Task for Account Owner": skipped for an excluded store or Company
+    @IsTest static void atRiskTask_skippedWhenExcluded() {
+        Account normal   = makeStore(Date.today().addDays(-10), true);
+        Account excluded = makeStore(Date.today().addDays(-10), true);
+        Account viaCo    = makeStore(Date.today().addDays(-10), true);
+        update new List<Account>{
+            new Account(Id = excluded.Id, Exclude_From_Auto_Offboarding__c = true),
+            new Account(Id = viaCo.ParentId, Exclude_From_Auto_Offboarding__c = true)
+        };
+        Test.startTest();
+        update new List<Account>{
+            new Account(Id = normal.Id,   At_Risk_Since__c = Date.today()),
+            new Account(Id = excluded.Id, At_Risk_Since__c = Date.today()),
+            new Account(Id = viaCo.Id,    At_Risk_Since__c = Date.today())
+        };
+        Test.stopTest();
+        String subj = 'Shopify sales at risk%';
+        System.assertEquals(1, [SELECT COUNT() FROM Task WHERE WhatId = :normal.Id   AND Subject LIKE :subj]);
+        System.assertEquals(0, [SELECT COUNT() FROM Task WHERE WhatId = :excluded.Id AND Subject LIKE :subj]);
+        System.assertEquals(0, [SELECT COUNT() FROM Task WHERE WhatId = :viaCo.Id    AND Subject LIKE :subj]);
+    }
+
     // ── SendWarmOffEmail ──────────────────────────────────────────
 
     @IsTest static void invocable_handlesMissingNoticeAndMissingTemplate() {
