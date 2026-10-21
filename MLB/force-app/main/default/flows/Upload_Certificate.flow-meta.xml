@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>67.0</apiVersion>
+    <actionCalls>
+        <description>Saves the uploaded certificate files as Contact attachments ("[Category] name"). The Vendor Activation Agreement template attaches Contact attachments only, so files added directly to Files are not sent.</description>
+        <name>Copy_Certificates_To_Attachments</name>
+        <label>Copy Certificates To Attachments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>CertificateAttachmentService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Which_Category</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_File_Screen</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>category</name>
+            <value>
+                <elementReference>varCategory</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contactId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contentVersionIds</name>
+            <value>
+                <elementReference>varVersionIds</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>CertificateAttachmentService</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>    <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_File_Name</name>
@@ -552,7 +587,7 @@
             <targetReference>Update_Category</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Which_Category</targetReference>
+            <targetReference>Copy_Certificates_To_Attachments</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>

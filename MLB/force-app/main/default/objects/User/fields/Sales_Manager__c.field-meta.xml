@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Manager__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ticked for users who appear as Sales Manager choices in the Contact Create Agreement flow (Vendor_Activation_Food_and_Beverage_Agreement). Replaces the Sales Managers role for that list.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Tick to make this user selectable as Sales Manager on vendor agreements.</inlineHelpText>
+    <label>Sales Manager</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

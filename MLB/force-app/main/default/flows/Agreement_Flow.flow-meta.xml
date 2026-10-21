@@ -24,6 +24,13 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
+            <assignToReference>currentRow.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>existingRow.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>currentRow.Opportunity_LUR__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -178,7 +185,7 @@
             <assignToReference>Get_opportunity.Agreement_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Select_Agreement_Type</elementReference>
+                <elementReference>frmAgreementType</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -265,7 +272,7 @@
             <assignToReference>Get_opportunity.Agreement_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Select_Agreement_Type</elementReference>
+                <elementReference>frmAgreementType</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -372,7 +379,7 @@
             <assignToReference>Get_opportunity.Agreement_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Select_Agreement_Type</elementReference>
+                <elementReference>frmAgreementType</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -529,7 +536,7 @@
             <assignToReference>Get_opportunity.Agreement_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Select_Agreement_Type</elementReference>
+                <elementReference>frmAgreementType</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -828,6 +835,196 @@
         </assignmentItems>
         <connector>
             <targetReference>Parking_In_Range</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_To_Create</name>
+        <label>Add To Create</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>createRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Split_Rows</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>createCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Split_Rows</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_To_Delete</name>
+        <label>Add To Delete</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>deleteRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Extra_Rows_Loop</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>deleteCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Extra_Rows_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_Extra</name>
+        <label>Count Extra</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>seekIndex</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Extra_Row</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Existing row being updated: tick Flow_Update__c so the update passes the Membership_Agreement_Flow_Only validation rule. Membership_Agreement_Reset_Flow_Update clears it right after the save.</description>
+        <name>Mark_And_Add_To_Update</name>
+        <label>Mark And Add To Update</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Split_Rows.Flow_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Split_Rows</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Split_Rows</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prep_Extra_Rows</name>
+        <label>Prep Extra Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>seekIndex</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Extra_Rows_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Remembers the matching existing row once the seek loop reaches the current row number.</description>
+        <name>Capture_Row</name>
+        <label>Capture Row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>existingRow</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Seek_Existing_Row</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Seek_Existing_Row</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_Seek</name>
+        <label>Count Seek</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>seekIndex</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Target_Row</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Before each Row Entry pass: clear the previous existing row and restart the seek counter, so a pass beyond the saved rows starts blank.</description>
+        <name>Prep_Row_Lookup</name>
+        <label>Prep Row Lookup</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>existingRow</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>nullRow</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>seekIndex</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Seek_Existing_Row</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Agreement already saved: load the saved Opportunity values and Membership rows so every screen opens prefilled. Not run for a new agreement, so its screens start blank.</description>
+        <name>Set_Prefill</name>
+        <label>Set Prefill</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>prefillOpp</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_opportunity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>prefillRows</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Existing_Rows</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_the_Agreement_Type</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -1615,6 +1812,11 @@
         </value>
     </choices>
     <choices>
+        <name>TermLength_1YearNewBusiness</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;1 year New Business&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+    </choices>
+    <choices>
         <name>TermLength_1YearRenewal</name>
         <choiceText>1 year renewal</choiceText>
         <dataType>String</dataType>
@@ -1670,10 +1872,10 @@
             <name>Memberships</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Select_Agreement_Type</leftValueReference>
+                <leftValueReference>frmAgreementType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Membership</elementReference>
+                    <stringValue>Membership</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1685,10 +1887,10 @@
             <name>MultiProduct</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Select_Agreement_Type</leftValueReference>
+                <leftValueReference>frmAgreementType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Multi_Product</elementReference>
+                    <stringValue>Multi-Product</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1700,10 +1902,10 @@
             <name>Flexs</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Select_Agreement_Type</leftValueReference>
+                <leftValueReference>frmAgreementType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Flex</elementReference>
+                    <stringValue>Flex</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1715,10 +1917,10 @@
             <name>SuiteLeases</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Select_Agreement_Type</leftValueReference>
+                <leftValueReference>frmAgreementType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Suite_Lease</elementReference>
+                    <stringValue>Suite Lease</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1748,7 +1950,7 @@
             </conditions>
             <connector>
                 <isGoTo>true</isGoTo>
-                <targetReference>Row_Entry</targetReference>
+                <targetReference>Prep_Row_Lookup</targetReference>
             </connector>
             <label>More Rows</label>
         </rules>
@@ -1773,7 +1975,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Row_Entry</targetReference>
+                <targetReference>Prep_Row_Lookup</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -1835,7 +2037,183 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>Updated the Approval Process</description>
+    <decisions>
+        <name>Has_New_Rows</name>
+        <label>Has New Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Has_Update_Rows</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>New_Rows_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>createCount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Membership_Records</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Rows that existed before but are beyond the new row count are deleted.</description>
+        <name>Has_Old_Rows</name>
+        <label>Has Surplus Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Agreement_Summary</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Old_Rows_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>deleteCount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Old_Rows</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_Update_Rows</name>
+        <label>Has Update Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Has_Old_Rows</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Update_Rows_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>updateCount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Membership_Rows</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Extra_Row</name>
+        <label>Is Extra Row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Extra_Rows_Loop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Extra_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>seekIndex</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>frmMaxRows</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_To_Delete</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_New_Row</name>
+        <label>Is New Row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Mark_And_Add_To_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Row</defaultConnectorLabel>
+        <rules>
+            <name>New_Row_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Split_Rows.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_To_Create</targetReference>
+            </connector>
+            <label>New Row</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Target_Row</name>
+        <label>Is Target Row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Seek_Existing_Row</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Target_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>seekIndex</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>rowIndex</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Capture_Row</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_Agreement</name>
+        <label>Has Agreement</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Agreement</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>New Agreement</defaultConnectorLabel>
+        <rules>
+            <name>Agreement_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_opportunity.Agreement_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Prefill</targetReference>
+            </connector>
+            <label>Agreement Exists</label>
+        </rules>
+    </decisions>
+    <description>Create or edit the agreement on an Opportunity (one flow for the Create Agreement and Edit Agreement buttons). No agreement yet: asks for the Agreement Type and shows blank screens. Agreement saved: opens that type with every field prefilled from the saved values. Same screens and calculations for both. Membership rows are updated in place (Flow_Update__c ticked so they pass the Membership_Agreement_Flow_Only rule), extra rows created and surplus rows deleted. The Opportunity is saved before the rows and flips Agreement_Flow_Update__c to pass Agreement_Sections_Flow_Only. Runs in system mode with sharing. Any error rolls the save back.</description>
     <dynamicChoiceSets>
         <name>Cardinpayment</name>
         <dataType>Picklist</dataType>
@@ -1910,59 +2288,43 @@
 )</expression>
     </formulas>
     <formulas>
-        <description>Resolves the Entity Name to save on the Opportunity from the Flex Agreement screen: the newly typed value if the user chose to overwrite; otherwise, if Leave As Is was chosen, the related Account&apos;s Name (used for both Person Accounts and standard Accounts, based on Account.IsPersonAccount).</description>
+        <description>Resolves the Entity Name to save on the Opportunity from the Flex Agreement screen: the newly typed value if the user chose to overwrite; otherwise (Leave As Is) the Entity Name already on the Opportunity, falling back to the related Account&apos;s Name when it is blank.</description>
         <name>frmFinalEntityName_Flex</name>
         <dataType>String</dataType>
         <expression>IF(
     {!Keep_Entity_Name_Flex} = &quot;Overwrite&quot;,
     {!New_Entity_Name_Flex},
-    IF(
-        {!Get_Related_Account.IsPersonAccount},
-        {!Get_Related_Account.Name},
-        {!Get_Related_Account.Name}
-    )
+    BLANKVALUE({!prefillOpp.Entity_Name__c}, {!Get_Related_Account.Name})
 )</expression>
     </formulas>
     <formulas>
-        <description>Resolves the Entity Name to save on the Opportunity from the Membership Terms screen: the newly typed value if the user chose to overwrite; otherwise, if Leave As Is was chosen, the related Account&apos;s Name (used for both Person Accounts and standard Accounts, based on Account.IsPersonAccount).</description>
+        <description>Resolves the Entity Name to save on the Opportunity from the Membership Terms screen: the newly typed value if the user chose to overwrite; otherwise (Leave As Is) the Entity Name already on the Opportunity, falling back to the related Account&apos;s Name when it is blank.</description>
         <name>frmFinalEntityName_Membership</name>
         <dataType>String</dataType>
         <expression>IF(
     {!Keep_Entity_Name_Membership} = &quot;Overwrite&quot;,
     {!New_Entity_Name_Membership},
-    IF(
-        {!Get_Related_Account.IsPersonAccount},
-        {!Get_Related_Account.Name},
-        {!Get_Related_Account.Name}
-    )
+    BLANKVALUE({!prefillOpp.Entity_Name__c}, {!Get_Related_Account.Name})
 )</expression>
     </formulas>
     <formulas>
-        <description>Resolves the Entity Name to save on the Opportunity from the Multi Product Agreement screen: the newly typed value if the user chose to overwrite; otherwise, if Leave As Is was chosen, the related Account&apos;s Name (used for both Person Accounts and standard Accounts, based on Account.IsPersonAccount).</description>
+        <description>Resolves the Entity Name to save on the Opportunity from the Multi Product Agreement screen: the newly typed value if the user chose to overwrite; otherwise (Leave As Is) the Entity Name already on the Opportunity, falling back to the related Account&apos;s Name when it is blank.</description>
         <name>frmFinalEntityName_MultiProduct</name>
         <dataType>String</dataType>
         <expression>IF(
     {!Keep_Entity_Name_MultiProduct} = &quot;Overwrite&quot;,
     {!New_Entity_Name_MultiProduct},
-    IF(
-        {!Get_Related_Account.IsPersonAccount},
-        {!Get_Related_Account.Name},
-        {!Get_Related_Account.Name}
-    )
+    BLANKVALUE({!prefillOpp.Entity_Name__c}, {!Get_Related_Account.Name})
 )</expression>
     </formulas>
     <formulas>
-        <description>Resolves the Entity Name to save on the Opportunity from the Suite Lease screen: the newly typed value if the user chose to overwrite; otherwise, if Leave As Is was chosen, the related Account&apos;s Name (used for both Person Accounts and standard Accounts, based on Account.IsPersonAccount).</description>
+        <description>Resolves the Entity Name to save on the Opportunity from the Suite Lease screen: the newly typed value if the user chose to overwrite; otherwise (Leave As Is) the Entity Name already on the Opportunity, falling back to the related Account&apos;s Name when it is blank.</description>
         <name>frmFinalEntityName_SuiteLease</name>
         <dataType>String</dataType>
         <expression>IF(
     {!Keep_Entity_Name_SuiteLease} = &quot;Overwrite&quot;,
     {!New_Entity_Name_SuiteLease},
-    IF(
-        {!Get_Related_Account.IsPersonAccount},
-        {!Get_Related_Account.Name},
-        {!Get_Related_Account.Name}
-    )
+    BLANKVALUE({!prefillOpp.Entity_Name__c}, {!Get_Related_Account.Name})
 )</expression>
     </formulas>
     <formulas>
@@ -2448,6 +2810,12 @@ IF(
         <expression>IF(ISBLANK({!termLength}), &quot;&quot;, TEXT({!frmTermLengthNumeric}))</expression>
     </formulas>
     <formulas>
+        <description>Opposite of the stored Agreement_Flow_Update__c. Flipping it in the same save lets the agreement fields pass the Agreement_Sections_Flow_Only validation rule.</description>
+        <name>frmToggleAgreementFlowUpdate</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!Get_opportunity.Agreement_Flow_Update__c})</expression>
+    </formulas>
+    <formulas>
         <description>Read-only toggle for the Total Due Today field on the Flex screen: locked (read-only) whenever the No. of Payments choice is PIF, editable otherwise.</description>
         <name>frmTotalDueTodayFlexReadOnly</name>
         <dataType>Boolean</dataType>
@@ -2460,7 +2828,7 @@ IF(
         <expression>IF(
     {!Paymentplan_Flex} = &quot;PIF&quot;,
     {!TotalflexMembership},
-    {!TotalDueToday_Flex}
+    IF(ISBLANK({!TotalDueToday_Flex}), {!prefillOpp.Total_Due_Today__c}, {!TotalDueToday_Flex})
 )</expression>
         <scale>2</scale>
     </formulas>
@@ -2471,10 +2839,134 @@ IF(
         <scale>2</scale>
     </formulas>
     <formulas>
-        <description>Opposite of the stored Agreement_Flow_Update__c. Flipping it in the same save lets the agreement fields pass the Agreement_Sections_Flow_Only validation rule.</description>
-        <name>frmToggleAgreementFlowUpdate</name>
+        <name>frmExistingCardInPayment</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Card_in_Payment__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingFlexPaymentPlan</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Payment_Plan__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Saved Number of Games (Parking) mapped back to the dropdown: one of the listed values, otherwise Others.</description>
+        <name>frmExistingGamesParkingChoice</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!existingRow.Number_of_Games_Parking__c}),
+    &quot;&quot;,
+    IF(
+        OR(VALUE({!existingRow.Number_of_Games_Parking__c}) = 81, VALUE({!existingRow.Number_of_Games_Parking__c}) = 41, VALUE({!existingRow.Number_of_Games_Parking__c}) = 40, VALUE({!existingRow.Number_of_Games_Parking__c}) = 20, VALUE({!existingRow.Number_of_Games_Parking__c}) = 10),
+        TEXT(VALUE({!existingRow.Number_of_Games_Parking__c})),
+        &quot;Others&quot;
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingGamesParkingOther</name>
+        <dataType>Number</dataType>
+        <expression>IF({!frmExistingGamesParkingChoice} = &quot;Others&quot;, VALUE({!existingRow.Number_of_Games_Parking__c}), {!nullNumber})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Saved Number of Games (Seat) mapped back to the dropdown: one of the listed values, otherwise Others.</description>
+        <name>frmExistingGamesSeatChoice</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!existingRow.Number_of_Games_Seat__c}),
+    &quot;&quot;,
+    IF(
+        OR(VALUE({!existingRow.Number_of_Games_Seat__c}) = 81, VALUE({!existingRow.Number_of_Games_Seat__c}) = 41, VALUE({!existingRow.Number_of_Games_Seat__c}) = 40, VALUE({!existingRow.Number_of_Games_Seat__c}) = 20, VALUE({!existingRow.Number_of_Games_Seat__c}) = 10),
+        TEXT(VALUE({!existingRow.Number_of_Games_Seat__c})),
+        &quot;Others&quot;
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingGamesSeatOther</name>
+        <dataType>Number</dataType>
+        <expression>IF({!frmExistingGamesSeatChoice} = &quot;Others&quot;, VALUE({!existingRow.Number_of_Games_Seat__c}), {!nullNumber})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>frmExistingParking</name>
         <dataType>Boolean</dataType>
-        <expression>NOT({!Get_opportunity.Agreement_Flow_Update__c})</expression>
+        <expression>BLANKVALUE({!prefillOpp.Number_of_Rows_Parkings__c}, 0) &gt; 0</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingPaymentType</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Payment_Type__c})</expression>
+    </formulas>
+    <formulas>
+        <description>1-yr Renewal stores the single Season in Season_Year__c; other terms store Start-End.</description>
+        <name>frmExistingSeason</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!prefillOpp.Season_Year__c}, &quot;-&quot;), &quot;&quot;, {!prefillOpp.Season_Year__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSeasonEnd</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!prefillOpp.Season_Year__c}, &quot;-&quot;), TRIM(MID({!prefillOpp.Season_Year__c}, FIND(&quot;-&quot;, {!prefillOpp.Season_Year__c}) + 1, 20)), &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSeasonStart</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!prefillOpp.Season_Year__c}, &quot;-&quot;), TRIM(LEFT({!prefillOpp.Season_Year__c}, FIND(&quot;-&quot;, {!prefillOpp.Season_Year__c}) - 1)), &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSuiteGames</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Total_of_Games__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSuiteLevel</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Suite_Level__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSuiteLocation</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Suite_Location__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSuiteNumber</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Suite_Number__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSuiteTickets</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Total_Tickets_in_Suite__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmExistingSuiteYears</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!prefillOpp.Total_Years_of_Contract__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Term Length dropdown value rebuilt from the saved numeric Term_Length__c (1/2/3) and the saved Escalator text, which says New Business for the New Business terms.</description>
+        <name>frmExistingTermLength</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!prefillOpp.Term_Length__c} = &quot;1&quot;,
+    &quot;1 year renewal&quot;,
+    IF(
+        {!prefillOpp.Term_Length__c} = &quot;2&quot;,
+        IF(CONTAINS({!prefillOpp.Escalator__c}, &quot;New Business&quot;), &quot;2 year New Business&quot;, &quot;2 Year Renewal&quot;),
+        IF(
+            {!prefillOpp.Term_Length__c} = &quot;3&quot;,
+            IF(CONTAINS({!prefillOpp.Escalator__c}, &quot;New Business&quot;), &quot;3 year New Business&quot;, &quot;3 year Renewal&quot;),
+            &quot;&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>The agreement type being worked on: the saved Agreement Type when editing, otherwise the type chosen on the Select Agreement Type screen.</description>
+        <name>frmAgreementType</name>
+        <dataType>String</dataType>
+        <expression>BLANKVALUE(TEXT({!Get_opportunity.Agreement_Type__c}), {!Select_Agreement_Type})</expression>
     </formulas>
     <interviewLabel>Agreement Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Agreement Flow</label>
@@ -2489,7 +2981,7 @@ IF(
             <targetReference>Apply_Header_And_Collect</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Create_Membership_Records</targetReference>
+            <targetReference>Split_Rows</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
@@ -2504,6 +2996,50 @@ IF(
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Stamp_Header_On_Records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Existing rows beyond the new row count are collected for deletion.</description>
+        <name>Extra_Rows_Loop</name>
+        <label>Extra Rows Loop</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>prefillRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Count_Extra</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_Membership_To_Opportunity</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Split_Rows</name>
+        <label>Split Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>finalRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Is_New_Row</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Prep_Extra_Rows</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+
+    <loops>
+        <name>Seek_Existing_Row</name>
+        <label>Seek Existing Row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>prefillRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Count_Seek</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Row_Entry</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -2531,14 +3067,28 @@ IF(
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Assign_Membership_To_Opportunity</targetReference>
+            <targetReference>Has_Update_Rows</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>Update_Failed</targetReference>
+            <targetReference>Rollback_Changes</targetReference>
         </faultConnector>
-        <inputReference>finalRecords</inputReference>
+        <inputReference>createRecords</inputReference>
     </recordCreates>
+    <recordDeletes>
+        <name>Delete_Old_Rows</name>
+        <label>Delete Old Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Agreement_Summary</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Rollback_Changes</targetReference>
+        </faultConnector>
+        <inputReference>deleteRecords</inputReference>
+    </recordDeletes>
     <recordLookups>
         <name>Get_opportunity</name>
         <label>Get opportunity</label>
@@ -2567,7 +3117,7 @@ IF(
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Agreement</targetReference>
+            <targetReference>Get_Existing_Rows</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2581,6 +3131,39 @@ IF(
         <object>Account</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <description>Existing Membership Agreement rows for this Opportunity, in creation order, used to prefill each Row Entry pass.</description>
+        <name>Get_Existing_Rows</name>
+        <label>Get Existing Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Agreement</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Opportunity_LUR__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Membership_Agreement__c</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordRollbacks>
+        <name>Rollback_Changes</name>
+        <label>Rollback Changes</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Failed</targetReference>
+        </connector>
+    </recordRollbacks>
     <recordUpdates>
         <name>Update_Flex_Opportunity</name>
         <label>Update Flex Opportunity</label>
@@ -2590,7 +3173,7 @@ IF(
             <targetReference>Agreement_Summary</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>Update_Failed</targetReference>
+            <targetReference>Rollback_Changes</targetReference>
         </faultConnector>
         <inputReference>Get_opportunity</inputReference>
     </recordUpdates>
@@ -2600,11 +3183,11 @@ IF(
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Agreement_Summary</targetReference>
+            <targetReference>Has_New_Rows</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>Update_Failed</targetReference>
+            <targetReference>Rollback_Changes</targetReference>
         </faultConnector>
         <inputReference>Get_opportunity</inputReference>
     </recordUpdates>
@@ -2618,7 +3201,7 @@ IF(
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>Update_Failed</targetReference>
+            <targetReference>Rollback_Changes</targetReference>
         </faultConnector>
         <inputReference>Get_opportunity</inputReference>
     </recordUpdates>
@@ -2632,9 +3215,23 @@ IF(
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>Update_Failed</targetReference>
+            <targetReference>Rollback_Changes</targetReference>
         </faultConnector>
         <inputReference>Get_opportunity</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Membership_Rows</name>
+        <label>Update Membership Rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Has_Old_Rows</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Rollback_Changes</targetReference>
+        </faultConnector>
+        <inputReference>updateRecords</inputReference>
     </recordUpdates>
     <runInMode>SystemModeWithSharing</runInMode>
     <screens>
@@ -2684,7 +3281,7 @@ Flex Agreement</description>
         <allowPause>false</allowPause>
         <fields>
             <name>Membership_Summary_Text</name>
-            <fieldText>&lt;p&gt;{!frmMaxRows} record(s) created in Membership Agreement.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;{!frmMaxRows} record(s) saved in Membership Agreement.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -2697,10 +3294,10 @@ Flex Agreement</description>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>Select_Agreement_Type</leftValueReference>
+                    <leftValueReference>frmAgreementType</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
-                        <elementReference>Membership</elementReference>
+                        <stringValue>Membership</stringValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -2720,10 +3317,10 @@ Flex Agreement</description>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>Select_Agreement_Type</leftValueReference>
+                    <leftValueReference>frmAgreementType</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
-                        <elementReference>Multi_Product</elementReference>
+                        <stringValue>Multi-Product</stringValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -2743,10 +3340,10 @@ Flex Agreement</description>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>Select_Agreement_Type</leftValueReference>
+                    <leftValueReference>frmAgreementType</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
-                        <elementReference>Flex</elementReference>
+                        <stringValue>Flex</stringValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -2766,10 +3363,10 @@ Flex Agreement</description>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>Select_Agreement_Type</leftValueReference>
+                    <leftValueReference>frmAgreementType</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
-                        <elementReference>Suite_Lease</elementReference>
+                        <stringValue>Suite Lease</stringValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -2890,6 +3487,9 @@ Flex Agreement</description>
                 <fields>
                     <name>TotalflexMembership</name>
                     <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Total_Flex_Membership__c</elementReference>
+                </defaultValue>
                     <fieldText>Total flex Membership</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2909,6 +3509,9 @@ Flex Agreement</description>
                     <choiceReferences>FlexPaymentPlan_PIF</choiceReferences>
                     <choiceReferences>FlexPaymentPlan_5Month</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingFlexPaymentPlan</elementReference>
+                </defaultValue>
                     <fieldText>No. of Payments for this Season</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2948,6 +3551,9 @@ Flex Agreement</description>
                 <fields>
                     <name>BeginningSeason</name>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Beginning_Season_Flex__c</elementReference>
+                </defaultValue>
                     <fieldText>Current Season</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3093,7 +3699,7 @@ Flex Agreement</description>
         <fields>
             <name>Ticket_Office_Comments_Flex</name>
             <defaultValue>
-                <elementReference>Get_opportunity.Ticket_Office_Comments__c</elementReference>
+                <stringValue>{!Get_opportunity.Ticket_Office_Comments__c}</stringValue>
             </defaultValue>
             <fieldText>Ticket Office Comments</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -3125,6 +3731,9 @@ Flex Agreement</description>
         <fields>
             <name>Number_of_Rows</name>
             <dataType>Number</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Number_of_Rows_Seats__c</elementReference>
+                </defaultValue>
             <fieldText>Number of Rows (Tickets)</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3142,6 +3751,9 @@ Flex Agreement</description>
         <fields>
             <name>parking</name>
             <dataType>Boolean</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingParking</elementReference>
+                </defaultValue>
             <fieldText>Parking</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3158,6 +3770,9 @@ Flex Agreement</description>
         <fields>
             <name>Number_of_Rows_Parking</name>
             <dataType>Number</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Number_of_Rows_Parkings__c</elementReference>
+                </defaultValue>
             <fieldText>Number of Rows (Parking)</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3201,9 +3816,13 @@ Flex Agreement</description>
             <choiceReferences>TermLength_1YearRenewal</choiceReferences>
             <choiceReferences>TermLength_2YearRenewal</choiceReferences>
             <choiceReferences>TermLength_3YearRenewal</choiceReferences>
+            <choiceReferences>TermLength_1YearNewBusiness</choiceReferences>
             <choiceReferences>TermLength_2YearNewBusiness</choiceReferences>
             <choiceReferences>TermLength_3YearNewBusiness</choiceReferences>
             <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingTermLength</elementReference>
+                </defaultValue>
             <fieldText>Term Length</fieldText>
             <fieldType>DropdownBox</fieldType>
             <helpText>&lt;p&gt;Select the term length and agreement type for this membership&lt;/p&gt;</helpText>
@@ -3221,6 +3840,9 @@ Flex Agreement</description>
         <fields>
             <name>Season</name>
             <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSeason</elementReference>
+                </defaultValue>
             <fieldText>Current Season</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3251,6 +3873,9 @@ Flex Agreement</description>
         <fields>
             <name>Season_Start_year</name>
             <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSeasonStart</elementReference>
+                </defaultValue>
             <fieldText>Contract Season Start</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3281,6 +3906,9 @@ Flex Agreement</description>
         <fields>
             <name>Season_End_Year</name>
             <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSeasonEnd</elementReference>
+                </defaultValue>
             <fieldText>Contract Season End</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3366,6 +3994,9 @@ Flex Agreement</description>
             <name>Payment_Plan</name>
             <choiceReferences>PaymentPlanMembership</choiceReferences>
             <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingPaymentType</elementReference>
+                </defaultValue>
             <fieldText>No. of Payments for this Season</fieldText>
             <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3383,6 +4014,9 @@ Flex Agreement</description>
             <name>Card_In_Payment</name>
             <choiceReferences>Cardinpayment</choiceReferences>
             <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingCardInPayment</elementReference>
+                </defaultValue>
             <fieldText>Payment Plan for Future Season</fieldText>
             <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3399,6 +4033,9 @@ Flex Agreement</description>
         <fields>
             <name>Paid_to_Date</name>
             <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Total_Paid_to_Date__c</elementReference>
+                </defaultValue>
             <fieldText>Paid to Date</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3500,7 +4137,7 @@ Flex Agreement</description>
         <fields>
             <name>Ticket_Office_Comments_Membership</name>
             <defaultValue>
-                <elementReference>Get_opportunity.Ticket_Office_Comments__c</elementReference>
+                <stringValue>{!Get_opportunity.Ticket_Office_Comments__c}</stringValue>
             </defaultValue>
             <fieldText>Ticket Office Comments</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -3631,6 +4268,9 @@ Flex Agreement</description>
                 <fields>
                     <name>amountFlex</name>
                     <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Amount_allocated_to_Flex__c</elementReference>
+                </defaultValue>
                     <fieldText>Amount for Flex</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3648,6 +4288,9 @@ Flex Agreement</description>
                 <fields>
                     <name>amountGroup</name>
                     <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Amount_allocated_to_Groups__c</elementReference>
+                </defaultValue>
                     <fieldText>Amount for Group</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3665,6 +4308,9 @@ Flex Agreement</description>
                 <fields>
                     <name>amountSuite</name>
                     <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Amount_allocated_to_Suites__c</elementReference>
+                </defaultValue>
                     <fieldText>Amount for Suite</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3682,6 +4328,9 @@ Flex Agreement</description>
                 <fields>
                     <name>Seasons</name>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Multi_Product_Season_Year__c</elementReference>
+                </defaultValue>
                     <fieldText>Current Season</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3827,7 +4476,7 @@ Flex Agreement</description>
         <fields>
             <name>Ticket_Office_Comments_MultiProduct</name>
             <defaultValue>
-                <elementReference>Get_opportunity.Ticket_Office_Comments__c</elementReference>
+                <stringValue>{!Get_opportunity.Ticket_Office_Comments__c}</stringValue>
             </defaultValue>
             <fieldText>Ticket Office Comments</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -3879,9 +4528,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_OrderID_Seat</name>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Order_ID__c</elementReference>
+                </defaultValue>
                     <fieldText>Order ID</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -3901,9 +4553,12 @@ Flex Agreement</description>
                     <choiceReferences>NumberOfGamesSeat_10</choiceReferences>
                     <choiceReferences>NumberOfGamesSeat_Others</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingGamesSeatChoice</elementReference>
+                </defaultValue>
                     <fieldText>Number of Games</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -3917,9 +4572,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_NumberOfGames_Seat_Other</name>
                     <dataType>Number</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingGamesSeatOther</elementReference>
+                </defaultValue>
                     <fieldText>Number of Games - Other</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -3945,9 +4603,12 @@ Flex Agreement</description>
                     <name>Row_PlanType</name>
                     <choiceReferences>planType</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Plan_Type__c</elementReference>
+                </defaultValue>
                     <fieldText>Plan Type</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -3961,9 +4622,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_Section</name>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Location_Section__c</elementReference>
+                </defaultValue>
                     <fieldText>Location - Section</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -3977,9 +4641,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_Row</name>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Location_Row__c</elementReference>
+                </defaultValue>
                     <fieldText>Location - Row</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -3993,9 +4660,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_Qty</name>
                     <dataType>Number</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Qty_Seats__c</elementReference>
+                </defaultValue>
                     <fieldText>Seat Quantity</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -4010,10 +4680,13 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_Seat</name>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Location_Seat__c</elementReference>
+                </defaultValue>
                     <fieldText>Location - Seat</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;Enter a single seat number for Qty 1 (e.g. 8), a comma-separated list for non-adjacent seats (e.g. 1,6 for Qty 2), or a seat range for adjacent seats (e.g. 8-9 for Qty 2).&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4031,9 +4704,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_Price</name>
                     <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Price_Seats__c</elementReference>
+                </defaultValue>
                     <fieldText>Price per seat</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>2</scale>
                     <styleProperties>
@@ -4084,9 +4760,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_OrderID_Parking</name>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Order_ID_Parking__c</elementReference>
+                </defaultValue>
                     <fieldText>Order ID</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4106,9 +4785,12 @@ Flex Agreement</description>
                     <choiceReferences>NumberOfGamesParking_10</choiceReferences>
                     <choiceReferences>NumberOfGamesParking_Others</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingGamesParkingChoice</elementReference>
+                </defaultValue>
                     <fieldText>Number of Games (Parking)</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4122,9 +4804,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_NumberOfGames_Parking_Other</name>
                     <dataType>Number</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingGamesParkingOther</elementReference>
+                </defaultValue>
                     <fieldText>Number of Games (Parking) - Other</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -4150,9 +4835,12 @@ Flex Agreement</description>
                     <name>Row_ParkingPlanType</name>
                     <choiceReferences>Plantypeparking</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Plan_Type_Parking__c</elementReference>
+                </defaultValue>
                     <fieldText>Plan Type</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4167,9 +4855,12 @@ Flex Agreement</description>
                     <name>Row_ParkingLocation</name>
                     <choiceReferences>LocationParkingChoice</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Location_Parking__c</elementReference>
+                </defaultValue>
                     <fieldText>Location</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4183,9 +4874,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_ParkingQty</name>
                     <dataType>Number</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Qty_Parking__c</elementReference>
+                </defaultValue>
                     <fieldText>Qty</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -4200,9 +4894,12 @@ Flex Agreement</description>
                 <fields>
                     <name>Row_ParkingPrice</name>
                     <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>existingRow.Price_Parking__c</elementReference>
+                </defaultValue>
                     <fieldText>Price</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>2</scale>
                     <styleProperties>
@@ -4372,6 +5069,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteChoice_Fiesta</choiceReferences>
                     <choiceReferences>SuiteChoice_HallOfFame</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteLocation</elementReference>
+                </defaultValue>
                     <fieldText>Suite Location</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4428,6 +5128,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteNumber_39</choiceReferences>
                     <choiceReferences>SuiteNumber_40</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteNumber</elementReference>
+                </defaultValue>
                     <fieldText>Suite Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4446,6 +5149,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteChoice_Founders</choiceReferences>
                     <choiceReferences>SuiteChoice_Legends</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteLevel</elementReference>
+                </defaultValue>
                     <fieldText>Suite Level</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4477,6 +5183,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteTickets_25</choiceReferences>
                     <choiceReferences>SuiteTickets_26</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteTickets</elementReference>
+                </defaultValue>
                     <fieldText>Total Tickets in Suite</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4519,6 +5228,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteTickets_19</choiceReferences>
                     <choiceReferences>SuiteTickets_20</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteTickets</elementReference>
+                </defaultValue>
                     <fieldText>Total Tickets in Suite</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4562,6 +5274,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteTickets_27</choiceReferences>
                     <choiceReferences>SuiteTickets_28</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteTickets</elementReference>
+                </defaultValue>
                     <fieldText>Total Tickets in Suite</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4603,6 +5318,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteTickets_33</choiceReferences>
                     <choiceReferences>SuiteTickets_34</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteTickets</elementReference>
+                </defaultValue>
                     <fieldText>Total Tickets in Suite</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4634,6 +5352,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteGames_41</choiceReferences>
                     <choiceReferences>SuiteGames_81</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteGames</elementReference>
+                </defaultValue>
                     <fieldText>Total # of Games</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4655,6 +5376,9 @@ Flex Agreement</description>
                     <choiceReferences>SuiteYears_4</choiceReferences>
                     <choiceReferences>SuiteYears_5</choiceReferences>
                     <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>frmExistingSuiteYears</elementReference>
+                </defaultValue>
                     <fieldText>Total Years of Contract</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4671,6 +5395,9 @@ Flex Agreement</description>
                 <fields>
                     <name>This_Season_Total_Amount</name>
                     <dataType>Currency</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.This_Season_Total_Amount__c</elementReference>
+                </defaultValue>
                     <fieldText>This Season Total Amount</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4736,6 +5463,9 @@ Flex Agreement</description>
                 <fields>
                     <name>Parking_Pass</name>
                     <dataType>Number</dataType>
+                <defaultValue>
+                    <elementReference>prefillOpp.Parking_Passes__c</elementReference>
+                </defaultValue>
                     <fieldText>Parking Pass</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4856,7 +5586,7 @@ Flex Agreement</description>
         <fields>
             <name>Ticket_Office_Comments_SuiteLease</name>
             <defaultValue>
-                <elementReference>Get_opportunity.Ticket_Office_Comments__c</elementReference>
+                <stringValue>{!Get_opportunity.Ticket_Office_Comments__c}</stringValue>
             </defaultValue>
             <fieldText>Ticket Office Comments</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -4978,5 +5708,97 @@ Flex Agreement</description>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <scale>2</scale>
+    </variables>
+    <variables>
+        <name>createCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>createRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Membership_Agreement__c</objectType>
+    </variables>
+    <variables>
+        <name>deleteCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>deleteRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Membership_Agreement__c</objectType>
+    </variables>
+    <variables>
+        <name>updateCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>updateRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Membership_Agreement__c</objectType>
+    </variables>
+
+    <variables>
+        <name>existingRow</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Membership_Agreement__c</objectType>
+    </variables>
+    <variables>
+        <description>Intentionally never assigned - used to clear existingRow before each Row Entry pass.</description>
+        <name>nullRow</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Membership_Agreement__c</objectType>
+    </variables>
+    <variables>
+        <name>seekIndex</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>Saved Opportunity used to prefill the screens. Empty for a new agreement.</description>
+        <name>prefillOpp</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Saved Membership Agreement rows used to prefill and update. Empty for a new agreement.</description>
+        <name>prefillRows</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Membership_Agreement__c</objectType>
     </variables>
 </Flow>

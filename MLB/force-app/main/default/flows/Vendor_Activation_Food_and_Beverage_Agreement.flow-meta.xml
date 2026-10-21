@@ -33,10 +33,10 @@
         <displayField>Name</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>UserRoleId</field>
+            <field>Sales_Manager__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Sales_Manager_Role.Id</elementReference>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
@@ -78,7 +78,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Sales_Manager_Role</targetReference>
+            <targetReference>Agreement_Information_Screen</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -113,27 +113,6 @@
         <object>Contact</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordLookups>
-        <name>Get_Sales_Manager_Role</name>
-        <label>Get Sales Manager Role</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Agreement_Information_Screen</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Sales Manager</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>UserRole</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordUpdates>
         <name>Update_Contact_Record</name>
         <label>Update Contact Record</label>
@@ -151,7 +130,25 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Event_Date__c</field>
+            <field>Agreement_Status__c</field>
+            <value>
+                <stringValue>Ready to Send</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>COI_Coverage_Amount__c</field>
+            <value>
+                <elementReference>fld_coi_coverage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>COI_Expiration_Date__c</field>
+            <value>
+                <elementReference>fld_coi_expiration</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Event_date__c</field>
             <value>
                 <elementReference>fld_event_date</elementReference>
             </value>
@@ -163,15 +160,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Sales_Manager__c</field>
+            <field>Food_and_Beverage_Expiry_Date__c</field>
             <value>
-                <elementReference>fld_sales_manager</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>COI_Coverage_Amount__c</field>
-            <value>
-                <elementReference>fld_coi_coverage</elementReference>
+                <elementReference>fld_fandb_expiration</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -181,15 +172,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>COI_Expiration_Date__c</field>
+            <field>Sales_Manager__c</field>
             <value>
-                <elementReference>fld_coi_expiration</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Food_and_Beverage_Expiry_Date__c</field>
-            <value>
-                <elementReference>fld_fandb_expiration</elementReference>
+                <elementReference>fld_sales_manager</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -233,7 +218,7 @@
             <fieldType>InputField</fieldType>
             <helpText>Enter the date by which this agreement must be signed and returned. This must be at least 10 business days before the event date you entered above.</helpText>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
+            <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -244,7 +229,11 @@
             </styleProperties>
             <validationRule>
                 <errorMessage>Execution Date must be at least 10 business days (approximately 14 calendar days) before the Event Date and cannot fall on or after the Event Date.</errorMessage>
-                <formulaExpression>OR(ISBLANK({!fld_execution_date}), ISBLANK({!fld_event_date}), AND({!fld_execution_date} &lt;= ({!fld_event_date} - 14), {!fld_execution_date} &lt; {!fld_event_date}))</formulaExpression>
+                <formulaExpression>AND(
+  NOT(ISBLANK({!fld_execution_date})),
+  NOT(ISBLANK({!fld_event_date})),
+  {!fld_execution_date} &lt;= ({!fld_event_date} - 14)
+)</formulaExpression>
             </validationRule>
         </fields>
         <fields>
@@ -284,7 +273,7 @@
             <dataType>Currency</dataType>
             <fieldText>Coverage Amount</fieldText>
             <fieldType>InputField</fieldType>
-            <helpText>Enter the total coverage amount shown on the vendor's Certificate of Insurance (COI).</helpText>
+            <helpText>Enter the total coverage amount shown on the vendor&apos;s Certificate of Insurance (COI).</helpText>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <scale>2</scale>
