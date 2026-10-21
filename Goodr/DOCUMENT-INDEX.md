@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-21 (Exclude from Auto-Offboarding: REQ-035, CR-026, CR-027, CON-034, CON-035, ATR-002).
+Every project document, by folder and serial number. **Last updated:** 2026-10-21 (Exclude from Auto-Offboarding: REQ-035, CR-026, CR-027, CON-034, CON-035, ATR-002; Company page YTD and At-Risk fields: REQ-036, CR-028).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -9,8 +9,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 |---|---|---|---|
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, onboarding | KB-007 |
-| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-036 |
-| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-028 |
+| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-037 |
+| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-029 |
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-036 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-010 |
@@ -66,6 +66,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | REQ-033 | [Move Goodr Into sfdcut SFDC Repository](03-Requirements/REQ-033_Move-Goodr-Into-Sfdcut-SFDC-Repository.md) | ✅ Done (pull request) |
 | REQ-034 | [Align Goodr with the MLB folder standard (sandbox-only content)](03-Requirements/REQ-034_Align-Goodr-With-MLB-Standard.md) | ✅ Done |
 | REQ-035 | [Exclude an Account from the Automated Offboarding](03-Requirements/REQ-035_Auto-Offboarding-Exclusion.md) | 🔧 Built and tested in the sandbox 2026-10-21 (ATR-002, 30 / 30 pass); waiting on client testing (CON-034) |
+| REQ-036 | [Show YTD and At-Risk details on the Company page](03-Requirements/REQ-036_Company-Page-YTD-And-At-Risk-Fields.md) | ✅ Done in the sandbox 2026-10-21 |
 
 ## 04 — Change Records
 | ID | Document | Date |
@@ -93,6 +94,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CR-025 | [Align with the house folder standard (sandbox-only content)](04-Change-Records/CR-025_Align-With-House-Standard.md) | 2026-10-19 |
 | CR-026 | [Auto-Offboarding Exclusion: fields, field access and pages](04-Change-Records/CR-026_Auto-Offboarding-Exclusion-Fields-Access-And-Pages.md) | 2026-10-21 |
 | CR-027 | [Auto-Offboarding Exclusion: warm-off batch and at-risk task flow](04-Change-Records/CR-027_Auto-Offboarding-Exclusion-Batch-And-Flow.md) | 2026-10-21 |
+| CR-028 | [Company page: YTD and At-Risk fields](04-Change-Records/CR-028_Company-Page-YTD-And-At-Risk-Fields.md) | 2026-10-21 |
 
 ## 05 — Conflicts
 | ID | Document | Status |

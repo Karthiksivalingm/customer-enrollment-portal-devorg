@@ -692,6 +692,26 @@
                 <identifier>RecordR12_Sales_Performance_Percent_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Current_YTD_Sales__c</fieldItem>
+                <identifier>RecordCurrent_YTD_Sales_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.YTD_Performance_Percent__c</fieldItem>
+                <identifier>RecordYTD_Performance_Percent_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6974b1a5-dadd-423d-bfb5-d8a16bc801f3</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -724,6 +744,36 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.R12_Calculation_Last_Run__c</fieldItem>
                 <identifier>RecordR12_Calculation_Last_Run_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Prior_YTD_Sales__c</fieldItem>
+                <identifier>RecordPrior_YTD_Sales_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.At_Risk_Since__c</fieldItem>
+                <identifier>RecordAt_Risk_Since_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.At_Risk_Episode_Count__c</fieldItem>
+                <identifier>RecordAt_Risk_Episode_Count_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-022ca9f3-62d1-4ac0-8d24-567a0bef9c08</name>
