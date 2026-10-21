@@ -119,7 +119,9 @@
 | Notices / tasks | 209 / 103 | |
 
 - **Safety:** the Shopify push was switched off for the one manual-offboarding save (TC-035-19), because the stores have dummy Shopify IDs. Existing records were not changed.
-- **Cleanup:** the test data is **kept** until the project lead confirms it can be deleted. Deleting accounts only recalculates internal totals; it makes no Shopify call.
+- **Cleanup:**
+  - **Bulk set deleted on 2026-10-21** at the project lead's request: `R12 WOT EXCLBULK Co`, its 200 stores, the contact `excltest.bulk@example.com`, 200 notices and 100 tasks. No background jobs started, and no API errors were logged. A query afterwards confirmed 0 records left.
+  - **Small set kept** for the manual tester: `R12 WOT EXCLTEST Co A` / `Co B`, the 9 `R12 WOT EXCLTEST` stores, 7 contacts, and their notices and tasks. It is to be deleted when manual testing is finished. Deleting accounts only recalculates internal totals; it makes no Shopify call.
 
 ## 5. Defects found
 None.
