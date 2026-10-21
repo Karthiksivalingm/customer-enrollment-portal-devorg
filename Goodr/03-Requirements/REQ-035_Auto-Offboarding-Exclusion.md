@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **ID** | REQ-035 |
-| **Status** | 🔧 Built in the sandbox (21 Oct 2026). Waiting on client testing and the open decisions in [CON-034](../05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md) |
+| **Status** | 🔧 Built and tested in the sandbox (21 Oct 2026, [ATR-002](../08-QA/01-Automated-Testing/ATR-002_Auto-Offboarding-Exclusion.md): 30 / 30 pass). Waiting on client testing and the open decisions in [CON-034](../05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md) |
 | **Requested** | 2026-10-21 (Slack, follow-up to the Friday call on the Offboarding launch) |
 | **Requested by** | Kayla (client) |
 | **Related** | [CR-026](../04-Change-Records/CR-026_Auto-Offboarding-Exclusion-Fields-Access-And-Pages.md) · [CR-027](../04-Change-Records/CR-027_Auto-Offboarding-Exclusion-Batch-And-Flow.md) · [CON-034](../05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md) · [CON-035](../05-Conflicts/CON-035_Offboarding-Behaviour-Vs-Client-Answers.md) · [KB-002](../02-Knowledge-Base/Business-Process.md) |
@@ -66,4 +66,4 @@ These answers were received with this request. The behaviour they describe is no
 | Offboarding directly in Shopify? | Should not happen; offboarding is done through Salesforce |
 
 ## Output
-CR-026, CR-027. QA documents (ATR / MTC) to follow after client testing.
+CR-026, CR-027, [ATR-002](../08-QA/01-Automated-Testing/ATR-002_Auto-Offboarding-Exclusion.md) (sandbox test report). Manual test cases (MTC) to follow.

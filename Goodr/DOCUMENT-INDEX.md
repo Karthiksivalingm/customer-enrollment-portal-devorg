@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-21 (Exclude from Auto-Offboarding: REQ-035, CR-026, CR-027, CON-034, CON-035).
+Every project document, by folder and serial number. **Last updated:** 2026-10-21 (Exclude from Auto-Offboarding: REQ-035, CR-026, CR-027, CON-034, CON-035, ATR-002).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -14,7 +14,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-036 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-010 |
-| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario | ATR-002 |
+| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario | ATR-003 |
 | `08-QA/02-Manual-Testing` | `MTC-` | Manual test case documents | MTC-004 |
 
 **Rules:**
@@ -65,7 +65,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | REQ-032 | [Shopify Test Class Coverage](03-Requirements/REQ-032_Shopify-Test-Class-Coverage.md) | ✅ Done (deploy `0Afdx00000GDn9lCAD`, 105/105) |
 | REQ-033 | [Move Goodr Into sfdcut SFDC Repository](03-Requirements/REQ-033_Move-Goodr-Into-Sfdcut-SFDC-Repository.md) | ✅ Done (pull request) |
 | REQ-034 | [Align Goodr with the MLB folder standard (sandbox-only content)](03-Requirements/REQ-034_Align-Goodr-With-MLB-Standard.md) | ✅ Done |
-| REQ-035 | [Exclude an Account from the Automated Offboarding](03-Requirements/REQ-035_Auto-Offboarding-Exclusion.md) | 🔧 Built in the sandbox 2026-10-21; waiting on client testing (CON-034) |
+| REQ-035 | [Exclude an Account from the Automated Offboarding](03-Requirements/REQ-035_Auto-Offboarding-Exclusion.md) | 🔧 Built and tested in the sandbox 2026-10-21 (ATR-002, 30 / 30 pass); waiting on client testing (CON-034) |
 
 ## 04 — Change Records
 | ID | Document | Date |
@@ -145,6 +145,7 @@ None. Deployment documents are written only when something is actually deployed.
 | ID | Document |
 |---|---|
 | ATR-001 | [Cluster and team assignment for old and new values](08-QA/01-Automated-Testing/ATR-001_Cluster-And-Team-Old-And-New-Mapping.md) |
+| ATR-002 | [Exclude an Account from the Automated Offboarding (30 / 30 pass)](08-QA/01-Automated-Testing/ATR-002_Auto-Offboarding-Exclusion.md) |
 | MTC-001 | [Key Account, Sector and Specialty CAN test scenarios](08-QA/02-Manual-Testing/MTC-001_Key-Account-Sector-Specialty-CAN-Test-Scenarios.xlsx) (Excel) |
 | MTC-002 | [Cluster and team assignment reference](08-QA/02-Manual-Testing/MTC-002_Cluster-and-Team-Assignment.xlsx) (Excel) |
 | MTC-003 | [Record page sections by Sales Channel / Sector](08-QA/02-Manual-Testing/MTC-003_Record-Page-Sections-by-Sales-Channel-Sector.xlsx) (Excel) |
