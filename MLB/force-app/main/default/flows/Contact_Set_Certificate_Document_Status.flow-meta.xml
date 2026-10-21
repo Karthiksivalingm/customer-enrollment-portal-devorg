@@ -6,8 +6,8 @@
         <description>Document Uploaded once every certificate required for the Account Type is collected; otherwise Document Pending.</description>
         <name>Set_Document_Status</name>
         <label>Set Document Status</label>
-        <locationX>176</locationX>
-        <locationY>287</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>$Record.Agreement_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -55,13 +55,13 @@ AND(ISPICKVAL({!$Record.Account.Type}, &quot;Sales Activation&quot;), {!$Record.
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>50</locationX>
+        <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Set_Document_Status</targetReference>
         </connector>
         <filterFormula>AND(
-{!$Record.RecordType.DeveloperName} = &quot;Vendor_Contact&quot;,
+OR({!$Record.RecordType.DeveloperName} = &quot;Vendor_Contact&quot;, {!$Record.RecordType.DeveloperName} = &quot;Sales_Vendor&quot;),
 OR(ISPICKVAL({!$Record.Account.Type}, &quot;Food and Beverage&quot;), ISPICKVAL({!$Record.Account.Type}, &quot;Non-Profit&quot;), ISPICKVAL({!$Record.Account.Type}, &quot;Sales Activation&quot;)),
 OR(ISBLANK(TEXT({!$Record.Agreement_Status__c})), ISPICKVAL({!$Record.Agreement_Status__c}, &quot;Document Pending&quot;), ISPICKVAL({!$Record.Agreement_Status__c}, &quot;Document Uploaded&quot;)))</filterFormula>
         <object>Contact</object>

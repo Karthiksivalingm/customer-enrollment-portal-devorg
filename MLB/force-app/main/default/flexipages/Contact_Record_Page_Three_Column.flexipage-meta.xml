@@ -7,47 +7,6 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Contact.Upload_Certificate</value>
-                            <visibilityRule>
-                                <booleanFilter>((1 AND (2 OR 3)) OR (4 AND (5 OR 3)) OR (6 AND (5 OR 3))) AND 7</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.Account_Type__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Food and Beverage</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.Food_Services_Certificate_Collected__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.W_9_Collected__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.Account_Type__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Non Profit</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.COI_Collected__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.Account_Type__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Sales Activation</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Vendor_Contact</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Contact.Create_Agreement</value>
                             <visibilityRule>
                                 <booleanFilter>((1 AND 2 AND 3) OR (4 AND 5) OR (6 AND 5)) AND (7 OR 8 OR 9) AND 10</booleanFilter>
@@ -98,8 +57,8 @@
                                 </criteria>
                                 <criteria>
                                     <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Vendor_Contact</rightValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Vendor</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -134,8 +93,8 @@
                                 </criteria>
                                 <criteria>
                                     <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Vendor_Contact</rightValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Vendor</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -469,16 +428,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Current_Year__c</fieldItem>
                 <identifier>RecordCurrent_Year__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Execution_Date_in_Words__c</fieldItem>
-                <identifier>RecordExecution_Date_in_Words__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -1066,8 +1015,8 @@
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Vendor_Contact</rightValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Vendor</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1197,8 +1146,8 @@
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Vendor_Contact</rightValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Vendor</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

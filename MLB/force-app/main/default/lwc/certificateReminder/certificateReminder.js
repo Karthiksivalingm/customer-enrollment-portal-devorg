@@ -11,7 +11,7 @@ import W9_COLLECTED from '@salesforce/schema/Contact.W_9_Collected__c';
 import RECORD_TYPE from '@salesforce/schema/Contact.RecordType.DeveloperName';
 
 const FIELDS = [ACCOUNT_TYPE, AGREEMENT_STATUS, COI_COLLECTED, FOOD_COLLECTED, W9_COLLECTED, RECORD_TYPE];
-const VENDOR_RECORD_TYPE = 'Vendor_Contact';
+const VENDOR_RECORD_TYPES = ['Vendor_Contact', 'Sales_Vendor'];
 
 // Certificates per Account.Type - matches the Upload Certificate flow. Optional ones can be uploaded but are not required.
 const REQUIRED = {
@@ -51,7 +51,7 @@ export default class CertificateReminder extends LightningElement {
     get isVendor() {
         return (
             Boolean(this.record) &&
-            getFieldValue(this.record, RECORD_TYPE) === VENDOR_RECORD_TYPE &&
+            VENDOR_RECORD_TYPES.includes(getFieldValue(this.record, RECORD_TYPE)) &&
             Boolean(this.accountType && REQUIRED[this.accountType])
         );
     }
