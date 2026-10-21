@@ -3,12 +3,13 @@
 | | |
 |---|---|
 | **Document** | MTC-001 |
-| **Requirement** | REQ-014 Edit Agreement and locked agreement fields |
-| **Automated test report** | [ATR-001](../01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 of 22 scenarios passed on 2026-10-19; one defect found and fixed (DEF-001) |
+| **Requirement** | REQ-014 Agreement Flow (create and edit) and locked agreement fields |
+| **Automated test report** | [ATR-001](../01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 24 of 24 scenarios passed (2026-10-19, retested 2026-10-21 after create and edit were combined); one defect found and fixed (DEF-001) |
 | **Environment** | Sandbox (UTDEV), Marlins Sales app, Ticketing Opportunities |
 | **How to use** | Run each test case in order. The **Expected result** is the outcome verified in the automated run. Write what you see in **Actual result** and mark **Status** as Pass or Fail. |
 
 ## What is being tested
+- **Create Agreement** and **Edit Agreement** open the same flow. With no agreement it asks for the type and starts blank; with an agreement it skips the type question and opens prefilled.
 - **Edit Agreement** reopens a saved agreement (Membership, Multi-Product, Flex or Suite Lease) with every value filled in, so it can be changed and saved again. Membership rows are updated in place; rows are added or removed when the row count changes.
 - **Agreement details are locked.** The fields in the four agreement sections of the Opportunity, and the Membership Agreement rows, can only be changed through Create Agreement or Edit Agreement. Manual edits are blocked for every user, including administrators.
 
@@ -44,6 +45,8 @@ You need a System Administrator login and a Sales Manager login (Marlins Sales L
 | TC-014-20 | Membership: remove rows | Surplus rows deleted | | |
 | TC-014-21 | Flex: create, then edit | Created, then pre-filled and updated | | |
 | TC-014-22 | Manual edit right after an Edit Agreement save | Blocked with the Membership row rule message | | |
+| TC-014-23 | New agreement starts blank | Type screen shown; screens blank | | |
+| TC-014-24 | Existing agreement opens prefilled without the type screen | No type screen; saved values shown | | |
 
 ---
 
@@ -321,6 +324,32 @@ You need a System Administrator login and a Sales Manager login (Marlins Sales L
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
+### TC-014-23 — New agreement starts blank
+| | |
+|---|---|
+| **Preconditions** | Logged in as a System Administrator. An Opportunity with no agreement yet (Agreement Type blank). |
+| **Front-end steps** | 1. Click **Create Agreement**.<br>2. Check the **Select Agreement Type** screen appears. Choose **Membership**, click **Next**.<br>3. Check Number of Rows (Tickets) is empty and Parking is unticked.<br>4. Close the window without saving. |
+| **Backend check** | Agreement Type on the Opportunity is still blank. |
+| **Test data** | — |
+| **Expected result** | The type screen is shown and the Membership screens start blank, even if the Opportunity holds old hidden values. |
+| **Actual result** | |
+| **Status** | Pass / Fail |
+
+![Select Agreement Type screen](MTC-001_screenshots/TC-014-23_type_screen.png)
+![Membership row counts start blank](MTC-001_screenshots/TC-014-23_membership_blank.png)
+
+### TC-014-24 — Existing agreement opens prefilled without the type screen
+| | |
+|---|---|
+| **Preconditions** | Logged in as a System Administrator. An Opportunity with a Suite Lease agreement. |
+| **Front-end steps** | 1. Click **Edit Agreement**.<br>2. Check there is no Select Agreement Type screen.<br>3. Compare the fields with the Suite Lease Details on the Opportunity.<br>4. Close the window without saving. |
+| **Backend check** | Opportunity Suite Lease Details. |
+| **Test data** | — |
+| **Expected result** | The Suite Lease screen opens directly with the saved values. |
+| **Actual result** | |
+| **Status** | Pass / Fail |
+
+![Suite Lease opens prefilled with no type screen](MTC-001_screenshots/TC-014-24_suite_prefilled_no_type_screen.png)
 ---
 
 ## Sign-off
@@ -328,7 +357,7 @@ You need a System Administrator login and a Sales Manager login (Marlins Sales L
 |---|---|
 | **Tester name** | |
 | **Test date** | |
-| **Test cases passed** | ____ of 22 |
+| **Test cases passed** | ____ of 24 |
 | **Overall result** | Pass / Fail |
 | **Comments** | |
 | **Signature** | |

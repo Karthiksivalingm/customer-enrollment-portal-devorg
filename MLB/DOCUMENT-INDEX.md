@@ -1,6 +1,6 @@
 # MLB Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-19 (ATR-001 and MTC-001 added).
+Every project document, by folder and serial number. **Last updated:** 2026-10-21 (REQ-014 to REQ-018, CR-027 to CR-035, CON-016 to CON-018, TECH-009 and TECH-010, ATR-002, MTC-002).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-005_Signed-Agreement-Email-With-PDF.md`.
@@ -9,13 +9,13 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 |---|---|---|---|
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, users | KB-007 |
-| `03-Requirements` | `REQ-` | One per requirement: need, scope, behaviour, acceptance criteria, assumptions, open questions | REQ-014 |
-| `04-Change-Records` | `CR-` | One per change made to an org: what, when, deploy ID, verification, rollback | CR-027 |
-| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-016 |
+| `03-Requirements` | `REQ-` | One per requirement: need, scope, behaviour, acceptance criteria, assumptions, open questions | REQ-019 |
+| `04-Change-Records` | `CR-` | One per change made to an org: what, when, deploy ID, verification, rollback | CR-036 |
+| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-019 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-001 |
-| `07-Technical` | `TECH-` | Technical design and component detail | TECH-009 |
-| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario, after "all good" | ATR-002 |
-| `08-QA/02-Manual-Testing` | `MTC-` | Manual test case document with steps, screenshots and expected results, after "all good" | MTC-002 |
+| `07-Technical` | `TECH-` | Technical design and component detail | TECH-011 |
+| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario, after "all good" | ATR-003 |
+| `08-QA/02-Manual-Testing` | `MTC-` | Manual test case document with steps, screenshots and expected results, after "all good" | MTC-003 |
 
 **Rules:**
 - Numbers are never reused. A cancelled item keeps its number and is marked as such.
@@ -56,6 +56,11 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | REQ-011 | [Ticketing Engagement fields and Opportunity link](03-Requirements/REQ-011_Ticketing-Engagement-Fields-and-Opportunity-Link.md) | ⏸ On hold, reverted |
 | REQ-012 | [Sales Managers role access](03-Requirements/REQ-012_Sales-Managers-Role-Access.md) | ✅ Sandbox |
 | REQ-013 | [Suite Lease: MVP label and 40 games](03-Requirements/REQ-013_Suite-Lease-MVP-Label-And-40-Games.md) | ✅ Sandbox |
+| REQ-014 | [Agreement Flow: create and edit, locked agreement fields](03-Requirements/REQ-014_Agreement-Flow-Create-Edit-And-Locked-Agreement-Fields.md) | ✅ Sandbox |
+| REQ-015 | [Account Sales Vendor: Type value removed](03-Requirements/REQ-015_Account-Sales-Vendor-Type-Value.md) | ✅ Sandbox |
+| REQ-016 | [Contact Sales Vendor record type](03-Requirements/REQ-016_Contact-Sales-Vendor-Record-Type.md) | ✅ Sandbox |
+| REQ-017 | [User Sales Manager checkbox](03-Requirements/REQ-017_User-Sales-Manager-Checkbox.md) | ✅ Sandbox |
+| REQ-018 | [Certificate-only agreement attachments](03-Requirements/REQ-018_Certificate-Only-Agreement-Attachments.md) | ✅ Sandbox |
 
 ## 04 — Change Records
 | ID | Change | Date |
@@ -86,6 +91,15 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | CR-024 | [Marlins Sales app Contact page](04-Change-Records/CR-024_Marlins-Sales-App-Contact-Page.md) | 10-09 |
 | CR-025 | [Adobe Sign permission sets for Sales Managers](04-Change-Records/CR-025_Adobe-Sign-Permission-Sets-For-Sales-Managers.md) | 10-09 |
 | CR-026 | [Agreement Flow: MVP label and 40 games](04-Change-Records/CR-026_Agreement-Flow-MVP-Label-And-40-Games.md) | 10-13 |
+| CR-027 | [Membership Agreement manual-edit lock](04-Change-Records/CR-027_Membership-Agreement-Manual-Edit-Lock.md) | 10-14/15 |
+| CR-028 | [Edit Agreement flow and button (superseded by CR-031)](04-Change-Records/CR-028_Edit-Agreement-Flow-And-Button.md) | 10-15 |
+| CR-029 | [Opportunity agreement fields lock](04-Change-Records/CR-029_Opportunity-Agreement-Fields-Lock.md) | 10-15 |
+| CR-030 | [DEF-001 Paid to Date fix](04-Change-Records/CR-030_DEF-001-Paid-To-Date-Fix.md) | 10-19 |
+| CR-031 | [One Agreement Flow for create and edit](04-Change-Records/CR-031_Combined-Agreement-Flow.md) | 10-21 |
+| CR-032 | [Account Sales Vendor Type value](04-Change-Records/CR-032_Account-Sales-Vendor-Type-Value.md) | 10-21 |
+| CR-033 | [Contact Sales Vendor record type and features](04-Change-Records/CR-033_Contact-Sales-Vendor-Record-Type.md) | 10-21 |
+| CR-034 | [User Sales Manager checkbox](04-Change-Records/CR-034_User-Sales-Manager-Checkbox.md) | 10-21 |
+| CR-035 | [Certificate-only agreement attachments](04-Change-Records/CR-035_Certificate-Only-Agreement-Attachments.md) | 10-21 |
 
 ## 05 — Conflicts
 | ID | Conflict | Status |
@@ -105,6 +119,9 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-1
 | CON-013 | [Opportunity ProVenue ID is a formula](05-Conflicts/CON-013_Opportunity-ProVenue-ID-Is-A-Formula.md) | ℹ Known |
 | CON-014 | [Sales Manager access gaps](05-Conflicts/CON-014_Sales-Manager-Access-Gaps.md) | ✅ |
 | CON-015 | [Suite Location MPV vs MVP](05-Conflicts/CON-015_Suite-Location-MPV-vs-MVP.md) | ✅ |
+| CON-016 | [Adobe runtime variable limits](05-Conflicts/CON-016_Adobe-Runtime-Variable-Limits.md) | ✅ |
+| CON-017 | [1 year New Business term not wired](05-Conflicts/CON-017_One-Year-New-Business-Term-Not-Wired.md) | ⚠ Open |
+| CON-018 | [Contact page filter condition limit](05-Conflicts/CON-018_Contact-Page-Filter-Condition-Limit.md) | ℹ Known |
 
 ## 06 — Deployment
 No deployment documents yet. Nothing has been deployed so far.
@@ -120,10 +137,13 @@ No deployment documents yet. Nothing has been deployed so far.
 | TECH-006 | [Ticketing Engagement design (on hold)](07-Technical/TECH-006_Ticketing-Engagement-Design-On-Hold.md) |
 | TECH-007 | [Sales Manager access model](07-Technical/TECH-007_Sales-Manager-Access-Model.md) |
 | TECH-008 | [Agreement Flow: Suite Lease choices](07-Technical/TECH-008_Agreement-Flow-Suite-Lease-Choices.md) |
+| TECH-009 | [Agreement Flow create/edit and locks](07-Technical/TECH-009_Agreement-Flow-Create-Edit-And-Locks.md) |
+| TECH-010 | [Sales Vendor, Sales Manager, certificate attachments](07-Technical/TECH-010_Sales-Vendor-And-Certificate-Attachments.md) |
 
 ## 08 — QA
 See [08-QA/README.md](08-QA/README.md).
 
 | ID | Automated test report | Manual test cases |
 |---|---|---|
-| 001 (REQ-014 Edit Agreement and locked agreement fields) | [ATR-001](08-QA/01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 of 22 passed, DEF-001 found and fixed · [test class](08-QA/01-Automated-Testing/ATR-001_EditAgreementQaTest.cls) | [MTC-001](08-QA/02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 22 test cases with screenshots |
+| 001 (REQ-014 Edit Agreement and locked agreement fields) | [ATR-001](08-QA/01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 24 of 24 passed (retested after combining the flows), DEF-001 found and fixed · [test class](08-QA/01-Automated-Testing/ATR-001_EditAgreementQaTest.cls) | [MTC-001](08-QA/02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 24 test cases with screenshots |
+| 002 (REQ-015 to REQ-018 Sales Vendor, Sales Manager checkbox, certificate attachments) | [ATR-002](08-QA/01-Automated-Testing/ATR-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 16 of 16 passed | [MTC-002](08-QA/02-Manual-Testing/MTC-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 11 test cases with screenshots |

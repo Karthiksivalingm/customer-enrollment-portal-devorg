@@ -4,14 +4,14 @@
 |---|---|
 | **ID** | TECH-005 |
 | **Org** | utdev sandbox |
-| **As of** | 2026-10-13 |
+| **As of** | 2026-10-21 |
 
 Legend: **C** = created · **M** = modified · **D** = deleted · **X** = deactivated · **R** = reverted (no longer exists)
 
 ## Agreement Flow and Ticket Office notification (REQ-001 to REQ-005, REQ-013)
 | Component | Type | Action | Local file |
 |---|---|---|---|
-| `Agreement_Flow` | Flow | M (Ticket Office Comments; MVP label and 40 games, v65) | flows/Agreement_Flow.flow-meta.xml |
+| `Agreement_Flow` | Flow | M (Ticket Office Comments; MVP label and 40 games; create and edit in one flow, v68) | flows/Agreement_Flow.flow-meta.xml |
 | `Adobe_Agreement_Notify_Ticket_Office` | Flow | C | flows/Adobe_Agreement_Notify_Ticket_Office.flow-meta.xml |
 | `unfiled$public/Ticket_Office_Agreement_Details` | Email template (VF) | C | email/unfiled$public/Ticket_Office_Agreement_Details.email(+meta) |
 | `TicketOfficeAgreementStatus` | VF component | C | components/ |
@@ -32,25 +32,51 @@ Legend: **C** = created · **M** = modified · **D** = deleted · **X** = deacti
 | `Contact.Vendor_Contact` | Record type | M (picklist values) | objects/Contact/recordTypes/ |
 | `Contact.Certificate_Flow_Update__c` | Checkbox field | C | objects/Contact/fields/ |
 | `Contact.Certificate_Fields_Flow_Only` | Validation rule | C | objects/Contact/validationRules/ |
-| `Contact_Set_Certificate_Document_Status` | Flow | C | flows/ |
-| `Adobe_Agreement_Update_Contact_Status` | Flow | C | flows/ |
-| `Upload_Certificate` | Flow | M | flows/ |
+| `Contact_Set_Certificate_Document_Status` | Flow | C (v4: includes Sales_Vendor) | flows/ |
+| `Adobe_Agreement_Update_Contact_Status` | Flow | C (v4: includes Sales_Vendor) | flows/ |
+| `Upload_Certificate` | Flow | M (v11: copy certificates to attachments) | flows/ |
 | `Delete_Agreement_File` | Flow | X | flowDefinitions/Delete_Agreement_File.flowDefinition-meta.xml |
-| `certificateReminder` | LWC | C | lwc/certificateReminder |
+| `certificateReminder` | LWC | C (accepts Sales_Vendor) | lwc/certificateReminder |
 | `certificateUploadModal` | LWC | C | lwc/certificateUploadModal |
-| `Contact_Record_Page_Three_Column` | FlexiPage | M | flexipages/ |
+| `Contact_Record_Page_Three_Column` | FlexiPage | M (record type filters: contains Vendor) | flexipages/ |
 | `Admin` profile FLS (3 certificate fields) | Profile | M | not kept locally |
 | FLS on 3 certificate fields (all other profiles) | FieldPermissions | M (read-only) | **not in metadata** |
 
 ## Sales Managers role access (REQ-012)
 | Component | Type | Action | Local file |
 |---|---|---|---|
-| `MLB_Sales_Manager_Access` | Permission set | C (app Marlins_Sales, 3 Contact record types, RunFlow) | permissionsets/MLB_Sales_Manager_Access.permissionset-meta.xml |
+| `MLB_Sales_Manager_Access` | Permission set | C (app Marlins_Sales, 4 Contact record types incl. Sales_Vendor, RunFlow) | permissionsets/MLB_Sales_Manager_Access.permissionset-meta.xml |
 | `Marlins_Sales` | CustomApplication | M (Contact View → Contact_Record_Page_Three_Column) | applications/Marlins_Sales.app-meta.xml |
 | Assignments: MLB_Sales_Manager_Access, Adobe_Sign_User, Adobe_Access, AdobeSign_ContractBuilder_User | PermissionSetAssignment (data) | C, all 18 Sales Managers role users | **not in metadata** |
 
 `applications/standard__LightningSales.app-meta.xml` was retrieved for comparison only and **not changed**.
 
+## Agreement edit and locked agreement fields (REQ-014)
+| Component | Type | Action | Local file |
+|---|---|---|---|
+| `Membership_Agreement__c.Flow_Update__c` | Checkbox (hidden) | C | objects/Membership_Agreement__c/fields/ |
+| `Membership_Agreement__c.Membership_Agreement_Flow_Only` | Validation rule | C | objects/Membership_Agreement__c/validationRules/ |
+| `Membership_Agreement_Reset_Flow_Update` | Flow (record-triggered) | C | flows/ |
+| `Opportunity.Agreement_Flow_Update__c` | Checkbox (hidden) | C | objects/Opportunity/fields/ |
+| `Opportunity.Agreement_Sections_Flow_Only` | Validation rule | C | objects/Opportunity/validationRules/ |
+| `Update_Opportunity_from_Membership_Agreement` | Flow (record-triggered) | M (v5) | flows/ |
+| `Edit_Agreement_Flow` | Flow | C, then D (merged into Agreement_Flow, CR-031) | — |
+| `Opportunity.Edit_Agreement` | Quick action | C (opens Agreement_Flow) | quickActions/ |
+| `Ticketing_Opportunity_LRP` | FlexiPage | M (Edit Agreement action) | flexipages/ |
+
+## Client change requests, 2026-10-21 (REQ-015 to REQ-018)
+| Component | Type | Action | Local file |
+|---|---|---|---|
+| `Account.Sales_Vendor` | Record type | M ("Sales Vendor" removed from Type) | objects/Account/recordTypes/ |
+| `Contact.Sales_Vendor` | Record type | C (clone of Vendor_Contact) | objects/Contact/recordTypes/ |
+| `Admin`, `Ticket Sales`, `Marlins Sales Leadership` | Profiles (partial) | M (Sales_Vendor visibility and layout; Sales_Manager__c field access) | profiles/ |
+| `User.Sales_Manager__c` | Checkbox | C | objects/User/fields/ |
+| `Vendor_Activation_Food_and_Beverage_Agreement` | Flow | M (v9: Sales Manager list from the checkbox) | flows/ |
+| `CertificateAttachmentService` / `…Test` | Apex | C | classes/ |
+| `Contact.Send_Agreement` | Custom button | Unchanged (retrieved; temporarily changed for testing and restored) | objects/Contact/webLinks/ |
+| Users Billy Marlin, Ruben Smith | Data | Sales_Manager__c ticked | **not in metadata** |
+| Adobe template row 0000031 (a0oiV0000000D0TQAU) | Data | Source type Files → Attachments | **not in metadata** |
+| Certificate attachments (29 on 18 contacts) | Data | C (backfill) | **not in metadata** |
 ## Adobe / environment (no deployable metadata)
 | Item | Action |
 |---|---|
@@ -63,4 +89,4 @@ Legend: **C** = created · **M** = modified · **D** = deleted · **X** = deacti
 3 Ticketing Engagement fields, 3 validation rules, Opportunity lookup, 2 flows, quick action, page and layout changes: **R** ([CR-022](../04-Change-Records/CR-022_Revert-Ticketing-Engagement-Requirements.md)).
 
 ## Retrieved into the project but not changed
-`objects/Contact/Contact.object-meta.xml` (pulled automatically with the field retrieve). **Don't deploy it** unless intended.
+`objects/Contact/Contact.object-meta.xml` and `objects/Account/Account.object-meta.xml` (pulled automatically with retrieves). **Don't deploy them** unless intended.

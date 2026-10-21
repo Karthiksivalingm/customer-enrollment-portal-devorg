@@ -3,17 +3,17 @@
 | | |
 |---|---|
 | **Report ID** | ATR-001 |
-| **Requirement** | REQ-014 Edit Agreement and locked agreement fields (requirement document to follow) |
+| **Requirement** | [REQ-014](../../03-Requirements/REQ-014_Agreement-Flow-Create-Edit-And-Locked-Agreement-Fields.md) Agreement Flow (create and edit) and locked agreement fields |
 | **Manual test cases** | [MTC-001](../02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md) |
 | **Org** | Sandbox (UTDEV) |
 | **Run date** | 2026-10-19 |
 | **Run as** | System Administrator (Billy Marlin); Sales Manager profile (Marlins Sales Leadership) in backend tests |
-| **Result** | **22 of 22 scenarios passed** after one defect was found and fixed (DEF-001) |
+| **Result** | **24 of 24 scenarios passed** after one defect was found and fixed (DEF-001). Retested on 2026-10-21 after create and edit were combined into one flow (section 7). |
 
 ## 1. Scope
 | Component | Type | Version tested |
 |---|---|---|
-| `Edit_Agreement_Flow` | Screen flow (Edit Agreement button) | v4 |
+| `Edit_Agreement_Flow` | Screen flow (Edit Agreement button) | v4 (merged into Agreement_Flow v68 on 2026-10-21, see section 7) |
 | `Agreement_Flow` | Screen flow (Create Agreement button) | v66 |
 | `Opportunity.Edit_Agreement` | Quick action on the Ticketing Opportunity record page | — |
 | `Membership_Agreement__c.Membership_Agreement_Flow_Only` | Validation rule | active |
@@ -85,3 +85,16 @@
 
 - Every snapshot field on the four Opportunities and both Membership rows was compared after the restore: **0 differences**, no extra rows, both hidden checkboxes unticked.
 - The restore used a temporary Apex helper (`TmpQaRestore`), deleted straight after. No temporary classes remain in the org.
+
+## 7. Retest after combining create and edit (2026-10-21)
+Create and edit now run in one flow, `Agreement_Flow` v68 ([CR-031](../../04-Change-Records/CR-031_Combined-Agreement-Flow.md)); `Edit_Agreement_Flow` was deleted and the Edit Agreement button opens Agreement_Flow.
+
+| Test ID | Scenario | Type | Input | Expected result | Actual result | Result |
+|---|---|---|---|---|---|---|
+| TC-014-01 to 13 | All backend scenarios | Apex, validate-only | as above | as above | 13 of 13 passed (validate `0AfiV000000AoTNSA0`) | Pass |
+| TC-014-23 | New agreement starts blank | UI | Opportunity with no Agreement Type (006iV000000ZBBtQAO, which still holds old hidden Membership values): Create Agreement → Membership | Select Agreement Type screen shown; row counts blank | Type screen shown; Number of Rows blank, Parking unticked | Pass |
+| TC-014-24 | Existing agreement opens prefilled, no type screen | UI | Suite Lease Opportunity: Edit Agreement | No type screen; saved values shown | No type screen; Legends, 16, Founders, 10 games, $1,111.00, Parking Pass 11 | Pass |
+| TC-014-16 (rerun) | Edit and save Suite Lease in the combined flow | UI + SOQL | Parking Pass 11 → 15; Games 10 → 41 | Saved with words | Parking 15, Games 41, "Forty-One (41)" | Pass |
+
+- TC-014-18 to 20 (Membership saves) were not rerun: the sandbox's Membership test Opportunity (006iV000000ZvoDQAS) had been changed to a Flex agreement by a user before the retest. The Membership path is covered by the backend tests and by the earlier screen tests of the same flow elements.
+- Test data: both Opportunities snapshotted before and restored after (temporary helper `TmpQaRestore`, deleted). Comparison after restore: **0 differences**.

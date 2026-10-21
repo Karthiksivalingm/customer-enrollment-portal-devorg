@@ -26,6 +26,9 @@ All four requested users are **active**.
 ## Sales Managers role access (2026-10-09)
 All **18** users in role `Sales_Managers` (11 active, 7 inactive) hold the four required permission sets: MLB Sales Manager Access, Adobe Sign User, Adobe Access and Acrobat Sign Document Builder User. See [TECH-007](../07-Technical/TECH-007_Sales-Manager-Access-Model.md) and [REQ-012](../03-Requirements/REQ-012_Sales-Managers-Role-Access.md).
 
+## Sales Manager checkbox (2026-10-21)
+The User field **Sales Manager** decides who appears in the Sales Manager list of the Contact Create Agreement flow ([REQ-017](../03-Requirements/REQ-017_User-Sales-Manager-Checkbox.md)). Ticked in the sandbox: **Billy Marlin** and **Ruben Smith**. Roles are no longer used for this list.
+
 ## Fixing the .invalid emails
 **Not done yet.** It sends emails to real inboxes, so it needs approval.
 1. Remove `.invalid` from the three emails.
