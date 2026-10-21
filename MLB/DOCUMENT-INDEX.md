@@ -28,6 +28,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | [AI-Workflow.md](01-Instructions/AI-Workflow.md) | Workflows A, B and C; required document structures |
 | [Coding-Standards.md](01-Instructions/Coding-Standards.md) | Rules every change must meet |
 | [Project-Rules.md](01-Instructions/Project-Rules.md) | Environments, folders, document control, QA, test data, approvals, version control, reporting |
+| [QA-Process.md](01-Instructions/QA-Process.md) | When QA runs, file locations, test IDs, how tests are run, ATR and MTC structure |
 
 ## 02 — Knowledge Base
 | ID | Document |
@@ -141,7 +142,7 @@ No deployment documents yet. Nothing has been deployed so far.
 | TECH-010 | [Sales Vendor, Sales Manager, certificate attachments](07-Technical/TECH-010_Sales-Vendor-And-Certificate-Attachments.md) |
 
 ## 08 — QA
-See [08-QA/README.md](08-QA/README.md).
+How QA is run and what each document contains: [01-Instructions/QA-Process.md](01-Instructions/QA-Process.md).
 
 | ID | Automated test report | Manual test cases |
 |---|---|---|
