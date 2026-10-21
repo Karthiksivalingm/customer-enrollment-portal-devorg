@@ -121,7 +121,12 @@
 - **Safety:** the Shopify push was switched off for the one manual-offboarding save (TC-035-19), because the stores have dummy Shopify IDs. Existing records were not changed.
 - **Cleanup:**
   - **Bulk set deleted on 2026-10-21** at the project lead's request: `R12 WOT EXCLBULK Co`, its 200 stores, the contact `excltest.bulk@example.com`, 200 notices and 100 tasks. No background jobs started, and no API errors were logged. A query afterwards confirmed 0 records left.
-  - **Small set kept** for the manual tester: `R12 WOT EXCLTEST Co A` / `Co B`, the 9 `R12 WOT EXCLTEST` stores, 7 contacts, and their notices and tasks. It is to be deleted when manual testing is finished. Deleting accounts only recalculates internal totals; it makes no Shopify call.
+  - **Small set reduced to a demo pair on 2026-10-21** at the project lead's request. Deleted: `Co B`, stores B12, C1, C2, N12, RC, U12, X12 and the tested X18, their contacts, notices and tasks. Company A's at-risk fields were restored to their original values (not at risk, no date).
+  - **Kept for the demo**, under `R12 WOT EXCLTEST Co A` (active):
+    - `R12 WOT EXCLTEST N18`: **normal process**. Not ticked; deactivated by the automation at 18 months, reason "Store At Risk", Email 5 sent, notices Offboarded.
+    - `R12 WOT EXCLTEST X18`: **new process**. A new record, recreated for the demo: ticked, with a reason; 18 months without an order; Email 3 and 4 sent. After a batch run (`707dx00001zOsKoAAK`, 0 errors) it is still active, with no Email 5 and no reason set.
+    - Contacts `excltest.n18@example.com` and `excltest.x18@example.com`.
+  - Delete the demo pair when it is no longer needed. Deleting accounts only recalculates internal totals; it makes no Shopify call.
 
 ## 5. Defects found
 None.
