@@ -4,7 +4,7 @@
         <application>Marlins_Sales</application>
         <visible>true</visible>
     </applicationVisibilities>
-    <description>Sales Managers role: Marlins Sales app, all three Contact record types (Business Contact, Internal, Vendor Contact) and Run Flows, for the Agreement Flow, Upload Certificate and Create Agreement (Vendor Activation) screen flows.</description>
+    <description>Sales Managers: Marlins Sales app, all four Contact record types (Business Contact, Internal, Vendor Contact, Sales Vendor) and Run Flows for the agreement and certificate screen flows.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>MLB Sales Manager Access</label>
     <recordTypeVisibilities>
@@ -13,6 +13,10 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <recordType>Contact.Internal</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Contact.Sales_Vendor</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
