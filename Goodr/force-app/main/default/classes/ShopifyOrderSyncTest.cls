@@ -715,7 +715,8 @@ public class ShopifyOrderSyncTest {
             RecordTypeId               = storeRtId,
             ParentId                   = companyAcc.Id,
             Shopify_Company_Id__c      = 'NOCONFIG_LOC',
-            Sales_Channel__c           = 'Key Account',
+            // No Sales Channel: config is resolved by country, and a channel value
+            // would tie the test to one org's picklist ('Key Account' vs 'Key Accounts')
             Last_Shopify_Order_Date__c = Date.today(),
             ShippingStreet             = '1 Main St',
             ShippingCity               = 'City',

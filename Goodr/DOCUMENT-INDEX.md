@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-21 (Exclude from Auto-Offboarding: REQ-035, CR-026, CR-027, CON-034, CON-035, ATR-002; Company page YTD and At-Risk fields: REQ-036, CR-028).
+Every project document, by folder and serial number. **Last updated:** 2026-10-22 (ShopifyOrderSyncTest fix for the release validation: CR-029, CON-036).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -10,8 +10,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, onboarding | KB-007 |
 | `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-037 |
-| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-029 |
-| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-036 |
+| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-030 |
+| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-037 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-010 |
 | `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario | ATR-003 |
@@ -95,6 +95,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CR-026 | [Auto-Offboarding Exclusion: fields, field access and pages](04-Change-Records/CR-026_Auto-Offboarding-Exclusion-Fields-Access-And-Pages.md) | 2026-10-21 |
 | CR-027 | [Auto-Offboarding Exclusion: warm-off batch and at-risk task flow](04-Change-Records/CR-027_Auto-Offboarding-Exclusion-Batch-And-Flow.md) | 2026-10-21 |
 | CR-028 | [Company page: YTD and At-Risk fields](04-Change-Records/CR-028_Company-Page-YTD-And-At-Risk-Fields.md) | 2026-10-21 |
+| CR-029 | [ShopifyOrderSyncTest: no dependency on the "Key Account" value](04-Change-Records/CR-029_ShopifyOrderSyncTest-Org-Independent-Sales-Channel.md) | 2026-10-22 |
 
 ## 05 — Conflicts
 | ID | Document | Status |
@@ -125,6 +126,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CON-032 | [With At Risk Mode = Every Stage, a store can lose the at-risk flag in](05-Conflicts/CON-032_With-At-Risk-Mode-Every-Stage-A-Store.md) | ⚠ Open risk |
 | CON-034 | [Auto-Offboarding Exclusion: open decisions](05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md) | ⚠ Open (client decision) |
 | CON-035 | [Offboarding behaviour vs the client's answers](05-Conflicts/CON-035_Offboarding-Behaviour-Vs-Client-Answers.md) | ⚠ Open (parked) |
+| CON-036 | [The sandbox-only "Key Account" rename breaks test classes in other deployments](05-Conflicts/CON-036_Sandbox-Only-Key-Account-Rename-Breaks-Test-Deploys.md) | ⚠ Open risk |
 | CON-033 | [Running ShopifyAtRiskNoticeBatch by hand sends real emails](05-Conflicts/CON-033_Running-ShopifyAtRiskNoticeBatch-By-Hand-Sends-Real-Emails.md) | ⚠ Open risk |
 
 ## 06 — Deployment
