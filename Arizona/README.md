@@ -3,18 +3,19 @@
 Independent Arizona project in the shared `sfdcut/SFDC` repository. `force-app/` mirrors the in-scope unmanaged metadata of the
 Arizona sandbox (alias `Arizona`, org name Azlionhearts, Org ID `00DWH000005wW9V2AU`).
 
-**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions](01-Instructions/): [AI-Workflow](01-Instructions/AI-Workflow.md), [Coding-Standards](01-Instructions/Coding-Standards.md), [Project-Rules](01-Instructions/Project-Rules.md).
+**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions](01-Instructions/): [AI-Workflow](01-Instructions/AI-Workflow.md), [Coding-Standards](01-Instructions/Coding-Standards.md), [Project-Rules](01-Instructions/Project-Rules.md), [QA-Process](01-Instructions/QA-Process.md).
 Project overview: [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md). Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
 
 | Folder | Contents |
 |---|---|
-| [01-Instructions](01-Instructions/) | How work is done: AI Workflow, Coding Standards, Project Rules (same as every project in the repository) |
+| [01-Instructions](01-Instructions/) | How work is done: AI Workflow, Coding Standards, Project Rules, QA Process (same as every project in the repository) |
 | [02-Knowledge-Base](02-Knowledge-Base/) | Evidence-based overview: org context, business processes, data model, automation, integrations, security, open questions |
 | [03-Requirements](03-Requirements/) | Dated REQ records |
 | [04-Change-Records](04-Change-Records/) | Dated CR records of actual, authorized record/data changes with verified before/after values |
 | [05-Conflicts](05-Conflicts/) | Dated CF records of errors, conflicts and failed operations |
 | [06-Deployment](06-Deployment/) | Procedures, checklists, dated DEP records and deployment history |
 | [07-Technical-Documents](07-Technical-Documents/) | Technical reference, metadata inventory, retrieval reports, component Change History |
+| [08-QA](08-QA/) | Automated test reports (`ATR-`) and manual test cases (`MTC-`), per [QA-Process.md](01-Instructions/QA-Process.md) |
 | `force-app/`, `manifest/`, `config/`, `sfdx-project.json` | Salesforce DX project (run `sf` commands from `Arizona/`) |
 | [scripts](scripts/README.md) | Node.js: org verification, metadata listing, manifest and inventory generators, secret scan, record creation |
 

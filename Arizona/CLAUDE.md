@@ -3,9 +3,9 @@
 This folder is the complete, self-contained Arizona project inside the shared `sfdcut/SFDC` repository.
 Work only inside `Arizona/`. Never change, stage or commit any other project folder or repository-root file.
 
-The standing instructions are the three files in `01-Instructions/` (same as every project in this repository):
-[AI-Workflow.md](01-Instructions/AI-Workflow.md), [Coding-Standards.md](01-Instructions/Coding-Standards.md) and
-[Project-Rules.md](01-Instructions/Project-Rules.md). The points below are the Arizona-specific facts those files refer to.
+The standing instructions are the four files in `01-Instructions/` (same as every project in this repository):
+[AI-Workflow.md](01-Instructions/AI-Workflow.md), [Coding-Standards.md](01-Instructions/Coding-Standards.md),
+[Project-Rules.md](01-Instructions/Project-Rules.md) and [QA-Process.md](01-Instructions/QA-Process.md). The points below are the Arizona-specific facts those files refer to.
 
 ## Arizona specifics
 - **Agreed sandbox:** alias **`Arizona`**: org Azlionhearts, Org ID `00DWH000005wW9V2AU`,
@@ -25,3 +25,4 @@ The standing instructions are the three files in `01-Instructions/` (same as eve
 @01-Instructions/AI-Workflow.md
 @01-Instructions/Coding-Standards.md
 @01-Instructions/Project-Rules.md
+@01-Instructions/QA-Process.md

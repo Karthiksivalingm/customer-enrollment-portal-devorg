@@ -12,6 +12,7 @@
 - [AI Workflow](01-Instructions/AI-Workflow.md)
 - [Coding Standards](01-Instructions/Coding-Standards.md)
 - [Project Rules](01-Instructions/Project-Rules.md)
+- [QA Process](01-Instructions/QA-Process.md)
 
 ## 02-Knowledge-Base
 
@@ -55,6 +56,12 @@
 - [Metadata Inventory](07-Technical-Documents/Metadata-Inventory.md)
 - [Metadata Scope](07-Technical-Documents/Metadata-Scope.md)
 - [Retrieval Report — 2026-10-15 (initial baseline)](07-Technical-Documents/Retrieval/2026-10-15-Initial-Retrieval.md)
+
+## 08-QA
+
+- [Automated testing (Arizona)](08-QA/01-Automated-Testing/README.md)
+- [Manual testing (Arizona)](08-QA/02-Manual-Testing/README.md)
+- [08 — QA (Arizona)](08-QA/README.md)
 
 ## config
 
