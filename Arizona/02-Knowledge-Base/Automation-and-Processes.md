@@ -10,6 +10,9 @@
 - **VERIFIED:** [`phaseDocumentTracker`](../force-app/main/default/lwc/phaseDocumentTracker/) (internal record pages and Experience Cloud)
   calls [`PhaseDocumentTrackerController`](../force-app/main/default/classes/PhaseDocumentTrackerController.cls) (1,064 lines). It resolves the
   current user's Contact, division, language, driving status, contract type and service type, and shows phase tabs with each document's status.
+- **VERIFIED (since 2026-10-22, [CR-001](../04-Change-Records/CR-001_Phase-Document-Tracker-Eligibility-And-Multi-Service.md)):** what the tracker shows depends
+  on the Contact's division — Member and Tutor see only *Based Forms*; Parent Provider sees Pay and Tax for 1099 only and no driver items;
+  Provider follows the Contact's contract, driving and service values. A Contact can have several services (ATC, HAH, RSP), each shown in its own section.
 - **VERIFIED:** Status values: Completed, Pending, Rejected, Expired, Not Needed. Status is stored on Contact fields; files are
   `ContentDocument`s linked to the Contact. SAM and OIG checks moved from checkboxes to `SAM_Status__c` / `OIG_Status__c`.
 - **VERIFIED:** Portal users cannot update Contact (licence restriction), so a portal action publishes
@@ -96,3 +99,4 @@ The portal LWC `newcaseadvocacyform` ("Case New Status Banner") is used in Exper
 | Date | Change |
 |---|---|
 | 2026-10-15 | Created from the initial retrieval and the CronTrigger query. |
+| 2026-10-22 | §1 updated for the Phase Document Tracker eligibility and multi-service change (CR-001). |

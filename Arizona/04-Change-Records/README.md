@@ -1,13 +1,15 @@
 # 04-Change-Records
 
-One dated record per **actual** business-record or configuration-data change that the user **explicitly authorized**:
-`YYYY-MM-DD-CR-NNN-<slug>.md`. Create with `node scripts/new-doc.js CR "<title>"` (template: [config/templates/CR.md](../config/templates/CR.md)).
+One record per change made to the Arizona sandbox: what changed, when, deploy ID, verification and rollback
+([Project-Rules.md](../01-Instructions/Project-Rules.md) §2–3). Naming: `CR-###_Short-Title-With-Hyphens.md`. Numbers are never reused.
 
-- Before and after values come from queries run before and after the change, never from a Git diff or a metadata retrieval.
-- Record identifiers only when safe and needed; no full data extracts or unnecessary personal data.
-- Metadata retrieval is not a record change. Do not create records for operations that did not happen.
+- Record what actually happened, with evidence (source comparison, deploy IDs, queries). Never invent values or results.
+- For business-record (data) changes, include verified before and after values; no full data extracts or unnecessary personal data.
+- Metadata retrieval alone is not a change to the org.
 
 ## Register
-| ID | Date | Title | Authorized by | Result |
+| ID | Date | Title | Component(s) | Status |
 |---|---|---|---|---|
-| — | — | No record changes have been made (the 2026-10-15 setup was read-only). | — | — |
+| [CR-001](CR-001_Phase-Document-Tracker-Eligibility-And-Multi-Service.md) | 2026-10-22 | Phase Document Tracker: eligibility filtering and multiple services | LWC `phaseDocumentTracker` | Changed in sandbox; functional verification TO BE CONFIRMED |
+
+Next free number: **CR-002**.

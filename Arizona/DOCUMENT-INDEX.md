@@ -31,6 +31,7 @@
 
 ## 04-Change-Records
 
+- [CR-001 — Phase Document Tracker: eligibility filtering and multiple services](04-Change-Records/CR-001_Phase-Document-Tracker-Eligibility-And-Multi-Service.md)
 - [04-Change-Records](04-Change-Records/README.md)
 
 ## 05-Conflicts

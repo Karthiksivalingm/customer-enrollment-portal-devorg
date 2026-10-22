@@ -52,6 +52,30 @@ const STATUS_OPTIONS = [
 // side that uploaded a file may delete it (untagged legacy files show on both).
 const UPLOAD_SOURCE = 'portal';
 
+// Category filter rules (from the eligibility matrix).
+// Tokens are normalized: lowercase, letters and digits only.
+// "Member" -> "member", "Parent Provider" -> "parentprovider", "Non-Driver" -> "nondriver".
+const DIVISION_ONLY_TOKENS = ['member', 'tutor'];
+const PARENT_PROVIDER_TOKEN = 'parentprovider';
+
+// Order in which service sections are displayed. Every selected service
+// gets its own section (ATC, HAH, RSP).
+const SERVICE_PRIORITY = ['atc', 'hah', 'rsp'];
+
+// Picklist/token aliases used by the filter (service and driving values)
+const TOKEN_ALIASES = {
+    rsh: 'rsp',        // legacy "RSH" values
+    respite: 'rsp',
+    habilitation: 'hah'
+};
+
+// Contract type token -> key used by PAY_TAX_DOCS ('w4' = W2 contract, '1099' = 1099 contract)
+const CONTRACT_KEY_MAP = {
+    w2: 'w4',
+    w4: 'w4',
+    '1099': '1099'
+};
+
 const UI_TEXT = {
     english: {
         tabNames: {
@@ -134,8 +158,8 @@ const BASED_FORMS_DOCS = {
             { label: 'False Claims Act Policy - English', page: 'FalseClaimsActPolicyEnglish' },
             { label: 'Member Handbook - English', page: 'MemberHandbookEnglish' },
             { label: 'Pre-Service Orientation - English', page: 'PreServiceOrientationEnglish' },
-            { label: 'ATC Monitoring Agreement', page: 'ATCMonitoringAgreement' },
-            { label: 'HCBS Service Contract', page: 'HCBSServiceContractMember' }
+            { label: 'ATC Monitoring Agreement - English', page: 'ATCMonitoringAgreement' },
+            { label: 'HCBS Service Contract - English', page: 'HCBSServiceContractMember' }
         ],
         spanish: [
             { label: 'DDD-EVV Member Contingency Back-Up Plan - Spanish', page: 'DDDEVVMemberContingencySpanish' },
@@ -144,133 +168,141 @@ const BASED_FORMS_DOCS = {
             { label: 'False Claims Act Policy - English', page: 'FalseClaimsActPolicyEnglish2' },
             { label: 'Member Handbook - Spanish', page: 'MemberHandbookSpanish' },
             { label: 'Pre-Service Orientation - Spanish', page: 'PreServiceOrientationSpanish' },
-            { label: 'ATC Monitoring Agreement', page: 'ATCMonitoringAgreementEs' },
-            { label: 'HCBS Service Contract', page: 'HCBSServiceContractMemberEs' }
+            { label: 'Member_Opt_Out_Agreement - Spanish', page: 'MemberOptOutAgreementSpanish' },
+            { label: 'HCBS Service Contract - English', page: 'HCBSServiceContractMemberEs' }
         ]
     },
     'parent provider': {
         english: [
-            { label: 'Abuse & Neglect Policy - English', page: 'AbuseNeglectPolicyEnglishPP' },
-            { label: 'Bloodborne Pathogens Exposure Control Plan - English', page: 'BloodbornePathogensEnglishPP' },
-            { label: 'Certifications Policy - English', page: 'CertificationsPolicyEnglishPP' },
-            { label: 'DDD Reference Request - English', page: 'DDDReferenceRequestEnglishPP' },
-            { label: 'Direct Service Position - English', page: 'DirectServicePositionEnglishPP' },
-            { label: 'Employee Policies - English', page: 'EmployeePoliciesEnglishPP' },
-            { label: 'False Claims Act Policy - English', page: 'FalseClaimsActPolicyEnglishPP' },
-            { label: 'Incident Reporting Policy - English', page: 'IncidentReportingPolicyEnglishPP' },
-            { label: 'AZLH_DCW Training Database Authorization', page: 'DCWTrainingDatabaseAuthPP' },
-            { label: 'Bring Your Own Device Policy - English', page: 'BYODPolicyEnglishPP' },
-            { label: 'Communication Authorization - English', page: 'CommunicationAuthEnglishPP' },
-            { label: 'DDD-EVV Member Contingency Back-Up Plan - English', page: 'DDDEVVContingencyEnglishPP' },
-            { label: 'EEO-1 Self Identification Form - English', page: 'EEO1SelfIdEnglishPP' },
-            { label: 'EVV Designee Attestation - English', page: 'EVVDesigneeAttestationEnglishPP' },
-            { label: 'HIPAA Policy - English', page: 'HIPAAPolicyEnglishPP' },
-            { label: 'Substance Abuse Testing Policy - English', page: 'SubstanceAbuseTestingEnglishPP' },
-            { label: 'Employment Application - English', page: 'EmploymentApplicationEnglishPP' },
-            { label: 'Central Registry Clearance Form - English', page: 'CentralRegistryClearanceEnglishPP' },
-            { label: 'Criminal History - English', page: 'CriminalHistoryEnglishPP' },
-            { label: 'Direct Deposit Authorization - English', page: 'DirectDepositAuthEnglishPP' },
-            { label: 'Employee Handbook - English', page: 'EmployeeHandbookEnglishPP' },
-            { label: 'EVV Timesheet Attestation - English', page: 'EVVTimesheetAttestationEnglishPP' },
-            { label: 'HIPAA Confidentiality - English', page: 'HIPAAConfidentialityEnglishPP' },
-            { label: 'Unlicensed Home Policy - English', page: 'UnlicensedHomePolicyEnglishPP' },
-            { label: 'Client Orientation', page: 'ClientOrientationPP' },
-            { label: 'HCBS Service Contract', page: 'HCBSServiceContractPP' },
-            { label: 'I-9', page: 'I9PP' }
+            { label: 'AZLH Client Orientation - English', page: 'ClientOrientationPP' },
+    { label: 'AZLH_DCW Training Database Authorization', page: 'DCWTrainingDatabaseAuthPP' },
+    { label: 'AZLH Employment Application FINAL', page: 'EmploymentApplicationEnglishPP' },
+    { label: 'Abuse & Neglect Policy - English', page: 'AbuseNeglectPolicyEnglishPP' },
+    { label: 'Bloodborne Pathogens Exposure Control Plan - English', page: 'BloodbornePathogensEnglishPP' },
+    { label: 'Bring Your Own Device Policy - English', page: 'BYODPolicyEnglishPP' },
+    { label: 'Central Registry Clearance Form - English', page: 'CentralRegistryClearanceEnglishPP' },
+    { label: 'Certifications Policy - English', page: 'CertificationsPolicyEnglishPP' },
+    { label: 'Communication Authorization - English', page: 'CommunicationAuthEnglishPP' },
+    { label: 'Criminal History - English', page: 'CriminalHistoryEnglishPP' },
+    { label: 'DDD Reference Request - English', page: 'DDDReferenceRequestEnglishPP' },
+    { label: 'DDD-EVV Member Contingency Back-Up Plan - English', page: 'DDDEVVContingencyEnglishPP' },
+    { label: 'Direct Deposit Authorization - English', page: 'DirectDepositAuthEnglishPP' },
+    { label: 'Direct Service Position - English', page: 'DirectServicePositionEnglishPP' },
+    { label: 'EEO-1 Self Identification Form - English', page: 'EEO1SelfIdEnglishPP' },
+    { label: 'Employee Handbook - English', page: 'EmployeeHandbookEnglishPP' },
+    { label: 'Employee Policies - English', page: 'EmployeePoliciesEnglishPP' },
+    { label: 'EVV Designee Attestation - English', page: 'EVVDesigneeAttestationEnglishPP' },
+    { label: 'EVV Timesheet Attestation - English', page: 'EVVTimesheetAttestationEnglishPP' },
+    { label: 'False Claims Act Policy - English', page: 'FalseClaimsActPolicyEnglishPP' },
+    { label: 'HCBS Service Contract - English', page: 'HCBSServiceContractPP' },
+    { label: 'HIPAA Confidentiality - English', page: 'HIPAAConfidentialityEnglishPP' },
+    { label: 'HIPAA Policy - English', page: 'HIPAAPolicyEnglishPP' },
+    { label: 'I-9 - English', page: 'I9PP' },
+    { label: 'Incident Reporting Policy - English', page: 'IncidentReportingPolicyEnglishPP' },
+    { label: 'Substance Abuse Testing Policy - English', page: 'SubstanceAbuseTestingEnglishPP' },
+    { label: 'Unlicensed Home Policy - English', page: 'UnlicensedHomePolicyEnglishPP' }
         ],
         spanish: [
             { label: 'Abuse & Neglect Policy - Spanish', page: 'AbuseNeglectPolicySpanishPP' },
-            { label: 'Central Registry Clearance Form - Spanish', page: 'CentralRegistryClearanceSpanishPP' },
-            { label: 'Criminal History - Spanish', page: 'CriminalHistorySpanishPP' },
-            { label: 'Direct Deposit Authorization - Spanish', page: 'DirectDepositAuthSpanishPP' },
-            { label: 'Employee Handbook - Spanish', page: 'EmployeeHandbookSpanishPP' },
-            { label: 'EVV Designee Attestation - Spanish', page: 'EVVDesigneeAttestationSpanishPP' },
-            { label: 'HIPAA Policy - Spanish', page: 'HIPAAPolicySpanishPP' },
-            { label: 'Substance Abuse Testing Policy - Spanish', page: 'SubstanceAbuseTestingSpanishPP' },
-            { label: 'Bloodborne Pathogens Exposure Control Plan - Spanish', page: 'BloodbornePathogensSpanishPP' },
-            { label: 'Certifications Policy - Spanish', page: 'CertificationsPolicySpanishPP' },
-            { label: 'DDD Reference Request - Spanish', page: 'DDDReferenceRequestSpanishPP' },
-            { label: 'Direct Service Position - Spanish', page: 'DirectServicePositionSpanishPP' },
-            { label: 'Employee Policies - Spanish', page: 'EmployeePoliciesSpanishPP' },
-            { label: 'EVV Timesheet Attestation - Spanish', page: 'EVVTimesheetAttestationSpanishPP' },
-            { label: 'HIPAA Confidentiality - Spanish', page: 'HIPAAConfidentialitySpanishPP' },
-            { label: 'Training Database Authorization - Spanish', page: 'TrainingDatabaseAuthSpanishPP' },
-            { label: 'Bring Your Own Device Policy - Spanish', page: 'BYODPolicySpanishPP' },
-            { label: 'Communication Authorization - Spanish', page: 'CommunicationAuthSpanishPP' },
-            { label: 'DDD-EVV Member Contingency Back-Up Plan - Spanish', page: 'DDDEVVContingencySpanishPP' },
-            { label: 'EEO-1 Self Identification Form - Spanish', page: 'EEO1SelfIdSpanishPP' },
-            { label: 'Employment Application - Spanish', page: 'EmploymentApplicationSpanishPP' },
-            { label: 'False Claims Act Policy - Spanish', page: 'FalseClaimsActPolicySpanishPP' },
-            { label: 'Incident Reporting Policy - Spanish', page: 'IncidentReportingPolicySpanishPP' },
-            { label: 'Unlicensed Home Policy - Spanish', page: 'UnlicensedHomePolicySpanishPP' }
+    { label: 'Bloodborne Pathogens Exposure Control Plan - Spanish', page: 'BloodbornePathogensSpanishPP' },
+    { label: 'Bring Your Own Device Policy - Spanish', page: 'BYODPolicySpanishPP' },
+    { label: 'Central Registry Clearance Form - Spanish', page: 'CentralRegistryClearanceSpanishPP' },
+    { label: 'Certifications Policy - Spanish', page: 'CertificationsPolicySpanishPP' },
+    { label: 'Client Orientation - Spanish', page: 'ClientOrientationSpanishPP' },
+    { label: 'Communication Authorization - Spanish', page: 'CommunicationAuthSpanishPP' },
+    { label: 'Criminal History - Spanish', page: 'CriminalHistorySpanishPP' },
+    { label: 'DDD Reference Request - Spanish', page: 'DDDReferenceRequestSpanishPP' },
+    { label: 'DDD-EVV Member Contingency Back-Up Plan - Spanish', page: 'DDDEVVContingencySpanishPP' },
+    { label: 'Direct Deposit Authorization - Spanish', page: 'DirectDepositAuthSpanishPP' },
+    { label: 'Direct Service Position - Spanish', page: 'DirectServicePositionSpanishPP' },
+    { label: 'EEO-1 Self Identification Form - Spanish', page: 'EEO1SelfIdSpanishPP' },
+    { label: 'Employee Handbook - Spanish', page: 'EmployeeHandbookSpanishPP' },
+    { label: 'Employee Policies - Spanish', page: 'EmployeePoliciesSpanishPP' },
+    { label: 'AZLH_Employment_Application_4.2026_FINAL', page: 'EmploymentApplicationSpanishPP' },
+    { label: 'EVV Designee Attestation - Spanish', page: 'EVVDesigneeAttestationSpanishPP' },
+    { label: 'EVV Timesheet Attestation - Spanish', page: 'EVVTimesheetAttestationSpanishPP' },
+    { label: 'False Claims Act Policy - Spanish', page: 'FalseClaimsActPolicySpanishPP' },
+    { label: 'HCBS_Service_Contract - Spanish', page: 'HCBSServiceContractSpanishPP' },
+    { label: 'HIPAA Confidentiality - Spanish', page: 'HIPAAConfidentialitySpanishPP' },
+    { label: 'HIPAA Policy - Spanish', page: 'HIPAAPolicySpanishPP' },
+    { label: 'I-9 - Spanish', page: 'I9SpanishPP' },
+    { label: 'Incident Reporting Policy - Spanish', page: 'IncidentReportingPolicySpanishPP' },
+    { label: 'Substance Abuse Testing Policy - Spanish', page: 'SubstanceAbuseTestingSpanishPP' },
+    { label: 'Training Database Authorization - Spanish', page: 'TrainingDatabaseAuthSpanishPP' },
+    { label: 'Unlicensed Home Policy - Spanish', page: 'UnlicensedHomePolicySpanishPP' }
         ]
     },
     provider: {
         english: [
-            { label: 'Abuse & Neglect Policy - English', page: 'AbuseNeglectPolicyEnglishProv' },
-            { label: 'Bloodborne Pathogens Exposure Control Plan - English', page: 'BloodbornePathogensEnglishProv' },
-            { label: 'Certifications Policy - English', page: 'CertificationsPolicyEnglishProv' },
-            { label: 'DDD Reference Request - English', page: 'DDDReferenceRequestEnglishProv' },
-            { label: 'Direct Service Position - English', page: 'DirectServicePositionEnglishProv' },
-            { label: 'Employee Policies - English', page: 'EmployeePoliciesEnglishProv' },
-            { label: 'HIPAA Policy - English', page: 'HIPAAPolicyEnglishProv' },
-            { label: 'Substance Abuse Testing Policy - English', page: 'SubstanceAbuseTestingEnglishProv' },
-            { label: 'AZLH_DCW Training Database Authorization', page: 'DCWTrainingDatabaseAuthProv' },
-            { label: 'Bring Your Own Device Policy - English', page: 'BYODPolicyEnglishProv' },
-            { label: 'Communication Authorization - English', page: 'CommunicationAuthEnglishProv' },
-            { label: 'DDD-EVV Member Contingency Back-Up Plan - English', page: 'DDDEVVContingencyEnglishProv' },
-            { label: 'EEO-1 Self Identification Form - English', page: 'EEO1SelfIdEnglishProv' },
-            { label: 'EVV Timesheet Attestation - English', page: 'EVVTimesheetAttestationEnglishProv' },
-            { label: 'HIPAA Confidentiality - English', page: 'HIPAAConfidentialityEnglishProv' },
-            { label: 'Unlicensed Home Policy - English', page: 'UnlicensedHomePolicyEnglishProv' },
-            { label: 'Employment Application - English', page: 'EmploymentApplicationEnglishProv' },
-            { label: 'Central Registry Clearance Form - English', page: 'CentralRegistryClearanceEnglishProv' },
-            { label: 'Criminal History - English', page: 'CriminalHistoryEnglishProv' },
-            { label: 'Direct Deposit Authorization - English', page: 'DirectDepositAuthEnglishProv' },
-            { label: 'Employee Handbook - English', page: 'EmployeeHandbookEnglishProv' },
-            { label: 'False Claims Act Policy - English', page: 'FalseClaimsActPolicyEnglishProv' },
-            { label: 'Incident Reporting Policy - English', page: 'IncidentReportingPolicyEnglishProv' },
-            { label: 'Client Orientation', page: 'ClientOrientationProv' },
-            { label: 'I-9', page: 'I9Prov' }
+             { label: 'Abuse & Neglect Policy - English', page: 'AbuseNeglectPolicyEnglishProv' },
+             { label: 'AZLH Client Orientation - English', page: 'ClientOrientationProv' },
+    { label: 'AZLH_DCW Training Database Authorization', page: 'DCWTrainingDatabaseAuthProv' },
+    { label: 'AZLH_Employment_Application_4.2026_FINAL', page: 'AZLHEmploymentApplicationFINALProv' },
+    { label: 'Bloodborne Pathogens Exposure Control Plan - English', page: 'BloodbornePathogensEnglishProv' },
+    { label: 'Bring Your Own Device Policy - English', page: 'BYODPolicyEnglishProv' },
+    { label: 'Central Registry Clearance Form - English', page: 'CentralRegistryClearanceEnglishProv' },
+    { label: 'Certifications Policy - English', page: 'CertificationsPolicyEnglishProv' },
+    { label: 'Communication Authorization - English', page: 'CommunicationAuthEnglishProv' },
+    { label: 'Criminal History - English', page: 'CriminalHistoryEnglishProv' },
+    { label: 'DDD Reference Request - English', page: 'DDDReferenceRequestEnglishProv' },
+    { label: 'DDD-EVV Member Contingency Back-Up Plan - English', page: 'DDDEVVContingencyEnglishProv' },
+    { label: 'Direct Deposit Authorization - English', page: 'DirectDepositAuthEnglishProv' },
+    { label: 'Direct Service Position - English', page: 'DirectServicePositionEnglishProv' },
+    { label: 'EEO-1 Self Identification Form - English', page: 'EEO1SelfIdEnglishProv' },
+    { label: 'Employee Handbook - English', page: 'EmployeeHandbookEnglishProv' },
+    { label: 'Employee Policies - English', page: 'EmployeePoliciesEnglishProv' },
+    { label: 'EVV Timesheet Attestation - English', page: 'EVVTimesheetAttestationEnglishProv' },
+    { label: 'False Claims Act Policy - English', page: 'FalseClaimsActPolicyEnglishProv' },
+    {label: 'HCBS Service Contract - English', page: 'HCBSServiceContractProv' },
+    { label: 'HIPAA Confidentiality - English', page: 'HIPAAConfidentialityEnglishProv' },
+    { label: 'HIPAA Policy - English', page: 'HIPAAPolicyEnglishProv' },
+    { label: 'I-9 - English', page: 'I9EnglishProv' },
+    { label: 'Incident Reporting Policy - English', page: 'IncidentReportingPolicyEnglishProv' },
+    { label: 'Substance Abuse Testing Policy - English', page: 'SubstanceAbuseTestingEnglishProv' },
+    { label: 'Unlicensed Home Policy - English', page: 'UnlicensedHomePolicyEnglishProv' }
         ],
         spanish: [
             { label: 'Abuse & Neglect Policy - Spanish', page: 'AbuseNeglectPolicySpanishProv' },
-            { label: 'Central Registry Clearance Form - Spanish', page: 'CentralRegistryClearanceSpanishProv' },
-            { label: 'Criminal History - Spanish', page: 'CriminalHistorySpanishProv' },
-            { label: 'Direct Deposit Authorization - Spanish', page: 'DirectDepositAuthSpanishProv' },
-            { label: 'Employee Handbook - Spanish', page: 'EmployeeHandbookSpanishProv' },
-            { label: 'EVV Timesheet Attestation - Spanish', page: 'EVVTimesheetAttestationSpanishProv' },
-            { label: 'HIPAA Confidentiality - Spanish', page: 'HIPAAConfidentialitySpanishProv' },
-            { label: 'Training Database Authorization - Spanish', page: 'TrainingDatabaseAuthSpanishProv' },
-            { label: 'Bloodborne Pathogens Exposure Control Plan - Spanish', page: 'BloodbornePathogensSpanishProv' },
-            { label: 'Certifications Policy - Spanish', page: 'CertificationsPolicySpanishProv' },
-            { label: 'DDD Reference Request - Spanish', page: 'DDDReferenceRequestSpanishProv' },
-            { label: 'Direct Service Position - Spanish', page: 'DirectServicePositionSpanishProv' },
-            { label: 'Employee Policies - Spanish', page: 'EmployeePoliciesSpanishProv' },
-            { label: 'False Claims Act Policy - Spanish', page: 'FalseClaimsActPolicySpanishProv' },
-            { label: 'Incident Reporting Policy - Spanish', page: 'IncidentReportingPolicySpanishProv' },
-            { label: 'Unlicensed Home Policy - Spanish', page: 'UnlicensedHomePolicySpanishProv' },
-            { label: 'Bring Your Own Device Policy - Spanish', page: 'BYODPolicySpanishProv' },
-            { label: 'Communication Authorization - Spanish', page: 'CommunicationAuthSpanishProv' },
-            { label: 'DDD-EVV Member Contingency Back-Up Plan - Spanish', page: 'DDDEVVContingencySpanishProv' },
-            { label: 'EEO-1 Self Identification Form - Spanish', page: 'EEO1SelfIdSpanishProv' },
-            { label: 'Employment Application - Spanish', page: 'EmploymentApplicationSpanishProv' },
-            { label: 'HIPAA Policy - Spanish', page: 'HIPAAPolicySpanishProv' },
-            { label: 'Substance Abuse Testing Policy - Spanish', page: 'SubstanceAbuseTestingSpanishProv' }
+    { label: 'Bloodborne Pathogens Exposure Control Plan - Spanish', page: 'BloodbornePathogensSpanishProv' },
+    { label: 'Bring Your Own Device Policy - Spanish', page: 'BYODPolicySpanishProv' },
+    { label: 'Central Registry Clearance Form - Spanish', page: 'CentralRegistryClearanceSpanishProv' },
+    { label: 'Client Orientation - Spanish', page: 'ClientOrientationSpanishPP' },
+    { label: 'Certifications Policy - Spanish', page: 'CertificationsPolicySpanishProv' },
+    { label: 'Communication Authorization - Spanish', page: 'CommunicationAuthSpanishProv' },
+    { label: 'Criminal History - Spanish', page: 'CriminalHistorySpanishProv' },
+    { label: 'DDD Reference Request - Spanish', page: 'DDDReferenceRequestSpanishProv' },
+    { label: 'DDD-EVV Member Contingency Back-Up Plan - Spanish', page: 'DDDEVVContingencySpanishProv' },
+    { label: 'Direct Deposit Authorization - Spanish', page: 'DirectDepositAuthSpanishProv' },
+    { label: 'Direct Service Position - Spanish', page: 'DirectServicePositionSpanishProv' },
+    { label: 'EEO-1 Self Identification Form - Spanish', page: 'EEO1SelfIdSpanishProv' },
+    { label: 'Employee Handbook - Spanish', page: 'EmployeeHandbookSpanishProv' },
+    { label: 'Employee Policies - Spanish', page: 'EmployeePoliciesSpanishProv' },
+    { label: 'AZLH_Employment_Application_4.2026_FINAL', page: 'EmploymentApplicationSpanishProv' },
+    { label: 'EVV Timesheet Attestation - Spanish', page: 'EVVTimesheetAttestationSpanishProv' },
+    { label: 'False Claims Act Policy - Spanish', page: 'FalseClaimsActPolicySpanishProv' },
+    { label: 'HIPAA Confidentiality - Spanish', page: 'HIPAAConfidentialitySpanishProv' },
+    { label: 'HIPAA Policy - Spanish', page: 'HIPAAPolicySpanishProv' },
+    { label: 'I-9 - Spanish', page: 'I9SpanishProv' },
+    { label: 'Incident Reporting Policy - Spanish', page: 'IncidentReportingPolicySpanishProv' },
+    { label: 'Substance Abuse Testing Policy - Spanish', page: 'SubstanceAbuseTestingSpanishProv' },
+    { label: 'Training Database Authorization - Spanish', page: 'TrainingDatabaseAuthSpanishProv' },
+    { label: 'Unlicensed Home Policy - Spanish', page: 'UnlicensedHomePolicySpanishProv' }
         ]
     },
     tutor: {
         english: [
             { label: 'Direct Deposit Authorization - English', page: 'DirectDepositAuthEnglishTutor' },
             { label: 'Payroll Deduction Authorization - English', page: 'PayrollDeductionAuthEnglishTutor' },
-            { label: 'Federal W-9', page: 'FederalW9Tutor' },
-            { label: 'Independent Contractor Agreement for Tutoring Services', page: 'ICAgreementTutoring' },
-            { label: 'Worker Comp Waiver - 1099 Sole Proprietor', page: 'WorkerCompWaiverTutor' }
+            { label: 'Federal W-9 - English', page: 'FederalW9Tutor' },
+            { label: 'Independent Contractor Agreement for Tutoring Services - English', page: 'ICAgreementTutoring' },
+            { label: 'Worker Comp Waiver - 1099 Sole Proprietor - English', page: 'WorkerCompWaiverTutor' }
         ],
         spanish: [
             { label: 'Direct Deposit Authorization - Spanish', page: 'DirectDepositAuthSpanishTutor' },
             { label: 'Payroll Deduction Authorization - Spanish', page: 'PayrollDeductionAuthSpanishTutor' },
-            { label: 'Federal W-9', page: 'FederalW9TutorEs' }
+            { label: 'Federal W-9 - Spanish', page: 'FederalW9TutorSpan' },
+            { label: 'Independent Contractor Agreement for Tutoring Services - Spanish', page: 'ICAgreementTutoringSpan' },
+            { label: 'Worker Comp Waiver - 1099 Sole Proprietor - Spanish', page: 'WorkerCompWaiverTutorSpan' }
         ]
     }
 };
@@ -278,29 +310,36 @@ const BASED_FORMS_DOCS = {
 const PAY_TAX_DOCS = {
     '1099': {
         english: [
-            { label: 'Contractor Notifications & Approval Request', page: 'ContractorNotificationsApproval' },
-            { label: 'Federal W-9', page: 'FederalW9_1099' },
-            { label: 'HCBS Provider 1099 Contract', page: 'HCBSProvider1099Contract' },
-            { label: 'Worker Comp Waiver - 1099 Sole Proprietor', page: 'WorkerCompWaiver1099' }
+            { label: 'Contractor Notification & Approval Request - English', page: 'ContractorNotificationsApproval' },
+            { label: 'Federal W-9 - English', page: 'FederalW9_1099' },
+            { label: 'HCBS Provider 1099 Contract - English', page: 'HCBSProvider1099Contract' },
+            { label: 'Worker Comp Waiver - 1099 Sole Proprietor - English', page: 'WorkerCompWaiver1099' }
         ],
-        spanish: []
+        spanish: [
+            { label: 'Contractor Notification & Approval Request - Spanish', page: 'ContractorNotificationsApprovalSpan' },
+            { label: 'Federal W-9 - Spanish', page: 'FederalW9_1099Span' },
+            { label: 'HCBS_Provider_Contract - Spanish', page: 'HCBSProvider1099ContractSpan' },
+            { label: 'Worker Comp Waiver - 1099 Sole Proprietor - Spanish', page: 'WorkerCompWaiver1099Span' }
+        ]
     },
     w4: {
         english: [
-            { label: 'Federal W-4 2026 - English', page: 'FederalW4_2026_English' },
+            { label: 'Federal W-4 - English', page: 'FederalW4_2026_English' },
             { label: 'Payroll Deduction Authorization - English', page: 'PayrollDeductionAuthorizationEnglish' },
             { label: 'Return to Work Policy - English', page: 'ReturnToWorkPolicyEnglish' },
             { label: 'Sick Day Policy - English', page: 'SickDayPolicyEnglish' },
             { label: 'Workers Compensation Policy - English', page: 'WorkersCompPolicyEnglish' },
-            { label: 'Arizona A-4', page: 'ArizonaA4' },
-            { label: 'Rate Agreement', page: 'RateAgreement' }
+            { label: 'Arizona A-4 - English', page: 'ArizonaA4' },
+            { label: 'Rate Agreement - English', page: 'RateAgreement' }
         ],
         spanish: [
             { label: 'Federal W-4 2026 - Spanish', page: 'FederalW4_2026_Spanish' },
             { label: 'Payroll Deduction Authorization - Spanish', page: 'PayrollDeductionAuthorizationSpanish' },
             { label: 'Return to Work Policy - Spanish', page: 'ReturnToWorkPolicySpanish' },
             { label: 'Sick Day Policy - Spanish', page: 'SickDayPolicySpanish' },
-            { label: 'Workers Compensation Policy - Spanish', page: 'WorkersCompPolicySpanish' }
+            { label: 'Workers Compensation Policy - Spanish', page: 'WorkersCompPolicySpanish' },
+            { label: 'Rate Agreement - Spanish', page: 'RateAgreementSpanish' },
+            { label: 'Arizona A-4 - Spanish', page: 'ArizonaA4Spanish' }
         ]
     }
 };
@@ -308,11 +347,11 @@ const PAY_TAX_DOCS = {
 const LIVE_IN_DOCS = {
     english: [
         { label: 'Difficulty of Care Income Attestation - English', page: 'DifficultyOfCareIncomeAttestationEnglish' },
-        { label: 'Parent as a Paid Caregiver for Minor Children Affidavit - English', page: 'ParentPaidCaregiverAffidavitEnglish' }
+        { label: 'Parents as Paid Caregiver for Minor Children Affidavit - English', page: 'ParentPaidCaregiverAffidavitEnglish' }
     ],
     spanish: [
         { label: 'Difficulty of Care Income Attestation - Spanish', page: 'DifficultyOfCareIncomeAttestationSpanish' },
-        { label: 'Parent as a Paid Caregiver for Minor Children Affidavit - Spanish', page: 'ParentPaidCaregiverAffidavitSpanish' }
+        { label: 'Parents as Paid Caregiver for Minor Children Affidavit - Spanish', page: 'ParentPaidCaregiverAffidavitSpanish' }
     ]
 };
 
@@ -353,15 +392,18 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
     // Documents sent in this session that are waiting for PandaDoc to report completion
     pendingDocs = {};
 
+    // Service data is kept per service token (atc / hah / rsp), so every
+    // selected service shows its own forms and documents.
+    serviceDocsBySvc = {};
+    serviceFormsBySvc = {};
+    serviceDocsResults = {};
+    serviceFormsResults = {};
+
     certDriverDocsResult;
     driverFormDocsResult;
-    serviceAgreementFormsResult;
-    serviceDocsResult;
     fileInfoResult;
     certDriverDocs = [];
     driverFormDocs = [];
-    serviceAgreementForms = [];
-    serviceStatusDocs = [];
     uploadedFileInfo = {};
 
     _onWindowFocus;
@@ -423,25 +465,36 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         }
     }
 
-    @wire(getServiceAgreementForms, { contactId: '$contactId', serviceType: '$serviceType', language: '$preferredLanguage' })
-    wiredServiceAgreementForms(result) {
-        this.serviceAgreementFormsResult = result;
-        if (result.data) {
-            this.serviceAgreementForms = result.data;
-            this.loadCompletedFiles();
-        } else if (result.error) {
-            this.errorMessage = this.reduceError(result.error);
-        }
+    // One wire per service for documents and agreement forms.
+    // Each wire is only active when that service is selected on the contact.
+    @wire(getServiceFormDocuments, { contactId: '$contactId', serviceType: '$atcParam' })
+    wiredAtcServiceDocs(result) {
+        this.handleServiceDocsResult('atc', result);
     }
 
-    @wire(getServiceFormDocuments, { contactId: '$contactId', serviceType: '$serviceType' })
-    wiredServiceDocs(result) {
-        this.serviceDocsResult = result;
-        if (result.data) {
-            this.serviceStatusDocs = result.data;
-        } else if (result.error) {
-            this.errorMessage = this.reduceError(result.error);
-        }
+    @wire(getServiceFormDocuments, { contactId: '$contactId', serviceType: '$hahParam' })
+    wiredHahServiceDocs(result) {
+        this.handleServiceDocsResult('hah', result);
+    }
+
+    @wire(getServiceFormDocuments, { contactId: '$contactId', serviceType: '$rspParam' })
+    wiredRspServiceDocs(result) {
+        this.handleServiceDocsResult('rsp', result);
+    }
+
+    @wire(getServiceAgreementForms, { contactId: '$contactId', serviceType: '$atcParam', language: '$preferredLanguage' })
+    wiredAtcServiceForms(result) {
+        this.handleServiceFormsResult('atc', result);
+    }
+
+    @wire(getServiceAgreementForms, { contactId: '$contactId', serviceType: '$hahParam', language: '$preferredLanguage' })
+    wiredHahServiceForms(result) {
+        this.handleServiceFormsResult('hah', result);
+    }
+
+    @wire(getServiceAgreementForms, { contactId: '$contactId', serviceType: '$rspParam', language: '$preferredLanguage' })
+    wiredRspServiceForms(result) {
+        this.handleServiceFormsResult('rsp', result);
     }
 
     @wire(getUploadedFileInfo, { contactId: '$contactId' })
@@ -449,6 +502,25 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         this.fileInfoResult = result;
         if (result.data) {
             this.uploadedFileInfo = result.data;
+        } else if (result.error) {
+            this.errorMessage = this.reduceError(result.error);
+        }
+    }
+
+    handleServiceDocsResult(service, result) {
+        this.serviceDocsResults = { ...this.serviceDocsResults, [service]: result };
+        if (result.data) {
+            this.serviceDocsBySvc = { ...this.serviceDocsBySvc, [service]: result.data };
+        } else if (result.error) {
+            this.errorMessage = this.reduceError(result.error);
+        }
+    }
+
+    handleServiceFormsResult(service, result) {
+        this.serviceFormsResults = { ...this.serviceFormsResults, [service]: result };
+        if (result.data) {
+            this.serviceFormsBySvc = { ...this.serviceFormsBySvc, [service]: result.data };
+            this.loadCompletedFiles();
         } else if (result.error) {
             this.errorMessage = this.reduceError(result.error);
         }
@@ -466,7 +538,10 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
             language: this.preferredLanguage
         })
             .then((result) => {
-                this.tabs = result.map((tab) => ({
+                // Member / Tutor only see their Based Forms tab
+                const visibleTabs = this.filterTabsByDivision(result || []);
+
+                this.tabs = visibleTabs.map((tab) => ({
                     ...tab,
                     key: tab.phaseName,
                     displayName: this.uiText.tabNames[tab.phaseName] || tab.phaseName
@@ -526,9 +601,11 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
             collect(this.isSpanish ? byDivision.spanish : byDivision.english);
         }
 
-        const byContract = PAY_TAX_DOCS[this.contractType];
-        if (byContract) {
-            collect(this.isSpanish ? byContract.spanish : byContract.english);
+        if (this.isPayTaxAllowed) {
+            const byContract = PAY_TAX_DOCS[this.contractKey];
+            if (byContract) {
+                collect(this.isSpanish ? byContract.spanish : byContract.english);
+            }
         }
 
         collect(this.isSpanish ? LIVE_IN_DOCS.spanish : LIVE_IN_DOCS.english);
@@ -562,7 +639,11 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
             return;
         }
 
-        const labels = [...(this.driverFormDocs || []), ...(this.serviceAgreementForms || [])]
+        // Gathers agreement forms from every selected service
+        const serviceForms = Object.values(this.serviceFormsBySvc || {})
+            .reduce((all, list) => all.concat(list || []), []);
+
+        const labels = [...(this.driverFormDocs || []), ...serviceForms]
             .map((doc) => doc.label)
             .filter((label) => !!label);
         const unique = [...new Set(labels)];
@@ -583,6 +664,113 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
             .catch((error) => {
                 console.error('Could not load completed form files', error);
             });
+    }
+
+    /* =====================================================================
+     * CATEGORY FILTERING
+     * Rules from the eligibility matrix:
+     *   Member / Tutor    -> Based Forms only; no other categories
+     *   Parent Provider   -> Based Forms; Pay and Tax 1099 only; no driver
+     *                        forms or driver documents; Service and Live-In
+     *                        follow the contact's values
+     *   Provider          -> every category follows the contact's values
+     *                        (W2 or 1099, Driver or Non-Driver, ATC/HAH/RSP, Live-In)
+     * A blank contact value hides the category that depends on it.
+     * ===================================================================== */
+
+    /** Normalizes a picklist/label value: lowercase, letters and digits only. */
+    normalizeToken(value) {
+        if (value === null || value === undefined) {
+            return '';
+        }
+        const token = String(value).toLowerCase().replace(/[^a-z0-9]/g, '');
+        return TOKEN_ALIASES[token] || token;
+    }
+
+    get divisionToken() {
+        return this.normalizeToken(this.division);
+    }
+
+    get isDivisionOnly() {
+        return DIVISION_ONLY_TOKENS.includes(this.divisionToken);
+    }
+
+    get isParentProvider() {
+        return this.divisionToken === PARENT_PROVIDER_TOKEN;
+    }
+
+    /** 'w4' for a W2 contract, '1099' for a 1099 contract, '' otherwise. */
+    get contractKey() {
+        const token = this.normalizeToken(this.contractType);
+        return CONTRACT_KEY_MAP[token] || '';
+    }
+
+    /** 'driver', 'nondriver', or '' when blank. */
+    get drivingToken() {
+        return this.normalizeToken(this.drivingStatus);
+    }
+
+    /** Driver document and driver form rows: Provider + Driver only. */
+    get canShowDriverItems() {
+        return !this.isParentProvider && this.drivingToken === 'driver';
+    }
+
+    /** Non-Driver form rows: Provider + Non-Driver only. */
+    get canShowNonDriverItems() {
+        return !this.isParentProvider && this.drivingToken === 'nondriver';
+    }
+
+    /** Pay and Tax: any contract for Provider; 1099 only for Parent Provider. */
+    get isPayTaxAllowed() {
+        if (!this.contractKey) {
+            return false;
+        }
+        if (this.isParentProvider) {
+            return this.contractKey === '1099';
+        }
+        return true;
+    }
+
+    /**
+     * The contact's service value, split into normalized tokens.
+     * Multi-select "atc;hah;rsp" becomes ['atc', 'hah', 'rsp'].
+     */
+    get serviceTokens() {
+        if (!this.serviceType || this.serviceType === 'none') {
+            return [];
+        }
+        return String(this.serviceType)
+            .split(';')
+            .map((part) => this.normalizeToken(part))
+            .filter((token) => token.length > 0);
+    }
+
+    /** Every selected service, in display order (ATC, HAH, RSP). */
+    get activeServices() {
+        const tokens = this.serviceTokens;
+        return SERVICE_PRIORITY.filter((service) => tokens.includes(service));
+    }
+
+    // Per-service wire parameters. Each is undefined unless that service
+    // is selected, so its wire stays idle.
+    get atcParam() {
+        return this.serviceTokens.includes('atc') ? 'atc' : undefined;
+    }
+
+    get hahParam() {
+        return this.serviceTokens.includes('hah') ? 'hah' : undefined;
+    }
+
+    get rspParam() {
+        return this.serviceTokens.includes('rsp') ? 'rsp' : undefined;
+    }
+
+    /** Tabs filter: Member and Tutor see only Based Forms. */
+    filterTabsByDivision(tabs) {
+        if (this.isDivisionOnly) {
+            return tabs.filter((tab) => tab.phaseName === BASED_FORMS_PHASE_NAME);
+        }
+        return tabs;
     }
 
     /* =====================================================================
@@ -609,8 +797,9 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         return this.contractType && this.contractType !== 'none';
     }
 
+    // True when the contact has at least one selected service
     get hasServiceType() {
-        return this.serviceType && this.serviceType !== 'none';
+        return this.activeServices.length > 0;
     }
 
     get isLiveIn() {
@@ -678,15 +867,16 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
     }
 
     get showPayTaxSection() {
-        return this.isPayTaxTab && this.hasContractType && !!PAY_TAX_DOCS[this.contractType];
+        return this.isPayTaxTab && this.isPayTaxAllowed && !!PAY_TAX_DOCS[this.contractKey];
     }
 
     get showLiveInSection() {
         return this.isServiceFormsTab && this.isLiveIn;
     }
 
+    // Shown when at least one selected service has documents or forms
     get showServiceFormsSection() {
-        return this.isServiceFormsTab && this.hasServiceType && this.serviceStatusDocs.length > 0;
+        return this.isServiceFormsTab && this.serviceGroups.length > 0;
     }
 
     get showNotEligibleMessage() {
@@ -732,7 +922,7 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         if (!this.showPayTaxSection) {
             return [];
         }
-        const byContract = PAY_TAX_DOCS[this.contractType];
+        const byContract = PAY_TAX_DOCS[this.contractKey];
         return this.buildRows(this.isSpanish ? byContract.spanish : byContract.english);
     }
 
@@ -761,8 +951,9 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
             .map((doc) => this.buildStatusRow(doc));
     }
 
+    // Driver document rows only for Provider + Driver
     get driverDocumentRows() {
-        if (!this.showDocsCertSection) {
+        if (!this.showDocsCertSection || !this.canShowDriverItems) {
             return [];
         }
         return this.certDriverDocs
@@ -774,8 +965,9 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         return this.driverDocumentRows.length > 0;
     }
 
+    // Driver form rows only for Provider + Driver
     get driverFormRows() {
-        if (!this.showDocsCertSection) {
+        if (!this.showDocsCertSection || !this.canShowDriverItems) {
             return [];
         }
         return this.driverFormDocs
@@ -787,8 +979,9 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         return this.driverFormRows.length > 0;
     }
 
+    // Non-driver form rows only for Provider + Non-Driver
     get nonDriverFormRows() {
-        if (!this.showDocsCertSection) {
+        if (!this.showDocsCertSection || !this.canShowNonDriverItems) {
             return [];
         }
         return this.driverFormDocs
@@ -800,46 +993,67 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         return this.nonDriverFormRows.length > 0;
     }
 
-    get serviceFormStatusRows() {
-        if (!this.showServiceFormsSection) {
+    /**
+     * One section per selected service (ATC, HAH, RSP). Each entry has its
+     * own certification heading, agreement heading, status rows and form
+     * rows. Services with nothing to show are left out.
+     */
+    get serviceGroups() {
+        if (!this.isServiceFormsTab) {
             return [];
         }
-        return this.serviceStatusDocs.map((doc) => this.buildStatusRow(doc));
+
+        return this.activeServices
+            .map((service) => {
+                const statusRows = (this.serviceDocsBySvc[service] || [])
+                    .map((doc) => this.buildStatusRow(doc));
+
+                const formRows = (this.serviceFormsBySvc[service] || [])
+                    .filter((doc) => doc.groupName === 'serviceAgreementForms')
+                    .map((doc) => this.buildFormRow(doc));
+
+                return {
+                    key: service,
+                    certificationHeading: this.certificationHeadingFor(service),
+                    agreementHeading: this.agreementHeadingFor(service),
+                    statusRows,
+                    formRows,
+                    hasStatusRows: statusRows.length > 0,
+                    hasFormRows: formRows.length > 0
+                };
+            })
+            .filter((group) => group.hasStatusRows || group.hasFormRows);
     }
 
+    /** Every agreement form row across all selected services. */
     get serviceAgreementFormRows() {
-        if (!this.isServiceFormsTab || !this.hasServiceType) {
-            return [];
-        }
-        return this.serviceAgreementForms
-            .filter((doc) => doc.groupName === 'serviceAgreementForms')
-            .map((doc) => this.buildFormRow(doc));
+        return this.serviceGroups.reduce((all, group) => all.concat(group.formRows), []);
     }
 
     get hasServiceAgreementFormRows() {
         return this.serviceAgreementFormRows.length > 0;
     }
 
-    get serviceCertificationHeading() {
-        if (this.serviceType === 'atc') {
+    certificationHeadingFor(service) {
+        if (service === 'atc') {
             return this.isSpanish ? 'Certificación de Servicio ATC' : 'Service ATC Certification';
         }
-        if (this.serviceType === 'hah') {
+        if (service === 'hah') {
             return this.isSpanish ? 'Certificación de Servicio HAH' : 'Service HAH Certification';
         }
         return this.uiText.serviceFormsHeading;
     }
 
-    get serviceAgreementFormsHeading() {
+    agreementHeadingFor(service) {
         const languageLabel = this.isSpanish ? 'Spanish' : 'English';
 
-        if (this.serviceType === 'atc') {
+        if (service === 'atc') {
             return `Service - ATC - ${languageLabel}`;
         }
-        if (this.serviceType === 'hah') {
+        if (service === 'hah') {
             return `Service - HAH - ${languageLabel}`;
         }
-        if (this.serviceType === 'rsp') {
+        if (service === 'rsp') {
             return `Service - RSH - ${languageLabel}`;
         }
         return this.uiText.serviceAgreementFormsHeading;
@@ -871,10 +1085,21 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
     /* =====================================================================
      * ROW BUILDERS
      * ===================================================================== */
-
+    normalizeStatus(raw) {
+        if (raw === null || raw === undefined || raw === '') {
+            return 'None';
+        }
+        const cleaned = String(raw).trim().toLowerCase().replace(/^document\./, '');
+        const match = STATUS_OPTIONS.find(
+            (o) => o.value.toLowerCase() === cleaned || o.label.toLowerCase() === cleaned
+        );
+        return match ? match.value : 'None';
+    }
+ 
     buildStatusRow(doc) {
         const text = this.uiText;
-        const isCompleted = !!doc.isCompleted;
+         const status = this.normalizeStatus(doc.status);
+        const isCompleted = !!doc.isCompleted||status === 'Completed' ;
         const fileInfo = this.uploadedFileInfo[doc.fieldApiName];
         const uploadSource = fileInfo ? fileInfo.uploadSource : null;
         const canDelete = !isCompleted && !!fileInfo && (uploadSource === UPLOAD_SOURCE || !uploadSource);
@@ -883,11 +1108,11 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
             key: doc.fieldApiName,
             label: doc.label,
             fieldApiName: doc.fieldApiName,
-            status: doc.status,
+            status: status,
             isCompleted,
-            statusClass: 'status-badge status-badge_' + (doc.status || 'not-started').toLowerCase().replace(/\s+/g, '-'),
+            statusClass: 'status-badge status-badge_' + (status === 'None' ? 'not-started' : status).toLowerCase().replace(/\s+/g, '-'),
             rowClass: isCompleted ? 'document-row document-row_completed' : 'document-row',
-            uploadLabel: doc.status === 'Rejected' || doc.status === 'Expired' ? text.reUpload : text.upload,
+            uploadLabel: status === 'Rejected' || status === 'Expired' ? text.reUpload : text.upload,
             hasFile: !!fileInfo,
             fileName: fileInfo ? fileInfo.fileName : '',
             contentDocumentId: fileInfo ? fileInfo.contentDocumentId : null,
@@ -896,16 +1121,17 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
     }
 
     buildFormRow(doc) {
-        const isCompleted = !!doc.isCompleted;
+        const status = this.normalizeStatus(doc.status);
+        const isCompleted = !!doc.isCompleted|| status === 'Completed';
         const file = this.completedFiles[doc.label];
         return {
             key: doc.fieldApiName,
             label: doc.label,
             fieldApiName: doc.fieldApiName,
             page: doc.page,
-            status: doc.status,
+            status: status,
             isCompleted,
-            statusClass: 'status-badge status-badge_' + (doc.status || 'not-started').toLowerCase().replace(/\s+/g, '-'),
+            statusClass: 'status-badge status-badge_' + (status === 'None' ? 'not-started' : status).toLowerCase().replace(/\s+/g, '-'),
             rowClass: isCompleted ? 'document-row document-row_completed' : 'document-row',
             hasFile: !!file,
             fileName: file ? file.fileName : '',
@@ -923,7 +1149,7 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
             const files = state.files || [];
             const newest = files.length ? files[0] : null;
 
-            const workflowStatus = state.status || 'None';
+            const workflowStatus = this.normalizeStatus(state.status);
             const isCompleted = workflowStatus === 'Completed';
             const nextAction = state.nextAction || 'send';
 
@@ -1076,7 +1302,7 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
 
             if (win) {
                 win.location = link;
-                this.showToast('Form ready', 'Complete and sign the form in the new tab.', 'success');
+                this.showToast('Form ready', 'Complete and sign the form.', 'success');
             } else {
                 this.showToast(
                     'Pop-up blocked',
@@ -1277,9 +1503,9 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
         const results = [
             this.certDriverDocsResult,
             this.driverFormDocsResult,
-            this.serviceAgreementFormsResult,
-            this.serviceDocsResult,
-            this.fileInfoResult
+            this.fileInfoResult,
+            ...Object.values(this.serviceDocsResults),
+            ...Object.values(this.serviceFormsResults)
         ].filter(Boolean);
         return Promise.all(results.map((r) => refreshApex(r)));
     }
@@ -1301,7 +1527,7 @@ export default class PhaseDocumentTracker extends NavigationMixin(LightningEleme
      * status is set to Completed. The document is then removed from the
      * pending list.
      */
-        async syncPendingDocuments() {
+    async syncPendingDocuments() {
         const entries = Object.entries(this.pendingDocs);
         if (!entries.length) {
             return;
