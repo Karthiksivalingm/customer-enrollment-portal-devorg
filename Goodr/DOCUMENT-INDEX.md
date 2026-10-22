@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-22 (ShopifyOrderSyncTest fix for the release validation: CR-029, CON-036).
+Every project document, by folder and serial number. **Last updated:** 2026-10-22 (REQ-037 hide Shopify sections on create, REQ-038 V1 fields and BI section: CR-030, CR-031, CON-037, TECH-010, ATR-003, MTC-004; QA-Process added).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -9,19 +9,19 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 |---|---|---|---|
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, onboarding | KB-007 |
-| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-037 |
-| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-030 |
-| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-037 |
+| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-039 |
+| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-032 |
+| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-038 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
-| `07-Technical` | `TECH-` | Technical design and component detail | TECH-010 |
-| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario | ATR-003 |
-| `08-QA/02-Manual-Testing` | `MTC-` | Manual test case documents | MTC-004 |
+| `07-Technical` | `TECH-` | Technical design and component detail | TECH-011 |
+| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario, after "all good" | ATR-004 |
+| `08-QA/02-Manual-Testing` | `MTC-` | Manual test case document with steps, screenshots and expected results, after "all good" | MTC-005 |
 
 **Rules:**
 - Numbers are never reused. A cancelled or removed item keeps its number and is marked as such.
 - An existing document is **updated** when its topic changes; a new number is used for a new topic.
 - Every document links to its related REQ, CR, TECH, CON, DEP and QA documents.
-- Not used / removed: REQ-005, 006, 015, 018, 019, 020, 024, 026, 027, 028, 029, 031 Â· CR-007, 010, 013, 020 Â· CON-001, 002, 004, 005, 006, 015, 021, 022 Â· DEP-001, 002 (removed 2026-10-19, CR-025).
+- Not used / removed: REQ-005, 006, 015, 018, 019, 020, 024, 026, 027, 028, 029, 031 · CR-007, 010, 013, 020 · CON-001, 002, 004, 005, 006, 015, 021, 022 · DEP-001, 002 (removed 2026-10-19, CR-025).
 
 ## 01 — Instructions (read-only)
 | File | Purpose |
@@ -29,6 +29,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | [AI-Workflow.md](01-Instructions/AI-Workflow.md) | Workflows A, B and C; required document structures |
 | [Coding-Standards.md](01-Instructions/Coding-Standards.md) | Rules every change must meet |
 | [Project-Rules.md](01-Instructions/Project-Rules.md) | Environments, folders, document control, QA, test data, approvals, version control, reporting |
+| [QA-Process.md](01-Instructions/QA-Process.md) | When QA runs, file locations, test IDs, how tests are run, ATR and MTC structure |
 
 ## 02 — Knowledge Base
 | ID | Document |
@@ -67,6 +68,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | REQ-034 | [Align Goodr with the MLB folder standard (sandbox-only content)](03-Requirements/REQ-034_Align-Goodr-With-MLB-Standard.md) | ✅ Done |
 | REQ-035 | [Exclude an Account from the Automated Offboarding](03-Requirements/REQ-035_Auto-Offboarding-Exclusion.md) | 🔧 Built and tested in the sandbox 2026-10-21 (ATR-002, 30 / 30 pass); waiting on client testing (CON-034) |
 | REQ-036 | [Show YTD and At-Risk details on the Company page](03-Requirements/REQ-036_Company-Page-YTD-And-At-Risk-Fields.md) | ✅ Done in the sandbox 2026-10-21 |
+| REQ-037 | [Hide the Shopify sections while a new Account is created](03-Requirements/REQ-037_Hide-Shopify-Sections-On-New-Account.md) | ✅ Done in the sandbox 2026-10-21 (ATR-003) |
+| REQ-038 | [Sales Channel V1 and Sector V1 on Contact, Lead and Opportunity, in a BI section](03-Requirements/REQ-038_V1-Fields-And-BI-Section.md) | ✅ Done in the sandbox 2026-10-22 (ATR-003) |
 
 ## 04 — Change Records
 | ID | Document | Date |
@@ -96,6 +99,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CR-027 | [Auto-Offboarding Exclusion: warm-off batch and at-risk task flow](04-Change-Records/CR-027_Auto-Offboarding-Exclusion-Batch-And-Flow.md) | 2026-10-21 |
 | CR-028 | [Company page: YTD and At-Risk fields](04-Change-Records/CR-028_Company-Page-YTD-And-At-Risk-Fields.md) | 2026-10-21 |
 | CR-029 | [ShopifyOrderSyncTest: no dependency on the "Key Account" value](04-Change-Records/CR-029_ShopifyOrderSyncTest-Org-Independent-Sales-Channel.md) | 2026-10-22 |
+| CR-030 | [Hide the Shopify sections on the New Account form](04-Change-Records/CR-030_Hide-Shopify-Sections-On-New-Account.md) | 2026-10-21 |
+| CR-031 | [Sales Channel V1 and Sector V1 on Contact, Lead and Opportunity; BI section](04-Change-Records/CR-031_V1-Fields-And-BI-Section.md) | 2026-10-22 |
 
 ## 05 — Conflicts
 | ID | Document | Status |
@@ -127,6 +132,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CON-034 | [Auto-Offboarding Exclusion: open decisions](05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md) | ⚠ Open (client decision) |
 | CON-035 | [Offboarding behaviour vs the client's answers](05-Conflicts/CON-035_Offboarding-Behaviour-Vs-Client-Answers.md) | ⚠ Open (parked) |
 | CON-036 | [The sandbox-only "Key Account" rename breaks test classes in other deployments](05-Conflicts/CON-036_Sandbox-Only-Key-Account-Rename-Breaks-Test-Deploys.md) | ⚠ Open risk |
+| CON-037 | [Lightning page filters cannot check "the record exists"](05-Conflicts/CON-037_Page-Filters-Cannot-Check-Record-Exists.md) | ✅ Resolved |
 | CON-033 | [Running ShopifyAtRiskNoticeBatch by hand sends real emails](05-Conflicts/CON-033_Running-ShopifyAtRiskNoticeBatch-By-Hand-Sends-Real-Emails.md) | ⚠ Open risk |
 
 ## 06 — Deployment
@@ -144,12 +150,15 @@ None. Deployment documents are written only when something is actually deployed.
 | TECH-007 | [Secure Configuration](07-Technical/TECH-007_Secure-Configuration.md) |  |
 | TECH-008 | [Sales Channel / Sector Impact Analysis](07-Technical/TECH-008_Sales-Channel-Sector-Impact-Analysis.xlsx) (Excel) | |
 | TECH-009 | [Sector Where-Used Analysis](07-Technical/TECH-009_Sector-Where-Used-Analysis.xlsx) (Excel) | |
+| TECH-010 | [Hide-on-create section filters and the BI section](07-Technical/TECH-010_Section-Filters-And-BI-Section.md) | |
 
 ## 08 — QA
 | ID | Document |
 |---|---|
 | ATR-001 | [Cluster and team assignment for old and new values](08-QA/01-Automated-Testing/ATR-001_Cluster-And-Team-Old-And-New-Mapping.md) |
 | ATR-002 | [Exclude an Account from the Automated Offboarding (30 / 30 pass)](08-QA/01-Automated-Testing/ATR-002_Auto-Offboarding-Exclusion.md) |
+| ATR-003 | [Hide the Shopify sections on create; V1 fields and BI section (28 / 28 pass)](08-QA/01-Automated-Testing/ATR-003_Hide-Shopify-Sections-And-BI-V1-Fields.md) · [test class](08-QA/01-Automated-Testing/ATR-003_SavedRecordAndV1QaTest.cls) |
 | MTC-001 | [Key Account, Sector and Specialty CAN test scenarios](08-QA/02-Manual-Testing/MTC-001_Key-Account-Sector-Specialty-CAN-Test-Scenarios.xlsx) (Excel) |
 | MTC-002 | [Cluster and team assignment reference](08-QA/02-Manual-Testing/MTC-002_Cluster-and-Team-Assignment.xlsx) (Excel) |
 | MTC-003 | [Record page sections by Sales Channel / Sector](08-QA/02-Manual-Testing/MTC-003_Record-Page-Sections-by-Sales-Channel-Sector.xlsx) (Excel) |
+| MTC-004 | [Hide the Shopify sections on create; V1 fields and BI section](08-QA/02-Manual-Testing/MTC-004_Hide-Shopify-Sections-And-BI-V1-Fields.md): 13 test cases with screenshots |

@@ -30,7 +30,7 @@ Never commit org credentials. `.sf/` and `.sfdx/` are git-ignored.
 4. [Change records (CR)](../DOCUMENT-INDEX.md#04--change-records): what has changed in the sandbox, and when.
 5. [Conflicts (CON)](../DOCUMENT-INDEX.md#05--conflicts): known problems and traps. **Read all of them.**
 6. [07-Technical](../07-Technical/): the cluster engine and inventories of classes, triggers, flows and fields.
-7. [08-QA](../08-QA/README.md): test reports and manual test cases.
+7. [QA-Process](../01-Instructions/QA-Process.md) and [08-QA](../08-QA/): how testing works, test reports and manual test cases.
 
 ## 3. Your first task
 Follow [AI-Workflow.md](../01-Instructions/AI-Workflow.md) and [Project-Rules.md](../01-Instructions/Project-Rules.md). Specific to Goodr:

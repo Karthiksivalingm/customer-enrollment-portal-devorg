@@ -165,26 +165,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Sales_Channel_V1__c</fieldItem>
-                <identifier>RecordSales_Channel_V1_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Sector_V1__c</fieldItem>
-                <identifier>RecordSector_V1_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Parent_Vertical__c</fieldItem>
                 <identifier>RecordParent_Vertical_cField</identifier>
             </fieldInstance>
@@ -318,6 +298,58 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-f756dd3e-cb5f-4b3f-b564-03e694ddc96a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sales_Channel_V1__c</fieldItem>
+                <identifier>RecordSales_Channel_V1_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-e5c1f845-1413-4ef8-a2f1-0dfb6d23eb11</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sector_V1__c</fieldItem>
+                <identifier>RecordSector_V1_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-d6a2bf14-10ea-4ab7-892e-427c8a8df13a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-e5c1f845-1413-4ef8-a2f1-0dfb6d23eb11</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_BI_1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-d6a2bf14-10ea-4ab7-892e-427c8a8df13a</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_BI_2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-774aaa46-1bfc-4888-937d-1d0f7c18d7fe</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -524,16 +556,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Total_Notices_Sent__c</fieldItem>
-                <identifier>RecordTotal_Notices_Sent_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Current_YTD_Sales__c</fieldItem>
                 <identifier>RecordCurrent_YTD_Sales_cField</identifier>
             </fieldInstance>
@@ -546,6 +568,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.YTD_Performance_Percent__c</fieldItem>
                 <identifier>RecordYTD_Performance_Percent_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Total_Notices_Sent__c</fieldItem>
+                <identifier>RecordTotal_Notices_Sent_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-639a000f-b03c-4baa-9b2d-73ecf0465eb9</name>
@@ -578,26 +610,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.At_Risk_Episode_Count__c</fieldItem>
-                <identifier>RecordAt_Risk_Episode_Count_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Open_Notices__c</fieldItem>
-                <identifier>RecordOpen_Notices_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Prior_YTD_Sales__c</fieldItem>
                 <identifier>RecordPrior_YTD_Sales_cField</identifier>
             </fieldInstance>
@@ -610,6 +622,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Shopify_Sales_At_Risk__c</fieldItem>
                 <identifier>RecordShopify_Sales_At_Risk_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.At_Risk_Episode_Count__c</fieldItem>
+                <identifier>RecordAt_Risk_Episode_Count_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Open_Notices__c</fieldItem>
+                <identifier>RecordOpen_Notices_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-494d0d71-98f7-46df-8dcb-d35fcc1f4619</name>
@@ -808,6 +840,24 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
+                    <value>Facet-774aaa46-1bfc-4888-937d-1d0f7c18d7fe</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>BI</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection_BI</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
                     <value>Facet-1f73580e-7836-4274-a866-7913f750ad73</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -820,6 +870,13 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection5</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Is_Saved_Record__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -838,6 +895,13 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection4</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Is_Saved_Record__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>

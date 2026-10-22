@@ -432,6 +432,24 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
+                    <value>Facet-c548e0f5-08bc-47dc-aa1d-2796ee69eb36</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>BI</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection_BI</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
                     <value>Facet-66346d33-a77a-4dd6-973b-2196e6e7116f</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -570,10 +588,6 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Tabs</value>
-                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-da8e7260-6ff6-4fa0-8a96-d83e5b77c391</value>
@@ -764,6 +778,58 @@
         </itemInstances>
         <name>sidebar</name>
         <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sales_Channel_V1__c</fieldItem>
+                <identifier>RecordSales_Channel_V1_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b05181c4-0aa2-40b1-a790-27fff295f4b7</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sector_V1__c</fieldItem>
+                <identifier>RecordSector_V1_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-ba67dfcd-2afe-4e01-bef2-6f00f8f53d1e</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b05181c4-0aa2-40b1-a790-27fff295f4b7</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_BI_1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-ba67dfcd-2afe-4e01-bef2-6f00f8f53d1e</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_BI_2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-c548e0f5-08bc-47dc-aa1d-2796ee69eb36</name>
+        <type>Facet</type>
     </flexiPageRegions>
     <masterLabel>Opportunity Record Page Updated</masterLabel>
     <sobjectType>Opportunity</sobjectType>
