@@ -63,6 +63,23 @@ The queues used by this mechanism (Action, Analyze, Digital Analyst, Hybrid …)
 | Routing Flows | `Case_General_Support_Router` (Active; queue-based "Pit Crew" / "Regular Case" branches). Skill-based routing Flows are Obsolete. `Basic_Routing_with_Case_Creation` is a Draft |
 | Telephony | Call centers `RingCentral`, `TVMSBCC`; Amazon Connect package (`awsac`); Service Cloud Voice permission sets. See [Integrations](Integrations-and-External-Systems.md) |
 
+## 2a. Skill-based routing (verified 2026-10-22, [ATR-001](../08-QA/01-Automated-Testing/ATR-001_Case-Skill-Based-Routing.md))
+
+**What is live:** the before-save Flow `Case_Skill_Mapping_for_same_request_types` (v2, Active) sets `Case.Routing_Skill__c` when a Case
+(Category General Support) is created or edited:
+- Inventory + Other → Inventory.
+- Inventory + VDV Issue → Inventory.
+- Onboarding + Other → General.
+- Websites - Apollo Apps + VDV Issue → General.
+
+Other combinations leave the field unchanged.
+
+**What is not live:** `Skill_Based_Routing_For_Case`, the Omni-Channel routing Flow that routes by General / Inventory skill and by priority
+through the High / Medium / Low routing configurations, has no active version (Obsolete since 2026-07-01).
+
+Skills exist (General, Inventory, English, Spanish, Voice, Enterprise, Red Dealer, Difficult Ticket). 19 active agents hold General and 9 hold
+Inventory. Open points are in [CON-001](../05-Conflicts/CON-001_Case-Skill-Router-Inactive.md).
+
 ## 3. Case configuration
 
 **Record types and business processes:**
@@ -100,3 +117,4 @@ The queues used by this mechanism (Action, Analyze, Digital Analyst, Hybrid …)
 | Date | Change |
 |---|---|
 | 2026-10-14 | Created from analysis of the baseline retrieval. |
+| 2026-10-22 | Added skill-based routing findings from ATR-001. |

@@ -20,6 +20,7 @@ SECTIONS = [
     ("05-Conflicts", "CF", "One dated record per error, conflict or unexpected behaviour"),
     ("06-Deployment", "DEP", "Procedures, checklists and one dated record per release or validation"),
     ("07-Technical-Documents", None, "Technical documents, generated inventories and component change history"),
+    ("08-QA", None, "Automated test reports (ATR) and manual test cases (MTC), see 01-Instructions/QA-Process.md"),
 ]
 FM_RX = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.S)
 
@@ -49,7 +50,8 @@ def build():
     body = []
     for folder, prefix, purpose in SECTIONS:
         fdir = os.path.join(tvmlib.TVM_DIR, folder)
-        files = sorted(glob.glob(os.path.join(fdir, "*.md")))
+        pattern = os.path.join(fdir, "**", "*.md") if folder == "08-QA" else os.path.join(fdir, "*.md")
+        files = sorted(glob.glob(pattern, recursive=True))
         dated = [f for f in files if prefix and re.match(rf"^\d{{4}}-\d{{2}}-\d{{2}}-{prefix}-\d+", os.path.basename(f))]
         standing = [f for f in files if f not in dated and os.path.basename(f).lower() != "readme.md"]
         nums = [int(re.search(rf"-{prefix}-(\d+)", os.path.basename(f)).group(1)) for f in dated] if prefix else []

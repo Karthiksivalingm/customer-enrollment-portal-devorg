@@ -13,15 +13,16 @@ Dated records are named `YYYY-MM-DD-<TYPE>-<NNN>-<slug>.md` and created with `py
 | [05-Conflicts](05-Conflicts/) | CF | One dated record per error, conflict or unexpected behaviour | 2 | CF-003 |
 | [06-Deployment](06-Deployment/) | DEP | Procedures, checklists and one dated record per release or validation | 0 | DEP-001 |
 | [07-Technical-Documents](07-Technical-Documents/) | standing docs | Technical documents, generated inventories and component change history | 0 | n/a |
+| [08-QA](08-QA/) | standing docs | Automated test reports (ATR) and manual test cases (MTC), see 01-Instructions/QA-Process.md | 0 | n/a |
 
 ## 01-Instructions
 
 | Document | Title |
 |---|---|
-| [Documentation-Rules.md](01-Instructions/Documentation-Rules.md) | Documentation Rules |
-| [Git-Automation-Rules.md](01-Instructions/Git-Automation-Rules.md) | Git Automation Rules |
-| [Salesforce-Safety-Rules.md](01-Instructions/Salesforce-Safety-Rules.md) | Salesforce Safety Rules |
-| [TVM-Working-Instructions.md](01-Instructions/TVM-Working-Instructions.md) | TVM Working Instructions |
+| [AI-Workflow.md](01-Instructions/AI-Workflow.md) | AI Workflow |
+| [Coding-Standards.md](01-Instructions/Coding-Standards.md) | Coding Standards |
+| [Project-Rules.md](01-Instructions/Project-Rules.md) | Project Rules |
+| [QA-Process.md](01-Instructions/QA-Process.md) | QA Process |
 
 ## 02-Knowledge-Base
 
@@ -39,6 +40,9 @@ Dated records are named `YYYY-MM-DD-<TYPE>-<NNN>-<slug>.md` and created with `py
 
 ## 03-Requirements
 
+| Document | Title |
+|---|---|
+| [REQ-001_Case-Skill-Based-Routing.md](03-Requirements/REQ-001_Case-Skill-Based-Routing.md) | REQ-001 — Case skill-based routing (QA of existing behaviour) |
 
 _No records yet._
 
@@ -49,6 +53,9 @@ _No records yet._
 
 ## 05-Conflicts
 
+| Document | Title |
+|---|---|
+| [CON-001_Case-Skill-Router-Inactive.md](05-Conflicts/CON-001_Case-Skill-Router-Inactive.md) | CON-001 — Case skill router inactive; Routing Skill not cleared |
 
 | ID | Date | Title | Status |
 |---|---|---|---|
@@ -76,3 +83,10 @@ _No records yet._
 | [Technical-Architecture.md](07-Technical-Documents/Technical-Architecture.md) | Technical Architecture and Dependencies |
 
 Subfolders: [Apex-Classes](07-Technical-Documents/Apex-Classes/) · [Apex-Triggers](07-Technical-Documents/Apex-Triggers/) · [Flows](07-Technical-Documents/Flows/) · [Integrations-and-APIs](07-Technical-Documents/Integrations-and-APIs/) · [Metadata-Inventory](07-Technical-Documents/Metadata-Inventory/) · [Objects-and-Fields](07-Technical-Documents/Objects-and-Fields/) · [Permissions-and-Security](07-Technical-Documents/Permissions-and-Security/) · [Reports-and-Dashboards](07-Technical-Documents/Reports-and-Dashboards/) · [Retrieval](07-Technical-Documents/Retrieval/) · [Routing-and-Omni-Channel](07-Technical-Documents/Routing-and-Omni-Channel/) · [Scheduled-and-Batch-Jobs](07-Technical-Documents/Scheduled-and-Batch-Jobs/) · [UI-Components](07-Technical-Documents/UI-Components/) · [Validation-Rules](07-Technical-Documents/Validation-Rules/)
+
+## 08-QA
+
+| Document | Title |
+|---|---|
+| [ATR-001_Case-Skill-Based-Routing.md](08-QA/01-Automated-Testing/ATR-001_Case-Skill-Based-Routing.md) | ATR-001 — Case skill-based routing |
+| [MTC-001_Case-Skill-Based-Routing.md](08-QA/02-Manual-Testing/MTC-001_Case-Skill-Based-Routing.md) | MTC-001 — Case skill-based routing |
