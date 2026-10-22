@@ -9,7 +9,7 @@
 | **Org** | Sandbox (Fullsandbox) |
 | **Run date** | 2026-10-22 |
 | **Run as** | System Administrator (validate-only test run); General Support profile (test user created inside the test, TC-001-09) |
-| **Result** | **14 of 14 scenarios passed.** 10 backend Apex scenarios and 4 configuration checks. Finding: the Omni-Channel skills router `Skill_Based_Routing_For_Case` is **inactive**. Routing Skill is set on Cases, but Cases are **not** routed to agents by skill in this sandbox (CON-001). |
+| **Result** | **14 of 14 scenarios passed.** 10 backend Apex scenarios and 4 configuration checks. The front-end screens were checked on 2026-10-22, up to the Save button (section 3, Front end). Finding: the Omni-Channel skills router `Skill_Based_Routing_For_Case` is **inactive**. Routing Skill is set on Cases, but Cases are **not** routed to agents by skill in this sandbox (CON-001). |
 
 ## 1. Scope
 | Component | Type | Version tested |
@@ -36,8 +36,11 @@ Mapping set by the Flow (Case Category = General Support):
   with `RunSpecifiedTests`. Salesforce ran the tests in the org and saved nothing: no class and no Case was left behind (TC-001-11).
   The tests create Cases on the Master record type with Case Category "General Support", so all Case automation runs as normal.
 - **Configuration (TC-001-11 to 14):** read-only SOQL queries against the sandbox (Flow versions, skills, agent skills).
-- **Front end:** not driven in this run. The screens are covered by [MTC-001](../02-Manual-Testing/MTC-001_Case-Skill-Based-Routing.md) for the QA team.
-  Screenshots will be added when the manual run is captured.
+- **Front end (2026-10-22):** the real screens in the Service Console and Setup, driven in Chrome (headless) as the System Administrator.
+  - The New Case forms were opened with the test values pre-filled, captured, and **cancelled before Save**. Saving a Case fires email alerts
+    (for example `Email_alert_to_case_assignment_when_case_created`), and the project rules do not allow emails to real people without approval.
+  - The skill result after save is therefore verified by the backend tests; the QA team completes the save in [MTC-001](../02-Manual-Testing/MTC-001_Case-Skill-Based-Routing.md).
+  - The screenshots are in [MTC-001_screenshots](../02-Manual-Testing/MTC-001_screenshots/).
 
 ## 3. Scenario results
 
@@ -63,6 +66,17 @@ Mapping set by the Flow (Case Category = General Support):
 | TC-001-13 | Omni skills router state | SOQL | System Administrator | `FlowDefinitionView`, `FlowVersionView` | Record the actual state | `Skill_Based_Routing_For_Case` has no active version (v3 Obsolete since 2026-07-01). `Skilled_Based_Omni_Flow_for_Cases` v1–v4 Obsolete | Pass (state recorded; see CON-001) |
 | TC-001-14 | Agents hold the routing skills | SOQL | System Administrator | `ServiceResourceSkill` on active service resources | At least one agent per skill | General: 19 active agents · Inventory: 9 active agents (General Support profile, plus a few admins) | Pass |
 
+### Front end
+| Test ID | Scenario | Type | Run as | Input / test data | Expected result | Actual result | Result |
+|---|---|---|---|---|---|---|---|
+| TC-001-01 to 05 | New Case form accepts each tested combination | UI (stopped before Save) | System Administrator | Master Record Type; General Support with each Subcategory / Request pair | Form opens with the values selectable, and no dependency error | All five forms opened with Category, Subcategory and Request set as given; cancelled, nothing saved | Pass |
+| TC-001-10 | Skills in Setup | UI | System Administrator | Setup → Skills | General and Inventory listed | 8 skills listed, including General and Inventory | Pass |
+| TC-001-12 | Mapping Flow in Setup | UI | System Administrator | Setup → Flows → Case Skill Mapping for same request types | Active version shown | Active Version 2 (activated 7/21/2026); trigger "Record—Run Before Save" | Pass |
+| TC-001-13 | Skills router in Setup | UI | System Administrator | Setup → Flows → Skill Based Routing For Case | Record the state | Active Version blank; version 3 Activation Status "Inactive" (deactivated 7/1/2026) | Pass (state recorded; CON-001) |
+| TC-001-14 | Agent skills | UI | System Administrator | Service Resource of a General Support agent → Service Resource Skills | Skill listed | Inventory listed (start date 6/23/2026) | Pass |
+
+After the run: `SELECT COUNT() FROM Case WHERE Subject LIKE 'QA Skill Routing%'` returned **0**, so no Case was saved from the screens.
+
 ## 4. Defects found
 None in the tested behaviour.
 
@@ -80,7 +94,8 @@ Findings, recorded in [CON-001](../../05-Conflicts/CON-001_Case-Skill-Router-Ina
 | Backend test run (validate-only, 10 of 10 passed, 0 failures, about 30 s) | `0AfVa00000DtpDhKAJ` (check-only = true, status Succeeded) |
 | Test class | [ATR-001_CaseSkillRoutingQaTest.cls](ATR-001_CaseSkillRoutingQaTest.cls), deployed as `CaseSkillRoutingQaTest`. Not saved in the org |
 | Skill-mapping Flow | `Case_Skill_Mapping_for_same_request_types` v2, Active |
-| Skills router | `Skill_Based_Routing_For_Case` latest v3, Obsolete (`301Va00000yq4UnIAI`), no active version |
+| Skills router | `Skill_Based_Routing_For_Case` latest v3 (`301Va00000yq4UnIAI`), no active version. The API reports it as Obsolete; Setup shows "Inactive" |
+| Screenshots | 9 files in [MTC-001_screenshots](../02-Manual-Testing/MTC-001_screenshots/) |
 | Skills | General `0C5Va000000y9DJKAY`, Inventory `0C5Vb0000007WkjKAE` |
 | Cases in the sandbox with a Routing Skill | General 6, Inventory 17 (existing data, not created by this test) |
 
@@ -88,6 +103,7 @@ Findings, recorded in [CON-001](../../05-Conflicts/CON-001_Case-Skill-Router-Ina
 | Record | Used in | Restored |
 |---|---|---|
 | Test Cases (up to 200 per scenario) and one General Support test user | TC-001-01 to 10, inside the validate-only run | Rolled back automatically; nothing saved |
+| New Case forms opened in the UI (TC-001-01 to 05) | Front end | Cancelled before Save; 0 Cases with the QA subject exist |
 | Existing records | None changed | — |
 
 - No records were created, changed or deleted in the sandbox, and no temporary components remain (TC-001-11).

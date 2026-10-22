@@ -21,6 +21,7 @@ You need:
 - A System Administrator login, and a General Support agent login.
 - An Account to link the test Cases to.
 
+Screenshots show each form filled in **before Save**; Routing Skill is not on the New Case form, because it is filled when the Case is saved.
 Saving a Case runs the normal Case automation, such as owner assignment and notifications to the Case owner. Use clearly named test Cases
 (Subject starting **"QA Skill Routing"**) and delete them when you finish.
 
@@ -60,6 +61,8 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
+![New Case form filled for TC-001-01, before Save](MTC-001_screenshots/TC-001-01_new_case_inventory_other.png)
+
 ### TC-001-02 — Inventory + VDV Issue
 | | |
 |---|---|
@@ -70,6 +73,8 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Expected result** | Routing Skill = **Inventory**. |
 | **Actual result** | |
 | **Status** | Pass / Fail |
+
+![New Case form filled for TC-001-02, before Save](MTC-001_screenshots/TC-001-02_new_case_inventory_vdv_issue.png)
 
 ### TC-001-03 — Onboarding + Other
 | | |
@@ -82,6 +87,8 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
+![New Case form filled for TC-001-03, before Save](MTC-001_screenshots/TC-001-03_new_case_onboarding_other.png)
+
 ### TC-001-04 — Websites - Apollo Apps + VDV Issue
 | | |
 |---|---|
@@ -93,6 +100,8 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
+![New Case form filled for TC-001-04, before Save](MTC-001_screenshots/TC-001-04_new_case_apollo_apps_vdv_issue.png)
+
 ### TC-001-05 — Unmapped combinations
 | | |
 |---|---|
@@ -103,6 +112,8 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Expected result** | Routing Skill is **blank** on both Cases. |
 | **Actual result** | |
 | **Status** | Pass / Fail |
+
+![New Case form filled for TC-001-05 (first Case), before Save](MTC-001_screenshots/TC-001-05_new_case_unmapped_feed_export.png)
 
 ### TC-001-06 — Edit a Case to a mapped combination
 | | |
@@ -159,6 +170,8 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
+![Setup → Skills list](MTC-001_screenshots/TC-001-10_setup_skills.png)
+
 ### TC-001-13 — Omni-Channel routing by skill
 | | |
 |---|---|
@@ -166,9 +179,15 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Front-end steps** | 1. Open **Setup → Flows** and search **Skill Based Routing For Case**.<br>2. Check the **Active** column and open the Flow's versions.<br>3. Optional: log in as a General Support agent who has the General skill, set Omni-Channel to an available status, and watch whether Case "QA Skill Routing 03" is offered. |
 | **Backend check** | Flow active version; Omni-Channel work offered to the agent. |
 | **Test data** | — |
-| **Expected result** | Skill Based Routing For Case is **not active**: there is no active version, and the latest version (3) is Obsolete. The Case is **not** offered to the agent because of its skill. Skill-based routing is not live in this sandbox (CON-001). |
+| **Expected result** | Skill Based Routing For Case is **not active**. **Active Version** is blank, and version 3 shows Activation Status **Inactive** (deactivated 7/1/2026). The Case is **not** offered to the agent because of its skill. Skill-based routing is not live in this sandbox (CON-001). |
 | **Actual result** | |
 | **Status** | Pass / Fail |
+
+![Skill Based Routing For Case: no active version](MTC-001_screenshots/TC-001-13_skill_router_flow_inactive.png)
+
+For comparison, the Flow that fills Routing Skill is active (version 2):
+
+![Case Skill Mapping for same request types: active version 2](MTC-001_screenshots/TC-001-12_mapping_flow_active.png)
 
 ### TC-001-14 — Agents hold the skills
 | | |
@@ -180,6 +199,8 @@ TC-001-11 and TC-001-12 are backend-only checks of the automated run (nothing le
 | **Expected result** | General Support agents hold **General** and/or **Inventory**. Automated count of active agents: General 19, Inventory 9. |
 | **Actual result** | |
 | **Status** | Pass / Fail |
+
+![Service resource skills of a General Support agent (Inventory)](MTC-001_screenshots/TC-001-14_service_resource_skills.png)
 
 ## After testing
 Delete the Cases whose Subject starts with **"QA Skill Routing"**.
