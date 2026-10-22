@@ -22,14 +22,14 @@ Every project uses the same folder structure:
 
 | Folder | Prefix | What goes in it |
 |---|---|---|
-| `01-Instructions` | — | How work is done: AI-Workflow, Coding Standards, Project Rules. Read-only; change only when the project lead asks. |
+| `01-Instructions` | — | How work is done: AI-Workflow, Coding Standards, Project Rules, QA Process. Read-only; change only when the project lead asks. |
 | `02-Knowledge-Base` | `KB-` | Background: project overview, business process, integrations, environments, users, user guides |
 | `03-Requirements` | `REQ-` | One document per requirement: need, scope, behaviour, acceptance criteria, assumptions, open questions |
 | `04-Change-Records` | `CR-` | One record per change made to an org: what changed, when, deploy ID, verification, rollback |
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed to production |
 | `07-Technical` | `TECH-` | Technical design and component detail |
-| `08-QA` | `ATR-` / `MTC-` | Automated test reports and manual test case documents (see section 5) |
+| `08-QA` | `ATR-` / `MTC-` | Automated test reports and manual test case documents (see section 5 and [QA-Process.md](QA-Process.md)) |
 | `force-app/` | — | Salesforce metadata source |
 
 ## 3. Document control
@@ -55,7 +55,7 @@ Every project uses the same folder structure:
 
 ## 5. Quality assurance
 
-Run on the same confirmation as the documents. Each scenario has one ID used in both QA documents, for example `TC-014-03` (requirement REQ-014, scenario 3).
+Run on the same confirmation as the documents. The full process, file layouts and test-case columns are in [QA-Process.md](QA-Process.md). Each scenario has one ID used in both QA documents, for example `TC-014-03` (requirement REQ-014, scenario 3).
 
 **Automated testing**: `08-QA/01-Automated-Testing/ATR-###_<Requirement>.md`
 - Run every scenario against the sandbox: positive, negative, bulk (200 records) and permission cases, as an administrator and as the real user profiles.
@@ -63,7 +63,7 @@ Run on the same confirmation as the documents. Each scenario has one ID used in 
 - Include the evidence: deploy IDs, Apex test results and coverage, query output.
 - Record the test data created and confirm it was removed.
 
-**Manual test cases**: `08-QA/02-Manual-Testing/MTC-###_<Requirement>.docx`
+**Manual test cases**: `08-QA/02-Manual-Testing/MTC-###_<Requirement>.md`, with screenshots in `MTC-###_screenshots/`
 - Written for the manual QA tester, one table row per scenario, with these columns:
 
 | Test ID | Scenario | Preconditions | Front-end steps (with screenshots) | Backend check | Test data | Expected result | Actual result | Status |
@@ -98,7 +98,7 @@ Ask the project lead before doing any of these, even in a sandbox:
 - **Use the agreed branch.** Don't create branches unless the project lead asks.
 - **Pull before you push** so other people's work is never overwritten.
 - **Commit after every document is created or updated,** together with the source changes it describes.
-- **Write clear commit messages:** start with the project name, then say what changed and why, for example `MLB: REQ-013 Suite Lease MVP label and 40-game option`.
+- **Write clear commit messages:** start with the project name, then say what changed and why, for example `Epicare: REQ-001 <short description of the change>`.
 - **Never commit** org login or cache folders (`.sf/`, `.sfdx/`), personal tool settings, credentials or secrets.
 - **Check before committing.** Review the list of staged files and confirm nothing outside your project folder is included.
 
