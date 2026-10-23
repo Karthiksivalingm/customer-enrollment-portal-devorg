@@ -25,7 +25,7 @@
             <label>Latest Agreement</label>
         </rules>
     </decisions>
-    <description>Keeps the recipient Vendor Contact&apos;s Agreement Status equal to the Adobe Sign status of the Contact&apos;s most recently created agreement - from the moment it is created (Draft, Pre-Send, Send in Progress, Created) through Out for Approval, Approved, Out for Signature, Signed, Cancelled / Declined, Expired. Status changes on older agreements for the same Contact are ignored. Waiting-for-counter statuses map to their parent status. Vendor Contact and Sales Vendor record types only.</description>
+    <description>Keeps the recipient Sales Vendor contact&apos;s Agreement Status equal to the Adobe Sign status of the Contact&apos;s most recently created agreement - from the moment it is created (Draft, Pre-Send, Send in Progress, Created) through Out for Approval, Approved, Out for Signature, Signed, Cancelled / Declined, Expired. Status changes on older agreements for the same Contact are ignored. Waiting-for-counter statuses map to their parent status. Sales Vendor record type only.</description>
     <environments>Default</environments>
     <formulas>
         <description>Adobe Sign status mapped to the Contact Agreement Status picklist value (blank = no change).</description>
@@ -122,7 +122,7 @@
         <filterFormula>AND(
 OR(ISNEW(), ISCHANGED({!$Record.echosign_dev1__Status__c})),
 NOT(ISBLANK({!$Record.echosign_dev1__Recipient__c})),
-OR({!$Record.echosign_dev1__Recipient__r.RecordType.DeveloperName} = &quot;Vendor_Contact&quot;, {!$Record.echosign_dev1__Recipient__r.RecordType.DeveloperName} = &quot;Sales_Vendor&quot;),
+{!$Record.echosign_dev1__Recipient__r.RecordType.DeveloperName} = &quot;Sales_Vendor&quot;,
 OR(
 ISPICKVAL({!$Record.echosign_dev1__Status__c}, &quot;Draft&quot;),
 ISPICKVAL({!$Record.echosign_dev1__Status__c}, &quot;Pre-Send&quot;),

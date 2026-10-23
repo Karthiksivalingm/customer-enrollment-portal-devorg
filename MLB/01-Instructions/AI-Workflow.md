@@ -14,7 +14,8 @@ The coding rules that apply to all three are in [Coding-Standards.md](Coding-Sta
 
 ---
 
-## Workflow A: Small change or break-fix
+
+# Workflow A: Small change or break-fix
 
 ### Step 1: Pin down what is actually being asked
 

@@ -11,7 +11,7 @@ import W9_COLLECTED from '@salesforce/schema/Contact.W_9_Collected__c';
 import RECORD_TYPE from '@salesforce/schema/Contact.RecordType.DeveloperName';
 
 const FIELDS = [ACCOUNT_TYPE, AGREEMENT_STATUS, COI_COLLECTED, FOOD_COLLECTED, W9_COLLECTED, RECORD_TYPE];
-const VENDOR_RECORD_TYPES = ['Vendor_Contact', 'Sales_Vendor'];
+const VENDOR_RECORD_TYPES = ['Sales_Vendor'];
 
 // Certificates per Account.Type - matches the Upload Certificate flow. Optional ones can be uploaded but are not required.
 const REQUIRED = {

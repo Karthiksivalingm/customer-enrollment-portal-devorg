@@ -4,7 +4,7 @@ private class CertificateAttachmentServiceTest {
     private static Contact newVendor() {
         Account a = new Account(Name = 'Cert Test Vendor', Type = 'Non-Profit');
         insert as system a;
-        Id rt = Schema.SObjectType.Contact.getRecordTypeInfosByDeveloperName().get('Vendor_Contact').getRecordTypeId();
+        Id rt = Schema.SObjectType.Contact.getRecordTypeInfosByDeveloperName().get('Sales_Vendor').getRecordTypeId();
         Contact c = new Contact(LastName = 'Cert Test', AccountId = a.Id, RecordTypeId = rt);
         insert as system c;
         return c;

@@ -61,7 +61,7 @@ AND(ISPICKVAL({!$Record.Account.Type}, &quot;Sales Activation&quot;), {!$Record.
             <targetReference>Set_Document_Status</targetReference>
         </connector>
         <filterFormula>AND(
-OR({!$Record.RecordType.DeveloperName} = &quot;Vendor_Contact&quot;, {!$Record.RecordType.DeveloperName} = &quot;Sales_Vendor&quot;),
+{!$Record.RecordType.DeveloperName} = &quot;Sales_Vendor&quot;,
 OR(ISPICKVAL({!$Record.Account.Type}, &quot;Food and Beverage&quot;), ISPICKVAL({!$Record.Account.Type}, &quot;Non-Profit&quot;), ISPICKVAL({!$Record.Account.Type}, &quot;Sales Activation&quot;)),
 OR(ISBLANK(TEXT({!$Record.Agreement_Status__c})), ISPICKVAL({!$Record.Agreement_Status__c}, &quot;Document Pending&quot;), ISPICKVAL({!$Record.Agreement_Status__c}, &quot;Document Uploaded&quot;)))</filterFormula>
         <object>Contact</object>
