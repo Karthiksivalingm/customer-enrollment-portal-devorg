@@ -23,10 +23,10 @@
 | Setting | State | Done by | Note |
 |---|---|---|---|
 | Email Deliverability | All email | User, 2026-10-07 | Required for any email to leave the sandbox |
-| Adobe Sign: Enable Automatic Status Updates | Enabled | User | Required for agreement statuses to update ([CON-005](../05-Conflicts/CON-005_Adobe-Sign-Status-Not-Syncing-In-Sandbox.md)) |
-| Field-level security: COI / W-9 / Food Service Collected | Read-only for all profiles | Assistant, 2026-10-07 | Applied directly, not as deployable files ([CR-014](../04-Change-Records/CR-014_Certificate-Fields-Locked-To-Flow-Only.md)) |
-| FLS on new Ticketing Engagement / Opportunity fields | Removed with the fields | — | Reverted ([CR-022](../04-Change-Records/CR-022_Revert-Ticketing-Engagement-Requirements.md)) |
-| Adobe Sign Callback site | Exists, **inactive** | Assistant | Salesforce sites can't be deleted ([CR-005](../04-Change-Records/CR-005_Adobe-Sign-Callback-Setup-And-Revert.md)) |
+| Adobe Sign: Enable Automatic Status Updates | Enabled | User | Required for agreement statuses to update ([CON-005](../2026-10/05-Conflicts/CON-005_Adobe-Sign-Status-Not-Syncing-In-Sandbox.md)) |
+| Field-level security: COI / W-9 / Food Service Collected | Read-only for all profiles | Assistant, 2026-10-07 | Applied directly, not as deployable files ([CR-014](../2026-10/04-Change-Records/CR-014_Certificate-Fields-Locked-To-Flow-Only.md)) |
+| FLS on new Ticketing Engagement / Opportunity fields | Removed with the fields | — | Reverted ([CR-022](../2026-10/04-Change-Records/CR-022_Revert-Ticketing-Engagement-Requirements.md)) |
+| Adobe Sign Callback site | Exists, **inactive** | Assistant | Salesforce sites can't be deleted ([CR-005](../2026-10/04-Change-Records/CR-005_Adobe-Sign-Callback-Setup-And-Revert.md)) |
 
 ## 3. Local tooling
 

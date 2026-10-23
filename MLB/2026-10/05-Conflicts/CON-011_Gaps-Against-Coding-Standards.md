@@ -4,7 +4,7 @@
 |---|---|
 | **ID** | CON-011 |
 | **Status** | ⚠ **Open: must be closed before production** |
-| **Reference** | [Coding-Standards.md](../01-Instructions/Coding-Standards.md) · [AI-Workflow.md](../01-Instructions/AI-Workflow.md) |
+| **Reference** | [Coding-Standards.md](../../01-Instructions/Coding-Standards.md) · [AI-Workflow.md](../../01-Instructions/AI-Workflow.md) |
 
 | Standard | Current state | Gap |
 |---|---|---|

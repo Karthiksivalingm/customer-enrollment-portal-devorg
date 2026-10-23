@@ -17,7 +17,7 @@
    - the **customer signs** (the email carries the signed PDF) **or declines** it
 6. After the customer signs, Adobe Sign stores **"<agreement> - signed.pdf"** on the agreement and emails the executed copy to the signers.
 
-Email rules: [REQ-003](../03-Requirements/REQ-003_Ticket-Office-Email-Triggering-Conditions.md). Content per type: [TECH-003](../07-Technical/TECH-003_Ticket-Office-Email-Field-Mapping.md).
+Email rules: [REQ-003](../2026-10/03-Requirements/REQ-003_Ticket-Office-Email-Triggering-Conditions.md). Content per type: [TECH-003](../2026-10/07-Technical/TECH-003_Ticket-Office-Email-Field-Mapping.md).
 
 ### Agreement value per type
 
@@ -55,7 +55,7 @@ Applies only to Contacts of record type **Vendor Contact** whose Account **Type*
 | Create Agreement | All required certificates uploaded **and** status is Document Uploaded, Cancelled / Declined or Expired |
 | Send Agreement | Vendor Account Type **and** status is anything except Document Pending or Document Uploaded (from Ready to Send onward) |
 
-Design detail: [TECH-004](../07-Technical/TECH-004_Vendor-Certificate-and-Agreement-Status-Automation.md).
+Design detail: [TECH-004](../2026-10/07-Technical/TECH-004_Vendor-Certificate-and-Agreement-Status-Automation.md).
 
 ## 3. People and roles
 

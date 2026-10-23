@@ -2,7 +2,7 @@
 
 How every confirmed requirement is tested and how the test evidence is stored. It applies to people and AI tools alike, on any Salesforce project.
 
-The rules for when this runs are in [Project-Rules.md](Project-Rules.md) (section 5). The test-class rules for code are in [Coding-Standards.md](Coding-Standards.md) (section 5). QA engineers should also read "For QA engineers" in [AI-Workflow.md](AI-Workflow.md).
+The rules for when this runs are in [Project-Rules.md](Project-Rules.md) (section 6). The test-class rules for code are in [Coding-Standards.md](Coding-Standards.md) (section 5). QA engineers should also read "For QA engineers" in [AI-Workflow.md](AI-Workflow.md).
 
 ---
 
@@ -11,18 +11,19 @@ The rules for when this runs are in [Project-Rules.md](Project-Rules.md) (sectio
 2. The project lead confirms it works ("all good").
 3. Every scenario is run in the backend and recorded as an **automated test report (ATR)**.
 4. A **manual test case document (MTC)** is written for the QA tester.
-5. Both are listed in `DOCUMENT-INDEX.md` and committed with the other documents.
+5. Both are listed in the month's `MONTH-INDEX.md` and in `DOCUMENT-INDEX.md`, and committed with the other documents.
 
 ## 2. Where the files go
 | Folder | Prefix | File | Contents |
 |---|---|---|---|
-| `08-QA/01-Automated-Testing` | `ATR-` | `ATR-###_<Requirement>.md` | The backend test run, with evidence. A test class written only for the run can be kept beside it as `ATR-###_<ClassName>.cls`. |
-| `08-QA/02-Manual-Testing` | `MTC-` | `MTC-###_<Requirement>.md` | Test cases for the manual tester |
-| `08-QA/02-Manual-Testing` | — | `MTC-###_screenshots/` | Screenshots used in the MTC, named by test ID, for example `TC-014-03_record_blocked.png` |
+| `YYYY-MM/08-QA/01-Automated-Testing` | `ATR-` | `ATR-###_<Requirement>.md` | The backend test run, with evidence. A test class written only for the run can be kept beside it as `ATR-###_<ClassName>.cls`. |
+| `YYYY-MM/08-QA/02-Manual-Testing` | `MTC-` | `MTC-###_<Requirement>.md` | Test cases for the manual tester |
+| `YYYY-MM/08-QA/02-Manual-Testing` | — | `MTC-###_screenshots/` | Screenshots used in the MTC, named by test ID, for example `TC-014-03_record_blocked.png` |
 
 - Use the next free number from `DOCUMENT-INDEX.md` and never reuse a number.
 - One ATR and one MTC can cover several requirements confirmed together. List them all in the header.
-- When a requirement changes after its QA was written, update its ATR and MTC (add a retest section) instead of starting new ones.
+- `YYYY-MM` is the month the QA document is first created (see Project-Rules section 2).
+- When a requirement changes after its QA was written, update its ATR and MTC where they are (add a retest section) instead of starting new ones, and note the retest in the current month's `MONTH-INDEX.md`.
 
 ## 3. Test IDs
 - Format: `TC-<requirement number>-<scenario number>`, for example `TC-014-03` is scenario 3 of REQ-014.

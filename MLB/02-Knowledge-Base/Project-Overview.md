@@ -13,13 +13,13 @@
 
 The work so far extends the Marlins ticket-sales and vendor processes in Salesforce, centred on **Adobe Acrobat Sign agreements**:
 
-1. **Agreement Flow (Opportunity screen flow).** Reps capture agreement details for four agreement types: Membership, Multi-Product, Flex and Suite Lease. A common **Ticket Office Comments** field was added. See [REQ-001](../03-Requirements/REQ-001_Ticket-Office-Comments-Field.md).
+1. **Agreement Flow (Opportunity screen flow).** Reps capture agreement details for four agreement types: Membership, Multi-Product, Flex and Suite Lease. A common **Ticket Office Comments** field was added. See [REQ-001](../2026-10/03-Requirements/REQ-001_Ticket-Office-Comments-Field.md).
 2. **Ticket Office notifications.** Salesforce emails the Ticket Office and Sales Manager when an Opportunity agreement is sent at $50k or more, approved or declined by the Sales Manager, or signed or declined by the customer. The signed email carries the signed PDF. See REQ-002 to REQ-005.
 3. **Vendor Contact certificates and agreement status.** Vendor contacts must upload certificates (COI, W-9, Food Service) by Account Type before an agreement is created. The Contact's Agreement Status tracks the documents and then the latest Adobe agreement. See REQ-006 to REQ-010.
-4. **Sales Managers role access.** All three Contact record types, the Marlins Sales Contact page and the Adobe Sign permission sets for every Sales Manager. See [REQ-012](../03-Requirements/REQ-012_Sales-Managers-Role-Access.md).
-5. **Agreement Flow: create and edit, locked agreement details.** One flow behind the Create Agreement and Edit Agreement buttons; an existing agreement opens prefilled. Agreement fields on the Opportunity and Membership Agreement rows can only change through it. See [REQ-014](../03-Requirements/REQ-014_Agreement-Flow-Create-Edit-And-Locked-Agreement-Fields.md).
+4. **Sales Managers role access.** All three Contact record types, the Marlins Sales Contact page and the Adobe Sign permission sets for every Sales Manager. See [REQ-012](../2026-10/03-Requirements/REQ-012_Sales-Managers-Role-Access.md).
+5. **Agreement Flow: create and edit, locked agreement details.** One flow behind the Create Agreement and Edit Agreement buttons; an existing agreement opens prefilled. Agreement fields on the Opportunity and Membership Agreement rows can only change through it. See [REQ-014](../2026-10/03-Requirements/REQ-014_Agreement-Flow-Create-Edit-And-Locked-Agreement-Fields.md).
 6. **Sales Vendors.** Sales Vendor record types on Account and Contact; Sales Vendor contacts follow the vendor certificate process. A Sales Manager checkbox on User drives the Sales Manager list on vendor agreements; only certificate files are attached to vendor agreements. See REQ-015 to REQ-018.
-7. **Ticketing Engagement on Opportunity.** Built, then **reverted and on hold** at the client's request. See [REQ-011](../03-Requirements/REQ-011_Ticketing-Engagement-Fields-and-Opportunity-Link.md).
+7. **Ticketing Engagement on Opportunity.** Built, then **reverted and on hold** at the client's request. See [REQ-011](../2026-10/03-Requirements/REQ-011_Ticketing-Engagement-Fields-and-Opportunity-Link.md).
 
 ## Key business objects
 

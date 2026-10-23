@@ -39,7 +39,7 @@ Users in the **Sales Managers** role (for example Sonja Colon) must be able to r
 
 ## Open questions
 - Sonja Colon has **no Manager** on her user record; who should it be?
-- Billy Marlin's manager, Ruben Smith, still has a `.invalid` email ([KB-005](../02-Knowledge-Base/KB-005_Sandbox-User-Status.md)).
+- Billy Marlin's manager, Ruben Smith, still has a `.invalid` email ([KB-005](../../02-Knowledge-Base/KB-005_Sandbox-User-Status.md)).
 
 ## Update 2026-10-23: sales reps
 At the client's request the same access was given to four Sales Reps (Ticket Sales profile): Antonio Diz, Chema Sanchez, Isaac Paladino, Keeley Himmelreich. They now hold MLB Sales Manager Access as well as the three Adobe Sign sets. See [CR-037](../04-Change-Records/CR-037_Sales-Manager-Ticks-And-Sales-User-Access.md).
