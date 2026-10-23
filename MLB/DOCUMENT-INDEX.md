@@ -1,6 +1,6 @@
 # MLB Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-21 (REQ-014 to REQ-018, CR-027 to CR-035, CON-016 to CON-018, TECH-009 and TECH-010, ATR-002, MTC-002).
+Every project document, by folder and serial number. **Last updated:** 2026-10-23 (CR-036, CR-037; REQ-012, REQ-016, REQ-017, TECH-010, ATR-002, MTC-002 updated).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-005_Signed-Agreement-Email-With-PDF.md`.
@@ -10,7 +10,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, users | KB-007 |
 | `03-Requirements` | `REQ-` | One per requirement: need, scope, behaviour, acceptance criteria, assumptions, open questions | REQ-019 |
-| `04-Change-Records` | `CR-` | One per change made to an org: what, when, deploy ID, verification, rollback | CR-036 |
+| `04-Change-Records` | `CR-` | One per change made to an org: what, when, deploy ID, verification, rollback | CR-038 |
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-019 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-001 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-011 |
@@ -101,6 +101,8 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CR-033 | [Contact Sales Vendor record type and features](04-Change-Records/CR-033_Contact-Sales-Vendor-Record-Type.md) | 10-21 |
 | CR-034 | [User Sales Manager checkbox](04-Change-Records/CR-034_User-Sales-Manager-Checkbox.md) | 10-21 |
 | CR-035 | [Certificate-only agreement attachments](04-Change-Records/CR-035_Certificate-Only-Agreement-Attachments.md) | 10-21 |
+| CR-036 | [Contact vendor features: Sales Vendor only](04-Change-Records/CR-036_Contact-Vendor-Features-Sales-Vendor-Only.md) | 10-23 |
+| CR-037 | [Sales Manager ticks and sales user access](04-Change-Records/CR-037_Sales-Manager-Ticks-And-Sales-User-Access.md) | 10-23 |
 
 ## 05 — Conflicts
 | ID | Conflict | Status |
@@ -122,7 +124,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CON-015 | [Suite Location MPV vs MVP](05-Conflicts/CON-015_Suite-Location-MPV-vs-MVP.md) | ✅ |
 | CON-016 | [Adobe runtime variable limits](05-Conflicts/CON-016_Adobe-Runtime-Variable-Limits.md) | ✅ |
 | CON-017 | [1 year New Business term not wired](05-Conflicts/CON-017_One-Year-New-Business-Term-Not-Wired.md) | ⚠ Open |
-| CON-018 | [Contact page filter condition limit](05-Conflicts/CON-018_Contact-Page-Filter-Condition-Limit.md) | ℹ Known |
+| CON-018 | [Contact page filter condition limit](05-Conflicts/CON-018_Contact-Page-Filter-Condition-Limit.md) | ✅ Closed |
 
 ## 06 — Deployment
 No deployment documents yet. Nothing has been deployed so far.
@@ -147,4 +149,4 @@ How QA is run and what each document contains: [01-Instructions/QA-Process.md](0
 | ID | Automated test report | Manual test cases |
 |---|---|---|
 | 001 (REQ-014 Edit Agreement and locked agreement fields) | [ATR-001](08-QA/01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 24 of 24 passed (retested after combining the flows), DEF-001 found and fixed · [test class](08-QA/01-Automated-Testing/ATR-001_EditAgreementQaTest.cls) | [MTC-001](08-QA/02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 24 test cases with screenshots |
-| 002 (REQ-015 to REQ-018 Sales Vendor, Sales Manager checkbox, certificate attachments) | [ATR-002](08-QA/01-Automated-Testing/ATR-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 16 of 16 passed | [MTC-002](08-QA/02-Manual-Testing/MTC-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 11 test cases with screenshots |
+| 002 (REQ-015 to REQ-018 Sales Vendor, Sales Manager checkbox, certificate attachments) | [ATR-002](08-QA/01-Automated-Testing/ATR-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 16 of 16 passed, retest 5 of 5 | [MTC-002](08-QA/02-Manual-Testing/MTC-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 12 test cases with screenshots |

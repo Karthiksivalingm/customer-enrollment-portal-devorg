@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **ID** | CON-018 |
-| **Status** | ℹ Known, worked around ([CR-033](../04-Change-Records/CR-033_Contact-Sales-Vendor-Record-Type.md)) |
+| **Status** | ✅ Closed: since [CR-036](../04-Change-Records/CR-036_Contact-Vendor-Features-Sales-Vendor-Only.md) the filters test one record type (equals Sales_Vendor), so the "contains" workaround and its risk are gone |
 | **Found** | 2026-10-21 |
 | **Related** | [REQ-016](../03-Requirements/REQ-016_Contact-Sales-Vendor-Record-Type.md) |
 

@@ -4,7 +4,7 @@
 |---|---|
 | **ID** | TECH-005 |
 | **Org** | utdev sandbox |
-| **As of** | 2026-10-21 |
+| **As of** | 2026-10-23 |
 
 Legend: **C** = created · **M** = modified · **D** = deleted · **X** = deactivated · **R** = reverted (no longer exists)
 
@@ -32,13 +32,13 @@ Legend: **C** = created · **M** = modified · **D** = deleted · **X** = deacti
 | `Contact.Vendor_Contact` | Record type | M (picklist values) | objects/Contact/recordTypes/ |
 | `Contact.Certificate_Flow_Update__c` | Checkbox field | C | objects/Contact/fields/ |
 | `Contact.Certificate_Fields_Flow_Only` | Validation rule | C | objects/Contact/validationRules/ |
-| `Contact_Set_Certificate_Document_Status` | Flow | C (v4: includes Sales_Vendor) | flows/ |
-| `Adobe_Agreement_Update_Contact_Status` | Flow | C (v4: includes Sales_Vendor) | flows/ |
+| `Contact_Set_Certificate_Document_Status` | Flow | C (v5: Sales_Vendor only) | flows/ |
+| `Adobe_Agreement_Update_Contact_Status` | Flow | C (v5: Sales_Vendor only) | flows/ |
 | `Upload_Certificate` | Flow | M (v11: copy certificates to attachments) | flows/ |
 | `Delete_Agreement_File` | Flow | X | flowDefinitions/Delete_Agreement_File.flowDefinition-meta.xml |
-| `certificateReminder` | LWC | C (accepts Sales_Vendor) | lwc/certificateReminder |
+| `certificateReminder` | LWC | C (Sales_Vendor only) | lwc/certificateReminder |
 | `certificateUploadModal` | LWC | C | lwc/certificateUploadModal |
-| `Contact_Record_Page_Three_Column` | FlexiPage | M (record type filters: contains Vendor) | flexipages/ |
+| `Contact_Record_Page_Three_Column` | FlexiPage | M (record type filters: equals Sales_Vendor) | flexipages/ |
 | `Admin` profile FLS (3 certificate fields) | Profile | M | not kept locally |
 | FLS on 3 certificate fields (all other profiles) | FieldPermissions | M (read-only) | **not in metadata** |
 

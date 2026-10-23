@@ -27,7 +27,13 @@ All four requested users are **active**.
 All **18** users in role `Sales_Managers` (11 active, 7 inactive) hold the four required permission sets: MLB Sales Manager Access, Adobe Sign User, Adobe Access and Acrobat Sign Document Builder User. See [TECH-007](../07-Technical/TECH-007_Sales-Manager-Access-Model.md) and [REQ-012](../03-Requirements/REQ-012_Sales-Managers-Role-Access.md).
 
 ## Sales Manager checkbox (2026-10-21)
-The User field **Sales Manager** decides who appears in the Sales Manager list of the Contact Create Agreement flow ([REQ-017](../03-Requirements/REQ-017_User-Sales-Manager-Checkbox.md)). Ticked in the sandbox: **Billy Marlin** and **Ruben Smith**. Roles are no longer used for this list.
+The User field **Sales Manager** decides who appears in the Sales Manager list of the Contact Create Agreement flow ([REQ-017](../03-Requirements/REQ-017_User-Sales-Manager-Checkbox.md)). Ticked in the sandbox (2026-10-23): **Samantha MacIntosh, Jason Liss, Pierce Jefferson, Brandon Federico, Nathan Medrano**, plus **Billy Marlin** and **Ruben Smith** from the first setup. Roles are no longer used for this list.
+
+## Sales users with full agreement access (2026-10-23)
+| User | Profile / role | Access |
+|---|---|---|
+| Sonja Colon, Samantha MacIntosh, Jason Liss, Pierce Jefferson, Brandon Federico, Nathan Medrano | Marlins Sales Leadership / Sales Managers | Marlins Sales app, MLB Sales Manager Access, the three Adobe Sign sets |
+| Antonio Diz, Chema Sanchez, Isaac Paladino, Keeley Himmelreich | Ticket Sales / Sales Reps | Same: MLB Sales Manager Access assigned on 2026-10-23 ([CR-037](../04-Change-Records/CR-037_Sales-Manager-Ticks-And-Sales-User-Access.md)) |
 
 ## Fixing the .invalid emails
 **Not done yet.** It sends emails to real inboxes, so it needs approval.

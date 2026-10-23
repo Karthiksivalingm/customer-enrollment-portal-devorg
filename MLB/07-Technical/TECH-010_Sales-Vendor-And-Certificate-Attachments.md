@@ -5,16 +5,16 @@
 | **ID** | TECH-010 |
 | **Requirements** | [REQ-015](../03-Requirements/REQ-015_Account-Sales-Vendor-Type-Value.md) · [REQ-016](../03-Requirements/REQ-016_Contact-Sales-Vendor-Record-Type.md) · [REQ-017](../03-Requirements/REQ-017_User-Sales-Manager-Checkbox.md) · [REQ-018](../03-Requirements/REQ-018_Certificate-Only-Agreement-Attachments.md) |
 
-## 1. Vendor record types
+## 1. Record type rule (Sales Vendor only, since 2026-10-23)
 | Place | Rule |
 |---|---|
-| Contact page filters (`Contact_Record_Page_Three_Column`) | `{!Record.RecordType.DeveloperName}` CONTAINS `Vendor` (4 filters) |
-| `Contact_Set_Certificate_Document_Status` (before save) | OR(RT = Vendor_Contact, RT = Sales_Vendor) AND vendor Account Type AND status blank / Document Pending / Document Uploaded |
-| `Adobe_Agreement_Update_Contact_Status` (after save) | Recipient RT = Vendor_Contact or Sales_Vendor |
-| `certificateReminder` LWC | `VENDOR_RECORD_TYPES = ['Vendor_Contact', 'Sales_Vendor']` |
+| Contact page filters (`Contact_Record_Page_Three_Column`) | `{!Record.RecordType.DeveloperName}` EQUAL `Sales_Vendor` (4 filters) |
+| `Contact_Set_Certificate_Document_Status` (before save) | RT = Sales_Vendor AND vendor Account Type AND status blank / Document Pending / Document Uploaded |
+| `Adobe_Agreement_Update_Contact_Status` (after save) | Recipient RT = Sales_Vendor |
+| `certificateReminder` LWC | `VENDOR_RECORD_TYPES = ['Sales_Vendor']` |
 | `Certificate_Fields_Flow_Only` rule, `CertificateAttachmentService` | Record type independent |
 
-Access to Sales_Vendor: Admin and Ticket Sales profiles (Contact-Vendor layout), MLB_Sales_Manager_Access permission set.
+Access to Sales_Vendor: Admin and Ticket Sales profiles (Contact-Vendor layout), MLB_Sales_Manager_Access permission set (held by the Sales Managers role users and, since 2026-10-23, four Sales Reps).
 
 ## 2. Sales Manager list
 `Vendor_Activation_Food_and_Beverage_Agreement` (v9) → `SalesManagerChoiceSet`: User where `Sales_Manager__c = true` AND `IsActive = true`, label Name, value Id. Saved to `Contact.Sales_Manager__c` by `Update_Contact_Record` (unchanged).

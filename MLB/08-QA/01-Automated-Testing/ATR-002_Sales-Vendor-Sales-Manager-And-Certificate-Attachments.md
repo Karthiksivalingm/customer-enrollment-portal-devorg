@@ -8,7 +8,7 @@
 | **Org** | Sandbox (UTDEV) |
 | **Run date** | 2026-10-21 |
 | **Run as** | System Administrator (Billy Marlin); Ticket Sales user in the Apex no-access test |
-| **Result** | **16 of 16 scenarios passed** |
+| **Result** | **16 of 16 scenarios passed**; retested on 2026-10-23 after the vendor features were limited to Sales Vendor and more Sales Managers were ticked (section 7: 5 of 5 passed) |
 
 ## 1. Scope
 | Component | Type | Version tested |
@@ -63,3 +63,14 @@ None in the delivered design. The first design (Adobe runtime variables) failed 
 | Runtime-variable test drafts (3) and template rows (2), temporary button URL | CON-016 trials | Deleted / restored |
 | Send Agreement draft a15iV000000QyuzQAC | TC-018-03 | Deleted; "Vendor Contact" status still Ready to Send |
 | Ruben Smith Sales Manager tick | TC-017-03 | Ticked again |
+
+## 7. Retest (2026-10-23)
+Changes: [CR-036](../../04-Change-Records/CR-036_Contact-Vendor-Features-Sales-Vendor-Only.md) (vendor features on Sales Vendor only) and [CR-037](../../04-Change-Records/CR-037_Sales-Manager-Ticks-And-Sales-User-Access.md) (five Sales Managers ticked; four reps given MLB Sales Manager Access).
+
+| Test ID | Scenario | Type | Input | Expected result | Actual result | Result |
+|---|---|---|---|---|---|---|
+| TC-016-08 | Vendor Contact gets no vendor features | UI | Vendor Contact "UT Demo 1" | No banner; no Upload Certificate, Create Agreement or Send Agreement buttons | None shown | Pass |
+| TC-016-05 (rerun) | Sales Vendor still works | API + UI | New Sales Vendor contact on a Non-Profit account | Document Pending; banner with Upload Certificate | Document Pending; banner and Upload Certificate shown (contact deleted) | Pass |
+| TC-018-01 (rerun) | Copy logic on the Sales Vendor record type | Apex | CertificateAttachmentServiceTest now creates Sales Vendor contacts | 5 of 5 | 5 of 5 (deploy `0AfiV000000BLfRSAW`) | Pass |
+| TC-017-02 (rerun) | Sales Manager list after the ticks | UI | Contact Create Agreement flow | The seven ticked active users | Jason Liss, Samantha MacIntosh, Nathan Medrano, Ruben Smith, Billy Marlin, Brandon Federico, Pierce Jefferson | Pass |
+| TC-017-04 | Ten sales users have every access our features need | SOQL | App, Run Flows, 4 permission sets, 7 objects, 50 fields for 10 users | All present | All 10 hold MLB_Sales_Manager_Access and the three Adobe sets; app, Run Flows, objects and fields present | Pass |

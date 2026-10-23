@@ -4,13 +4,13 @@
 |---|---|
 | **Document** | MTC-002 |
 | **Requirements** | REQ-015 · REQ-016 · REQ-017 · REQ-018 |
-| **Automated test report** | [ATR-002](../01-Automated-Testing/ATR-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 16 of 16 scenarios passed on 2026-10-21 |
+| **Automated test report** | [ATR-002](../01-Automated-Testing/ATR-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 16 of 16 scenarios passed on 2026-10-21; retested 2026-10-23 (5 of 5) |
 | **Environment** | Sandbox (UTDEV), Marlins Sales app |
 | **How to use** | Run each test case in order. The **Expected result** is the outcome verified in the automated run. Write what you see in **Actual result** and mark **Status** as Pass or Fail. |
 
 ## What is being tested
 - **Account:** Sales Vendor Accounts no longer offer "Sales Vendor" as Account Type.
-- **Contact:** new **Sales Vendor** record type, available to sales reps, administrators and Sales Managers, with the same certificate and agreement features as Vendor Contact.
+- **Contact:** new **Sales Vendor** record type, available to sales reps, administrators and Sales Managers. The certificate and agreement features run **only on Sales Vendor** contacts; Vendor Contact no longer gets them.
 - **User:** a **Sales Manager** checkbox decides who is listed as Sales Manager on vendor agreements.
 - **Send Agreement:** only certificates uploaded through the Upload Certificate component are attached; files added directly to Files are not.
 
@@ -27,6 +27,7 @@ You need a System Administrator login, a sales rep login (Ticket Sales profile) 
 | TC-016-03 | Status set from certificates | Agreement Status = Document Pending | | |
 | TC-016-04 | Certificate banner and upload | Banner with Upload Certificate; upload ticks the certificate | | |
 | TC-016-05 | Status follows the agreement | Agreement Status changes to Draft after Send Agreement | | |
+| TC-016-08 | Vendor Contact gets no vendor features | No banner or vendor buttons | | |
 | TC-017-01 | Sales Manager list | Only ticked users listed | | |
 | TC-017-02 | Untick a Sales Manager | User disappears from the list | | |
 | TC-018-01 | Uploaded certificate saved as attachment | "[Category] file" attachment on the Contact | | |
@@ -115,6 +116,16 @@ You need a System Administrator login, a sales rep login (Ticket Sales profile) 
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
+### TC-016-08 — Vendor Contact gets no vendor features
+| | |
+|---|---|
+| **Preconditions** | Logged in as a System Administrator. An existing Vendor Contact (for example "UT Demo 1"). |
+| **Front-end steps** | 1. Open the Vendor Contact.<br>2. Look for the Vendor Certificates banner and the Upload Certificate, Create Agreement and Send Agreement buttons. |
+| **Backend check** | Contact record type = Vendor Contact. |
+| **Test data** | — |
+| **Expected result** | No banner and none of those buttons: the certificate and agreement features run on Sales Vendor contacts only. |
+| **Actual result** | |
+| **Status** | Pass / Fail |
 ### TC-017-01 — Sales Manager list
 | | |
 |---|---|
@@ -122,7 +133,7 @@ You need a System Administrator login, a sales rep login (Ticket Sales profile) 
 | **Front-end steps** | 1. Click **Create Agreement** on the contact.<br>2. Open the **Sales Manager** dropdown.<br>3. Close the window without saving. |
 | **Backend check** | Setup → Users: who has Sales Manager ticked. |
 | **Test data** | — |
-| **Expected result** | The dropdown lists exactly the active users with Sales Manager ticked (sandbox: Ruben Smith, Billy Marlin). |
+| **Expected result** | The dropdown lists exactly the active users with Sales Manager ticked (sandbox: Jason Liss, Samantha MacIntosh, Nathan Medrano, Ruben Smith, Billy Marlin, Brandon Federico, Pierce Jefferson). |
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
@@ -135,7 +146,7 @@ You need a System Administrator login, a sales rep login (Ticket Sales profile) 
 | **Front-end steps** | 1. Setup → Users → Ruben Smith → **Edit** → untick **Sales Manager** → Save.<br>2. Repeat TC-017-01.<br>3. Tick Sales Manager on Ruben Smith again. |
 | **Backend check** | — |
 | **Test data** | — |
-| **Expected result** | With Ruben unticked, only Billy Marlin is listed. |
+| **Expected result** | With Ruben unticked, he is no longer listed; the other six remain. |
 | **Actual result** | |
 | **Status** | Pass / Fail |
 
@@ -168,7 +179,7 @@ You need a System Administrator login, a sales rep login (Ticket Sales profile) 
 |---|---|
 | **Tester name** | |
 | **Test date** | |
-| **Test cases passed** | ____ of 11 |
+| **Test cases passed** | ____ of 12 |
 | **Overall result** | Pass / Fail |
 | **Comments** | |
 | **Signature** | |
