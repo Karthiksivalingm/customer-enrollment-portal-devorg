@@ -1,6 +1,6 @@
 # 2026-10 — Month index
 
-History of the project work in October 2026: every requirement, the documents and components behind it, and its status. The master index is [DOCUMENT-INDEX.md](../DOCUMENT-INDEX.md).
+History of the project work in October 2026: every requirement, the documents and components behind it, and its status. The master index is [DOCUMENT-INDEX.md](../DOCUMENT-INDEX.md). The tracking workbook for this month is [2026-10_Tracker.xlsx](2026-10_Tracker.xlsx).
 
 ## Summary
 - **Ticket Office notifications** (REQ-001 to REQ-005): Ticket Office Comments in the Agreement Flow; Ticket Office email on $50k first send, Sales Manager approval / denial and customer signature / decline; signed PDF attached.

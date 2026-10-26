@@ -11,7 +11,7 @@ The rules for when this runs are in [Project-Rules.md](Project-Rules.md) (sectio
 2. The project lead confirms it works ("all good").
 3. Every scenario is run in the backend and recorded as an **automated test report (ATR)**.
 4. A **manual test case document (MTC)** is written for the QA tester.
-5. Both are listed in the month's `MONTH-INDEX.md` and in `DOCUMENT-INDEX.md`, and committed with the other documents.
+5. Both are listed in the month's `MONTH-INDEX.md` and in `DOCUMENT-INDEX.md`, the month's tracking workbook (`YYYY-MM_Tracker.xlsx`, QA sheet) is rebuilt, and everything is committed with the other documents.
 
 ## 2. Where the files go
 | Folder | Prefix | File | Contents |

@@ -9,9 +9,9 @@ Master index. `01-Instructions` and `02-Knowledge-Base` are **common** and sit a
 4. If it doesn't exist, it's a new requirement: use the next free numbers below and file it in the current month's folder.
 
 ## Months
-| Month | Summary | History |
-|---|---|---|
-| 2026-10 | REQ-001 to REQ-018: Ticket Office email, vendor certificates, Agreement Flow create/edit and locks, Sales Vendor, Sales Manager access, QA (ATR-001/002, MTC-001/002) | [2026-10/MONTH-INDEX.md](2026-10/MONTH-INDEX.md) |
+| Month | Summary | History | Tracker (Excel) |
+|---|---|---|---|
+| 2026-10 | REQ-001 to REQ-018: Ticket Office email, vendor certificates, Agreement Flow create/edit and locks, Sales Vendor, Sales Manager access, QA (ATR-001/002, MTC-001/002) | [2026-10/MONTH-INDEX.md](2026-10/MONTH-INDEX.md) | [2026-10_Tracker.xlsx](2026-10/2026-10_Tracker.xlsx) |
 
 ## Requirement lookup
 | REQ | Title | Keywords | Month | Status |

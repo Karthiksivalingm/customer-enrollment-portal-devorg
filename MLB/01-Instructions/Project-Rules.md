@@ -28,6 +28,7 @@ The instructions and the knowledge base are **common** and sit at the project ro
 ├── force-app/ …              Salesforce metadata source and project config
 └── YYYY-MM/                  one folder per month
     ├── MONTH-INDEX.md        the month's history: every requirement, its documents, components and status
+    ├── YYYY-MM_Tracker.xlsx  the month's tracking workbook (Excel), built from the month's documents
     ├── 03-Requirements/  04-Change-Records/  05-Conflicts/  06-Deployment/
     └── 07-Technical/  08-QA/01-Automated-Testing/  08-QA/02-Manual-Testing/
 ```
@@ -42,13 +43,30 @@ The instructions and the knowledge base are **common** and sit at the project ro
 | `YYYY-MM/06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed to production |
 | `YYYY-MM/07-Technical` | `TECH-` | Technical design and component detail |
 | `YYYY-MM/08-QA` | `ATR-` / `MTC-` | Automated test reports and manual test case documents (see section 6 and [QA-Process.md](QA-Process.md)) |
+| `YYYY-MM/YYYY-MM_Tracker.xlsx` | — | Monthly tracking workbook (see "Monthly tracker" below) |
 | `force-app/` (root) | — | Salesforce metadata source |
+| `scripts/tracker/` (root) | — | `Build-MonthTracker.ps1`, which builds the monthly tracking workbook |
 
 **Which month a document belongs to:**
 - A new document goes in the month it is **first created**. Create the month folder, with the full structure and a `MONTH-INDEX.md`, the first time something is filed in a new month.
 - When an existing requirement changes in a later month, **update its documents where they are** (in their original month). New change records (CR), test retests and similar new documents for that change go in the **current** month, and both months' `MONTH-INDEX.md` files note the link.
 - **Knowledge base documents** are not filed by month; they go in the root `02-Knowledge-Base` and are updated in place. Mention a new or changed KB document in the current month's `MONTH-INDEX.md` summary.
 - **Living documents in month folders** (component inventory, open-items list) stay in the month they were created and are updated in place. `DOCUMENT-INDEX.md` lists where each one is.
+
+**Monthly tracker (Excel):** every month folder has one tracking workbook, `YYYY-MM_Tracker.xlsx`, so anyone can follow the month's work without opening the documents. It has these sheets:
+
+| Sheet | What it shows |
+|---|---|
+| Overview | Counts (requirements done, on hold, superseded, in production; change records; open items; QA), what happened this month, open items needing a decision, how to use the workbook |
+| Requirements | One row per requirement: what the client asked for, status, requested and approved dates, production status, objects and components, keywords, change records, related documents, QA, link to the document |
+| Change Records | Every change made: date, requirement, components changed, deploy ID, status, link |
+| Conflicts & Open Items | Every conflict and open item: state (Open / Closed / Known limitation), date found, the problem, related documents, link |
+| Technical | Technical documents and what they relate to |
+| QA | Automated test reports and manual test case documents: requirements covered, date, test IDs, result, link |
+
+- **Create or update it only after the project lead approves the requirement** ("all good"), in the same step as the other documents. Never while the requirement is still being built.
+- **The documents are the source.** Update the documents first, then rebuild the workbook with `scripts/tracker/Build-MonthTracker.ps1 -Month YYYY-MM`. Don't edit the workbook by hand; changes would be lost at the next rebuild.
+- When an earlier month's requirement changes, rebuild the trackers for both that month and the current month.
 
 ## 3. Every requirement: read the instructions, then check the history first
 
@@ -69,6 +87,7 @@ For every requirement prompt, before any investigation or build:
 - **Keep the indexes current, in the same change as the document:**
   - the month's `MONTH-INDEX.md`: the requirement history row (REQ, title, keywords, objects and main components, status, related CR / CON / TECH / ATR / MTC) and the document lists
   - the root `DOCUMENT-INDEX.md`: the requirement lookup row (REQ, title, keywords, month, status), the month summary, the next free numbers, the knowledge-base list and the living-documents list
+  - the month's `YYYY-MM_Tracker.xlsx`, rebuilt from the documents (section 2)
 - **Write for the reader.** Requirement and user documents use the client's terms. Don't mention internal tools, other clients or other projects' environments in a project's documents.
 
 ## 5. When documents are written
@@ -80,6 +99,7 @@ For every requirement prompt, before any investigation or build:
   3. the knowledge base (KB) updated if the background changed
   4. the QA documents (section 6)
   5. the month's `MONTH-INDEX.md` and the root `DOCUMENT-INDEX.md` updated
+  6. the month's tracking workbook `YYYY-MM_Tracker.xlsx` created or rebuilt (last, after all the documents above)
 - **Deployment documents (DEP)** are written only when a deployment to production actually happens.
 - **Finish with a list** of the documents created or updated.
 
