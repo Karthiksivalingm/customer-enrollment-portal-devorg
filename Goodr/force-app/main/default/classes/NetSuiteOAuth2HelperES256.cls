@@ -76,20 +76,29 @@ public with sharing class NetSuiteOAuth2HelperES256 {
     }
 
     public static String getAccessToken(Boolean forceRefresh) {
+        System.debug('NetSuiteAuth | 1. getAccessToken start (forceRefresh=' + forceRefresh + ')');
         if (!forceRefresh) {
             String cached = getCachedToken();
+            System.debug('NetSuiteAuth | 2. cached token available: ' + String.isNotBlank(cached));
             if (String.isNotBlank(cached)) return cached;
         }
         String token = fetchNewAccessToken();
         putCachedToken(token);
+        System.debug('NetSuiteAuth | 9. getAccessToken done: new token ready (value not logged)');
         return token;
     }
 
     /** Authenticated GET, e.g. callRest('/record/v1/customer?limit=5'). */
     public static HttpResponse callRest(String relativePath) {
+        System.debug('NetSuiteAuth | REST callRest start: GET ' + relativePath);
         HttpResponse res = doRest(relativePath, getAccessToken(false));
         if (res.getStatusCode() == 401) {
+            System.debug('NetSuiteAuth | REST got HTTP 401 (token rejected or expired) -> getting a new token and retrying once');
             res = doRest(relativePath, getAccessToken(true)); // stale token -> refresh once
+        }
+        System.debug('NetSuiteAuth | REST GET ' + relativePath + ' -> HTTP ' + res.getStatusCode());
+        if (res.getStatusCode() >= 300) {
+            System.debug('NetSuiteAuth | REST error body: ' + String.valueOf(res.getBody()).left(1000));
         }
         return res;
     }
@@ -98,6 +107,7 @@ public with sharing class NetSuiteOAuth2HelperES256 {
     @TestVisible
     private static String buildAssertionJwt() {
         NetSuite_Config__mdt c = getConfig();
+        System.debug('NetSuiteAuth | 4. building JWT assertion (kid = Certificate ID ' + c.Certificate_Id__c + ')');
 
         String headerJson = '{"alg":"ES256","typ":"JWT","kid":"' + c.Certificate_Id__c + '"}';
 
@@ -110,11 +120,16 @@ public with sharing class NetSuiteOAuth2HelperES256 {
             ',"iat":' + nowSec +
             ',"exp":' + (nowSec + 300) + '}';
 
+        System.debug('NetSuiteAuth | 5. JWT claims: iss(Client ID)=' + maskValue(c.Client_Id__c) + ', scope=' + scopeArr
+            + ', aud=' + getTokenEndpoint() + ', iat=' + nowSec + ', exp=' + (nowSec + 300));
+
         String signingInput = base64url(headerJson) + '.' + base64url(payloadJson);
 
+        System.debug('NetSuiteAuth | 6. decoding private key from NetSuite_Config__mdt and signing with ES256 (fails here = bad/RSA key)');
         Blob keyBlob = EncodingUtil.base64Decode(getPrivateKeyB64());
         Blob derSig  = Crypto.sign('ECDSA-SHA256', Blob.valueOf(signingInput), keyBlob);
         Blob rawSig  = derToRawEcdsa(derSig, 32); // P-256 -> 32-byte R and S
+        System.debug('NetSuiteAuth | 6. JWT signed OK (key ' + keyBlob.size() + ' bytes, signature ' + rawSig.size() + ' bytes)');
 
         return signingInput + '.' + base64url(rawSig);
     }
@@ -136,6 +151,7 @@ public with sharing class NetSuiteOAuth2HelperES256 {
         req.setTimeout(TIMEOUT_MS);
         req.setBody(body);
 
+        System.debug('NetSuiteAuth | 7. token request -> POST ' + getTokenEndpoint());
         HttpResponse res = new Http().send(req);
         System.debug('NetSuite token status: ' + res.getStatusCode());
 
@@ -143,10 +159,16 @@ public with sharing class NetSuiteOAuth2HelperES256 {
             Map<String, Object> t = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
             String token = (String) t.get('access_token');
             if (String.isBlank(token)) {
+                System.debug('NetSuiteAuth | 8. token request FAILED: HTTP 200 but no access_token in reply: ' + String.valueOf(res.getBody()).left(500));
                 throw new NetSuiteAuthException('Token response contained no access_token: ' + res.getBody());
             }
+            System.debug('NetSuiteAuth | 8. access token received (length ' + token.length() + ', expires_in=' + t.get('expires_in') + 's, value not logged)');
             return token;
         }
+        System.debug('NetSuiteAuth | 8. token request FAILED: HTTP ' + res.getStatusCode()
+            + ' | reply: ' + String.valueOf(res.getBody()).left(1000)
+            + ' | WWW-Authenticate: ' + res.getHeader('WWW-Authenticate')
+            + ' | likely cause: ' + tokenFailureHint(res.getStatusCode(), res.getBody()));
         throw new NetSuiteAuthException(describeError('NetSuite token request', res));
     }
 
@@ -157,6 +179,7 @@ public with sharing class NetSuiteOAuth2HelperES256 {
         req.setHeader('Authorization', 'Bearer ' + token);
         req.setHeader('Content-Type', 'application/json');
         req.setTimeout(TIMEOUT_MS);
+        System.debug('NetSuiteAuth | REST request -> GET ' + getRestBase() + relativePath);
         return new Http().send(req);
     }
 
@@ -170,6 +193,7 @@ public with sharing class NetSuiteOAuth2HelperES256 {
                 cfg = NetSuite_Config__mdt.getInstance(CONFIG_RECORD);
             }
             if (cfg == null) {
+                System.debug('NetSuiteAuth | 3. config FAILED: NetSuite_Config__mdt record "' + CONFIG_RECORD + '" not found');
                 throw new NetSuiteAuthException(
                     'NetSuite_Config__mdt record "' + CONFIG_RECORD + '" not found. ' +
                     'Create it under Setup > Custom Metadata Types > NetSuite Config.'
@@ -178,10 +202,15 @@ public with sharing class NetSuiteOAuth2HelperES256 {
             if (String.isBlank(cfg.Client_Id__c) || String.isBlank(cfg.Certificate_Id__c)
                     || String.isBlank(cfg.Account_Id__c) || String.isBlank(cfg.Scope__c)
                     || String.isBlank(cfg.Private_Key__c)) {
+                System.debug('NetSuiteAuth | 3. config FAILED: blank field(s) in "' + CONFIG_RECORD + '": ' + missingConfigFields(cfg));
                 throw new NetSuiteAuthException(
                     'NetSuite_Config__mdt record "' + CONFIG_RECORD + '" is missing one or more required fields.'
                 );
             }
+            System.debug('NetSuiteAuth | 3. config loaded from ' + (testConfigOverride != null && Test.isRunningTest() ? 'test override' : 'NetSuite_Config__mdt.' + CONFIG_RECORD)
+                + ': Account ID=' + cfg.Account_Id__c + ', Certificate ID=' + cfg.Certificate_Id__c
+                + ', Client ID=' + maskValue(cfg.Client_Id__c) + ', Scope=' + cfg.Scope__c
+                + ', private key present (' + cfg.Private_Key__c.length() + ' chars)');
         }
         return cfg;
     }
@@ -301,6 +330,7 @@ public with sharing class NetSuiteOAuth2HelperES256 {
     private static String getCachedToken() {
         try {
             Cache.OrgPartition part = Cache.Org.getPartition(CACHE_PARTITION);
+            System.debug('NetSuiteAuth | cache read: partition "' + CACHE_PARTITION + '" found=' + (part != null) + ', token stored=' + (part != null && part.contains(CACHE_KEY)));
             if (part != null && part.contains(CACHE_KEY)) return (String) part.get(CACHE_KEY);
         } catch (Exception e) {
             System.debug('Token cache read skipped: ' + e.getMessage());
@@ -311,9 +341,36 @@ public with sharing class NetSuiteOAuth2HelperES256 {
         try {
             Cache.OrgPartition part = Cache.Org.getPartition(CACHE_PARTITION);
             if (part != null) part.put(CACHE_KEY, token, CACHE_TTL_SECS);
+            System.debug('NetSuiteAuth | cache write: token saved for ' + CACHE_TTL_SECS + 's = ' + (part != null));
         } catch (Exception e) {
             System.debug('Token cache write skipped: ' + e.getMessage());
         }
+    }
+
+    // --- Debug helpers (only used in System.debug lines; never log secrets) ---
+    private static String maskValue(String value) {
+        if (String.isBlank(value)) return '(blank)';
+        return value.length() > 8 ? value.left(4) + '...' + value.right(4) : '(set)';
+    }
+
+    private static String missingConfigFields(NetSuite_Config__mdt c) {
+        List<String> missing = new List<String>();
+        if (String.isBlank(c.Client_Id__c))      missing.add('Client_Id__c');
+        if (String.isBlank(c.Certificate_Id__c)) missing.add('Certificate_Id__c');
+        if (String.isBlank(c.Account_Id__c))     missing.add('Account_Id__c');
+        if (String.isBlank(c.Scope__c))          missing.add('Scope__c');
+        if (String.isBlank(c.Private_Key__c))    missing.add('Private_Key__c');
+        return String.join(missing, ', ');
+    }
+
+    private static String tokenFailureHint(Integer statusCode, String body) {
+        String b = body == null ? '' : body.toLowerCase();
+        if (b.contains('invalid_client')) return 'Client ID unknown/disabled, or Certificate ID does not match an active M2M mapping';
+        if (b.contains('invalid_grant'))  return 'JWT rejected: certificate/private key mismatch, expired certificate, or clock/exp issue';
+        if (b.contains('invalid_scope'))  return 'Scope not allowed for this integration record (check Scope__c and the integration record scopes)';
+        if (statusCode == 500)            return 'NetSuite server_error: M2M mapping missing/inactive after refresh, certificate not EC P-256, or key mismatch';
+        if (statusCode == 401 || statusCode == 403) return 'Integration user/role not allowed to log in with OAuth 2.0 or REST Web Services';
+        return 'see NetSuite Setup > Users/Roles > User Management > View Login Audit Trail';
     }
 
     public class NetSuiteAuthException extends Exception {}

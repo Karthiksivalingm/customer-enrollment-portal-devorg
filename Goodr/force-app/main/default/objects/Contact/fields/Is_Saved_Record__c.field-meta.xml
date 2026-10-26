@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Saved_Record__c</fullName>
+    <description>True once the Contact has been saved. Used only by Lightning page section filters to hide sections (e.g. NetSuite Information) on the New Contact form. Not placed on any page layout or record page.</description>
+    <externalId>false</externalId>
+    <formula>NOT(ISBLANK(Id))</formula>
+    <inlineHelpText>System field: checked for every saved Contact. Used to hide sections while a new Contact is being created.</inlineHelpText>
+    <label>Is Saved Record</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NetSuite_Created_Date__c</fullName>
+    <description>Date and time the NetSuite Customer was created from this Lead by the Create NetSuite button.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When this Lead was created in NetSuite.</inlineHelpText>
+    <label>NetSuite Created Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

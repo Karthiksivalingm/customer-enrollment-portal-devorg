@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-22 (REQ-037 hide Shopify sections on create, REQ-038 V1 fields and BI section: CR-030, CR-031, CON-037, TECH-010, ATR-003, MTC-004; QA-Process added).
+Every project document, by folder and serial number. **Last updated:** 2026-10-26 (CR-032 Create NetSuite button foundation in the sandbox).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -10,7 +10,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, onboarding | KB-007 |
 | `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-039 |
-| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-032 |
+| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-033 |
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-038 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-011 |
@@ -101,6 +101,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CR-029 | [ShopifyOrderSyncTest: no dependency on the "Key Account" value](04-Change-Records/CR-029_ShopifyOrderSyncTest-Org-Independent-Sales-Channel.md) | 2026-10-22 |
 | CR-030 | [Hide the Shopify sections on the New Account form](04-Change-Records/CR-030_Hide-Shopify-Sections-On-New-Account.md) | 2026-10-21 |
 | CR-031 | [Sales Channel V1 and Sector V1 on Contact, Lead and Opportunity; BI section](04-Change-Records/CR-031_V1-Fields-And-BI-Section.md) | 2026-10-22 |
+| CR-032 | [Create NetSuite button: foundation (fields, NetSuite Information section, value map, client, Shopify skip guard)](04-Change-Records/CR-032_NetSuite-Create-Button-Foundation.md) | 2026-10-26 |
 
 ## 05 — Conflicts
 | ID | Document | Status |

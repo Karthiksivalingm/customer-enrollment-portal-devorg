@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NetSuite_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Company Account created by the Create NetSuite button. Kept separate from Related Account, which holds the Create Shopify account when both buttons are used.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Company account created for NetSuite from this Lead.</inlineHelpText>
+    <label>NetSuite Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>NetSuite Leads</relationshipLabel>
+    <relationshipName>NetSuite_Leads</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

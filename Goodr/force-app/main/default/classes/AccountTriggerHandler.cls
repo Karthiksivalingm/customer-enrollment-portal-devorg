@@ -8,7 +8,8 @@ public inherited sharing class AccountTriggerHandler {
         // ── CHANGED: removed 'Key Accounts' exclusion — ALL channels now sync ──
         for (Account acc : newAccounts) {
             if (acc.RecordTypeId == AccountTriggerHelper.getCompanyRecordTypeId() &&
-                String.isBlank(acc.Shopify_Company_Id__c)) {
+                String.isBlank(acc.Shopify_Company_Id__c) &&
+                acc.Skip_Shopify_Sync__c != true) { // Create NetSuite records are not sent to Shopify
                 accountIdsToInsert.add(acc.Id);
             }
         }
@@ -46,7 +47,8 @@ public inherited sharing class AccountTriggerHandler {
                     String.isBlank(acc.Shopify_Company_Id__c) &&
                     parentAcc != null &&
                     String.isNotBlank(parentAcc.Shopify_Company_Id__c) &&
-                    acc.Manual_Approval_Status__c == 'Approved';
+                    acc.Manual_Approval_Status__c == 'Approved' &&
+                    acc.Skip_Shopify_Sync__c != true; // Create NetSuite records are not sent to Shopify
 
                 if (locationNeedsSync) {
                     storeLocationIdsToSync.add(acc.Id);

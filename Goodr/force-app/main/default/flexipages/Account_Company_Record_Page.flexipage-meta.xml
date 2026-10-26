@@ -299,16 +299,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.NetSuite_Id__c</fieldItem>
-                <identifier>RecordNetSuite_Id_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Shopify_Company_Id__c</fieldItem>
                 <identifier>RecordShopify_Company_Id_cField</identifier>
             </fieldInstance>
@@ -1233,6 +1223,58 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.NetSuite_Id__c</fieldItem>
+                <identifier>RecordNetSuite_Id_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-ce547713-9743-4350-9647-0070b75dc0dd</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Skip_Shopify_Sync__c</fieldItem>
+                <identifier>RecordSkip_Shopify_Sync_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-c0d491f0-bc6f-4dc2-b09e-2ea45592ead0</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-ce547713-9743-4350-9647-0070b75dc0dd</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_netsuite1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-c0d491f0-bc6f-4dc2-b09e-2ea45592ead0</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_netsuite2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-1c849d9d-35ba-4dd7-b497-f2d5b728f375</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -1469,6 +1511,31 @@
                         <leftValue>{!Record.Sales_Channel__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Global</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-1c849d9d-35ba-4dd7-b497-f2d5b728f375</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>NetSuite Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection_NetSuite</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Is_Saved_Record__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

@@ -40,7 +40,8 @@ public inherited sharing class ContactTriggerHandler {
         for (Contact con : newContacts) {
             if (String.isNotBlank(con.Email) && 
                 String.isBlank(con.Shopify_Customer_Id__c) && 
-                con.Manual_Approval_Status__c == 'Approved') {
+                con.Manual_Approval_Status__c == 'Approved' &&
+                con.Skip_Shopify_Sync__c != true) { // Create NetSuite records are not sent to Shopify
                 contactIdsToInsert.add(con.Id);
             }
         }
@@ -107,7 +108,7 @@ public inherited sharing class ContactTriggerHandler {
                 String.isNotBlank(newCon.Email) &&
                 (newCon.Phone != oldCon.Phone || newCon.Email != oldCon.Email);
 
-            if (approvalJustHappened || correctionRetryNeeded) {
+            if ((approvalJustHappened || correctionRetryNeeded) && newCon.Skip_Shopify_Sync__c != true) { // Create NetSuite records are not sent to Shopify
                 contactIdsForShopifySync.add(newCon.Id);
             }
 

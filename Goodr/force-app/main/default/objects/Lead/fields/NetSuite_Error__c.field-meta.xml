@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NetSuite_Error__c</fullName>
+    <description>Readable error from the last failed Create NetSuite attempt. Full request and response details are in the API Log (Integration = NetSuite).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Why the last NetSuite sync failed. Fix the issue and click Create NetSuite again.</inlineHelpText>
+    <label>NetSuite Error</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>
