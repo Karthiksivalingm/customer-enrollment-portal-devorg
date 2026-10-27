@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Sales_Channel_Sector_For_Shopify</fullName>
+    <active>false</active>
+    <description>Blocks Create Shopify (Shopify Created set to true) and standard Lead conversion when Sales Channel or Sector is blank. Normal Lead create and edit are not affected.</description>
+    <errorConditionFormula>AND(
+  OR(
+    AND(Shopify_Created__c, NOT(PRIORVALUE(Shopify_Created__c))),
+    AND(IsConverted, NOT(PRIORVALUE(IsConverted)))
+  ),
+  OR(
+    ISBLANK(TEXT(Sales_Channel__c)),
+    ISBLANK(TEXT(Sector__c))
+  )
+)</errorConditionFormula>
+    <errorMessage>Please fill in Sales Channel and Sector before clicking Create Shopify.</errorMessage>
+</ValidationRule>

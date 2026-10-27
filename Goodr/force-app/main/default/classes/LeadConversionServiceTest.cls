@@ -52,12 +52,15 @@ public class LeadConversionServiceTest {
             Has_Physical_Store__c = true,
             Resale_Certificate_Status__c = 'Yes, I do.',
             Terms_of_Service_Agreement__c = 'Test',
-            Country = 'US'
+            Country = 'US',
+            // Required by validation rule Require_Sales_Channel_Sector_To_Qualify
+            Sales_Channel__c = 'Specialty',
+            Sector__c = 'Self Service'
         );
         insert testLead;
         testLead.Status = 'Qualified';
         update testLead;
-        
+
         Test.startTest();
         Boolean result = LeadConversionService.canConvert(testLead.Id);
         Test.stopTest();

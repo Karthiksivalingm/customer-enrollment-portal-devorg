@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Sales_Channel_Sector_To_Qualify</fullName>
+    <active>true</active>
+    <description>Blocks changing Lead Status to Qualified while Sales Channel or Sector is blank. Create Shopify needs a Qualified Lead, so both values are always filled first. Lead create and edit are not affected.</description>
+    <errorConditionFormula>AND(
+  ISCHANGED(Status),
+  NOT(IsConverted),
+  ISPICKVAL(Status, &apos;Qualified&apos;),
+  OR(
+    ISBLANK(TEXT(Sales_Channel__c)),
+    ISBLANK(TEXT(Sector__c))
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>Please fill in Sales Channel and Sector before setting this Lead to Qualified.</errorMessage>
+</ValidationRule>
