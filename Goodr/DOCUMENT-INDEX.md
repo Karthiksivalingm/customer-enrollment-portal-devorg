@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-27 (CR-033 Lead validation rule: Sales Channel and Sector required to qualify).
+Every project document, by folder and serial number. **Last updated:** 2026-10-27 (CR-034 scheduled jobs moved to Pacific Time; CON-020 updated).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -10,7 +10,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, onboarding | KB-007 |
 | `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-040 |
-| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-034 |
+| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-035 |
 | `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-039 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-011 |
@@ -104,6 +104,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CR-031 | [Sales Channel V1 and Sector V1 on Contact, Lead and Opportunity; BI section](04-Change-Records/CR-031_V1-Fields-And-BI-Section.md) | 2026-10-22 |
 | CR-032 | [Create NetSuite button: foundation (fields, NetSuite Information section, value map, client, Shopify skip guard)](04-Change-Records/CR-032_NetSuite-Create-Button-Foundation.md) | 2026-10-26 |
 | CR-033 | [Lead validation rule: Sales Channel and Sector required to qualify](04-Change-Records/CR-033_Lead-Qualify-Validation-Rule.md) | 2026-10-27 |
+| CR-034 | [Scheduled Apex jobs moved to Pacific Time](04-Change-Records/CR-034_Scheduled-Jobs-Moved-To-Pacific-Time.md) | 2026-10-27 |
 
 ## 05 — Conflicts
 | ID | Document | Status |
