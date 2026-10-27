@@ -17,10 +17,10 @@ The client confirmed that stores are deactivated **automatically** at 18 months 
 - **Evidence:** reproduced in the sandbox on 2026-10-27 with a real store in the Shopify test store ([ATR-005](../08-QA/01-Automated-Testing/ATR-005_Offboarding-Shopify-Role-Removal.md), TC-040-04).
 
 ## Behaviour
-After the daily batch deactivates stores at 18 months, it starts a new job. For those stores, the new job calls the **existing** Shopify status push, the same one a manual deactivation uses, which removes their ordering role. The Sales Sync then finds no role, and the store stays inactive.
+After the daily batch deactivates stores at 18 months, it starts a small new batch, **one store per transaction**. For each store, that batch calls the **existing** Shopify status push, the same one a manual deactivation uses, which removes the store's ordering role. The Sales Sync then finds no role, and the store stays inactive. A store that fails doesn't stop the others.
 
 ## Scope
-- **In:** `ShopifyAtRiskNoticeBatch` (part of the not-yet-live offboarding process), the new `ShopifyOffboardRolePushQueueable`, and tests.
+- **In:** `ShopifyAtRiskNoticeBatch` (part of the not-yet-live offboarding process), the new `ShopifyOffboardRolePushBatch`, and tests.
 - **Out (unchanged):** `ShopifyActiveStatusPushService`, `ShopifyActiveStatusSyncQueueable`, `AccountTriggerHandler` / `AccountTriggerHelper`, the Shopify Sales Sync, lead conversion, manual offboarding, flows and the order sync.
 
 ## Acceptance criteria

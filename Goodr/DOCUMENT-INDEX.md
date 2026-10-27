@@ -167,7 +167,7 @@ None. Deployment documents are written only when something is actually deployed.
 | ATR-002 | [Exclude an Account from the Automated Offboarding (30 / 30 pass)](08-QA/01-Automated-Testing/ATR-002_Auto-Offboarding-Exclusion.md) |
 | ATR-003 | [Hide the Shopify sections on create; V1 fields and BI section (28 / 28 pass)](08-QA/01-Automated-Testing/ATR-003_Hide-Shopify-Sections-And-BI-V1-Fields.md) · [test class](08-QA/01-Automated-Testing/ATR-003_SavedRecordAndV1QaTest.cls) |
 | ATR-004 | [Lead validation rule: Sales Channel and Sector required to qualify (15 / 15 pass, regression 110 / 110, on screen 8 / 8)](08-QA/01-Automated-Testing/ATR-004_Lead-Qualify-Validation-Rule.md) · [test class](08-QA/01-Automated-Testing/ATR-004_LeadQualifyRuleQaTest.cls) |
-| ATR-005 | [Automatic offboarding removes the Shopify ordering role (10 / 10 pass, regression 390 / 390)](08-QA/01-Automated-Testing/ATR-005_Offboarding-Shopify-Role-Removal.md) |
+| ATR-005 | [Automatic offboarding removes the Shopify ordering role (13 / 13 pass, regression 390 / 390)](08-QA/01-Automated-Testing/ATR-005_Offboarding-Shopify-Role-Removal.md) |
 | MTC-001 | [Key Account, Sector and Specialty CAN test scenarios](08-QA/02-Manual-Testing/MTC-001_Key-Account-Sector-Specialty-CAN-Test-Scenarios.xlsx) (Excel) |
 | MTC-002 | [Cluster and team assignment reference](08-QA/02-Manual-Testing/MTC-002_Cluster-and-Team-Assignment.xlsx) (Excel) |
 | MTC-003 | [Record page sections by Sales Channel / Sector](08-QA/02-Manual-Testing/MTC-003_Record-Page-Sections-by-Sales-Channel-Sector.xlsx) (Excel) |

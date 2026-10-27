@@ -1,7 +1,7 @@
 @IsTest
-private class ShopifyOffboardRolePushQueueableTest {
+private class ShopifyOffboardRolePushBatchTest {
 
-    // Tests for ShopifyOffboardRolePushQueueable and the call from ShopifyAtRiskNoticeBatch.finish().
+    // Tests for ShopifyOffboardRolePushBatch and the call from ShopifyAtRiskNoticeBatch.finish().
     // Shopify is mocked: the role lookup returns one role for the contact, the revoke succeeds.
 
     private static final Id COMPANY_RT = Schema.SObjectType.Account
@@ -115,88 +115,60 @@ private class ShopifyOffboardRolePushQueueableTest {
     }
 
     private static Integer pushJobs() {
-        return [SELECT COUNT() FROM AsyncApexJob WHERE ApexClass.Name = 'ShopifyOffboardRolePushQueueable'];
+        return [SELECT COUNT() FROM AsyncApexJob WHERE ApexClass.Name = 'ShopifyOffboardRolePushBatch' AND JobType = 'BatchApex'];
     }
 
-    // ── Queueable ─────────────────────────────────────────────────
+    // ── Role removal batch ────────────────────────────────────────
+
+    private static void runPush(Set<Id> ids) {
+        Test.startTest();
+        Database.executeBatch(new ShopifyOffboardRolePushBatch(ids), ShopifyOffboardRolePushBatch.STORES_PER_CHUNK);
+        Test.stopTest();
+    }
 
     @IsTest static void inactiveStore_roleRevokedAndCleared() {
         insertShopifyConfig();
         Account s = makeStore(false, null, false);
         ShopifyRoleMock mock = new ShopifyRoleMock();
         Test.setMock(HttpCalloutMock.class, mock);
-        Test.startTest();
-        System.enqueueJob(new ShopifyOffboardRolePushQueueable(new List<Id>{ s.Id }));
-        Test.stopTest();
+        runPush(new Set<Id>{ s.Id });
         System.assertEquals(1, mock.revokes, 'Ordering role revoked in Shopify');
         System.assertEquals(null, storedRoleId(s.Id), 'Stored role id cleared');
     }
 
-    @IsTest static void reactivatedStore_keepsRole() {
+    @IsTest static void activeStore_keepsRole() {
         insertShopifyConfig();
         Account s = makeStore(true, null, false);
         ShopifyRoleMock mock = new ShopifyRoleMock();
         Test.setMock(HttpCalloutMock.class, mock);
-        Test.startTest();
-        System.enqueueJob(new ShopifyOffboardRolePushQueueable(new List<Id>{ s.Id }));
-        Test.stopTest();
+        runPush(new Set<Id>{ s.Id });
         System.assertEquals(0, mock.lookups + mock.revokes, 'No Shopify call for an active store');
         System.assertEquals('999', storedRoleId(s.Id), 'Role kept');
     }
 
-    @IsTest static void manyStores_firstJobTakesOnlyItsShare() {
+    @IsTest static void start_selectsOnlyInactiveShopifyStores() {
         insertShopifyConfig();
-        // One company with several inactive stores, created in bulk (one save per object)
-        Account company = new Account(
-            Name = 'ORPQ Bulk Company', RecordTypeId = COMPANY_RT, Tax_ID__c = '987654320',
-            Shopify_Company_Id__c = 'SHOPCO-BULK', Manual_Approval_Status__c = 'Approved',
-            ShippingStreet = '1 Test St', ShippingCity = 'Austin', ShippingPostalCode = '78701',
-            ShippingCountryCode = 'US', ShippingStateCode = 'TX'
-        );
-        insert company;
-        List<Account> stores = new List<Account>();
-        for (Integer i = 0; i < ShopifyOffboardRolePushQueueable.STORES_PER_JOB + 2; i++) {
-            stores.add(new Account(
-                Name = 'ORPQ Bulk Store ' + i, RecordTypeId = STORE_RT, ParentId = company.Id, Active__c = false,
-                Shopify_Company_Id__c = 'SHOPLOC-BULK-' + i, Manual_Approval_Status__c = 'Approved',
-                ShippingStreet = '1 Test St', ShippingCity = 'Austin', ShippingPostalCode = '78701',
-                ShippingCountryCode = 'US', ShippingStateCode = 'TX'
-            ));
-        }
-        insert stores;
-        lastContactId = 'SFTEST-BULK';
-        Contact c = new Contact(FirstName = 'Test', LastName = 'ZTest-Bulk', AccountId = company.Id,
-                                Email = 'orpq.bulk@example.com', Shopify_Company_Contact_Id__c = lastContactId);
-        insert c;
-        List<AccountContactRelation> acrs = new List<AccountContactRelation>();
-        List<Id> ids = new List<Id>();
-        for (Account s : stores) {
-            acrs.add(new AccountContactRelation(AccountId = s.Id, ContactId = c.Id, IsActive = true,
-                                                Shopify_Role_Assignment_Id__c = '999'));
-            ids.add(s.Id);
-        }
-        insert acrs;
-        ShopifyRoleMock mock = new ShopifyRoleMock();
-        Test.setMock(HttpCalloutMock.class, mock);
-        Test.startTest();
-        System.enqueueJob(new ShopifyOffboardRolePushQueueable(ids));
-        Test.stopTest();
-        System.assertEquals(ShopifyOffboardRolePushQueueable.STORES_PER_JOB, mock.lookups,
-            'One job handles STORES_PER_JOB stores; the rest go to the next chained job');
+        Account inactive1 = makeStore(false, null, false);
+        Account inactive2 = makeStore(false, null, false);
+        Account active    = makeStore(true,  null, false);
+        Database.QueryLocatorIterator it = new ShopifyOffboardRolePushBatch(
+            new Set<Id>{ inactive1.Id, inactive2.Id, active.Id }).start(null).iterator();
+        Set<Id> picked = new Set<Id>();
+        while (it.hasNext()) picked.add(it.next().Id);
+        System.assertEquals(new Set<Id>{ inactive1.Id, inactive2.Id }, picked, 'Only inactive stores are pushed');
+        System.assertEquals(1, ShopifyOffboardRolePushBatch.STORES_PER_CHUNK, 'One store per transaction');
     }
 
-    @IsTest static void emptyList_noCalls() {
+    @IsTest static void emptySet_noCalls() {
         ShopifyRoleMock mock = new ShopifyRoleMock();
         Test.setMock(HttpCalloutMock.class, mock);
-        Test.startTest();
-        System.enqueueJob(new ShopifyOffboardRolePushQueueable(null));
-        Test.stopTest();
+        runPush(null);
         System.assertEquals(0, mock.lookups + mock.revokes);
     }
 
     // ── Called from the notice batch ──────────────────────────────
 
-    @IsTest static void batchDeactivation_queuesRoleRemoval() {
+    @IsTest static void batchDeactivation_startsRoleRemoval() {
         insertShopifyConfig();
         Account s = makeStore(true, Date.today().addMonths(-18).addDays(-1), false);
         seedWarnings(s);
@@ -206,10 +178,10 @@ private class ShopifyOffboardRolePushQueueableTest {
         Database.executeBatch(new ShopifyAtRiskNoticeBatch(config()), 50);
         Test.stopTest();
         System.assertEquals(false, [SELECT Active__c FROM Account WHERE Id = :s.Id].Active__c, 'Store deactivated');
-        System.assertEquals(1, pushJobs(), 'Shopify role removal queued for the deactivated store');
+        System.assertEquals(1, pushJobs(), 'Shopify role removal started for the deactivated store');
     }
 
-    @IsTest static void noDeactivation_nothingQueued() {
+    @IsTest static void noDeactivation_nothingStarted() {
         insertShopifyConfig();
         makeStore(true, Date.today().addMonths(-12).addDays(-3), false);
         Test.setMock(HttpCalloutMock.class, new ShopifyRoleMock());
@@ -220,7 +192,7 @@ private class ShopifyOffboardRolePushQueueableTest {
         System.assertEquals(0, pushJobs(), 'No role removal when no store is deactivated');
     }
 
-    @IsTest static void excludedStore_nothingQueued() {
+    @IsTest static void excludedStore_nothingStarted() {
         insertShopifyConfig();
         Account s = makeStore(true, Date.today().addMonths(-18).addDays(-1), true);
         seedWarnings(s);
