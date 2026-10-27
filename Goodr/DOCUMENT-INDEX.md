@@ -122,7 +122,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CON-017 | [Repo vs org: On 2026-10-13 the repo did not match the org](05-Conflicts/CON-017_Repo-Vs-Org-On-2026-10-13-The.md) | ✅ Resolved |
 | CON-018 | [API version: Retrieving with manifest version 59](05-Conflicts/CON-018_API-Version-Retrieving-With-Manifest-Version-59.md) | ✅ Resolved |
 | CON-019 | [Data: Sandbox Account update](05-Conflicts/CON-019_Data-Sandbox-Account-Update.md) | ✅ Resolved (recorded in CR-019) |
-| CON-020 | [Shopify At-Risk: Sandbox-only settings](05-Conflicts/CON-020_Shopify-At-Risk-Sandbox-Only-Settings.md) | âš  Open (client decision) |
+| CON-020 | [Shopify At-Risk: Sandbox-only settings](05-Conflicts/CON-020_Shopify-At-Risk-Sandbox-Only-Settings.md) | ⚠ Open (time zone done: Pacific, CR-034; test filter sandbox-only) |
 | CON-023 | [Several triggers on one object, and Salesforce doesn't guarantee](05-Conflicts/CON-023_Several-Triggers-On-One-Object-And-Salesforce-Doesnt.md) | ⚠ Open risk |
 | CON-024 | [ClusterRuleEngine uses the first matching rule with no ordering](05-Conflicts/CON-024_ClusterRuleEngine-Uses-The-First-Matching-Rule-With-No.md) | ⚠ Open risk |
 | CON-025 | [Flow Opportunity_field_update_from_Account](05-Conflicts/CON-025_Flow-Opportunity-Field-Update-From-Account.md) | ⚠ Open risk |
