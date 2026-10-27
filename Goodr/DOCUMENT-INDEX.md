@@ -1,6 +1,6 @@
 # Goodr Project — Document Index
 
-Every project document, by folder and serial number. **Last updated:** 2026-10-27 (CR-034 scheduled jobs moved to Pacific Time; CON-020 updated).
+Every project document, by folder and serial number. **Last updated:** 2026-10-27 (REQ-040 / CR-035 / ATR-005: automatic offboarding removes the Shopify ordering role; CON-039; CON-035 updated).
 
 ## Naming convention
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`, for example `REQ-012_Cluster-Not-Updating-For-Sector-Only-Change.md`.
@@ -9,12 +9,12 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 |---|---|---|---|
 | `01-Instructions` | — | Instructions for how work is done. **Read-only; never edited by the assistant.** | — |
 | `02-Knowledge-Base` | `KB-` | Background: overview, process, integrations, environment, onboarding | KB-007 |
-| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-040 |
-| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-035 |
-| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-039 |
+| `03-Requirements` | `REQ-` | One per requirement: need, scope, acceptance criteria, open questions | REQ-041 |
+| `04-Change-Records` | `CR-` | One per change made to the sandbox: what, when, deploy ID, verification, rollback | CR-036 |
+| `05-Conflicts` | `CON-` | Problems, clashes with existing automation or standards, open risks | CON-040 |
 | `06-Deployment` | `DEP-` | Deployment documents, created only when something is actually deployed | DEP-003 |
 | `07-Technical` | `TECH-` | Technical design and component detail | TECH-011 |
-| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario, after "all good" | ATR-005 |
+| `08-QA/01-Automated-Testing` | `ATR-` | Backend test run of every scenario, after "all good" | ATR-006 |
 | `08-QA/02-Manual-Testing` | `MTC-` | Manual test case document with steps, screenshots and expected results, after "all good" | MTC-006 |
 
 **Rules:**
@@ -71,6 +71,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | REQ-037 | [Hide the Shopify sections while a new Account is created](03-Requirements/REQ-037_Hide-Shopify-Sections-On-New-Account.md) | ✅ Done in the sandbox 2026-10-21 (ATR-003) |
 | REQ-038 | [Sales Channel V1 and Sector V1 on Contact, Lead and Opportunity, in a BI section](03-Requirements/REQ-038_V1-Fields-And-BI-Section.md) | ✅ Done in the sandbox 2026-10-22 (ATR-003) |
 | REQ-039 | [Sales Channel and Sector required before a Lead is Qualified](03-Requirements/REQ-039_Sales-Channel-Sector-Required-To-Qualify-Lead.md) | ✅ Done in the sandbox 2026-10-27 (ATR-004) |
+| REQ-040 | [Automatic offboarding also removes the Shopify ordering role](03-Requirements/REQ-040_Offboarding-Removes-Shopify-Ordering-Role.md) | ✅ Built and tested in the sandbox 2026-10-27 (ATR-005) |
 
 ## 04 — Change Records
 | ID | Document | Date |
@@ -105,6 +106,7 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CR-032 | [Create NetSuite button: foundation (fields, NetSuite Information section, value map, client, Shopify skip guard)](04-Change-Records/CR-032_NetSuite-Create-Button-Foundation.md) | 2026-10-26 |
 | CR-033 | [Lead validation rule: Sales Channel and Sector required to qualify](04-Change-Records/CR-033_Lead-Qualify-Validation-Rule.md) | 2026-10-27 |
 | CR-034 | [Scheduled Apex jobs moved to Pacific Time](04-Change-Records/CR-034_Scheduled-Jobs-Moved-To-Pacific-Time.md) | 2026-10-27 |
+| CR-035 | [Offboarding batch removes the Shopify ordering role of the stores it deactivates](04-Change-Records/CR-035_Offboarding-Batch-Removes-Shopify-Ordering-Role.md) | 2026-10-27 |
 
 ## 05 — Conflicts
 | ID | Document | Status |
@@ -134,11 +136,12 @@ Every project document, by folder and serial number. **Last updated:** 2026-10-2
 | CON-031 | [Shopify company rollup is calculated per 200-record batch chunk](05-Conflicts/CON-031_Shopify-Company-Rollup-Is-Calculated-Per-200-Record.md) | ⚠ Open risk |
 | CON-032 | [With At Risk Mode = Every Stage, a store can lose the at-risk flag in](05-Conflicts/CON-032_With-At-Risk-Mode-Every-Stage-A-Store.md) | ⚠ Open risk |
 | CON-034 | [Auto-Offboarding Exclusion: open decisions](05-Conflicts/CON-034_Auto-Offboarding-Exclusion-Open-Decisions.md) | ⚠ Open (client decision) |
-| CON-035 | [Offboarding behaviour vs the client's answers](05-Conflicts/CON-035_Offboarding-Behaviour-Vs-Client-Answers.md) | ⚠ Open (parked) |
+| CON-035 | [Offboarding behaviour vs the client's answers](05-Conflicts/CON-035_Offboarding-Behaviour-Vs-Client-Answers.md) | ⚠ Open (parked; gap 6 fixed by CR-035) |
 | CON-036 | [The sandbox-only "Key Account" rename breaks test classes in other deployments](05-Conflicts/CON-036_Sandbox-Only-Key-Account-Rename-Breaks-Test-Deploys.md) | ⚠ Open risk |
 | CON-037 | [Lightning page filters cannot check "the record exists"](05-Conflicts/CON-037_Page-Filters-Cannot-Check-Record-Exists.md) | ✅ Resolved |
 | CON-038 | [Qualify rule: Leads already Qualified, and other limits](05-Conflicts/CON-038_Qualify-Rule-And-Existing-Qualified-Leads.md) | ⚠ Open (client decision) |
 | CON-033 | [Running ShopifyAtRiskNoticeBatch by hand sends real emails](05-Conflicts/CON-033_Running-ShopifyAtRiskNoticeBatch-By-Hand-Sends-Real-Emails.md) | ⚠ Open risk |
+| CON-039 | [The sandbox "Specialty CAN" Shopify setting does not point to a test store](05-Conflicts/CON-039_Sandbox-Canada-Shopify-Setting-Is-Not-A-Test-Store.md) | ⚠ Open risk |
 
 ## 06 — Deployment
 None. Deployment documents are written only when something is actually deployed.
@@ -164,6 +167,7 @@ None. Deployment documents are written only when something is actually deployed.
 | ATR-002 | [Exclude an Account from the Automated Offboarding (30 / 30 pass)](08-QA/01-Automated-Testing/ATR-002_Auto-Offboarding-Exclusion.md) |
 | ATR-003 | [Hide the Shopify sections on create; V1 fields and BI section (28 / 28 pass)](08-QA/01-Automated-Testing/ATR-003_Hide-Shopify-Sections-And-BI-V1-Fields.md) · [test class](08-QA/01-Automated-Testing/ATR-003_SavedRecordAndV1QaTest.cls) |
 | ATR-004 | [Lead validation rule: Sales Channel and Sector required to qualify (15 / 15 pass, regression 110 / 110, on screen 8 / 8)](08-QA/01-Automated-Testing/ATR-004_Lead-Qualify-Validation-Rule.md) · [test class](08-QA/01-Automated-Testing/ATR-004_LeadQualifyRuleQaTest.cls) |
+| ATR-005 | [Automatic offboarding removes the Shopify ordering role (10 / 10 pass, regression 390 / 390)](08-QA/01-Automated-Testing/ATR-005_Offboarding-Shopify-Role-Removal.md) |
 | MTC-001 | [Key Account, Sector and Specialty CAN test scenarios](08-QA/02-Manual-Testing/MTC-001_Key-Account-Sector-Specialty-CAN-Test-Scenarios.xlsx) (Excel) |
 | MTC-002 | [Cluster and team assignment reference](08-QA/02-Manual-Testing/MTC-002_Cluster-and-Team-Assignment.xlsx) (Excel) |
 | MTC-003 | [Record page sections by Sales Channel / Sector](08-QA/02-Manual-Testing/MTC-003_Record-Page-Sections-by-Sales-Channel-Sector.xlsx) (Excel) |

@@ -2,6 +2,7 @@
  * Retailer inactivity warm-off (SellGoodr ToS Section 22).
  * Daily batch: sends 5 emails at 12 / 15 / 17 / 17.5 months after a store's last
  * Shopify order, and at 18 months sets Account.Active__c = false and sends Email 5.
+ * Deactivated stores then lose their Shopify ordering role (ShopifyOffboardRolePushQueueable).
  * Each email = one Shopify_At_Risk_Notice__c per contact; the insert fires the
  * "Send Shopify At Risk Notice" flow, which sends it through SendWarmOffEmail.
  * Settings: Shopify_At_Risk_Config__mdt, record 'Default'.
@@ -56,6 +57,12 @@ public class ShopifyAtRiskNoticeBatch
     private Integer wDue           = 0;
     private Integer wPastNoWarning = 0;
     private Integer wReactivated   = 0;
+
+    // Stores deactivated in this run; their Shopify ordering role is removed in finish()
+    private Set<Id> offboardedIds = new Set<Id>();
+
+    // Tests switch this on (with a callout mock) to run the Shopify role removal
+    @TestVisible private static Boolean pushRolesInTests = false;
 
     public ShopifyAtRiskNoticeBatch() {}
 
@@ -485,6 +492,13 @@ public class ShopifyAtRiskNoticeBatch
             ' | Updated OK: '                     + updated + ' of ' + updates.size()
         );
 
+        // Remove the Shopify ordering role of the stores deactivated in this run. The Account
+        // trigger skips its Shopify push for batch updates; without this, the Shopify sales sync
+        // would set these stores active again from the role still in Shopify.
+        if (!offboardedIds.isEmpty() && (!Test.isRunningTest() || pushRolesInTests)) {
+            System.enqueueJob(new ShopifyOffboardRolePushQueueable(new List<Id>(offboardedIds)));
+        }
+
         // Optional legacy run creates the old single notice (Legacy_Notice_Enabled__c)
         if (cfg.Legacy_Notice_Enabled__c && !Test.isRunningTest()) {
             Database.executeBatch(new ShopifyAtRiskNoticeBatch(cfg, true), 200);
@@ -535,6 +549,7 @@ public class ShopifyAtRiskNoticeBatch
                               res[i].getErrors()[0].getMessage());
         }
         wOffboarded += disabled.size();
+        offboardedIds.addAll(disabled);
 
         // Phase B: without touching Active__c, so the offboarding flow does not fire again
         if (ownerId != null && !disabled.isEmpty()) {
