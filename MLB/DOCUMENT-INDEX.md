@@ -1,6 +1,6 @@
 # MLB Project — Document Index
 
-Master index. `01-Instructions` and `02-Knowledge-Base` are **common** and sit at the project root. All other documents are stored **by month**: each month folder has the same structure and its own `MONTH-INDEX.md` with the full history of that month. **Last updated:** 2026-10-23 (knowledge base moved to the root as a common folder).
+Master index. `01-Instructions` and `02-Knowledge-Base` are **common** and sit at the project root. All other documents are stored **by month**: each month folder has the same structure and its own `MONTH-INDEX.md` with the full history of that month. **Last updated:** 2026-10-28 (REQ-019 Suite Lease payment schedule, REQ-020 Person Account Type values).
 
 ## How to look something up
 1. Read the instruction files in `01-Instructions` (always, for every requirement).
@@ -11,7 +11,7 @@ Master index. `01-Instructions` and `02-Knowledge-Base` are **common** and sit a
 ## Months
 | Month | Summary | History | Tracker (Excel) |
 |---|---|---|---|
-| 2026-10 | REQ-001 to REQ-018: Ticket Office email, vendor certificates, Agreement Flow create/edit and locks, Sales Vendor, Sales Manager access, QA (ATR-001/002, MTC-001/002) | [2026-10/MONTH-INDEX.md](2026-10/MONTH-INDEX.md) | [2026-10_Tracker.xlsx](2026-10/2026-10_Tracker.xlsx) |
+| 2026-10 | REQ-001 to REQ-020: Ticket Office email, vendor certificates, Agreement Flow create/edit and locks, Sales Vendor, Sales Manager access, Suite Lease payment schedule, Person Account Type, QA (ATR-001 to 003, MTC-001 to 003) | [2026-10/MONTH-INDEX.md](2026-10/MONTH-INDEX.md) | [2026-10_Tracker.xlsx](2026-10/2026-10_Tracker.xlsx) |
 
 ## Requirement lookup
 | REQ | Title | Keywords | Month | Status |
@@ -34,6 +34,8 @@ Master index. `01-Instructions` and `02-Knowledge-Base` are **common** and sit a
 | REQ-016 | Contact Sales Vendor record type | sales vendor, certificate features | 2026-10 | ✅ Sandbox |
 | REQ-017 | User Sales Manager checkbox | sales manager list | 2026-10 | ✅ Sandbox |
 | REQ-018 | Certificate-only agreement attachments | send agreement, attachments, Adobe template | 2026-10 | ✅ Sandbox |
+| REQ-019 | Suite Lease payment schedule and editable license fees | payment schedule, payment plan, due dates, payment amount, license fee, Adobe tags | 2026-10 | ✅ Sandbox |
+| REQ-020 | Person Account: Food and Beverage and Non-Profit Type values | person account, account type | 2026-10 | ✅ Sandbox |
 
 ## Naming and numbering
 `<PREFIX>-<3-digit serial>_<Short-Title-With-Hyphens>.md`. Serial numbers run across all months and are never reused.
@@ -41,13 +43,15 @@ Master index. `01-Instructions` and `02-Knowledge-Base` are **common** and sit a
 | Folder | Prefix | What goes in it | Next free number |
 |---|---|---|---|
 | `02-Knowledge-Base` (root, common) | `KB-` | Background: overview, process, integrations, environment, users, guides | KB-007 |
-| `YYYY-MM/03-Requirements` | `REQ-` | One per requirement | REQ-019 |
-| `YYYY-MM/04-Change-Records` | `CR-` | One per change made to an org | CR-038 |
-| `YYYY-MM/05-Conflicts` | `CON-` | Problems, clashes, open risks | CON-019 |
+| `YYYY-MM/03-Requirements` | `REQ-` | One per requirement | REQ-021 |
+| `YYYY-MM/04-Change-Records` | `CR-` | One per change made to an org | CR-044 |
+| `YYYY-MM/05-Conflicts` | `CON-` | Problems, clashes, open risks | CON-022 |
 | `YYYY-MM/06-Deployment` | `DEP-` | Only when something is actually deployed to production | DEP-001 |
-| `YYYY-MM/07-Technical` | `TECH-` | Technical design and component detail | TECH-011 |
-| `YYYY-MM/08-QA/01-Automated-Testing` | `ATR-` | Automated test reports | ATR-003 |
-| `YYYY-MM/08-QA/02-Manual-Testing` | `MTC-` | Manual test cases, with `MTC-###_screenshots/` | MTC-003 |
+| `YYYY-MM/07-Technical` | `TECH-` | Technical design and component detail | TECH-012 |
+| `YYYY-MM/08-QA/01-Automated-Testing` | `ATR-` | Automated test reports | ATR-004 |
+| `YYYY-MM/08-QA/02-Manual-Testing` | `MTC-` | Manual test cases, with `MTC-###_screenshots/` | MTC-004 |
+
+Defect IDs (`DEF-###`, recorded in ATR documents) also run across months: next free **DEF-003**.
 
 ## 02 — Knowledge Base (common)
 Background for the whole project, not tied to a month. Update these in place.
@@ -69,6 +73,7 @@ Updated in place in the month they were created. Open them directly; no need to 
 |---|---|
 | TECH-005 Component Inventory | [2026-10/07-Technical/TECH-005_Component-Inventory.md](2026-10/07-Technical/TECH-005_Component-Inventory.md) |
 | CON-012 Open data, user and tooling items | [2026-10/05-Conflicts/CON-012_Open-Data-And-Access-Items.md](2026-10/05-Conflicts/CON-012_Open-Data-And-Access-Items.md) |
+| CON-021 Payment schedule and Person Account open items | [2026-10/05-Conflicts/CON-021_Payment-Schedule-Open-Items.md](2026-10/05-Conflicts/CON-021_Payment-Schedule-Open-Items.md) |
 
 ## 01 — Instructions
 | File | Purpose |

@@ -8,6 +8,8 @@ History of the project work in October 2026: every requirement, the documents an
 - **Access** (REQ-012, REQ-017): Sales Managers role access; Sales Manager checkbox on User; ten sales users given full agreement access.
 - **Agreement Flow** (REQ-013, REQ-014): MVP label and 40 games; one flow for create and edit; agreement fields and Membership rows locked to the flow.
 - **Sales Vendor record types** (REQ-015, REQ-016).
+- **Suite Lease payment schedule** (REQ-019, 10-27): Number of Payment Schedule (Full, 2–12), required due dates, one calculated Payment Amount, dates saved as "November 2, 2026", Suite Payment Plan section, Adobe tags; Year 1–5 License Fee editable manually (changes REQ-014's lock).
+- **Person Account Type** (REQ-020, 10-27): Food and Beverage and Non-Profit offered on Person Accounts.
 - **On hold**: Ticketing Engagement (REQ-011), built and reverted.
 
 ## Requirement history
@@ -26,14 +28,16 @@ History of the project work in October 2026: every requirement, the documents an
 | [REQ-011](03-Requirements/REQ-011_Ticketing-Engagement-Fields-and-Opportunity-Link.md) | Ticketing Engagement fields and Opportunity link | ticketing engagement, ProVenue ID | Ticketing_Engagement__c | ⏸ On hold, reverted | CR-022 | TECH-006, CON-013 |
 | [REQ-012](03-Requirements/REQ-012_Sales-Managers-Role-Access.md) | Sales Managers role access (+ four sales reps, 10-23) | permission set, Marlins Sales app, record types, Adobe permission sets | MLB_Sales_Manager_Access; Marlins_Sales app | ✅ Sandbox | CR-023, CR-024, CR-025, CR-037 | TECH-007, CON-014 |
 | [REQ-013](03-Requirements/REQ-013_Suite-Lease-MVP-Label-And-40-Games.md) | Suite Lease: MVP label and 40 games | suite location, MVP, total games | Agreement_Flow | ✅ Sandbox | CR-026 | TECH-008, CON-015 |
-| [REQ-014](03-Requirements/REQ-014_Agreement-Flow-Create-Edit-And-Locked-Agreement-Fields.md) | Agreement Flow: create and edit, locked agreement fields | edit agreement, prefill, membership rows, validation rule, lock | Agreement_Flow; Membership_Agreement__c; Opportunity rules | ✅ Sandbox | CR-027 to CR-031 | TECH-009, CON-016, CON-017, ATR-001, MTC-001 |
+| [REQ-014](03-Requirements/REQ-014_Agreement-Flow-Create-Edit-And-Locked-Agreement-Fields.md) | Agreement Flow: create and edit, locked agreement fields | edit agreement, prefill, membership rows, validation rule, lock | Agreement_Flow; Membership_Agreement__c; Opportunity rules | ✅ Sandbox (lock changed by REQ-019) | CR-027 to CR-031, CR-038 | TECH-009, CON-016, CON-017, ATR-001, MTC-001 |
 | [REQ-015](03-Requirements/REQ-015_Account-Sales-Vendor-Type-Value.md) | Account Sales Vendor: Type value removed | account type, sales vendor | Account.Sales_Vendor record type | ✅ Sandbox | CR-032 | TECH-010, ATR-002, MTC-002 |
 | [REQ-016](03-Requirements/REQ-016_Contact-Sales-Vendor-Record-Type.md) | Contact Sales Vendor record type | sales vendor, record type, certificate features | Contact.Sales_Vendor; profiles; page filters | ✅ Sandbox | CR-033, CR-036 | TECH-010, CON-018, ATR-002, MTC-002 |
 | [REQ-017](03-Requirements/REQ-017_User-Sales-Manager-Checkbox.md) | User Sales Manager checkbox | sales manager list, checkbox, vendor agreement | User.Sales_Manager__c; Vendor_Activation_Food_and_Beverage_Agreement | ✅ Sandbox | CR-034, CR-037 | TECH-010, ATR-002, MTC-002 |
 | [REQ-018](03-Requirements/REQ-018_Certificate-Only-Agreement-Attachments.md) | Certificate-only agreement attachments | send agreement, attachments, files, Adobe template | CertificateAttachmentService; Upload_Certificate; Adobe template | ✅ Sandbox | CR-035 | TECH-010, CON-016, ATR-002, MTC-002 |
+| [REQ-019](03-Requirements/REQ-019_Suite-Lease-Payment-Schedule.md) | Suite Lease payment schedule and editable license fees | payment schedule, payment plan, due dates, payment amount, November 2 2026, license fee, Adobe tags, suite payment plan | Opportunity fields; Agreement_Flow v75; Agreement_Sections_Flow_Only; Payment_Amounts_Numeric_Only; Ticketing_Opportunity_LRP; Adobe Suite Lease templates | ✅ Sandbox | CR-038 to CR-042 | TECH-011, CON-019, CON-020, CON-021, ATR-003, MTC-003 |
+| [REQ-020](03-Requirements/REQ-020_Person-Account-Type-Values.md) | Person Account: Food and Beverage and Non-Profit Type values | person account, account type, food and beverage, non-profit | PersonAccount record type | ✅ Sandbox | CR-043 | TECH-011, CON-021, ATR-003, MTC-003 |
 
 ## Documents created this month
-The knowledge base is common to all months and lives in the root [02-Knowledge-Base](../02-Knowledge-Base) folder. KB-004 (Salesforce Environment), KB-005 (Sandbox User Status) and KB-006 (Agreement Testing Guide) were added this month.
+The knowledge base is common to all months and lives in the root [02-Knowledge-Base](../02-Knowledge-Base) folder. KB-004 (Salesforce Environment), KB-005 (Sandbox User Status) and KB-006 (Agreement Testing Guide) were added this month. On 10-28, KB-002 (Business Process) and KB-006 were updated for the Suite Lease payment schedule (REQ-019).
 
 ### 04 — Change Records
 | ID | Change | Date |
@@ -75,6 +79,12 @@ The knowledge base is common to all months and lives in the root [02-Knowledge-B
 | CR-035 | [Certificate-only agreement attachments](04-Change-Records/CR-035_Certificate-Only-Agreement-Attachments.md) | 10-21 |
 | CR-036 | [Contact vendor features: Sales Vendor only](04-Change-Records/CR-036_Contact-Vendor-Features-Sales-Vendor-Only.md) | 10-23 |
 | CR-037 | [Sales Manager ticks and sales user access](04-Change-Records/CR-037_Sales-Manager-Ticks-And-Sales-User-Access.md) | 10-23 |
+| CR-038 | [Suite Lease payment plan build, license fees unlocked](04-Change-Records/CR-038_Suite-Payment-Plan-Build.md) | 10-27 |
+| CR-039 | [Payment schedule and Account Type tags on the Suite Lease Adobe templates](04-Change-Records/CR-039_Suite-Lease-Adobe-Document-Tags.md) | 10-27 |
+| CR-040 | [Opportunity page: Suite Lease Details arranged, Suite Payment Plan section](04-Change-Records/CR-040_Opportunity-Page-Suite-Sections.md) | 10-27 |
+| CR-041 | [Number of Payment Schedule, one Payment Amount, option 1 removed](04-Change-Records/CR-041_Payment-Schedule-One-Amount-And-Rename.md) | 10-27 |
+| CR-042 | [Payment due dates stored as "November 2, 2026"](04-Change-Records/CR-042_Payment-Due-Dates-As-Text.md) | 10-27 |
+| CR-043 | [Person Account Type values](04-Change-Records/CR-043_Person-Account-Type-Values.md) | 10-27 |
 
 ### 05 — Conflicts
 | ID | Conflict | Status |
@@ -97,6 +107,9 @@ The knowledge base is common to all months and lives in the root [02-Knowledge-B
 | CON-016 | [Adobe runtime variable limits](05-Conflicts/CON-016_Adobe-Runtime-Variable-Limits.md) | ✅ |
 | CON-017 | [1 year New Business term not wired](05-Conflicts/CON-017_One-Year-New-Business-Term-Not-Wired.md) | ⚠ Open |
 | CON-018 | [Contact page filter condition limit](05-Conflicts/CON-018_Contact-Page-Filter-Condition-Limit.md) | ✅ Closed |
+| CON-019 | [Payment due dates stored as text](05-Conflicts/CON-019_Payment-Due-Dates-Stored-As-Text.md) | ℹ Known |
+| CON-020 | [Opportunity page filter limits for due date rows](05-Conflicts/CON-020_Opportunity-Page-Visibility-Filter-Limits.md) | ✅ Closed |
+| CON-021 | [Payment schedule and Person Account open items](05-Conflicts/CON-021_Payment-Schedule-Open-Items.md) | ⚠ Open |
 
 ### 06 — Deployment
 None. Nothing was deployed to production this month.
@@ -114,12 +127,14 @@ None. Nothing was deployed to production this month.
 | TECH-008 | [Agreement Flow: Suite Lease choices](07-Technical/TECH-008_Agreement-Flow-Suite-Lease-Choices.md) |
 | TECH-009 | [Agreement Flow create/edit and locks](07-Technical/TECH-009_Agreement-Flow-Create-Edit-And-Locks.md) |
 | TECH-010 | [Sales Vendor, Sales Manager, certificate attachments](07-Technical/TECH-010_Sales-Vendor-And-Certificate-Attachments.md) |
+| TECH-011 | [Suite Lease payment schedule and Person Account Type](07-Technical/TECH-011_Suite-Lease-Payment-Schedule.md) |
 
 ### 08 — QA
 | ID | Automated test report | Manual test cases |
 |---|---|---|
 | 001 (REQ-014) | [ATR-001](08-QA/01-Automated-Testing/ATR-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 24 of 24 passed, DEF-001 found and fixed · [test class](08-QA/01-Automated-Testing/ATR-001_EditAgreementQaTest.cls) | [MTC-001](08-QA/02-Manual-Testing/MTC-001_Edit-Agreement-And-Locked-Agreement-Fields.md): 24 test cases |
 | 002 (REQ-015 to REQ-018) | [ATR-002](08-QA/01-Automated-Testing/ATR-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 16 of 16 passed, retest 5 of 5 | [MTC-002](08-QA/02-Manual-Testing/MTC-002_Sales-Vendor-Sales-Manager-And-Certificate-Attachments.md): 12 test cases |
+| 003 (REQ-019, REQ-020) | [ATR-003](08-QA/01-Automated-Testing/ATR-003_Suite-Lease-Payment-Schedule-And-Person-Account-Type.md): 20 of 20 passed, DEF-002 found and fixed · [test class](08-QA/01-Automated-Testing/ATR-003_PaymentPlanQaTest.cls) | [MTC-003](08-QA/02-Manual-Testing/MTC-003_Suite-Lease-Payment-Schedule-And-Person-Account-Type.md): 20 test cases, 7 screenshots |
 
 ## Open items at month end
-See [CON-012](05-Conflicts/CON-012_Open-Data-And-Access-Items.md) and [CON-017](05-Conflicts/CON-017_One-Year-New-Business-Term-Not-Wired.md).
+See [CON-012](05-Conflicts/CON-012_Open-Data-And-Access-Items.md), [CON-017](05-Conflicts/CON-017_One-Year-New-Business-Term-Not-Wired.md) and [CON-021](05-Conflicts/CON-021_Payment-Schedule-Open-Items.md).

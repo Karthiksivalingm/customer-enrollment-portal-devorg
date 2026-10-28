@@ -32,7 +32,9 @@ Start → Get_opportunity → Get_Related_Account → Get_Existing_Rows (Members
 | Object | Rule | Exception | Who sets the exception |
 |---|---|---|---|
 | Membership_Agreement__c | `Membership_Agreement_Flow_Only`: NOT(ISNEW()) AND NOT(Flow_Update__c) AND OR(ISCHANGED(35 fields)) | `Flow_Update__c` ticked in the same save | Agreement Flow ticks it; `Membership_Agreement_Reset_Flow_Update` (after save) unticks it. |
-| Opportunity | `Agreement_Sections_Flow_Only`: NOT(ISNEW()) AND NOT(ISCHANGED(Agreement_Flow_Update__c)) AND OR(ISCHANGED(35 fields)) | `Agreement_Flow_Update__c` **flipped** in the same save | Agreement Flow (`frmToggleAgreementFlowUpdate`) and `Update_Opportunity_from_Membership_Agreement`. |
+| Opportunity | `Agreement_Sections_Flow_Only`: NOT(ISNEW()) AND NOT(ISCHANGED(Agreement_Flow_Update__c)) AND OR(ISCHANGED(44 fields; 35 until 2026-10-27)) | `Agreement_Flow_Update__c` **flipped** in the same save | Agreement Flow (`frmToggleAgreementFlowUpdate`) and `Update_Opportunity_from_Membership_Agreement`. |
+
+- **2026-10-27 ([REQ-019](../03-Requirements/REQ-019_Suite-Lease-Payment-Schedule.md), [TECH-011](TECH-011_Suite-Lease-Payment-Schedule.md)):** Year_1–5_License_Fee__c removed from the Opportunity rule; Number_of_Payment_Plans__c, Payment_Amount__c and Payment_Due_Date_1–12__c added. Agreement_Flow is now v75.
 
 - The Opportunity uses flip, not tick-and-reset, to avoid a second Opportunity save (which would re-run every Opportunity trigger and flow, including Adobe Sign).
 - Formula fields (Total Membership Price, Total Membership Due) are excluded from the rule.

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
@@ -582,16 +582,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Suite_Level__c</fieldItem>
-                <identifier>RecordSuite_Level__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Suite_Location__c</fieldItem>
                 <identifier>RecordSuite_Location__cField</identifier>
             </fieldInstance>
@@ -612,8 +602,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.This_Season_Total_Amount__c</fieldItem>
-                <identifier>RecordThis_Season_Total_Amount__cField</identifier>
+                <fieldItem>Record.Suite_Level__c</fieldItem>
+                <identifier>RecordSuite_Level__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -632,8 +622,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Parking_Passes__c</fieldItem>
-                <identifier>RecordParking_Passes__cField</identifier>
+                <fieldItem>Record.Total_of_Games__c</fieldItem>
+                <identifier>RecordTotal_of_Games__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -642,14 +632,24 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Total_of_Games__c</fieldItem>
-                <identifier>RecordTotal_of_Games__cField</identifier>
+                <fieldItem>Record.Parking_Passes__c</fieldItem>
+                <identifier>RecordParking_Passes__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-31f552b0-9d9e-4a49-bc14-2980693420a9</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.This_Season_Total_Amount__c</fieldItem>
+                <identifier>RecordThis_Season_Total_Amount__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -783,16 +783,6 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Due_Date__c</fieldItem>
-                <identifier>RecordDue_Date__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-c64caa78-3393-4e74-b9ca-5004389f11fa</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -818,6 +808,421 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-22e87e1e-b02e-4f78-a97f-afa7f69ed083</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Number_of_Payment_Plans__c</fieldItem>
+                <identifier>RecordNumber_of_Payment_Plans__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_1__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_1__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Payment_Amount__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_2__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_2__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Payment_Amount__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Full</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_3__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_3__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Payment_Amount__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Full</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>2</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_4__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_4__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Payment_Amount__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Full</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>2</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>3</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_5__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_5__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Payment_Amount__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Full</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>2</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>3</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>4</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_6__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_6__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Payment_Amount__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Full</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>2</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>3</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>4</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>5</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_7__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_7__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>7</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>8</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>9</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>10</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>11</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>12</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_8__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_8__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>8</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>9</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>10</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>11</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>12</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_9__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_9__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>9</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>10</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>11</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>12</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_10__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_10__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>10</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>11</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>12</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_11__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_11__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>11</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>12</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Due_Date_12__c</fieldItem>
+                <identifier>RecordPayment_Due_Date_12__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Number_of_Payment_Plans__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>12</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-a19c0001-0000-4000-8000-000000000001</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Due_Date__c</fieldItem>
+                <identifier>RecordDue_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Amount__c</fieldItem>
+                <identifier>RecordPayment_Amount__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-a19c0001-0000-4000-8000-000000000002</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-a19c0001-0000-4000-8000-000000000001</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_suitePayment1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-a19c0001-0000-4000-8000-000000000002</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_suitePayment2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-a19c0001-0000-4000-8000-000000000003</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -1415,6 +1820,31 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection9</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Agreement_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Suite Lease</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-a19c0001-0000-4000-8000-000000000003</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Suite Payment Plan</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection_suitePayment</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Agreement_Type__c}</leftValue>

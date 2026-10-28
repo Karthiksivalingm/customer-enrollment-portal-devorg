@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Amounts_Numeric_Only</fullName>
+    <active>true</active>
+    <description>Payment Amount is a text field: allow only numbers (digits with up to 2 decimals, no letters, symbols or commas).</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Payment_Amount__c)), NOT(REGEX(Payment_Amount__c, "^[0-9]+(\\.[0-9]{1,2})?$")))</errorConditionFormula>
+    <errorMessage>Payment Amount can contain numbers only (for example 1250 or 1250.50). Letters, symbols and commas are not allowed.</errorMessage>
+</ValidationRule>

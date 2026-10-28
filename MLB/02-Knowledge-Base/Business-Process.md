@@ -3,12 +3,14 @@
 | | |
 |---|---|
 | **Document ID** | KB-002 |
-| **Last updated** | 2026-10-09 |
+| **Last updated** | 2026-10-28 (Suite Lease payment schedule; vendor features on Sales Vendor contacts) |
 
 ## 1. Ticket sales agreement process (Opportunity)
 
 1. The Sales Rep opens the Opportunity and runs the **Agreement Flow** (screen flow `Agreement_Flow`).
 2. The rep picks the agreement type (**Membership, Multi-Product, Flex or Suite Lease**) and enters its details, including **Ticket Office Comments**. The flow saves the values on the Opportunity. For Membership it also creates `Membership_Agreement__c` seat and parking rows.
+   - **Suite Lease payment schedule** (since 2026-10-27, [REQ-019](../2026-10/03-Requirements/REQ-019_Suite-Lease-Payment-Schedule.md)): the rep picks **Number of Payment Schedule** (Full or 2–12 monthly payments) and enters a due date for each payment. The flow saves one **Payment Amount** (total ÷ number of payments) and the dates written out ("November 2, 2026") for the agreement document. **Due Date** is the first payment date.
+   - Year 1–5 License Fee are filled by the flow and can also be edited directly. All other agreement details can only be changed through **Edit Agreement**.
 3. The rep clicks **Send Agreement**, and Adobe Sign creates the agreement (`echosign_dev1__SIGN_Agreement__c`) linked to the Opportunity.
 4. Adobe Sign routes the agreement: **approvers first** (Sales Manager and others, per template), then the **customer signer**.
 5. Salesforce emails the **Ticket Office** (To) and the **Sales Manager** (`Opportunity_Owner_Manager__c`), with reply-to the Sales Rep, when:
@@ -30,7 +32,7 @@ Email rules: [REQ-003](../2026-10/03-Requirements/REQ-003_Ticket-Office-Email-Tr
 
 ## 2. Vendor certificate and agreement process (Contact)
 
-Applies only to Contacts of record type **Vendor Contact** whose Account **Type** is Food and Beverage, Non-Profit or Sales Activation.
+Applies only to Contacts of record type **Sales Vendor** (Vendor Contact until 2026-10-23, [CR-036](../2026-10/04-Change-Records/CR-036_Contact-Vendor-Features-Sales-Vendor-Only.md)) whose Account **Type** is Food and Beverage, Non-Profit or Sales Activation.
 
 1. The vendor contact page shows the **Certificate Reminder** banner and a popup listing which certificates are still needed.
 2. The user clicks **Upload Certificate**, and the existing Upload Certificate flow runs. Uploading a certificate ticks its checkbox automatically. **Nobody can tick these boxes by hand.**

@@ -5,7 +5,7 @@
 | **ID** | REQ-014 |
 | **Status** | ✅ Built in the sandbox (utdev) and confirmed working by the user ("all good", 2026-10-21) |
 | **Requested** | 2026-10-14 to 2026-10-21 (built in steps; see the change records) |
-| **Related** | CR-027 · CR-028 · CR-029 · CR-030 · CR-031 · TECH-009 · CON-016 · CON-017 · ATR-001 · MTC-001 |
+| **Related** | CR-027 · CR-028 · CR-029 · CR-030 · CR-031 · TECH-009 · CON-016 · CON-017 · ATR-001 · MTC-001 · changed by REQ-019 (CR-038, 2026-10-27) |
 
 ## Business need
 1. Sales reps need to **change an agreement after it has been captured**, without re-entering everything.
@@ -29,7 +29,8 @@
 
 ### Locked agreement details
 - **Membership Agreement rows:** any change to an editable field on an existing row is blocked for every user, including System Administrators: "Membership Agreement records can't be edited manually. Please use the Edit Agreement button on the Opportunity." Creating and deleting rows is allowed.
-- **Opportunity:** changes to the 35 editable fields in the Suite Lease Details, Membership Agreement Details, Multi Product Information and Flex Membership Information sections are blocked for every user: "Agreement details can't be edited manually. Please use the Edit Agreement button on the Opportunity." New Opportunities and all other fields are not affected.
+- **Opportunity:** changes to the editable fields in the Suite Lease Details, Membership Agreement Details, Multi Product Information and Flex Membership Information sections are blocked for every user: "Agreement details can't be edited manually. Please use the Edit Agreement button on the Opportunity." New Opportunities and all other fields are not affected.
+  - **Changed 2026-10-27 by [REQ-019](REQ-019_Suite-Lease-Payment-Schedule.md):** Year 1–5 License Fee are no longer locked (users can edit them), and the Suite Lease payment schedule fields (Number of Payment Schedule, Payment Amount, Payment 1–12 Due Date) are locked. The rule now covers 44 fields (was 35).
 - Only Agreement Flow (and the Paid to Date copy flow) can change these fields, through hidden checkboxes that users cannot see or edit.
 
 ## Acceptance criteria

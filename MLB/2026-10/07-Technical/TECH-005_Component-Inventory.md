@@ -11,7 +11,7 @@ Legend: **C** = created · **M** = modified · **D** = deleted · **X** = deacti
 ## Agreement Flow and Ticket Office notification (REQ-001 to REQ-005, REQ-013)
 | Component | Type | Action | Local file |
 |---|---|---|---|
-| `Agreement_Flow` | Flow | M (Ticket Office Comments; MVP label and 40 games; create and edit in one flow, v68) | flows/Agreement_Flow.flow-meta.xml |
+| `Agreement_Flow` | Flow | M (Ticket Office Comments; MVP label and 40 games; create and edit in one flow, v68; Suite Lease payment schedule, v75) | flows/Agreement_Flow.flow-meta.xml |
 | `Adobe_Agreement_Notify_Ticket_Office` | Flow | C | flows/Adobe_Agreement_Notify_Ticket_Office.flow-meta.xml |
 | `unfiled$public/Ticket_Office_Agreement_Details` | Email template (VF) | C | email/unfiled$public/Ticket_Office_Agreement_Details.email(+meta) |
 | `TicketOfficeAgreementStatus` | VF component | C | components/ |
@@ -77,6 +77,23 @@ Legend: **C** = created · **M** = modified · **D** = deleted · **X** = deacti
 | Users Billy Marlin, Ruben Smith | Data | Sales_Manager__c ticked | **not in metadata** |
 | Adobe template row 0000031 (a0oiV0000000D0TQAU) | Data | Source type Files → Attachments | **not in metadata** |
 | Certificate attachments (29 on 18 contacts) | Data | C (backfill) | **not in metadata** |
+## Suite Lease payment schedule and Person Account Type (REQ-019, REQ-020)
+| Component | Type | Action | Local file |
+|---|---|---|---|
+| `Opportunity.Number_of_Payment_Plans__c` | Picklist (label "Number of Payment Schedule") | C | objects/Opportunity/fields/ |
+| `Opportunity.Payment_Amount__c` | Text(18) | C | objects/Opportunity/fields/ |
+| `Opportunity.Payment_Due_Date_1__c` … `_12__c` | Text(30) | C (first as Date, rebuilt as text, CR-042) | objects/Opportunity/fields/ |
+| `Opportunity.Payment_Amount_1__c` … `_12__c` | Text | C, then D (CR-041) | — |
+| `Opportunity.Payment_Due_Date_1_Formatted__c` … `_12_` | Formula | C, then D and purged (CR-042) | — |
+| `Opportunity.Payment_Amounts_Numeric_Only` | Validation rule | C | objects/Opportunity/validationRules/ |
+| `Opportunity.Agreement_Sections_Flow_Only` | Validation rule | M (license fees out; schedule fields in; 44 fields) | objects/Opportunity/validationRules/ |
+| `Agreement_Flow` | Flow | M (v75; versions 69–74 deleted) | flows/ |
+| `Ticketing_Opportunity_LRP` | FlexiPage | M (Suite Lease Details arranged; Suite Payment Plan section) | flexipages/ |
+| `Opportunity-Opportunity Layout` | Page layout | M (schedule fields) | layouts/ |
+| `Admin`, `Ticket Sales`, `Marlins Sales Leadership`, `Marlins IT Admin` | Profiles (partial) | M (field access on the 14 fields; deployed from a temporary folder, not kept in force-app) | — |
+| `PersonAccount.PersonAccount` | Record type | M (Type: Food and Beverage, Non-Profit) | objects/PersonAccount/recordTypes/ |
+| Suite Lease Adobe templates DCT-16, DCT-22 | Data | 15 field-mapping entries each (CR-039) | **not in metadata** |
+
 ## Adobe / environment (no deployable metadata)
 | Item | Action |
 |---|---|
