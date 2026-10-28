@@ -18,9 +18,9 @@ Loaded automatically at the start of every session. It is the short version of t
 
 | Step | What to do | Read |
 |---|---|---|
-| 1. Check the history | Search the **Requirement lookup** in `DOCUMENT-INDEX.md` by title and keywords. | `DOCUMENT-INDEX.md` |
-| 2a. It exists | Open **only** that month's `MONTH-INDEX.md` row and the documents it links to. Don't search other months. | `YYYY-MM/MONTH-INDEX.md` |
-| 2b. It's new | Take the next free numbers from `DOCUMENT-INDEX.md`; file it in the current month (create the month folder with the full structure if needed). | — |
+| 1. Check the history (**tracker first, always**) | Run `& scripts\tracker\Find-Requirement.ps1 -Search "<keywords or ID>"`. It searches every month's Excel tracker and prints only the matching REQ, CR and CON rows, with their documents. Don't browse folders to find a requirement. | `YYYY-MM_Tracker.xlsx` (through the script) |
+| 2a. It exists | Open **only** the documents the tracker result lists. Open the month's `MONTH-INDEX.md` only if you need more context. | Listed documents |
+| 2b. It's new (no match) | Confirm with the **Requirement lookup** in `DOCUMENT-INDEX.md`, then take the next free numbers; file it in the current month (create the month folder with the full structure if needed). | `DOCUMENT-INDEX.md` |
 | 3. Find components | For "what touches object X?", check the component inventory before searching the code. | `TECH-005_Component-Inventory.md` |
 | 4. Investigate and build | Follow the workflow and coding rules. | `AI-Workflow.md`, `Coding-Standards.md` |
 | 5. Report | What changed (created / modified / deleted), what was verified, what failed, open questions. | `Project-Rules.md` section 10 |

@@ -4,9 +4,9 @@ Master index. `01-Instructions` and `02-Knowledge-Base` are **common** and sit a
 
 ## How to look something up
 1. Read the instruction files in `01-Instructions` (always, for every requirement).
-2. Look for the topic in the **Requirement lookup** table below (title and keywords).
-3. If it exists, open only that month's `MONTH-INDEX.md` and the documents it links to. Don't search the other months or folders.
-4. If it doesn't exist, it's a new requirement: use the next free numbers below and file it in the current month's folder.
+2. **Search the Excel trackers first:** `& scripts\tracker\Find-Requirement.ps1 -Search "<keywords or ID>"`. It lists the matching requirements, change records and open items from every month's tracker, with their documents.
+3. If it exists, open only the documents the result lists (the month's `MONTH-INDEX.md` only if you need more context). Don't search the other months or folders.
+4. If there is no match, check the **Requirement lookup** table below (title and keywords). If it isn't there either, it's a new requirement: use the next free numbers below and file it in the current month's folder.
 
 ## Months
 | Month | Summary | History | Tracker (Excel) |

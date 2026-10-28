@@ -45,7 +45,7 @@ The instructions and the knowledge base are **common** and sit at the project ro
 | `YYYY-MM/08-QA` | `ATR-` / `MTC-` | Automated test reports and manual test case documents (see section 6 and [QA-Process.md](QA-Process.md)) |
 | `YYYY-MM/YYYY-MM_Tracker.xlsx` | — | Monthly tracking workbook (see "Monthly tracker" below) |
 | `force-app/` (root) | — | Salesforce metadata source |
-| `scripts/tracker/` (root) | — | `Build-MonthTracker.ps1`, which builds the monthly tracking workbook |
+| `scripts/tracker/` (root) | — | `Build-MonthTracker.ps1`, which builds the monthly tracking workbook; `Find-Requirement.ps1`, which searches all trackers (first lookup step, section 3) |
 
 **Which month a document belongs to:**
 - A new document goes in the month it is **first created**. Create the month folder, with the full structure and a `MONTH-INDEX.md`, the first time something is filed in a new month.
@@ -72,10 +72,12 @@ The instructions and the knowledge base are **common** and sit at the project ro
 
 For every requirement prompt, before any investigation or build:
 1. **Read the instruction files** in `01-Instructions` and follow them.
-2. **Check whether the requirement already exists:** search the **Requirement lookup** table in `DOCUMENT-INDEX.md` (title and keywords).
-3. **If it exists,** open only that month's `MONTH-INDEX.md` and the documents it links to. Do not search through every month, folder or file; this keeps the work fast and avoids reading unrelated documents.
-4. **If it is new,** treat it as a new requirement: take the next free numbers from `DOCUMENT-INDEX.md` and file its documents in the current month.
-5. **Only if the lookup is inconclusive,** search the most likely month first, then widen.
+2. **Search the monthly Excel trackers first.** Run `scripts/tracker/Find-Requirement.ps1 -Search "<keywords or ID>"`. It reads every month's `YYYY-MM_Tracker.xlsx` (Requirements, Change Records, and Conflicts & Open Items sheets) and lists only the matching rows: ID, title, status, components, related CR / TECH / CON / QA documents and the document path. Use it **instead of** browsing folders or opening documents to find a requirement. Try the requirement's title words, the object or component name, or the ID (for example `REQ-019`).
+3. **If it exists,** open only the documents listed in the tracker result. Open that month's `MONTH-INDEX.md` only if you need more context than the tracker gives. Do not search through every month, folder or file; this keeps the work fast and avoids reading unrelated documents.
+4. **If it is new** (no tracker match), confirm with the **Requirement lookup** table in `DOCUMENT-INDEX.md`, which also covers anything not yet in a tracker. Then take the next free numbers from `DOCUMENT-INDEX.md` and file its documents in the current month.
+5. **Only if both lookups are inconclusive,** search the most likely month first, then widen.
+
+The trackers are rebuilt after every approved requirement (section 2), so they are always current for approved work. A requirement still being built has no documents or tracker row yet; that work is the current task.
 
 ## 4. Document control
 
