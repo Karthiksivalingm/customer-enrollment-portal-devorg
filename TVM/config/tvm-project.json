@@ -15,11 +15,48 @@
     "remoteName": "origin",
     "remoteUrl": "https://github.com/sfdcut/SFDC.git",
     "workingBranch": "tvm/develop",
-    "protectedBranches": ["main", "master"],
+    "protectedBranches": [
+      "main",
+      "master"
+    ],
     "autoCommit": true,
     "autoPush": true
   },
   "secretRecords": [
     "customMetadata/TouchPoint_Callout.*"
-  ]
+  ],
+  "documents": {
+    "_comment": "Monthly folders (Project-Rules section 2). Living documents stay in the month they were created and are updated in place.",
+    "livingMonth": "2026-10",
+    "living": [
+      {
+        "name": "Component change history",
+        "path": "2026-10/07-Technical/Change-History.md"
+      },
+      {
+        "name": "Metadata inventory (generated from force-app)",
+        "path": "2026-10/07-Technical/Metadata-Inventory/README.md"
+      },
+      {
+        "name": "Metadata scope",
+        "path": "2026-10/07-Technical/Metadata-Scope.md"
+      },
+      {
+        "name": "Retrieval report",
+        "path": "2026-10/07-Technical/Retrieval/Retrieval-Report.md"
+      },
+      {
+        "name": "Metadata discovery",
+        "path": "2026-10/07-Technical/Retrieval/Discovery.md"
+      },
+      {
+        "name": "Technical documents index",
+        "path": "2026-10/07-Technical/Technical-Architecture.md"
+      },
+      {
+        "name": "Deployment procedure and checklists",
+        "path": "2026-10/06-Deployment/Deployment-Procedure.md"
+      }
+    ]
+  }
 }

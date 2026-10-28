@@ -1,32 +1,28 @@
 # TVM Salesforce: instructions for Claude
 
-This folder is the complete, self-contained TVM project inside the shared `sfdcut/SFDC` repository.
-Work only inside `TVM/`. Never change, stage or commit any other project folder or repository-root file.
+This folder is the TVM project inside the shared `sfdcut/SFDC` repository. Work only inside `TVM/`. Never change, stage or commit any
+other project folder or repository-root file. Start Claude Code from the `TVM/` folder so this file and `.claude/settings.json` load.
 
-**Start Claude Code from the `TVM/` folder.** That loads this file, the instruction files imported below, and the hooks in
-`.claude/settings.json`: org guard, context reminders, and auto-commit/push.
-
-## Key points
-- The only Salesforce org is alias **`Fullsandbox`**: Team Velocity Marketing, Org ID `00DVa000006Eh6TMAS`, a sandbox.
-  Run every `sf` command as `python scripts/sf_safe.py <args>`. It verifies the org and refuses org changes without `--approved <ID>`.
-- Never deploy, change records, activate Flows or delete anything without the user's explicit approval of that exact operation and target.
-  Production is never touched from this repository. A Git push is never a deployment.
-- The real Salesforce source lives in `force-app/main/default/`. Documentation supplements it and never replaces it.
-- **Every task updates its documentation in the same turn.** Use the routing table in Documentation-Rules.md:
-  - REQ in `03-Requirements/` for every task received: `python scripts/new_doc.py REQ "<title>"`.
-  - CR, CF and DEP records where they apply.
-  - Metadata changes: `07-Technical-Documents/` plus a dated row in `07-Technical-Documents/Change-History.md`.
-  - `02-Knowledge-Base/` when behaviour or architecture changes.
-- When a turn ends, the Stop hook runs `scripts/autocommit.py`. It regenerates inventories and the index, runs the secret and
-  documentation checks, commits **only TVM paths** and pushes to **`tvm/develop`**. If it blocks, fix what it reports.
-  Write a one-line commit subject to `.tvm-state/commit-message.txt` before finishing.
-- Never invent requirement IDs, approvals, record values, dates or test results. Write **TO BE CONFIRMED** instead.
-- Never print, copy or commit credential values. Hardcoded credentials found in org source are handled by
-  [config/secret-files.json](config/secret-files.json).
-- Project background: [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md). Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
+## Project facts
+- **Org:** alias `Fullsandbox` (Team Velocity Marketing, Org ID `00DVa000006Eh6TMAS`, a sandbox) is the only org. Run every `sf` command as
+  `python scripts/sf_safe.py <args>`. It verifies the org and refuses org changes without `--approved <ID>`.
+- **Monthly folders:** `01-Instructions` and `02-Knowledge-Base` are common at the root. All other documents live in `YYYY-MM/`
+  (Project-Rules section 2):
+  - `python scripts/new_doc.py REQ|CR|CON|DEP|TECH|ATR|MTC "<title>"` files a document in the current month. It creates the month folder and
+    `MONTH-INDEX.md` the first time.
+  - `python scripts/build_index.py` rebuilds `DOCUMENT-INDEX.md` and the month document lists.
+  - After the project lead approves ("all good"), update the month's `MONTH-INDEX.md` (Summary and Requirement history), then rebuild
+    the workbook: `& scripts\tracker\Build-MonthTracker.ps1 -Month YYYY-MM -ProjectRoot <full path of TVM>`.
+- **Living documents** (component change history, generated metadata inventory, retrieval reports, deployment procedures) stay in
+  `2026-10/` and are updated in place. They are listed in `DOCUMENT-INDEX.md`.
+- **Credentials:** org source files with hardcoded credentials are listed in [config/secret-files.json](config/secret-files.json) and kept
+  out of Git (CON-002). Never print, copy or commit credential values.
+- **End-of-turn hook:** `scripts/autocommit.py` validates (secrets, XML/JSON, document names, Change History). It commits and pushes only on the branch set in
+  `config/tvm-project.json`, and stops on any other branch.
+- **Start here:** [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md) (requirement lookup) and [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md).
 
 ## Standing instructions (imported)
-@01-Instructions/TVM-Working-Instructions.md
-@01-Instructions/Salesforce-Safety-Rules.md
-@01-Instructions/Documentation-Rules.md
-@01-Instructions/Git-Automation-Rules.md
+@01-Instructions/Project-Rules.md
+@01-Instructions/AI-Workflow.md
+@01-Instructions/Coding-Standards.md
+@01-Instructions/QA-Process.md

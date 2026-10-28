@@ -2,7 +2,7 @@
 
 Usage (from Epicare/):  python scripts/check_retrieval.py
 Reads .project-state/retrieve/*.json (written by scripts/retrieve.py) and the source tree.
-Writes 07-Technical-Documents/Retrieval/Retrieval-Report.md. Exit 1 when a batch failed or in-scope
+Writes 2026-10/07-Technical/Retrieval/Retrieval-Report.md. Exit 1 when a batch failed or in-scope
 components are missing without an explanation. Offline.
 """
 import glob
@@ -15,23 +15,24 @@ import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
 import projlib  # noqa: E402
+import monthlib  # noqa: E402
 
 NS = "{http://soap.sforce.com/2006/04/metadata}"
 STATE = os.path.join(projlib.PROJECT_DIR, ".project-state", "retrieve")
 SRC = os.path.join(projlib.PROJECT_DIR, "force-app", "main", "default")
-# Known, explained gaps: (type, name) -> reason. Keep in step with 07-Technical-Documents/Metadata-Scope.md.
+# Known, explained gaps: (type, name) -> reason. Keep in step with 2026-10/07-Technical/Metadata-Scope.md.
 EXPLAINED = {
     ("ConnectedApp", "CPQIntegrationUserApp"): "Metadata API error 'Load of metadata from db failed' (Salesforce-provided "
-                                              "connected app). See CF-001.",
+                                              "connected app). See CON-001.",
 }
 # Known gaps by name prefix: (type, prefix) -> reason.
 EXPLAINED_PREFIX = {
     ("Report", "unfiled$public"): "Pseudo-folder; never returned as a component (its reports are listed individually).",
     ("EmailTemplate", "unfiled$public"): "Pseudo-folder; never returned as a component.",
     ("Report", "CRM_180925_"): "Salesforce-generated sample Sales Engagement report: Metadata API error 'Load of metadata "
-                               "from db failed'. See CF-001.",
+                               "from db failed'. See CON-001.",
     ("Dashboard", "CRM_180925_"): "Salesforce-generated sample dashboard: Metadata API error 'Load of metadata from db "
-                                  "failed'. See CF-001.",
+                                  "failed'. See CON-001.",
 }
 
 
@@ -107,7 +108,7 @@ def main():
            "## Warnings and errors reported by the Metadata API", "",
            *(["| Batch | Message |", "|---|---|", *warn_rows] if warn_rows else ["None."]), "",
            "## Files per source folder", "", "| Folder | Files |", "|---|---|", *per_dir]
-    projlib.write_if_changed(os.path.join(projlib.PROJECT_DIR, "07-Technical-Documents", "Retrieval", "Retrieval-Report.md"), "\n".join(doc) + "\n")
+    projlib.write_if_changed(monthlib.living_path("07-Technical", "Retrieval", "Retrieval-Report.md"), "\n".join(doc) + "\n")
     print(f"{total_got}/{total_in} named components returned; {total_files} files; unexplained problems: {problems}")
     sys.exit(1 if problems else 0)
 

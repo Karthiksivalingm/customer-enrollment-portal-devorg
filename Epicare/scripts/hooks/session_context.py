@@ -11,13 +11,12 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import projlib  # noqa: E402
 
 ROUTING = (
-    "Epicare documentation routing (01-Instructions/Documentation-Rules.md): new task/requirement -> "
-    "`python scripts/new_doc.py REQ \"<title>\"`; actual record change -> CR (with verified before/after values); "
-    "error or conflict -> CF; deployment prep/execution/verification -> DEP; metadata change -> update its "
-    "07-Technical-Documents doc and add a dated row to 07-Technical-Documents/Change-History.md; material behaviour change -> 02-Knowledge-Base; "
-    "standing-rule change -> 01-Instructions. Salesforce CLI only via `python scripts/sf_safe.py` (UTDEV). "
-    "When you finish, the Stop hook validates, commits and pushes Epicare files to the configured branch; write a one-line commit "
-    "subject to .project-state/commit-message.txt first."
+    "Epicare: read 01-Instructions (Project-Rules, AI-Workflow, Coding-Standards, QA-Process) for every requirement. "
+    "Check DOCUMENT-INDEX.md (Requirement lookup) first. Documents are filed by month: "
+    "`python scripts/new_doc.py REQ|CR|CON|DEP|TECH|ATR|MTC \"<title>\"` files them in YYYY-MM/ (the month folder "
+    "and MONTH-INDEX.md are created on first use). Write documents only after the project lead approves (\"all good\"), "
+    "then update MONTH-INDEX.md and rebuild the tracker: scripts/tracker/Build-MonthTracker.ps1 -Month YYYY-MM. "
+    "Salesforce CLI only through `python scripts/sf_safe.py`."
 )
 
 

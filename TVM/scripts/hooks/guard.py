@@ -1,7 +1,7 @@
 """Claude Code PreToolUse hook (Bash | PowerShell): block unsafe Git and Salesforce commands.
 
 Exit 2 blocks the tool call and the stderr text is shown to Claude.
-The rules mirror 01-Instructions/Git-Automation-Rules.md and Salesforce-Safety-Rules.md.
+The rules mirror 01-Instructions/Project-Rules.md.
 """
 import json
 import re

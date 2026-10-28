@@ -8,7 +8,7 @@ All scripts read [`config/tvm-project.json`](../config/tvm-project.json).
 | `verify_org.py` | Confirms `Fullsandbox` is Org `00DVa000006Eh6TMAS` and a sandbox | Read-only |
 | `sf_safe.py` | The only way to run `sf`: verifies the org, forces `--target-org Fullsandbox`, refuses org changes without `--approved <ID>` | As allowed |
 | `build_manifest.py` | Rebuilds `manifest/package.xml` (unmanaged code + data model) from org metadata listings | Read-only |
-| `build_inventory.py` | Regenerates `07-Technical-Documents/Metadata-Inventory/` from `force-app` | No (offline) |
+| `build_inventory.py` | Regenerates `2026-10/07-Technical/Metadata-Inventory/` from `force-app` | No (offline) |
 | `build_index.py` | Regenerates `DOCUMENT-INDEX.md` | No |
 | `new_doc.py` | Creates a dated REQ / CR / CF / DEP record with the next free ID, without duplicates | No |
 | `secret_scan.py` | Blocks credentials and forbidden files (`--all` or file list) | No |

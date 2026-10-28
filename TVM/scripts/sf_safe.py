@@ -60,10 +60,10 @@ def main(argv):
     known = changing or any(cmd_text.startswith(p) for p in READ_ONLY_PREFIXES)
     if not known:
         tvmlib.fail(f"Refused: 'sf {cmd_text}' is not on the TVM allow-list. Add it to scripts/sf_safe.py "
-                    "and 01-Instructions/Salesforce-Safety-Rules.md if it is needed.")
+                    "and 01-Instructions/Project-Rules.md if it is needed.")
     if changing and not approved:
         tvmlib.fail(f"Refused: 'sf {cmd_text}' changes the org. Re-run with --approved <ID> only after the user "
-                    "approved this exact operation and target (see 01-Instructions/Salesforce-Safety-Rules.md).")
+                    "approved this exact operation and target (see 01-Instructions/Project-Rules.md).")
 
     try:
         ident = tvmlib.verify_org(cfg)

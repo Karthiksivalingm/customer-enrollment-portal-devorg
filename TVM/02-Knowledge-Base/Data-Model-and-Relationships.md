@@ -5,7 +5,7 @@ Built from `force-app/main/default/objects/` (retrieved 2026-10-14).
 - **Coverage:** 133 objects. These are the unmanaged custom objects, custom settings, custom metadata types and Knowledge, plus the 22 standard objects
   that carry unmanaged fields. Managed-package fields are excluded.
 - **Grouping:** functional areas are an INFERENCE from object names and relationships.
-- **Field lists:** per object in [Metadata-Inventory/Objects](../07-Technical-Documents/Metadata-Inventory/Objects-and-Fields.md).
+- **Field lists:** per object in [Metadata-Inventory/Objects](../2026-10/07-Technical/Metadata-Inventory/Objects-and-Fields.md).
 
 Legend: MD = master-detail, L = lookup. OWD: RW = Public Read/Write, CBP = Controlled by Parent.
 

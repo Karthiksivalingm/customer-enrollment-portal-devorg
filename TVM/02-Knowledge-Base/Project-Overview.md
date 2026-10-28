@@ -17,7 +17,7 @@
 
 | Area | Count |
 |---|---|
-| Apex classes (incl. tests) / triggers | See [inventory summary](../07-Technical-Documents/Metadata-Inventory/README.md). About 220 TVM-authored classes; 20 triggers on 12 objects |
+| Apex classes (incl. tests) / triggers | See [inventory summary](../2026-10/07-Technical/Metadata-Inventory/README.md). About 220 TVM-authored classes; 20 triggers on 12 objects |
 | Flows | 620: 483 Active, 220 active record-triggered, 51 scheduled |
 | Objects | 133 in source: ~110 custom objects, settings and metadata types, plus 22 customized standard objects. Account (778 fields), Opportunity (802) and Case (465) are the most customized |
 | UI | 205 Lightning pages, 152 layouts, 108 tabs, 9 apps, ~17 LWC, ~31 Aura, 35 Visualforce pages |
@@ -31,7 +31,7 @@
   - Omni-Channel for support, priority and voice queues.
   - See [Case-Routing-and-Omni-Channel.md](Case-Routing-and-Omni-Channel.md).
 - **Automation is mainly Flow-based.** Apex triggers sit beside many record-triggered Flows on Opportunity, Case and Account. There is no single trigger framework. See [Automation-and-Execution-Order.md](Automation-and-Execution-Order.md).
-- **The TouchPoint (Quickbase) integration** pushes Account, Contact, group and budget data. Some paths are active, some inactive, and credentials are hardcoded (CF-001). See [Integrations](Integrations-and-External-Systems.md).
+- **The TouchPoint (Quickbase) integration** pushes Account, Contact, group and budget data. Some paths are active, some inactive, and credentials are hardcoded (CON-002). See [Integrations](Integrations-and-External-Systems.md).
 - **The data model** centres on the Account (dealership), with about 20 master-detail children. Most custom objects are Public Read/Write or Controlled by Parent. See [Data-Model-and-Relationships.md](Data-Model-and-Relationships.md).
 
 ## 4. Knowledge Base map

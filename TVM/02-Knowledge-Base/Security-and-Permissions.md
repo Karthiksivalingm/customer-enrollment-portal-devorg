@@ -2,7 +2,7 @@
 
 Built from retrieved source (2026-10-14). **Coverage is partial:** profiles, permission set groups, roles, groups and sharing rules belong to
 the `routing` and `access` retrieval batches, which were still running when this page was written (see
-[Retrieval-Report.md](../07-Technical-Documents/Retrieval/Retrieval-Report.md)). INFERENCE marks interpretation.
+[Retrieval-Report.md](../2026-10/07-Technical/Retrieval/Retrieval-Report.md)). INFERENCE marks interpretation.
 
 ## Org-wide defaults (Confirmed, from object metadata)
 - **Custom objects:** every custom object is **Public Read/Write** or **Controlled by Parent** (master-detail children). None is Private or Read Only.
@@ -25,14 +25,14 @@ the `routing` and `access` retrieval batches, which were still running when this
 | UI and tools | Allow_Flows, Customize_Lightning_Pages, Listview_Manager, Data_cloud_tab_access, Use_Lightning_Content_Builder_With_CMS, USF_Flow_Action_Collection_Actions, USF_Flow_Screen_Component_Custom_Objects, Slack_Admin_User, Slack_Feedback_User |
 | Look like test or sample sets | abc, abc1, abcs, dreamhouse |
 
-The full list with licenses and permission counts is in [Metadata-Inventory/Permission-Sets.md](../07-Technical-Documents/Metadata-Inventory/Permission-Sets.md).
+The full list with licenses and permission counts is in [Metadata-Inventory/Permission-Sets.md](../2026-10/07-Technical/Metadata-Inventory/Permission-Sets.md).
 
 ## Custom permissions
 `Franchise_Type_Edit` and `Show_RPM_Bounceback_Fields`. The latter is granted by the permission set of the same name.
 
 ## Integration security
 - **Bypass:** integration triggers are bypassed through `Process_Switches__c` and the "Integration User".
-- **Credentials:** hardcoded in 7 Apex classes and 1 external credential ([CF-001](../05-Conflicts/2026-10-14-CF-001-hardcoded-credentials-in-org-apex-and-external-credential-so.md)). `TouchPoint_Callout__mdt` holds tokens (org only).
+- **Credentials:** hardcoded in 7 Apex classes and 1 external credential ([CON-002](../2026-10/05-Conflicts/CON-002_Hardcoded-Credentials-In-Org-Apex-And-External-Credential-Source.md)). `TouchPoint_Callout__mdt` holds tokens (org only).
 
 ## Risks to review (INFERENCE)
 - High-risk access: View_all_data, Query_All, Hard_Delete and the MFA exemption sets. Review who holds them.

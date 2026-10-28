@@ -37,10 +37,10 @@ class AutomationTest(unittest.TestCase):
             shutil.copytree(os.path.join(Epicare, d), os.path.join(self.tvm, d),
                             ignore=shutil.ignore_patterns("__pycache__", "tests"))
         shutil.copy(os.path.join(Epicare, ".gitignore"), self.tvm)
-        for d in ("01-Instructions", "03-Requirements", "04-Change-Records", "05-Conflicts", "06-Deployment",
-                  "07-Technical-Documents", "02-Knowledge-Base", "force-app/main/default/classes"):
+        for d in ("01-Instructions",
+                  "2026-10/07-Technical", "02-Knowledge-Base", "force-app/main/default/classes"):
             os.makedirs(os.path.join(self.tvm, d), exist_ok=True)
-        with open(os.path.join(self.tvm, "07-Technical-Documents", "Change-History.md"), "w") as fh:
+        with open(os.path.join(self.tvm, "2026-10/07-Technical", "Change-History.md"), "w") as fh:
             fh.write("# Change History\n\n| Date | Component | Change |\n|---|---|---|\n")
         cfg_path = os.path.join(self.tvm, "config", "project.json")
         cfg = json.load(open(cfg_path))
@@ -126,11 +126,11 @@ class AutomationTest(unittest.TestCase):
         p = self.autocommit()
         self.assertNotEqual(p.returncode, 0)
         self.assertIn("Change-History.md", p.stderr)
-        with open(os.path.join(self.tvm, "07-Technical-Documents", "Change-History.md"), "a") as fh:
+        with open(os.path.join(self.tvm, "2026-10/07-Technical", "Change-History.md"), "a") as fh:
             fh.write("| 2026-10-14 | ApexClass `Foo` | Added (REQ-001) |\n")
         p = self.autocommit()
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("Epicare/07-Technical-Documents/Metadata-Inventory/Apex-Classes.md", self.remote_files())
+        self.assertIn("Epicare/2026-10/07-Technical/Metadata-Inventory/Apex-Classes.md", self.remote_files())
 
     def test_invalid_xml_blocks(self):
         self.write("Epicare/config/bad.xml", "<a><b></a>\n")
@@ -187,17 +187,27 @@ class AutomationTest(unittest.TestCase):
         self.assertFalse(os.path.exists(os.path.join(self.tvm, ".project-state", "commit-message.txt")))
         self.assertFalse(any(".project-state" in f for f in self.remote_files()))
 
-    def test_new_doc_is_idempotent(self):
+    def test_new_doc_files_by_month_without_duplicates(self):
         nd = [sys.executable, os.path.join(self.tvm, "scripts", "new_doc.py")]
-        a = sh(nd + ["REQ", "Case routing", "--key", "req-case-routing", "--date", "2026-10-14"], self.tvm).stdout
-        b = sh(nd + ["REQ", "Case routing again", "--key", "req-case-routing", "--date", "2026-10-14"], self.tvm).stdout
-        c = sh(nd + ["REQ", "Another request", "--date", "2026-10-14"], self.tvm).stdout
-        self.assertIn("Created 03-Requirements/2026-10-14-REQ-001-case-routing.md", a)
+        a = sh(nd + ["REQ", "Case routing", "--month", "2026-11"], self.tvm).stdout
+        b = sh(nd + ["REQ", "Case routing", "--month", "2026-12"], self.tvm).stdout
+        c = sh(nd + ["REQ", "Another request", "--month", "2026-12"], self.tvm).stdout
+        self.assertIn("Created 2026-11/03-Requirements/REQ-001_Case-Routing.md", a)
         self.assertIn("Already exists", b)
-        self.assertIn("2026-10-14-REQ-002-another-request.md", c)
+        self.assertIn("Created 2026-12/03-Requirements/REQ-002_Another-Request.md", c)   # numbers run across months
+        for m in ("2026-11", "2026-12"):                                                  # full month structure created
+            self.assertTrue(os.path.exists(os.path.join(self.tvm, m, "MONTH-INDEX.md")))
+            self.assertTrue(os.path.isdir(os.path.join(self.tvm, m, "08-QA", "02-Manual-Testing")))
         p = self.autocommit()
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("Epicare/DOCUMENT-INDEX.md", self.remote_files())
+        self.assertIn("Epicare/2026-12/MONTH-INDEX.md", self.remote_files())
+
+    def test_document_outside_month_folder_blocks(self):
+        self.write("Epicare/05-Conflicts/CON-009_Loose-Document.md", "# CON-009 — Loose\n")
+        p = self.autocommit()
+        self.assertNotEqual(p.returncode, 0)
+        self.assertIn("filed by month", p.stderr)
 
     def test_guard_blocks_unsafe_commands(self):
         guard = [sys.executable, os.path.join(self.tvm, "scripts", "hooks", "guard.py")]

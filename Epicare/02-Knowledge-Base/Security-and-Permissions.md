@@ -1,8 +1,8 @@
 # Security and Permissions
 
 Built from retrieved profiles, permission sets, permission set groups, roles, groups, sharing rules and object settings (2026-10-15).
-INFERENCE marks interpretation. Full lists: [Permission-Sets](../07-Technical-Documents/Metadata-Inventory/Permission-Sets.md),
-[Profiles, groups and sharing](../07-Technical-Documents/Metadata-Inventory/Profiles-Groups-and-Sharing.md).
+INFERENCE marks interpretation. Full lists: [Permission-Sets](../2026-10/07-Technical/Metadata-Inventory/Permission-Sets.md),
+[Profiles, groups and sharing](../2026-10/07-Technical/Metadata-Inventory/Profiles-Groups-and-Sharing.md).
 
 ## Organization-wide defaults
 | Setting | Objects |
@@ -56,7 +56,7 @@ Segregation-of-duties validation rules:
   Review `View_Encrypted_Data` and the field permissions.
 - **Credential access sets:** four overlapping permission sets grant named or external credential access.
 - **Duplicate role sets:** two Commissions Director permission sets; one has a person-specific label.
-- **Credentials in custom labels:** see [CF-002](../05-Conflicts/2026-10-15-CF-002-nipr-credential-stored-in-custom-labels.md).
+- **Credentials in custom labels:** see [CON-002](../2026-10/05-Conflicts/CON-002_NIPR-Credential-Stored-In-Custom-Labels.md).
 
 ## History
 | Date | Change |

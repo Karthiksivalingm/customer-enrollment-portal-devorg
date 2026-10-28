@@ -102,7 +102,7 @@ def all_files():
     for root, dirs, files in os.walk(tvmlib.TVM_DIR):
         dirs[:] = [d for d in dirs if d not in (".git", ".sf", ".sfdx", "node_modules", ".tvm-state")]
         out += [os.path.join(root, f) for f in files]
-    excluded = secret_files()  # known, git-ignored credential files are reported by CF-001, not here
+    excluded = secret_files()  # known, git-ignored credential files are reported by CON-002, not here
     return [p for p in out if os.path.relpath(p, tvmlib.TVM_DIR).replace("\\", "/") not in excluded]
 
 

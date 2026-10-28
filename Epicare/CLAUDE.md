@@ -1,34 +1,29 @@
 # Epicare Salesforce: instructions for Claude
 
-This folder is the self-contained Epicare project inside the shared `sfdcut/SFDC` repository.
-Work only inside `Epicare/`. Never change, stage or commit any other project folder or repository-root file.
+This folder is the Epicare project inside the shared `sfdcut/SFDC` repository. Work only inside `Epicare/`. Never change, stage or commit
+any other project folder or repository-root file. Start Claude Code from the `Epicare/` folder so this file and `.claude/settings.json` load.
 
-**Read and follow the standing instructions imported below before doing any Epicare work.** Start Claude Code from the `Epicare/`
-folder so this file and the hooks in `.claude/settings.json` load. The hooks provide the org and Git guard, context reminders,
-and the end-of-turn validation.
-
-## Key points
-- **The only Salesforce org is alias `UTDEV`:** Epicare Insurance sandbox, Org ID `00DWB000008ALkv2AG`.
+## Project facts
+- **Org:** alias `UTDEV` (Epicare Insurance sandbox, Org ID `00DWB000008ALkv2AG`) is the only org.
   - `PROD` is production and is **never** used.
   - Run every `sf` command as `python scripts/sf_safe.py <args>`. It verifies the org and refuses org changes without `--approved <ID>`.
-- **Approvals:** never deploy, change records, activate Flows or delete anything without the user's explicit approval of that exact operation and target.
-  A Git push is never a deployment.
-- **Before a task:** read [Project-Overview.md](02-Knowledge-Base/Project-Overview.md) and the relevant
-  [Metadata-Inventory](07-Technical-Documents/Metadata-Inventory/README.md) pages. Retrieve the current version of each component before editing it.
-- **Source:** the real Salesforce source lives in `force-app/main/default/`. Documentation supplements it and never replaces it.
-- **Documentation, in the same turn as the work.** Routing is in Documentation-Rules.md:
-  - Every task received → a REQ record (`python scripts/new_doc.py REQ "<title>"`).
-  - Records changed → CR. Errors → CF. Deployments → DEP.
-  - Metadata changes → `07-Technical-Documents/`, plus a dated row in `07-Technical-Documents/Change-History.md`.
-  - Behaviour or architecture changes → `02-Knowledge-Base/`.
-- **Git:** the Stop hook validates every turn but does not commit. When the user asks to publish, run
-  `python scripts/autocommit.py -m "<subject>"`. That makes an Epicare-only commit and a normal push to `main`.
-- **Never invent** requirement IDs, approvals, record values, dates or test results. Write **TO BE CONFIRMED** instead.
-- **Credentials:** never print, copy or commit them.
-- **Index:** every document is listed in [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
+- **Monthly folders:** `01-Instructions` and `02-Knowledge-Base` are common at the root. All other documents live in `YYYY-MM/`
+  (Project-Rules section 2):
+  - `python scripts/new_doc.py REQ|CR|CON|DEP|TECH|ATR|MTC "<title>"` files a document in the current month. It creates the month folder and
+    `MONTH-INDEX.md` the first time.
+  - `python scripts/build_index.py` rebuilds `DOCUMENT-INDEX.md` and the month document lists.
+  - After the project lead approves ("all good"), update the month's `MONTH-INDEX.md` (Summary and Requirement history), then rebuild
+    the workbook: `& scripts\tracker\Build-MonthTracker.ps1 -Month YYYY-MM -ProjectRoot <full path of Epicare>`.
+- **Living documents** (component change history, generated metadata inventory, retrieval reports, deployment procedures) stay in
+  `2026-10/` and are updated in place. They are listed in `DOCUMENT-INDEX.md`.
+- **Credentials:** the NIPR credential sits in custom labels, so the labels file is kept out of Git (CON-002,
+  [config/secret-files.json](config/secret-files.json)). Never print, copy or commit credential values.
+- **Git:** the end-of-turn hook validates but does not commit. When the user asks to publish, run `python scripts/autocommit.py -m "<subject>"`.
+  That makes an Epicare-only commit and a normal push to `main`.
+- **Start here:** [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md) (requirement lookup) and [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md).
 
 ## Standing instructions (imported)
-@01-Instructions/Epicare-Working-Instructions.md
-@01-Instructions/Salesforce-Safety-Rules.md
-@01-Instructions/Documentation-Rules.md
-@01-Instructions/Git-Automation-Rules.md
+@01-Instructions/Project-Rules.md
+@01-Instructions/AI-Workflow.md
+@01-Instructions/Coding-Standards.md
+@01-Instructions/QA-Process.md

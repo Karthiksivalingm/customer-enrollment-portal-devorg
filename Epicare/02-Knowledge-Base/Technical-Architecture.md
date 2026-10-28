@@ -26,12 +26,12 @@ External: GO AMS / Supabase (callout:EventAPI + inbound platform events) · NIPR
 | Commission pipeline | `Upline_Policy__c` → `Upline_Policy_Created__e` → `UplinePolicyCreatedEventHandler` → `Commission_Record__c` (5 triggers) → `Payment_Batch__c` approval Flow → `Commission_Paid__e` → GO AMS | A change at any step affects payouts. Test bulk import, approval and the event chain end to end |
 | Payment approval | Flow `Payment_Batch_Approval_Commission_Records`; rule `Approver_not_equal_to_Submitter`; owner-based sharing for the approver role | The Flow re-fires every Commission_Record trigger for each record in the batch. Watch limits on large batches |
 | Agent activation | Contact validation rules (`EO_Required_for_Activation`, `NPN_Required`, `Onboarding_Forward_Only`), certifications, `Certification_Gate_Settings__mdt`, appointment Ready-to-Sell rules | Gate logic is spread across rules, Flows and triggers |
-| NIPR | Custom labels (URLs and credentials, CF-002), remote sites, `NAICProducerCode__c` triggers and Flows on Account and Contact | Credential rotation breaks NIPR until labels are replaced. Beta and production hosts both exist |
+| NIPR | Custom labels (URLs and credentials, CON-002), remote sites, `NAICProducerCode__c` triggers and Flows on Account and Contact | Credential rotation breaks NIPR until labels are replaced. Beta and production hosts both exist |
 | GO AMS | Named credential `EventAPI`, external credential `SF_Event_OAuth` (principal access through permission sets), integration profiles | Credential and permission changes stop event delivery. 4xx errors go to `Error_Log__c` |
 | Data retention | `Data_Retention_Rule__mdt` (Test_Mode), `DataRetentionEnforcement` batch (paused) | Turning off Test_Mode or resuming the job **deletes records** |
 
 ## Where to look before changing something
-1. [Metadata-Inventory](../07-Technical-Documents/Metadata-Inventory/README.md)
+1. [Metadata-Inventory](../2026-10/07-Technical/Metadata-Inventory/README.md)
 2. [Automation-and-Execution-Order.md](Automation-and-Execution-Order.md)
 3. [Integrations-and-External-Systems.md](Integrations-and-External-Systems.md)
 4. [Security-and-Permissions.md](Security-and-Permissions.md)

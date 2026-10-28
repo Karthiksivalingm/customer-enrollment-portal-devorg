@@ -44,13 +44,13 @@ How the TVM org is put together, from the retrieved source (2026-10-14). Detail 
 |---|---|---|
 | Case routing (`CalculateCaseDueDate`, `CaseAssignmentBatch*`) | `Case_Routing_Config__mdt` records, queue names (Group Name) and membership, `User.OOO__c`, Account technician fields, `Account.FNDN_Billed_Through_TVM__c` | Renaming a queue or request type breaks routing silently. INFERENCE: no error is raised |
 | Account / Opportunity save | 2 Account triggers + 24 active Flows; 1 Opportunity trigger + 57 active Flows | High risk of governor limits and ordering side effects. Test any change with bulk data |
-| TouchPoint sync | Inactive triggers, active Flows, hardcoded credentials (CF-001), `TouchPoint_Callout__mdt` | Credential rotation breaks the callouts until the code is changed |
+| TouchPoint sync | Inactive triggers, active Flows, hardcoded credentials (CON-002), `TouchPoint_Callout__mdt` | Credential rotation breaks the callouts until the code is changed |
 | Salesforce-to-Salesforce sharing | Label `FDConnectionId`, PartnerNetwork connection to the Foundation Direct org | Depends on a live connection in each environment |
 | Flows using screen components | Package-owned (no-namespace) LWC/Apex from flow component packages | Not in TVM source; must exist in the target org |
 | Email-to-case replies | `EmailToCaseReply` + email-service address (Setup) + hard-coded RecordTypeId | RecordType Ids differ between orgs. Check before deploying elsewhere |
 
 ## 4. Where to look before changing something
-1. [Metadata-Inventory](../07-Technical-Documents/Metadata-Inventory/README.md): every component with type, object, status.
+1. [Metadata-Inventory](../2026-10/07-Technical/Metadata-Inventory/README.md): every component with type, object, status.
 2. [Automation-and-Execution-Order.md](Automation-and-Execution-Order.md): everything that runs on the object.
 3. [Case-Routing-and-Omni-Channel.md](Case-Routing-and-Omni-Channel.md) and [Integrations-and-External-Systems.md](Integrations-and-External-Systems.md).
 4. [Security-and-Permissions.md](Security-and-Permissions.md): who can see and do what.

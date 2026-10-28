@@ -10,7 +10,7 @@ Usage (from TVM/):
 Commit subject: -m, else the first line of .tvm-state/commit-message.txt (Claude writes it before
 finishing; it is deleted after a successful commit), else a generated summary.
 
-Safety rules enforced here (see 01-Instructions/Git-Automation-Rules.md):
+Safety rules enforced here (see 01-Instructions/Project-Rules.md, section 9):
   * Only paths under TVM/ are ever staged, and always by explicit path (never `git add .` / `-A`).
   * Stops if the remote URL, branch, or pre-staged files are not as expected, or a merge/rebase is in progress.
   * Never force-pushes, never pushes to a protected branch, never changes the remote.
@@ -29,11 +29,11 @@ import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
 import tvmlib  # noqa: E402
+import monthlib  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TRAILER = "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
-RECORD_DIRS = {"03-Requirements": "REQ", "04-Change-Records": "CR", "05-Conflicts": "CF", "06-Deployment": "DEP"}
-GENERATED = ("07-Technical-Documents/Metadata-Inventory/", "DOCUMENT-INDEX.md")
+GENERATED = ("2026-10/07-Technical/Metadata-Inventory/", "DOCUMENT-INDEX.md")
 
 
 class Blocked(Exception):
@@ -181,39 +181,37 @@ def validate(paths, prefix):
         except (ValueError, ET.ParseError) as exc:
             problems.append(f"{p}: invalid {'JSON' if p.endswith('.json') else 'XML'} ({str(exc)[:120]})")
 
-    # 3. Dated records: filename and front matter agree
+    # 3. Monthly documents (Project-Rules section 2): YYYY-MM/<folder>/<PREFIX>-<NNN>_<Short-Title>.md
+    folder_prefix = {"03-Requirements": "REQ", "04-Change-Records": "CR", "05-Conflicts": "CON", "06-Deployment": "DEP",
+                     "07-Technical": "TECH", "08-QA/01-Automated-Testing": "ATR", "08-QA/02-Manual-Testing": "MTC"}
+    folders_rx = "|".join(re.escape(f) for f in folder_prefix)
     for p in existing:
         rel = p[len(prefix):]
-        folder = rel.split("/")[0]
-        if folder in RECORD_DIRS and rel.count("/") == 1 and rel.endswith(".md"):
-            name = os.path.basename(rel)
-            m = re.match(r"^(\d{4}-\d{2}-\d{2})-([A-Z]+)-(\d{3,})-[a-z0-9-]+\.md$", name)
-            if not m:
-                if re.match(r"^\d{4}-\d{2}-\d{2}-", name):
-                    problems.append(f"{p}: dated record name must be YYYY-MM-DD-{RECORD_DIRS[folder]}-NNN-slug.md")
-                continue
-            with open(to_local(p), encoding="utf-8") as fh:
-                head = fh.read(800)
-            fid = re.search(r"^id:\s*(\S+)", head, re.M)
-            fdate = re.search(r"^date:\s*(\S+)", head, re.M)
-            if m.group(2) != RECORD_DIRS[folder]:
-                problems.append(f"{p}: {m.group(2)} record in the {folder} folder (expected {RECORD_DIRS[folder]}).")
-            if not fid or fid.group(1) != f"{m.group(2)}-{m.group(3)}":
-                problems.append(f"{p}: front matter 'id' must be {m.group(2)}-{m.group(3)}.")
-            if not fdate or fdate.group(1) != m.group(1):
-                problems.append(f"{p}: front matter 'date' must match the filename date {m.group(1)}.")
+        m = re.match(rf"^(\d{{4}}-\d{{2}})/({folders_rx})/([^/]+\.md)$", rel)
+        if not m:
+            if re.match(r"^(03-Requirements|04-Change-Records|05-Conflicts|06-Deployment|07-Technical|08-QA)/", rel):
+                problems.append(f"{p}: documents are filed by month (YYYY-MM/...). Use python scripts/new_doc.py <TYPE> \"<title>\".")
+            continue
+        want, name = folder_prefix[m.group(2)], m.group(3)
+        dm = re.match(r"^([A-Z]+)-(\d{3})_[A-Za-z0-9][A-Za-z0-9-]*\.md$", name)
+        if dm and dm.group(1) != want:
+            problems.append(f"{p}: {dm.group(1)} document in {m.group(2)} (expected {want}-).")
+        elif not dm and re.match(r"^[A-Z]+-\d", name):
+            problems.append(f"{p}: name must be {want}-NNN_Short-Title-With-Hyphens.md.")
+        if not os.path.exists(to_local(prefix + m.group(1) + "/MONTH-INDEX.md")):
+            problems.append(f"{p}: {m.group(1)}/MONTH-INDEX.md is missing (python scripts/new_doc.py creates the month folder).")
 
-    # 4. Every changed Salesforce component is documented in 07-Technical-Documents/Change-History.md
+    # 4. Every changed Salesforce component is documented in 2026-10/07-Technical/Change-History.md
     src_prefix = prefix + "force-app/main/default/"
     components = sorted({component_of(p[len(src_prefix):]) for p in paths if p.startswith(src_prefix)})
     if components:
-        history = prefix + "07-Technical-Documents/Change-History.md"
+        history = prefix + os.path.relpath(monthlib.living_path("07-Technical", "Change-History.md"), monthlib.ROOT).replace("\\", "/")
         added = added_text(history) if history in paths else ""
         if not re.search(r"\[bulk:[^\]]+\]", added):
             missing = [c for c in components if c not in added]
             if missing:
                 problems.append(
-                    "Salesforce source changed but 07-Technical-Documents/Change-History.md has no new entry naming: "
+                    "Salesforce source changed but 2026-10/07-Technical/Change-History.md has no new entry naming: "
                     + ", ".join(missing[:25]) + (" …" if len(missing) > 25 else "")
                     + ". Add a dated row per component (or one row with [bulk: <manifest>] for a bulk retrieval), "
                     "and update the component's technical document and any affected Knowledge Base page.")

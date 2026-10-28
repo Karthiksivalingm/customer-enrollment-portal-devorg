@@ -2,10 +2,10 @@
 
 Built from the retrieved source (2026-10-15). INFERENCE marks interpretation.
 Full lists:
-- [Apex-Triggers](../07-Technical-Documents/Metadata-Inventory/Apex-Triggers.md)
-- [Flows](../07-Technical-Documents/Metadata-Inventory/Flows.md)
-- [Apex-Classes](../07-Technical-Documents/Metadata-Inventory/Apex-Classes.md)
-- [Trigger catalog](../07-Technical-Documents/Apex-Triggers/Trigger-Catalog.md)
+- [Apex-Triggers](../2026-10/07-Technical/Metadata-Inventory/Apex-Triggers.md)
+- [Flows](../2026-10/07-Technical/Metadata-Inventory/Flows.md)
+- [Apex-Classes](../2026-10/07-Technical/Metadata-Inventory/Apex-Classes.md)
+- [Trigger catalog](../2026-10/07-Technical/Apex-Triggers/Trigger-Catalog.md)
 
 ## 1. Scale and style
 - **Triggers:** 33, all Active.
@@ -64,7 +64,7 @@ There is **no guaranteed order between the 6 Contact triggers or the 5 Commissio
 | `License_Alert__e` | — | `LicenseAlertHelper` is called from `LicenseAlertBatch` |
 
 ## 4. Scheduled and batch processing
-- **17 scheduled Apex jobs** in UTDEV: 9 waiting, 8 paused. See [Scheduled-Jobs.md](../07-Technical-Documents/Scheduled-and-Batch-Jobs/Scheduled-Jobs.md).
+- **17 scheduled Apex jobs** in UTDEV: 9 waiting, 8 paused. See [Scheduled-Jobs.md](../2026-10/07-Technical/Scheduled-and-Batch-Jobs/Scheduled-Jobs.md).
 - **Main jobs:**
   - Daily policy-year increment.
   - Missing-payment check.

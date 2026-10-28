@@ -2,7 +2,7 @@
 
 Usage (from TVM/):  python scripts/check_retrieval.py
 Reads .tvm-state/retrieve/*.json (written by scripts/retrieve.py) and the source tree.
-Writes 07-Technical-Documents/Retrieval/Retrieval-Report.md. Exit 1 when a batch failed or in-scope
+Writes 2026-10/07-Technical/Retrieval/Retrieval-Report.md. Exit 1 when a batch failed or in-scope
 components are missing without an explanation. Offline.
 """
 import glob
@@ -15,11 +15,12 @@ import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
 import tvmlib  # noqa: E402
+import monthlib  # noqa: E402
 
 NS = "{http://soap.sforce.com/2006/04/metadata}"
 STATE = os.path.join(tvmlib.TVM_DIR, ".tvm-state", "retrieve")
 SRC = os.path.join(tvmlib.TVM_DIR, "force-app", "main", "default")
-# Known, explained gaps: (type, name) -> reason. Keep in step with 07-Technical-Documents/Metadata-Scope.md.
+# Known, explained gaps: (type, name) -> reason. Keep in step with 2026-10/07-Technical/Metadata-Scope.md.
 EXPLAINED = {}
 
 
@@ -91,7 +92,7 @@ def main():
            "## Warnings and errors reported by the Metadata API", "",
            *(["| Batch | Message |", "|---|---|", *warn_rows] if warn_rows else ["None."]), "",
            "## Files per source folder", "", "| Folder | Files |", "|---|---|", *per_dir]
-    tvmlib.write_if_changed(os.path.join(tvmlib.TVM_DIR, "07-Technical-Documents", "Retrieval", "Retrieval-Report.md"), "\n".join(doc) + "\n")
+    tvmlib.write_if_changed(monthlib.living_path("07-Technical", "Retrieval", "Retrieval-Report.md"), "\n".join(doc) + "\n")
     print(f"{total_got}/{total_in} named components returned; {total_files} files; unexplained problems: {problems}")
     sys.exit(1 if problems else 0)
 

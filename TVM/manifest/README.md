@@ -6,4 +6,4 @@
 | `releases/DEP-NNN-package.xml` | One manifest per deployment record (create when needed). |
 
 Retrieve the baseline: `python scripts/sf_safe.py project retrieve start --manifest manifest/package.xml --ignore-conflicts --wait 60`
-(check `git status` first so no uncommitted work is overwritten). Scope and exclusions: [07-Technical-Documents/Metadata-Scope.md](../07-Technical-Documents/Metadata-Scope.md).
+(check `git status` first so no uncommitted work is overwritten). Scope and exclusions: [2026-10/07-Technical/Metadata-Scope.md](../2026-10/07-Technical/Metadata-Scope.md).

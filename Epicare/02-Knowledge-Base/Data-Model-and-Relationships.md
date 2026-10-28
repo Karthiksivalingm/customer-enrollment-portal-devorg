@@ -2,7 +2,7 @@
 
 Built from `force-app/main/default/objects/` (retrieved 2026-10-15). Coverage: 48 objects. These are the unmanaged custom objects,
 platform events, custom settings and custom metadata types, plus the standard objects that carry unmanaged fields.
-Field-level detail for each object is in [Metadata-Inventory/Objects](../07-Technical-Documents/Metadata-Inventory/Objects-and-Fields.md).
+Field-level detail for each object is in [Metadata-Inventory/Objects](../2026-10/07-Technical/Metadata-Inventory/Objects-and-Fields.md).
 Purposes marked INFERENCE are read from names and fields. MD = master-detail; OWD = organization-wide default (internal / external).
 
 ## Core standard objects
@@ -39,7 +39,7 @@ See [Integrations](Integrations-and-External-Systems.md).
 | `Data_Retention_Rule__mdt` | 6 rules, all action Delete with `Test_Mode = true`. Retention: Banking_Info deactivated 3 years; Commission Estimated / Written-off 3; Commission exceptions resolved 3; Commission Paid 7; import logs 7; payment batches 7 |
 | Custom settings | `Retention_Export_Tracker__c` (last export date), `In_App_Checklist_Settings__c` |
 | Global value sets | `Line_of_Business` (Medicare, ACA, Life, Supplementary, Annuities, Health), `Medicare_Carriers` (8), `States` (57) |
-| Custom labels | 6: NIPR / PDB URLs and NIPR credentials. The labels file is excluded from Git ([CF-002](../05-Conflicts/2026-10-15-CF-002-nipr-credential-stored-in-custom-labels.md)) |
+| Custom labels | 6: NIPR / PDB URLs and NIPR credentials. The labels file is excluded from Git ([CON-002](../2026-10/05-Conflicts/CON-002_NIPR-Credential-Stored-In-Custom-Labels.md)) |
 
 ## Sensitive data held (for access reviews)
 - SSN fields on Contact and `DOI__c`.

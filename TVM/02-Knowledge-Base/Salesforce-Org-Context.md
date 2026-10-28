@@ -15,7 +15,7 @@
 | Production org | Not connected from this project. Production is out of scope. | — |
 
 Other orgs are authenticated on the developer machine (other clients' production orgs and sandboxes). TVM tooling refuses every alias
-except `Fullsandbox` ([Salesforce-Safety-Rules.md](../01-Instructions/Salesforce-Safety-Rules.md)).
+except `Fullsandbox` ([Project-Rules.md](../01-Instructions/Project-Rules.md)).
 
 ## Installed packages (2026-10-14, `sf package installed list`)
 

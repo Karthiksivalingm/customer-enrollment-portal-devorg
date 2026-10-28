@@ -47,7 +47,7 @@
 | [Security-and-Permissions.md](Security-and-Permissions.md) | OWD, roles, sharing, profiles, permission sets |
 | [Technical-Architecture.md](Technical-Architecture.md) | Layers and component dependencies |
 | [Known-Constraints.md](Known-Constraints.md) | Risks, limits, open questions |
-| [Metadata-Inventory](../07-Technical-Documents/Metadata-Inventory/README.md), [Retrieval report](../07-Technical-Documents/Retrieval/Retrieval-Report.md) | What is in source, and what could not be retrieved |
+| [Metadata-Inventory](../2026-10/07-Technical/Metadata-Inventory/README.md), [Retrieval report](../2026-10/07-Technical/Retrieval/Retrieval-Report.md) | What is in source, and what could not be retrieved |
 
 ## 5. Not determined
 - Business priorities and current requirements. No requirements have been received yet.

@@ -1,24 +1,22 @@
 # TVM — Salesforce (Team Velocity Marketing, Fullsandbox)
 
-Independent TVM project in the shared `sfdcut/SFDC` repository. `force-app/` mirrors the unmanaged metadata of the TVM Fullsandbox
-(alias `Fullsandbox`, Org ID `00DVa000006Eh6TMAS`). Work happens on branch `tvm/develop`.
+TVM project in the shared `sfdcut/SFDC` repository. `force-app/` mirrors the unmanaged metadata of the TVM Fullsandbox
+(alias `Fullsandbox`, Org ID `00DVa000006Eh6TMAS`).
 
-**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions/TVM-Working-Instructions.md](01-Instructions/TVM-Working-Instructions.md).
-Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
+**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions/Project-Rules.md](01-Instructions/Project-Rules.md).
+Every document, the requirement lookup and the next free numbers: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
 
-| Folder | Contents |
-|---|---|
-| [01-Instructions](01-Instructions/) | Permanent rules: working instructions, Salesforce safety, documentation, Git automation |
-| [02-Knowledge-Base](02-Knowledge-Base/) | Verified overview: org context, data model, architecture, automation, integrations, security, constraints |
-| [03-Requirements](03-Requirements/) | Dated REQ records |
-| [04-Change-Records](04-Change-Records/) | Dated CR records of actual record/data changes with verified before/after values |
-| [05-Conflicts](05-Conflicts/) | Dated CF records of errors and conflicts |
-| [06-Deployment](06-Deployment/) | Procedures, checklists and dated DEP records |
-| [07-Technical-Documents](07-Technical-Documents/) | Topic documents, generated inventories, component Change History |
-| `force-app/`, `manifest/`, `config/`, `sfdx-project.json` | Salesforce DX project (run commands from `TVM/`) |
-| [scripts](scripts/README.md) | Org verification, safe `sf` wrapper, generators, auto-commit, Claude Code hooks |
+```
+TVM/
+├── 01-Instructions/          common: AI-Workflow, Coding Standards, Project Rules, QA Process (read-only)
+├── 02-Knowledge-Base/        common: project overview, org context, data model, automation, integrations, security
+├── DOCUMENT-INDEX.md         master index
+├── YYYY-MM/                  one folder per month (MONTH-INDEX.md, YYYY-MM_Tracker.xlsx,
+│                             03-Requirements … 08-QA)
+├── force-app/, manifest/, config/, sfdx-project.json   Salesforce DX project
+└── scripts/                  sf_safe, retrieval, inventories, new_doc, build_index, tracker/Build-MonthTracker.ps1
+```
 
 ## Setup on a new machine
-1. `git switch tvm/develop`
-2. `sf org login web --alias Fullsandbox --instance-url https://test.salesforce.com` (your own sandbox user), then `python scripts/verify_org.py`.
-3. Start Claude Code from this `TVM/` folder.
+1. `sf org login web --alias Fullsandbox --instance-url https://test.salesforce.com` (your own sandbox user), then `python scripts/verify_org.py`.
+2. Start Claude Code from this `TVM/` folder.

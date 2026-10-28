@@ -1,7 +1,7 @@
 # Integrations and External Systems
 
 Built from retrieved source (2026-10-14). No credential values are recorded here. Hardcoded credentials found in source are tracked in
-[CF-001](../05-Conflicts/2026-10-14-CF-001-hardcoded-credentials-in-org-apex-and-external-credential-so.md).
+[CON-002](../2026-10/05-Conflicts/CON-002_Hardcoded-Credentials-In-Org-Apex-And-External-Credential-Source.md).
 INFERENCE marks statements not verified in code.
 
 ## 1. TouchPoint CRM (Quickbase): the main custom integration
@@ -21,7 +21,7 @@ Supporting pieces:
 - **Fields:** `Account.Touchpoint_Master_ID__c`, `Monthly_Budget__c.Sent_to_TP__c`.
 
 **Risks:**
-- Credentials are hardcoded in 7 classes (CF-001).
+- Credentials are hardcoded in 7 classes (CON-002).
 - INFERENCE: up to three Account sync paths could fire on one change: the trigger if reactivated, `TP_SYNCv2`, and `SendAccountToTouchpoint`.
 
 ## 2. Salesforce-to-Salesforce (Foundation Direct org)

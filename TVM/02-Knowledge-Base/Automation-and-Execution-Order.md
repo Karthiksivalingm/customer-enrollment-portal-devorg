@@ -1,9 +1,9 @@
 # Automation and Execution Order
 
 Built from the retrieved source (`force-app/main/default/`, retrieved 2026-10-14). Statements marked **INFERENCE** come from names or
-partial reading, not verified behaviour. Full lists: [Apex-Triggers](../07-Technical-Documents/Metadata-Inventory/Apex-Triggers.md),
-[Flows](../07-Technical-Documents/Metadata-Inventory/Flows.md), [Apex-Classes](../07-Technical-Documents/Metadata-Inventory/Apex-Classes.md),
-[Automation-Rules](../07-Technical-Documents/Metadata-Inventory/Automation-Rules.md).
+partial reading, not verified behaviour. Full lists: [Apex-Triggers](../2026-10/07-Technical/Metadata-Inventory/Apex-Triggers.md),
+[Flows](../2026-10/07-Technical/Metadata-Inventory/Flows.md), [Apex-Classes](../2026-10/07-Technical/Metadata-Inventory/Apex-Classes.md),
+[Automation-Rules](../2026-10/07-Technical/Metadata-Inventory/Automation-Rules.md).
 
 ## 1. Scale
 - **620 Flows:** 428 autolaunched, 169 screen, 16 routing, 7 survey. By status: 483 Active, 91 Obsolete, 42 Draft, 4 InvalidDraft.

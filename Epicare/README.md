@@ -3,20 +3,19 @@
 Epicare project in the shared `sfdcut/SFDC` repository. `force-app/` mirrors the unmanaged metadata of the Epicare Insurance sandbox
 (alias `UTDEV`, Org ID `00DWB000008ALkv2AG`).
 
-**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions/Epicare-Working-Instructions.md](01-Instructions/Epicare-Working-Instructions.md).
-Every document: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
+**Start here:** [CLAUDE.md](CLAUDE.md) → [01-Instructions/Project-Rules.md](01-Instructions/Project-Rules.md).
+Every document, the requirement lookup and the next free numbers: [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md).
 
-| Folder | Contents |
-|---|---|
-| [01-Instructions](01-Instructions/) | Permanent rules: working instructions, Salesforce safety, documentation, Git automation |
-| [02-Knowledge-Base](02-Knowledge-Base/) | Verified overview of the Epicare org: data model, automation, security, integrations, constraints |
-| [03-Requirements](03-Requirements/) | Dated REQ records |
-| [04-Change-Records](04-Change-Records/) | Dated CR records of actual, authorized record changes |
-| [05-Conflicts](05-Conflicts/) | Dated CF records of errors and conflicts |
-| [06-Deployment](06-Deployment/) | Procedures, checklists, dated DEP records |
-| [07-Technical-Documents](07-Technical-Documents/) | Technical documents, generated inventories, component change history |
-| `force-app/`, `manifest/`, `config/`, `sfdx-project.json` | Salesforce DX project (run commands from `Epicare/`) |
-| [scripts](scripts/README.md) | Org verification, safe `sf` wrapper, manifest and retrieval, generators, validation and commit, Claude Code hooks |
+```
+Epicare/
+├── 01-Instructions/          common: AI-Workflow, Coding Standards, Project Rules, QA Process (read-only)
+├── 02-Knowledge-Base/        common: project overview, org context, data model, automation, integrations, security
+├── DOCUMENT-INDEX.md         master index
+├── YYYY-MM/                  one folder per month (MONTH-INDEX.md, YYYY-MM_Tracker.xlsx,
+│                             03-Requirements … 08-QA)
+├── force-app/, manifest/, config/, sfdx-project.json   Salesforce DX project
+└── scripts/                  sf_safe, retrieval, inventories, new_doc, build_index, tracker/Build-MonthTracker.ps1
+```
 
 ## Setup on a new machine
 1. `sf org login web --alias UTDEV --instance-url https://test.salesforce.com` (your own sandbox user), then `python scripts/verify_org.py`.

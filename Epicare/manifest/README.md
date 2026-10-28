@@ -6,4 +6,4 @@
 | `releases/DEP-NNN-package.xml` | One manifest per deployment record (create when needed). |
 
 Retrieve: `python scripts/retrieve.py` (batches, verifies UTDEV before each batch, refuses to overwrite uncommitted source).
-Then `python scripts/check_retrieval.py`. Scope: [07-Technical-Documents/Metadata-Scope.md](../07-Technical-Documents/Metadata-Scope.md).
+Then `python scripts/check_retrieval.py`. Scope: [2026-10/07-Technical/Metadata-Scope.md](../2026-10/07-Technical/Metadata-Scope.md).

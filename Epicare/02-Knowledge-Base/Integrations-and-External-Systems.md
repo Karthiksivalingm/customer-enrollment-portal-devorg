@@ -20,18 +20,18 @@ Built from the retrieved source (2026-10-15). No credential values are recorded.
 | Item | Detail |
 |---|---|
 | Endpoints | Custom labels `NPN_uRL`, `SSN_URL`, `Targetsurl`, `pdb_alerts_Url`. Remote sites: production `pdb-xml-reports.api.nipr.com`, `pdb-alerts-industry-services.api.nipr.com`; beta hosts as well. **`prodpdp1` points to the beta host despite its name** |
-| Auth | Basic auth built from custom labels `Nipr_username` / `Nipr_password`. **Credential stored in labels**: [CF-002](../05-Conflicts/2026-10-15-CF-002-nipr-credential-stored-in-custom-labels.md) |
+| Auth | Basic auth built from custom labels `Nipr_username` / `Nipr_password`. **Credential stored in labels**: [CON-002](../2026-10/05-Conflicts/CON-002_NIPR-Credential-Stored-In-Custom-Labels.md) |
 | Functions | NPN lookup and SSN lookup: Aura `NPN`, `SearchAccountNPN`; LWC `ssnSearchButtona`; invocable `NIPRforFlow` used by the Flow `Account_Agent_Onboarding`. Adding and removing PDB alert "targets": Account, Contact and `NAICProducerCode__c` triggers. Scheduled PDB alerts and NPN refresh: `NiprpDbalertsQueueable`, `ScheduledAccountNpnUpdate`, `ScheduledContactNpnUpdate`, `NIPRStaleCheckScheduler` |
 | Objects written | Contact, Account, `DOI__c`, `LOA__c` |
 | Errors | try/catch with `System.debug` only. No `Error_Log__c`. INFERENCE: failures are silent |
 
 ## 3. Other
 - **No inbound Apex endpoints:** no `@RestResource`, SOAP web service or email-service handler.
-- **Connected apps:** `CPQIntegrationUserApp` could not be retrieved ([CF-001](../05-Conflicts/2026-10-15-CF-001-metadata-api-failed-to-return-sample-reports-dashboard-and-a.md)).
+- **Connected apps:** `CPQIntegrationUserApp` could not be retrieved ([CON-001](../2026-10/05-Conflicts/CON-001_Metadata-API-Failed-To-Return-Sample-Reports-Dashboard-And-A-Connected.md)).
 - **Packages:** Sales Insights (`OIQ`) and Salesforce Connected Apps. No third-party integration packages.
 
 ## Risks (INFERENCE)
-- NIPR credentials in custom labels (CF-002). NIPR failures are not logged.
+- NIPR credentials in custom labels (CON-002). NIPR failures are not logged.
 - `prodpdp1` remote site naming vs host.
 - Possible double NIPR target registration on Contact create ([Automation](Automation-and-Execution-Order.md)).
 - `AMS` and `Go_AMS` external credentials are configured but unused.
