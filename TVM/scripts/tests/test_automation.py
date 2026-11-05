@@ -198,6 +198,16 @@ class AutomationTest(unittest.TestCase):
         self.assertIn("TVM/DOCUMENT-INDEX.md", self.remote_files())
         self.assertIn("TVM/2026-12/MONTH-INDEX.md", self.remote_files())
 
+    def test_session_start_creates_current_month(self):
+        month = __import__("datetime").date.today().strftime("%Y-%m")
+        shutil.rmtree(os.path.join(self.tvm, month), ignore_errors=True)
+        p = sh([sys.executable, os.path.join(self.tvm, "scripts", "hooks", "session_context.py"), "start"], self.tvm)
+        self.assertIn(f"New month: created {month}/", p.stdout)
+        self.assertTrue(os.path.exists(os.path.join(self.tvm, month, "MONTH-INDEX.md")))
+        self.assertTrue(os.path.isdir(os.path.join(self.tvm, month, "08-QA", "01-Automated-Testing")))
+        p = sh([sys.executable, os.path.join(self.tvm, "scripts", "hooks", "session_context.py"), "start"], self.tvm)
+        self.assertNotIn("New month", p.stdout)   # only once per month
+
     def test_document_outside_month_folder_blocks(self):
         self.write("TVM/05-Conflicts/CON-009_Loose-Document.md", "# CON-009 — Loose\n")
         p = self.autocommit()

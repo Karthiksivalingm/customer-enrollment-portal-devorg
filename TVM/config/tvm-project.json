@@ -14,9 +14,8 @@
   "git": {
     "remoteName": "origin",
     "remoteUrl": "https://github.com/sfdcut/SFDC.git",
-    "workingBranch": "tvm/develop",
+    "workingBranch": "main",
     "protectedBranches": [
-      "main",
       "master"
     ],
     "autoCommit": true,

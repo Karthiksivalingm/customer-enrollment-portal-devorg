@@ -113,6 +113,7 @@ def update_month_index(month):
 def build():
     cfg = plib.load_config()
     name = cfg.get("project", os.path.basename(ROOT))
+    monthlib.ensure_month()  # a new month gets its folder as soon as the month starts (Project-Rules section 2)
     months = monthlib.months()
     for m in months:
         monthlib.ensure_month(m)  # a month folder created by hand gets its full structure and MONTH-INDEX.md

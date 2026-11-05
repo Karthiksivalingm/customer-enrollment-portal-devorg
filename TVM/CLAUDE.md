@@ -8,8 +8,8 @@ other project folder or repository-root file. Start Claude Code from the `TVM/` 
   `python scripts/sf_safe.py <args>`. It verifies the org and refuses org changes without `--approved <ID>`.
 - **Monthly folders:** `01-Instructions` and `02-Knowledge-Base` are common at the root. All other documents live in `YYYY-MM/`
   (Project-Rules section 2):
-  - `python scripts/new_doc.py REQ|CR|CON|DEP|TECH|ATR|MTC "<title>"` files a document in the current month. It creates the month folder and
-    `MONTH-INDEX.md` the first time.
+  - `python scripts/new_doc.py REQ|CR|CON|DEP|TECH|ATR|MTC "<title>"` files a document in the current month. The current month's folder (03 to 08 and
+    `MONTH-INDEX.md`) is created automatically at the start of each month by the session hook and by `build_index.py`.
   - `python scripts/build_index.py` rebuilds `DOCUMENT-INDEX.md` and the month document lists.
   - After the project lead approves ("all good"), update the month's `MONTH-INDEX.md` (Summary and Requirement history), then rebuild
     the workbook: `& scripts\tracker\Build-MonthTracker.ps1 -Month YYYY-MM -ProjectRoot <full path of TVM>`.
@@ -19,6 +19,8 @@ other project folder or repository-root file. Start Claude Code from the `TVM/` 
   out of Git (CON-002). Never print, copy or commit credential values.
 - **End-of-turn hook:** `scripts/autocommit.py` validates (secrets, XML/JSON, document names, Change History). It commits and pushes only on the branch set in
   `config/tvm-project.json`, and stops on any other branch.
+- **Git:** standing instruction from the user: every TVM change is committed and pushed to `main` without asking. The end-of-turn hook runs
+  `scripts/autocommit.py`, which makes a TVM-only commit (explicit paths, secret scan) and a normal push.
 - **Start here:** [DOCUMENT-INDEX.md](DOCUMENT-INDEX.md) (requirement lookup) and [02-Knowledge-Base/Project-Overview.md](02-Knowledge-Base/Project-Overview.md).
 
 ## Standing instructions (imported)
