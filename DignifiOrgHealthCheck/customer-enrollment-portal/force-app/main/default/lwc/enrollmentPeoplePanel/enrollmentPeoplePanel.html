@@ -1,0 +1,46 @@
+<template>
+  <template lwc:if={isEnrollment}>
+    <lightning-card title={cardTitle} icon-name="standard:contact">
+      <div class="slds-p-horizontal_medium">
+        <template lwc:if={message}>
+          <div
+            class="slds-notify slds-notify_alert slds-alert_warning slds-m-bottom_small"
+            role="alert"
+          >
+            <span class="slds-assistive-text">Warning</span>
+            <h2>{message}</h2>
+          </div>
+        </template>
+
+        <template lwc:if={isConverted}>
+          <div class="slds-box slds-theme_shade slds-m-bottom_small">
+            <p>
+              This enrollment was converted.
+              <template lwc:if={accountUrl}>
+                <a href={accountUrl}>View the Account</a>
+              </template>
+            </p>
+          </div>
+        </template>
+
+        <template lwc:if={hasPeople}>
+          <div class="panel-table">
+            <lightning-datatable
+              key-field="id"
+              data={rows}
+              columns={columns}
+              hide-checkbox-column
+              resize-column-disabled
+            ></lightning-datatable>
+          </div>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
+
+  <template lwc:elseif={loadError}>
+    <lightning-card title="Roles" icon-name="standard:contact">
+      <p class="slds-p-horizontal_medium slds-text-color_error">{loadError}</p>
+    </lightning-card>
+  </template>
+</template>

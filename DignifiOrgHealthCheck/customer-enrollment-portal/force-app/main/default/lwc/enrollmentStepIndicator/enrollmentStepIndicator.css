@@ -1,0 +1,103 @@
+@import "c/enrollmentStyles";
+
+.ep-steps__summary {
+  display: none;
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ep-color-text-muted);
+}
+
+.ep-steps__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ep-steps__item {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+/* Connector line between steps. */
+.ep-steps__item + .ep-steps__item::before {
+  content: "";
+  position: absolute;
+  top: 1.125rem;
+  right: calc(50% + 1.5rem);
+  left: calc(-50% + 1.5rem);
+  height: 2px;
+  background: var(--ep-color-border);
+}
+
+.ep-steps__item--complete + .ep-steps__item::before {
+  background: var(--ep-color-primary);
+}
+
+.ep-steps__marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid var(--ep-color-border);
+  border-radius: 50%;
+  background: var(--ep-color-surface);
+  color: var(--ep-color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.ep-steps__check {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.ep-steps__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ep-color-text-muted);
+}
+
+.ep-steps__item--current .ep-steps__marker {
+  border-color: var(--ep-color-primary);
+  background: var(--ep-color-primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px var(--ep-color-primary-soft);
+}
+
+.ep-steps__item--current .ep-steps__label {
+  color: var(--ep-color-text);
+}
+
+.ep-steps__item--complete .ep-steps__marker {
+  border-color: var(--ep-color-primary);
+  background: var(--ep-color-primary-soft);
+  color: var(--ep-color-primary);
+}
+
+.ep-steps__item--complete .ep-steps__label {
+  color: var(--ep-color-text);
+}
+
+/* Small screens: show a text summary and markers only. */
+@media (max-width: 479px) {
+  .ep-steps__summary {
+    display: block;
+  }
+
+  .ep-steps__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}

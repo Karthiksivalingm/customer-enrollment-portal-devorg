@@ -1,0 +1,69 @@
+<template>
+  <div class="ep-review">
+    <section class="ep-review__block" aria-labelledby="review-company-title">
+      <div class="ep-review__block-header">
+        <h3 id="review-company-title" class="ep-review__block-title">
+          Company information
+        </h3>
+        <button
+          type="button"
+          class="ep-button ep-button--ghost ep-button--small"
+          aria-label="Edit company information"
+          data-id="edit-company"
+          onclick={handleEditCompany}
+        >
+          Edit
+        </button>
+      </div>
+      <dl class="ep-review__list">
+        <template for:each={companyRows} for:item="row">
+          <div key={row.key} class={row.rowClass}>
+            <dt class="ep-review__term">{row.label}</dt>
+            <dd class={row.valueClass}>{row.value}</dd>
+          </div>
+        </template>
+      </dl>
+    </section>
+
+    <section class="ep-review__block" aria-labelledby="review-people-title">
+      <div class="ep-review__block-header">
+        <h3 id="review-people-title" class="ep-review__block-title">
+          {peopleHeading}
+        </h3>
+        <button
+          type="button"
+          class="ep-button ep-button--ghost ep-button--small"
+          aria-label="Edit contacts"
+          data-id="edit-people"
+          onclick={handleEditPeople}
+        >
+          Edit
+        </button>
+      </div>
+      <ul class="ep-review__people">
+        <template for:each={personRows} for:item="person">
+          <li
+            key={person.key}
+            class="ep-review__person"
+            data-id="review-person"
+          >
+            <p class="ep-review__person-name">
+              <span class="ep-review__person-badge" aria-hidden="true"
+                >{person.number}</span
+              >
+              <span>{person.fullName}</span>
+            </p>
+            <dl class="ep-review__person-details">
+              <template for:each={person.details} for:item="detail">
+                <div key={detail.key} class="ep-review__row">
+                  <dt class="ep-review__term">{detail.label}</dt>
+                  <dd class={detail.valueClass}>{detail.value}</dd>
+                </div>
+              </template>
+            </dl>
+          </li>
+        </template>
+      </ul>
+    </section>
+  </div>
+</template>

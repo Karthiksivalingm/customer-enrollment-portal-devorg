@@ -1,0 +1,117 @@
+@import "c/enrollmentStyles";
+
+.ep-review {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ep-review__block {
+  padding: 1.5rem;
+  border: 1px solid var(--ep-color-border);
+  border-radius: var(--ep-radius-md);
+  background: var(--ep-color-surface);
+}
+
+.ep-review__block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ep-color-border);
+}
+
+.ep-review__block-title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--ep-color-text);
+}
+
+.ep-review__list,
+.ep-review__person-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 0;
+}
+
+.ep-review__row--full {
+  grid-column: 1 / -1;
+}
+
+.ep-review__term {
+  margin: 0 0 0.125rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ep-color-text-muted);
+}
+
+.ep-review__value {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--ep-color-text);
+  overflow-wrap: anywhere;
+}
+
+.ep-review__value--empty {
+  font-style: italic;
+  color: var(--ep-color-text-muted);
+}
+
+.ep-review__people {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ep-review__person {
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--ep-color-border);
+  border-radius: var(--ep-radius-sm);
+  background: var(--ep-color-background);
+}
+
+.ep-review__person-name {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 0 0.875rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.ep-review__person-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--ep-color-primary-soft);
+  color: var(--ep-color-primary);
+  font-size: 0.8125rem;
+}
+
+.ep-review__person-details {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.625rem;
+}
+
+@media (max-width: 767px) {
+  .ep-review__block {
+    padding: 1.125rem;
+  }
+
+  .ep-review__list,
+  .ep-review__people {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,17 @@
+<template>
+  <div class="ep-grid">
+    <template for:each={fields} for:item="item">
+      <c-enrollment-field
+        key={item.key}
+        class={item.gridClass}
+        data-name={item.key}
+        field={item.config}
+        options={item.options}
+        value={item.value}
+        error={item.error}
+        onvaluechange={handleValueChange}
+        onfieldblur={handleFieldBlur}
+      ></c-enrollment-field>
+    </template>
+  </div>
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollment_Source_Lead__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Customer enrollment: the enrollment Lead this Contact was created from.</description>
+    <externalId>false</externalId>
+    <label>Enrollment Source Lead</label>
+    <referenceTo>Lead</referenceTo>
+    <relationshipLabel>Enrollment Contacts</relationshipLabel>
+    <relationshipName>Enrollment_Contacts</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Customer Enrollment Portal</masterLabel>
+    <description
+  >Full enrollment page: header, welcome, multi-step enrollment form, and footer.</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+        name="brandName"
+        type="String"
+        label="Company / brand name"
+        default="Your Company"
+        description="Shown in the header, footer, and copyright line."
+      />
+            <property
+        name="supportEmail"
+        type="String"
+        label="Contact email"
+        description="Shown in the footer. Leave blank to show a placeholder."
+      />
+            <property
+        name="supportPhone"
+        type="String"
+        label="Contact phone"
+        description="Shown in the footer. Leave blank to show a placeholder."
+      />
+            <property
+        name="privacyPolicyUrl"
+        type="String"
+        label="Privacy Policy URL"
+        description="Full https:// URL or a site path starting with /. Leave blank to show a placeholder."
+      />
+            <property
+        name="termsUrl"
+        type="String"
+        label="Terms of Use URL"
+        description="Full https:// URL or a site path starting with /. Leave blank to show a placeholder."
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

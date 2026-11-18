@@ -1,0 +1,59 @@
+@import "c/enrollmentStyles";
+
+.ep-person {
+  padding: 1.5rem;
+  background: var(--ep-color-surface);
+  border: 1px solid var(--ep-color-border);
+  border-radius: var(--ep-radius-md);
+  box-shadow: 0 1px 2px rgba(15, 42, 73, 0.05);
+}
+
+.ep-person__header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ep-color-border);
+}
+
+.ep-person__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--ep-color-primary-soft);
+  color: var(--ep-color-primary);
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.ep-person__heading {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ep-person__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ep-color-text);
+}
+
+.ep-person__subtitle {
+  margin: 0.125rem 0 0;
+  font-size: 0.875rem;
+  color: var(--ep-color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .ep-person {
+    padding: 1.125rem;
+  }
+}

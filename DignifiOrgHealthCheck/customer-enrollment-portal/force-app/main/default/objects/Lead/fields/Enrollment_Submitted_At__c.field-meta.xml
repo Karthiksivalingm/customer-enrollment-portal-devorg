@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollment_Submitted_At__c</fullName>
+    <description>Customer enrollment: server time the enrollment form was submitted.</description>
+    <externalId>false</externalId>
+    <label>Enrollment Submitted At</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

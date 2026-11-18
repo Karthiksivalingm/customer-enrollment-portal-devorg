@@ -1,0 +1,26 @@
+@import "c/enrollmentStyles";
+
+.ep-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--ep-color-background);
+}
+
+.ep-page__content {
+  flex: 1 0 auto;
+}
+
+.ep-page__form {
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+  /* Leaves room above the form when it is scrolled into view. */
+  scroll-margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .ep-page__form {
+    padding-top: 1.75rem;
+    padding-bottom: 2.5rem;
+  }
+}

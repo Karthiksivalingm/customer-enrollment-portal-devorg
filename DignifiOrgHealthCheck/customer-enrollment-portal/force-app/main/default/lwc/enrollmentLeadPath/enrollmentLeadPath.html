@@ -1,0 +1,66 @@
+<template>
+  <template lwc:if={isVisible}>
+    <article class="slds-card">
+      <div class="slds-card__body slds-card__body_inner slds-p-vertical_small">
+        <div class="slds-path">
+          <div class="slds-grid slds-path__track">
+            <div class="slds-grid slds-path__scroller-container">
+              <div class="slds-path__scroller">
+                <div class="slds-path__scroller_inner">
+                  <ul
+                    class="slds-path__nav"
+                    role="listbox"
+                    aria-orientation="horizontal"
+                    aria-label="Lead Status"
+                  >
+                    <template for:each={stages} for:item="stage">
+                      <li
+                        key={stage.value}
+                        class={stage.itemClass}
+                        role="presentation"
+                      >
+                        <a
+                          aria-selected={stage.ariaSelected}
+                          class="slds-path__link"
+                          href="#"
+                          role="option"
+                          tabindex={stage.tabIndex}
+                          data-value={stage.value}
+                          onclick={handleSelect}
+                        >
+                          <span class="slds-path__stage">
+                            <lightning-icon
+                              icon-name="utility:check"
+                              size="xx-small"
+                              variant="inverse"
+                            ></lightning-icon>
+                            <span class="slds-assistive-text"
+                              >{stage.assistiveText}</span
+                            >
+                          </span>
+                          <span class="slds-path__title">{stage.label}</span>
+                        </a>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <template lwc:if={showAction}>
+              <div class="slds-grid slds-path__action">
+                <lightning-button
+                  variant="brand"
+                  class="slds-path__mark-complete"
+                  label={actionLabel}
+                  icon-name={actionIcon}
+                  disabled={isActionDisabled}
+                  onclick={handleAction}
+                ></lightning-button>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+</template>

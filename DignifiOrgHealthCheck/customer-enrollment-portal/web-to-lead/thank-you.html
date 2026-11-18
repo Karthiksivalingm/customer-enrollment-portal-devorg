@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enrollment submitted</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="ep-embed">
+      <div class="ep-card ep-confirmation">
+        <span class="ep-confirmation__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path fill="currentColor" d="M9.6 17.4 4.4 12.2l1.8-1.8 3.4 3.4 8.2-8.2 1.8 1.8-10 10Z"></path>
+          </svg>
+        </span>
+        <h1 class="ep-confirmation__title">Thank you. Your enrollment has been submitted.</h1>
+        <!-- Web-to-Lead always redirects here; it cannot report server-side results. -->
+        <p class="ep-confirmation__text">
+          We have received your company details and contact information.
+          Our team will review your enrollment and contact you shortly.
+        </p>
+        <div class="ep-confirmation__next">
+          <h2 class="ep-confirmation__next-title">What happens next</h2>
+          <ol class="ep-confirmation__steps">
+            <li>Our team reviews the information you submitted.</li>
+            <li>We contact you if we need to confirm any details.</li>
+            <li>Once approved, your company and team are set up with us.</li>
+          </ol>
+        </div>
+      </div>
+    </main>
+    <script src="embed.js"></script>
+    <script>
+      // Lets an embedding page scroll the confirmation into view.
+      window.EPEmbed.notify("submitted");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollment_Channel__c</fullName>
+    <description>Customer enrollment: submission channel. Set only by Apex (EnrollmentWebToLeadService) to "Web-to-Lead" for Leads from the Web-to-Lead enrollment form. Blank on Experience Cloud enrollment Leads and ordinary Leads. A label, not proof of origin.</description>
+    <externalId>false</externalId>
+    <label>Enrollment Channel</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Web-to-Lead</fullName>
+                <default>false</default>
+                <label>Web-to-Lead</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

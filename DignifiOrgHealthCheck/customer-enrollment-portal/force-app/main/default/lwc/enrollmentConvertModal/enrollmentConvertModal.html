@@ -1,0 +1,256 @@
+<template>
+  <lightning-modal-header label="Convert Lead">
+    Creates one Account and one Contact for every submitted contact, then
+    converts the Lead.
+  </lightning-modal-header>
+
+  <lightning-modal-body>
+    <template lwc:if={isLoading}>
+      <div class="spinner-holder">
+        <lightning-spinner
+          alternative-text="Loading enrollment"
+          size="medium"
+        ></lightning-spinner>
+      </div>
+    </template>
+
+    <template lwc:if={errorMessage}>
+      <div
+        class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_medium"
+        role="alert"
+        data-id="error"
+      >
+        <span class="slds-assistive-text">Error</span>
+        <h2>{errorMessage}</h2>
+      </div>
+    </template>
+
+    <template lwc:if={hasWarnings}>
+      <div
+        class="slds-box slds-theme_warning slds-m-bottom_medium"
+        role="status"
+      >
+        <p class="slds-text-heading_small slds-m-bottom_x-small">
+          Please review
+        </p>
+        <ul class="slds-list_dotted">
+          <template for:each={warnings} for:item="warning">
+            <li key={warning}>{warning}</li>
+          </template>
+        </ul>
+      </div>
+    </template>
+
+    <template lwc:if={showForm}>
+      <h3 class="slds-text-heading_small slds-m-bottom_small">Account</h3>
+      <lightning-radio-group
+        label="Account"
+        variant="label-hidden"
+        options={accountModeOptions}
+        value={accountMode}
+        type="button"
+        class="slds-m-bottom_small"
+        onchange={handleAccountModeChange}
+      ></lightning-radio-group>
+      <template lwc:if={isExistingAccount}>
+        <div class="slds-m-bottom_large">
+          <lightning-record-picker
+            label="Existing Account"
+            placeholder="Search Accounts..."
+            object-api-name="Account"
+            required
+            value={existingAccountId}
+            onchange={handleExistingAccountChange}
+          ></lightning-record-picker>
+        </div>
+      </template>
+      <div class={accountFieldsClass}>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            label="Account name"
+            required
+            max-length="255"
+            value={account.name}
+            data-section="account"
+            data-field="name"
+            onchange={handleAccountChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            label="Website"
+            max-length="255"
+            value={account.website}
+            data-section="account"
+            data-field="website"
+            onchange={handleAccountChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            type="tel"
+            label="Phone"
+            max-length="40"
+            value={account.phone}
+            data-section="account"
+            data-field="phone"
+            onchange={handleAccountChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            label="Street"
+            max-length="255"
+            value={account.street}
+            data-section="account"
+            data-field="street"
+            onchange={handleAccountChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            label="City"
+            max-length="40"
+            value={account.city}
+            data-section="account"
+            data-field="city"
+            onchange={handleAccountChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            label="Postal code"
+            max-length="20"
+            value={account.postalCode}
+            data-section="account"
+            data-field="postalCode"
+            onchange={handleAccountChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-combobox
+            label="Country"
+            placeholder="Select a country"
+            options={countryOptions}
+            value={account.countryCode}
+            data-section="account"
+            data-field="countryCode"
+            onchange={handleAccountChange}
+          ></lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-combobox
+            label="State / Province"
+            placeholder={statePlaceholder}
+            options={stateOptions}
+            value={account.stateCode}
+            disabled={noStates}
+            data-section="account"
+            data-field="stateCode"
+            onchange={handleAccountChange}
+          ></lightning-combobox>
+        </div>
+      </div>
+
+      <h3 class="slds-text-heading_small slds-m-bottom_small">
+        Contacts to create ({people.length})
+      </h3>
+      <template for:each={people} for:item="person">
+        <div key={person.id} class="slds-box slds-m-bottom_small person-box">
+          <p class="slds-text-title_bold slds-m-bottom_x-small">
+            {person.position}
+          </p>
+          <div class="slds-grid slds-wrap slds-gutters_small">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+              <lightning-input
+                label="First name"
+                required
+                max-length="40"
+                value={person.firstName}
+                data-section="person"
+                data-person={person.id}
+                data-field="firstName"
+                onchange={handlePersonChange}
+              ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+              <lightning-input
+                label="Last name"
+                required
+                max-length="80"
+                value={person.lastName}
+                data-section="person"
+                data-person={person.id}
+                data-field="lastName"
+                onchange={handlePersonChange}
+              ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+              <lightning-input
+                type="email"
+                label="Email"
+                required
+                max-length="80"
+                value={person.email}
+                data-section="person"
+                data-person={person.id}
+                data-field="email"
+                onchange={handlePersonChange}
+              ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+              <lightning-input
+                type="tel"
+                label="Phone"
+                max-length="40"
+                value={person.phone}
+                data-section="person"
+                data-person={person.id}
+                data-field="phone"
+                onchange={handlePersonChange}
+              ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+              <lightning-combobox
+                label="Role"
+                placeholder="Select Role"
+                options={roleOptions}
+                value={person.role}
+                data-section="person"
+                data-person={person.id}
+                data-field="role"
+                onchange={handlePersonChange}
+              ></lightning-combobox>
+              <template lwc:if={person.legacyJobTitle}>
+                <p
+                  class="slds-text-color_weak slds-text-body_small slds-m-top_xx-small"
+                >
+                  Submitted job title: {person.legacyJobTitle} (used as the
+                  Contact title unless a Role is selected)
+                </p>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+    </template>
+  </lightning-modal-body>
+
+  <lightning-modal-footer>
+    <lightning-button
+      label="Cancel"
+      class="slds-m-right_x-small"
+      disabled={isBusy}
+      onclick={handleCancel}
+    ></lightning-button>
+    <template lwc:if={showForm}>
+      <lightning-button
+        variant="brand"
+        label={convertLabel}
+        disabled={isBusy}
+        data-id="confirm"
+        onclick={handleConvert}
+      ></lightning-button>
+    </template>
+  </lightning-modal-footer>
+</template>

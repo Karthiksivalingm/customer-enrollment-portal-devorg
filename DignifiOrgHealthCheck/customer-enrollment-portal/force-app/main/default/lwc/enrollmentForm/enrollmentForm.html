@@ -1,0 +1,187 @@
+<template>
+  <div class="ep-form">
+    <!-- Screen-reader-only announcements (for example "Contact 3 added"). -->
+    <p class="ep-sr-only" aria-live="polite">{announcement}</p>
+
+    <template lwc:if={isSuccessStep}>
+      <c-enrollment-confirmation
+        company-email={submittedEmail}
+        people-count={submittedPeopleCount}
+      ></c-enrollment-confirmation>
+    </template>
+
+    <template lwc:else>
+      <div class="ep-card ep-form__card">
+        <div class="ep-form__progress">
+          <c-enrollment-step-indicator
+            steps={steps}
+            current-step={step}
+          ></c-enrollment-step-indicator>
+        </div>
+
+        <div class="ep-form__body">
+          <div class="ep-step-header">
+            <h2
+              class="ep-step-header__title"
+              tabindex="-1"
+              data-id="step-heading"
+            >
+              {stepTitle}
+            </h2>
+            <p class="ep-step-header__description">{stepDescription}</p>
+          </div>
+
+          <template lwc:if={errorSummary}>
+            <div class="ep-alert" role="alert" data-id="error-summary">
+              <svg
+                class="ep-alert__icon"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="10" cy="10" r="9" fill="currentColor"></circle>
+                <rect
+                  x="9"
+                  y="5"
+                  width="2"
+                  height="6.5"
+                  rx="1"
+                  fill="#ffffff"
+                ></rect>
+                <circle cx="10" cy="14.5" r="1.25" fill="#ffffff"></circle>
+              </svg>
+              <div>
+                <span>{errorSummary}</span>
+                <template lwc:if={hasErrorDetails}>
+                  <ul class="ep-alert__list">
+                    <template for:each={errorDetails} for:item="detail">
+                      <li key={detail}>{detail}</li>
+                    </template>
+                  </ul>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Hidden from people and screen readers; only bots fill it in. -->
+          <div class="ep-hp" aria-hidden="true">
+            <label>
+              Leave this field empty
+              <input
+                type="text"
+                name="faxNumber"
+                tabindex="-1"
+                autocomplete="off"
+                oninput={handleHoneypot}
+              />
+            </label>
+          </div>
+
+          <!-- Section A: Company Information -->
+          <template lwc:if={isCompanyStep}>
+            <template lwc:if={countryLoadError}>
+              <div class="ep-alert" role="alert">
+                <span
+                  >The country list could not be loaded. Please refresh the
+                  page.</span
+                >
+              </div>
+            </template>
+            <c-enrollment-company-section
+              company={company}
+              errors={companyErrors}
+              country-options={countryOptions}
+              oncompanychange={handleCompanyChange}
+              oncompanyblur={handleCompanyBlur}
+            ></c-enrollment-company-section>
+          </template>
+
+          <!-- Section B: People Information -->
+          <template lwc:if={isPeopleStep}>
+            <div class="ep-people">
+              <template for:each={peopleView} for:item="item">
+                <c-enrollment-person-card
+                  key={item.key}
+                  data-key={item.key}
+                  person={item.person}
+                  person-number={item.number}
+                  errors={item.errors}
+                  can-remove={canRemovePeople}
+                  onpersonchange={handlePersonChange}
+                  onpersonblur={handlePersonBlur}
+                  onremove={handleRemovePerson}
+                ></c-enrollment-person-card>
+              </template>
+            </div>
+            <button
+              type="button"
+              class="ep-add-person"
+              data-id="add-person"
+              disabled={isAddDisabled}
+              onclick={handleAddPerson}
+            >
+              <svg
+                class="ep-add-person__icon"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  fill="currentColor"
+                  d="M9 4h2v5h5v2h-5v5H9v-5H4V9h5V4Z"
+                ></path>
+              </svg>
+              <span>Add contact</span>
+            </button>
+            <p class="ep-help ep-people__count">{peopleCountText}</p>
+          </template>
+
+          <!-- Section C: Review -->
+          <template lwc:if={isReviewStep}>
+            <c-enrollment-review
+              company={company}
+              people={people}
+              country-options={countryOptions}
+              onedit={handleEdit}
+            ></c-enrollment-review>
+          </template>
+        </div>
+
+        <div class="ep-actions">
+          <template lwc:if={showBack}>
+            <button
+              type="button"
+              class="ep-button ep-button--secondary"
+              data-id="back"
+              disabled={isSubmitting}
+              onclick={handleBack}
+            >
+              Back
+            </button>
+          </template>
+          <template lwc:if={isReviewStep}>
+            <button
+              type="button"
+              class="ep-button ep-button--primary ep-actions__primary"
+              data-id="submit"
+              disabled={isSubmitting}
+              onclick={handleSubmit}
+            >
+              {submitLabel}
+            </button>
+          </template>
+          <template lwc:else>
+            <button
+              type="button"
+              class="ep-button ep-button--primary ep-actions__primary"
+              data-id="next"
+              onclick={handleNext}
+            >
+              {nextLabel}
+            </button>
+          </template>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

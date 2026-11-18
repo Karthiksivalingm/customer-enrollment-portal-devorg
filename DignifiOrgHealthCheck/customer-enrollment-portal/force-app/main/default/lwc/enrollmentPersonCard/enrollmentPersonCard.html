@@ -1,0 +1,50 @@
+<template>
+  <article class="ep-person" aria-labelledby="person-title">
+    <div class="ep-person__header">
+      <span class="ep-person__badge" aria-hidden="true">{personNumber}</span>
+      <div class="ep-person__heading">
+        <h3 id="person-title" class="ep-person__title">{title}</h3>
+        <template lwc:if={displayName}>
+          <p class="ep-person__subtitle">{displayName}</p>
+        </template>
+      </div>
+      <template lwc:if={canRemove}>
+        <button
+          type="button"
+          class="ep-button ep-button--danger-ghost ep-button--small"
+          aria-label={removeLabel}
+          data-id="remove-person"
+          onclick={handleRemove}
+        >
+          <svg
+            class="ep-button__icon"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M8 2h4a1 1 0 0 1 1 1v1h4a1 1 0 1 1 0 2h-1l-.8 10.4A2 2 0 0 1 13.2 18H6.8a2 2 0 0 1-2-1.6L4 6H3a1 1 0 0 1 0-2h4V3a1 1 0 0 1 1-1Zm-2 4 .8 10h6.4L14 6H6Zm2.5 2a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 8.5 8Zm3 0a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 11.5 8Z"
+            ></path>
+          </svg>
+          <span>Remove</span>
+        </button>
+      </template>
+    </div>
+    <div class="ep-grid">
+      <template for:each={fields} for:item="item">
+        <c-enrollment-field
+          key={item.key}
+          class={item.gridClass}
+          data-name={item.key}
+          field={item.config}
+          value={item.value}
+          error={item.error}
+          options={item.options}
+          onvaluechange={handleValueChange}
+          onfieldblur={handleFieldBlur}
+        ></c-enrollment-field>
+      </template>
+    </div>
+  </article>
+</template>

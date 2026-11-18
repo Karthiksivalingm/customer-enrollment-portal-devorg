@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollment_People__c</fullName>
+    <description>Customer enrollment: the people submitted with this Lead, stored as versioned JSON ({"schemaVersion":1,"people":[...]}). Written only by Apex; shown by the enrollmentPeoplePanel component. Keep off page layouts.</description>
+    <externalId>false</externalId>
+    <label>Enrollment People</label>
+    <length>131072</length>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

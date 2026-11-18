@@ -1,0 +1,83 @@
+<template>
+  <footer class="ep-footer">
+    <div class="ep-container ep-footer__grid">
+      <div class="ep-footer__brand">
+        <p class="ep-footer__name">{brandLabel}</p>
+        <p class="ep-footer__text">
+          Customer enrollment portal. Questions about your enrollment? Our team
+          is here to help.
+        </p>
+      </div>
+
+      <div class="ep-footer__column">
+        <h2 class="ep-footer__heading">Contact</h2>
+        <ul class="ep-footer__list">
+          <li>
+            <template lwc:if={emailHref}>
+              <a class="ep-footer__link" href={emailHref}>{supportEmail}</a>
+            </template>
+            <template lwc:else>
+              <span class="ep-footer__placeholder"
+                >[Contact email placeholder]</span
+              >
+            </template>
+          </li>
+          <li>
+            <template lwc:if={phoneHref}>
+              <a class="ep-footer__link" href={phoneHref}>{supportPhone}</a>
+            </template>
+            <template lwc:else>
+              <span class="ep-footer__placeholder"
+                >[Contact phone placeholder]</span
+              >
+            </template>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ep-footer__column">
+        <h2 class="ep-footer__heading">Legal</h2>
+        <ul class="ep-footer__list">
+          <li>
+            <template lwc:if={privacyHref}>
+              <a
+                class="ep-footer__link"
+                href={privacyHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </a>
+            </template>
+            <template lwc:else>
+              <span class="ep-footer__placeholder">Privacy Policy</span>
+            </template>
+          </li>
+          <li>
+            <template lwc:if={termsHref}>
+              <a
+                class="ep-footer__link"
+                href={termsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Terms of Use
+              </a>
+            </template>
+            <template lwc:else>
+              <span class="ep-footer__placeholder">Terms of Use</span>
+            </template>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ep-footer__bottom">
+      <div class="ep-container">
+        <p class="ep-footer__copyright">
+          © {currentYear} {brandLabel}. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</template>

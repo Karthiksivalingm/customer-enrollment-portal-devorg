@@ -1,0 +1,21 @@
+<template>
+  <div class="ep-page">
+    <c-enrollment-header brand-name={brandName}></c-enrollment-header>
+
+    <div class="ep-page__content">
+      <c-enrollment-welcome></c-enrollment-welcome>
+
+      <div class="ep-container ep-page__form">
+        <c-enrollment-form></c-enrollment-form>
+      </div>
+    </div>
+
+    <c-enrollment-footer
+      brand-name={brandName}
+      support-email={supportEmail}
+      support-phone={supportPhone}
+      privacy-policy-url={privacyPolicyUrl}
+      terms-url={termsUrl}
+    ></c-enrollment-footer>
+  </div>
+</template>

@@ -1,0 +1,39 @@
+<template>
+  <div class="ep-card ep-confirmation">
+    <span class="ep-confirmation__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path
+          fill="currentColor"
+          d="M9.6 17.4 4.4 12.2l1.8-1.8 3.4 3.4 8.2-8.2 1.8 1.8-10 10Z"
+        ></path>
+      </svg>
+    </span>
+    <h2
+      class="ep-confirmation__title"
+      tabindex="-1"
+      data-id="confirmation-heading"
+    >
+      Thank you. Your enrollment has been submitted.
+    </h2>
+    <p class="ep-confirmation__text">
+      We have received your company details and the information for
+      {peopleText}.
+      <template lwc:if={companyEmail}>
+        Our team will review your enrollment and contact you at
+        <strong>{companyEmail}</strong>.
+      </template>
+      <template lwc:else>
+        Our team will review your enrollment and contact you shortly.
+      </template>
+    </p>
+
+    <div class="ep-confirmation__next">
+      <h3 class="ep-confirmation__next-title">What happens next</h3>
+      <ol class="ep-confirmation__steps">
+        <li>Our team reviews the information you submitted.</li>
+        <li>We contact you if we need to confirm any details.</li>
+        <li>Once approved, your company and team are set up with us.</li>
+      </ol>
+    </div>
+  </div>
+</template>

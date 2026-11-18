@@ -1,0 +1,32 @@
+<template>
+  <div class="ep-steps">
+    <p class="ep-steps__summary">{summary}</p>
+    <ol class="ep-steps__list" aria-label="Enrollment progress">
+      <template for:each={items} for:item="item">
+        <li
+          key={item.key}
+          class={item.className}
+          aria-current={item.ariaCurrent}
+        >
+          <span class="ep-steps__marker" aria-hidden="true">
+            <template lwc:if={item.isComplete}>
+              <svg
+                class="ep-steps__check"
+                viewBox="0 0 20 20"
+                focusable="false"
+              >
+                <path
+                  fill="currentColor"
+                  d="M8.1 14.6 3.8 10.3l1.4-1.4 2.9 2.9 6.7-6.7 1.4 1.4-8.1 8.1Z"
+                ></path>
+              </svg>
+            </template>
+            <template lwc:else>{item.number}</template>
+          </span>
+          <span class="ep-steps__label">{item.label}</span>
+          <span class="ep-sr-only">{item.statusText}</span>
+        </li>
+      </template>
+    </ol>
+  </div>
+</template>

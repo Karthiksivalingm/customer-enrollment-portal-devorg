@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollment_Person_Key__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Customer enrollment: LeadId:PersonId of the submitted person this Contact was created from. The unique index guarantees each submitted person becomes at most one Contact.</description>
+    <externalId>true</externalId>
+    <label>Enrollment Person Key</label>
+    <length>40</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

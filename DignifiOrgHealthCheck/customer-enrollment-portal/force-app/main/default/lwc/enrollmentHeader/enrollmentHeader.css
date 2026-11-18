@@ -1,0 +1,199 @@
+@import "c/enrollmentStyles";
+
+.ep-header {
+  position: relative;
+  background: var(--ep-color-surface);
+  border-bottom: 1px solid var(--ep-color-border);
+  box-shadow: 0 1px 3px rgba(15, 42, 73, 0.05);
+}
+
+/* Hidden until it receives keyboard focus. */
+.ep-skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 20;
+  padding: 0.5rem 1rem;
+  border-radius: var(--ep-radius-sm);
+  background: var(--ep-color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.ep-skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--ep-color-focus);
+  outline-offset: 2px;
+}
+
+.ep-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 76px;
+}
+
+/* ---------- Brand ---------- */
+
+.ep-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.ep-brand__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: var(--ep-radius-md);
+  background: var(--ep-color-primary);
+  color: #ffffff;
+}
+
+.ep-brand__mark svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.ep-brand__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ep-brand__name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ep-color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ep-brand__tagline {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ep-color-text-muted);
+}
+
+/* ---------- Navigation (desktop) ---------- */
+
+.ep-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.ep-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ep-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.875rem;
+  border-radius: var(--ep-radius-sm);
+  color: var(--ep-color-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ep-nav__link:hover {
+  background: var(--ep-color-primary-soft);
+  color: var(--ep-color-primary);
+}
+
+.ep-nav__link:focus-visible {
+  outline: 3px solid var(--ep-color-focus);
+  outline-offset: 2px;
+}
+
+.ep-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ep-color-border);
+  border-radius: var(--ep-radius-sm);
+  background: var(--ep-color-surface);
+  color: var(--ep-color-primary);
+  cursor: pointer;
+}
+
+.ep-menu-toggle:focus-visible {
+  outline: 3px solid var(--ep-color-focus);
+  outline-offset: 2px;
+}
+
+.ep-menu-toggle__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ---------- Navigation (tablet and mobile) ---------- */
+
+@media (max-width: 899px) {
+  .ep-header__bar {
+    flex-wrap: wrap;
+    min-height: 68px;
+  }
+
+  .ep-menu-toggle {
+    display: inline-flex;
+  }
+
+  .ep-nav {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.5rem 0 1rem;
+    border-top: 1px solid var(--ep-color-border);
+  }
+
+  .ep-nav--open {
+    display: flex;
+  }
+
+  .ep-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ep-nav__link {
+    width: 100%;
+    padding: 0 0.75rem;
+  }
+
+  .ep-nav__cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .ep-brand__mark {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .ep-brand__name {
+    font-size: 1rem;
+  }
+}

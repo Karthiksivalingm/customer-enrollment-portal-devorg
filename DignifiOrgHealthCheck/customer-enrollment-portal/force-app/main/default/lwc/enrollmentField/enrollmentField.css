@@ -1,0 +1,97 @@
+@import "c/enrollmentStyles";
+
+.ep-field__label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ep-color-text);
+}
+
+.ep-field__required {
+  margin-left: 0.125rem;
+  color: var(--ep-color-error);
+}
+
+.ep-field__optional {
+  margin-left: 0.25rem;
+  font-weight: 400;
+  color: var(--ep-color-text-muted);
+}
+
+.ep-field__input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--ep-color-border-strong);
+  border-radius: var(--ep-radius-sm);
+  background: var(--ep-color-surface);
+  color: var(--ep-color-text);
+  font-family: inherit;
+  /* 16px or larger stops iOS Safari from zooming in when an input is focused. */
+  font-size: 1rem;
+  line-height: 1.5;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ep-field__input:hover {
+  border-color: var(--ep-color-primary);
+}
+
+/* Native select with a custom chevron so it matches the text inputs. */
+.ep-field__select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23163a63' d='M5.3 7.3a1 1 0 0 1 1.4 0L10 10.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 0-1.4Z'/%3E%3C/svg%3E");
+  background-position: right 0.875rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  cursor: pointer;
+}
+
+.ep-field__select:disabled {
+  cursor: not-allowed;
+  background-color: var(--ep-color-background);
+  color: var(--ep-color-text-muted);
+}
+
+.ep-field__input:focus {
+  outline: none;
+  border-color: var(--ep-color-primary);
+  box-shadow: 0 0 0 3px rgba(22, 58, 99, 0.2);
+}
+
+.ep-field__input--invalid,
+.ep-field__input--invalid:hover {
+  border-color: var(--ep-color-error);
+}
+
+.ep-field__input--invalid:focus {
+  border-color: var(--ep-color-error);
+  box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.18);
+}
+
+.ep-field__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+  margin: 0.375rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--ep-color-error);
+}
+
+.ep-field__error-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ep-field__input {
+    transition: none;
+  }
+}

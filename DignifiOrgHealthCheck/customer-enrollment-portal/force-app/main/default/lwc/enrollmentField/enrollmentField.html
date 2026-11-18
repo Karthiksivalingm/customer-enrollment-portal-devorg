@@ -1,0 +1,73 @@
+<template>
+  <div class="ep-field">
+    <label class="ep-field__label" for={controlId}>
+      {field.label}
+      <template lwc:if={field.required}>
+        <span class="ep-field__required" aria-hidden="true">*</span>
+      </template>
+      <template lwc:else>
+        <span class="ep-field__optional">(optional)</span>
+      </template>
+    </label>
+    <template lwc:if={isSelect}>
+      <select
+        id="field-select"
+        class={selectClass}
+        name={field.name}
+        autocomplete={field.autocomplete}
+        required={field.required}
+        disabled={isSelectDisabled}
+        aria-invalid={ariaInvalid}
+        aria-describedby={describedBy}
+        onchange={handleInput}
+        onblur={handleBlur}
+      >
+        <option value="">{selectPlaceholder}</option>
+        <template for:each={selectOptions} for:item="option">
+          <option
+            key={option.value}
+            value={option.value}
+            selected={option.selected}
+          >
+            {option.label}
+          </option>
+        </template>
+      </select>
+    </template>
+    <template lwc:else>
+      <input
+        id="field-input"
+        class={inputClass}
+        name={field.name}
+        type={inputType}
+        value={value}
+        maxlength={field.maxLength}
+        autocomplete={field.autocomplete}
+        inputmode={field.inputMode}
+        required={field.required}
+        aria-invalid={ariaInvalid}
+        aria-describedby={describedBy}
+        oninput={handleInput}
+        onblur={handleBlur}
+      />
+    </template>
+    <template lwc:if={field.helpText}>
+      <p id="field-help" class="ep-help">{field.helpText}</p>
+    </template>
+    <template lwc:if={hasError}>
+      <p id="field-error" class="ep-field__error">
+        <svg
+          class="ep-field__error-icon"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <circle cx="10" cy="10" r="9" fill="currentColor"></circle>
+          <rect x="9" y="5" width="2" height="6.5" rx="1" fill="#ffffff"></rect>
+          <circle cx="10" cy="14.5" r="1.25" fill="#ffffff"></circle>
+        </svg>
+        <span>{error}</span>
+      </p>
+    </template>
+  </div>
+</template>

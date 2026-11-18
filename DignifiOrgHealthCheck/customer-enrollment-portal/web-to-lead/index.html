@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customer Enrollment Form</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--
+      Embeddable enrollment form. No site header, hero or footer: the host page
+      (for example the client's website, through an iframe) provides those.
+    -->
+    <main class="ep-embed">
+      <!-- Screen-reader announcements (for example "Contact 3 added"). -->
+      <p class="ep-sr-only" aria-live="polite" id="announcement"></p>
+
+      <noscript>
+        <div class="ep-alert" role="alert">
+          This form needs JavaScript. Please enable JavaScript and reload the page.
+        </div>
+      </noscript>
+
+      <div class="ep-card ep-form__card">
+        <div class="ep-form__progress">
+          <p class="ep-steps__summary" id="steps-summary"></p>
+          <ol class="ep-steps__list" id="steps" aria-label="Enrollment progress"></ol>
+        </div>
+
+        <div class="ep-form__body">
+          <div class="ep-step-header">
+            <h2 class="ep-step-header__title" id="step-title" tabindex="-1"></h2>
+            <p class="ep-step-header__description" id="step-description"></p>
+          </div>
+
+          <div class="ep-alert ep-hidden" role="alert" id="error-summary">
+            <svg class="ep-alert__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <circle cx="10" cy="10" r="9" fill="currentColor"></circle>
+              <rect x="9" y="5" width="2" height="6.5" rx="1" fill="#ffffff"></rect>
+              <circle cx="10" cy="14.5" r="1.25" fill="#ffffff"></circle>
+            </svg>
+            <span id="error-summary-text"></span>
+          </div>
+
+          <!-- Hidden from people and screen readers; only bots fill it in. -->
+          <div class="ep-hp" aria-hidden="true">
+            <label>
+              Leave this field empty
+              <input type="text" id="fax-number" name="faxNumber" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+
+          <!-- Step 1: Company information -->
+          <section id="step-company" class="ep-grid" aria-label="Company information"></section>
+
+          <!-- Step 2: Contacts -->
+          <section id="step-people" class="ep-hidden" aria-label="Contacts">
+            <div class="ep-people" id="people"></div>
+            <button type="button" class="ep-add-person" id="add-person">
+              <svg class="ep-add-person__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M9 4h2v5h5v2h-5v5H9v-5H4V9h5V4Z"></path>
+              </svg>
+              <span>Add contact</span>
+            </button>
+            <p class="ep-help ep-people__count" id="people-count"></p>
+          </section>
+
+          <!-- Step 3: Review -->
+          <section id="step-review" class="ep-review ep-hidden" aria-label="Review"></section>
+        </div>
+
+        <div class="ep-actions">
+          <button type="button" class="ep-button ep-button--secondary ep-hidden" id="back">Back</button>
+          <button type="button" class="ep-button ep-button--primary ep-actions__primary" id="next">Next</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- The real submission: a standard Web-to-Lead form, filled in by app.js on Submit. -->
+    <form id="w2l-form" method="POST" class="ep-hidden" aria-hidden="true"></form>
+
+    <script src="embed.js"></script>
+    <script src="countries.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
